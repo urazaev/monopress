@@ -56,4 +56,45 @@
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
-<? echo $bcn; ?> Lorem ipsum dolor.
+<?php
+//        echo $options['custom-code-css'];
+//print_r($options);
+//foreach ($options as $item) {
+//    echo $item;
+//}
+//
+//echo join(', ', $options);
+//
+//array_walk($options, create_function('$a', 'echo $a;'));
+//
+//
+//
+//        global $options;
+//
+//        foreach ($options['opt-social-profiles'] as $idx => &arr) {
+//        echo 'Profile ID: ' . $arr['id'];
+//        echo 'Enabled: '    . $arr['enabled'];
+//        echo 'Icon: '       . $arr['icon'];
+//        echo 'Name: '       . $arr['name'];
+//        echo 'URL: '        . $arr['url'];
+//        echo 'Color: '      . $arr['color'];
+//        echo 'Background: ' . $arr['background'];
+//        }
+//
+//        // Or do the following for full icon rendering
+//        foreach ($options['opt-social-profiles'] as $idx => &arr) {
+//        if ($arr['enabled']) {
+//        $id     = $arr['id'];
+//        $url    = $arr['url'];
+//
+//        $icons .= '';
+//        $icons .= '</pre><ul><li class="' . $id . '"><a href="' . $url . '" target="_blank"><i class="' . $arr['icon'] . '"></i></a></li></ul><pre>';
+//    }
+//
+//    $output = '</pre><ul class="icons">';
+//            $output .= $icons;
+//            $output .= '</ul><pre>';
+//}
+//
+//?>
+        lorem lorem
