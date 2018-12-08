@@ -257,6 +257,30 @@ Redux::setHelpSidebar($opt_name, $content);
 
 
  */
+// -> START Portfolio settings
+Redux::setSection($opt_name, array(
+    'title' => __('Dont miss Portfolio', 'bcn-theme'),
+    'id' => 'Portfolio',
+    'desc' => __('', 'bcn-theme'),
+    'icon' => 'el el-photo'
+));
+
+Redux::setSection($opt_name, array(
+    'title' => __('Layout', 'bcn-theme'),
+    'id' => 'template-settings',
+    'subsection' => true,
+    'fields' => array(),
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/background/" target="_blank">docs.reduxframework.com/core/fields/background/</a>',
+));
+
+Redux::setSection($opt_name, array(
+    'title' => __('Portfolio typography', 'bcn-theme'),
+    'id' => 'categories-template',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/border/" target="_blank">docs.reduxframework.com/core/fields/border/</a>',
+    'subsection' => true,
+    'fields' => array()
+));
+
 
 // -> START Header
 Redux::setSection($opt_name, array(
@@ -460,41 +484,16 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-    'title' => __('Spacing', 'bcn-theme'),
-    'id' => 'spacing',
-    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/spacing/" target="_blank">docs.reduxframework.com/core/fields/spacing/</a>',
-    'subsection' => true,
-    'fields' => array()
-));
-
-
-// -> START Portfolio settings
-Redux::setSection($opt_name, array(
     'title' => __('Portfolio', 'bcn-theme'),
-    'id' => 'Portfolio',
-    'desc' => __('', 'bcn-theme'),
-    'icon' => 'el el-photo'
-));
-
-Redux::setSection($opt_name, array(
-    'title' => __('Layout', 'bcn-theme'),
-    'id' => 'template-settings',
-    'subsection' => true,
-    'fields' => array(),
-    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/background/" target="_blank">docs.reduxframework.com/core/fields/background/</a>',
-));
-
-Redux::setSection($opt_name, array(
-    'title' => __('Portfolio typography', 'bcn-theme'),
-    'id' => 'categories-template',
-    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/border/" target="_blank">docs.reduxframework.com/core/fields/border/</a>',
+    'id' => 'portfoilo',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/spacing/" target="_blank">docs.reduxframework.com/core/fields/spacing/</a>',
     'subsection' => true,
     'fields' => array()
 ));
 
 // -> START Miscellaneous
 Redux::setSection($opt_name, array(
-    'title' => __('Miscellaneous', 'bcn-theme'),
+    'title' => __('++ Miscellaneous', 'bcn-theme'),
     'id' => 'miscellaneous',
     'desc' => __('', 'bcn-theme'),
     'icon' => 'el el-cog'
@@ -504,21 +503,150 @@ Redux::setSection($opt_name, array(
 Redux::setSection($opt_name, array(
     'title' => __('Block settings', 'bcn-theme'),
     'id' => 'block-settings',
-    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/gallery/" target="_blank">docs.reduxframework.com/core/fields/gallery/</a>',
     'subsection' => true,
-    'fields' => array()
+    'fields' => array(
+        array(
+            'id' => 'block-settings-start',
+            'type' => 'section',
+            'title' => __('Global Block Template', 'bcn-theme'),
+            'subtitle' => __('This template will be applied to the whole site. The theme will also try to adjust the default widgets to look in the same style with the block template selected here.'),
+            'indent' => true, // Indent all options below until the next 'section' option is set.
+        ),
+        array(
+            'id'       => 'block-settings-template',
+            'type' => 'image_select',
+            'title'    => __('Block template', 'bcn-theme'),
+            'subtitle' => __('You can overwrite the template on each block and widget.'),
+            'desc' => __('This uses some of the built in images, you can use them for layout options.', 'bcn-theme'),
+            //Must provide key => value(array:title|img) pairs for radio options
+            'options' => array(
+                '1' => array(
+                    'alt' => '1 Column',
+                    'img'   => get_template_directory_uri().'/images/admin/preview-01.jpg'
+                ),
+                '2' => array(
+                    'alt' => '2 Column Left',
+                    'img'   => get_template_directory_uri().'/images/admin/preview-02.jpg'
+                ),
+                '3' => array(
+                    'alt' => '2 Column Right',
+                    'img'   => get_template_directory_uri().'/images/admin/preview-03.jpg'
+                ),
+                '4' => array(
+                    'alt' => '3 Column Middle',
+                    'img'   => get_template_directory_uri().'/images/admin/preview-04.jpg'
+                ),
+                '5' => array(
+                    'alt' => '3 Column Left',
+                    'img'   => get_template_directory_uri().'/images/admin/preview-05.jpg'
+                ),
+                '6' => array(
+                    'alt' => '3 Column Right',
+                    'img'   => get_template_directory_uri().'/images/admin/preview-06.jpg'
+                ),
+                '7' => array(
+                    'alt' => '3 Column Right',
+                    'img'   => get_template_directory_uri().'/images/admin/preview-07.jpg'
+                ),
+                '8' => array(
+                    'alt' => '3 Column Right',
+                    'img'   => get_template_directory_uri().'/images/admin/preview-09.jpg'
+                ),
+                '9' => array(
+                    'alt' => '3 Column Right',
+                    'img'   => get_template_directory_uri().'/images/admin/preview-11.jpg'
+                ),
+            ),
+            'default' => '2',
+            'tiles' => true,
+        ),
+        array(
+            'id' => 'block-settings-meta-start',
+            'type' => 'section',
+            'title' => __('Meta info on Modules/Blocks', 'bcn-theme'),
+            'subtitle' => __('You can overwrite the template on each block and widget.'),
+            'indent' => false, // Indent all options below until the next 'section' option is set.
+        ),
+        array(
+            'id' => 'block-settings-meta-author',
+            'type' => 'switch',
+            'title' => __('Show author name', 'bcn-theme'),
+            'subtitle' => __('Enable or disable the author name (on blocks and modules)'),
+            'default' => false,
+        ),
+        array(
+            'id' => 'block-settings-meta-date',
+            'type' => 'switch',
+            'title' => __('Show date', 'bcn-theme'),
+            'subtitle' => __('Enable or disable the post date (on blocks and modules)'),
+            'default' => false,
+        ),
+        array(
+            'id' => 'block-settings-meta-comments-number',
+            'type' => 'switch',
+            'title' => __('Show comment count', 'bcn-theme'),
+            'subtitle' => __('Enable or disable comment number (on blocks and modules)'),
+            'default' => false,
+        ),
+        array(
+            'id' => 'block-settings-meta-reviews',
+            'type' => 'switch',
+            'title' => __('Show review', 'bcn-theme'),
+            'subtitle' => __('Enable or disable reviews (on blocks and modules)'),
+            'default' => false,
+        ),
+    )
 ));
 
 Redux::setSection($opt_name, array(
     'title' => __('Background', 'bcn-theme'),
     'id' => 'background',
-    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/media/" target="_blank">docs.reduxframework.com/core/fields/media/</a>',
     'subsection' => true,
-    'fields' => array()
+    'fields' => array(
+        array(
+            'id' => 'background-theme',
+            'type' => 'background',
+//            'output' => array('body'),
+            'title' => __('Theme background', 'bcn-theme'),
+            'background-color' => 'false',
+        ),
+
+        array(
+            'id' => 'background-search',
+            'type' => 'background',
+//            'output' => array('body'),
+            'title' => __('Search panel background', 'bcn-theme'),
+            'background-color' => 'false',
+        ),
+
+        array(
+            'id' => 'background-flip',
+            'type' => 'background',
+//            'output' => array('body'),
+            'title' => __('Flip panel background', 'bcn-theme'),
+            'background-color' => 'false',
+        ),
+
+        array(
+            'id' => 'background-mobile-menu',
+            'type' => 'background',
+//            'output' => array('body'),
+            'title' => __('Mobile menu background', 'bcn-theme'),
+            'background-color' => 'false',
+        ),
+
+//        array(
+//            'id' => 'background-theme',
+//            'type' => 'background',
+////            'output' => array('body'),
+//            'title' => __('Footer background', 'bcn-theme'),
+//            'background-color' => 'false',
+//        ),
+    ),
 ));
 
 Redux::setSection($opt_name, array(
-    'title' => __('+ Excerpts', 'bcn-theme'),
+    'title' => __('Excerpts', 'bcn-theme'),
     'id' => 'excerpts',
     'desc' => __('Adding a text as excerpt on post edit page (Excerpt box), will overwrite the theme excerpts ', 'bcn-theme'),
     'subsection' => true,
@@ -543,15 +671,429 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-    'title' => __('Theme color', 'bcn-theme'),
+    'title' => __('Theme colors', 'bcn-theme'),
     'id' => 'theme-color',
-    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/slides/" target="_blank">docs.reduxframework.com/core/fields/slides/</a>',
+//    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/slides/" target="_blank">docs.reduxframework.com/core/fields/slides/</a>',
     'subsection' => true,
-    'fields' => array()
+    'fields' => array(
+
+//      General colors
+
+        array(
+            'id' => 'colors-general-start',
+            'type' => 'section',
+            'title' => __('General theme colors', 'bcn-theme'),
+            'indent' => true, // Indent all options below until the next 'section' option is set.
+        ),
+        array(
+            'id'       => 'colors-general-accent',
+            'type'     => 'color',
+            'title'    => __('Theme accent color', 'bcn-theme'),
+            'subtitle' => __('Select theme accent color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-general-bg',
+            'type'     => 'color',
+            'title'    => __('Background color', 'bcn-theme'),
+            'subtitle' => __('Select theme background color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-general-headers-bg',
+            'type'     => 'color',
+            'title'    => __('Headers background color', 'bcn-theme'),
+            'subtitle' => __('Select a global header background color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-general-headers',
+            'type'     => 'color',
+            'title'    => __('Headers text color', 'bcn-theme'),
+            'subtitle' => __('Select a global header text color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+
+//      Preloader
+
+        array(
+            'id' => 'colors-preloader-start',
+            'type' => 'section',
+            'title' => __('Preloader', 'bcn-theme'),
+            'indent' => true, // Indent all options below until the next 'section' option is set.
+        ),
+        array(
+            'id'       => 'colors-preloader-bg',
+            'type'     => 'color',
+            'title'    => __('Preloader background color', 'bcn-theme'),
+            'subtitle' => __('Select preloader background color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-preloader',
+            'type'     => 'color',
+            'title'    => __('Preloader color', 'bcn-theme'),
+            'subtitle' => __('Select preloader color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+
+//      Header
+
+        array(
+            'id' => 'colors-header-start',
+            'type' => 'section',
+            'title' => __('Header', 'bcn-theme'),
+            'indent' => true, // Indent all options below until the next 'section' option is set.
+        ),
+        array(
+            'id'       => 'colors-header-bg',
+            'type'     => 'color',
+            'title'    => __('Header background color', 'bcn-theme'),
+            'subtitle' => __('Select header background color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-header-logo',
+            'type'     => 'color',
+            'title'    => __('Text logo color', 'bcn-theme'),
+            'subtitle' => __('Select text logo color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-menu-bg',
+            'type'     => 'color',
+            'title'    => __('Menu background color', 'bcn-theme'),
+            'subtitle' => __('Select menu background color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-menu-hover',
+            'type'     => 'color',
+            'title'    => __('Menu active & hover color', 'bcn-theme'),
+            'subtitle' => __('Select the active and hover color for menu and submenu'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-menu-txt',
+            'type'     => 'color',
+            'title'    => __('Menu text color', 'bcn-theme'),
+            'subtitle' => __('Select menu text color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-menu-accent-txt',
+            'type'     => 'color',
+            'title'    => __('Menu accent text color', 'bcn-theme'),
+            'subtitle' => __('Select menu accent text color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+
+//      Header -> Submenu
+
+        array(
+            'id'       => 'colors-submenu-bg',
+            'type'     => 'color',
+            'title'    => __('Sub-menu background color', 'bcn-theme'),
+            'subtitle' => __('Select sub-menu background color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-submenu-color',
+            'type'     => 'color',
+            'title'    => __('Sub-menu text color', 'bcn-theme'),
+            'subtitle' => __('Select sub-menu text color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-submenu-hover-bg',
+            'type'     => 'color',
+            'title'    => __('Sub-menu active & hover background', 'bcn-theme'),
+            'subtitle' => __('Active and hover background color for sub-menus'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-submenu-hover-color',
+            'type'     => 'color',
+            'title'    => __('Sub-menu active & hover text color', 'bcn-theme'),
+            'subtitle' => __('Active and hover text color for sub-menus'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+
+//      Header -> icons
+
+        array(
+            'id'       => 'colors-menu-icons',
+            'type'     => 'color',
+            'title'    => __('Menu icons color', 'bcn-theme'),
+            'subtitle' => __('Select menu icons color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-menu-icons-hover',
+            'type'     => 'color',
+            'title'    => __('Menu icons hover color', 'bcn-theme'),
+            'subtitle' => __('Select menu icons hover color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+
+//      Header ->  social
+
+        array(
+            'id'       => 'colors-menu-soc-icons',
+            'type'     => 'color',
+            'title'    => __('Social icons color', 'bcn-theme'),
+            'subtitle' => __('Select social icons color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-menu-soc-icons-hover',
+            'type'     => 'color',
+            'title'    => __('Social icons hover color', 'bcn-theme'),
+            'subtitle' => __('Select social icons hover color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+
+//      Sidebar
+
+        array(
+            'id' => 'colors-sidebar-start',
+            'type' => 'section',
+            'title' => __('Sidebar', 'bcn-theme'),
+            'indent' => true, // Indent all options below until the next 'section' option is set.
+        ),
+        array(
+            'id'       => 'colors-sidebar-bg',
+            'type'     => 'color',
+            'title'    => __('Sidebar background color', 'bcn-theme'),
+            'subtitle' => __('Select sidebar background color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-sidebar-color',
+            'type'     => 'color',
+            'title'    => __('Sidebar text color', 'bcn-theme'),
+            'subtitle' => __('Select sidebar text color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+
+//      Flip panel
+
+        array(
+            'id' => 'colors-flip-start',
+            'type' => 'section',
+            'title' => __('Flip panel', 'bcn-theme'),
+            'indent' => true, // Indent all options below until the next 'section' option is set.
+        ),
+        array(
+            'id'       => 'colors-flip-bg',
+            'type'     => 'color',
+            'title'    => __('Flip panel background color', 'bcn-theme'),
+            'subtitle' => __('Select flip panel background color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-flip-color',
+            'type'     => 'color',
+            'title'    => __('Flip panel text and icons color', 'bcn-theme'),
+            'subtitle' => __('Select text and icons color for flip panel'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+
+//      Search panel
+
+        array(
+            'id' => 'colors-search-start',
+            'type' => 'section',
+            'title' => __('Search panel', 'bcn-theme'),
+            'indent' => true, // Indent all options below until the next 'section' option is set.
+        ),
+        array(
+            'id'       => 'colors-search-bg',
+            'type'     => 'color',
+            'title'    => __('Search panel background color', 'bcn-theme'),
+            'subtitle' => __('Select search panel background color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-search-color',
+            'type'     => 'color',
+            'title'    => __('Search panel text and icons color', 'bcn-theme'),
+            'subtitle' => __('Select search panel text and icons color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-search-border',
+            'type'     => 'color',
+            'title'    => __('Search panel bottom border color', 'bcn-theme'),
+            'subtitle' => __('Select search panel bottom border color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+
+//      Posts
+
+        array(
+            'id' => 'colors-posts-start',
+            'type' => 'section',
+            'title' => __('Posts', 'bcn-theme'),
+            'indent' => true, // Indent all options below until the next 'section' option is set.
+        ),
+        array(
+            'id'       => 'colors-posts-title',
+            'type'     => 'color',
+            'title'    => __('Post title color', 'bcn-theme'),
+            'subtitle' => __('Select post title color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-posts-author',
+            'type'     => 'color',
+            'title'    => __('Post & block author name color', 'bcn-theme'),
+            'subtitle' => __('Select author name color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-posts-text',
+            'type'     => 'color',
+            'title'    => __('Post text color', 'bcn-theme'),
+            'subtitle' => __('Select post content color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-posts-h',
+            'type'     => 'color',
+            'title'    => __('Post h1, h2, h3, h4, h5, h6 color', 'bcn-theme'),
+            'subtitle' => __('Select in post h color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-posts-blockquote',
+            'type'     => 'color',
+            'title'    => __('Post blockquote color', 'bcn-theme'),
+            'subtitle' => __('Select in post blockquote color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+
+//      Pages
+
+        array(
+            'id' => 'colors-pages-start',
+            'type' => 'section',
+            'title' => __('Pages', 'bcn-theme'),
+            'indent' => true, // Indent all options below until the next 'section' option is set.
+        ),
+        array(
+            'id'       => 'colors-pages-title',
+            'type'     => 'color',
+            'title'    => __('Page title color', 'bcn-theme'),
+            'subtitle' => __('Select page title color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-pages-text',
+            'type'     => 'color',
+            'title'    => __('Page text color', 'bcn-theme'),
+            'subtitle' => __('Select page text color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-pages-h',
+            'type'     => 'color',
+            'title'    => __('Page h1, h2, h3, h4, h5, h6 color', 'bcn-theme'),
+            'subtitle' => __('Select page h color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+
+//      Footer
+
+        array(
+            'id' => 'colors-footer-start',
+            'type' => 'section',
+            'title' => __('Footer', 'bcn-theme'),
+            'indent' => true, // Indent all options below until the next 'section' option is set.
+        ),
+        array(
+            'id'       => 'colors-footer-bg',
+            'type'     => 'color',
+            'title'    => __('Background color', 'bcn-theme'),
+            'subtitle' => __('Select footer background color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-footer-color',
+            'type'     => 'color',
+            'title'    => __('Text color', 'bcn-theme'),
+            'subtitle' => __('Select footer text color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-footer-header',
+            'type'     => 'color',
+            'title'    => __('Widgets header text color', 'bcn-theme'),
+            'subtitle' => __('Select widgets header text color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-footer-social',
+            'type'     => 'color',
+            'title'    => __('Footer social icons color', 'bcn-theme'),
+            'subtitle' => __('Select social icons color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+        array(
+            'id'       => 'colors-footer-social-hover',
+            'type'     => 'color',
+            'title'    => __('Footer social icons hover color', 'bcn-theme'),
+            'subtitle' => __('Select social icons hover color'),
+            'default'  => false,
+            'validate' => 'color',
+        ),
+
+    )
 ));
 
+
+
 Redux::setSection($opt_name, array(
-    'title' => __('+ Theme fonts', 'bcn-theme'),
+    'title' => __('Theme fonts', 'bcn-theme'),
     'id' => 'theme-fonts',
 //    'desc' => __('Font Settings ', 'bcn-theme'),
     'subsection' => true,
@@ -580,7 +1122,6 @@ Redux::setSection($opt_name, array(
             'title' => __('Header', 'bcn-theme'),
             'indent' => true,
         ),
-
         array(
             'id' => 'fonts-header-logo',
             'type'     => 'typography',
@@ -592,7 +1133,6 @@ Redux::setSection($opt_name, array(
             'default'  => false,
             'text-transform' => true,
         ),
-
         array(
             'id' => 'fonts-header-widget',
             'type'     => 'typography',
@@ -604,7 +1144,6 @@ Redux::setSection($opt_name, array(
             'default'  => false,
             'text-transform' => true,
         ),
-
         array(
             'id' => 'fonts-header-menu',
             'type'     => 'typography',
@@ -616,7 +1155,6 @@ Redux::setSection($opt_name, array(
             'default'  => false,
             'text-transform' => true,
         ),
-
         array(
             'id' => 'fonts-header-submenu',
             'type'     => 'typography',
@@ -664,7 +1202,7 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'fonts-post-start',
             'type' => 'section',
-            'title' => __('Post  elements', 'bcn-theme'),
+            'title' => __('Post content', 'bcn-theme'),
             'indent' => true,
         ),
         array(
@@ -1078,107 +1616,11 @@ Redux::setSection($opt_name, array(
             'default'  => false,
             'text-transform' => true,
         ),
-//        array(
-//            'id' => 'fonts-buttons-start',
-//            'type' => 'section',
-//            'title' => __('Buttons fonts settings', 'bcn-theme'),
-//            'subtitle' => __('From h1 to h6.', 'bcn-theme'),
-//            'indent' => true, // Indent all options below until the next 'section' option is set.
-//        ),
-//        array(
-//            'id'       => 'button_default_color',
-//            'type'     => 'background',
-//            'output'   => array( '.btn, div.wpforms-container-full .wpforms-form input[type=submit], div.wpforms-container-full .wpforms-form button[type=submit], button, [type="button"], [type="reset"], [type="submit"], .woocommerce div.product form.cart .button, body div.wpforms-container-full .wpforms-form button[type=submit], .woocommerce #review_form #respond .form-submit input, .woocommerce ul.products li.product .button, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce-cart .wc-proceed-to-checkout a.checkout-button, .woocommerce_checkout_place_order, .woocommerce button.button.alt, .products .sto_product_photo .added_to_cart, .added_to_cart, .woocommerce a.added_to_cart, .sto_product_cont_desc a.button' ),
-//            'title'    => __( 'Button Background Color', 'bcn-theme' ),
-//            'default'  => array(
-//                'background-color' => '#5872f7',
-//            ),
-//            'background-image' => false,
-//            'background-repeat' => false,
-//            'background-size' => false,
-//            'background-attachment' => false,
-//            'background-position' => false,
-//            'transparent' => false,
-//            'preview' => false,
-//        ),
-//        array(
-//            'id'       => 'button_default_color_hover',
-//            'type'     => 'background',
-//            'output'   => array( '.btn:hover, div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-container-full .wpforms-form button[type=submit]:hover, button:hover, [type="button"]:hover, [type="reset"]:hover, [type="submit"]:hover, .woocommerce div.product form.cart .button:hover, body div.wpforms-container-full .wpforms-form button[type=submit]:hover, .woocommerce #review_form #respond .form-submit input:hover, .woocommerce ul.products li.product .button:hover, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover, .woocommerce_checkout_place_order:hover, .woocommerce button.button.alt:hover, .products .sto_product_photo .added_to_cart:hover, .added_to_cart:hover, .woocommerce a.added_to_cart:hover, .sto_product_cont_desc .button:hover' ),
-//            'title'    => __( 'Button Background Color Hover', 'bcn-theme' ),
-//            'default'  => array(
-//                'background-color' => '#3f5ae4',
-//            ),
-//            'background-image' => false,
-//            'background-repeat' => false,
-//            'background-size' => false,
-//            'background-attachment' => false,
-//            'background-position' => false,
-//            'transparent' => false,
-//            'preview' => false,
-//        ),
-//        array(
-//            'id'       => 'button-typo',
-//            'type'     => 'typography',
-//            'title'    => __( 'Button Font', 'bcn-theme' ),
-//            'google'   => true,
-//            'default'  => false,
-//            'output'    => array('.btn, .btn:hover, div.wpforms-container-full .wpforms-form input[type=submit], div.wpforms-container-full .wpforms-form button[type=submit], div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-container-full .wpforms-form button[type=submit]:hover, button, [type="button"], [type="reset"], [type="submit"], .woocommerce div.product form.cart .button, .woocommerce div.product form.cart .button:hover, body div.wpforms-container-full .wpforms-form button[type=submit], body div.wpforms-container-full .wpforms-form button[type=submit]:hover, .woocommerce #review_form #respond .form-submit input, .woocommerce #review_form #respond .form-submit input:hover, .woocommerce ul.products li.product .button, .woocommerce ul.products li.product .button:hover, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .cart button, .woocommerce-cart .wc-proceed-to-checkout a.checkout-button, .woocommerce_checkout_place_order, .woocommerce button.button.alt, .products .sto_product_photo .added_to_cart, input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea, select, .input-text, .added_to_cart, .woocommerce a.added_to_cart, .sto_product_cont_desc .button'),
-//            'text-align' => false,
-//        ),
-//        array(
-//            'id'       => 'button-round',
-//            'type'     => 'switch',
-//            'title'    => __( 'Round Button', 'bcn-theme' ),
-//            'default'  => true,
-//        ),
-//        array(
-//            'id'       => 'button-round-radius',
-//            'required' => array('button-round', '=', '1'),
-//            'type'     => 'radius',
-//            'output'   => array( '' ),
-//            'mode'     => 'round',
-//            'units'         => 'px',
-//            'units_extended'=> 'true',
-//            'display_units' => 'true',
-//            'title'    => __( 'Button round radius', 'bcn-theme' ),
-//            'default'            => array(
-//                'round-radius-top'     => '10px',
-//                'padding-right'   => '10px',
-//                'padding-bottom'  => '10px',
-//                'padding-left'    => '10px',
-//                'units'          => 'px',
-//            )
-//        ),
-
-//        array(
-//            'id'       => 'button-padding',
-//            'type'     => 'spacing',
-//            'output'   => array( '' ),
-//            'mode'     => 'padding',
-//            'units'         => 'px',
-//            'units_extended'=> 'true',
-//            'display_units' => 'true',
-//            'title'    => __( 'Button Padding', 'bcn-theme' ),
-//            'default'            => array(
-//                'padding-top'     => '12px',
-//                'padding-right'   => '20px',
-//                'padding-bottom'  => '12px',
-//                'padding-left'    => '20px',
-//                'units'          => 'px',
-//            )
-//        ),
-//        array(
-//            'id'       => 'button-shadow',
-//            'type'     => 'switch',
-//            'title'    => __( 'Shadow', 'bcn-theme' ),
-//            'default'  => false,
-//        ),
     ),
 ));
 
 Redux::setSection($opt_name, array(
-    'title' => __('+ Custom code', 'bcn-theme'),
+    'title' => __('Custom code', 'bcn-theme'),
     'id' => 'custom-code',
     'subsection' => true,
     'fields' => array(
@@ -1209,13 +1651,12 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-    'title' => __('+ Analytics', 'bcn-theme'),
+    'title' => __('Analytics', 'bcn-theme'),
     'id' => 'analytics',
     'subsection' => true,
-    'desc' => __('Google analytics code ', 'bcn-theme') . 'Google analytics helps track your site traffic',
     'fields' => array(
         array(
-            'id' => 'opt-ace-editor-analytics',
+            'id' => 'analytics',
             'type' => 'ace_editor',
             'full_width' => true,
             'title' => __('Google Analytics code', 'bcn-theme'),
@@ -1228,99 +1669,284 @@ Redux::setSection($opt_name, array(
     )
 ));
 
+//   Social networks
+
 Redux::setSection($opt_name, array(
-    'title' => __('+ Social networks', 'bcn-theme'),
+    'title' => __('Social networks', 'bcn-theme'),
     'id' => 'social-networks',
     'desc' => __('Insert a link to your account if you want to display this social network.', 'bcn-theme'),
     'subsection' => true,
     'fields' => array(
-        array(
-            'id' => 'opt-social-network',
-            'type' => 'text',
-//            'title' => __('Enter title', 'bcn-theme'),
-//            'subtitle' => __('Enter subtitle', 'bcn-theme'),
-//            'desc' => __('Enter desc', 'bcn-theme'),
-            'label' => true,
-            'full_width' => true,
-            'options' => array(
-                'Facebook' => '',
-                'Twitter' => '',
-                'Instagram' => '',
-                'Youtube' => '',
-                'Deviantart' => '',
-                'Digg' => '',
-                'Dribbble' => '',
-                'Dropbox' => '',
-                'Evernote' => '',
-                'Flickr' => '',
-                'Google +' => '',
-                'Last FM' => '',
-                'LinkedIN' => '',
-                'Picasa' => '',
-                'Pinterest' => '',
-                'RSS' => '',
-                'Tumblr' => '',
-                'Vimeo' => '',
-                'WordPress' => '',
-                '500 pixels' => '',
-                'ViewBug' => '',
-                'Xing' => '',
-                'Spotify' => '',
-                'Houzz' => '',
-                'Skype' => '',
-                'Slideshare' => '',
-                'Bandcamp' => '',
-                'Soundcloud' => '',
-                'Meerkat' => '',
-                'Periscope' => '',
-                'Snapchat' => '',
-                'The City' => '',
-                'Behance' => '',
-                'Microsoft Pinpoint' => '',
-                'Viadeo' => '',
-                'TripAdvisor' => '',
-                'VKontakte' => '',
-                'Odnoklassniki' => '',
 
-            ),
+//      Most popular socials
+
+        array(
+            'id' => 'social-twitter',
+            'type' => 'text',
+            'title' => __('Twitter', 'bcn-theme'),
+            'desc' => __('Link to : twitter', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-facebook',
+            'type' => 'text',
+            'title' => __('Facebook', 'bcn-theme'),
+            'desc' => __('Link to : facebook', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-instagram',
+            'type' => 'text',
+            'title' => __('Instagram', 'bcn-theme'),
+            'desc' => __('Link to : instagram', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-youtube',
+            'type' => 'text',
+            'title' => __('Youtube', 'bcn-theme'),
+            'desc' => __('Link to : youtube', 'bcn-theme'),
+        ),
+
+//      Regular
+
+        array(
+            'id' => 'social-behance',
+            'type' => 'text',
+            'title' => __('Behance', 'bcn-theme'),
+            'desc' => __('Link to : behance', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-blogger',
+            'type' => 'text',
+            'title' => __('Blogger', 'bcn-theme'),
+            'desc' => __('Link to : blogger', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-dailymotion',
+            'type' => 'text',
+            'title' => __('Dailymotion', 'bcn-theme'),
+            'desc' => __('Link to : dailymotion', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-delicious',
+            'type' => 'text',
+            'title' => __('Delicious', 'bcn-theme'),
+            'desc' => __('Link to : delicious', 'bcn-theme'),
+        ),
+
+        array(
+            'id' => 'social-deviantart',
+            'type' => 'text',
+            'title' => __('Deviantart', 'bcn-theme'),
+            'desc' => __('Link to : deviantart', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-digg',
+            'type' => 'text',
+            'title' => __('Digg', 'bcn-theme'),
+            'desc' => __('Link to : digg', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-dribbble',
+            'type' => 'text',
+            'title' => __('Dribbble', 'bcn-theme'),
+            'desc' => __('Link to : dribbble', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-dropbox',
+            'type' => 'text',
+            'title' => __('Dropbox', 'bcn-theme'),
+            'desc' => __('Link to : dropbox', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-evernote',
+            'type' => 'text',
+            'title' => __('Evernote', 'bcn-theme'),
+            'desc' => __('Link to : evernote', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-flickr',
+            'type' => 'text',
+            'title' => __('Flickr', 'bcn-theme'),
+            'desc' => __('Link to : flickr', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-googleplus',
+            'type' => 'text',
+            'title' => __('Google +', 'bcn-theme'),
+            'desc' => __('Link to : googleplus', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-instagram',
+            'type' => 'text',
+            'title' => __('Last FM', 'bcn-theme'),
+            'desc' => __('Link to : instagram', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-linkedin',
+            'type' => 'text',
+            'title' => __('LinkedIN', 'bcn-theme'),
+            'desc' => __('Link to : linkedin', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-picasa',
+            'type' => 'text',
+            'title' => __('Picasa', 'bcn-theme'),
+            'desc' => __('Link to : picasa', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-pinterest',
+            'type' => 'text',
+            'title' => __('Pinterest', 'bcn-theme'),
+            'desc' => __('Link to : pinterest', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-rss',
+            'type' => 'text',
+            'title' => __('RSS', 'bcn-theme'),
+            'desc' => __('Link to : rss', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-tumblr',
+            'type' => 'text',
+            'title' => __('Tumblr', 'bcn-theme'),
+            'desc' => __('Link to : tumblr', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-vimeo',
+            'type' => 'text',
+            'title' => __('Vimeo', 'bcn-theme'),
+            'desc' => __('Link to : vimeo', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-wordpress',
+            'type' => 'text',
+            'title' => __('WordPress', 'bcn-theme'),
+            'desc' => __('Link to : wordpress', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-500pixels',
+            'type' => 'text',
+            'title' => __('500 pixels', 'bcn-theme'),
+            'desc' => __('Link to : 500 pixels', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-viewbug',
+            'type' => 'text',
+            'title' => __('ViewBug', 'bcn-theme'),
+            'desc' => __('Link to : viewbug', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-xing',
+            'type' => 'text',
+            'title' => __('Xing', 'bcn-theme'),
+            'desc' => __('Link to : xing', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-spotify',
+            'type' => 'text',
+            'title' => __('Spotify', 'bcn-theme'),
+            'desc' => __('Link to : spotify', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-houzz',
+            'type' => 'text',
+            'title' => __('Houzz', 'bcn-theme'),
+            'desc' => __('Link to : houzz', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-skype',
+            'type' => 'text',
+            'title' => __('Skype', 'bcn-theme'),
+            'desc' => __('Link to : skype', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-slideshare',
+            'type' => 'text',
+            'title' => __('Slideshare', 'bcn-theme'),
+            'desc' => __('Link to : slideshare', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-bandcamp',
+            'type' => 'text',
+            'title' => __('Bandcamp', 'bcn-theme'),
+            'desc' => __('Link to : bandcamp', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-soundcloud',
+            'type' => 'text',
+            'title' => __('Soundcloud', 'bcn-theme'),
+            'desc' => __('Link to : soundcloud', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-periscope',
+            'type' => 'text',
+            'title' => __('Periscope', 'bcn-theme'),
+            'desc' => __('Link to : periscope', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-snapchat',
+            'type' => 'text',
+            'title' => __('Snapchat', 'bcn-theme'),
+            'desc' => __('Link to : snapchat', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-thecity',
+            'type' => 'text',
+            'title' => __('The City', 'bcn-theme'),
+            'desc' => __('Link to : thecity', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-microsoft-pinpoint',
+            'type' => 'text',
+            'title' => __('Microsoft Pinpoint', 'bcn-theme'),
+            'desc' => __('Link to : microsoft pinpoint', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-viadeo',
+            'type' => 'text',
+            'title' => __('Viadeo', 'bcn-theme'),
+            'desc' => __('Link to : viadeo', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-tripadvisor',
+            'type' => 'text',
+            'title' => __('TripAdvisor', 'bcn-theme'),
+            'desc' => __('Link to : tripadvisor', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-vk',
+            'type' => 'text',
+            'title' => __('VKontakte', 'bcn-theme'),
+            'desc' => __('Link to : vkontakte', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-ok',
+            'type' => 'text',
+            'title' => __('Odnoklassniki', 'bcn-theme'),
+            'desc' => __('Link to : odnoklassniki', 'bcn-theme'),
+        ),
+        array(
+            'id' => 'social-telegram',
+            'type' => 'text',
+            'title' => __('Telegram', 'bcn-theme'),
+            'desc' => __('Link to : telegram', 'bcn-theme'),
         ),
     )
 ));
 
 Redux::setSection($opt_name, array(
-    'title' => __('+ Import - export', 'bcn-theme'),
+    'title' => __('Import - export', 'bcn-theme'),
     'id' => 'import-export',
-    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/slides/" target="_blank">docs.reduxframework.com/core/fields/slides/</a>',
     'subsection' => true,
     'fields' => array(
         array(
-            'id' => 'opt-import-export',
+            'id' => 'import-export',
             'type' => 'import_export',
-            'title' => 'Import Export',
-            'subtitle' => 'Save and restore your Redux options',
-            'full_width' => false,
+//            'title' => 'Import Export',
+//            'subtitle' => 'Save and restore your Redux options',
+            'full_width' => true,
         ),
     )
 ));
-
-Redux::setSection($opt_name, array(
-//    under counstruction section
-    'title' => __('- CPT and taxonomies', 'bcn-theme'),
-    'id' => 'cpt-and-taxonomies',
-    'desc' => __('Section under counstruction'),
-    'subsection' => true,
-    'fields' => array()
-));
-
-Redux::setSection($opt_name, array(
-//    under counstruction section
-    'title' => __('- Translations', 'bcn-theme'),
-    'id' => 'translations',
-    'desc' => __('We recommend use wpml for theme translation ', 'bcn-theme'),
-    'subsection' => true,
-    'fields' => array()
-));
-
 
 /*
  * <--- END SECTIONS
@@ -1337,33 +1963,33 @@ Redux::setSection($opt_name, array(
  */
 // -> START Basic Fields
 Redux::setSection($opt_name, array(
-    'title' => __('Basic Fields', 'redux-framework-demo'),
+    'title' => __('Basic Fields', 'bcn-theme'),
     'id' => 'basic',
-    'desc' => __('These are really basic fields!', 'redux-framework-demo'),
+    'desc' => __('These are really basic fields!', 'bcn-theme'),
     'customizer_width' => '400px',
     'icon' => 'el el-home'
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Checkbox', 'redux-framework-demo'),
+    'title' => __('Checkbox', 'bcn-theme'),
     'id' => 'basic-checkbox',
     'subsection' => true,
     'customizer_width' => '450px',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
     'fields' => array(
         array(
             'id' => 'opt-checkbox',
             'type' => 'checkbox',
-            'title' => __('Checkbox Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Checkbox Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'default' => '1'// 1 = on | 0 = off
         ),
         array(
             'id' => 'opt-multi-check',
             'type' => 'checkbox',
-            'title' => __('Multi Checkbox Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Multi Checkbox Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             //Must provide key => value pairs for multi checkbox options
             'options' => array(
                 '1' => 'Opt 1',
@@ -1380,34 +2006,34 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-checkbox-data',
             'type' => 'checkbox',
-            'title' => __('Multi Checkbox Option (with menu data)', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Multi Checkbox Option (with menu data)', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'data' => 'menu'
         ),
         array(
             'id' => 'opt-checkbox-sidebar',
             'type' => 'checkbox',
-            'title' => __('Multi Checkbox Option (with sidebar data)', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Multi Checkbox Option (with sidebar data)', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'data' => 'sidebars'
         ),
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Radio', 'redux-framework-demo'),
+    'title' => __('Radio', 'bcn-theme'),
     'id' => 'basic-Radio',
     'subsection' => true,
     'customizer_width' => '500px',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/radio/" target="_blank">docs.reduxframework.com/core/fields/radio/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/radio/" target="_blank">docs.reduxframework.com/core/fields/radio/</a>',
     'fields' => array(
         array(
             'id' => 'opt-radio',
             'type' => 'radio',
-            'title' => __('Radio Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Radio Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             //Must provide key => value pairs for radio options
             'options' => array(
                 '1' => 'Opt 1',
@@ -1419,25 +2045,25 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-radio-data',
             'type' => 'radio',
-            'title' => __('Radio Option w/ Menu Data', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Radio Option w/ Menu Data', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'data' => 'menu'
         ),
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Sortable', 'redux-framework-demo'),
+    'title' => __('Sortable', 'bcn-theme'),
     'id' => 'basic-Sortable',
     'subsection' => true,
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/sortable/" target="_blank">docs.reduxframework.com/core/fields/sortable/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/sortable/" target="_blank">docs.reduxframework.com/core/fields/sortable/</a>',
     'fields' => array(
         array(
             'id' => 'opt-sortable',
             'type' => 'sortable',
-            'title' => __('Sortable Text Option', 'redux-framework-demo'),
-            'subtitle' => __('Define and reorder these however you want.', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Sortable Text Option', 'bcn-theme'),
+            'subtitle' => __('Define and reorder these however you want.', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'label' => true,
             'options' => array(
                 'Text One' => 'Item 1',
@@ -1449,9 +2075,9 @@ Redux::setSection($opt_name, array(
             'id' => 'opt-check-sortable',
             'type' => 'sortable',
             'mode' => 'checkbox', // checkbox or text
-            'title' => __('Sortable Text Option', 'redux-framework-demo'),
-            'subtitle' => __('Define and reorder these however you want.', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Sortable Text Option', 'bcn-theme'),
+            'subtitle' => __('Define and reorder these however you want.', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'options' => array(
                 'cb1' => 'Checkbox One',
                 'cb2' => 'Checkbox Two',
@@ -1466,8 +2092,8 @@ Redux::setSection($opt_name, array(
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Text', 'redux-framework-demo'),
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/text/" target="_blank">docs.reduxframework.com/core/fields/text/</a>',
+    'title' => __('Text', 'bcn-theme'),
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/text/" target="_blank">docs.reduxframework.com/core/fields/text/</a>',
     'id' => 'basic-Text',
     'subsection' => true,
     'customizer_width' => '700px',
@@ -1475,17 +2101,17 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'text-example',
             'type' => 'text',
-            'title' => __('Text Field', 'redux-framework-demo'),
-            'subtitle' => __('Subtitle', 'redux-framework-demo'),
-            'desc' => __('Field Description', 'redux-framework-demo'),
+            'title' => __('Text Field', 'bcn-theme'),
+            'subtitle' => __('Subtitle', 'bcn-theme'),
+            'desc' => __('Field Description', 'bcn-theme'),
             'default' => 'Default Text',
         ),
         array(
             'id' => 'text-example-hint',
             'type' => 'text',
-            'title' => __('Text Field w/ Hint', 'redux-framework-demo'),
-            'subtitle' => __('Subtitle', 'redux-framework-demo'),
-            'desc' => __('Field Description', 'redux-framework-demo'),
+            'title' => __('Text Field w/ Hint', 'bcn-theme'),
+            'subtitle' => __('Subtitle', 'bcn-theme'),
+            'desc' => __('Field Description', 'bcn-theme'),
             'default' => 'Default Text',
             'text_hint' => array(
                 'title' => 'Hint Title',
@@ -1495,32 +2121,32 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'text-placeholder',
             'type' => 'text',
-            'title' => __('Text Field', 'redux-framework-demo'),
-            'subtitle' => __('Subtitle', 'redux-framework-demo'),
-            'desc' => __('Field Description', 'redux-framework-demo'),
+            'title' => __('Text Field', 'bcn-theme'),
+            'subtitle' => __('Subtitle', 'bcn-theme'),
+            'desc' => __('Field Description', 'bcn-theme'),
             'placeholder' => 'Placeholder Text',
         ),
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Multi Text', 'redux-framework-demo'),
+    'title' => __('Multi Text', 'bcn-theme'),
     'id' => 'basic-Multi Text',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/multi-text/" target="_blank">docs.reduxframework.com/core/fields/multi-text/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/multi-text/" target="_blank">docs.reduxframework.com/core/fields/multi-text/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-multitext',
             'type' => 'multi_text',
-            'title' => __('Multi Text Option', 'redux-framework-demo'),
-            'subtitle' => __('Field subtitle', 'redux-framework-demo'),
-            'desc' => __('Field Decription', 'redux-framework-demo'),
+            'title' => __('Multi Text Option', 'bcn-theme'),
+            'subtitle' => __('Field subtitle', 'bcn-theme'),
+            'desc' => __('Field Decription', 'bcn-theme'),
         ),
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Password', 'redux-framework-demo'),
+    'title' => __('Password', 'bcn-theme'),
     'id' => 'basic-Password',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/password/" target="_blank">docs.reduxframework.com/core/fields/password/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/password/" target="_blank">docs.reduxframework.com/core/fields/password/</a>',
     'subsection' => true,
     'fields' => array(
         array(
@@ -1536,46 +2162,46 @@ Redux::setSection($opt_name, array(
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Textarea', 'redux-framework-demo'),
+    'title' => __('Textarea', 'bcn-theme'),
     'id' => 'basic-Textarea',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/textarea/" target="_blank">docs.reduxframework.com/core/fields/textarea/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/textarea/" target="_blank">docs.reduxframework.com/core/fields/textarea/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-textarea',
             'type' => 'textarea',
-            'title' => __('Textarea Option - HTML Validated Custom', 'redux-framework-demo'),
-            'subtitle' => __('Subtitle', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Textarea Option - HTML Validated Custom', 'bcn-theme'),
+            'subtitle' => __('Subtitle', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'default' => 'Default Text',
         )
     )
 ));
 // -> START Editors
 Redux::setSection($opt_name, array(
-    'title' => __('Editors', 'redux-framework-demo'),
+    'title' => __('Editors', 'bcn-theme'),
     'id' => 'editor',
     'customizer_width' => '500px',
     'icon' => 'el el-edit',
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('WordPress Editor', 'redux-framework-demo'),
+    'title' => __('WordPress Editor', 'bcn-theme'),
     'id' => 'editor-wordpress',
     //'icon'  => 'el el-home'
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-editor',
             'type' => 'editor',
-            'title' => __('Editor', 'redux-framework-demo'),
-            'subtitle' => __('Use any of the features of WordPress editor inside your panel!', 'redux-framework-demo'),
+            'title' => __('Editor', 'bcn-theme'),
+            'subtitle' => __('Use any of the features of WordPress editor inside your panel!', 'bcn-theme'),
             'default' => 'Powered by Redux Framework.',
         ),
         array(
             'id' => 'opt-editor-tiny',
             'type' => 'editor',
-            'title' => __('Editor w/o Media Button', 'redux-framework-demo'),
+            'title' => __('Editor w/o Media Button', 'bcn-theme'),
             'default' => 'Powered by Redux Framework.',
             'args' => array(
                 'wpautop' => false,
@@ -1591,24 +2217,24 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-editor-full',
             'type' => 'editor',
-            'title' => __('Editor - Full Width', 'redux-framework-demo'),
+            'title' => __('Editor - Full Width', 'bcn-theme'),
             'full_width' => true
         ),
     ),
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/editor/" target="_blank">docs.reduxframework.com/core/fields/editor/</a>',
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('ACE Editor', 'redux-framework-demo'),
+    'title' => __('ACE Editor', 'bcn-theme'),
     'id' => 'editor-ace',
     //'icon'  => 'el el-home'
     'subsection' => true,
-    'desc' => __('For full documentation on the this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/ace-editor/" target="_blank">docs.reduxframework.com/core/fields/ace-editor/</a>',
+    'desc' => __('For full documentation on the this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/ace-editor/" target="_blank">docs.reduxframework.com/core/fields/ace-editor/</a>',
     'fields' => array(
         array(
             'id' => 'opt-ace-editor-css',
             'type' => 'ace_editor',
-            'title' => __('CSS Code', 'redux-framework-demo'),
-            'subtitle' => __('Paste your CSS code here.', 'redux-framework-demo'),
+            'title' => __('CSS Code', 'bcn-theme'),
+            'subtitle' => __('Paste your CSS code here.', 'bcn-theme'),
             'mode' => 'css',
             'theme' => 'monokai',
             'desc' => 'Possible modes can be found at <a href="' . 'http://' . 'ace.c9.io" target="_blank">' . 'http://' . 'ace.c9.io/</a>.',
@@ -1617,8 +2243,8 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-ace-editor-js',
             'type' => 'ace_editor',
-            'title' => __('JS Code', 'redux-framework-demo'),
-            'subtitle' => __('Paste your JS code here.', 'redux-framework-demo'),
+            'title' => __('JS Code', 'bcn-theme'),
+            'subtitle' => __('Paste your JS code here.', 'bcn-theme'),
             'mode' => 'javascript',
             'theme' => 'chrome',
             'desc' => 'Possible modes can be found at <a href="' . 'http://' . 'ace.c9.io" target="_blank">' . 'http://' . 'ace.c9.io/</a>.',
@@ -1628,8 +2254,8 @@ Redux::setSection($opt_name, array(
             'id' => 'opt-ace-editor-php',
             'type' => 'ace_editor',
             'full_width' => true,
-            'title' => __('PHP Code', 'redux-framework-demo'),
-            'subtitle' => __('Paste your PHP code here.', 'redux-framework-demo'),
+            'title' => __('PHP Code', 'bcn-theme'),
+            'subtitle' => __('Paste your PHP code here.', 'bcn-theme'),
             'mode' => 'php',
             'theme' => 'chrome',
             'desc' => 'Possible modes can be found at <a href="' . 'http://' . 'ace.c9.io" target="_blank">' . 'http://' . 'ace.c9.io/</a>.',
@@ -1640,47 +2266,47 @@ Redux::setSection($opt_name, array(
 ));
 // -> START Color Selection
 Redux::setSection($opt_name, array(
-    'title' => __('Color Selection', 'redux-framework-demo'),
+    'title' => __('Color Selection', 'bcn-theme'),
     'id' => 'color',
-    'desc' => __('', 'redux-framework-demo'),
+    'desc' => __('', 'bcn-theme'),
     'icon' => 'el el-brush'
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Color', 'redux-framework-demo'),
+    'title' => __('Color', 'bcn-theme'),
     'id' => 'color-Color',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/color/" target="_blank">docs.reduxframework.com/core/fields/color/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/color/" target="_blank">docs.reduxframework.com/core/fields/color/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-color-title',
             'type' => 'color',
             'output' => array('.site-title'),
-            'title' => __('Site Title Color', 'redux-framework-demo'),
-            'subtitle' => __('Pick a title color for the theme (default: #000).', 'redux-framework-demo'),
+            'title' => __('Site Title Color', 'bcn-theme'),
+            'subtitle' => __('Pick a title color for the theme (default: #000).', 'bcn-theme'),
             'default' => '#000000',
         ),
         array(
             'id' => 'opt-color-footer',
             'type' => 'color',
-            'title' => __('Footer Background Color', 'redux-framework-demo'),
-            'subtitle' => __('Pick a background color for the footer (default: #dd9933).', 'redux-framework-demo'),
+            'title' => __('Footer Background Color', 'bcn-theme'),
+            'subtitle' => __('Pick a background color for the footer (default: #dd9933).', 'bcn-theme'),
             'default' => '#dd9933',
             'validate' => 'color',
         ),
     ),
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Color Gradient', 'redux-framework-demo'),
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/color-gradient/" target="_blank">docs.reduxframework.com/core/fields/color-gradient/</a>',
+    'title' => __('Color Gradient', 'bcn-theme'),
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/color-gradient/" target="_blank">docs.reduxframework.com/core/fields/color-gradient/</a>',
     'id' => 'color-gradient',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-color-header',
             'type' => 'color_gradient',
-            'title' => __('Header Gradient Color Option', 'redux-framework-demo'),
-            'subtitle' => __('Only color validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Header Gradient Color Option', 'bcn-theme'),
+            'subtitle' => __('Only color validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'default' => array(
                 'from' => '#1e73be',
                 'to' => '#00897e'
@@ -1689,16 +2315,16 @@ Redux::setSection($opt_name, array(
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Color RGBA', 'redux-framework-demo'),
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/color-rgba/" target="_blank">docs.reduxframework.com/core/fields/color-rgba/</a>',
+    'title' => __('Color RGBA', 'bcn-theme'),
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/color-rgba/" target="_blank">docs.reduxframework.com/core/fields/color-rgba/</a>',
     'id' => 'color-rgba',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-color-rgba',
             'type' => 'color_rgba',
-            'title' => __('Color RGBA', 'redux-framework-demo'),
-            'subtitle' => __('Gives you the RGBA color.', 'redux-framework-demo'),
+            'title' => __('Color RGBA', 'bcn-theme'),
+            'subtitle' => __('Gives you the RGBA color.', 'bcn-theme'),
             'default' => array(
                 'color' => '#7e33dd',
                 'alpha' => '.8'
@@ -1710,17 +2336,17 @@ Redux::setSection($opt_name, array(
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Link Color', 'redux-framework-demo'),
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/link-color/" target="_blank">docs.reduxframework.com/core/fields/link-color/</a>',
+    'title' => __('Link Color', 'bcn-theme'),
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/link-color/" target="_blank">docs.reduxframework.com/core/fields/link-color/</a>',
     'id' => 'color-link',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-link-color',
             'type' => 'link_color',
-            'title' => __('Links Color Option', 'redux-framework-demo'),
-            'subtitle' => __('Only color validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Links Color Option', 'bcn-theme'),
+            'subtitle' => __('Only color validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             //'regular'   => false, // Disable Regular Color
             //'hover'     => false, // Disable Hover Color
             //'active'    => false, // Disable Active Color
@@ -1734,17 +2360,17 @@ Redux::setSection($opt_name, array(
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Palette Colors', 'redux-framework-demo'),
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/palette-color/" target="_blank">docs.reduxframework.com/core/fields/palette-color/</a>',
+    'title' => __('Palette Colors', 'bcn-theme'),
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/palette-color/" target="_blank">docs.reduxframework.com/core/fields/palette-color/</a>',
     'id' => 'color-palette',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-palette-color',
             'type' => 'palette',
-            'title' => __('Palette Color Option', 'redux-framework-demo'),
-            'subtitle' => __('Only color validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Palette Color Option', 'bcn-theme'),
+            'subtitle' => __('Only color validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'default' => 'red',
             'palettes' => array(
                 'red' => array(
@@ -1772,13 +2398,13 @@ Redux::setSection($opt_name, array(
 ));
 // -> START Design Fields
 Redux::setSection($opt_name, array(
-    'title' => __('Design Fields', 'redux-framework-demo'),
+    'title' => __('Design Fields', 'bcn-theme'),
     'id' => 'design',
-    'desc' => __('', 'redux-framework-demo'),
+    'desc' => __('', 'bcn-theme'),
     'icon' => 'el el-wrench'
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Background', 'redux-framework-demo'),
+    'title' => __('Background', 'bcn-theme'),
     'id' => 'design-background',
     'subsection' => true,
     'fields' => array(
@@ -1786,27 +2412,27 @@ Redux::setSection($opt_name, array(
             'id' => 'opt-background',
             'type' => 'background',
             'output' => array('body'),
-            'title' => __('Body Background', 'redux-framework-demo'),
-            'subtitle' => __('Body background with image, color, etc.', 'redux-framework-demo'),
+            'title' => __('Body Background', 'bcn-theme'),
+            'subtitle' => __('Body background with image, color, etc.', 'bcn-theme'),
             //'default'   => '#FFFFFF',
         ),
     ),
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/background/" target="_blank">docs.reduxframework.com/core/fields/background/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/background/" target="_blank">docs.reduxframework.com/core/fields/background/</a>',
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Border', 'redux-framework-demo'),
+    'title' => __('Border', 'bcn-theme'),
     'id' => 'design-border',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/border/" target="_blank">docs.reduxframework.com/core/fields/border/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/border/" target="_blank">docs.reduxframework.com/core/fields/border/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-header-border',
             'type' => 'border',
-            'title' => __('Header Border Option', 'redux-framework-demo'),
-            'subtitle' => __('Only color validation can be done on this field type', 'redux-framework-demo'),
+            'title' => __('Header Border Option', 'bcn-theme'),
+            'subtitle' => __('Only color validation can be done on this field type', 'bcn-theme'),
             'output' => array('.site-header'),
             // An array of CSS selectors to apply this font style to
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'default' => array(
                 'border-color' => '#1e73be',
                 'border-style' => 'solid',
@@ -1819,12 +2445,12 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-header-border-expanded',
             'type' => 'border',
-            'title' => __('Header Border Option', 'redux-framework-demo'),
-            'subtitle' => __('Only color validation can be done on this field type', 'redux-framework-demo'),
+            'title' => __('Header Border Option', 'bcn-theme'),
+            'subtitle' => __('Only color validation can be done on this field type', 'bcn-theme'),
             'output' => array('.site-header'),
             'all' => false,
             // An array of CSS selectors to apply this font style to
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'default' => array(
                 'border-color' => '#1e73be',
                 'border-style' => 'solid',
@@ -1837,9 +2463,9 @@ Redux::setSection($opt_name, array(
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Dimensions', 'redux-framework-demo'),
+    'title' => __('Dimensions', 'bcn-theme'),
     'id' => 'design-dimensions',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/dimensions/" target="_blank">docs.reduxframework.com/core/fields/dimensions/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/dimensions/" target="_blank">docs.reduxframework.com/core/fields/dimensions/</a>',
     'subsection' => true,
     'fields' => array(
         array(
@@ -1847,9 +2473,9 @@ Redux::setSection($opt_name, array(
             'type' => 'dimensions',
             'units' => array('em', 'px', '%'),    // You can specify a unit value. Possible: px, em, %
             'units_extended' => 'true',  // Allow users to select any type of unit
-            'title' => __('Dimensions (Width/Height) Option', 'redux-framework-demo'),
-            'subtitle' => __('Allow your users to choose width, height, and/or unit.', 'redux-framework-demo'),
-            'desc' => __('You can enable or disable any piece of this field. Width, Height, or Units.', 'redux-framework-demo'),
+            'title' => __('Dimensions (Width/Height) Option', 'bcn-theme'),
+            'subtitle' => __('Allow your users to choose width, height, and/or unit.', 'bcn-theme'),
+            'desc' => __('You can enable or disable any piece of this field. Width, Height, or Units.', 'bcn-theme'),
             'default' => array(
                 'width' => 200,
                 'height' => 100,
@@ -1860,9 +2486,9 @@ Redux::setSection($opt_name, array(
             'type' => 'dimensions',
             'units' => array('em', 'px', '%'),    // You can specify a unit value. Possible: px, em, %
             'units_extended' => 'true',  // Allow users to select any type of unit
-            'title' => __('Dimensions (Width) Option', 'redux-framework-demo'),
-            'subtitle' => __('Allow your users to choose width, height, and/or unit.', 'redux-framework-demo'),
-            'desc' => __('You can enable or disable any piece of this field. Width, Height, or Units.', 'redux-framework-demo'),
+            'title' => __('Dimensions (Width) Option', 'bcn-theme'),
+            'subtitle' => __('Allow your users to choose width, height, and/or unit.', 'bcn-theme'),
+            'desc' => __('You can enable or disable any piece of this field. Width, Height, or Units.', 'bcn-theme'),
             'height' => false,
             'default' => array(
                 'width' => 200,
@@ -1872,9 +2498,9 @@ Redux::setSection($opt_name, array(
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Spacing', 'redux-framework-demo'),
+    'title' => __('Spacing', 'bcn-theme'),
     'id' => 'design-spacing',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/spacing/" target="_blank">docs.reduxframework.com/core/fields/spacing/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/spacing/" target="_blank">docs.reduxframework.com/core/fields/spacing/</a>',
     'subsection' => true,
     'fields' => array(
         array(
@@ -1893,9 +2519,9 @@ Redux::setSection($opt_name, array(
             //'units'         => 'em',      // You can specify a unit value. Possible: px, em, %
             //'units_extended'=> 'true',    // Allow users to select any type of unit
             //'display_units' => 'false',   // Set to false to hide the units if the units are specified
-            'title' => __('Padding/Margin Option', 'redux-framework-demo'),
-            'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'redux-framework-demo'),
-            'desc' => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo'),
+            'title' => __('Padding/Margin Option', 'bcn-theme'),
+            'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'bcn-theme'),
+            'desc' => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'bcn-theme'),
             'default' => array(
                 'margin-top' => '1px',
                 'margin-right' => '2px',
@@ -1918,9 +2544,9 @@ Redux::setSection($opt_name, array(
             'units' => array('em', 'px', '%'),      // You can specify a unit value. Possible: px, em, %
             'units_extended' => 'true',    // Allow users to select any type of unit
             //'display_units' => 'false',   // Set to false to hide the units if the units are specified
-            'title' => __('Padding/Margin Option', 'redux-framework-demo'),
-            'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'redux-framework-demo'),
-            'desc' => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo'),
+            'title' => __('Padding/Margin Option', 'bcn-theme'),
+            'subtitle' => __('Allow your users to choose the spacing or margin they want.', 'bcn-theme'),
+            'desc' => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'bcn-theme'),
             'default' => array(
                 'margin-top' => '1px',
                 'margin-right' => '2px',
@@ -1932,41 +2558,41 @@ Redux::setSection($opt_name, array(
 ));
 // -> START Media Uploads
 Redux::setSection($opt_name, array(
-    'title' => __('Media Uploads', 'redux-framework-demo'),
+    'title' => __('Media Uploads', 'bcn-theme'),
     'id' => 'media',
-    'desc' => __('', 'redux-framework-demo'),
+    'desc' => __('', 'bcn-theme'),
     'icon' => 'el el-picture'
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Gallery', 'redux-framework-demo'),
+    'title' => __('Gallery', 'bcn-theme'),
     'id' => 'media-gallery',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/gallery/" target="_blank">docs.reduxframework.com/core/fields/gallery/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/gallery/" target="_blank">docs.reduxframework.com/core/fields/gallery/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-gallery',
             'type' => 'gallery',
-            'title' => __('Add/Edit Gallery', 'redux-framework-demo'),
-            'subtitle' => __('Create a new Gallery by selecting existing or uploading new images using the WordPress native uploader', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Add/Edit Gallery', 'bcn-theme'),
+            'subtitle' => __('Create a new Gallery by selecting existing or uploading new images using the WordPress native uploader', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
         ),
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Media', 'redux-framework-demo'),
+    'title' => __('Media', 'bcn-theme'),
     'id' => 'media-media',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/media/" target="_blank">docs.reduxframework.com/core/fields/media/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/media/" target="_blank">docs.reduxframework.com/core/fields/media/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-media',
             'type' => 'media',
             'url' => true,
-            'title' => __('Media w/ URL', 'redux-framework-demo'),
+            'title' => __('Media w/ URL', 'bcn-theme'),
             'compiler' => 'true',
             //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-            'desc' => __('Basic media uploader with disabled URL input field.', 'redux-framework-demo'),
-            'subtitle' => __('Upload any media using the WordPress native uploader', 'redux-framework-demo'),
+            'desc' => __('Basic media uploader with disabled URL input field.', 'bcn-theme'),
+            'subtitle' => __('Upload any media using the WordPress native uploader', 'bcn-theme'),
             'default' => array('url' => 'https://s.wordpress.org/style/images/codeispoetry.png'),
             //'hint'      => array(
             //    'title'     => 'Hint Title',
@@ -1976,17 +2602,17 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'media-no-url',
             'type' => 'media',
-            'title' => __('Media w/o URL', 'redux-framework-demo'),
-            'desc' => __('This represents the minimalistic view. It does not have the preview box or the display URL in an input box. ', 'redux-framework-demo'),
-            'subtitle' => __('Upload any media using the WordPress native uploader', 'redux-framework-demo'),
+            'title' => __('Media w/o URL', 'bcn-theme'),
+            'desc' => __('This represents the minimalistic view. It does not have the preview box or the display URL in an input box. ', 'bcn-theme'),
+            'subtitle' => __('Upload any media using the WordPress native uploader', 'bcn-theme'),
         ),
         array(
             'id' => 'media-no-preview',
             'type' => 'media',
             'preview' => false,
-            'title' => __('Media No Preview', 'redux-framework-demo'),
-            'desc' => __('This represents the minimalistic view. It does not have the preview box or the display URL in an input box. ', 'redux-framework-demo'),
-            'subtitle' => __('Upload any media using the WordPress native uploader', 'redux-framework-demo'),
+            'title' => __('Media No Preview', 'bcn-theme'),
+            'desc' => __('This represents the minimalistic view. It does not have the preview box or the display URL in an input box. ', 'bcn-theme'),
+            'subtitle' => __('Upload any media using the WordPress native uploader', 'bcn-theme'),
             'hint' => array(
                 'title' => 'Test',
                 'content' => 'This is a <b>hint</b> tool-tip for the webFonts field.<br/><br/>Add any HTML based text you like here.',
@@ -1995,46 +2621,46 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-random-upload',
             'type' => 'media',
-            'title' => __('Upload Anything - Disabled Mode', 'redux-framework-demo'),
+            'title' => __('Upload Anything - Disabled Mode', 'bcn-theme'),
             'full_width' => true,
             'mode' => false,
             // Can be set to false to allow any media type, or can also be set to any mime type.
-            'desc' => __('Basic media uploader with disabled URL input field.', 'redux-framework-demo'),
-            'subtitle' => __('Upload any media using the WordPress native uploader', 'redux-framework-demo'),
+            'desc' => __('Basic media uploader with disabled URL input field.', 'bcn-theme'),
+            'subtitle' => __('Upload any media using the WordPress native uploader', 'bcn-theme'),
         ),
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Slides', 'redux-framework-demo'),
+    'title' => __('Slides', 'bcn-theme'),
     'id' => 'additional-slides',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/slides/" target="_blank">docs.reduxframework.com/core/fields/slides/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/slides/" target="_blank">docs.reduxframework.com/core/fields/slides/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-slides',
             'type' => 'slides',
-            'title' => __('Slides Options', 'redux-framework-demo'),
-            'subtitle' => __('Unlimited slides with drag and drop sortings.', 'redux-framework-demo'),
-            'desc' => __('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'redux-framework-demo'),
+            'title' => __('Slides Options', 'bcn-theme'),
+            'subtitle' => __('Unlimited slides with drag and drop sortings.', 'bcn-theme'),
+            'desc' => __('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'bcn-theme'),
             'placeholder' => array(
-                'title' => __('This is a title', 'redux-framework-demo'),
-                'description' => __('Description Here', 'redux-framework-demo'),
-                'url' => __('Give us a link!', 'redux-framework-demo'),
+                'title' => __('This is a title', 'bcn-theme'),
+                'description' => __('Description Here', 'bcn-theme'),
+                'url' => __('Give us a link!', 'bcn-theme'),
             ),
         ),
     )
 ));
 // -> START Presentation Fields
 Redux::setSection($opt_name, array(
-    'title' => __('Presentation Fields', 'redux-framework-demo'),
+    'title' => __('Presentation Fields', 'bcn-theme'),
     'id' => 'presentation',
-    'desc' => __('', 'redux-framework-demo'),
+    'desc' => __('', 'bcn-theme'),
     'icon' => 'el el-screen'
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Divide', 'redux-framework-demo'),
+    'title' => __('Divide', 'bcn-theme'),
     'id' => 'presentation-divide',
-    'desc' => __('The spacer to the section menu as seen to the left (after this section block) is the divide "section". Also the divider below is the divide "field".', 'redux-framework-demo') . '<br />' . __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/divide/" target="_blank">docs.reduxframework.com/core/fields/divide/</a>',
+    'desc' => __('The spacer to the section menu as seen to the left (after this section block) is the divide "section". Also the divider below is the divide "field".', 'bcn-theme') . '<br />' . __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/divide/" target="_blank">docs.reduxframework.com/core/fields/divide/</a>',
     'subsection' => true,
     'fields' => array(
         array(
@@ -2044,45 +2670,45 @@ Redux::setSection($opt_name, array(
     ),
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Info', 'redux-framework-demo'),
+    'title' => __('Info', 'bcn-theme'),
     'id' => 'presentation-info',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/info/" target="_blank">docs.reduxframework.com/core/fields/info/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/info/" target="_blank">docs.reduxframework.com/core/fields/info/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-info-field',
             'type' => 'info',
-            'desc' => __('This is the info field, if you want to break sections up.', 'redux-framework-demo')
+            'desc' => __('This is the info field, if you want to break sections up.', 'bcn-theme')
         ),
         array(
             'id' => 'opt-notice-info1',
             'type' => 'info',
             'style' => 'info',
-            'title' => __('This is a title.', 'redux-framework-demo'),
-            'desc' => __('This is an info field with the <strong>info</strong> style applied. By default the <strong>normal</strong> style is applied.', 'redux-framework-demo')
+            'title' => __('This is a title.', 'bcn-theme'),
+            'desc' => __('This is an info field with the <strong>info</strong> style applied. By default the <strong>normal</strong> style is applied.', 'bcn-theme')
         ),
         array(
             'id' => 'opt-info-warning',
             'type' => 'info',
             'style' => 'warning',
-            'title' => __('This is a title.', 'redux-framework-demo'),
-            'desc' => __('This is an info field with the <strong>warning</strong> style applied.', 'redux-framework-demo')
+            'title' => __('This is a title.', 'bcn-theme'),
+            'desc' => __('This is an info field with the <strong>warning</strong> style applied.', 'bcn-theme')
         ),
         array(
             'id' => 'opt-info-success',
             'type' => 'info',
             'style' => 'success',
             'icon' => 'el el-info-circle',
-            'title' => __('This is a title.', 'redux-framework-demo'),
-            'desc' => __('This is an info field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo')
+            'title' => __('This is a title.', 'bcn-theme'),
+            'desc' => __('This is an info field with the <strong>success</strong> style applied and an icon.', 'bcn-theme')
         ),
         array(
             'id' => 'opt-info-critical',
             'type' => 'info',
             'style' => 'critical',
             'icon' => 'el el-info-circle',
-            'title' => __('This is a title.', 'redux-framework-demo'),
-            'desc' => __('This is an info field with the <strong>critical</strong> style applied and an icon.', 'redux-framework-demo')
+            'title' => __('This is a title.', 'bcn-theme'),
+            'desc' => __('This is an info field with the <strong>critical</strong> style applied and an icon.', 'bcn-theme')
         ),
         array(
             'id' => 'opt-info-custom',
@@ -2090,23 +2716,23 @@ Redux::setSection($opt_name, array(
             'style' => 'custom',
             'color' => 'purple',
             'icon' => 'el el-info-circle',
-            'title' => __('This is a title.', 'redux-framework-demo'),
-            'desc' => __('This is an info field with the <strong>custom</strong> style applied, color arg passed, and an icon.', 'redux-framework-demo')
+            'title' => __('This is a title.', 'bcn-theme'),
+            'desc' => __('This is an info field with the <strong>custom</strong> style applied, color arg passed, and an icon.', 'bcn-theme')
         ),
         array(
             'id' => 'opt-info-normal',
             'type' => 'info',
             'notice' => false,
-            'title' => __('This is a title.', 'redux-framework-demo'),
-            'desc' => __('This is an info non-notice field with the <strong>normal</strong> style applied.', 'redux-framework-demo')
+            'title' => __('This is a title.', 'bcn-theme'),
+            'desc' => __('This is an info non-notice field with the <strong>normal</strong> style applied.', 'bcn-theme')
         ),
         array(
             'id' => 'opt-notice-info',
             'type' => 'info',
             'notice' => false,
             'style' => 'info',
-            'title' => __('This is a title.', 'redux-framework-demo'),
-            'desc' => __('This is an info non-notice field with the <strong>info</strong> style applied.', 'redux-framework-demo')
+            'title' => __('This is a title.', 'bcn-theme'),
+            'desc' => __('This is an info non-notice field with the <strong>info</strong> style applied.', 'bcn-theme')
         ),
         array(
             'id' => 'opt-notice-warning',
@@ -2114,8 +2740,8 @@ Redux::setSection($opt_name, array(
             'notice' => false,
             'style' => 'warning',
             'icon' => 'el el-info-circle',
-            'title' => __('This is a title.', 'redux-framework-demo'),
-            'desc' => __('This is an info non-notice field with the <strong>warning</strong> style applied and an icon.', 'redux-framework-demo')
+            'title' => __('This is a title.', 'bcn-theme'),
+            'desc' => __('This is an info non-notice field with the <strong>warning</strong> style applied and an icon.', 'bcn-theme')
         ),
         array(
             'id' => 'opt-notice-success',
@@ -2123,8 +2749,8 @@ Redux::setSection($opt_name, array(
             'notice' => false,
             'style' => 'success',
             'icon' => 'el el-info-circle',
-            'title' => __('This is a title.', 'redux-framework-demo'),
-            'desc' => __('This is an info non-notice field with the <strong>success</strong> style applied and an icon.', 'redux-framework-demo')
+            'title' => __('This is a title.', 'bcn-theme'),
+            'desc' => __('This is an info non-notice field with the <strong>success</strong> style applied and an icon.', 'bcn-theme')
         ),
         array(
             'id' => 'opt-notice-critical',
@@ -2132,35 +2758,35 @@ Redux::setSection($opt_name, array(
             'notice' => false,
             'style' => 'critical',
             'icon' => 'el el-info-circle',
-            'title' => __('This is a title.', 'redux-framework-demo'),
-            'desc' => __('This is an non-notice field with the <strong>critical</strong> style applied and an icon.', 'redux-framework-demo')
+            'title' => __('This is a title.', 'bcn-theme'),
+            'desc' => __('This is an non-notice field with the <strong>critical</strong> style applied and an icon.', 'bcn-theme')
         ),
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Section', 'redux-framework-demo'),
+    'title' => __('Section', 'bcn-theme'),
     'id' => 'presentation-section',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/section/" target="_blank">docs.reduxframework.com/core/fields/section/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/section/" target="_blank">docs.reduxframework.com/core/fields/section/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'section-start',
             'type' => 'section',
-            'title' => __('Section Example', 'redux-framework-demo'),
-            'subtitle' => __('With the "section" field you can create indented option sections.', 'redux-framework-demo'),
+            'title' => __('Section Example', 'bcn-theme'),
+            'subtitle' => __('With the "section" field you can create indented option sections.', 'bcn-theme'),
             'indent' => true, // Indent all options below until the next 'section' option is set.
         ),
         array(
             'id' => 'section-test',
             'type' => 'text',
-            'title' => __('Field Title', 'redux-framework-demo'),
-            'subtitle' => __('Field Subtitle', 'redux-framework-demo'),
+            'title' => __('Field Title', 'bcn-theme'),
+            'subtitle' => __('Field Subtitle', 'bcn-theme'),
         ),
         array(
             'id' => 'section-test-media',
             'type' => 'media',
-            'title' => __('Field Title', 'redux-framework-demo'),
-            'subtitle' => __('Field Subtitle', 'redux-framework-demo'),
+            'title' => __('Field Title', 'bcn-theme'),
+            'subtitle' => __('Field Subtitle', 'bcn-theme'),
         ),
         array(
             'id' => 'section-end',
@@ -2170,7 +2796,7 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'section-info',
             'type' => 'info',
-            'desc' => __('And now you can add more fields below and outside of the indent.', 'redux-framework-demo'),
+            'desc' => __('And now you can add more fields below and outside of the indent.', 'bcn-theme'),
         ),
     ),
 ));
@@ -2180,23 +2806,23 @@ Redux::setSection($opt_name, array(
 ));
 // -> START Switch & Button Set
 Redux::setSection($opt_name, array(
-    'title' => __('Switch & Button Set', 'redux-framework-demo'),
+    'title' => __('Switch & Button Set', 'bcn-theme'),
     'id' => 'switch_buttonset',
-    'desc' => __('', 'redux-framework-demo'),
+    'desc' => __('', 'bcn-theme'),
     'icon' => 'el el-cogs'
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Button Set', 'redux-framework-demo'),
+    'title' => __('Button Set', 'bcn-theme'),
     'id' => 'switch_buttonset-set',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/button-set/" target="_blank">docs.reduxframework.com/core/fields/button-set/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/button-set/" target="_blank">docs.reduxframework.com/core/fields/button-set/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-button-set',
             'type' => 'button_set',
-            'title' => __('Button Set Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Button Set Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             //Must provide key => value pairs for radio options
             'options' => array(
                 '1' => 'Opt 1',
@@ -2208,9 +2834,9 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-button-set-multi',
             'type' => 'button_set',
-            'title' => __('Button Set, Multi Select', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Button Set, Multi Select', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'multi' => true,
             //Must provide key => value pairs for radio options
             'options' => array(
@@ -2223,31 +2849,31 @@ Redux::setSection($opt_name, array(
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Switch', 'redux-framework-demo'),
+    'title' => __('Switch', 'bcn-theme'),
     'id' => 'switch_buttonset-switch',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/switch/" target="_blank">docs.reduxframework.com/core/fields/switch/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/switch/" target="_blank">docs.reduxframework.com/core/fields/switch/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'switch-on',
             'type' => 'switch',
-            'title' => __('Switch On', 'redux-framework-demo'),
-            'subtitle' => __('Look, it\'s on!', 'redux-framework-demo'),
+            'title' => __('Switch On', 'bcn-theme'),
+            'subtitle' => __('Look, it\'s on!', 'bcn-theme'),
             'default' => true,
         ),
         array(
             'id' => 'switch-off',
             'type' => 'switch',
-            'title' => __('Switch Off', 'redux-framework-demo'),
-            'subtitle' => __('Look, it\'s on!', 'redux-framework-demo'),
+            'title' => __('Switch Off', 'bcn-theme'),
+            'subtitle' => __('Look, it\'s on!', 'bcn-theme'),
             //'options' => array('on', 'off'),
             'default' => false,
         ),
         array(
             'id' => 'switch-parent',
             'type' => 'switch',
-            'title' => __('Switch - Nested Children, Enable to show', 'redux-framework-demo'),
-            'subtitle' => __('Look, it\'s on! Also hidden child elements!', 'redux-framework-demo'),
+            'title' => __('Switch - Nested Children, Enable to show', 'bcn-theme'),
+            'subtitle' => __('Look, it\'s on! Also hidden child elements!', 'bcn-theme'),
             'default' => 0,
             'on' => 'Enabled',
             'off' => 'Disabled',
@@ -2256,40 +2882,40 @@ Redux::setSection($opt_name, array(
             'id' => 'switch-child1',
             'type' => 'switch',
             'required' => array('switch-parent', '=', '1'),
-            'title' => __('Switch - This and the next switch required for patterns to show', 'redux-framework-demo'),
-            'subtitle' => __('Also called a "fold" parent.', 'redux-framework-demo'),
-            'desc' => __('Items set with a fold to this ID will hide unless this is set to the appropriate value.', 'redux-framework-demo'),
+            'title' => __('Switch - This and the next switch required for patterns to show', 'bcn-theme'),
+            'subtitle' => __('Also called a "fold" parent.', 'bcn-theme'),
+            'desc' => __('Items set with a fold to this ID will hide unless this is set to the appropriate value.', 'bcn-theme'),
             'default' => false,
         ),
         array(
             'id' => 'switch-child2',
             'type' => 'switch',
             'required' => array('switch-parent', '=', '1'),
-            'title' => __('Switch2 - Enable the above switch and this one for patterns to show', 'redux-framework-demo'),
-            'subtitle' => __('Also called a "fold" parent.', 'redux-framework-demo'),
-            'desc' => __('Items set with a fold to this ID will hide unless this is set to the appropriate value.', 'redux-framework-demo'),
+            'title' => __('Switch2 - Enable the above switch and this one for patterns to show', 'bcn-theme'),
+            'subtitle' => __('Also called a "fold" parent.', 'bcn-theme'),
+            'desc' => __('Items set with a fold to this ID will hide unless this is set to the appropriate value.', 'bcn-theme'),
             'default' => false,
         ),
     )
 ));
 // -> START Select Fields
 Redux::setSection($opt_name, array(
-    'title' => __('Select Fields', 'redux-framework-demo'),
+    'title' => __('Select Fields', 'bcn-theme'),
     'id' => 'select',
     'icon' => 'el el-list-alt'
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Select', 'redux-framework-demo'),
+    'title' => __('Select', 'bcn-theme'),
     'id' => 'select-select',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/select/" target="_blank">docs.reduxframework.com/core/fields/select/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/select/" target="_blank">docs.reduxframework.com/core/fields/select/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-select',
             'type' => 'select',
-            'title' => __('Select Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Select Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             //Must provide key => value pairs for select options
             'options' => array(
                 '1' => 'Opt 1',
@@ -2301,17 +2927,17 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-select-stylesheet',
             'type' => 'select',
-            'title' => __('Theme Stylesheet', 'redux-framework-demo'),
-            'subtitle' => __('Select your themes alternative color scheme.', 'redux-framework-demo'),
+            'title' => __('Theme Stylesheet', 'bcn-theme'),
+            'subtitle' => __('Select your themes alternative color scheme.', 'bcn-theme'),
             'options' => array('default.css' => 'default.css', 'color1.css' => 'color1.css'),
             'default' => 'default.css',
         ),
         array(
             'id' => 'opt-select-optgroup',
             'type' => 'select',
-            'title' => __('Select Option with optgroup', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Select Option with optgroup', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             //Must provide key => value pairs for select options
             'options' => array(
                 'Group 1' => array(
@@ -2334,9 +2960,9 @@ Redux::setSection($opt_name, array(
             'id' => 'opt-multi-select',
             'type' => 'select',
             'multi' => true,
-            'title' => __('Multi Select Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Multi Select Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             //Must provide key => value pairs for radio options
             'options' => array(
                 '1' => 'Opt 1',
@@ -2349,92 +2975,92 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-info',
             'type' => 'info',
-            'desc' => __('You can easily add a variety of data from WordPress.', 'redux-framework-demo'),
+            'desc' => __('You can easily add a variety of data from WordPress.', 'bcn-theme'),
         ),
         array(
             'id' => 'opt-select-categories',
             'type' => 'select',
             'data' => 'categories',
-            'title' => __('Categories Select Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Categories Select Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
         ),
         array(
             'id' => 'opt-select-categories-multi',
             'type' => 'select',
             'data' => 'categories',
             'multi' => true,
-            'title' => __('Categories Multi Select Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Categories Multi Select Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
         ),
         array(
             'id' => 'opt-select-pages',
             'type' => 'select',
             'data' => 'pages',
-            'title' => __('Pages Select Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Pages Select Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
         ),
         array(
             'id' => 'opt-multi-select-pages',
             'type' => 'select',
             'data' => 'pages',
             'multi' => true,
-            'title' => __('Pages Multi Select Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Pages Multi Select Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
         ),
         array(
             'id' => 'opt-select-tags',
             'type' => 'select',
             'data' => 'tags',
-            'title' => __('Tags Select Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Tags Select Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
         ),
         array(
             'id' => 'opt-multi-select-tags',
             'type' => 'select',
             'data' => 'tags',
             'multi' => true,
-            'title' => __('Tags Multi Select Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Tags Multi Select Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
         ),
         array(
             'id' => 'opt-select-menus',
             'type' => 'select',
             'data' => 'menus',
-            'title' => __('Menus Select Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Menus Select Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
         ),
         array(
             'id' => 'opt-multi-select-menus',
             'type' => 'select',
             'data' => 'menu',
             'multi' => true,
-            'title' => __('Menus Multi Select Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Menus Multi Select Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
         ),
         array(
             'id' => 'opt-select-post-type',
             'type' => 'select',
             'data' => 'post_type',
-            'title' => __('Post Type Select Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Post Type Select Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
         ),
         array(
             'id' => 'opt-multi-select-post-type',
             'type' => 'select',
             'data' => 'post_type',
             'multi' => true,
-            'title' => __('Post Type Multi Select Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Post Type Multi Select Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
         ),
         array(
             'id' => 'opt-multi-select-sortable',
@@ -2442,74 +3068,74 @@ Redux::setSection($opt_name, array(
             'data' => 'post_type',
             'multi' => true,
             'sortable' => true,
-            'title' => __('Post Type Multi Select Option + Sortable', 'redux-framework-demo'),
-            'subtitle' => __('This field also has sortable enabled!', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Post Type Multi Select Option + Sortable', 'bcn-theme'),
+            'subtitle' => __('This field also has sortable enabled!', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
         ),
         array(
             'id' => 'opt-select-posts',
             'type' => 'select',
             'data' => 'post',
-            'title' => __('Posts Select Option2', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Posts Select Option2', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
         ),
         array(
             'id' => 'opt-multi-select-posts',
             'type' => 'select',
             'data' => 'post',
             'multi' => true,
-            'title' => __('Posts Multi Select Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Posts Multi Select Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
         ),
         array(
             'id' => 'opt-select-roles',
             'type' => 'select',
             'data' => 'roles',
-            'title' => __('User Role Select Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('User Role Select Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
         ),
         array(
             'id' => 'opt-select-capabilities',
             'type' => 'select',
             'data' => 'capabilities',
             'multi' => true,
-            'title' => __('Capabilities Select Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Capabilities Select Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
         ),
         array(
             'id' => 'opt-select-elusive',
             'type' => 'select',
             'data' => 'elusive-icons',
-            'title' => __('Elusive Icons Select Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('Here\'s a list of all the elusive icons by name and icon.', 'redux-framework-demo'),
+            'title' => __('Elusive Icons Select Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('Here\'s a list of all the elusive icons by name and icon.', 'bcn-theme'),
         ),
         array(
             'id' => 'opt-select-users',
             'type' => 'select',
             'data' => 'users',
-            'title' => __('Users Select Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Users Select Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
         ),
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Image Select', 'redux-framework-demo'),
+    'title' => __('Image Select', 'bcn-theme'),
     'id' => 'select-image_select',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/image-select/" target="_blank">docs.reduxframework.com/core/fields/image-select/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/image-select/" target="_blank">docs.reduxframework.com/core/fields/image-select/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-image-select-layout',
             'type' => 'image_select',
-            'title' => __('Images Option for Layout', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This uses some of the built in images, you can use them for layout options.', 'redux-framework-demo'),
+            'title' => __('Images Option for Layout', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This uses some of the built in images, you can use them for layout options.', 'bcn-theme'),
             //Must provide key => value(array:title|img) pairs for radio options
             'options' => array(
                 '1' => array(
@@ -2543,8 +3169,8 @@ Redux::setSection($opt_name, array(
             'id' => 'opt-patterns',
             'type' => 'image_select',
             'tiles' => true,
-            'title' => __('Images Option (with tiles => true)', 'redux-framework-demo'),
-            'subtitle' => __('Select a background pattern.', 'redux-framework-demo'),
+            'title' => __('Images Option (with tiles => true)', 'bcn-theme'),
+            'subtitle' => __('Select a background pattern.', 'bcn-theme'),
             'default' => 0,
             'options' => $sample_patterns
         ,
@@ -2552,9 +3178,9 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-image-select',
             'type' => 'image_select',
-            'title' => __('Images Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Images Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             //Must provide key => value(array:title|img) pairs for radio options
             'options' => array(
                 '1' => array('title' => 'Opt 1', 'img' => 'images/align-none.png'),
@@ -2569,10 +3195,10 @@ Redux::setSection($opt_name, array(
             'type' => 'image_select',
             'presets' => true,
             'full_width' => true,
-            'title' => __('Preset', 'redux-framework-demo'),
-            'subtitle' => __('This allows you to set a json string or array to override multiple preferences in your theme.', 'redux-framework-demo'),
+            'title' => __('Preset', 'bcn-theme'),
+            'subtitle' => __('This allows you to set a json string or array to override multiple preferences in your theme.', 'bcn-theme'),
             'default' => 0,
-            'desc' => __('This allows you to set a json string or array to override multiple preferences in your theme.', 'redux-framework-demo'),
+            'desc' => __('This allows you to set a json string or array to override multiple preferences in your theme.', 'bcn-theme'),
             'options' => array(
                 '1' => array(
                     'alt' => 'Preset 1',
@@ -2594,16 +3220,16 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-    'title' => __('Select Image', 'redux-framework-demo'),
+    'title' => __('Select Image', 'bcn-theme'),
     'id' => 'select-select_image',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/select-image/" target="_blank">docs.reduxframework.com/core/fields/select-image/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/select-image/" target="_blank">docs.reduxframework.com/core/fields/select-image/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-select_image-field',
             'type' => 'select_image',
-            'title' => __('Select Image', 'redux-framework-demo'),
-            'subtitle' => __('A preview of the selected image will appear underneath the select box.', 'redux-framework-demo'),
+            'title' => __('Select Image', 'bcn-theme'),
+            'subtitle' => __('A preview of the selected image will appear underneath the select box.', 'bcn-theme'),
             'options' => array(
                 array(
                     'alt' => 'Preset 1',
@@ -2620,8 +3246,8 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-select-image',
             'type' => 'select_image',
-            'title' => __('Select Image', 'redux-framework-demo'),
-            'subtitle' => __('A preview of the selected image will appear underneath the select box.', 'redux-framework-demo'),
+            'title' => __('Select Image', 'bcn-theme'),
+            'subtitle' => __('A preview of the selected image will appear underneath the select box.', 'bcn-theme'),
             'options' => $sample_patterns,
             'default' => ReduxFramework::$_url . '../sample/patterns/triangular.png',
         ),
@@ -2629,22 +3255,22 @@ Redux::setSection($opt_name, array(
 ));
 // -> START Slider / Spinner
 Redux::setSection($opt_name, array(
-    'title' => __('Slider / Spinner', 'redux-framework-demo'),
+    'title' => __('Slider / Spinner', 'bcn-theme'),
     'id' => 'slider_spinner',
-    'desc' => __('', 'redux-framework-demo'),
+    'desc' => __('', 'bcn-theme'),
     'icon' => 'el el-adjust-alt'
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Slider', 'redux-framework-demo'),
+    'title' => __('Slider', 'bcn-theme'),
     'id' => 'slider_spinner-slider',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/slider/" target="_blank">docs.reduxframework.com/core/fields/slider/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/slider/" target="_blank">docs.reduxframework.com/core/fields/slider/</a>',
     'fields' => array(
         array(
             'id' => 'opt-slider-label',
             'type' => 'slider',
-            'title' => __('Slider Example 1', 'redux-framework-demo'),
-            'subtitle' => __('This slider displays the value as a label.', 'redux-framework-demo'),
-            'desc' => __('Slider description. Min: 1, max: 500, step: 1, default value: 250', 'redux-framework-demo'),
+            'title' => __('Slider Example 1', 'bcn-theme'),
+            'subtitle' => __('This slider displays the value as a label.', 'bcn-theme'),
+            'desc' => __('Slider description. Min: 1, max: 500, step: 1, default value: 250', 'bcn-theme'),
             'default' => 250,
             'min' => 1,
             'step' => 1,
@@ -2654,9 +3280,9 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-slider-text',
             'type' => 'slider',
-            'title' => __('Slider Example 2 with Steps (5)', 'redux-framework-demo'),
-            'subtitle' => __('This example displays the value in a text box', 'redux-framework-demo'),
-            'desc' => __('Slider description. Min: 0, max: 300, step: 5, default value: 75', 'redux-framework-demo'),
+            'title' => __('Slider Example 2 with Steps (5)', 'bcn-theme'),
+            'subtitle' => __('This example displays the value in a text box', 'bcn-theme'),
+            'desc' => __('Slider description. Min: 0, max: 300, step: 5, default value: 75', 'bcn-theme'),
             'default' => 75,
             'min' => 0,
             'step' => 5,
@@ -2666,9 +3292,9 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-slider-select',
             'type' => 'slider',
-            'title' => __('Slider Example 3 with two sliders', 'redux-framework-demo'),
-            'subtitle' => __('This example displays the values in select boxes', 'redux-framework-demo'),
-            'desc' => __('Slider description. Min: 0, max: 500, step: 5, slider 1 default value: 100, slider 2 default value: 300', 'redux-framework-demo'),
+            'title' => __('Slider Example 3 with two sliders', 'bcn-theme'),
+            'subtitle' => __('This example displays the values in select boxes', 'bcn-theme'),
+            'desc' => __('Slider description. Min: 0, max: 500, step: 5, slider 1 default value: 100, slider 2 default value: 300', 'bcn-theme'),
             'default' => array(
                 1 => 100,
                 2 => 300,
@@ -2682,9 +3308,9 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-slider-float',
             'type' => 'slider',
-            'title' => __('Slider Example 4 with float values', 'redux-framework-demo'),
-            'subtitle' => __('This example displays float values', 'redux-framework-demo'),
-            'desc' => __('Slider description. Min: 0, max: 1, step: .1, default value: .5', 'redux-framework-demo'),
+            'title' => __('Slider Example 4 with float values', 'bcn-theme'),
+            'subtitle' => __('This example displays float values', 'bcn-theme'),
+            'desc' => __('Slider description. Min: 0, max: 1, step: .1, default value: .5', 'bcn-theme'),
             'default' => .5,
             'min' => 0,
             'step' => .1,
@@ -2696,16 +3322,16 @@ Redux::setSection($opt_name, array(
     'subsection' => true,
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Spinner', 'redux-framework-demo'),
+    'title' => __('Spinner', 'bcn-theme'),
     'id' => 'slider_spinner-spinner',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/spinner/" target="_blank">docs.reduxframework.com/core/fields/spinner/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/spinner/" target="_blank">docs.reduxframework.com/core/fields/spinner/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-spinner',
             'type' => 'spinner',
-            'title' => __('JQuery UI Spinner Example 1', 'redux-framework-demo'),
-            'desc' => __('JQuery UI spinner description. Min:20, max: 100, step:20, default value: 40', 'redux-framework-demo'),
+            'title' => __('JQuery UI Spinner Example 1', 'bcn-theme'),
+            'desc' => __('JQuery UI spinner description. Min:20, max: 100, step:20, default value: 40', 'bcn-theme'),
             'default' => '40',
             'min' => '20',
             'step' => '20',
@@ -2715,16 +3341,16 @@ Redux::setSection($opt_name, array(
 ));
 // -> START Typography
 Redux::setSection($opt_name, array(
-    'title' => __('Typography', 'redux-framework-demo'),
+    'title' => __('Typography', 'bcn-theme'),
     'id' => 'typography',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/typography/" target="_blank">docs.reduxframework.com/core/fields/typography/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/typography/" target="_blank">docs.reduxframework.com/core/fields/typography/</a>',
     'icon' => 'el el-font',
     'fields' => array(
         array(
             'id' => 'opt-typography-body',
             'type' => 'typography',
-            'title' => __('Body Font', 'redux-framework-demo'),
-            'subtitle' => __('Specify the body font properties.', 'redux-framework-demo'),
+            'title' => __('Body Font', 'bcn-theme'),
+            'subtitle' => __('Specify the body font properties.', 'bcn-theme'),
             'google' => true,
             'output' => array('h1, h2, h3, h4'),
             'default' => array(
@@ -2737,7 +3363,7 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-typography',
             'type' => 'typography',
-            'title' => __('Typography h2.site-description', 'redux-framework-demo'),
+            'title' => __('Typography h2.site-description', 'bcn-theme'),
             //'compiler'      => true,  // Use if you want to hook in your own CSS compiler
             //'google'      => false,
             // Disable google fonts. Won't work if you haven't defined your google api key
@@ -2759,7 +3385,7 @@ Redux::setSection($opt_name, array(
             // An array of CSS selectors to apply this font style to dynamically
             'units' => 'px',
             // Defaults to px
-            'subtitle' => __('Typography option with each property can be called individually.', 'redux-framework-demo'),
+            'subtitle' => __('Typography option with each property can be called individually.', 'bcn-theme'),
             'default' => array(
                 'color' => '#333',
                 'font-style' => '700',
@@ -2773,17 +3399,17 @@ Redux::setSection($opt_name, array(
 ));
 // -> START Additional Types
 Redux::setSection($opt_name, array(
-    'title' => __('Additional Types', 'redux-framework-demo'),
+    'title' => __('Additional Types', 'bcn-theme'),
     'id' => 'additional',
-    'desc' => __('', 'redux-framework-demo'),
+    'desc' => __('', 'bcn-theme'),
     'icon' => 'el el-magic',
     //'fields' => array(
     //    array(
     //        'id'              => 'opt-customizer-only-in-section',
     //        'type'            => 'select',
-    //        'title'           => __( 'Customizer Only Option', 'redux-framework-demo' ),
-    //        'subtitle'        => __( 'The subtitle is NOT visible in customizer', 'redux-framework-demo' ),
-    //        'desc'            => __( 'The field desc is NOT visible in customizer.', 'redux-framework-demo' ),
+    //        'title'           => __( 'Customizer Only Option', 'bcn-theme' ),
+    //        'subtitle'        => __( 'The subtitle is NOT visible in customizer', 'bcn-theme' ),
+    //        'desc'            => __( 'The field desc is NOT visible in customizer.', 'bcn-theme' ),
     //        'customizer_only' => true,
     //        //Must provide key => value pairs for select options
     //        'options'         => array(
@@ -2796,24 +3422,24 @@ Redux::setSection($opt_name, array(
     //)
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Date', 'redux-framework-demo'),
+    'title' => __('Date', 'bcn-theme'),
     'id' => 'additional-date',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/date/" target="_blank">docs.reduxframework.com/core/fields/date/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/date/" target="_blank">docs.reduxframework.com/core/fields/date/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-datepicker',
             'type' => 'date',
-            'title' => __('Date Option', 'redux-framework-demo'),
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo')
+            'title' => __('Date Option', 'bcn-theme'),
+            'subtitle' => __('No validation can be done on this field type', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme')
         ),
     ),
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Sorter', 'redux-framework-demo'),
+    'title' => __('Sorter', 'bcn-theme'),
     'id' => 'additional-sorter',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/sorter/" target="_blank">docs.reduxframework.com/core/fields/sorter/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/sorter/" target="_blank">docs.reduxframework.com/core/fields/sorter/</a>',
     'subsection' => true,
     'fields' => array(
         array(
@@ -2857,64 +3483,64 @@ Redux::setSection($opt_name, array(
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Raw', 'redux-framework-demo'),
+    'title' => __('Raw', 'bcn-theme'),
     'id' => 'additional-raw',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/raw/" target="_blank">docs.reduxframework.com/core/fields/raw/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/raw/" target="_blank">docs.reduxframework.com/core/fields/raw/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-raw_info_4',
             'type' => 'raw',
-            'title' => __('Standard Raw Field', 'redux-framework-demo'),
-            'subtitle' => __('Subtitle', 'redux-framework-demo'),
-            'desc' => __('Description', 'redux-framework-demo'),
+            'title' => __('Standard Raw Field', 'bcn-theme'),
+            'subtitle' => __('Subtitle', 'bcn-theme'),
+            'desc' => __('Description', 'bcn-theme'),
             'content' => $sampleHTML,
         ),
         array(
             'id' => 'opt-raw_info_5',
             'type' => 'raw',
             'full_width' => false,
-            'title' => __('Raw Field <code>full_width</code> False', 'redux-framework-demo'),
-            'subtitle' => __('Subtitle', 'redux-framework-demo'),
-            'desc' => __('Description', 'redux-framework-demo'),
+            'title' => __('Raw Field <code>full_width</code> False', 'bcn-theme'),
+            'subtitle' => __('Subtitle', 'bcn-theme'),
+            'desc' => __('Description', 'bcn-theme'),
             'content' => $sampleHTML,
         ),
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Advanced Features', 'redux-framework-demo'),
+    'title' => __('Advanced Features', 'bcn-theme'),
     'icon' => 'el el-thumbs-up',
     // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('Callback', 'redux-framework-demo'),
+    'title' => __('Callback', 'bcn-theme'),
     'id' => 'additional-callback',
-    'desc' => __('For full documentation on this field, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/fields/callback/" target="_blank">docs.reduxframework.com/core/fields/callback/</a>',
+    'desc' => __('For full documentation on this field, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/fields/callback/" target="_blank">docs.reduxframework.com/core/fields/callback/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-custom-callback',
             'type' => 'callback',
-            'title' => __('Custom Field Callback', 'redux-framework-demo'),
-            'subtitle' => __('This is a completely unique field type', 'redux-framework-demo'),
-            'desc' => __('This is created with a callback function, so anything goes in this field. Make sure to define the function though.', 'redux-framework-demo'),
+            'title' => __('Custom Field Callback', 'bcn-theme'),
+            'subtitle' => __('This is a completely unique field type', 'bcn-theme'),
+            'desc' => __('This is created with a callback function, so anything goes in this field. Make sure to define the function though.', 'bcn-theme'),
             'callback' => 'redux_my_custom_field'
         ),
     )
 ));
 // -> START Validation
 Redux::setSection($opt_name, array(
-    'title' => __('Field Validation', 'redux-framework-demo'),
+    'title' => __('Field Validation', 'bcn-theme'),
     'id' => 'validation',
-    'desc' => __('For full documentation on validation, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/the-basics/validation/" target="_blank">docs.reduxframework.com/core/the-basics/validation/</a>',
+    'desc' => __('For full documentation on validation, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/the-basics/validation/" target="_blank">docs.reduxframework.com/core/the-basics/validation/</a>',
     'subsection' => true,
     'fields' => array(
         array(
             'id' => 'opt-text-email',
             'type' => 'text',
-            'title' => __('Text Option - Email Validated', 'redux-framework-demo'),
-            'subtitle' => __('This is a little space under the Field Title in the Options table, additional info is good in here.', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Text Option - Email Validated', 'bcn-theme'),
+            'subtitle' => __('This is a little space under the Field Title in the Options table, additional info is good in here.', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'validate' => 'email',
             'msg' => 'custom error message',
             'default' => 'test@test.com',
@@ -2922,61 +3548,61 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-text-post-type',
             'type' => 'text',
-            'title' => __('Text Option with Data Attributes', 'redux-framework-demo'),
-            'subtitle' => __('You can also pass an options array if you want. Set the default to whatever you like.', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Text Option with Data Attributes', 'bcn-theme'),
+            'subtitle' => __('You can also pass an options array if you want. Set the default to whatever you like.', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'data' => 'post_type',
         ),
         array(
             'id' => 'opt-multi-text',
             'type' => 'multi_text',
-            'title' => __('Multi Text Option - Color Validated', 'redux-framework-demo'),
+            'title' => __('Multi Text Option - Color Validated', 'bcn-theme'),
             'validate' => 'color',
-            'subtitle' => __('If you enter an invalid color it will be removed. Try using the text "blue" as a color.  ;)', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo')
+            'subtitle' => __('If you enter an invalid color it will be removed. Try using the text "blue" as a color.  ;)', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme')
         ),
         array(
             'id' => 'opt-text-url',
             'type' => 'text',
-            'title' => __('Text Option - URL Validated', 'redux-framework-demo'),
-            'subtitle' => __('This must be a URL.', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Text Option - URL Validated', 'bcn-theme'),
+            'subtitle' => __('This must be a URL.', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'validate' => 'url',
             'default' => 'http://reduxframework.com',
         ),
         array(
             'id' => 'opt-text-numeric',
             'type' => 'text',
-            'title' => __('Text Option - Numeric Validated', 'redux-framework-demo'),
-            'subtitle' => __('This must be numeric.', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Text Option - Numeric Validated', 'bcn-theme'),
+            'subtitle' => __('This must be numeric.', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'validate' => 'numeric',
             'default' => '0',
         ),
         array(
             'id' => 'opt-text-comma-numeric',
             'type' => 'text',
-            'title' => __('Text Option - Comma Numeric Validated', 'redux-framework-demo'),
-            'subtitle' => __('This must be a comma separated string of numerical values.', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Text Option - Comma Numeric Validated', 'bcn-theme'),
+            'subtitle' => __('This must be a comma separated string of numerical values.', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'validate' => 'comma_numeric',
             'default' => '0',
         ),
         array(
             'id' => 'opt-text-no-special-chars',
             'type' => 'text',
-            'title' => __('Text Option - No Special Chars Validated', 'redux-framework-demo'),
-            'subtitle' => __('This must be a alpha numeric only.', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Text Option - No Special Chars Validated', 'bcn-theme'),
+            'subtitle' => __('This must be a alpha numeric only.', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'validate' => 'no_special_chars',
             'default' => '0'
         ),
         array(
             'id' => 'opt-text-str_replace',
             'type' => 'text',
-            'title' => __('Text Option - Str Replace Validated', 'redux-framework-demo'),
-            'subtitle' => __('You decide.', 'redux-framework-demo'),
-            'desc' => __('This field\'s default value was changed by a filter hook!', 'redux-framework-demo'),
+            'title' => __('Text Option - Str Replace Validated', 'bcn-theme'),
+            'subtitle' => __('You decide.', 'bcn-theme'),
+            'desc' => __('This field\'s default value was changed by a filter hook!', 'bcn-theme'),
             'validate' => 'str_replace',
             'str' => array(
                 'search' => ' ',
@@ -2987,9 +3613,9 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-text-preg_replace',
             'type' => 'text',
-            'title' => __('Text Option - Preg Replace Validated', 'redux-framework-demo'),
-            'subtitle' => __('You decide.', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Text Option - Preg Replace Validated', 'bcn-theme'),
+            'subtitle' => __('You decide.', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'validate' => 'preg_replace',
             'preg' => array(
                 'pattern' => '/[^a-zA-Z_ -]/s',
@@ -3000,18 +3626,18 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-text-custom_validate',
             'type' => 'text',
-            'title' => __('Text Option - Custom Callback Validated', 'redux-framework-demo'),
-            'subtitle' => __('You decide.', 'redux-framework-demo'),
-            'desc' => __('Enter <code>1</code> and click <strong>Save Changes</strong> for an error message, or enter <code>2</code> and click <strong>Save Changes</strong> for a warning message.', 'redux-framework-demo'),
+            'title' => __('Text Option - Custom Callback Validated', 'bcn-theme'),
+            'subtitle' => __('You decide.', 'bcn-theme'),
+            'desc' => __('Enter <code>1</code> and click <strong>Save Changes</strong> for an error message, or enter <code>2</code> and click <strong>Save Changes</strong> for a warning message.', 'bcn-theme'),
             'validate_callback' => 'redux_validate_callback_function',
             'default' => '0'
         ),
         //array(
         //    'id'                => 'opt-text-custom_validate-class',
         //    'type'              => 'text',
-        //    'title'             => __( 'Text Option - Custom Callback Validated - Class', 'redux-framework-demo' ),
-        //    'subtitle'          => __( 'You decide.', 'redux-framework-demo' ),
-        //    'desc'              => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+        //    'title'             => __( 'Text Option - Custom Callback Validated - Class', 'bcn-theme' ),
+        //    'subtitle'          => __( 'You decide.', 'bcn-theme' ),
+        //    'desc'              => __( 'This is the description field, again good for additional info.', 'bcn-theme' ),
         //    'validate_callback' => array( 'Class_Name', 'validate_callback_function' ),
         //    // You can pass the current class
         //    // Or pass the class name and method
@@ -3024,27 +3650,27 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-textarea-no-html',
             'type' => 'textarea',
-            'title' => __('Textarea Option - No HTML Validated', 'redux-framework-demo'),
-            'subtitle' => __('All HTML will be stripped', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Textarea Option - No HTML Validated', 'bcn-theme'),
+            'subtitle' => __('All HTML will be stripped', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'validate' => 'no_html',
             'default' => 'No HTML is allowed in here.'
         ),
         array(
             'id' => 'opt-textarea-html',
             'type' => 'textarea',
-            'title' => __('Textarea Option - HTML Validated', 'redux-framework-demo'),
-            'subtitle' => __('HTML Allowed (wp_kses)', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Textarea Option - HTML Validated', 'bcn-theme'),
+            'subtitle' => __('HTML Allowed (wp_kses)', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'validate' => 'html', //see http://codex.wordpress.org/Function_Reference/wp_kses_post
             'default' => 'HTML is allowed in here.'
         ),
         array(
             'id' => 'opt-textarea-some-html',
             'type' => 'textarea',
-            'title' => __('Textarea Option - HTML Validated Custom', 'redux-framework-demo'),
-            'subtitle' => __('Custom HTML Allowed (wp_kses)', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Textarea Option - HTML Validated Custom', 'bcn-theme'),
+            'subtitle' => __('Custom HTML Allowed (wp_kses)', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'validate' => 'html_custom',
             'default' => '<p>Some HTML is allowed in here.</p>',
             'allowed_html' => array(
@@ -3060,18 +3686,18 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'opt-textarea-js',
             'type' => 'textarea',
-            'title' => __('Textarea Option - JS Validated', 'redux-framework-demo'),
-            'subtitle' => __('JS will be escaped', 'redux-framework-demo'),
-            'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            'title' => __('Textarea Option - JS Validated', 'bcn-theme'),
+            'subtitle' => __('JS will be escaped', 'bcn-theme'),
+            'desc' => __('This is the description field, again good for additional info.', 'bcn-theme'),
             'validate' => 'js'
         ),
     )
 ));
 // -> START Required
 Redux::setSection($opt_name, array(
-    'title' => __('Field Required / Linking', 'redux-framework-demo'),
+    'title' => __('Field Required / Linking', 'bcn-theme'),
     'id' => 'required',
-    'desc' => __('For full documentation on validation, visit: ', 'redux-framework-demo') . '<a href="//docs.reduxframework.com/core/the-basics/required/" target="_blank">docs.reduxframework.com/core/the-basics/required/</a>',
+    'desc' => __('For full documentation on validation, visit: ', 'bcn-theme') . '<a href="//docs.reduxframework.com/core/the-basics/required/" target="_blank">docs.reduxframework.com/core/the-basics/required/</a>',
     'subsection' => true,
     'fields' => array(
         array(
@@ -3174,22 +3800,22 @@ Redux::setSection($opt_name, array(
     )
 ));
 Redux::setSection($opt_name, array(
-    'title' => __('WPML Integration', 'redux-framework-demo'),
-    'desc' => __('These fields can be fully translated by WPML (WordPress Multi-Language). This serves as an example for you to implement. For extra details look at our <a href="//docs.reduxframework.com/core/advanced/wpml-integration/" target="_blank">WPML Implementation</a> documentation.', 'redux-framework-demo'),
+    'title' => __('WPML Integration', 'bcn-theme'),
+    'desc' => __('These fields can be fully translated by WPML (WordPress Multi-Language). This serves as an example for you to implement. For extra details look at our <a href="//docs.reduxframework.com/core/advanced/wpml-integration/" target="_blank">WPML Implementation</a> documentation.', 'bcn-theme'),
     'subsection' => true,
     // 'submenu' => false, // Setting submenu to false on a given section will hide it from the WordPress sidebar menu!
     'fields' => array(
         array(
             'id' => 'wpml-text',
             'type' => 'textarea',
-            'title' => __('WPML Text', 'redux-framework-demo'),
-            'desc' => __('This string can be translated via WPML.', 'redux-framework-demo'),
+            'title' => __('WPML Text', 'bcn-theme'),
+            'desc' => __('This string can be translated via WPML.', 'bcn-theme'),
         ),
         array(
             'id' => 'wpml-multicheck',
             'type' => 'checkbox',
-            'title' => __('WPML Multi Checkbox', 'redux-framework-demo'),
-            'desc' => __('You can literally translate the values via key.', 'redux-framework-demo'),
+            'title' => __('WPML Multi Checkbox', 'bcn-theme'),
+            'desc' => __('You can literally translate the values via key.', 'bcn-theme'),
             //Must provide key => value pairs for multi checkbox options
             'options' => array(
                 '1' => 'Option 1',
@@ -3201,16 +3827,16 @@ Redux::setSection($opt_name, array(
 ));
 Redux::setSection($opt_name, array(
     'icon' => 'el el-list-alt',
-    'title' => __('Customizer Only', 'redux-framework-demo'),
-    'desc' => __('<p class="description">This Section should be visible only in Customizer</p>', 'redux-framework-demo'),
+    'title' => __('Customizer Only', 'bcn-theme'),
+    'desc' => __('<p class="description">This Section should be visible only in Customizer</p>', 'bcn-theme'),
     'customizer_only' => true,
     'fields' => array(
         array(
             'id' => 'opt-customizer-only',
             'type' => 'select',
-            'title' => __('Customizer Only Option', 'redux-framework-demo'),
-            'subtitle' => __('The subtitle is NOT visible in customizer', 'redux-framework-demo'),
-            'desc' => __('The field desc is NOT visible in customizer.', 'redux-framework-demo'),
+            'title' => __('Customizer Only Option', 'bcn-theme'),
+            'subtitle' => __('The subtitle is NOT visible in customizer', 'bcn-theme'),
+            'desc' => __('The field desc is NOT visible in customizer.', 'bcn-theme'),
             'customizer_only' => true,
             //Must provide key => value pairs for select options
             'options' => array(
@@ -3225,7 +3851,7 @@ Redux::setSection($opt_name, array(
 if (file_exists(dirname(__FILE__) . '/../README.md')) {
     $section = array(
         'icon' => 'el el-list-alt',
-        'title' => __('Documentation', 'redux-framework-demo'),
+        'title' => __('Documentation', 'bcn-theme'),
         'fields' => array(
             array(
                 'id' => '17',
