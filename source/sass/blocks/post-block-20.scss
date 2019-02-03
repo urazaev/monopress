@@ -1,0 +1,122 @@
+.post-block-20 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 30px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+    width: 53%;
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+}
+
+.post-block-20__wrapper-link {
+  text-align: right;
+  margin: 0;
+  padding-bottom: 30px;
+
+  @media (min-width: $tablet-width) {
+    padding-bottom: 10px;
+  }
+}
+
+.post-block-20__item {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  transition: all ease-in 0.3s;
+  opacity: 0.3;
+  width: 100%;
+
+  @media (min-width: $tablet-width) {
+    margin-left: 76px;
+    display: flex;
+    width: auto;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:nth-child(1) {
+    display: flex;
+    opacity: 1;
+  }
+}
+
+.post-block-20__img {
+  @include indents-zero;
+}
+
+.post-block-20__img-item {
+  width: 100%;
+}
+
+.post-block-20__date {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  font-size: 10px;
+  font-family: $fonts-primary;
+  color: var(--header-text-color);
+  transform: rotate(90deg);
+  transform-origin: 0 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 12px;
+    top: 40px;
+    left: -10px;
+  }
+}
+
+.post-block-20__date-item {
+  @include indents-zero;
+}
+
+.post-block-20__header {
+  font-family: $fonts-secondary;
+  line-height: 1.4;
+  color: var(--header-text-color);
+  font-weight: bold;
+  text-decoration: none;
+  @include indents-zero;
+  text-align: right;
+  font-size: 14px;
+  padding-top: 30px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    font-size: 1.26vw;
+  }
+
+  @media (min-width: $large-desktop-width) {
+    font-size: 25px;
+  }
+}
+
+.post-block-20__header-link {
+  font-family: $fonts-secondary;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--header-text-color);
+  font-weight: bold;
+  text-decoration: none;
+  @include links-decoration(rgba(var(--header-text-color), 0.8));
+}
+
+.post-block-20__wrapper-text {
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+
+  @media (min-width: $tablet-width) {
+    padding: 50px 30px 50px 50px;
+    width: 47%;
+  }
+}

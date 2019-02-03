@@ -1,0 +1,61 @@
+.button {
+  padding: 4.5px 10px;
+  font-size: 13px;
+  font-family: $fonts-secondary;
+  font-weight: bold;
+  color: $text-color-white;
+  background: #2196f3;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  &:hover {
+    color: $text-color-white;
+  }
+
+  &::before {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    content: " ";
+    background: $background-white;
+    opacity: 0.3;
+    transition: all 0.3s;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+
+  &--big {
+    padding: 12px 32px;
+  }
+
+  &--white {
+    background: #ffffff;
+  }
+
+  &--blue {
+    background: #2196f3;
+  }
+
+  &--green {
+    background: #4caf50;
+  }
+
+  &--orange {
+    background: #ff9800;
+  }
+
+  &--brown {
+    background: #795548;
+  }
+
+  &--red {
+    background: #f44336;
+  }
+  &--light {
+    color: $text-color-white !important;
+  }
+}

@@ -1,10 +1,10 @@
 /*!
 Theme Name: bcn
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
+Theme URI: http://urazaev.com/themes/bcn/
+Author: UrazaevProduction
+Author URI: http://urazaev.com/
 Description: Description
-Version: 1.0.0
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: bcn
@@ -562,7 +562,7 @@ input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
-input[type="search"],
+input[type="search"]:not:usernav__search-input,
 input[type="number"],
 input[type="tel"],
 input[type="range"],
@@ -614,23 +614,24 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	/*color: royalblue;*/
 }
+/* TODO check reason*/
 
 a:visited {
-	color: purple;
+	/*color: purple;*/
 }
 
 a:hover, a:focus, a:active {
-	color: midnightblue;
+	/*color: midnightblue;*/
 }
 
 a:focus {
-	outline: thin dotted;
+	/*outline: thin dotted;*/
 }
 
 a:hover, a:active {
-	outline: 0;
+	/*outline: 0;*/
 }
 
 /*--------------------------------------------------------------

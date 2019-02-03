@@ -1,0 +1,119 @@
+.post-block-21 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+  padding-top: 30px;
+
+  @media (min-width: $tablet-width) {
+    width: 55%;
+    padding-top: 50px;
+    padding-right: 5%;
+  }
+
+}
+
+.post-block-21__wrapper-link {
+  margin-bottom: 21px;
+  text-align: right;
+}
+
+.post-block-21__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+
+  @media (min-width: $tablet-width) {
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.post-block-21__item:hover {
+  .post-block-21__img {
+    overflow: hidden;
+  }
+
+  .post-block-21__img-item {
+    transition: all ease-in 0.3s;
+  }
+
+  .post-block-21__img a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    background: linear-gradient(to top, rgba(33, 33, 33, 0.5), rgba(33, 33, 33, 0));
+    z-index: 1;
+    opacity: 1;
+    animation: links-gradient 0.3s forwards;
+  }
+
+  .post-block-21__header-link {
+    border-bottom-width: 0.5px;
+    border-bottom-color: rgba($text-color-dark, 0.8);
+    border-bottom-style: solid;
+    color: rgba($text-color-dark, 0.8);
+  }
+}
+
+.post-block-21__img {
+  @include indents-zero;
+  overflow: hidden;
+  position: relative;
+}
+
+.post-block-21__img-item {
+  width: 100%;
+}
+
+.post-block-21__header {
+  @include indents-zero;
+  text-align: right;
+  font-size: 14px;
+  line-height: 1.4;
+  padding-top: 20px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 1.56vw;
+  }
+
+  @media (min-width: $large-desktop-width) {
+    font-size: 25px;
+  }
+}
+
+.post-block-21__header-link {
+  font-family: $fonts-secondary;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--header-text-color);
+  font-weight: bold;
+  @include links-decoration(rgba(var(--header-text-color), 0.8));
+}
+
+.post-block-21__footer {
+  font-size: 12px;
+  font-family: $fonts-primary;
+  color: var(--main-text-color);
+  text-align: right;
+  padding-top: 20px;
+}
+
+.post-block-21__comments-count {
+  min-width: 83px;
+  display: inline-block;
+}
+
+.post-block-21__comments-date {
+  margin-left: 20px;
+  display: inline-block;
+}

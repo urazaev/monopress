@@ -1,0 +1,224 @@
+/*************************
+  Begin of hamburger
+**************************/
+.main-nav-vertical__hamburger-wrapper {
+
+}
+
+.main-nav-vertical__hamburger {
+  width: 24px;
+  position: relative;
+  display: block;
+  height: 21px;
+  cursor: pointer;
+  @include button-reset();
+  outline: 0;
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.main-nav-vertical__hamburger span {
+  display: block;
+  position: absolute;
+  left: 6px;
+  height: 3px;
+  background: var(--header-text-color);
+  transition: all ease-in-out 0.1s;
+}
+
+.main-nav-vertical__hamburger span:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -6px;
+  height: 3px;
+  width: 3px;
+  background: var(--header-text-color);
+  border-radius: 100%;
+  transition: all ease-in-out 0.1s;
+}
+
+.main-nav-vertical__hamburger span:nth-of-type(1) {
+  width: 89%;
+  top: 0;
+}
+
+.main-nav-vertical__hamburger span:nth-of-type(2) {
+  width: 71%;
+  top: 6px;
+}
+
+.main-nav-vertical__hamburger span:nth-of-type(3) {
+  width: 62%;
+  top: 12px;
+}
+
+.main-nav-vertical__hamburger span:nth-of-type(4) {
+  width: 80%;
+  top: 18px;
+}
+
+.main-nav-vertical__hamburger:hover span:nth-of-type(1) {
+  width: 100%;
+}
+
+.main-nav-vertical__hamburger:hover span:nth-of-type(2) {
+  width: 82%;
+}
+
+.main-nav-vertical__hamburger:hover span:nth-of-type(3) {
+  width: 73%;
+}
+
+.main-nav-vertical__hamburger:hover span:nth-of-type(4) {
+  width: 91%;
+}
+
+.main-nav-vertical__hamburger.active span {
+  top: 10px;
+  left: 4px;
+  width: 25px !important;
+  background: var(--header-text-color);
+  transform: rotate(45deg);
+}
+
+.main-nav-vertical__hamburger.active span:before {
+  left: 0;
+  transform: rotate(90deg);
+  width: 100%;
+  border-radius: 0;
+  background: var(--header-text-color);
+}
+
+/* end of hamburger */
+
+.main-nav-vertical {
+  /*   position: relative; */
+  display: flex;
+  flex-direction: column;
+}
+
+.main-nav-vertical .main-nav__list.main-nav__wrapper {
+  /* position: relative; */
+  display: none;
+  flex-direction: column;
+  @include indents-zero;
+  padding-top: 30px;
+  /* width: 100%; */
+  text-transform: uppercase;
+
+  &--opened, &--nojs {
+    display: flex;
+  }
+
+  @media (min-width: $tablet-width) {
+    @include indents-zero;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: none;
+  }
+}
+
+.main-nav-vertical .main-nav__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-right: 14px;
+  margin-left: 14px;
+  list-style: none;
+  white-space: nowrap;
+
+  @media (min-width: $tablet-width) {
+    padding-bottom: 0;
+    &--active a::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      width: 100%;
+      background-color: var(--header-text-color);
+      opacity: 1;
+    }
+
+    &--parrent {
+      margin-left: 0;
+      margin-right: 0;
+      padding-bottom: 10px;
+    }
+  }
+
+}
+
+.main-nav-vertical .main-nav__link {
+  font-size: 14px;
+  line-height: 1.375em;
+  //line-height: 30px;
+  color: var(--header-text-color);
+  text-decoration: none;
+
+  @media (min-width: $tablet-width) {
+    font-weight: 700;
+  }
+}
+
+.main-nav-vertical .main-nav__list {
+
+  @media (min-width: $tablet-width) {
+    /*     display: flex;
+        flex-direction: column !important;
+        align-items: center;
+        list-style: none;
+        width: 100%; */
+
+    &--lvl2 {
+      @include indents-zero;
+      //padding-left: 8px;
+      //padding-right: 8px;
+      left: 100%;
+      top: -7px !important;
+    }
+  }
+}
+
+.main-nav-vertical > .main-nav__list > .main-nav__item {
+  padding-left: 34px;
+  @media (min-width: $tablet-width) {
+    padding-left: 0;
+  }
+}
+
+.main-nav-vertical .main-nav__item--parrent {
+  min-width: 100%;
+  text-align: left;
+  @media (min-width: $tablet-width) {
+    display: inline;
+    text-align: center;
+    padding-left: 0;
+  }
+}
+
+.main-nav-vertical .main-nav__list--lvl2 {
+
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    min-width: 300px;
+  }
+}
+
+.main-nav-vertical .main-nav__link {
+  @include indents-zero;
+  font-size: 14px;
+  line-height: 30px;
+  color: var(--header-text-color);
+  text-decoration: none;
+}
+
+.main-nav-vertical .main-nav__list--lvl2 .main-nav__link {
+  font-weight: 400;
+  text-align: left;
+}

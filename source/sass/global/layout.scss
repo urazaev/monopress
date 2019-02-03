@@ -1,0 +1,89 @@
+/**********************
+
+layouts
+
+ ************************/
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+
+  &.header-shadow {
+    //background-color: var(--main-background);
+    background-color: $background-white;
+  }
+  @media (min-width: $tablet-width) {
+    &.header-shadow::before {
+      content: "";
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 81px;
+      position: absolute;
+      background-color: var(--header-background);
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  background-color: var(--main-background);
+  //
+  //@media (min-width: $mobile-width-only) {
+  //  padding-left: 30px;
+  //  padding-right: 30px;
+  //}
+
+  @media (min-width: $desktop-width) {
+    width: $lg-screen;
+  }
+
+  @media (min-width: $large-desktop-width) {
+    width: $xl-screen;
+  }
+
+  // Для отображения первой страницы
+  &--fullheight {
+    max-height: 100vh;
+  }
+  &--index {
+    flex-direction: column;
+  }
+
+  &--home-09 {
+    position: relative;
+  }
+  &--home-02 {
+    //width: 100% !important;
+    display: flex;
+    background-color: var(--main-background);
+  }
+  &--home-11 {
+    width: 100% !important;
+    display: flex;
+    background-color: var(--main-background);
+  }
+  &--home-03 {
+    //width: 100% !important;
+  }
+  &--home-04 {
+    display: block;
+    background: none;
+  }
+  &--portfolio {
+    width: 100%;
+    display: block;
+    background: none;
+  }
+  &--home-20 {
+    display: block;
+    background: none;
+  }
+  &--fullwidth {
+    width: 100% !important;
+  }
+}

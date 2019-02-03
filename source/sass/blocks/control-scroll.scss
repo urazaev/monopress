@@ -1,0 +1,16 @@
+.control-scroll {
+  display: none;
+  @media (min-width: $tablet-width) {
+    margin-top: 45px;
+    display: block;
+  }
+}
+
+.control-scroll__scroll-button {
+  transform: rotate(90deg);
+  font-family: $fonts-secondary;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--main-text-color);
+}
+

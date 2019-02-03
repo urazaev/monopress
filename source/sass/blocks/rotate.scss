@@ -1,0 +1,14 @@
+.rotate {
+  @media (min-width: $tablet-width) {
+    transform: rotate(90deg);
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  &--mobile {
+    @media (max-width: $tablet-width) {
+      transform: rotate(90deg);
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+  }
+}

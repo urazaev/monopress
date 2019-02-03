@@ -1,0 +1,123 @@
+.post-block-17 {
+  width: 100%;
+  position: relative;
+
+  @media (min-width: $tablet-width) {
+    top: 0;
+    z-index: 50;
+    position: fixed;
+    right: 0;
+    width: 55%;
+    padding-right: 5%;
+  }
+}
+
+.post-block-17__item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--about-background);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 80px;
+
+  @media (min-width: $tablet-width) {
+    justify-content: center;
+    padding-top: 0;
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+  }
+
+}
+
+.post-block-17__header {
+  @include indents-zero;
+  font-family: $fonts-secondary;
+  line-height: 1.4;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right;
+  color: var(--about-header-color);
+  @media (min-width: $tablet-width) {
+
+    font-size: 1.59vw;
+  }
+  @media (min-width: $large-desktop-width) {
+    font-size: 25px;
+  }
+}
+
+.post-block-17__text {
+  font-family: $fonts-primary;
+  font-size: 13px;
+  line-height: 26px;
+  color: var(--about-text-color);
+  text-align: right;
+}
+
+.post-block-17__wrapper-link {
+  margin-top: 18px;
+  text-align: right;
+}
+
+.post-block-17__link-item {
+  color: var(--about-button-text) !important;
+}
+
+.post-block-17__control-slider {
+
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+
+  position: absolute;
+  right: 30px;
+  top: 30px;
+
+  @media (min-width: $tablet-width) {
+    transform: translateX(-50%);
+    width: 50px;
+    position: fixed;
+    right: unset;
+    top: unset;
+    bottom: 7vh;
+    left: 50%;
+  }
+
+}
+
+.post-block-17__prev-link,
+.post-block-17__next-link {
+  color: var(--about-text-color);
+  @include button-reset;
+  border: none;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  &:hover {
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--about-text-color);
+    opacity: 0.9;
+  }
+}
+
+.post-block-17__slider-info {
+  position: absolute;
+  z-index: 101;
+  top: 30px;
+  left: 30px;
+  font-family: $fonts-secondary;
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: bold;
+  color: var(--about-text-color);
+
+  @media (min-width: $tablet-width) {
+    top: 20px;
+    left: 50px;
+  }
+}

@@ -1,0 +1,46 @@
+.control-scroll-only {
+
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    @include media-divider(margin-left, 769px);
+    z-index: 10;
+
+    &--vpright {
+      margin-left: 0 !important;
+      right: 0;
+      left: auto;
+      bottom: 0;
+      transform: translateX(-50%) translateY(-100%);
+    }
+  }
+}
+
+.control-scroll-only__scroll-button {
+  transform: rotate(90deg);
+  font-family: $fonts-secondary;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--main-text-color);
+  position: absolute;
+  //bottom: 25px;
+  //right: 28px;
+}
+
+#scroll-button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  @include links-decoration-bottom-line();
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

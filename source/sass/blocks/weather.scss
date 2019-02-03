@@ -1,0 +1,39 @@
+.weather {
+  display: none;
+
+  @media (min-width: $tablet-width+300px) {
+    display: flex;
+    width: $lg-screen/5.423;
+    color: inherit;
+    font-size: 12px;
+    font-family: $fonts-primary;
+
+    &--hor {
+      order: 3;
+      flex-grow: 1;
+    }
+
+    &--vertical {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+}
+
+.weather__num {
+  font-size: 30px;
+  font-family: $fonts-secondary;
+  text-transform: uppercase;
+  color: var(--weather-num-color);
+  font-weight: 600;
+  min-width: $lg-screen/18.823;
+  padding-right: 10px;
+  margin-top: 10px;
+}
+.weather__location {
+  min-width: $lg-screen/8.463;
+  margin-left: 10px;
+  margin-top: 5px;
+  color: var(--weather-location-color);
+}

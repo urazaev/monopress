@@ -1,0 +1,117 @@
+.control-right {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  z-index: 100;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  @media (min-width: $tablet-width) {
+    flex-direction: column;
+    padding: 0;
+    background-color: var(--control-background);
+    transform: translateX(-100%);
+    min-height: 100vh;
+    width: 5%;
+    top: 0;
+    left: 50%;
+    position: fixed;
+  }
+
+  @media(min-width: $lg-screen) {
+    margin-left: $lg-screen / 2;
+  }
+
+  @media(min-width: $xl-screen) {
+    margin-left: $xl-screen / 2;
+  }
+
+  &--left-border {
+    @media (min-width: $tablet-width) {
+      border-left: 1px solid var(--control-border-color);
+    }
+  }
+
+  &--portfolio {
+    left: auto;
+    right: 0;
+    transform: none;
+    margin-left: 0 !important;
+    padding-bottom: 30px;
+    @media (min-width: $tablet-width) {
+      padding-top: 40px;
+      min-height: 100vh;
+    }
+  }
+  &--portfolio-inverse {
+
+    background: $background-white;
+    padding: 30px;
+    position: absolute;
+    left: -30px;
+    right: -30px;
+    top: -106px;
+    z-index: 198;
+    border-top: 1px solid rgba($background-black, 0.2);
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 0;
+      padding: 0;
+      background-color: transparent;
+      left: auto;
+      right: 0;
+      transform: none;
+      margin-left: 0 !important;
+    }
+  }
+  &--vpright {
+    @media (min-width: $tablet-width) {
+      padding: 0;
+      right: 0;
+      left: auto;
+      margin: 0 !important;
+      transform: none;
+
+      @media (min-width: $tablet-width) {
+        padding: 70px 0 0 0 !important;
+      }
+    }
+  }
+  &--pt30 {
+    padding-top: 30px;
+  }
+}
+
+.control-right__item {
+  padding-right: 30px;
+  @media (min-width: $tablet-width) {
+    padding-right: 0;
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.control-right__scroll {
+  display: none;
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-grow: 1;
+    padding-bottom: 25px;
+  }
+
+}
+
+.control-right__link {
+  font-family: $fonts-secondary;
+  font-size: 12px;
+  color: var(--control-text-color);
+  @include links-decoration-bottom-line();
+  @media (min-width: $tablet-width) {
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
+.control-right__link.control-right__active {
+  color: var(--active-word);
+}

@@ -1,0 +1,27 @@
+.weather-vertical {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.weather-vertical__num {
+  @include indents-zero;
+  font-size: 30px;
+  font-family: $fonts-secondary;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--weather-num-color);
+}
+
+.weather-vertical__location {
+  @include indents-zero;
+  margin-top: 16px;
+  font-size: 12px;
+  font-family: $fonts-primary;
+  color: var(--weather-location-color);
+}

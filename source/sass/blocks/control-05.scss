@@ -1,0 +1,60 @@
+.control-05 {
+  position: absolute;
+  top: 120px;
+  left: 30px;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-start;
+  width: 150px;
+
+
+  @media (min-width: $tablet-width) {
+    position: fixed;
+    top: 31px;
+    right: 40px;
+    left: auto;
+  }
+}
+
+.control-05__control-slider {
+  display: flex;
+  justify-content: space-between;
+  width: 73px;
+}
+
+.control-05__prev-link,
+.control-05__next-link {
+  color: var(--main-text-color);
+  @include button-reset;
+  border: none;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  &:hover {
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--subnav-background);
+    opacity: 0.9;
+  }
+}
+
+.control-05__scroll-link {
+  display: none;
+  @media (min-width: $tablet-width) {
+    display: block;
+    font-family: $fonts-secondary;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--main-text-color);
+    @include button-reset;
+    transform: rotate(90deg);
+    padding: 0;
+    margin-top: 21px;
+    margin-left: 4px;
+    @include links-decoration-bottom-line();
+
+  }
+
+
+}

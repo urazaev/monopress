@@ -1,0 +1,117 @@
+/**********************
+
+globals
+
+ ************************/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  font-family: $fonts-secondary;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: inherit;
+    color: inherit;
+  }
+
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+/**********************
+
+visually-hidden
+
+ ************************/
+
+.visually-hidden:not(:focus):not(:active), .vh:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  -webkit-clip-path: inset(100%);
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.promary-font {
+
+  font-family: $fonts-primary;
+}
+
+.secondary-font {
+
+  font-family: $fonts-secondary;
+}
+
+.section-divider {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 40px 30px !important;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 80px 40px !important;
+  }
+  &--mobile-top-reset {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    @media (min-width: $tablet-width) {
+      padding: 80px 40px !important;
+    }
+  }
+}
+
+.pb {
+  padding-bottom: 40px !important;
+  @media (min-width: $tablet-width) {
+    padding-bottom: 80px !important;
+  }
+}
+
+.mt-remove-mobiles {
+  margin-top: 0 !important;
+  @media (min-width: $tablet-width) {
+    margin-top: unset;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}

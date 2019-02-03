@@ -1,0 +1,86 @@
+.post-text-block-20 {
+  position: relative;
+  @include indents-zero;
+  font-family: $fonts-primary;
+  color: var(--main-text-color);
+}
+
+.post-text-block-20__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-text-block-20__text {
+  @include indents-zero;
+  font-size: 13px;
+  line-height: 26px;
+  font-family: $fonts-primary;
+  font-weight: normal;
+  color: var(--main-text-color);
+
+  @media (min-width: $tablet-width) {
+    padding-top: 26px;
+  }
+}
+
+.post-text-block-20__header .post-text-block-20__active-word-orange {
+  color: var(--active-word);
+}
+
+.post-text-block-20__header .post-text-block-20__active-word-red {
+  color: var(--active-word);
+}
+
+.post-text-block-20__header {
+  @include indents-zero;
+  line-height: 1.4;
+  font-size: 16px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 1.26vw;
+    margin-top: 24px;
+  }
+
+  @media (min-width: $large-desktop-width) {
+    font-size: 25px;
+  }
+}
+
+.post-text-block-20__header-link {
+  font-size: inherit;
+  line-height: inherit;
+  font-family: $fonts-secondary;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--header-text-color);
+  @include links-decoration(rgba(var(--header-text-color), 0.8));
+}
+
+.post-text-block-20__social-wrapper {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -4px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+  }
+}
+
+.post-text-block-20__social-facebook {
+    margin-right: 16px;
+}
+
+.post-text-block-20__social-link-facebook,
+.post-text-block-20__social-link-twitter {
+  font-size: 12px;
+  line-height: 26px;
+  font-family: $fonts-secondary;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--social-link-color);
+}

@@ -1,0 +1,133 @@
+/**********************
+
+Backgrounds:
+
+************************/
+
+$background-main: #000000;
+$background-black: #000000;
+$background-light-gray: #f4f4f4;
+$background-medium-gray: #c0c0c0;
+$background-dark-gray: #414141;
+$background-green: #4caf50;
+$background-brown: #795548;
+$background-white: #ffffff;
+$background-dark: #212121;
+
+/**********************
+
+Widget backgounds:
+
+************************/
+
+$background-widget-dark: #212121;
+
+/**********************
+
+Page headers:
+
+************************/
+
+$page-header-white: #ffffff;
+$page-header-gray: #f4f4f4;
+$page-header-black: #212121;
+
+/**********************
+
+Backgrounds:
+
+************************/
+
+$background-down: #5496bd;
+$background-add: #eeeeee;
+$background-img: #c0ddf0;
+
+/**********************
+
+Text colours:
+
+************************/
+
+$text-color-white: #ffffff;
+$text-color-dark: #212121;
+$text-color-header-blue: #2196f3;
+$text-color-header-orange: #ff9800;
+$text-color-header-white: #ffffff;
+$text-color-description: #333333;
+$text-color-orange: #ff9800;
+$text-color-green: #4caf50;
+$text-color-red: #f44336;
+$text-color-blue: #2196f3;
+$text-color-hover: #81b3d2;
+
+/**********************
+
+Divider lines colours:
+
+************************/
+
+$line-grey: #dddddd;
+
+/**********************
+
+Viewports:
+
+************************/
+
+$mobile-width: 320px;
+$mobile-width-only: 767px;
+$small-screen: 480px;
+$tablet-width: 768px;
+$desktop-width: 1200px;
+$large-desktop-width: 1600px;
+
+/**********************
+
+Typography:
+
+************************/
+
+$fonts-primary: "Roboto", Arial, Tahoma;
+$fonts-secondary: "Montserrat", sans-serif;
+
+/**********************
+
+Width variables:
+
+************************/
+
+//extra large screen
+$xl-screen: 1600px;
+//large screen
+$lg-screen: 1200px;
+//medium screen
+$md-screen: 768px;
+//small screen
+$sm-screen: 480px;
+//extra small screen
+$xs-screen: 320px;
+
+$vertical-sidebar-width: 224px;
+$post-widget-width: 496px;
+
+/***************************
+
+Control panel width (recent, popular, scroll)
+
+****************************/
+
+//small
+$sm-control-width: 40px;
+//medium
+$md-control-width: 80px;
+
+$tmp-glb-odd-width: 580px;
+
+/***************************
+
+uikit
+
+****************************/
+
+$global-primary-background: $background-dark;
+$global-link-color: $text-color-dark;

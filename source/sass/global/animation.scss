@@ -1,0 +1,114 @@
+
+/**********************
+
+animations
+
+ ************************/
+
+
+$ani-color-main: #bebebe;
+$ani-black: #d8d8d8;
+
+.has-animation {
+  position: relative;
+  p, img, a, h2, div, span {
+    opacity: 0;
+  }
+  &.animate-in {
+    p, img, a, h2, div, span {
+      animation: textHidden 0.1s 0.8s forwards;
+    }
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      z-index: 10;
+    }
+    &:before {
+      background-color: $ani-color-main;
+    }
+    &:after {
+      background-color: $ani-black;
+      animation-delay: .3s;
+    }
+  }
+  &.animation-ltr.animate-in {
+    &:before {
+      animation: revealLTR 1s ease;
+    }
+    &:after {
+      animation: revealLTR 0.8s 0.3s ease;
+    }
+  }
+  &.animation-rtl.animate-in {
+    &:before {
+      animation: revealRTL 1s ease;
+    }
+    &:after {
+      animation: revealRTL 0.8s 0.3s ease;
+    }
+  }
+  //&.animation-totop.animate-in {
+  //  animation: toTOP 3s 1.5s ease;
+  //}
+}
+
+@keyframes revealRTL {
+  0% {
+    width: 0;
+    right: 0;
+  }
+  65% {
+    width: 100%;
+    right: 0;
+  }
+  100% {
+    width: 0;
+    right: 100%;
+  }
+}
+
+@keyframes revealLTR {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  65% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes textHidden {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animation-to-left {
+  animation: toLeft ease 1s;
+
+}
+
+@keyframes toLeft {
+  0% {
+    transform: translateX(50vh);
+    opacity: 0;
+    filter: blur(10px) grayscale(20%);
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    filter: none;
+  }
+}

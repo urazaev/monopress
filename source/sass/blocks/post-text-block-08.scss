@@ -1,0 +1,82 @@
+.post-text-block-08 {
+
+  @include indents-zero;
+  background-color: var(--main-background);
+  order: 2;
+  padding: 30px;
+  @media (min-width: $tablet-width) {
+    order: unset;
+    padding-top: 16px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 35.9%;
+
+  }
+
+}
+
+.post-text-block-08__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-text-block-08__text {
+  @include indents-zero;
+  padding-top: 26px;
+  font-size: 13px;
+  line-height: 26px;
+  font-family: $fonts-primary;
+  font-weight: normal;
+  color: var(--main-test-color);
+}
+
+.post-text-block-08__header .post-text-block-08__active-word {
+  color: var(--active-word);
+}
+
+.post-text-block-08__header {
+  @include indents-zero;
+  margin-top: 24px;
+  line-height: 1.333;
+  font-size: 14px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 1vw;
+
+  }
+
+  @media (min-width: $large-desktop-width) {
+    font-size: 21px;
+  }
+}
+
+.post-text-block-08__header-link {
+  font-size: inherit;
+  line-height: inherit;
+  font-family: $fonts-secondary;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--header-text-color);
+  @include links-decoration(rgba(var(--header-text-color), 0.8));
+
+}
+
+.post-text-block-08__social-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.post-text-block-08__social-facebook {
+  margin-right: 16px;
+}
+
+.post-text-block-08__social-link-facebook,
+.post-text-block-08__social-link-twitter {
+  font-size: 12px;
+  line-height: 26px;
+  font-family: $fonts-secondary;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--social-link-color);
+}

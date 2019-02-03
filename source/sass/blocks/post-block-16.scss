@@ -1,0 +1,116 @@
+.post-block-16 {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-direction: column;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+  }
+}
+
+.post-block-16__wrapper {
+  right: 0;
+  top: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+
+  @media (min-width: $tablet-width) {
+    width: 69.1%;
+    top: 0;
+    bottom: 0;
+    height: calc(100% - 80px);
+    position: fixed;
+  }
+}
+
+.post-block-16__img {
+  @include indents-zero;
+  overflow: hidden;
+  flex-grow: 1;
+  flex-basis: 0%;
+  flex-shrink: 0;
+  height: 100%;
+}
+.post-block-16__img-item {
+  min-height: 550px;
+  width: 100%;
+  object-fit: cover;
+  @media (min-width: $tablet-width) {
+    min-height: 100%;
+  }
+
+}
+
+.post-block-16__wrapper-link {
+  text-align: right;
+  order: 1;
+  margin: 0;
+}
+
+.post-block-16__item {
+  position: fixed;
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  background-color: rgba($background-white, 0.85);
+  z-index: 100;
+
+  @media (min-width: $tablet-width) {
+    width: 37%;
+    bottom: 50px;
+    right: 50px;
+    left: unset;
+  }
+
+}
+
+.post-block-16__date {
+  position: absolute;
+  left: -5px;
+  font-size: 12px;
+  top: 0;
+  font-family: $fonts-primary;
+  color: $text-color-dark;
+  transform: rotate(90deg);
+  transform-origin: 0 0;
+  @media (min-width: $tablet-width) {
+    left: -10px;
+  }
+}
+
+.post-block-16__date-item {
+  @include indents-zero;
+}
+
+.post-block-16__header {
+  @include indents-zero;
+
+  text-align: right;
+  order: 2;
+  font-size: 16px;
+  line-height: 1.333;
+  padding-top: 30px;
+  @media (min-width: $tablet-width) {
+    font-size: 1.89vw;
+
+  }
+  @media (min-width: $large-desktop-width) {
+    font-size: 30px;
+  }
+}
+
+.post-block-16__header-link {
+  font-family: $fonts-secondary;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--header-text-color);
+  font-weight: bold;
+  text-decoration: none;
+  @include links-decoration(rgba($text-color-dark, 0.8));
+}

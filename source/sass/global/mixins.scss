@@ -1,0 +1,95 @@
+@mixin indents-zero {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin loading-spinner($activeColor: "#212121", $selector: "&::before", $time: 1.5s) {
+  @keyframes spinner {
+    0% {
+      transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    }
+    100% {
+      transform: translate3d(-50%, -50%, 0) rotate(360deg);
+    }
+  }
+  position: relative;
+  &.-loaded {
+    opacity: 0;
+    transition: opacity linear 0.1s;
+  }
+
+  #{$selector} {
+    animation: $time linear infinite spinner;
+    border: solid 3px #eee;
+    border-bottom-color: #{$activeColor};
+    border-radius: 50%;
+    content: "";
+    height: 40px;
+    left: 50%;
+    opacity: inherit;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    transform-origin: center;
+    width: 40px;
+    will-change: transform;
+  }
+}
+
+@mixin media-divider($property, $value) {
+
+  $base-size: $large-desktop-width;
+  $devider: $base-size / $value;
+  @media (min-width: $mobile-width) {
+    #{$property}: $xs-screen / $devider;
+  }
+
+  @media (min-width: $tablet-width) {
+    #{$property}: $md-screen / $devider;
+  }
+
+  @media (min-width: $desktop-width) {
+    #{$property}: $lg-screen / $devider;
+  }
+
+  @media (min-width: $large-desktop-width) {
+    #{$property}: $xl-screen / $devider;
+  }
+}
+
+@mixin html-vars($var, $value) {
+  --#{$var}: #{$value};
+}
+
+@mixin links-decoration($var) {
+  transition: 0.3s all ease;
+  &:hover {
+    border-bottom-width: 0.5px;
+    border-bottom-color: #{$var};
+    border-bottom-style: solid;
+    color: #{$var};
+  }
+}
+
+@mixin links-decoration-bottom-line($time: "0.3", $bottom: "-4px") {
+  position: relative;
+  &::before {
+    position: absolute;
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: #{$bottom};
+    content: " ";
+    background: $background-dark;
+    transition: all #{$time}s;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}
+
+@mixin button-reset(){
+  border:none;
+  background: none;
+}
