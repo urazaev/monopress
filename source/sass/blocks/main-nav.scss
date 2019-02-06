@@ -126,7 +126,7 @@
   }
 }
 
-.main-nav__link {
+.main-nav__link, .menu-item a {
   position: relative;
   font-size: 14px;
   color: inherit;
@@ -151,16 +151,16 @@
       width: 100%;
     }
   }
+}
 
-  &--top {
-    display: block;
-    @media (min-width: $tablet-width) {
-      display: inline;
-    }
+.menu-item-has-children a {
+  display: block;
+  @media (min-width: $tablet-width) {
+    display: inline;
   }
 }
 
-.main-nav__item {
+.main-nav__item, .menu-item {
   position: relative;
   display: inline;
   margin-right: 14px;
@@ -169,14 +169,14 @@
   list-style: none;
   white-space: nowrap;
 
-  &--opened {
+  &--opened, &-opened {
     @media (max-width: $mobile-width-only) {
       padding-bottom: 0;
     }
   }
 
   @media (min-width: $tablet-width) {
-    &--active a::before {
+    &--active a::before, .current-menu-item a::before {
       content: "";
       position: absolute;
       left: 0;
@@ -190,8 +190,9 @@
   }
 }
 
-.main-nav__list.main-nav__wrapper, .menu.menu-wrapper  {
+.menu {
   position: relative;
+  flex-wrap: wrap;
   display: none;
   flex-direction: column;
   @include indents-zero;
@@ -199,8 +200,9 @@
   width: 100%;
   text-transform: uppercase;
 
-  &-opened, &-nojs {
-    display: flex;
+  .sub-menu .sub-menu {
+    position: relative;
+    top: 0;
   }
 
   @media (min-width: $tablet-width) {
@@ -213,49 +215,60 @@
   }
 
   @media (min-width: $desktop-width) {
-    justify-content: flex-start;
-    margin-left: 27.8%;
+    justify-content: center;
+    //margin-left: 27.8%;
   }
 
 }
 
-.main-nav__list {
+.menu-opened, .menu-nojs, .menu-wrapper-opened, .menu-wrapper-nojs, .menu-item-has-children-opened .sub-menu{
+  display: flex !important;
+}
+
+.menu ul {
   @include indents-zero;
   margin-top: 5px;
   text-transform: none;
+}
 
-  &--lvl2 .main-nav__link {
-    height: auto;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    line-height: 1.375em;
-    padding-left: 8px;
+.sub-menu {
+  position: unset;
+  width: 100%;
+  height: 0;
+  padding: 0;
+  z-index: 100;
+  left: 0;
+  overflow: hidden;
+  transform: translateY(-10px);
+  background: var(--header-background);
 
-    &:hover {
-      opacity: 0.7;
-    }
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    min-width: 300px;
   }
+}
 
-  &--lvl2 {
-    position: unset;
-    width: 100%;
-    height: 0;
-    padding: 0;
-    z-index: 100;
-    left: 0;
-    overflow: hidden;
-    transform: translateY(-10px);
-    background: var(--header-background);
+.menu-item-has-children-opened .sub-menu {
+  height: auto;
+  flex-direction: column;
+}
 
-    @media (min-width: $tablet-width) {
-      position: absolute;
-      min-width: 300px;
-    }
+.main-nav__link, .sub-menu a {
+  height: auto;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 1.375em;
+  padding-left: 8px;
+
+  &:hover {
+    opacity: 0.7;
   }
 }
 
 .main-nav__item--opened .main-nav__list--lvl2,
-.main-nav__item--nojs .main-nav__list--lvl2 {
+.main-nav__item--nojs .main-nav__list--lvl2,
+.menu-wrapper-nojs li .sub-menu,
+.menu-wrapper-opened li .sub-menu {
   display: block;
   opacity: 1;
   top: 23px;
@@ -269,11 +282,13 @@
   }
 }
 
+//TODO: next code do
+
 .main-nav__item--closed .main-nav__list--lvl2 {
   display: none;
 }
 
-.main-nav__list--lvl2 .main-nav__item {
+.main-nav__list--lvl2 .main-nav__item, .sub-menu .menu-item {
   display: flex;
   flex-direction: column;
   color: inherit;
@@ -281,12 +296,12 @@
 }
 
 @media (min-width: $tablet-width) {
-  .main-nav__item:hover .main-nav__list--lvl2 {
+  .main-nav__item:hover .main-nav__list--lvl2, .menu-item-has-children:hover .sub-menu {
     display: block;
     transform: translateY(0);
     transition: 0.3s;
     opacity: 1;
-    top: 23px;
+    top: 24px;
     height: auto;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -294,7 +309,7 @@
     z-index: 200;
   }
 
-  .main-nav__list--lvl2 .main-nav__link::before {
+  .main-nav__list--lvl2 .main-nav__link::before, .sub-menu a:before {
     position: relative;
     display: inline-block;
     width: 0;
@@ -302,9 +317,14 @@
     background: var(--header-text-color);
   }
 
-  .main-nav__list--lvl2 .main-nav__link:hover::before {
+  .main-nav__list--lvl2 .main-nav__link:hover::before, .sub-menu a:hover::before {
     width: 10px;
     transition: 0.5s;
     margin-right: 5px;
   }
+}
+
+.menu-item .sub-menu .sub-menu {
+  top: 0 !important;
+  background-color: transparent !important;
 }

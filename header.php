@@ -104,81 +104,12 @@ global $theme_options;
               <?php
               wp_nav_menu(array(
                 'container' => false,
-                'menu_id' => 'up-demo-top-menu',
-                'menu_class' => 'menu menu-wrapper main-nav__wrapper-opened main-nav__wrapper-nojs',
+                'menu' => esc_html($theme_options['main-menu-select']),
+                'menu_id' => esc_html($theme_options['main-menu-select']),
+                'menu_class' => 'menu menu-wrapper menu-wrapper-opened menu-wrapper-nojs',
                 'echo' => true,
               ));
               ?>
-
-              <!--                            <ul class="main-nav__list main-nav__wrapper main-nav__wrapper--opened main-nav__wrapper--nojs header-animate">-->
-              <!--                                <li class="main-nav__item main-nav__item--nojs main-nav__item--opened main-nav__item--parrent">-->
-              <!--                                    <a-->
-              <!--                                            class="main-nav__link main-nav__link--top" href="#">Home</a>-->
-              <!--                                    <ul class="main-nav__list main-nav__list--lvl2">-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="home-page-v1.html">Lifestyle</a>-->
-              <!--                                        </li>-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="home-page-v2.html">Fashion</a>-->
-              <!--                                        </li>-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="home-page-v3.html">Food-->
-              <!--                                                full page</a></li>-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="home-page-v4.html">Food-->
-              <!--                                                grid</a></li>-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="home-page-v5.html">Interrior-->
-              <!--                                                boxed</a></li>-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="home-page-v6.html">Interrior-->
-              <!--                                                wide</a></li>-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="home-page-v7.html">Personal</a>-->
-              <!--                                        </li>-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="home-page-v8.html">Personal-->
-              <!--                                                Inverse</a></li>-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="home-page-v9.html">Cryptocurrency</a>-->
-              <!--                                        </li>-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="home-page-v10.html">Featured</a>-->
-              <!--                                        </li>-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="home-page-v11.html">Featured-->
-              <!--                                                inverse</a></li>-->
-              <!--                                    </ul>-->
-              <!--                                </li>-->
-              <!--                                <li class="main-nav__item main-nav__item--nojs main-nav__item--opened main-nav__item--parrent">-->
-              <!--                                    <a-->
-              <!--                                            class="main-nav__link main-nav__link--top" href="#">About</a>-->
-              <!--                                    <ul class="main-nav__list main-nav__list--lvl2">-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="about-page-v1.html">About-->
-              <!--                                                light</a></li>-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="about-page-v2.html">About-->
-              <!--                                                dark</a></li>-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="about-page-v3.html">About-->
-              <!--                                                colored</a></li>-->
-              <!--                                    </ul>-->
-              <!--                                </li>-->
-              <!--                                <li class="main-nav__item main-nav__item--nojs main-nav__item--opened main-nav__item--parrent">-->
-              <!--                                    <a-->
-              <!--                                            class="main-nav__link main-nav__link--top" href="#">Post</a>-->
-              <!--                                    <ul class="main-nav__list main-nav__list--lvl2">-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="post-page-v1.html">Layout-->
-              <!--                                                1</a></li>-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="post-page-v2.html">Layout-->
-              <!--                                                2</a></li>-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="post-page-v3.html">Layout-->
-              <!--                                                3</a></li>-->
-              <!--                                    </ul>-->
-              <!--                                </li>-->
-              <!--                                <li class="main-nav__item main-nav__item--nojs main-nav__item--opened main-nav__item--parrent">-->
-              <!--                                    <a-->
-              <!--                                            class="main-nav__link main-nav__link--top" href="#">Portfolio</a>-->
-              <!--                                    <ul class="main-nav__list main-nav__list--lvl2">-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="portfolio-v1.html">Masonry</a>-->
-              <!--                                        </li>-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="portfolio-v2.html">Clean-->
-              <!--                                                grid</a></li>-->
-              <!--                                        <li class="main-nav__item"><a class="main-nav__link" href="portfolio-v3.html">Dark-->
-              <!--                                                background</a></li>-->
-              <!--                                    </ul>-->
-              <!--                                </li>-->
-              <!--                                <li class="main-nav__item main-nav__item--nojs main-nav__item--opened"><a-->
-              <!--                                            class="main-nav__link main-nav__link--top"-->
-              <!--                                            href="contacts.html">Contact</a></li>-->
-              <!--                            </ul>-->
             </nav>
             <?php if ($theme_options['main-menu-date'] == 1) { ?>
               <div class="date date--hor header-animate"><?php echo date('M d', current_time('timestamp', 1)) ?></div>

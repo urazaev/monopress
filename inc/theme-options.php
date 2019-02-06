@@ -260,7 +260,7 @@ Redux::setArgs($opt_name, $args);
 
 // -> START Header
 Redux::setSection($opt_name, array(
-    'title' => __('Header', 'bcn'),
+    'title' => __('+ Header', 'bcn'),
     'id' => 'header',
     'desc' => __('Header options', 'bcn'),
     'icon' => 'el el-adjust-alt'
@@ -274,7 +274,7 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'header-layout',
             'type' => 'image_select',
-            'title' => __('+ Header style', 'bcn'),
+            'title' => __('Header style', 'bcn'),
 //            TODO: paste icons
             'subtitle' => __('Select the layout in which the header elements will be arranged', 'bcn'),
             'options' => array(
@@ -292,7 +292,7 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'header-bg-title',
             'type' => 'section',
-            'title' => __('+ Header background', 'bcn'),
+            'title' => __('Header background', 'bcn'),
             'subtitle' => __('You can overwrite the template on each block and widget.', 'bcn'),
             'indent' => true, // Indent all options below until the next 'section' option is set.
             'output' => 'header',
@@ -324,13 +324,13 @@ Redux::setSection($opt_name, array(
             'id' => 'main-menu-select',
             'type' => 'select',
             'data' => 'menus',
-            'title' => __('- Header menu (main)', 'bcn'),
+            'title' => __('Header menu (main)', 'bcn'),
             'subtitle' => __('Select a menu for the main header section', 'bcn'),
         ),
         array(
             'id' => 'main-menu-sticky',
             'type' => 'switch',
-            'title' => __('+ Sticky menu', 'bcn'),
+            'title' => __('Sticky menu', 'bcn'),
             'subtitle' => __('How to display the header menu on scroll', 'bcn'),
             'default' => 'false',
             'tiles' => true,
@@ -354,7 +354,7 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'main-menu-date',
             'type' => 'switch',
-            'title' => __('+ Show date', 'bcn'),
+            'title' => __('Show date', 'bcn'),
             'subtitle' => __('Hide or show the date in the top menu', 'bcn'),
             'default' => 1,
             'on' => 'Enabled',
@@ -363,7 +363,7 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'main-menu-weather',
             'type' => 'switch',
-            'title' => __('+ Show weather', 'bcn'),
+            'title' => __('Show weather', 'bcn'),
             'subtitle' => __('Hide or show the weather info in the top menu', 'bcn'),
             'default' => 1,
             'on' => 'Enabled',
@@ -372,7 +372,7 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'main-menu-search',
             'type' => 'switch',
-            'title' => __('+ Show search icon', 'bcn'),
+            'title' => __('Show search icon', 'bcn'),
             'subtitle' => __('Show or hide search icon', 'bcn'),
             'description' => __('Hide or show the search dialog info in the top menu.', 'bcn'),
             'default' => 1,
@@ -382,7 +382,7 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'main-menu-flip',
             'type' => 'switch',
-            'title' => __('+ Show flip panel', 'bcn'),
+            'title' => __('Show flip panel', 'bcn'),
             'subtitle' => __('Show or hide the flip', 'bcn'),
             'description' => __('The flip panel uses sidebar to show information. To add content to the flip panel go to the widgets section and drag widget to the Flip Panel sidebar.', 'bcn'),
             'default' => 1,
@@ -412,7 +412,7 @@ Redux::setSection($opt_name, array(
 
 
 Redux::setSection($opt_name, array(
-    'title' => __('++ Logo & favicon ', 'bcn'),
+    'title' => __('Logo & favicon ', 'bcn'),
     'id' => 'logo-favicon',
     'subsection' => true,
     'fields' => array(
@@ -427,7 +427,7 @@ Redux::setSection($opt_name, array(
             'id' => 'favicon',
             'type' => 'media',
             'url' => true,
-            'title' => __('+ Site favicon', 'bcn'),
+            'title' => __('Site favicon', 'bcn'),
             'compiler' => 'true',
             'subtitle' => __('Optional - upload a favicon image .png', 'bcn'),
         ),
@@ -531,7 +531,7 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-    'title' => __('++ Ios bookmarklet', 'bcn'),
+    'title' => __('Ios bookmarklet', 'bcn'),
     'id' => 'ios-bookmarklet',
     'desc' => __('The bookmarklets work on iOS and Android. When a user adds your site to the home screen, the phone will download one of the icons from here (based on the screen size and device type) and your site will appear with that icon on the homes creen', 'bcn'),
     'subsection' => true,
@@ -540,7 +540,7 @@ Redux::setSection($opt_name, array(
             'id' => 'bookmarklet-76',
             'type' => 'media',
             'url' => true,
-            'title' => __('+Image 76 x 76', 'bcn'),
+            'title' => __('Image 76 x 76', 'bcn'),
             'compiler' => 'true',
             //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
             'subtitle' => __('Upload your icon (76 x 76px).png', 'bcn'),
@@ -549,7 +549,7 @@ Redux::setSection($opt_name, array(
             'id' => 'bookmarklet-114',
             'type' => 'media',
             'url' => true,
-            'title' => __('+Image 114 x 114', 'bcn'),
+            'title' => __('Image 114 x 114', 'bcn'),
             'compiler' => 'true',
             //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
             'subtitle' => __('Upload your icon (114 x 114px).png', 'bcn'),
@@ -558,7 +558,7 @@ Redux::setSection($opt_name, array(
             'id' => 'bookmarklet-120',
             'type' => 'media',
             'url' => true,
-            'title' => __('+Image 120 x 120', 'bcn'),
+            'title' => __('Image 120 x 120', 'bcn'),
             'compiler' => 'true',
             //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
             'subtitle' => __('Upload your icon (120 x 120px).png', 'bcn'),
@@ -567,7 +567,7 @@ Redux::setSection($opt_name, array(
             'id' => 'bookmarklet-144',
             'type' => 'media',
             'url' => true,
-            'title' => __('+Image 144 x 144', 'bcn'),
+            'title' => __('Image 144 x 144', 'bcn'),
             'compiler' => 'true',
             //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
             'subtitle' => __('Upload your icon (144 x 144px).png', 'bcn'),
@@ -576,7 +576,7 @@ Redux::setSection($opt_name, array(
             'id' => 'bookmarklet-152',
             'type' => 'media',
             'url' => true,
-            'title' => __('+Image 152 x 152', 'bcn'),
+            'title' => __('Image 152 x 152', 'bcn'),
             'compiler' => 'true',
             //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
             'subtitle' => __('Upload your icon (152 x 152px).png', 'bcn'),
