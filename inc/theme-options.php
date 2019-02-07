@@ -843,62 +843,62 @@ Redux::setSection($opt_name, array(
             'on' => 'Enabled',
             'off' => 'Disabled',
         ),
-        array(
-            'required' => array('subfooter-on', '=', '1'),
-            'id' => 'subfooter-layout',
-            'type' => 'image_select',
-            'title' => __('Sub footer templates', 'bcn'),
-            'subtitle' => __('Set the sub footer template', 'bcn'),
-//            'desc' => __('This uses some of the built in images, you can use them for layout options.', 'bcn'),
-            //Must provide key => value(array:title|img) pairs for radio options
-            'options' => array(
-//                TODO: set the sub footer templates
-                '1' => array(
-                    'alt' => '1 Column',
-                    'img' => get_template_directory_uri() . '/images/admin/preview-01.jpg'
-                ),
-                '2' => array(
-                    'alt' => '2 Column Left',
-                    'img' => get_template_directory_uri() . '/images/admin/preview-02.jpg'
-                ),
-                '3' => array(
-                    'alt' => '2 Column Right',
-                    'img' => get_template_directory_uri() . '/images/admin/preview-03.jpg'
-                ),
-                '4' => array(
-                    'alt' => '3 Column Middle',
-                    'img' => get_template_directory_uri() . '/images/admin/preview-04.jpg'
-                ),
-                '5' => array(
-                    'alt' => '3 Column Left',
-                    'img' => get_template_directory_uri() . '/images/admin/preview-05.jpg'
-                ),
-                '6' => array(
-                    'alt' => '3 Column Right',
-                    'img' => get_template_directory_uri() . '/images/admin/preview-06.jpg'
-                ),
-                '7' => array(
-                    'alt' => '3 Column Right',
-                    'img' => get_template_directory_uri() . '/images/admin/preview-07.jpg'
-                ),
-                '8' => array(
-                    'alt' => '3 Column Right',
-                    'img' => get_template_directory_uri() . '/images/admin/preview-09.jpg'
-                ),
-                '9' => array(
-                    'alt' => '3 Column Right',
-                    'img' => get_template_directory_uri() . '/images/admin/preview-11.jpg'
-                ),
-            ),
-            'default' => '2',
-            'tiles' => true,
-        ),
+//        array(
+//            'required' => array('subfooter-on', '=', '1'),
+//            'id' => 'subfooter-layout',
+//            'type' => 'image_select',
+//            'title' => __('Sub footer templates', 'bcn'),
+//            'subtitle' => __('Set the sub footer template', 'bcn'),
+////            'desc' => __('This uses some of the built in images, you can use them for layout options.', 'bcn'),
+//            //Must provide key => value(array:title|img) pairs for radio options
+//            'options' => array(
+////                TODO: set the sub footer templates
+//                '1' => array(
+//                    'alt' => '1 Column',
+//                    'img' => get_template_directory_uri() . '/images/admin/preview-01.jpg'
+//                ),
+//                '2' => array(
+//                    'alt' => '2 Column Left',
+//                    'img' => get_template_directory_uri() . '/images/admin/preview-02.jpg'
+//                ),
+//                '3' => array(
+//                    'alt' => '2 Column Right',
+//                    'img' => get_template_directory_uri() . '/images/admin/preview-03.jpg'
+//                ),
+//                '4' => array(
+//                    'alt' => '3 Column Middle',
+//                    'img' => get_template_directory_uri() . '/images/admin/preview-04.jpg'
+//                ),
+//                '5' => array(
+//                    'alt' => '3 Column Left',
+//                    'img' => get_template_directory_uri() . '/images/admin/preview-05.jpg'
+//                ),
+//                '6' => array(
+//                    'alt' => '3 Column Right',
+//                    'img' => get_template_directory_uri() . '/images/admin/preview-06.jpg'
+//                ),
+//                '7' => array(
+//                    'alt' => '3 Column Right',
+//                    'img' => get_template_directory_uri() . '/images/admin/preview-07.jpg'
+//                ),
+//                '8' => array(
+//                    'alt' => '3 Column Right',
+//                    'img' => get_template_directory_uri() . '/images/admin/preview-09.jpg'
+//                ),
+//                '9' => array(
+//                    'alt' => '3 Column Right',
+//                    'img' => get_template_directory_uri() . '/images/admin/preview-11.jpg'
+//                ),
+//            ),
+//            'default' => '2',
+//            'tiles' => true,
+//        ),
         array(
             'required' => array('subfooter-on', '=', '1'),
             'id' => 'subfooter-text',
             'type' => 'textarea',
-            'title' => __('Footer copyright text', 'bcn'),
-            'subtitle' => __('Set footer copyright text', 'bcn'),
+            'title' => __('Sub footer copyright text', 'bcn'),
+            'subtitle' => __('Set sub footer copyright text', 'bcn'),
         ),
         array(
             'required' => array('subfooter-on', '=', '1'),

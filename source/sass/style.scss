@@ -4,6 +4,9 @@
 @import "../../node_modules/uikit/src/scss/mixins.scss";
 @import "../../node_modules/uikit/src/scss/uikit.scss";
 
+@import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
+//@import "../../node_modules/bootstrap/scss/_type.scss";
+
 @import "global/mixins";
 @import "global/global.scss";
 @import "global/animation.scss";
@@ -69,4 +72,7 @@
 @import "blocks/loading-spinner.scss";
 
 @import "blocks/portfolio.scss";
+
+@import "blocks/footer.scss";
+@import "blocks/sub-footer.scss";
 

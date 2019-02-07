@@ -1,0 +1,25 @@
+.sub-footer {
+  background-color: var(--header-background);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: var(--sidebar-text-color);
+}
+
+.footer-menu {
+  .menu-item {
+    padding-bottom: 0;
+  }
+  margin-top: 0 !important;
+}
+
+.sub-footer-right {
+  .menu {
+    justify-content: flex-end !important;
+  }
+}
+
+.sub-footer-center {
+  .menu {
+    justify-content: center !important;
+  }
+}
