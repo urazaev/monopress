@@ -733,7 +733,7 @@ Redux::setSection($opt_name, array(
             'required' => array('footer-on', '=', '1'),
             'id' => 'footer-email',
             'type' => 'text',
-            'title' => __('Your email address', 'bcn'),
+            'title' => __('+ Your email address', 'bcn'),
             'subtitle' => __('Your email address', 'bcn'),
             'description' => __('Your contact email address', 'bcn'),
         ),
@@ -2768,7 +2768,7 @@ Redux::setSection($opt_name, array(
         array(
             'id' => 'fonts-footer-text',
             'type' => 'typography',
-            'title' => __('Footer text', 'bcn'),
+            'title' => __('+ Footer text', 'bcn'),
             'google' => true,
             'output' => array(''),
             'text-align' => false,

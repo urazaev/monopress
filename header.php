@@ -65,7 +65,7 @@ global $theme_options;
         <header class="page-header"
                 <?php if ($theme_options['main-menu-sticky'] == 1) { ?>data-uk-sticky<?php } ?>>
           <div class="page-header__wrapper"
-               data-uk-scrollspy="target: > .header-animate; cls:uk-animation-slide-top-small; delay: 600">
+               data-uk-scrollspy="target: > .header-animate; cls:uk-animation-slide-top-small; delay: 800">
             <nav class="main-nav main-nav--hor">
               <div class="main-nav__hamburger-wrapper">
                 <button class="icon main-nav__hamburger" id="hamburger-one">

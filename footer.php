@@ -107,18 +107,46 @@ if (class_exists('ReduxFramework')) {
       <div class="row">
         <div class="col text-center">
           <p class="footer-logo">
-            footer-logo
-          </p>
-          <p>
+            <a class="main-nav__logo main-nav__logo--hor header-animate"
+               href="<?php echo esc_url(home_url('/')); ?>">
 
+              <?php
+              if ($theme_options['logo-type'] == '0') {
+                echo esc_attr($theme_options['logo-txt']);
+              } else {
+                echo "<picture>";
+                if ($theme_options['logo-mobile'] != '' && $theme_options['logo-mobile']['url'] != '') { ?>
+
+                  <source media="(max-width: 767px)"
+                          srcset="<?php echo esc_html($theme_options['logo-mobile']['url']);
+                          if (esc_html($theme_options['logo-mobile']['url'] != '')) {
+                            echo ', ' . esc_html($theme_options['logo-mobile-retina']['url']) . ' 2x';
+                          } ?>">
+                  <?php
+                }
+                if ($theme_options['logo'] != '' && $theme_options['logo']['url'] != '') {
+                  echo '<img class="main-nav__logo-img" src="' . esc_html($theme_options['logo']['url']) . '" ' . (($theme_options['logo-retina']['url'] != '') ? 'srcset="' . esc_html($theme_options['logo-retina']['url']) . ' 2x"' : '') . ' alt="' . (($theme_options['logo-alt'] != '') ? '' . esc_html($theme_options['logo-alt']) . '' : '' . get_bloginfo('description', 'display') . '') . '" title="' . (($theme_options['logo-title'] != '') ? '' . esc_html($theme_options['logo-title']) . '' : '' . get_bloginfo('description', 'display') . '') . '">';
+                }
+                echo "</picture>";
+              }
+              ?>
+            </a>
           </p>
           <?php
           if ($theme_options['footer-text'] != '') {
-            ?>
-            <p>
-              <?php echo esc_html($theme_options['footer-text']); ?>
-            </p>
-            <?php
+            echo '<p class="footer-txt">' .esc_html($theme_options['footer-text']). '</p>';
+          }
+          ?>
+
+          <?php
+          if ($theme_options['footer-email'] != '') {
+            echo '<p class="footer-contacts">Contact us <a href="mailto:' .esc_html($theme_options['footer-email']). '">'.esc_html($theme_options['footer-email']).'</a></p>';
+          }
+          ?>
+
+          <?php
+          if ($theme_options['footer-social'] == '1') {
+            echo '<p class="footer-socials"><ul class="social-listing"><li><a href="#">item</a><a href="#">item</a></li></ul></a></p>';
           }
           ?>
 

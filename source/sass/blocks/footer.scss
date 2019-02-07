@@ -1,6 +1,23 @@
 .footer {
-  .footer-first {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: var(--header-background);
+  a {
+    color: var(--sidebar-text-color);
+  }
+  &.footer-first {
     background-color: #0e0e0e;
     color: #eaeaea;
+    .footer-txt {
+
+    }
+    .footer-contacts {
+      a {
+        &:hover {
+          text-decoration: underline;
+          color: #ff6600;
+        }
+      }
+    }
   }
 }
