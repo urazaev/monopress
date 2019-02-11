@@ -101,12 +101,155 @@ global $theme_options;
 <?php wp_footer();
 if (class_exists('ReduxFramework')) {
   if ($theme_options['footer-on'] == 1) {
+    if ($theme_options['footer-layout'] == 'http://bcn:8888/wp-content/themes/bcn/images/admin/preview-01.jpg') {
+      ?>
+      <footer class="container-fluid footer footer-first">
+        <div class="row">
+          <div class="col text-center">
+            <p class="footer-logo">
+              <a class="main-nav__logo main-nav__logo--hor header-animate"
+                 href="<?php echo esc_url(home_url('/')); ?>">
 
-    ?>
-    <footer class="container-fluid footer footer-first">
-      <div class="row">
-        <div class="col text-center">
-          <p class="footer-logo">
+                <?php
+                if ($theme_options['logo-type'] == '0') {
+                  echo esc_attr($theme_options['logo-txt']);
+                } else {
+                  echo "<picture>";
+                  if ($theme_options['logo-mobile'] != '' && $theme_options['logo-mobile']['url'] != '') { ?>
+
+                    <source media="(max-width: 767px)"
+                            srcset="<?php echo esc_html($theme_options['logo-mobile']['url']);
+                            if (esc_html($theme_options['logo-mobile']['url'] != '')) {
+                              echo ', ' . esc_html($theme_options['logo-mobile-retina']['url']) . ' 2x';
+                            } ?>">
+                    <?php
+                  }
+
+                  if ($theme_options['footer-logo'] != '' && $theme_options['footer-logo']['url'] != '') {
+                    echo '<img class="footer-logo-img-item" src="' . esc_html($theme_options['footer-logo']['url']) . '" ' . (($theme_options['footer-logo-retina']['url'] != '') ? 'srcset="' . esc_html($theme_options['footer-logo-retina']['url']) . ' 2x"' : '') . ' alt="' . (($theme_options['footer-logo-alt'] != '') ? '' . esc_html($theme_options['footer-logo-alt']) . '' : '' . get_bloginfo('description', 'display') . '') . '" title="' . (($theme_options['footer-logo-title'] != '') ? '' . esc_html($theme_options['footer-logo-title']) . '' : '' . get_bloginfo('description', 'display') . '') . '">';
+                  } elseif ($theme_options['logo'] != '' && $theme_options['logo']['url'] != '') {
+                    echo '<img class="footer-logo-img-item" src="' . esc_html($theme_options['logo']['url']) . '" ' . (($theme_options['logo-retina']['url'] != '') ? 'srcset="' . esc_html($theme_options['logo-retina']['url']) . ' 2x"' : '') . ' alt="' . (($theme_options['footer-logo-alt'] != '') ? '' . esc_html($theme_options['footer-logo-alt']) . '' : '' . get_bloginfo('description', 'display') . '') . '" title="' . (($theme_options['footer-logo-title'] != '') ? '' . esc_html($theme_options['footer-logo-title']) . '' : '' . get_bloginfo('description', 'display') . '') . '">';
+                  }
+                  echo "</picture>";
+                }
+                ?>
+              </a>
+            </p>
+            <?php
+            if ($theme_options['footer-text'] != '') {
+              echo '<p class="footer-txt">' . esc_html($theme_options['footer-text']) . '</p>';
+            }
+
+            if ($theme_options['footer-email'] != '') {
+              echo '<p class="footer-contacts">Contact us <a href="mailto:' . esc_html($theme_options['footer-email']) . '">' . esc_html($theme_options['footer-email']) . '</a></p>';
+            }
+
+            if ($theme_options['footer-social'] == '1') {
+              ?>
+
+              <ul class="social-listing">
+                <!--                TODO include all socials into loop -->
+                <?php if (isset($theme_options['social-twitter'])) {
+                  echo '<li><a href="#' . esc_html($theme_options['social-twitter']) . '"><i class="uk-icon" data-uk-icon="twitter"></i></a></li>';
+                } ?>
+                <?php if (isset($theme_options['social-facebook'])) {
+                  echo '<li><a href="#' . esc_html($theme_options['social-facebook']) . '"><i class="uk-icon" data-uk-icon="facebook"></i></a></li>';
+                } ?>
+                <?php if (isset($theme_options['social-instagram'])) {
+                  echo '<li><a href="#' . esc_html($theme_options['social-instagram']) . '"><i class="uk-icon" data-uk-icon="instagram"></i></a></li>';
+                } ?>
+                <?php if (isset($theme_options['social-youtube'])) {
+                  echo '<li><a href="#' . esc_html($theme_options['social-youtube']) . '"><i class="uk-icon" data-uk-icon="youtube"></i></a></li>';
+                } ?>
+                <?php if (isset($theme_options['social-behance'])) {
+                  echo '<li><a href="#' . esc_html($theme_options['social-behance']) . '"><i class="uk-icon" data-uk-icon="behance"></i></a></li>';
+                } ?>
+              </ul>
+              <?php
+            }
+            ?>
+          </div>
+        </div>
+      </footer>
+
+      <?php
+    }
+//    TODO: optimize layout setting - maybe podsomtret
+    if ($theme_options['footer-layout'] == 'http://bcn:8888/wp-content/themes/bcn/images/admin/preview-02.jpg') { ?>
+      <footer class="container-fluid footer footer-second">
+        <div class="row">
+          <div class="col">
+            <p class="footer-logo">
+              <a class="main-nav__logo main-nav__logo--hor header-animate"
+                 href="<?php echo esc_url(home_url('/')); ?>">
+
+                <?php
+                if ($theme_options['logo-type'] == '0') {
+                  echo esc_attr($theme_options['logo-txt']);
+                } else {
+                  echo "<picture>";
+                  if ($theme_options['logo-mobile'] != '' && $theme_options['logo-mobile']['url'] != '') { ?>
+
+                    <source media="(max-width: 767px)"
+                            srcset="<?php echo esc_html($theme_options['logo-mobile']['url']);
+                            if (esc_html($theme_options['logo-mobile']['url'] != '')) {
+                              echo ', ' . esc_html($theme_options['logo-mobile-retina']['url']) . ' 2x';
+                            } ?>">
+                    <?php
+                  }
+
+                  if ($theme_options['footer-logo'] != '' && $theme_options['footer-logo']['url'] != '') {
+                    echo '<img class="footer-logo-img-item" src="' . esc_html($theme_options['footer-logo']['url']) . '" ' . (($theme_options['footer-logo-retina']['url'] != '') ? 'srcset="' . esc_html($theme_options['footer-logo-retina']['url']) . ' 2x"' : '') . ' alt="' . (($theme_options['footer-logo-alt'] != '') ? '' . esc_html($theme_options['footer-logo-alt']) . '' : '' . get_bloginfo('description', 'display') . '') . '" title="' . (($theme_options['footer-logo-title'] != '') ? '' . esc_html($theme_options['footer-logo-title']) . '' : '' . get_bloginfo('description', 'display') . '') . '">';
+                  } elseif ($theme_options['logo'] != '' && $theme_options['logo']['url'] != '') {
+                    echo '<img class="footer-logo-img-item" src="' . esc_html($theme_options['logo']['url']) . '" ' . (($theme_options['logo-retina']['url'] != '') ? 'srcset="' . esc_html($theme_options['logo-retina']['url']) . ' 2x"' : '') . ' alt="' . (($theme_options['footer-logo-alt'] != '') ? '' . esc_html($theme_options['footer-logo-alt']) . '' : '' . get_bloginfo('description', 'display') . '') . '" title="' . (($theme_options['footer-logo-title'] != '') ? '' . esc_html($theme_options['footer-logo-title']) . '' : '' . get_bloginfo('description', 'display') . '') . '">';
+                  }
+                  echo "</picture>";
+                }
+                ?>
+              </a>
+            </p>
+          </div>
+
+          <?php
+          if ($theme_options['footer-text'] != '') {
+            echo '<div class="col">' . esc_html($theme_options['footer-text']) . '</div>';
+          }
+
+          if ($theme_options['footer-social'] == '1') {
+            ?>
+            <div class="col">
+              <ul class="social-listing justify-right">
+                <!--  TODO include all socials into loop -->
+                <?php if (isset($theme_options['social-twitter'])) {
+                  echo '<li><a href="#' . esc_html($theme_options['social-twitter']) . '"><i class="uk-icon" data-uk-icon="twitter"></i></a></li>';
+                } ?>
+                <?php if (isset($theme_options['social-facebook'])) {
+                  echo '<li><a href="#' . esc_html($theme_options['social-facebook']) . '"><i class="uk-icon" data-uk-icon="facebook"></i></a></li>';
+                } ?>
+                <?php if (isset($theme_options['social-instagram'])) {
+                  echo '<li><a href="#' . esc_html($theme_options['social-instagram']) . '"><i class="uk-icon" data-uk-icon="instagram"></i></a></li>';
+                } ?>
+                <?php if (isset($theme_options['social-youtube'])) {
+                  echo '<li><a href="#' . esc_html($theme_options['social-youtube']) . '"><i class="uk-icon" data-uk-icon="youtube"></i></a></li>';
+                } ?>
+                <?php if (isset($theme_options['social-behance'])) {
+                  echo '<li><a href="#' . esc_html($theme_options['social-behance']) . '"><i class="uk-icon" data-uk-icon="behance"></i></a></li>';
+                } ?>
+              </ul>
+            </div>
+            <?php
+          }
+          ?>
+        </div>
+      </footer>
+      <?php
+    }
+    if ($theme_options['footer-layout'] == 'http://bcn:8888/wp-content/themes/bcn/images/admin/preview-03.jpg') {
+      ?>
+
+      <footer class="container-fluid footer footer-third">
+        <div class="row">
+          <div class="col">
             <a class="main-nav__logo main-nav__logo--hor header-animate"
                href="<?php echo esc_url(home_url('/')); ?>">
 
@@ -124,37 +267,85 @@ if (class_exists('ReduxFramework')) {
                           } ?>">
                   <?php
                 }
-                if ($theme_options['logo'] != '' && $theme_options['logo']['url'] != '') {
-                  echo '<img class="main-nav__logo-img" src="' . esc_html($theme_options['logo']['url']) . '" ' . (($theme_options['logo-retina']['url'] != '') ? 'srcset="' . esc_html($theme_options['logo-retina']['url']) . ' 2x"' : '') . ' alt="' . (($theme_options['logo-alt'] != '') ? '' . esc_html($theme_options['logo-alt']) . '' : '' . get_bloginfo('description', 'display') . '') . '" title="' . (($theme_options['logo-title'] != '') ? '' . esc_html($theme_options['logo-title']) . '' : '' . get_bloginfo('description', 'display') . '') . '">';
+
+                if ($theme_options['footer-logo'] != '' && $theme_options['footer-logo']['url'] != '') {
+                  echo '<img class="footer-logo-img-item" src="' . esc_html($theme_options['footer-logo']['url']) . '" ' . (($theme_options['footer-logo-retina']['url'] != '') ? 'srcset="' . esc_html($theme_options['footer-logo-retina']['url']) . ' 2x"' : '') . ' alt="' . (($theme_options['footer-logo-alt'] != '') ? '' . esc_html($theme_options['footer-logo-alt']) . '' : '' . get_bloginfo('description', 'display') . '') . '" title="' . (($theme_options['footer-logo-title'] != '') ? '' . esc_html($theme_options['footer-logo-title']) . '' : '' . get_bloginfo('description', 'display') . '') . '">';
+                } elseif ($theme_options['logo'] != '' && $theme_options['logo']['url'] != '') {
+                  echo '<img class="footer-logo-img-item" src="' . esc_html($theme_options['logo']['url']) . '" ' . (($theme_options['logo-retina']['url'] != '') ? 'srcset="' . esc_html($theme_options['logo-retina']['url']) . ' 2x"' : '') . ' alt="' . (($theme_options['footer-logo-alt'] != '') ? '' . esc_html($theme_options['footer-logo-alt']) . '' : '' . get_bloginfo('description', 'display') . '') . '" title="' . (($theme_options['footer-logo-title'] != '') ? '' . esc_html($theme_options['footer-logo-title']) . '' : '' . get_bloginfo('description', 'display') . '') . '">';
                 }
                 echo "</picture>";
               }
+
               ?>
             </a>
-          </p>
-          <?php
-          if ($theme_options['footer-text'] != '') {
-            echo '<p class="footer-txt">' .esc_html($theme_options['footer-text']). '</p>';
-          }
-          ?>
 
-          <?php
-          if ($theme_options['footer-email'] != '') {
-            echo '<p class="footer-contacts">Contact us <a href="mailto:' .esc_html($theme_options['footer-email']). '">'.esc_html($theme_options['footer-email']).'</a></p>';
-          }
-          ?>
+            <?php
+            if ($theme_options['footer-text'] != '') {
+              echo '<p class="footer-txt">' . esc_html($theme_options['footer-text']) . '</p>';
+            }
 
-          <?php
-          if ($theme_options['footer-social'] == '1') {
-            echo '<p class="footer-socials"><ul class="social-listing"><li><a href="#">item</a><a href="#">item</a></li></ul></a></p>';
-          }
-          ?>
+            if ($theme_options['footer-email'] != '') {
+              echo '<p class="footer-contacts">Contact us <a href="mailto:' . esc_html($theme_options['footer-email']) . '">' . esc_html($theme_options['footer-email']) . '</a></p>';
+            }
 
+            if ($theme_options['footer-social'] == '1') {
+              ?>
+
+              <ul class="social-listing justify-left">
+                <!--                TODO include all socials into loop -->
+                <?php if (isset($theme_options['social-twitter'])) {
+                  echo '<li><a href="#' . esc_html($theme_options['social-twitter']) . '"><i class="uk-icon" data-uk-icon="twitter"></i></a></li>';
+                } ?>
+                <?php if (isset($theme_options['social-facebook'])) {
+                  echo '<li><a href="#' . esc_html($theme_options['social-facebook']) . '"><i class="uk-icon" data-uk-icon="facebook"></i></a></li>';
+                } ?>
+                <?php if (isset($theme_options['social-instagram'])) {
+                  echo '<li><a href="#' . esc_html($theme_options['social-instagram']) . '"><i class="uk-icon" data-uk-icon="instagram"></i></a></li>';
+                } ?>
+                <?php if (isset($theme_options['social-youtube'])) {
+                  echo '<li><a href="#' . esc_html($theme_options['social-youtube']) . '"><i class="uk-icon" data-uk-icon="youtube"></i></a></li>';
+                } ?>
+                <?php if (isset($theme_options['social-behance'])) {
+                  echo '<li><a href="#' . esc_html($theme_options['social-behance']) . '"><i class="uk-icon" data-uk-icon="behance"></i></a></li>';
+                } ?>
+              </ul>
+              <?php
+            } ?>
+
+
+          </div>
+
+          <div class="col">
+            <h3>Popular posts</h3>
+            <ul class="footer-menu">
+              <li><a href="#">Dive into an Ocean Photographer's World</a></li>
+              <li><a href="#">Save the Oceans, Feed the World!</a></li>
+              <li><a href="#">On the Mysterious Ocean</a></li>
+              <li><a href="#">The Secrets I Find </a></li>
+              <li><a href="#">Dive into an Ocean Photographer's World</a></li>
+              <li><a href="#">What's the Difference Between Weather and
+                  Climate?</a></li>
+            </ul>
+
+
+          </div>
+          <div class="col">
+            <h3>Categories</h3>
+            <ul class="footer-menu">
+              <li><a href="#">Dive into an Ocean Photographer's World</a></li>
+              <li><a href="#">Save the Oceans, Feed the World!</a></li>
+              <li><a href="#">On the Mysterious Ocean</a></li>
+              <li><a href="#">The Secrets I Find </a></li>
+              <li><a href="#">Dive into an Ocean Photographer's World</a></li>
+              <li><a href="#">What's the Difference Between Weather and
+                  Climate?</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
 
-    <?php
+      <?php
+    }
   }
 }
 if (class_exists('ReduxFramework')) {

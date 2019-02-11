@@ -133,9 +133,9 @@ input[type="radio"].visually-hidden {
 }
 
 .justify-left {
-  justify-content: left !important;
+  justify-content: flex-start !important;
 }
 
 .justify-right {
-  justify-content: right !important;
+  justify-content: flex-end !important;
 }
