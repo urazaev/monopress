@@ -134,7 +134,7 @@ function bcn_scripts()
 {
     wp_enqueue_style('bcn-style', get_stylesheet_uri());
 
-    wp_enqueue_style('bcn-theme-style', get_template_directory_uri() . '/css/bcn_style.min.css', array(), time());
+    wp_enqueue_style('bcn-theme-style', get_template_directory_uri() . '/css/style.min.css', array(), time());
 
     //    header libraries
     wp_enqueue_script('bcn-uikit', get_template_directory_uri() . '/js/libraries/uikit.min.js', array(),  time());
