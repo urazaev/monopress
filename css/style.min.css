@@ -2014,6 +2014,7 @@ body.header-shadow{background-color:#fff}
 .flip-block__nav-link{color:inherit}
 .flip-block__nav-link:hover{text-decoration:underline}
 .flip-block__nav-link--active{color:var(--flip-link-active)}
+.widget-title{color:var(--flip-text-color)}
 .loading-spinner{min-height:100vh;position:fixed;z-index:99999;top:0;width:100%;background:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;opacity:1}
 .loading-spinner__item{width:75px;height:75px;position:relative;-webkit-transform:rotateZ(45deg);transform:rotateZ(45deg)}
 .loading-spinner__item .loading-spinner__item-cube{position:relative;-webkit-transform:rotateZ(45deg);transform:rotateZ(45deg)}
@@ -2066,6 +2067,8 @@ body.header-shadow{background-color:#fff}
 .footer.footer-third h3::after{content:"";position:absolute;left:0;width:35px;height:1px;background-color:#ccc;bottom:0}
 .footer.footer-third .footer-logo{margin:0}
 .footer.footer-third .footer-contacts a:hover{text-decoration:underline;color:#f60}
+#sb_instagram{padding:0 !important}
+#sb_instagram #sbi_images{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .sub-footer{background-color:var(--header-background);padding-top:20px;padding-bottom:20px;color:var(--sidebar-text-color)}
 .footer-menu{margin-top:0 !important}
 .footer-menu .menu-item{padding-bottom:0}

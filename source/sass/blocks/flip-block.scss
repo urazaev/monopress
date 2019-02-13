@@ -22,23 +22,23 @@
   width: 100%;
 
   @media (min-width: $tablet-width) {
-    padding: 40px;
-    left: 50%;
-    width: 50%;
+	padding: 40px;
+	left: 50%;
+	width: 50%;
   }
   &--large {
-    @media (min-width: $tablet-width) {
-      padding: 40px;
-      left: 45%;
-      width: 55%;
-    }
+	@media (min-width: $tablet-width) {
+	  padding: 40px;
+	  left: 45%;
+	  width: 55%;
+	}
   }
   &--open {
-    transform: translateX(0);
-    opacity: 1;
-    visibility: unset;
-    display: flex;
-    align-items: flex-start;
+	transform: translateX(0);
+	opacity: 1;
+	visibility: unset;
+	display: flex;
+	align-items: flex-start;
   }
 }
 
@@ -49,14 +49,14 @@
   //padding: 30px;
   padding-top: 30px;
   @media (min-width: $tablet-width) {
-    padding: 60px;
+	padding: 60px;
   }
   & .button {
-    @media (max-width: $mobile-width-only) {
-      text-align: center;
-      min-width: 200px;
-      //margin-bottom: 20px;
-    }
+	@media (max-width: $mobile-width-only) {
+	  text-align: center;
+	  min-width: 200px;
+	  //margin-bottom: 20px;
+	}
   }
 }
 
@@ -73,9 +73,13 @@
 .flip-block__nav-link {
   color: inherit;
   &:hover {
-    text-decoration: underline;
+	text-decoration: underline;
   }
   &--active {
-    color: var(--flip-link-active);
+	color: var(--flip-link-active);
   }
+}
+
+.widget-title {
+  color: var(--flip-text-color);
 }
