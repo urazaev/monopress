@@ -65,7 +65,7 @@ $args = array(
 	// TYPICAL -> Change these values as you need/desire
 	'opt_name' => $opt_name,
 	// This is where your data is stored in the database and also becomes your global variable name.
-	'display_name' => $theme->get('Name'),
+	'display_name'         => 'BCN ' . esc_html__('Options', 'bcn').'' ,
 	// Name that appears at the top of your panel
 	'display_version' => $theme->get('Version'),
 	// Version that appears at the top of your panel
@@ -114,7 +114,7 @@ $args = array(
 	// Force your panel to always open to a specific tab (by id)
 	'page_icon' => 'icon-themes',
 	// Icon displayed in the admin panel next to your menu_title
-	'page_slug' => '',
+	'page_slug' => 'up_options',
 	// Page slug used to denote the panel, will be based off page title then menu title then opt_name if not provided
 	'save_defaults' => true,
 	// On load save the defaults to DB before user clicks save or not

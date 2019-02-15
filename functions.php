@@ -223,3 +223,20 @@ if (defined('JETPACK__VERSION')) {
 if (!isset($theme_options) && file_exists(get_template_directory() . '/inc/theme-options.php')) {
 	require_once(get_template_directory() . '/inc/theme-options.php');
 }
+
+/**
+ * Theme Options css
+ */
+
+function addPanelCSS() {
+	wp_register_style(
+		'redux-custom-css',
+		get_template_directory_uri() . '/css/redux-admin.min.css',
+		array( 'redux-admin-css' ), // Be sure to include redux-admin-css so it's appended after the core css is applied
+		time(),
+		'all'
+	);
+	wp_enqueue_style('redux-custom-css');
+}
+// This example assumes your opt_name is set to redux_demo, replace with your opt_name value
+add_action( 'redux/page/theme_options/enqueue', 'addPanelCSS' );
