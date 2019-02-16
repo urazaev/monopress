@@ -240,3 +240,16 @@ function addPanelCSS() {
 }
 // This example assumes your opt_name is set to redux_demo, replace with your opt_name value
 add_action( 'redux/page/theme_options/enqueue', 'addPanelCSS' );
+
+/**
+ * include templates
+ **/
+
+if (!function_exists('up_get_template')) {
+	/*
+     * get template parts
+     */
+	function up_get_template($template, $name = null){
+		get_template_part( 'template-parts/' . $template, $name);
+	}
+}
