@@ -1168,7 +1168,7 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Categories template', 'bcn'),
+	'title' => __('++ Categories template', 'bcn'),
 	'id' => 'categories-template',
 	'desc' => __('Set the default layout for all the categories.', 'bcn'),
 	'subsection' => true,
@@ -1276,7 +1276,8 @@ Redux::setSection($opt_name, array(
 			'options' => array(
 				'1' => 'Normal pagination',
 				'2' => 'Infinite loading',
-				'3' => 'Infinite loading + Load more',
+//				'3' => 'Infinite loading + Load more',
+//			TODO for newest options
 			),
 			'default' => '1',
 		),

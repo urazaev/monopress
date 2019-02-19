@@ -14,7 +14,6 @@
 
 get_header();
 ?>
-
 	<div class="up-container up-container--fullwidth up-container--home-02 theme-light-gray" id="primary">
 
 		<main class="page-main page-main--home-02" id="main">
@@ -31,7 +30,7 @@ get_header();
 				<button class="control-scroll-only__scroll-button" id="scroll-button" type="button">Scroll</button>
 			</div>
 
-			<section class="post-block-02 theme-white">
+			<section class="post-block-02 theme-white" id="loop-content">
 				<?php
 				if (class_exists('ReduxFramework')) {
 					switch ($theme_options['category-article-display']) {
@@ -65,9 +64,10 @@ get_header();
 					}
 				}
 				?>
-				<div id="content">
-					Lorem ipsum dolor.
-				</div>
+				<?php if ($theme_options['category-pagination'] == 2) { ?>
+					<a id="inifiniteLoader"><img src="<?php bloginfo('template_directory'); ?>/images/ajax-loader.gif"/>
+						Loading more...</a>
+				<?php } ?>
 			</section>
 
 			<?php if ($theme_options['category-sidebar'] == 3) { ?>

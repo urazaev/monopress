@@ -354,7 +354,11 @@ if (class_exists('ReduxFramework')) {
 </div><!-- #page -->
 
 
-<a id="inifiniteLoader">Loading... <img src="<?php bloginfo('template_directory'); ?>/images/ajax-loader.gif" /></a>
+<?php
+wp_footer();
+?>
+<?php if ($theme_options['category-pagination'] == 2) { ?>
+
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		var count = 2;
@@ -370,34 +374,19 @@ if (class_exists('ReduxFramework')) {
 			$.ajax({
 				url: "<?php bloginfo('wpurl') ?>/wp-admin/admin-ajax.php",
 				type:'POST',
-				data: "action=infinite_scroll&page_no="+ pageNumber + '&loop_file=loop',
+				data: "action=infinite_scroll&page_no="+ pageNumber + '&loop_file=template-parts/post-block-02',
 				success: function(html){
 					$('a#inifiniteLoader').hide('1000');
-					$("#content").append(html);    // This will be the div where our content will be loaded
+					$("#loop-content").append(html);    // This will be the div where our content will be loaded
 				}
 			});
 			return false;
 		}
 
 	});
+</script>
 
-</script>
-<script type="text/javascript">
-	var count = 2;
-	var total = <?php echo $wp_query->max_num_pages; ?>;
-	$(window).scroll(function(){
-		if  ($(window).scrollTop() == $(document).height() - $(window).height()){
-			if (count > total){
-				return false;
-			}else{
-				loadArticle(count);
-			}
-			count++;
-		}
-	});
-</script>
-<?php
-wp_footer();
-?>
+<?php } ?>
+
 </body>
 </html>

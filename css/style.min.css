@@ -1418,7 +1418,8 @@ button{cursor:pointer}
 .justify-center{-webkit-box-pack:center !important;-ms-flex-pack:center !important;justify-content:center !important}
 .justify-left{-webkit-box-pack:start !important;-ms-flex-pack:start !important;justify-content:flex-start !important}
 .justify-right{-webkit-box-pack:end !important;-ms-flex-pack:end !important;justify-content:flex-end !important}
-a#inifiniteLoader{position:fixed;z-index:2;bottom:15px;right:10px;display:none}
+a#inifiniteLoader{position:relative;width:100%;padding-top:30px;padding-bottom:30px}
+a#inifiniteLoader img{width:25px;height:25px;margin-left:20px;margin-right:20px}
 .has-animation{position:relative}
 .has-animation p,.has-animation img,.has-animation a,.has-animation h2,.has-animation div,.has-animation span,.has-animation time{opacity:0}
 .has-animation.animate-in p,.has-animation.animate-in img,.has-animation.animate-in a,.has-animation.animate-in h2,.has-animation.animate-in div,.has-animation.animate-in span,.has-animation.animate-in time{-webkit-animation:textHidden .1s .8s forwards;animation:textHidden .1s .8s forwards}

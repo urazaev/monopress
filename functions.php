@@ -170,7 +170,7 @@ function bcn_scripts()
 	wp_enqueue_script('bcn-uikit-icons', get_template_directory_uri() . '/js/libraries/uikit-icons.min.js', array(), time());
 
 	//    footer libraries
-	wp_enqueue_script('bcn-library-jquery-2.2.4', get_template_directory_uri() . '/js/libraries/jquery-2.2.4.min.js', array(), time(), true);
+	wp_enqueue_script('bcn-library-jquery-2.2.4', get_template_directory_uri() . '/js/libraries/jquery-2.2.4.min.js', array(), time());
 	wp_enqueue_script('bcn-library-css-var-polyfill', get_template_directory_uri() . '/js/libraries/css-var-polyfill.min.js', array(), time(), true);
 	wp_enqueue_script('bcn-library-sticky-sidebar', get_template_directory_uri() . '/js/libraries/sticky-sidebar.min.js', array(), time(), true);
 	wp_enqueue_script('bcn-library-slick', get_template_directory_uri() . '/js/libraries/slick.min.js', array(), time(), true);
@@ -228,18 +228,20 @@ if (!isset($theme_options) && file_exists(get_template_directory() . '/inc/theme
  * Theme Options css
  */
 
-function addPanelCSS() {
+function addPanelCSS()
+{
 	wp_register_style(
 		'redux-custom-css',
 		get_template_directory_uri() . '/css/redux-admin.min.css',
-		array( 'redux-admin-css' ), // Be sure to include redux-admin-css so it's appended after the core css is applied
+		array('redux-admin-css'), // Be sure to include redux-admin-css so it's appended after the core css is applied
 		time(),
 		'all'
 	);
 	wp_enqueue_style('redux-custom-css');
 }
+
 // This example assumes your opt_name is set to redux_demo, replace with your opt_name value
-add_action( 'redux/page/theme_options/enqueue', 'addPanelCSS' );
+add_action('redux/page/theme_options/enqueue', 'addPanelCSS');
 
 /**
  * include templates
@@ -249,8 +251,9 @@ if (!function_exists('up_get_template')) {
 	/*
      * get template parts
      */
-	function up_get_template($template, $name = null){
-		get_template_part( 'template-parts/' . $template, $name);
+	function up_get_template($template, $name = null)
+	{
+		get_template_part('template-parts/' . $template, $name);
 	}
 }
 
@@ -258,23 +261,20 @@ if (!function_exists('up_get_template')) {
  * custom thumbs
  **/
 
-if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'post_block_02', 590, 375, 'true' );
+if (function_exists('add_image_size')) {
+	add_image_size('post_block_02', 590, 375, 'true');
 }
 
 /**
  * infinite scroll
  **/
-
-function wp_infinitepaginate(){
-	$loopFile        = $_POST['loop_file'];
-	$paged           = $_POST['page_no'];
-	$posts_per_page  = get_option('posts_per_page');
-
-	# Load the posts
-	query_posts(array('paged' => $paged ));
-	get_template_part( $loopFile );
-
+function wp_infinitepaginate()
+{
+	$loopFile = $_POST['loop_file'];
+	$paged = $_POST['page_no'];
+	$posts_per_page = get_option('posts_per_page');
+	query_posts(array('paged' => $paged));
+	get_template_part($loopFile);
 	exit;
 }
 

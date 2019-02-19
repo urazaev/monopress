@@ -141,9 +141,16 @@ input[type="radio"].visually-hidden {
 }
 
 a#inifiniteLoader{
-  position: fixed;
-  z-index: 2;
-  bottom: 15px;
-  right: 10px;
-  display:none;
+  position: relative;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  //display: none;
+
+  & img {
+	width: 25px;
+	height: 25px;
+	margin-left: 20px;
+	margin-right: 20px;
+  }
 }
