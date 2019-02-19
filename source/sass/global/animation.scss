@@ -11,11 +11,11 @@ $ani-black: #d8d8d8;
 
 .has-animation {
   position: relative;
-  p, img, a, h2, div, span {
+  p, img, a, h2, div, span, time {
     opacity: 0;
   }
   &.animate-in {
-    p, img, a, h2, div, span {
+    p, img, a, h2, div, span, time  {
       animation: textHidden 0.1s 0.8s forwards;
     }
     &:before, &:after {

@@ -906,7 +906,7 @@ Redux::setSection($opt_name, array(
 
 // -> START Advertisement
 Redux::setSection($opt_name, array(
-	'title' => __('Advertisement', 'bcn'),
+	'title' => __('-- Advertisement', 'bcn'),
 	'id' => 'ads',
 	'desc' => __('', 'bcn'),
 	'icon' => 'el el-usd'
@@ -1205,6 +1205,24 @@ Redux::setSection($opt_name, array(
 //            'default' => true,
 //            // TODO: for newest version
 //        ),
+        array(
+            'id' => 'category-template-author',
+            'type' => 'switch',
+            'title' => __('Show or hide author name and link.', 'bcn'),
+            'subtitle' => __('Show or hide author on post listings.', 'bcn'),
+            'default' => true,
+            'on' => 'Show',
+            'off' => 'Hide',
+        ),
+		array(
+            'id' => 'category-template-date',
+            'type' => 'switch',
+            'title' => __('Show or hide date.', 'bcn'),
+            'subtitle' => __('Show or hide date on post listings.', 'bcn'),
+            'default' => true,
+            'on' => 'Show',
+            'off' => 'Hide',
+        ),
 		array(
 			'id' => 'category-article-display',
 			'type' => 'image_select',
@@ -1269,7 +1287,7 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Sidebar position and custom sidebars.', 'bcn'),
 			'options' => array(
 				'1' => array(
-					'alt' => '1 Column',
+					'alt' => 'No sidebar',
 					'img' => ReduxFramework::$_url . 'assets/img/1col.png'
 				),
 				'2' => array(

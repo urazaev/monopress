@@ -66,9 +66,9 @@
     overflow: hidden;
   }
 
-  .post-block-02__img-item {
+  .post-block-02__img-item, img {
     transition: all ease-in 0.3s;
-    transform: scale(1.01);
+    transform: scale(1.05);
   }
 
   .post-block-02__img a::before {
@@ -118,7 +118,7 @@
 
 .post-block-02__date {
   position: absolute;
-  width: 37px;
+  width: auto;
   top: 0;
   left: -6px;
   font-size: 12px;

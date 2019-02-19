@@ -15,51 +15,72 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div class="up-container up-container--fullwidth up-container--home-02 theme-light-gray" id="primary">
 
+		<main class="page-main page-main--home-02" id="main">
+			<?php if ($theme_options['category-sidebar'] == 2) { ?>
+				<aside class="post-widget theme-widget-white sidebar">
+					<div class="sidebar__inner"
+						 data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 500">
+						<?php dynamic_sidebar('up-sidebar-default'); ?>
+					</div>
+				</aside>
+			<?php } ?>
 
-			<?php
-				up_get_template('post-block-02');
-			?>
+			<div class="control-scroll-only control-scroll-only--vpright">
+				<button class="control-scroll-only__scroll-button" id="scroll-button" type="button">Scroll</button>
+			</div>
 
+			<section class="post-block-02 theme-white">
+				<?php
+				if (class_exists('ReduxFramework')) {
+					switch ($theme_options['category-article-display']) {
+						case 1:
+							up_get_template('post-block-01');
+							break;
+						case 2:
+							up_get_template('post-block-02');
+							break;
+						case 3:
+							up_get_template('post-block-03');
+							break;
+						case 4:
+							up_get_template('post-block-04');
+							break;
+						case 5:
+							up_get_template('post-block-05');
+							break;
+						case 6:
+							up_get_template('post-block-06');
+							break;
+						case 7:
+							up_get_template('post-block-07');
+							break;
+						case 8:
+							up_get_template('post-block-08');
+							break;
+						case 9:
+							up_get_template('post-block-09');
+							break;
+					}
+				}
+				?>
+				<div id="content">
+					Lorem ipsum dolor.
+				</div>
+			</section>
 
-<!--					--><?php
-//					if ( have_posts() ) :
-//
-//						if ( is_home() && ! is_front_page() ) :
-//							?>
-<!--							<header>-->
-<!--								<h1 class="page-title screen-reader-text">-->
-<!--			--><?php //single_post_title(); ?><!--</h1>-->
-<!--							</header>-->
-<!--							--><?php
-//						endif;
-//
-//						/* Start the Loop */
-//						while ( have_posts() ) :
-//							the_post();
-//
-//							/*
-//							 * Include the Post-Type-specific template for the content.
-//							 * If you want to override this in a child theme, then include a file
-//							 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-//							 */
-//							get_template_part( 'template-parts/content', get_post_type() );
-//
-//						endwhile;
-//
-//						the_posts_navigation();
-//
-//					else :
-//
-//						get_template_part( 'template-parts/content', 'none' );
-//
-//					endif;
-//					?>
+			<?php if ($theme_options['category-sidebar'] == 3) { ?>
+				<aside class="post-widget theme-widget-white sidebar">
+					<div class="sidebar__inner"
+						 data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 500">
+						<?php dynamic_sidebar('up-sidebar-default'); ?>
+					</div>
+				</aside>
+			<?php } ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</main>
+	</div>
 
 <?php
 get_sidebar();

@@ -253,3 +253,30 @@ if (!function_exists('up_get_template')) {
 		get_template_part( 'template-parts/' . $template, $name);
 	}
 }
+
+/**
+ * custom thumbs
+ **/
+
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'post_block_02', 590, 375, 'true' );
+}
+
+/**
+ * infinite scroll
+ **/
+
+function wp_infinitepaginate(){
+	$loopFile        = $_POST['loop_file'];
+	$paged           = $_POST['page_no'];
+	$posts_per_page  = get_option('posts_per_page');
+
+	# Load the posts
+	query_posts(array('paged' => $paged ));
+	get_template_part( $loopFile );
+
+	exit;
+}
+
+add_action('wp_ajax_infinite_scroll', 'wp_infinitepaginate');           // for logged in user
+add_action('wp_ajax_nopriv_infinite_scroll', 'wp_infinitepaginate');    // if user not logged in

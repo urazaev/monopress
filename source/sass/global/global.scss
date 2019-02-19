@@ -139,3 +139,11 @@ input[type="radio"].visually-hidden {
 .justify-right {
   justify-content: flex-end !important;
 }
+
+a#inifiniteLoader{
+  position: fixed;
+  z-index: 2;
+  bottom: 15px;
+  right: 10px;
+  display:none;
+}
