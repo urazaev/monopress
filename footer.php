@@ -362,9 +362,14 @@ wp_footer();
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		var count = 2;
+		var total = <?php echo $wp_query->max_num_pages; ?>;
 		$(window).scroll(function(){
 			if  ($(window).scrollTop() == $(document).height() - $(window).height()){
-				loadArticle(count);
+				if (count > total){
+					return false;
+				}else{
+					loadArticle(count);
+				}
 				count++;
 			}
 		});

@@ -64,7 +64,10 @@ get_header();
 					}
 				}
 				?>
-				<?php if ($theme_options['category-pagination'] == 2) { ?>
+				<?php if ($theme_options['category-pagination'] == 1) {
+
+
+				} elseif ($theme_options['category-pagination'] == 2) { ?>
 					<a id="inifiniteLoader"><img src="<?php bloginfo('template_directory'); ?>/images/ajax-loader.gif"/>
 						Loading more...</a>
 				<?php } ?>
