@@ -1229,41 +1229,81 @@ Redux::setSection($opt_name, array(
 			'title' => __('Article display view', 'bcn'),
 			'subtitle' => __('Select a module type, this is how your article list will be displayed.', 'bcn'),
 			'options' => array(
-				'1' => array(
-					'alt' => '1 Column',
-					'img' => get_template_directory_uri() . '/images/admin/preview-01.jpg'
-				),
 				'2' => array(
-					'alt' => '2 Column Left',
+					'alt' => '2',
 					'img' => get_template_directory_uri() . '/images/admin/preview-02.jpg'
 				),
 				'3' => array(
-					'alt' => '2 Column Right',
+					'alt' => '3',
 					'img' => get_template_directory_uri() . '/images/admin/preview-03.jpg'
 				),
 				'4' => array(
-					'alt' => '3 Column Middle',
+					'alt' => '4',
 					'img' => get_template_directory_uri() . '/images/admin/preview-04.jpg'
 				),
 				'5' => array(
-					'alt' => '3 Column Left',
+					'alt' => '5',
 					'img' => get_template_directory_uri() . '/images/admin/preview-05.jpg'
 				),
 				'6' => array(
-					'alt' => '3 Column Right',
+					'alt' => '6',
 					'img' => get_template_directory_uri() . '/images/admin/preview-06.jpg'
 				),
 				'7' => array(
-					'alt' => '3 Column Right',
+					'alt' => '7',
 					'img' => get_template_directory_uri() . '/images/admin/preview-07.jpg'
 				),
 				'8' => array(
-					'alt' => '3 Column Right',
-					'img' => get_template_directory_uri() . '/images/admin/preview-09.jpg'
+					'alt' => '8',
+					'img' => get_template_directory_uri() . '/images/admin/preview-08.jpg'
 				),
 				'9' => array(
-					'alt' => '3 Column Right',
+					'alt' => '9',
+					'img' => get_template_directory_uri() . '/images/admin/preview-09.jpg'
+				),
+				'10' => array(
+					'alt' => '9',
+					'img' => get_template_directory_uri() . '/images/admin/preview-10.jpg'
+				),
+				'11' => array(
+					'alt' => '9',
 					'img' => get_template_directory_uri() . '/images/admin/preview-11.jpg'
+				),
+				'12' => array(
+					'alt' => '9',
+					'img' => get_template_directory_uri() . '/images/admin/preview-12.jpg'
+				),
+				'14' => array(
+					'alt' => '9',
+					'img' => get_template_directory_uri() . '/images/admin/preview-14.jpg'
+				),
+				'15' => array(
+					'alt' => '9',
+					'img' => get_template_directory_uri() . '/images/admin/preview-15.jpg'
+				),
+				'16' => array(
+					'alt' => '9',
+					'img' => get_template_directory_uri() . '/images/admin/preview-16.jpg'
+				),
+				'17' => array(
+					'alt' => '9',
+					'img' => get_template_directory_uri() . '/images/admin/preview-17.jpg'
+				),
+				'18' => array(
+					'alt' => '9',
+					'img' => get_template_directory_uri() . '/images/admin/preview-18.jpg'
+				),
+				'19' => array(
+					'alt' => '9',
+					'img' => get_template_directory_uri() . '/images/admin/preview-19.jpg'
+				),
+				'20' => array(
+					'alt' => '9',
+					'img' => get_template_directory_uri() . '/images/admin/preview-20.jpg'
+				),
+				'21' => array(
+					'alt' => '9',
+					'img' => get_template_directory_uri() . '/images/admin/preview-21.jpg'
 				),
 			),
 			'default' => '2',

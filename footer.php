@@ -20,7 +20,7 @@ global $theme_options;
 			<section class="flip-block">
 				<div class="flip-block__wrapper uk-article">
 
-					<?php dynamic_sidebar( 'up-sidebar-flip' ); ?>
+					<?php dynamic_sidebar('up-sidebar-flip'); ?>
 
 				</div>
 			</section>
@@ -57,10 +57,7 @@ global $theme_options;
 			instagram_render($theme_options['instagram-id'], $theme_options['instagram-images'], $theme_options['instagram-columns'], $theme_options['instagram-gap']);
 		}
 	}
-}
 
-
-if (class_exists('ReduxFramework')) {
 	if ($theme_options['footer-on'] == 1) {
 		if ($theme_options['footer-layout'] == '1') {
 			?>
@@ -272,7 +269,6 @@ if (class_exists('ReduxFramework')) {
 							<?php
 						} ?>
 
-
 					</div>
 
 					<div class="col">
@@ -286,7 +282,6 @@ if (class_exists('ReduxFramework')) {
 							<li><a href="#">What's the Difference Between Weather and
 									Climate?</a></li>
 						</ul>
-
 
 					</div>
 					<div class="col">
@@ -307,7 +302,6 @@ if (class_exists('ReduxFramework')) {
 			<?php
 		}
 	}
-
 
 	if ($theme_options['subfooter-on'] == 1) {
 		?>
@@ -357,41 +351,50 @@ if (class_exists('ReduxFramework')) {
 <?php
 wp_footer();
 ?>
-<?php if ($theme_options['category-pagination'] == 2) { ?>
+<?php
+if (class_exists('ReduxFramework')) {
 
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		var count = 2;
-		var total = <?php echo $wp_query->max_num_pages; ?>;
-		$(window).scroll(function(){
-			if  ($(window).scrollTop() == $(document).height() - $(window).height()){
-				if (count > total){
-					return false;
-				}else{
-					loadArticle(count);
-				}
-				count++;
-			}
-		});
+	if ($theme_options['category-pagination'] == 2) {
 
-		function loadArticle(pageNumber){
-			$('a#inifiniteLoader').show('fast');
-			$.ajax({
-				url: "<?php bloginfo('wpurl') ?>/wp-admin/admin-ajax.php",
-				type:'POST',
-				data: "action=infinite_scroll&page_no="+ pageNumber + '&loop_file=template-parts/post-block-02',
-				success: function(html){
-					$('a#inifiniteLoader').hide('1000');
-					$("#loop-content").append(html);    // This will be the div where our content will be loaded
-				}
-			});
-			return false;
-		}
 
-	});
-</script>
+		if (!is_single() || !is_page()):
+			?>
 
-<?php } ?>
+			<script type="text/javascript">
+				jQuery(document).ready(function ($) {
+					var count = 2;
+					var total = <?php echo $wp_query->max_num_pages; ?>;
+					$(window).scroll(function () {
+						if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+							if (count > total) {
+								return false;
+							} else {
+								loadArticle(count);
+							}
+							count++;
+						}
+					});
+
+					function loadArticle(pageNumber) {
+						$('a#inifiniteLoader').show('fast');
+						$.ajax({
+							url: "<?php bloginfo('wpurl') ?>/wp-admin/admin-ajax.php",
+							type: 'POST',
+							data: "action=infinite_scroll&page_no=" + pageNumber + '&loop_file=template-parts/post-block-02',
+							success: function (html) {
+								$('a#inifiniteLoader').hide('1000');
+								$("#loop-content").append(html);    // This will be the div where our content will be loaded
+							}
+						});
+						return false;
+					}
+				});
+			</script>
+
+		<?php
+		endif;
+	}
+} ?>
 
 </body>
 </html>

@@ -30,48 +30,74 @@ get_header();
 				<button class="control-scroll-only__scroll-button" id="scroll-button" type="button">Scroll</button>
 			</div>
 
-			<section class="post-block-02 theme-white" id="loop-content">
-				<?php
-				if (class_exists('ReduxFramework')) {
-					switch ($theme_options['category-article-display']) {
-						case 1:
-							up_get_template('post-block-01');
-							break;
-						case 2:
-							up_get_template('post-block-02');
-							break;
-						case 3:
-							up_get_template('post-block-03');
-							break;
-						case 4:
-							up_get_template('post-block-04');
-							break;
-						case 5:
-							up_get_template('post-block-05');
-							break;
-						case 6:
-							up_get_template('post-block-06');
-							break;
-						case 7:
-							up_get_template('post-block-07');
-							break;
-						case 8:
-							up_get_template('post-block-08');
-							break;
-						case 9:
-							up_get_template('post-block-09');
-							break;
-					}
+			<?php
+			if (class_exists('ReduxFramework')) {
+				switch ($theme_options['category-article-display']) {
+					case 2:
+						up_get_template('post-block-02');
+						break;
+					case 3:
+						up_get_template('post-block-03');
+						break;
+					case 4:
+						up_get_template('post-block-04');
+						break;
+					case 5:
+						up_get_template('post-block-05');
+						break;
+					case 6:
+						up_get_template('post-block-06');
+						break;
+					case 7:
+						up_get_template('post-block-07');
+						break;
+					case 8:
+						up_get_template('post-block-08');
+						break;
+					case 9:
+						up_get_template('post-block-09');
+						break;
+					case 10:
+						up_get_template('post-block-10');
+						break;
+					case 11:
+						up_get_template('post-block-11');
+						break;
+					case 12:
+						up_get_template('post-block-12');
+						break;
+					case 14:
+						up_get_template('post-block-14');
+						break;
+					case 15:
+						up_get_template('post-block-15');
+						break;
+					case 16:
+						up_get_template('post-block-16');
+						break;
+					case 17:
+						up_get_template('post-block-17');
+						break;
+					case 18:
+						up_get_template('post-block-18');
+						break;
+					case 19:
+						up_get_template('post-block-19');
+						break;
+					case 20:
+						up_get_template('post-block-20');
+						break;
+					case 21:
+						up_get_template('post-block-21');
+						break;
 				}
-				?>
-				<?php if ($theme_options['category-pagination'] == 1) {
-
-
-				} elseif ($theme_options['category-pagination'] == 2) { ?>
-					<a id="inifiniteLoader"><img src="<?php bloginfo('template_directory'); ?>/images/ajax-loader.gif"/>
-						Loading more...</a>
-				<?php } ?>
-			</section>
+			}
+			?>
+			<?php
+			if ($theme_options['category-pagination'] == 2) { ?>
+				<a id="inifiniteLoader"><img src="<?php bloginfo('template_directory'); ?>/images/ajax-loader.gif"/>
+					Loading more...</a>
+			<?php } ?>
 
 			<?php if ($theme_options['category-sidebar'] == 3) { ?>
 				<aside class="post-widget theme-widget-white sidebar">

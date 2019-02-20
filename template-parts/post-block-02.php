@@ -12,46 +12,48 @@ global $theme_options;
 ?>
 
 <?php if (have_posts()) : ?>
-	<?php while (have_posts()) : the_post();
+	<section class="post-block-02 theme-white" id="loop-content">
 
-		$post_id = get_the_ID();
-		$category_object = get_the_category($post_id);
-		$category_name = $category_object[0]->name;
+		<?php while (have_posts()) : the_post();
 
-		?>
-		<article class="post-block-02__item">
-			<header class="post-block-02__date">
-				<p class="post-block-02__date-item has-animation animation-rtl">
-					<?php if ($theme_options['category-template-date'] == 1) {
-						; ?>
-						<time
-							datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
-					if ($theme_options['category-template-author'] == 1) { ?>By <a
-						href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a><?php } ?>
-				</p>
-			</header>
+			$post_id = get_the_ID();
+			$category_object = get_the_category($post_id);
+			$category_name = $category_object[0]->name;
 
-			<figure class="post-block-02__img has-animation animation-rtl">
+			?>
+			<article class="post-block-02__item">
+				<header class="post-block-02__date">
+					<p class="post-block-02__date-item has-animation animation-rtl">
+						<?php if ($theme_options['category-template-date'] == 1) {
+							; ?>
+							<time
+								datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
+						if ($theme_options['category-template-author'] == 1) { ?>By <a
+							href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a><?php } ?>
+					</p>
+				</header>
 
-				<?php if (has_post_thumbnail()) { ?>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-						<?php the_post_thumbnail('post_block_02');; ?>
-					</a>
-				<?php } else { ?>
-					<a href="<?php the_permalink() ?>">
-						<img class="post-block-02__img-item"
-							 src="<?php echo get_template_directory_uri() ?>/images/placeholder-590-375.png"
-							 srcset="<?php echo get_template_directory_uri() ?>/images/placeholder-590-375@2x.png 2x"
-							 alt="Post picture">
-					</a>
+				<figure class="post-block-02__img has-animation animation-rtl">
 
-				<?php } ?>
+					<?php if (has_post_thumbnail()) { ?>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+							<?php the_post_thumbnail('post_block_02');; ?>
+						</a>
+					<?php } else { ?>
+						<a href="<?php the_permalink() ?>">
+							<img class="post-block-02__img-item"
+								 src="<?php echo get_template_directory_uri() ?>/images/placeholder-590-375.png"
+								 srcset="<?php echo get_template_directory_uri() ?>/images/placeholder-590-375@2x.png 2x"
+								 alt="Post picture">
+						</a>
 
-			</figure>
+					<?php } ?>
 
-			<footer class="post-block-02__footer">
-				<div class="post-block-02__footer-wrapper has-animation animation-ltr">
-					<div class="post-block-02__footer-bg">
+				</figure>
+
+				<footer class="post-block-02__footer">
+					<div class="post-block-02__footer-wrapper has-animation animation-ltr">
+						<div class="post-block-02__footer-bg">
 						  <span class="post-block-02__wrapper-link">
 							<?php
 							$thelist = '';
@@ -63,13 +65,23 @@ global $theme_options;
 							}
 							echo $thelist; ?>
 						  </span>
-						<h2 class="post-block-02__header"><a class="post-block-02__header-link"
-															 href="<?php esc_url(the_permalink()); ?>"><?php the_title() ?></a>
-						</h2>
+							<h2 class="post-block-02__header"><a class="post-block-02__header-link"
+																 href="<?php esc_url(the_permalink()); ?>"><?php the_title() ?></a>
+							</h2>
+						</div>
 					</div>
-				</div>
-			</footer>
-		</article>
-	<?php endwhile; ?>
+				</footer>
+			</article>
+		<?php endwhile;
+		if ($theme_options['category-pagination'] == 1) {
+			the_posts_pagination(array(
+				'mid_size' => 2,
+				'prev_text' => __('«'),
+				'next_text' => __('»'),
+			));
+		}
+		?>
+
+	</section>
 <?php endif; ?>
 
