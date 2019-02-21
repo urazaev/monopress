@@ -28,7 +28,7 @@ echo "09090909";
 						<?php if (has_post_thumbnail()) { ?>
 							<a class="post-block-09__img-item" href="<?php the_permalink(); ?>"
 							   title="<?php the_title_attribute(); ?>">
-								<?php the_post_thumbnail('post_block_09');; ?>
+								<?php the_post_thumbnail('post_block_09', array('class' => 'post-block-09__img-item')); ?>
 							</a>
 						<?php } else { ?>
 							<a href="<?php the_permalink() ?>">

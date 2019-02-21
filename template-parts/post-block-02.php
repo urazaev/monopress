@@ -36,7 +36,7 @@ global $theme_options;
 				<figure class="post-block-02__img has-animation animation-rtl">
 					<?php if (has_post_thumbnail()) { ?>
 						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-							<?php the_post_thumbnail('post_block_02'); ?>
+							<?php the_post_thumbnail('post_block_02', array('class' => 'post-block-02__img-item')); ?>
 						</a>
 					<?php } else { ?>
 						<a href="<?php the_permalink() ?>">

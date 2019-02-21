@@ -1,89 +1,74 @@
 <?php
 /**
- * Template part for displaying post category 02
+ * Template part for displaying post category 21
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package bcn
  */
 
+global $theme_options;
+
 ?>
 
-<section class="post-block-21" data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 500">
-	<article class="post-block-21__item">
-		<figure class="post-block-21__img">
+<?php if (have_posts()) : ?>
 
-			<a href="post-page-v1.html">
-				<img class="post-block-21__img-item" data-uk-scrollspy="cls: uk-animation-kenburns; repeat: true"
-					 src="img/content/700x370.jpg"
-					 srcset="img/content/700x370@2x.jpg 2x" alt="Post picture">
-			</a>
+	<section class="post-block-21" data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 500">
 
-		</figure>
-		<h2 class="post-block-21__header animation-rtl"><a
-				class="post-block-21__header-link" href="post-page-v1.html">Bitcoin rallies 5% to $7,700, building steam after
-				a tough few months for cryptocurrency</a></h2>
-		<footer class="post-block-21__footer">
-			<span class="post-block-21__comments-count">Comments 2</span>
-			<span class="post-block-21__comments-date">Nov 14</span>
-		</footer>
-	</article>
+		<?php while (have_posts()) :
+			the_post();
 
-	<article class="post-block-21__item">
-		<figure class="post-block-21__img">
+			$post_id = get_the_ID();
+			$category_object = get_the_category($post_id);
+			$category_name = $category_object[0]->name;
 
-			<a href="post-page-v1.html">
-				<img class="post-block-21__img-item" data-uk-scrollspy="cls: uk-animation-kenburns; repeat: true"
-					 src="img/content/700x370-2.jpg"
-					 srcset="img/content/700x370-2@2x.jpg 2x" alt="Post picture">
-			</a>
+			?>
 
-		</figure>
-		<h2 class="post-block-21__header animation-rtl"><a
-				class="post-block-21__header-link" href="post-page-v1.html">Markets Update: Cryptocurrency Bulls Continue to
-				Charge</a></h2>
-		<footer class="post-block-21__footer"><span
-				class="post-block-21__comments-count">Comments 2</span><span
-				class="post-block-21__comments-date">Nov 14</span>
-		</footer>
-	</article>
+			<article class="post-block-21__item">
+				<figure class="post-block-21__img">
 
-	<article class="post-block-21__item">
-		<figure class="post-block-21__img">
 
-			<a href="post-page-v1.html">
-				<img class="post-block-21__img-item" data-uk-scrollspy="cls: uk-animation-kenburns; repeat: true"
-					 src="img/content/700x370-3.jpg"
-					 srcset="img/content/700x370-3@2x.jpg 2x" alt="Post picture">
-			</a>
+					<?php if (has_post_thumbnail()) { ?>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+							<?php the_post_thumbnail('post_block_21', array('class' => 'post-block-21__img-item')); ?>
+						</a>
+					<?php } else { ?>
+						<a href="<?php the_permalink() ?>">
+							<img class="post-block-21__img-item"
+								 src="<?php echo get_template_directory_uri() ?>/images/placeholder-700-370.png"
+								 srcset="<?php echo get_template_directory_uri() ?>/images/placeholder-700-370@2x.png 2x"
+								 alt="Post picture">
+						</a>
+					<?php } ?>
 
-		</figure>
-		<h2 class="post-block-21__header animation-rtl"><a
-				class="post-block-21__header-link" href="post-page-v1.html">Bitcoin Experiences Biggest Price Gains In Months
-				As Cryptocurrency Market Recovers</a></h2>
-		<footer class="post-block-21__footer">
-			<span class="post-block-21__comments-count">Comments 2</span>
-			<span class="post-block-21__comments-date">Nov 14</span>
-		</footer>
-	</article>
+				</figure>
+				<h2 class="post-block-21__header animation-rtl"><a
+						class="post-block-21__header-link" href="<?php esc_url(the_permalink()); ?>"><?php the_title() ?></a></h2>
+				<footer class="post-block-21__footer">
+<!--					<span class="post-block-21__comments-count">Comments 2</span> TODO : for new iteration?-->
+					<span class="post-block-21__comments-date"><?php if ($theme_options['category-template-date'] == 1) {
+							; ?>
+							<time
+								datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
+						if ($theme_options['category-template-author'] == 1) { ?>By <a
+							href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a><?php } ?></span>
+				</footer>
+			</article>
 
-	<article class="post-block-21__item">
-		<figure class="post-block-21__img">
+		<?php endwhile;
 
-			<a href="post-page-v1.html">
-				<img class="post-block-21__img-item" data-uk-scrollspy="cls: uk-animation-kenburns; repeat: true"
-					 src="img/content/700x370-4.jpg"
-					 srcset="img/content/700x370-4@2x.jpg 2x" alt="Post picture">
-			</a>
+		if (class_exists('ReduxFramework')) {
 
-		</figure>
-		<h2 class="post-block-21__header animation-rtl"><a
-				class="post-block-21__header-link" href="post-page-v1.html">EU Issues Warning Over Cryptocurrency’s Future</a>
-		</h2>
-		<footer class="post-block-21__footer"><span
-				class="post-block-21__comments-count">Comments 2</span><span
-				class="post-block-21__comments-date">Nov 14</span>
-		</footer>
-	</article>
+			if ($theme_options['category-pagination'] == 1) {
+				the_posts_pagination(array(
+					'mid_size' => 2,
+					'prev_text' => __('«'),
+					'next_text' => __('»'),
+				));
+			}
+		}
+		?>
 
-</section>
+	</section>
+
+<?php endif; ?>

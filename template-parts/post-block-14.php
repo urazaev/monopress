@@ -7,97 +7,78 @@
  * @package bcn
  */
 
+global $theme_options;
+
 ?>
 
-<section class="post-block-14 theme-white" data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 500">
+<?php if (have_posts()) : ?>
 
-	<article class="post-block-14__item">
-		<header class="post-block-14__date"><p class="post-block-14__date-item"><span>Feb 19</span></p></header>
-		<span class="post-block-14__wrapper-link">
-              <a class="post-block-14__link button button--red" data-delay="100" href="#">Design</a>
-            </span>
-		<figure class="post-block-14__img" data-delay="100">
-			<a href="post-page-v1.html">
+	<?php while (have_posts()) : the_post();
 
-				<img class="post-block-14__img-item" src="img/content/545x350.jpg"
-					 srcset="img/content/545x350@2x.jpg 2x" alt="Post picture">
+		$post_id = get_the_ID();
+		$category_object = get_the_category($post_id);
+		$category_name = $category_object[0]->name;
 
-			</a>
-		</figure>
-		<h2 class="post-block-14__header" data-delay="100"><a
-				class="post-block-14__header-link" href="post-page-v1.html">Is Fringe Summer's Most Buzzworthy Home Decor
-				Trend?</a></h2>
-	</article>
+		?>
+		<section class="post-block-14 theme-white" data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 500">
 
-	<article class="post-block-14__item">
-		<header class="post-block-14__date"><p class="post-block-14__date-item"><span>Feb 19</span></p></header>
-		<span class="post-block-14__wrapper-link">
-              <a class="post-block-14__link button button--brown" data-delay="100" href="#">Interrior</a>
-            </span>
-		<figure class="post-block-14__img" data-delay="100">
-			<a href="post-page-v1.html">
+		<article class="post-block-14__item">
+			<header class="post-block-14__date">
+				<p class="post-block-14__date-item"><?php if ($theme_options['category-template-date'] == 1) {
+						; ?>
+						<time
+							datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time>
+					<?php }
+					if ($theme_options['category-template-author'] == 1) { ?>By <a
+						href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+						<?php echo get_the_author(); ?></a>
+					<?php } ?>
+				</p>
+			</header>
+			<span class="post-block-14__wrapper-link">
+				<?php
+				$thelist = '';
+				$i = 0;
+				foreach (get_the_category() as $category) {
+					if (0 < $i) $thelist .= ' ';
+					$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button button--orange' . $category->slug . '">' . $category->name . '</a>';
+					$i++;
+				}
+				echo $thelist; ?>
+			</span>
+			<figure class="post-block-14__img" data-delay="100">
+				<?php if (has_post_thumbnail()) { ?>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+						<?php the_post_thumbnail('post_block_14', array('class' => 'post-block-14__img-item')); ?>
+					</a>
+				<?php } else { ?>
+					<a href="<?php the_permalink() ?>">
+						<img class="post-block-14__img-item"
+							 src="<?php echo get_template_directory_uri() ?>/images/placeholder-545-350.png"
+							 srcset="<?php echo get_template_directory_uri() ?>/images/placeholder-545-350@2x.png 2x"
+							 alt="Post picture">
+					</a>
+				<?php } ?>
+			</figure>
+			<h2 class="post-block-14__header" data-delay="100"><a
+					class="post-block-14__header-link" href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+		</article>
 
-				<img class="post-block-14__img-item" src="img/content/545x350-2.jpg"
-					 srcset="img/content/545x350-2@2x.jpg 2x" alt="Post picture">
+	<?php endwhile;
 
-			</a>
-		</figure>
-		<h2 class="post-block-14__header" data-delay="100"><a
-				class="post-block-14__header-link" href="post-page-v1.html">6 Expert Hacks Our Interior Designers Swear By</a>
-		</h2>
-	</article>
+	if (class_exists('ReduxFramework')) {
 
-	<article class="post-block-14__item">
-		<header class="post-block-14__date"><p class="post-block-14__date-item"><span>Dec 7</span></p></header>
-		<span class="post-block-14__wrapper-link">
-              <a class="post-block-14__link button button--blue" data-delay="100" href="#">Lifestyle</a>
-            </span>
-		<figure class="post-block-14__img" data-delay="100">
-			<a href="post-page-v1.html">
+		if ($theme_options['category-pagination'] == 1) {
+			the_posts_pagination(array(
+				'mid_size' => 2,
+				'prev_text' => __('«'),
+				'next_text' => __('»'),
+			));
+		}
+	}
+	?>
 
-				<img class="post-block-14__img-item" src="img/content/545x350-3.jpg"
-					 srcset="img/content/545x350-3@2x.jpg 2x" alt="Post picture">
+	</section>
 
-			</a>
-		</figure>
-		<h2 class="post-block-14__header" data-delay="100"><a
-				class="post-block-14__header-link" href="post-page-v1.html">11 of the Best Sofa’s</a></h2>
-	</article>
 
-	<article class="post-block-14__item">
-		<header class="post-block-14__date"><p class="post-block-14__date-item"><span>Dec 7</span></p></header>
-		<span class="post-block-14__wrapper-link">
-              <a class="post-block-14__link button button--green" data-delay="100" href="#">Previews</a>
-            </span>
-		<figure class="post-block-14__img" data-delay="100">
-			<a href="post-page-v1.html">
-
-				<img class="post-block-14__img-item" src="img/content/545x350-4.jpg"
-					 srcset="img/content/545x350-4@2x.jpg 2x" alt="Post picture">
-
-			</a>
-		</figure>
-		<h2 class="post-block-14__header" data-delay="100"><a
-				class="post-block-14__header-link" href="post-page-v1.html">London’s Most Unique Hen Do Ideas</a></h2>
-	</article>
-
-	<article class="post-block-14__item">
-		<header class="post-block-14__date"><p class="post-block-14__date-item"><span>Jan 17</span></p></header>
-		<span class="post-block-14__wrapper-link">
-              <a class="post-block-14__link button button--orange" data-delay="100" href="#">Design</a>
-            </span>
-		<figure class="post-block-14__img" data-delay="100">
-			<a href="post-page-v1.html">
-
-				<img class="post-block-14__img-item" src="img/content/545x350-5.jpg"
-					 srcset="img/content/545x350-5@2x.jpg 2x" alt="Post picture">
-
-			</a>
-		</figure>
-		<h2 class="post-block-14__header" data-delay="100"><a
-				class="post-block-14__header-link" href="post-page-v1.html">Luxury Hotel-style Living With Metricon’s New Home
-				Design</a></h2>
-	</article>
-
-</section>
-
+<?php endif; ?>
