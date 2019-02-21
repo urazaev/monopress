@@ -1163,7 +1163,6 @@ Redux::setSection($opt_name, array(
 			),
 			'default' => '2'
 		),
-
 	),
 ));
 

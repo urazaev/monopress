@@ -11,14 +11,18 @@
 	text-align: center;
 	border: 1px solid #eaeaea;
 	padding: 5px 6px;
+  }
+
+  span:not(:first-child),
+  a:not(:first-child) {
 	margin-left: 2px;
 	margin-right: 2px;
   }
 
   //span:not(:first-child):not(:last-child),
   //a:not(:first-child):not(:last-child) {
-	//padding-left: 10px;
-	//padding-right: 10px;
+  //padding-left: 10px;
+  //padding-right: 10px;
   //}
 
   a:hover {
@@ -27,17 +31,22 @@
   }
   .prev {
 	margin-right: 10px;
-	flex-grow: 1;
+	//flex-grow: 1;
 	border: none;
 	margin-left: 0;
   }
   .next {
 	margin-left: 10px;
-	flex-grow: 1;
+	//flex-grow: 1;
 	border: none;
 	margin-right: 0;
   }
   .current {
 	background-color: #cccccc;
   }
+}
+
+.pagination {
+  width: 100%;
+
 }

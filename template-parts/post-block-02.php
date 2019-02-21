@@ -34,10 +34,9 @@ global $theme_options;
 				</header>
 
 				<figure class="post-block-02__img has-animation animation-rtl">
-
 					<?php if (has_post_thumbnail()) { ?>
 						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-							<?php the_post_thumbnail('post_block_02');; ?>
+							<?php the_post_thumbnail('post_block_02'); ?>
 						</a>
 					<?php } else { ?>
 						<a href="<?php the_permalink() ?>">
@@ -46,9 +45,7 @@ global $theme_options;
 								 srcset="<?php echo get_template_directory_uri() ?>/images/placeholder-590-375@2x.png 2x"
 								 alt="Post picture">
 						</a>
-
 					<?php } ?>
-
 				</figure>
 
 				<footer class="post-block-02__footer">
@@ -73,12 +70,16 @@ global $theme_options;
 				</footer>
 			</article>
 		<?php endwhile;
-		if ($theme_options['category-pagination'] == 1) {
-			the_posts_pagination(array(
-				'mid_size' => 2,
-				'prev_text' => __('«'),
-				'next_text' => __('»'),
-			));
+
+		if (class_exists('ReduxFramework')) {
+
+			if ($theme_options['category-pagination'] == 1) {
+				the_posts_pagination(array(
+					'mid_size' => 2,
+					'prev_text' => __('«'),
+					'next_text' => __('»'),
+				));
+			}
 		}
 		?>
 
