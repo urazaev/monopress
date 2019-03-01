@@ -9,11 +9,13 @@
 
 global $theme_options;
 
+echo "post-block-07";
+
 ?>
 
-<?php if (have_posts()) : ?>
+<section class="post-block-07" data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 800">
 
-	<section class="post-block-07" data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 800">
+	<?php if (have_posts()) : ?>
 
 		<?php while (have_posts()) : the_post();
 
@@ -28,8 +30,7 @@ global $theme_options;
 					<p class="post-block-07__date-item">
 						<?php if ($theme_options['category-template-date'] == 1) {
 							; ?>
-							<time
-								datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
+							<time datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
 						if ($theme_options['category-template-author'] == 1) { ?>By <a
 							href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a><?php } ?>
 					</p>
@@ -65,7 +66,8 @@ global $theme_options;
 
 				</figure>
 				<h2 class="post-block-07__header"><a
-						class="post-block-07__header-link" href="<?php the_permalink(); ?>"><?php the_title() ?></a></h2>
+						class="post-block-07__header-link" href="<?php the_permalink(); ?>"><?php the_title() ?></a>
+				</h2>
 			</article>
 
 		<?php endwhile;
@@ -81,7 +83,7 @@ global $theme_options;
 			}
 		}
 		?>
+	<?php endif; ?>
 
-	</section>
+</section>
 
-<?php endif; ?>

@@ -7,34 +7,84 @@
  * @package bcn
  */
 
+global $theme_options;
+
+echo "post-block-19";
+
+
 ?>
 
 
 <section class="post-block-19">
 
-	<article class="post-block-19__item">
+	<?php if (have_posts()) :
+		while (have_posts()) : the_post();
 
-		<figure class="post-block-19__img">
+			$post_id = get_the_ID();
+			$category_object = get_the_category($post_id);
+			$category_name = $category_object[0]->name;
 
-			<img class="post-block-19__img-item" src="img/content/800x900.jpg"
-				 srcset="img/content/800x900@2x.jpg 2x" alt="Post picture">
+			?>
+
+			<article class="post-block-19__item">
+
+				<figure class="post-block-19__img">
+
+					<?php if (has_post_thumbnail()) { ?>
+						<?php the_post_thumbnail('post_block_19', array('class' => 'post-block-19__img-item')); ?>
+					<?php } else { ?>
+						<img class="post-block-19__img-item"
+							 src="<?php echo get_template_directory_uri() ?>/images/placeholder-800-900.png"
+							 srcset="<?php echo get_template_directory_uri() ?>/images/placeholder-800-900@2x.png 2x"
+							 alt="Post picture">
+					<?php } ?>
 
 
-			<div class="post-block-19__widget theme-widget-black active-word-blue uk-animation-slide-bottom-small">
-				<span class="post-block-19__widget-link-wrapper"><a class="button button--red" href="#">Policy</a></span>
-				<h2 class="post-block-19__widget-title"><a
-						class="post-block-19__widget-title-link animation-ltr" href="post-page-v1.html">Republicans block Dem
-						effort to get <span
-							class="post-block-19__active-word">Trump's</span> tax returns</a></h2>
-				<footer class="post-block-19__widget-footer"><span
-						class="post-block-19__widget-comments-count">Comments 5</span><span
-						class="post-block-19__widget-date animation-ltr">Jan 30</span>
-				</footer>
-			</div>
+					<div
+						class="post-block-19__widget theme-widget-black active-word-blue uk-animation-slide-bottom-small">
+				<span class="post-block-19__widget-link-wrapper">
+						<?php
+						$thelist = '';
+						$i = 0;
+						foreach (get_the_category() as $category) {
+							if (0 < $i) $thelist .= ' ';
+							$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button button--red' . $category->slug . '">' . $category->name . '</a>';
+							$i++;
+						}
+						echo $thelist; ?>
 
-		</figure>
+				</span>
+						<h2 class="post-block-19__widget-title"><a
+								class="post-block-19__widget-title-link animation-ltr"
+								href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+						<footer class="post-block-19__widget-footer"><span
+								class="post-block-19__widget-comments-count">Comments 5</span><span
+								class="post-block-19__widget-date animation-ltr">
 
+								<?php if ($theme_options['category-template-date'] == 1) {
+									; ?>
+									<time datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
+								if ($theme_options['category-template-author'] == 1) { ?>By <a
+									href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a><?php } ?>
+							</span>
+						</footer>
+					</div>
 
-	</article>
+				</figure>
+
+			</article>
+
+		<?php endwhile;
+		if (class_exists('ReduxFramework')) {
+
+			if ($theme_options['category-pagination'] == 1) {
+				the_posts_pagination(array(
+					'mid_size' => 2,
+					'prev_text' => __('«'),
+					'next_text' => __('»'),
+				));
+			}
+		}
+	endif; ?>
 
 </section>

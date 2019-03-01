@@ -7,8 +7,18 @@
  * @package bcn
  */
 
+
+global $theme_options;
+
 ?>
 
+<?php
+
+
+echo "post-block-15";
+
+
+?>
 
 <section class="post-block-15 theme-white">
 

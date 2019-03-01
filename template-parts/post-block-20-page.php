@@ -7,6 +7,17 @@
  * @package bcn
  */
 
+global $theme_options;
+
+?>
+
+
+<?php
+
+
+echo "post-block-20";
+
+
 ?>
 
 <main class="page-main theme-white page-main--post-20">

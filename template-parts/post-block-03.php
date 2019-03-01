@@ -7,32 +7,72 @@
  * @package bcn
  */
 
-?>
+global $theme_options;
 
+echo "post-block-03";
+
+?>
 <section class="post-block-03">
 
-	<article class="post-block-03__item">
+	<?php if (have_posts()) :
+		while (have_posts()) : the_post(); ?>
 
-		<figure class="post-block-03__img">
+			<article class="post-block-03__item">
 
-			<img class="post-block-03__img-item" src="img/content/800x900-2.jpg"
-				 srcset="img/content/800x900-2@2x.jpg 2x" alt="Post picture">
+				<figure class="post-block-03__img">
 
-			<div class="post-block-03__widget theme-widget-black active-word-red"
-				 data-uk-scrollspy="target: > .animate; cls:uk-animation-slide-top-small; delay: 500">
-            <span class="post-block-03__widget-link-wrapper animate"><a class="button button--red"
-																		href="#">Policy</a></span>
-				<h2 class="post-block-03__widget-title animate"><a
-						class="post-block-03__widget-title-link" href="post-page-v1.html">Republicans
-						block Dem effort to get <span
-							class="post-block-03__active-word">Trump's</span> tax returns</a></h2>
-				<footer class="post-block-03__widget-footer animate"><span
-						class="post-block-03__widget-comments-count animation-rtl">Comments 5</span><span
-						class="post-block-03__widget-date animation-ltr">Jan 30</span>
-				</footer>
-			</div>
-		</figure>
+					<?php if (has_post_thumbnail()) { ?>
+						<?php the_post_thumbnail('post_block_03', array('class' => 'post-block-03__img-item')); ?>
+					<?php } else { ?>
+						<img class="post-block-03__img-item"
+							 src="<?php echo get_template_directory_uri() ?>/images/placeholder-800-900.png"
+							 srcset="<?php echo get_template_directory_uri() ?>/images/placeholder-800-900@2x.png 2x"
+							 alt="Post picture">
+					<?php } ?>
 
-	</article>
+					<div class="post-block-03__widget theme-widget-black active-word-red"
+						 data-uk-scrollspy="target: > .animate; cls:uk-animation-slide-top-small; delay: 500">
+            <span class="post-block-03__widget-link-wrapper animate">
+						<?php
+						$thelist = '';
+						$i = 0;
+						foreach (get_the_category() as $category) {
+							if (0 < $i) $thelist .= ' ';
+							$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button button--red' . $category->slug . '">' . $category->name . '</a>';
+							$i++;
+						}
+						echo $thelist; ?>
+			</span>
+						<h2 class="post-block-03__widget-title animate"><a
+								class="post-block-03__widget-title-link"
+								href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+						<footer class="post-block-03__widget-footer animate"><span
+								class="post-block-03__widget-comments-count animation-rtl">Comments <?php echo get_comments_number();?></span>
+							<?php if ($theme_options['category-template-date'] == 1) {
+								; ?>
+								<time class="post-block-03__widget-date animation-ltr"
+									  datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
+							if ($theme_options['category-template-author'] == 1) { ?>By <a
+								href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a><?php } ?>
+
+						</footer>
+					</div>
+				</figure>
+
+			</article>
+
+		<?php endwhile;
+
+		if (class_exists('ReduxFramework')) {
+			if ($theme_options['category-pagination'] == 1) {
+				the_posts_pagination(array(
+					'mid_size' => 2,
+					'prev_text' => __('«'),
+					'next_text' => __('»'),
+				));
+			}
+		}
+	endif;
+	?>
 
 </section>

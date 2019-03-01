@@ -7,104 +7,80 @@
  * @package bcn
  */
 
+global $theme_options;
+
+echo "post-block-11";
+
 ?>
 
 <section class="post-block-11" data-uk-scrollspy="target: > article; cls:uk-animation-slide-top-medium; delay: 500">
 
-	<article class="post-block-11__item">
-		<header class="post-block-11__date"><p class="post-block-11__date-item has-animation animation-rtl"
-			><span>Jan 5</span></p></header>
-		<figure class="post-block-11__img has-animation animation-rtl">
-			<a href="post-page-v3.html">
+	<?php if (have_posts()) :
+		while (have_posts()) : the_post();
 
-				<img class="post-block-11__img-item" src="img/content/590x375.jpg"
-					 srcset="img/content/590x375@2x.jpg 2x" alt="Post picture">
+			$post_id = get_the_ID();
+			$category_object = get_the_category($post_id);
+			$category_name = $category_object[0]->name;
 
-			</a>
-		</figure>
-		<footer class="post-block-11__footer">
-			<div class="post-block-11__footer-wrapper has-animation animation-ltr">
-				<div class="post-block-11__footer-bg">
+			?>
+
+			<article class="post-block-11__item">
+				<header class="post-block-11__date"><p class="post-block-11__date-item has-animation animation-rtl"
+					>
+						<?php if ($theme_options['category-template-date'] == 1) {
+							; ?>
+							<time datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
+						if ($theme_options['category-template-author'] == 1) { ?>By <a
+							href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a><?php } ?>
+					</p></header>
+				<figure class="post-block-11__img has-animation animation-rtl">
+					<?php if (has_post_thumbnail()) { ?>
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+							<?php the_post_thumbnail('post_block_11', array('class' => 'post-block-11__img-item')); ?>
+						</a>
+					<?php } else { ?>
+						<a href="<?php the_permalink() ?>">
+							<img class="post-block-11__img-item"
+								 src="<?php echo get_template_directory_uri() ?>/images/placeholder-590-375.png"
+								 srcset="<?php echo get_template_directory_uri() ?>/images/placeholder-590-375@2x.png 2x"
+								 alt="Post picture">
+						</a>
+					<?php } ?>
+				</figure>
+				<footer class="post-block-11__footer">
+					<div class="post-block-11__footer-wrapper has-animation animation-ltr">
+						<div class="post-block-11__footer-bg">
               <span class="post-block-11__wrapper-link">
-              <a class="post-block-11__link-item button button--brown" href="#">Sport</a>
+					<?php
+					$thelist = '';
+					$i = 0;
+					foreach (get_the_category() as $category) {
+						if (0 < $i) $thelist .= ' ';
+						$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button button--brown' . $category->slug . '">' . $category->name . '</a>';
+						$i++;
+					}
+					echo $thelist; ?>
               </span>
-					<h2 class="post-block-11__header"><a class="post-block-11__header-link" href="post-page-v3.html">What His
-							Favorite Shoes</a></h2>
-				</div>
-			</div>
-		</footer>
-	</article>
+							<h2 class="post-block-11__header"><a class="post-block-11__header-link"
+																 href="<?php the_permalink() ?>"><?php the_title() ?></a>
+							</h2>
+						</div>
+					</div>
+				</footer>
+			</article>
 
-	<article class="post-block-11__item">
-		<header class="post-block-11__date"><p class="post-block-11__date-item has-animation animation-rtl"
-			><span>Jan 5</span></p></header>
-		<figure class="post-block-11__img has-animation animation-rtl">
-			<a href="post-page-v3.html">
+		<?php endwhile;
+		if (class_exists('ReduxFramework')) {
 
-				<img class="post-block-11__img-item" src="img/content/590x375-2.jpg"
-					 srcset="img/content/590x375-2@2x.jpg 2x" alt="Post picture">
-
-			</a>
-		</figure>
-		<footer class="post-block-11__footer">
-			<div class="post-block-11__footer-wrapper has-animation animation-rtl" data-delay="800">
-				<div class="post-block-11__footer-bg">
-              <span class="post-block-11__wrapper-link">
-                <a class="post-block-11__link-item button button--red" href="#">Style</a>
-              </span>
-					<h2 class="post-block-11__header"><a class="post-block-11__header-link" href="post-page-v3.html">All the
-							Best Street Style from Coachella 2018</a></h2>
-				</div>
-			</div>
-		</footer>
-	</article>
-
-	<article class="post-block-11__item">
-		<header class="post-block-11__date"><p class="post-block-11__date-item has-animation animation-rtl"
-			><span>Feb 22</span></p></header>
-		<figure class="post-block-11__img has-animation animation-rtl">
-			<a href="post-page-v3.html">
-
-				<img class="post-block-11__img-item" src="img/content/590x375-3.jpg"
-					 srcset="img/content/590x375-3@2x.jpg 2x" alt="Post picture">
-
-			</a>
-		</figure>
-		<footer class="post-block-11__footer">
-			<div class="post-block-11__footer-wrapper has-animation animation-ltr">
-				<div class="post-block-11__footer-bg">
-              <span class="post-block-11__wrapper-link">
-              <a class="post-block-11__link-item button button--brown" href="#">Business</a>
-              </span>
-					<h2 class="post-block-11__header"><a class="post-block-11__header-link" href="post-page-v3.html">Hiring a Bisuness Development Associate</a></h2>
-				</div>
-			</div>
-		</footer>
-	</article>
-
-	<article class="post-block-11__item">
-		<header class="post-block-11__date"><p class="post-block-11__date-item has-animation animation-rtl"
-			><span>Jan 5</span></p></header>
-		<figure class="post-block-11__img has-animation animation-rtl">
-			<a href="post-page-v3.html">
-
-				<img class="post-block-11__img-item" src="img/content/590x375-4.jpg"
-					 srcset="img/content/590x375-4@2x.jpg 2x" alt="Post picture">
-
-			</a>
-		</figure>
-		<footer class="post-block-11__footer">
-			<div class="post-block-11__footer-wrapper has-animation animation-rtl" data-delay="800">
-				<div class="post-block-11__footer-bg">
-              <span class="post-block-11__wrapper-link">
-                <a class="post-block-11__link-item button button--red" href="#">Menus & parties</a>
-              </span>
-					<h2 class="post-block-11__header"><a class="post-block-11__header-link" href="post-page-v3.html">The Best
-							Birthday Cake Recipes</a></h2>
-				</div>
-			</div>
-		</footer>
-	</article>
+			if ($theme_options['category-pagination'] == 1) {
+				the_posts_pagination(array(
+					'mid_size' => 2,
+					'prev_text' => __('«'),
+					'next_text' => __('»'),
+				));
+			}
+		}
+	endif; ?>
 
 </section>
 

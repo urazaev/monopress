@@ -51,15 +51,15 @@ get_header();
 					case 7:
 						up_get_template('post-block-07');
 						break;
-					case 8:
-						up_get_template('post-block-08');
-						break;
+//					case 8:
+//						up_get_template('post-block-08');
+//						break;
 					case 9:
 						up_get_template('post-block-09');
 						break;
-					case 10:
-						up_get_template('post-block-10');
-						break;
+//					case 10:
+//						up_get_template('post-block-10');
+//						break;
 					case 11:
 						up_get_template('post-block-11');
 						break;
@@ -69,24 +69,24 @@ get_header();
 					case 14:
 						up_get_template('post-block-14');
 						break;
-					case 15:
-						up_get_template('post-block-15');
-						break;
+//					case 15:
+//						up_get_template('post-block-15');
+//						break;
 					case 16:
 						up_get_template('post-block-16');
 						break;
-					case 17:
-						up_get_template('post-block-17');
-						break;
+//					case 17:
+//						up_get_template('post-block-17');
+//						break;
 					case 18:
 						up_get_template('post-block-18');
 						break;
 					case 19:
 						up_get_template('post-block-19');
 						break;
-					case 20:
-						up_get_template('post-block-20');
-						break;
+//					case 20:
+//						up_get_template('post-block-20');
+//						break;
 					case 21:
 						up_get_template('post-block-21');
 						break;

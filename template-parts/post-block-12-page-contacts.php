@@ -7,6 +7,17 @@
  * @package bcn
  */
 
+global $theme_options;
+
+?>
+
+
+<?php
+
+
+echo "post-block-12";
+
+
 ?>
 
 <section class="post-block-12 theme-menu-light-gray uk-animation-fade">

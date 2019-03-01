@@ -9,14 +9,17 @@
 
 global $theme_options;
 
+echo "post-block-18";
+
+
 ?>
 
-<?php if (have_posts()) : ?>
 
-	<section class="post-block-18 theme-white"
-			 data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 500">
+<section class="post-block-18 theme-white"
+		 data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 500">
 
-		<?php while (have_posts()) : the_post();
+	<?php if (have_posts()) :
+		while (have_posts()) : the_post();
 
 			$post_id = get_the_ID();
 			$category_object = get_the_category($post_id);
@@ -43,8 +46,8 @@ global $theme_options;
 					<?php } else { ?>
 						<a href="<?php the_permalink() ?>">
 							<img class="post-block-18__img-item"
-								 src="<?php echo get_template_directory_uri() ?>/images/placeholder-658-387.png"
-								 srcset="<?php echo get_template_directory_uri() ?>/images/placeholder-658-387@2x.png 2x"
+								 src="<?php echo get_template_directory_uri() ?>/images/placeholder-590-375.png"
+								 srcset="<?php echo get_template_directory_uri() ?>/images/placeholder-590-375@2x.png 2x"
 								 alt="Post picture">
 						</a>
 					<?php } ?>
@@ -59,13 +62,13 @@ global $theme_options;
 				$i = 0;
 				foreach (get_the_category() as $category) {
 					if (0 < $i) $thelist .= ' ';
-					$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button button--blue' . $category->slug . '">' . $category->name . '</a>';
+					$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button button--red' . $category->slug . '">' . $category->name . '</a>';
 					$i++;
 				}
 				echo $thelist; ?>
               </span>
 							<h2 class="post-block-18__header"><a class="post-block-18__header-link"
-																 href="post-page-v1.html"><?php the_title() ?>
+																 href="<?php the_permalink() ?>"><?php the_title() ?>
 								</a></h2>
 						</div>
 					</div>
@@ -84,8 +87,7 @@ global $theme_options;
 				));
 			}
 		}
-		?>
+	endif;
+	?>
 
-	</section>
-
-<?php endif; ?>
+</section>

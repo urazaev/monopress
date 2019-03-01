@@ -1033,7 +1033,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'template-settings-preloader',
 			'type' => 'section',
-			'title' => __('Preloader', 'bcn'),
+			'title' => __(' + Preloader', 'bcn'),
 			'subtitle' => __('From here you can configure show or hide preloader. For color customization go to Miscellaneous > Theme colors > Preloader', 'bcn'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
@@ -1244,50 +1244,51 @@ Redux::setSection($opt_name, array(
 					'alt' => '5',
 					'img' => get_template_directory_uri() . '/images/admin/preview-05.jpg'
 				),
-				'6' => array(
-					'alt' => '6',
-					'img' => get_template_directory_uri() . '/images/admin/preview-06.jpg'
-				),
+//				'6' => array(
+//					'alt' => '6',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-06.jpg'
+//				),
 				'7' => array(
 					'alt' => '7',
 					'img' => get_template_directory_uri() . '/images/admin/preview-07.jpg'
 				),
-				'8' => array(
-					'alt' => '8',
-					'img' => get_template_directory_uri() . '/images/admin/preview-08.jpg'
-				),
+//				'8' => array(
+//					'alt' => '8',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-08.jpg'
+//				),
 				'9' => array(
 					'alt' => '9',
 					'img' => get_template_directory_uri() . '/images/admin/preview-09.jpg'
 				),
-				'10' => array(
-					'alt' => '9',
-					'img' => get_template_directory_uri() . '/images/admin/preview-10.jpg'
-				),
+//				'10' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-10.jpg'
+//				),
 				'11' => array(
 					'alt' => '9',
 					'img' => get_template_directory_uri() . '/images/admin/preview-11.jpg'
 				),
-				'12' => array(
-					'alt' => '9',
-					'img' => get_template_directory_uri() . '/images/admin/preview-12.jpg'
-				),
+//				'12' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-12.jpg'
+//				),
 				'14' => array(
 					'alt' => '9',
 					'img' => get_template_directory_uri() . '/images/admin/preview-14.jpg'
 				),
-				'15' => array(
-					'alt' => '9',
-					'img' => get_template_directory_uri() . '/images/admin/preview-15.jpg'
-				),
-				'16' => array(
-					'alt' => '9',
-					'img' => get_template_directory_uri() . '/images/admin/preview-16.jpg'
-				),
-				'17' => array(
-					'alt' => '9',
-					'img' => get_template_directory_uri() . '/images/admin/preview-17.jpg'
-				),
+//				'15' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-15.jpg'
+//				),
+//				'16' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-16.jpg'
+//				),
+//			TODO: miss the file?
+//				'17' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-17.jpg'
+//				),
 				'18' => array(
 					'alt' => '9',
 					'img' => get_template_directory_uri() . '/images/admin/preview-18.jpg'
@@ -1296,10 +1297,10 @@ Redux::setSection($opt_name, array(
 					'alt' => '9',
 					'img' => get_template_directory_uri() . '/images/admin/preview-19.jpg'
 				),
-				'20' => array(
-					'alt' => '9',
-					'img' => get_template_directory_uri() . '/images/admin/preview-20.jpg'
-				),
+//				'20' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-20.jpg'
+//				),
 				'21' => array(
 					'alt' => '9',
 					'img' => get_template_directory_uri() . '/images/admin/preview-21.jpg'

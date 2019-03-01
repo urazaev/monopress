@@ -11,7 +11,11 @@ global $theme_options;
 
 ?>
 
-<?php if (have_posts()) : ?>
+<?php
+
+echo "post-block-21";
+
+if (have_posts()) : ?>
 
 	<section class="post-block-21" data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 500">
 

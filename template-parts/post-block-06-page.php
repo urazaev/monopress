@@ -9,6 +9,14 @@
 
 ?>
 
+<?php
+
+
+echo "post-block-06";
+
+
+?>
+
 <section class="post-block-06 theme-about-light-gray">
 
 	<div class="single-slider-item uk-animation-slide-bottom-medium">

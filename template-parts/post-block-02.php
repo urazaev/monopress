@@ -9,12 +9,12 @@
 
 global $theme_options;
 
+echo "post-block-02";
 ?>
+<section class="post-block-02 theme-white" id="loop-content">
 
-<?php if (have_posts()) : ?>
-	<section class="post-block-02 theme-white" id="loop-content">
-
-		<?php while (have_posts()) : the_post();
+	<?php if (have_posts()) :
+		while (have_posts()) : the_post();
 
 			$post_id = get_the_ID();
 			$category_object = get_the_category($post_id);
@@ -69,8 +69,8 @@ global $theme_options;
 					</div>
 				</footer>
 			</article>
-		<?php endwhile;
 
+		<?php endwhile;
 		if (class_exists('ReduxFramework')) {
 
 			if ($theme_options['category-pagination'] == 1) {
@@ -81,8 +81,6 @@ global $theme_options;
 				));
 			}
 		}
-		?>
+	endif; ?>
 
-	</section>
-<?php endif; ?>
-
+</section>

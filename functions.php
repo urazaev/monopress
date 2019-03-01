@@ -266,17 +266,17 @@ if (function_exists('add_image_size')) {
 	add_image_size('post_block_03', 800, 900, 'true');
 	add_image_size('post_block_04', 750, 400, 'true');
 	add_image_size('post_block_05', 1375, 900, 'true');
-	add_image_size('post_block_06', 800, 533, 'true');
+//	add_image_size('post_block_06', 800, 533, 'true');
 	add_image_size('post_block_07', 962, 700, 'true'); // done
-	add_image_size('post_block_08', 800, 900, 'true');
+//	add_image_size('post_block_08', 800, 900, 'true');
 	add_image_size('post_block_09', 1600, 900, 'true'); // done
-	add_image_size('post_block_10', 800, 533, 'true');
+//	add_image_size('post_block_10', 800, 533, 'true');
 	add_image_size('post_block_11', 590, 375, 'true');
-	add_image_size('post_block_12', 590, 375, 'true');
+//	add_image_size('post_block_12', 590, 375, 'true');
 	add_image_size('post_block_14', 545, 350, 'true');
 //	add_image_size('post_block_15', 590, 375, 'true');
 //	add_image_size('post_block_16', 590, 375, 'true');
-	add_image_size('post_block_17', 800, 533, 'true');
+//	add_image_size('post_block_17', 800, 533, 'true');
 	add_image_size('post_block_18', 590, 375, 'true');
 	add_image_size('post_block_19', 800, 900, 'true');
 //	add_image_size('post_block_20', 590, 375, 'true');

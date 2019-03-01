@@ -9,12 +9,17 @@
 
 global $theme_options;
 
-echo "09090909";
+
+
+echo "post-block-09";
+
+
 ?>
-<?php if (have_posts()) : ?>
 
 	<section class="post-block-09">
 		<div class="single-slider-item">
+
+			<?php if (have_posts()) : ?>
 			<?php while (have_posts()) : the_post();
 
 				$post_id = get_the_ID();
@@ -82,7 +87,7 @@ echo "09090909";
 //				}
 //			}
 //			?>
+			<?php endif; ?>
 
 		</div>
 	</section>
-<?php endif; ?>

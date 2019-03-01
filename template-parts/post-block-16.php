@@ -7,6 +7,10 @@
  * @package bcn
  */
 
+global $theme_options;
+
+
+echo "post-block-16";
+
 ?>
 
-post-block-16 ???

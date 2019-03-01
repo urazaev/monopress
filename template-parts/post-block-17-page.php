@@ -7,6 +7,16 @@
  * @package bcn
  */
 
+global $theme_options;
+
+?>
+
+<?php
+
+
+echo "post-block-17";
+
+
 ?>
 
 <section class="post-block-17 theme-about-green">
