@@ -87,8 +87,13 @@ Typography:
 
 ************************/
 
-$fonts-primary: "Roboto", Arial, Tahoma;
-$fonts-secondary: "Montserrat", sans-serif;
+$fonts-primary: var(--fonts-primary);
+$fonts-secondary: var(--fonts-secondary);
+
+:root {
+  --fonts-primary: "Roboto", Arial, Tahoma;
+  --fonts-secondary: "Montserrat", sans-serif;
+}
 
 /**********************
 

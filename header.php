@@ -107,7 +107,7 @@ global $theme_options;
                 'container' => false,
                 'menu' => esc_html($theme_options['main-menu-select']),
                 'menu_id' => esc_html($theme_options['main-menu-select']),
-                'menu_class' => 'menu menu-wrapper menu-wrapper-opened menu-wrapper-nojs',
+                'menu_class' => 'menu header-menu menu-wrapper menu-wrapper-opened menu-wrapper-nojs',
                 'echo' => true,
               ));
               ?>
@@ -118,7 +118,7 @@ global $theme_options;
 
             <?php if ($theme_options['main-menu-weather'] == 1) { ?>
               <div class="weather weather--hor header-animate">
-                <div class="weather__num">+25°</div>
+                <b class="weather__num">+25°</b>
                 <div class="weather__location">San Francisco, CA</div>
               </div>
             <?php } ?>

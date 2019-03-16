@@ -165,6 +165,24 @@ if (isSideBar) {
 
 }
 
+/**********************
+
+ Fix post-img-fixed
+
+ ************************/
+
+var isPostImgFixed = document.querySelector('.post-img-fixed');
+
+if (isPostImgFixed) {
+
+	var sidebar = new StickySidebar('.post-img-fixed', {
+		containerSelector: '.page-main',
+		innerWrapperSelector: '.post-img-fixed__inner',
+		minWidth: 768
+	});
+
+}
+
 
 /**********************
 

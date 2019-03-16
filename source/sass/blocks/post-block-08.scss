@@ -1,10 +1,10 @@
 .post-block-08 {
   order: 1;
   @media (min-width: $tablet-width) {
-    order: unset;
-    width: 50%;
-    position: fixed;
-    right: 0;
+	order: unset;
+	width: 50%;
+	//position: fixed;
+	right: 0;
   }
 
 }
@@ -26,7 +26,7 @@
   height: 50vh;
   background-color: var(--main-background);
   @media (min-width: $tablet-width) {
-    height: 100vh;
+	height: 100vh;
 
   }
 
@@ -47,50 +47,52 @@
   flex-direction: column;
   background-color: rgba($background-dark, 0.75);
 
-
   @media (min-width: $tablet-width) {
-    min-height: 25vh;
-    padding: 50px;
-    bottom: 0;
-    left: unset;
-    right: unset;
-    width: 100%;
+	//min-height: 25vh;
+	padding: 50px;
+	bottom: 0;
+	left: unset;
+	right: unset;
+	width: 100%;
   }
 }
 
 .post-block-08__widget-link-wrapper {
   text-align: right;
+  padding-bottom: 20px;
 }
 
 .post-block-08__widget-title {
 
+  font-family: $fonts-secondary;
   line-height: 1.4;
   font-size: 16px;
   text-align: right;
   margin: 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  font-weight: bold;
+  color: var(--widget-text-color);
 
   @media (min-width: $tablet-width) {
-    font-size: 1.57vw;
+	font-size: 1.57vw;
   }
 
   @media (min-width: $large-desktop-width) {
-    font-size: 25px;
+	font-size: 25px;
   }
 }
 
 .post-block-08__widget-title-link {
   font-size: inherit;
   line-height: inherit;
-  font-family: $fonts-secondary;
-  font-weight: bold;
+  font-family: inherit;
+  font-weight: inherit;
   text-decoration: none;
-  color: var(--widget-text-color);
+  color: inherit;
   @include links-decoration(rgba($text-color-white, 0.8));
 }
 
 .post-block-08__widget-footer {
+  padding-top: 20px;
   font-size: 12px;
   line-height: 14px;
   font-family: $fonts-primary;
@@ -106,4 +108,8 @@
 
 .post-block-08__widget-date {
   margin-left: 24px;
+  a {
+	color: inherit;
+
+  }
 }

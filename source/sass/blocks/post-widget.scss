@@ -165,11 +165,11 @@
   font-size: 12px;
   line-height: 15px;
   font-family: $fonts-primary;
-  color: var(--widget-text-color);
+  color: inherit;
 }
 
 .post-widget__date {
-  color: var(--widget-text-color);
+  color: inherit;
 }
 
 .post-widget__comments-count {

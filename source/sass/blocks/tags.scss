@@ -1,0 +1,40 @@
+.tags-single-post {
+  padding-bottom: 30px;
+  a {
+	padding: 4.5px 10px;
+	font-size: 10px;
+	//font-family: $fonts-secondary;
+	color: #ffffff;
+	//font-weight: bold;
+	text-decoration: none;
+	position: relative;
+	display: inline-block;
+	background: var(--active-word);
+	margin-right: 6px;
+	margin-bottom: 6px;
+
+	&:hover {
+	  //color: var(--active-word);
+	}
+
+	&::before {
+	  content: "#";
+	}
+
+	&::after {
+	  position: absolute;
+	  width: 0;
+	  height: 100%;
+	  left: 0;
+	  top: 0;
+	  content: " ";
+	  background: $background-white;
+	  opacity: 0.3;
+	  transition: all 0.3s;
+	}
+
+	&:hover::after {
+	  width: 100%;
+	}
+  }
+}

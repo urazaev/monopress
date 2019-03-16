@@ -71,7 +71,7 @@
 
 .usernav__search-close {
   position: fixed;
-  color: var(--header-text-color);
+  color: var(--header-icon-color);
   top: 10%;
   right: 10%;
   font-size: 1.7em;
@@ -100,8 +100,8 @@
 }
 
 .usernav__search-input {
-  color: var(--header-text-color);
-  border-bottom: 3px solid var(--header-text-color);
+  color: var(--header-icon-color);
+  border-bottom: 3px solid var(--header-icon-color);
   font-size: 1.5rem !important;
 
 }
@@ -258,27 +258,27 @@
   top: 50%;
   left: 50%;
   margin: -2px 0 0 -2px;
-  background-color: var(--header-text-color);
-  box-shadow: -8px -8px 0 var(--header-text-color),
-  -8px 0 0 var(--header-text-color),
-  -8px 8px 0 var(--header-text-color),
-  0 -8px 0 var(--header-text-color),
-  0 8px 0 var(--header-text-color),
-  8px -8px 0 var(--header-text-color),
-  8px 0 0 var(--header-text-color),
-  8px 8px 0 var(--header-text-color);
+  background-color: var(--header-icon-color);
+  box-shadow: -8px -8px 0 var(--header-icon-color),
+  -8px 0 0 var(--header-icon-color),
+  -8px 8px 0 var(--header-icon-color),
+  0 -8px 0 var(--header-icon-color),
+  0 8px 0 var(--header-icon-color),
+  8px -8px 0 var(--header-icon-color),
+  8px 0 0 var(--header-icon-color),
+  8px 8px 0 var(--header-icon-color);
   transition: all ease-in-out 0.1s;
 }
 
 .usernav__hamburger:hover span {
-  box-shadow: -9px -9px 0 var(--header-text-color),
-  -9px 0 0 var(--header-text-color),
-  -9px 9px 0 var(--header-text-color),
-  0 -9px 0 var(--header-text-color),
-  0 9px 0 var(--header-text-color),
-  9px -9px 0 var(--header-text-color),
-  9px 0 0 var(--header-text-color),
-  9px 9px 0 var(--header-text-color);
+  box-shadow: -9px -9px 0 var(--header-icon-color-hover),
+  -9px 0 0 var(--header-icon-color-hover),
+  -9px 9px 0 var(--header-icon-color-hover),
+  0 -9px 0 var(--header-icon-color-hover),
+  0 9px 0 var(--header-icon-color-hover),
+  9px -9px 0 var(--header-icon-color-hover),
+  9px 0 0 var(--header-icon-color-hover),
+  9px 9px 0 var(--header-icon-color-hover);
   transition: all ease-in-out 0.1s;
 }
 
@@ -295,48 +295,48 @@
     transition: all ease-in-out 0.1s;
   }
 }
-
-.usernav__hamburger--light:hover span {
-  @media (min-width: $tablet-width) {
-    box-shadow: -9px -9px 0 $background-white,
-    -9px 0 0 $background-white,
-    -9px 9px 0 $background-white,
-    0 -9px 0 $background-white,
-    0 9px 0 $background-white,
-    9px -9px 0 $background-white,
-    9px 0 0 $background-white,
-    9px 9px 0 $background-white;
-    transition: all ease-in-out 0.1s;
-  }
-}
-
-.usernav__hamburger--xs-dark:hover span {
-  @media (max-width: $tablet-width) {
-    box-shadow: -9px -9px 0 $background-dark,
-    -9px 0 0 $background-dark,
-    -9px 9px 0 $background-dark,
-    0 -9px 0 $background-dark,
-    0 9px 0 $background-dark,
-    9px -9px 0 $background-dark,
-    9px 0 0 $background-dark,
-    9px 9px 0 $background-dark;
-    transition: all ease-in-out 0.1s;
-  }
-}
-
-.usernav__hamburger--xs-light:hover span {
-  @media (max-width: $tablet-width) {
-    box-shadow: -9px -9px 0 $background-white,
-    -9px 0 0 $background-white,
-    -9px 9px 0 $background-white,
-    0 -9px 0 $background-white,
-    0 9px 0 $background-white,
-    9px -9px 0 $background-white,
-    9px 0 0 $background-white,
-    9px 9px 0 $background-white;
-    transition: all ease-in-out 0.1s;
-  }
-}
+//
+//.usernav__hamburger--light:hover span {
+//  @media (min-width: $tablet-width) {
+//    box-shadow: -9px -9px 0 $background-white,
+//    -9px 0 0 $background-white,
+//    -9px 9px 0 $background-white,
+//    0 -9px 0 $background-white,
+//    0 9px 0 $background-white,
+//    9px -9px 0 $background-white,
+//    9px 0 0 $background-white,
+//    9px 9px 0 $background-white;
+//    transition: all ease-in-out 0.1s;
+//  }
+//}
+//
+//.usernav__hamburger--xs-dark:hover span {
+//  @media (max-width: $tablet-width) {
+//    box-shadow: -9px -9px 0 $background-dark,
+//    -9px 0 0 $background-dark,
+//    -9px 9px 0 $background-dark,
+//    0 -9px 0 $background-dark,
+//    0 9px 0 $background-dark,
+//    9px -9px 0 $background-dark,
+//    9px 0 0 $background-dark,
+//    9px 9px 0 $background-dark;
+//    transition: all ease-in-out 0.1s;
+//  }
+//}
+//
+//.usernav__hamburger--xs-light:hover span {
+//  @media (max-width: $tablet-width) {
+//    box-shadow: -9px -9px 0 $background-white,
+//    -9px 0 0 $background-white,
+//    -9px 9px 0 $background-white,
+//    0 -9px 0 $background-white,
+//    0 9px 0 $background-white,
+//    9px -9px 0 $background-white,
+//    9px 0 0 $background-white,
+//    9px 9px 0 $background-white;
+//    transition: all ease-in-out 0.1s;
+//  }
+//}
 
 .usernav__hamburger--dark.active:hover span {
   box-shadow: none;
@@ -362,24 +362,28 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: var(--header-text-color);
+  background-color: var(--header-icon-color);
   transition: all ease-in-out 0.1s;
 }
 
+.usernav__hamburger:hover span:before {
+  background-color: var(--header-icon-color-hover);
+}
+
 .usernav__hamburger.active span {
-  box-shadow: 0 0 0 var(--header-text-color);
+  box-shadow: 0 0 0 var(--header-icon-color);
   width: 100%;
   height: 2px;
   left: 0%;
   margin: -1px 0 0 0px;
   transform: rotate(45deg);
-  background: var(--header-text-color);
+  background: var(--header-icon-color);
   transition: all ease-in-out 0.1s;
 }
 
 .usernav__hamburger.active span:before {
   transform: rotate(90deg);
-  background: var(--header-text-color);
+  background: var(--header-icon-color);
   transition: all ease-in-out 0.2s;
 }
 

@@ -1,15 +1,17 @@
 .post-text-block-08 {
 
   @include indents-zero;
-  background-color: var(--main-background);
+  //background-color: var(--main-background);
   order: 2;
   padding: 30px;
+  width: 100%;
   @media (min-width: $tablet-width) {
     order: unset;
     padding-top: 16px;
     padding-left: 30px;
     padding-right: 30px;
-    width: 35.9%;
+    //width: 35.9%;
+    width: 50%;
 
   }
 

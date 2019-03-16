@@ -180,6 +180,7 @@ function bcn_scripts()
 //    wp_enqueue_script('bcn-navigation', get_template_directory_uri() . '/js/navigation.js', array(),  time(), true);
 //    wp_enqueue_script('bcn-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(),  time(), true);
 	wp_enqueue_script('bcn-app-min', get_template_directory_uri() . '/js/app.min.js', array(), time(), true);
+//	wp_enqueue_script('bcn-app-min', get_template_directory_uri() . '/js/app.js', array(), time(), true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
@@ -214,87 +215,3 @@ require get_template_directory() . '/inc/customizer.php';
 if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-//require_once (dirname(__FILE__) . '/redux-framework/config.php');
-
-/**
- * Theme Options
- */
-if (!isset($theme_options) && file_exists(get_template_directory() . '/inc/theme-options.php')) {
-	require_once(get_template_directory() . '/inc/theme-options.php');
-}
-
-/**
- * Theme Options css
- */
-
-function addPanelCSS()
-{
-	wp_register_style(
-		'redux-custom-css',
-		get_template_directory_uri() . '/css/redux-admin.min.css',
-		array('redux-admin-css'), // Be sure to include redux-admin-css so it's appended after the core css is applied
-		time(),
-		'all'
-	);
-	wp_enqueue_style('redux-custom-css');
-}
-
-// This example assumes your opt_name is set to redux_demo, replace with your opt_name value
-add_action('redux/page/theme_options/enqueue', 'addPanelCSS');
-
-/**
- * include templates
- **/
-
-if (!function_exists('up_get_template')) {
-	/*
-     * get template parts
-     */
-	function up_get_template($template, $name = null)
-	{
-		get_template_part('template-parts/' . $template, $name);
-	}
-}
-
-/**
- * custom thumbs
- **/
-
-if (function_exists('add_image_size')) {
-	add_image_size('post_block_02', 590, 375, 'true'); // done
-	add_image_size('post_block_03', 800, 900, 'true');
-	add_image_size('post_block_04', 750, 400, 'true');
-	add_image_size('post_block_05', 1375, 900, 'true');
-//	add_image_size('post_block_06', 800, 533, 'true');
-	add_image_size('post_block_07', 962, 700, 'true'); // done
-//	add_image_size('post_block_08', 800, 900, 'true');
-	add_image_size('post_block_09', 1600, 900, 'true'); // done
-//	add_image_size('post_block_10', 800, 533, 'true');
-	add_image_size('post_block_11', 590, 375, 'true');
-//	add_image_size('post_block_12', 590, 375, 'true');
-	add_image_size('post_block_14', 545, 350, 'true');
-//	add_image_size('post_block_15', 590, 375, 'true');
-//	add_image_size('post_block_16', 590, 375, 'true');
-//	add_image_size('post_block_17', 800, 533, 'true');
-	add_image_size('post_block_18', 590, 375, 'true');
-	add_image_size('post_block_19', 800, 900, 'true');
-//	add_image_size('post_block_20', 590, 375, 'true');
-	add_image_size('post_block_21', 700, 370, 'true');
-}
-
-/**
- * infinite scroll
- **/
-function wp_infinitepaginate()
-{
-	$loopFile = $_POST['loop_file'];
-	$paged = $_POST['page_no'];
-	$posts_per_page = get_option('posts_per_page');
-	query_posts(array('paged' => $paged));
-	get_template_part($loopFile);
-	exit;
-}
-
-add_action('wp_ajax_infinite_scroll', 'wp_infinitepaginate');           // for logged in user
-add_action('wp_ajax_nopriv_infinite_scroll', 'wp_infinitepaginate');    // if user not logged in

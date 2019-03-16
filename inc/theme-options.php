@@ -65,7 +65,7 @@ $args = array(
 	// TYPICAL -> Change these values as you need/desire
 	'opt_name' => $opt_name,
 	// This is where your data is stored in the database and also becomes your global variable name.
-	'display_name'         => 'BCN ' . esc_html__('Options', 'bcn').'' ,
+	'display_name' => 'BCN ' . esc_html__('Options', 'bcn') . '',
 	// Name that appears at the top of your panel
 	'display_version' => $theme->get('Version'),
 	// Version that appears at the top of your panel
@@ -1204,24 +1204,24 @@ Redux::setSection($opt_name, array(
 //            'default' => true,
 //            // TODO: for newest version
 //        ),
-        array(
-            'id' => 'category-template-author',
-            'type' => 'switch',
-            'title' => __('Show or hide author name and link.', 'bcn'),
-            'subtitle' => __('Show or hide author on post listings.', 'bcn'),
-            'default' => true,
-            'on' => 'Show',
-            'off' => 'Hide',
-        ),
 		array(
-            'id' => 'category-template-date',
-            'type' => 'switch',
-            'title' => __('Show or hide date.', 'bcn'),
-            'subtitle' => __('Show or hide date on post listings.', 'bcn'),
-            'default' => true,
-            'on' => 'Show',
-            'off' => 'Hide',
-        ),
+			'id' => 'category-template-author',
+			'type' => 'switch',
+			'title' => __('Show or hide author name and link.', 'bcn'),
+			'subtitle' => __('Show or hide author on post listings.', 'bcn'),
+			'default' => true,
+			'on' => 'Show',
+			'off' => 'Hide',
+		),
+		array(
+			'id' => 'category-template-date',
+			'type' => 'switch',
+			'title' => __('Show or hide date.', 'bcn'),
+			'subtitle' => __('Show or hide date on post listings.', 'bcn'),
+			'default' => true,
+			'on' => 'Show',
+			'off' => 'Hide',
+		),
 		array(
 			'id' => 'category-article-display',
 			'type' => 'image_select',
@@ -1353,13 +1353,13 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'post-and-custom-post',
 			'type' => 'section',
-			'title' => __('Post and Custom Post Types', 'bcn'),
+			'title' => __('+ Post and Custom Post Types', 'bcn'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'post-show-categories',
 			'type' => 'switch',
-			'title' => __('Show categories tags', 'bcn'),
+			'title' => __('+ Show categories tags', 'bcn'),
 			'subtitle' => __('Enable or disable the categories tags (on single posts and custom post types)', 'bcn'),
 			'default' => true,
 		),
@@ -1374,77 +1374,79 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'post-show-author-name',
 			'type' => 'switch',
-			'title' => __('Show author name', 'bcn'),
+			'title' => __('+ Show author name', 'bcn'),
 			'subtitle' => __('Enable or disable the author name (on single post page)', 'bcn'),
 			'default' => true,
 		),
 		array(
 			'id' => 'post-show-date',
 			'type' => 'switch',
-			'title' => __('Show date', 'bcn'),
+			'title' => __('+ Show date', 'bcn'),
 			'subtitle' => __('Enable or disable the post date (on single post page)', 'bcn'),
 			'default' => true,
 		),
-		array(
-			'id' => 'post-show-views',
-			'type' => 'switch',
-			'title' => __('Show post views', 'bcn'),
-			'subtitle' => __('Enable or disable the post views (on single post page)', 'bcn'),
-			'default' => false,
-		),
+//		array(
+//			'id' => 'post-show-views',
+//			'type' => 'switch',
+//			'title' => __('Show post views', 'bcn'),
+//			'subtitle' => __('Enable or disable the post views (on single post page)', 'bcn'),
+//			'default' => false,
+//		),
+//		// TODO: for newest version
 		array(
 			'id' => 'post-show-comments-numbers',
 			'type' => 'switch',
-			'title' => __('Show comment count', 'bcn'),
+			'title' => __('+ Show comment count', 'bcn'),
 			'subtitle' => __('Enable or disable comment number (on single post page)', 'bcn'),
 			'default' => false,
 		),
 		array(
 			'id' => 'block-show-tags',
 			'type' => 'switch',
-			'title' => __('Show tags', 'bcn'),
+			'title' => __('+ Show tags', 'bcn'),
 			'subtitle' => __('Enable or disable the post tags (bottom of single post pages and CPT)', 'bcn'),
-			'default' => true,
-		),
-		array(
-			'id' => 'block-show-author-box',
-			'type' => 'switch',
-			'title' => __('Show author box', 'bcn'),
-			'subtitle' => __('Enable or disable the author box (bottom of single post pages)', 'bcn'),
 			'default' => true,
 		),
 		array(
 			'id' => 'block-show-next-previous',
 			'type' => 'switch',
-			'title' => __('Show next and previous posts', 'bcn'),
+			'title' => __('+ Show next and previous posts', 'bcn'),
 			'subtitle' => __('Show or hide `next` and `previous` posts (bottom of single post pages)', 'bcn'),
+			'default' => true,
+		),
+		array(
+			'id' => 'block-show-author-box',
+			'type' => 'switch',
+			'title' => __('+ Show author box', 'bcn'),
+			'subtitle' => __('Enable or disable the author box (bottom of single post pages)', 'bcn'),
 			'default' => true,
 		),
 		array(
 			'id' => 'block-show-comments',
 			'type' => 'switch',
-			'title' => __('Enable comments on posts', 'bcn'),
+			'title' => __('+ Enable comments on posts', 'bcn'),
 			'subtitle' => __('Enable or disable the posts\' comments, for the entire site.', 'bcn'),
 			'default' => true,
 		),
-		array(
-			'id' => 'block-show-general-modal',
-			'type' => 'switch',
-			'title' => __('General modal image', 'bcn'),
-			'subtitle' => __('<p>Enable or disable general modal image viewer over all post images, so you won\'t have to go on each post to set them individually.</p><p>Consider that disabling this feature, the individual settings of an image post are applied.</p>', 'bcn'),
-			'default' => false,
-		),
+//		array(
+//			'id' => 'block-show-general-modal',
+//			'type' => 'switch',
+//			'title' => __('General modal image', 'bcn'),
+//			'subtitle' => __('<p>Enable or disable general modal image viewer over all post images, so you won\'t have to go on each post to set them individually.</p><p>Consider that disabling this feature, the individual settings of an image post are applied.</p>', 'bcn'),
+//			'default' => false,
+//			// TODO: for newest version
+//		),
 		array(
 			'id' => 'post-template-title',
 			'type' => 'section',
-			'title' => __('Default post template (site wide)', 'bcn'),
+			'title' => __('+ Default post template (site wide)', 'bcn'),
 			'subtitle' => __('This template will be applied to the whole site. The theme will also try to adjust the default widgets to look in the same style with the block template selected here.', 'bcn'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'post-template-default',
 			'type' => 'image_select',
-			'title' => __('Default site post template', 'bcn'),
+			'title' => __('+ Default site post template', 'bcn'),
 			'subtitle' => __('Setting this option will make all post pages, that don\'t have a post template set, to be displayed using this template. You can overwrite this setting on a per post basis.', 'bcn'),
 //            'desc' => __('This uses some of the built in images, you can use them for layout options.', 'bcn'),
 			//Must provide key => value(array:title|img) pairs for radio options
@@ -1757,7 +1759,7 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Background', 'bcn'),
+	'title' => __('+ Background', 'bcn'),
 	'id' => 'background',
 	'subsection' => true,
 	'fields' => array(
@@ -1767,6 +1769,7 @@ Redux::setSection($opt_name, array(
 //            'output' => array('body'),
 			'title' => __('Theme background', 'bcn'),
 			'background-color' => 'false',
+			'output' => '.up-container',
 		),
 		array(
 			'id' => 'background-search',
@@ -1774,6 +1777,7 @@ Redux::setSection($opt_name, array(
 //            'output' => array('body'),
 			'title' => __('Search panel background', 'bcn'),
 			'background-color' => 'false',
+			'output' => '.usernav__search-search--open',
 		),
 		array(
 			'id' => 'background-flip',
@@ -1781,20 +1785,24 @@ Redux::setSection($opt_name, array(
 //            'output' => array('body'),
 			'title' => __('Flip panel background', 'bcn'),
 			'background-color' => 'false',
+			'output' => '.flip-block--open',
 		),
-		array(
-			'id' => 'background-mobile-menu',
-			'type' => 'background',
-//            'output' => array('body'),
-			'title' => __('Mobile menu background', 'bcn'),
-			'background-color' => 'false',
-		),
+//		array(
+//			'id' => 'background-mobile-menu',
+//			'type' => 'background',
+////            'output' => array('body'),
+//			'title' => __('? Mobile menu background', 'bcn'),
+//			'background-color' => 'false',
+//		),
+//// TODO: for newest version
+
 		array(
 			'id' => 'background-portfolio',
 			'type' => 'background',
-//            'output' => array('body'),
+//           'output' => array('body'),
 			'title' => __('Portfolio background', 'bcn'),
 			'background-color' => 'false',
+			'output' => '.container--portfolio, .container--portfolio-03, .container--portfolio-02'
 		),
 
 //        array(
@@ -1807,33 +1815,33 @@ Redux::setSection($opt_name, array(
 	),
 ));
 
-Redux::setSection($opt_name, array(
-	'title' => __('Excerpts', 'bcn'),
-	'id' => 'excerpts',
-	'desc' => __('Adding a text as excerpt on post edit page (Excerpt box), will overwrite the theme excerpts ', 'bcn'),
-	'subsection' => true,
-	'fields' => array(
-		array(
-			'id' => 'title-lenght',
-			'type' => 'text',
-			'title' => __('Title lenght', 'bcn'),
-			'subtitle' => __('In words', 'bcn'),
-			'desc' => __('Example: 12', 'bcn'),
-			'default' => '12',
-		),
-		array(
-			'id' => 'excerpts-lenght',
-			'type' => 'text',
-			'title' => __('Excerpts lenght', 'bcn'),
-			'subtitle' => __('In words', 'bcn'),
-			'desc' => __('Example: 256', 'bcn'),
-			'default' => '12',
-		),
-	)
-));
+//Redux::setSection($opt_name, array(
+//	'title' => __('Excerpts', 'bcn'),
+//	'id' => 'excerpts',
+//	'desc' => __('Adding a text as excerpt on post edit page (Excerpt box), will overwrite the theme excerpts ', 'bcn'),
+//	'subsection' => true,
+//	'fields' => array(
+//		array(
+//			'id' => 'title-lenght',
+//			'type' => 'text',
+//			'title' => __('Title lenght', 'bcn'),
+//			'subtitle' => __('In words', 'bcn'),
+//			'desc' => __('Example: 12', 'bcn'),
+//			'default' => '12',
+//		),
+//		array(
+//			'id' => 'excerpts-lenght',
+//			'type' => 'text',
+//			'title' => __('Excerpts lenght', 'bcn'),
+//			'subtitle' => __('In words', 'bcn'),
+//			'desc' => __('Example: 256', 'bcn'),
+//			'default' => '12',
+//		),
+//	)
+//));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Theme colors', 'bcn'),
+	'title' => __('+ Theme colors', 'bcn'),
 	'id' => 'theme-color',
 //    'desc' => __('For full documentation on this field, visit: ', 'bcn') . '<a href="//docs.reduxframework.com/core/fields/slides/" target="_blank">docs.reduxframework.com/core/fields/slides/</a>',
 	'subsection' => true,
@@ -1854,7 +1862,14 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select theme accent color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'color' => 'body b,body strong, .content, .entry-content b, .entry-content strong, .entry-title span, .entry-title b, .entry-title strong',
+				'--active-word' => ':root',
+			),
+//		TODO: think much more about it
 		),
+
+
 		array(
 			'id' => 'colors-general-bg',
 			'type' => 'color',
@@ -1862,15 +1877,21 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select theme background color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'background-color' => 'body',
+			),
+
+
 		),
-		array(
-			'id' => 'colors-general-headers-bg',
-			'type' => 'color',
-			'title' => __('Headers background color', 'bcn'),
-			'subtitle' => __('Select a global header background color', 'bcn'),
-			'default' => false,
-			'validate' => 'color',
-		),
+//		array(
+//			'id' => 'colors-general-headers-bg',
+//			'type' => 'color',
+//			'title' => __('Headers background color', 'bcn'),
+//			'subtitle' => __('Select a global header background color', 'bcn'),
+//			'default' => false,
+//			'validate' => 'color',
+////			TODO: for newest version
+//		),
 		array(
 			'id' => 'colors-general-headers',
 			'type' => 'color',
@@ -1878,6 +1899,10 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select a global header text color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'color' => '.post-block-02__header a:hover, .post-block-03__widget-title a:hover, .post-block-04__header a:hover, .post-block-05__header a:hover, .post-block-07__header a:hover, .post-block-09__header a:hover, .post-block-11__header a:hover, .post-block-14__header a:hover, .post-block-18__header a:hover, .post-block-19__widget-title a:hover, .post-block-21__header a:hover, .post-block-02__header a, .post-block-03__widget-title a, .post-block-04__header a, .post-block-05__header a, .post-block-07__header a, .post-block-09__header a, .post-block-11__header a, .post-block-14__header a, .post-block-18__header a, .post-block-19__widget-title a, .post-block-21__header a, .post-block-02__item:hover .post-block-02__header-link, .post-block-03__item:hover .post-block-03__header-link, .post-block-04__item:hover .post-block-04__header-link, .post-block-05__item:hover .post-block-05__header-link, .post-block-07__item:hover .post-block-07__header-link, .post-block-09__item:hover .post-block-09__header-link, .post-block-11__item:hover .post-block-11__header-link, .post-block-14__item:hover .post-block-14__header-link, .post-block-18__item:hover .post-block-18__header-link, .post-block-19__item:hover .post-block-19__header-link, .post-block-21__item:hover .post-block-21__header-link',
+				'border-bottom-color' => '.post-block-02__item:hover .post-block-02__header-link, .post-block-03__item:hover .post-block-03__header-link, .post-block-04__item:hover .post-block-04__header-link, .post-block-05__item:hover .post-block-05__header-link, .post-block-07__item:hover .post-block-07__header-link, .post-block-09__item:hover .post-block-09__header-link, .post-block-11__item:hover .post-block-11__header-link, .post-block-14__item:hover .post-block-14__header-link, .post-block-18__item:hover .post-block-18__header-link, .post-block-19__item:hover .post-block-19__header-link, .post-block-21__item:hover .post-block-21__header-link'
+			)
 		),
 
 //      Preloader
@@ -1890,19 +1915,25 @@ Redux::setSection($opt_name, array(
 		),
 		array(
 			'id' => 'colors-preloader-bg',
-			'type' => 'color',
+			'type' => 'color_rgba',
 			'title' => __('Preloader background color', 'bcn'),
 			'subtitle' => __('Select preloader background color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'background-color' => '.loading-spinner'
+			),
 		),
 		array(
 			'id' => 'colors-preloader',
-			'type' => 'color',
+			'type' => 'color_rgba',
 			'title' => __('Preloader color', 'bcn'),
 			'subtitle' => __('Select preloader color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'background-color' => '.loading-spinner__item .loading-spinner__item-cube:before'
+			),
 		),
 
 //      Header
@@ -1912,6 +1943,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'section',
 			'title' => __('Header', 'bcn'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
+
 		),
 		array(
 			'id' => 'colors-header-bg',
@@ -1920,6 +1952,32 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select header background color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'background-color' => '.page-header'
+			),
+		),
+
+		array(
+			'id' => 'colors-header-text',
+			'type' => 'color',
+			'title' => __('Header text color', 'bcn'),
+			'subtitle' => __('Select header text color', 'bcn'),
+			'default' => false,
+			'validate' => 'color',
+			'output' => array(
+				'color' => '.page-header'
+			),
+		),
+		array(
+			'id' => 'colors-header-b',
+			'type' => 'color',
+			'title' => __('Header accent text color', 'bcn'),
+			'subtitle' => __('Select header accent text color', 'bcn'),
+			'default' => false,
+			'validate' => 'color',
+			'output' => array(
+				'color' => '.page-header b'
+			),
 		),
 		array(
 			'id' => 'colors-header-logo',
@@ -1928,6 +1986,9 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select text logo color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'color' => '.main-nav__logo, .main-nav__logo:hover'
+			),
 		),
 		array(
 			'id' => 'colors-menu-bg',
@@ -1936,6 +1997,9 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select menu background color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'background-color' => '.header-menu'
+			),
 		),
 		array(
 			'id' => 'colors-menu-hover',
@@ -1944,6 +2008,7 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select the active and hover color for menu and submenu', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => '.header-menu .menu-item a:hover, .header-menu .menu-item a:focus, .header-menu .menu-item a:active',
 		),
 		array(
 			'id' => 'colors-menu-txt',
@@ -1952,6 +2017,10 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select menu text color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'color' => '.header-menu .menu-item a',
+				'background-color' => '.header-menu .menu-item a::before',
+			),
 		),
 		array(
 			'id' => 'colors-menu-accent-txt',
@@ -1960,6 +2029,7 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select menu accent text color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => '.header-menu .menu-item > a >strong',
 		),
 
 //      Header -> Submenu
@@ -1971,6 +2041,9 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select sub-menu background color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'background-color' => '.header-menu .menu-item-has-children:hover .sub-menu, .header-menu .sub-menu',
+			),
 		),
 		array(
 			'id' => 'colors-submenu-color',
@@ -1979,6 +2052,10 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select sub-menu text color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'color' => '.header-menu .sub-menu a',
+				'background-color' => '.header-menu .sub-menu a::before',
+			),
 		),
 		array(
 			'id' => 'colors-submenu-hover-bg',
@@ -1987,6 +2064,9 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Active and hover background color for sub-menus', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'background-color' => '.header-menu .sub-menu a:hover, .header-menu .sub-menu a:focus,.header-menu .sub-menu a:active',
+			),
 		),
 		array(
 			'id' => 'colors-submenu-hover-color',
@@ -1995,6 +2075,10 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Active and hover text color for sub-menus', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'color' => '.header-menu .sub-menu a:hover, .header-menu .sub-menu a:focus, .header-menu .sub-menu a:active',
+				'background-color' => '.header-menu .sub-menu a:hover::before',
+			),
 		),
 
 //      Header -> icons
@@ -2006,6 +2090,11 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select menu icons color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'color' => '.usernav button',
+				'background-color' => '.usernav__hamburger span',
+				'--header-icon-color' => ':root'
+			),
 		),
 		array(
 			'id' => 'colors-menu-icons-hover',
@@ -2014,26 +2103,35 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select menu icons hover color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'color' => '.usernav button:hover',
+				'background-color' => '.sub-menu a:hover::before',
+				'--header-icon-color-hover' => ':root'
+			),
 		),
 
 //      Header ->  social
+//
+//		array(
+//			'id' => 'colors-menu-soc-icons',
+//			'type' => 'color',
+//			'title' => __('- Social icons color', 'bcn'),
+//			'subtitle' => __('Select social icons color', 'bcn'),
+//			'default' => false,
+//			'validate' => 'color',
+//			'output' => '',
+//		),
+//		array(
+//			'id' => 'colors-menu-soc-icons-hover',
+//			'type' => 'color',
+//			'title' => __('- Social icons hover color', 'bcn'),
+//			'subtitle' => __('Select social icons hover color', 'bcn'),
+//			'default' => false,
+//			'validate' => 'color',
+//			'output' => '',
+//		),
 
-		array(
-			'id' => 'colors-menu-soc-icons',
-			'type' => 'color',
-			'title' => __('Social icons color', 'bcn'),
-			'subtitle' => __('Select social icons color', 'bcn'),
-			'default' => false,
-			'validate' => 'color',
-		),
-		array(
-			'id' => 'colors-menu-soc-icons-hover',
-			'type' => 'color',
-			'title' => __('Social icons hover color', 'bcn'),
-			'subtitle' => __('Select social icons hover color', 'bcn'),
-			'default' => false,
-			'validate' => 'color',
-		),
+//		TODO: for newest version
 
 //      Sidebar
 
@@ -2050,6 +2148,9 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select sidebar background color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'background-color' => '.post-widget, .post-widget .sidebar__inner',
+			),
 		),
 		array(
 			'id' => 'colors-sidebar-color',
@@ -2058,6 +2159,19 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select sidebar text color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => '.post-widget, .post-widget .sidebar__inner',
+		),
+		array(
+			'id' => 'colors-sidebar-links-color',
+			'type' => 'color',
+			'title' => __('Sidebar links color', 'bcn'),
+			'subtitle' => __('Select sidebar links color', 'bcn'),
+			'default' => false,
+			'validate' => 'color',
+			'output' => array(
+				'color' => '.post-widget a, .post-widget .sidebar__inner a',
+				'border-bottom-color' => '.post-widget a, .post-widget .sidebar__inner a',
+			),
 		),
 
 //      Flip panel
@@ -2067,6 +2181,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'section',
 			'title' => __('Flip panel', 'bcn'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
+
 		),
 		array(
 			'id' => 'colors-flip-bg',
@@ -2075,6 +2190,9 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select flip panel background color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'background-color' => '.flip-block ',
+			),
 		),
 		array(
 			'id' => 'colors-flip-color',
@@ -2083,6 +2201,7 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select text and icons color for flip panel', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => '.flip-block__wrapper, .flip-block__wrapper a',
 		),
 
 //      Search panel
@@ -2100,6 +2219,9 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select search panel background color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'background-color' => '.usernav__search-search',
+			),
 		),
 		array(
 			'id' => 'colors-search-color',
@@ -2108,6 +2230,7 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select search panel text and icons color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => '.usernav__search-search.usernav__search-search--open  button, .usernav__search-input,.usernav__search-wrapper .usernav__search-input:focus, .usernav__search-input::-webkit-input-placeholder',
 		),
 		array(
 			'id' => 'colors-search-border',
@@ -2116,6 +2239,9 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select search panel bottom border color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'border-bottom-color' => '.usernav__search-input'
+			),
 		),
 
 //      Posts
@@ -2127,12 +2253,13 @@ Redux::setSection($opt_name, array(
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
-			'id' => 'colors-posts-title',
+			'id' => 'colors-posts-titles',
 			'type' => 'color',
 			'title' => __('Post title color', 'bcn'),
 			'subtitle' => __('Select post title color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => '.post h1',
 		),
 		array(
 			'id' => 'colors-posts-author',
@@ -2141,6 +2268,7 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select author name color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => '.post .author a',
 		),
 		array(
 			'id' => 'colors-posts-text',
@@ -2149,6 +2277,7 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select post content color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => '.post .entry-content',
 		),
 		array(
 			'id' => 'colors-posts-h',
@@ -2157,6 +2286,7 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select in post h color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => '.post h1,.post h2,.post h3,.post h4,.post h5,.post h6',
 		),
 		array(
 			'id' => 'colors-posts-blockquote',
@@ -2165,6 +2295,7 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select in post blockquote color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => '.post blockquote',
 		),
 
 //      Pages
@@ -2176,12 +2307,13 @@ Redux::setSection($opt_name, array(
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
-			'id' => 'colors-pages-title',
+			'id' => 'colors-pages-titles',
 			'type' => 'color',
 			'title' => __('Page title color', 'bcn'),
 			'subtitle' => __('Select page title color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => '.page h1',
 		),
 		array(
 			'id' => 'colors-pages-text',
@@ -2190,6 +2322,7 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select page text color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => '.page ',
 		),
 		array(
 			'id' => 'colors-pages-h',
@@ -2198,6 +2331,7 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select page h color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => '.page h1,.page h2,.page h3,.page h4,.page h5,.page h6',
 		),
 
 //      Footer
@@ -2215,14 +2349,31 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select footer background color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'background-color' => 'footer.footer, .footer.footer-first, .footer.footer-second, .footer.footer-third',
+			),
 		),
 		array(
-			'id' => 'colors-footer-color',
+			'id' => 'colors-footer-text',
 			'type' => 'color',
 			'title' => __('Text color', 'bcn'),
 			'subtitle' => __('Select footer text color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'color' => 'footer.footer, .footer.footer-first, .footer.footer-second, .footer.footer-third',
+			),
+		),
+		array(
+			'id' => 'colors-footer-links',
+			'type' => 'color',
+			'title' => __('Links color', 'bcn'),
+			'subtitle' => __('Select footer links color', 'bcn'),
+			'default' => false,
+			'validate' => 'color',
+			'output' => array(
+				'color' => 'footer.footer a, .footer.footer-first a, .footer.footer-second a, .footer.footer-third a',
+			),
 		),
 		array(
 			'id' => 'colors-footer-header',
@@ -2231,6 +2382,20 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select widgets header text color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'color' => 'footer.footer h2, .footer.footer-first h2, .footer.footer-second h2, .footer.footer-third h2, footer.footer h3, .footer.footer-first h3, .footer.footer-second h3, .footer.footer-third h3',
+			),
+		),
+		array(
+			'id' => 'colors-footer-social-bg',
+			'type' => 'color',
+			'title' => __('Footer social icons background', 'bcn'),
+			'subtitle' => __('Select social icons background', 'bcn'),
+			'default' => false,
+			'validate' => 'color',
+			'output' => array(
+				'background-color' => '.footer .social-listing li',
+			),
 		),
 		array(
 			'id' => 'colors-footer-social',
@@ -2239,6 +2404,9 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select social icons color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'color' => '.footer .social-listing a',
+			),
 		),
 		array(
 			'id' => 'colors-footer-social-hover',
@@ -2247,10 +2415,55 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select social icons hover color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'background-color' => '.footer .social-listing li:hover',
+			),
+		),
+
+//      sub Footer
+
+		array(
+			'id' => 'colors-subfooter-title',
+			'type' => 'section',
+			'title' => __('Sub footer', 'bcn'),
+			'indent' => true, // Indent all options below until the next 'section' option is set.
+		),
+		array(
+			'id' => 'colors-subfooter-bg',
+			'type' => 'color',
+			'title' => __('Background color', 'bcn'),
+			'subtitle' => __('Select sub footer background color', 'bcn'),
+			'default' => false,
+			'validate' => 'color',
+			'output' => array(
+				'background-color' => '.sub-footer',
+			),
+		),
+		array(
+			'id' => 'colors-subfooter-text',
+			'type' => 'color',
+			'title' => __('Text color', 'bcn'),
+			'subtitle' => __('Select sub footer text color', 'bcn'),
+			'default' => false,
+			'validate' => 'color',
+			'output' => array(
+				'color' => '.sub-footer',
+			),
+		),
+		array(
+			'id' => 'colors-subfooter-links',
+			'type' => 'color',
+			'title' => __('Links color', 'bcn'),
+			'subtitle' => __('Select sub footer links color', 'bcn'),
+			'default' => false,
+			'validate' => 'color',
+			'output' => array(
+				'color' => '.sub-footer a',
+				'background-color' => '.sub-footer a::before',
+			),
 		),
 
 //      Portfolio
-
 		array(
 			'id' => 'colors-portfolio-title',
 			'type' => 'section',
@@ -2264,6 +2477,9 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select portfolio background color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'background-color' => 'body.portfolio, section.portfolio, .portfolio.portfolio--inverse',
+			),
 		),
 		array(
 			'id' => 'colors-portfolio-color',
@@ -2272,29 +2488,39 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select portfolio text color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'color' => '.portfolio__link, .portfolio__link .uk-h5, .portfolio--grid .portfolio__link, .portfolio--grid .portfolio__link:hover, .portfolio--masonry .portfolio__link, .portfolio--masonry .portfolio__link:hover',
+			),
 		),
 		array(
-			'id' => 'colors-portfolio-hover-color',
+			'id' => 'colors-portfolio-hover',
 			'type' => 'color',
 			'title' => __('On hover fade color', 'bcn'),
 			'subtitle' => __('Select portfolio item on hover fade color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'background-color' => '.portfolio--grid .portfolio__link:hover',
+			),
 		),
 		array(
-			'id' => 'colors-portfolio-hover-color-txt-bg',
+			'id' => 'colors-portfolio-hover-txt-bg',
 			'type' => 'color',
 			'title' => __('On hover title background color', 'bcn'),
 			'subtitle' => __('Select portfolio item on hover title background color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
+			'output' => array(
+				'background-color' => '.portfolio .uk-overlay-default',
+			),
 		),
+
 	)
 ));
 
 
 Redux::setSection($opt_name, array(
-	'title' => __('Theme fonts', 'bcn'),
+	'title' => __('+ Theme fonts', 'bcn'),
 	'id' => 'theme-fonts',
 //    'desc' => __('Font Settings ', 'bcn'),
 	'subsection' => true,
@@ -2311,11 +2537,11 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('Body general font', 'bcn'),
 			'google' => true,
-			'output' => array(''),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
 			'text-transform' => true,
+			'output' => array('body'),
 		),
 		array(
 			'id' => 'fonts-header-title',
@@ -2328,69 +2554,71 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('Text logo', 'bcn'),
 			'google' => true,
-			'output' => array(''),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
 			'text-transform' => true,
+			'output' => array('.main-nav__logo'),
 		),
 		array(
-			'id' => 'fonts-header-widget',
+			'id' => 'fonts-header',
 			'type' => 'typography',
-			'title' => __('Header widget', 'bcn'),
+			'title' => __('Header', 'bcn'),
 			'google' => true,
-			'output' => array(''),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
 			'text-transform' => true,
+			'output' => array('.page-header'),
 		),
 		array(
 			'id' => 'fonts-header-menu',
 			'type' => 'typography',
 			'title' => __('Top menu', 'bcn'),
 			'google' => true,
-			'output' => array(''),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
 			'text-transform' => true,
+			'output' => array('.header-menu'),
 		),
 		array(
 			'id' => 'fonts-header-submenu',
 			'type' => 'typography',
 			'title' => __('Top sub menu', 'bcn'),
 			'google' => true,
-			'output' => array(''),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
 			'text-transform' => true,
+			'output' => array('.header-menu .sub-menu'),
 		),
 
-		array(
-			'id' => 'fonts-header-mobile-menu',
-			'type' => 'typography',
-			'title' => __('Mobile menu', 'bcn'),
-			'google' => true,
-			'output' => array(''),
-			'text-align' => false,
-			'color' => false,
-			'default' => false,
-			'text-transform' => true,
-		),
-
-		array(
-			'id' => 'fonts-header-mobile-submenu',
-			'type' => 'typography',
-			'title' => __('Mobile sub menu', 'bcn'),
-			'google' => true,
-			'output' => array(''),
-			'text-align' => false,
-			'color' => false,
-			'default' => false,
-			'text-transform' => true,
-		),
+//		array(
+//			'id' => 'fonts-header-mobile-menu',
+//			'type' => 'typography',
+//			'title' => __('Mobile menu', 'bcn'),
+//			'google' => true,
+//			'output' => array(''),
+//			'text-align' => false,
+//			'color' => false,
+//			'default' => false,
+//			'text-transform' => true,
+//			// TODO: for newest version
+//		),
+//
+//		array(
+//			'id' => 'fonts-header-mobile-submenu',
+//			'type' => 'typography',
+//			'title' => __('Mobile sub menu', 'bcn'),
+//			'google' => true,
+//			'output' => array(''),
+//			'text-align' => false,
+//			'color' => false,
+//			'default' => false,
+//			'text-transform' => true,
+//			// TODO: for newest version
+//		),
 //
 //        array(
 //            'id' => 'fonts-post-title',
@@ -2407,11 +2635,11 @@ Redux::setSection($opt_name, array(
 			'indent' => true,
 		),
 		array(
-			'id' => 'fonts-post-title',
+			'id' => 'fonts-post-titles',
 			'type' => 'typography',
 			'title' => __('Post title', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.post h1'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2422,7 +2650,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('Post content', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.post .entry-content'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2433,40 +2661,42 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('Blockquote', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.post blockquote'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
 			'text-transform' => true,
 		),
-		array(
-			'id' => 'fonts-post-boxkquote',
-			'type' => 'typography',
-			'title' => __('Box quote', 'bcn'),
-			'google' => true,
-			'output' => array(''),
-			'text-align' => false,
-			'color' => false,
-			'default' => false,
-			'text-transform' => true,
-		),
-		array(
-			'id' => 'fonts-post-pullquote',
-			'type' => 'typography',
-			'title' => __('Pull quote', 'bcn'),
-			'google' => true,
-			'output' => array(''),
-			'text-align' => false,
-			'color' => false,
-			'default' => false,
-			'text-transform' => true,
-		),
+//		array(
+//			'id' => 'fonts-post-boxkquote',
+//			'type' => 'typography',
+//			'title' => __('Box quote', 'bcn'),
+//			'google' => true,
+//			'output' => array(''),
+//			'text-align' => false,
+//			'color' => false,
+//			'default' => false,
+//			'text-transform' => true,
+//			// TODO: for newest version
+//		),
+//		array(
+//			'id' => 'fonts-post-pullquote',
+//			'type' => 'typography',
+//			'title' => __('Pull quote', 'bcn'),
+//			'google' => true,
+//			'output' => array(''),
+//			'text-align' => false,
+//			'color' => false,
+//			'default' => false,
+//			'text-transform' => true,
+//			// TODO: for newest version
+//		),
 		array(
 			'id' => 'fonts-post-lists',
 			'type' => 'typography',
 			'title' => __('Lists', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.post ul, .post ol'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2477,7 +2707,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('H1', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.post h1'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2488,7 +2718,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('H2', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.post h2'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2499,7 +2729,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('H3', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.post h3'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2510,7 +2740,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('H4', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.post h4'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2521,7 +2751,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('H5', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.post h5'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2532,7 +2762,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('H6', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.post h6'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2546,23 +2776,24 @@ Redux::setSection($opt_name, array(
 			'indent' => true,
 		),
 
-		array(
-			'id' => 'fonts-post-elements-category',
-			'type' => 'typography',
-			'title' => __('Category tag', 'bcn'),
-			'google' => true,
-			'output' => array(''),
-			'text-align' => false,
-			'color' => false,
-			'default' => false,
-			'text-transform' => true,
-		),
+//		array(
+//			'id' => 'fonts-post-elements-category',
+//			'type' => 'typography',
+//			'title' => __('Category tag', 'bcn'),
+//			'google' => true,
+//			'output' => array(''),
+//			'text-align' => false,
+//			'color' => false,
+//			'default' => false,
+//			'text-transform' => true,
+//			// TODO: for newest version
+//		),
 		array(
 			'id' => 'fonts-post-elements-author',
 			'type' => 'typography',
 			'title' => __('Author', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.byline'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2574,30 +2805,31 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('Date', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.posted-on'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
 			'text-transform' => true,
 		),
 
-		array(
-			'id' => 'fonts-post-elements-views-comments',
-			'type' => 'typography',
-			'title' => __('Views and comments', 'bcn'),
-			'google' => true,
-			'output' => array(''),
-			'text-align' => false,
-			'color' => false,
-			'default' => false,
-			'text-transform' => true,
-		),
+//		array(
+//			'id' => 'fonts-post-elements-views-comments',
+//			'type' => 'typography',
+//			'title' => __('Views and comments', 'bcn'),
+//			'google' => true,
+//			'output' => array(''),
+//			'text-align' => false,
+//			'color' => false,
+//			'default' => false,
+//			'text-transform' => true,
+//			// TODO: for newest version
+//		),
 		array(
 			'id' => 'fonts-post-elements-vst',
 			'type' => 'typography',
 			'title' => __('Via/source/tags', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('footer.entry-footer'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2608,29 +2840,30 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('Next/prev text', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.post-navigation .nav-previous, .post-navigation .nav-next'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
 			'text-transform' => true,
 		),
-		array(
-			'id' => 'fonts-post-elements-nppttxt',
-			'type' => 'typography',
-			'title' => __('Next/prev post title', 'bcn'),
-			'google' => true,
-			'output' => array(''),
-			'text-align' => false,
-			'color' => false,
-			'default' => false,
-			'text-transform' => true,
-		),
+//		array(
+//			'id' => 'fonts-post-elements-nppttxt',
+//			'type' => 'typography',
+//			'title' => __('+ Next/prev post title', 'bcn'),
+//			'google' => true,
+//			'output' => array('.site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation'),
+//			'text-align' => false,
+//			'color' => false,
+//			'default' => false,
+//			'text-transform' => true,
+//			// TODO: for newest version
+//		),
 		array(
 			'id' => 'fonts-post-elements-box-author-name',
 			'type' => 'typography',
 			'title' => __('Box author name', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.up-author-name'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2641,7 +2874,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('Box author url', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.up-author-url'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2652,29 +2885,31 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('Box author description', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.up-author-description'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
 			'text-transform' => true,
 		),
-		array(
-			'id' => 'fonts-post-elements-related-article',
-			'type' => 'typography',
-			'title' => __('Related article title', 'bcn'),
-			'google' => true,
-			'output' => array(''),
-			'text-align' => false,
-			'color' => false,
-			'default' => false,
-			'text-transform' => true,
-		),
+//		array(
+//			'id' => 'fonts-post-elements-related-article',
+//			'type' => 'typography',
+//			'title' => __('+ Related article title', 'bcn'),
+//			'google' => true,
+//			'output' => array('.site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation'),
+//			'text-align' => false,
+//			'color' => false,
+//			'default' => false,
+//			'text-transform' => true,
+//// TODO: for newest version
+//		),
+
 		array(
 			'id' => 'fonts-post-elements-share-text',
 			'type' => 'typography',
 			'title' => __('Share text', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.pk-share-buttons-wrap'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2685,7 +2920,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('Image caption', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.wp-caption-text'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2700,11 +2935,11 @@ Redux::setSection($opt_name, array(
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
-			'id' => 'fonts-pages-title',
+			'id' => 'fonts-pages-titles',
 			'type' => 'typography',
 			'title' => __('Page title', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.page h1'),
 			'text-align' => false,
 			'default' => false,
 			'text-transform' => true,
@@ -2715,7 +2950,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('Page content', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.page'),
 			'text-align' => false,
 			'default' => false,
 			'text-transform' => true,
@@ -2726,7 +2961,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('H1', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.page h1'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2737,7 +2972,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('H2', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.page h2'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2748,7 +2983,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('H3', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.page h3'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2759,7 +2994,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('H4', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.page h4'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2770,7 +3005,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('H5', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.page h5'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2781,7 +3016,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('H6', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.page h6'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2797,9 +3032,9 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-footer-text',
 			'type' => 'typography',
-			'title' => __('+ Footer text', 'bcn'),
+			'title' => __('Footer text', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('footer.footer, .footer.footer-first, .footer.footer-second, .footer.footer-third, footer.footer a, .footer.footer-first a, .footer.footer-second a, .footer.footer-third a, footer.footer h2, .footer.footer-first h2, .footer.footer-second h2, .footer.footer-third h2, footer.footer h3, .footer.footer-first h3, .footer.footer-second h3, .footer.footer-third h3'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2810,7 +3045,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'typography',
 			'title' => __('Footer menu', 'bcn'),
 			'google' => true,
-			'output' => array(''),
+			'output' => array('.footer-menu'),
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
@@ -2820,7 +3055,7 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('++ Custom code', 'bcn'),
+	'title' => __('+ Custom css code', 'bcn'),
 	'id' => 'custom-code',
 	'subsection' => true,
 	'fields' => array(
@@ -2842,7 +3077,7 @@ Redux::setSection($opt_name, array(
 //   Social networks
 
 Redux::setSection($opt_name, array(
-	'title' => __('Social networks', 'bcn'),
+	'title' => __('+ Social networks', 'bcn'),
 	'id' => 'social-networks',
 	'desc' => __('Insert a link to your account if you want to display this social network.', 'bcn'),
 	'subsection' => true,
@@ -3104,7 +3339,7 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Import - export', 'bcn'),
+	'title' => __('+ Import - export', 'bcn'),
 	'id' => 'import-export',
 	'subsection' => true,
 	'fields' => array(

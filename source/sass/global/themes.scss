@@ -5,6 +5,11 @@ Common colours themes
 
 *******************************************/
 
+:root {
+  @include html-vars(header-icon-color, $text-color-white);
+  @include html-vars(header-icon-color-hover, $text-color-white);
+}
+
 .theme-white {
 
   //flip-page colours
@@ -102,7 +107,6 @@ Common colours themes
 
   //header colours
   @include html-vars(header-background, $background-dark);
-  @include html-vars(header-text-color, $text-color-white);
 
   //main block colours
   @include html-vars(main-background, $background-dark);
