@@ -17,8 +17,7 @@
 .related-articles-wrap {
   .related-title {
 	margin: 0;
-	padding: 0;
-	padding-bottom: 20px;
+	padding: 0 0 20px 0;
 	font-size: 14px;
 	line-height: 30px;
 	font-family: var(--fonts-secondary);
@@ -68,10 +67,30 @@
   .slick-slide > div {
 	padding: 0 15px;
   }
+  .slick-dots li.slick-active button:before {
+	opacity: 1;
+	background-color: #666;
+	transition: all ease-in 0.3s;
+	transform: scale(1.5);
+  }
   .slick-dots li button:before {
-	border-radius: 50%;
+	/* border-radius: 50%; */
 	font-size: 0;
 	background-color: var(--active-word);
+	/* border: solid 2px #fff; */
+	width: 10px;
+	height: 10px;
+	opacity: 1;
+	transition: all ease-in 0.3s;
+  }
+  .slick-dots {
+	position: unset;
+	bottom: unset;
+	padding-top: 15px;
+	padding-bottom: 0;
+  }
+  .slick-dotted.slick-slider {
+	margin-bottom: 0;
   }
 }
 
@@ -83,4 +102,62 @@
   position: absolute;
   right: 15px;
   top: 0;
+}
+
+.related-img-link {
+  position: relative;
+  z-index: 10;
+  display: block;
+  overflow: hidden;
+
+  &::before {
+	content: "";
+	transition: all ease-in 0.3s;
+  }
+
+  &:hover::before {
+	content: "";
+	z-index: 20;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+	transition: all ease-in 0.3s;
+  }
+
+  &::after {
+	content: "\f061";
+
+	position: absolute;
+	z-index: 20;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	font-family: "FontAwesome";
+	color: #ffffff;
+	font-weight: 900;
+	font-size: 19px;
+	opacity: 0;
+	transition: all ease-in 0.2s;
+  }
+  &:hover::after {
+	content: "\f061";
+
+	position: absolute;
+	z-index: 20;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	font-family: "FontAwesome";
+	opacity: 1;
+	color: #ffffff;
+	font-weight: 900;
+	font-size: 19px;
+	display: flex;
+	transition: all ease-in 0.2s;
+  }
 }

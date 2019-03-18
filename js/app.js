@@ -220,7 +220,14 @@ if (isRelatedSlider) {
     arrows: false,
     adaptiveHeight: true,
     cssEase: 'linear',
-    slidesToScroll: 2
+    slidesToScroll: 2,
+    responsive: [{
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }]
   }); // slider.on('wheel', (function (e) {
   //   e.preventDefault();
   //

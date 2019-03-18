@@ -12,8 +12,7 @@ global $theme_options;
 
 <section class="post-text-block-08">
 
-	<article class="post-text-block-08__item active-word-blue uk-animation-fade"
-			 id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class('post-text-block-08__item active-word-blue uk-animation-fade'); ?>>
 
 		<div class="entry-content">
 			<?php
@@ -77,8 +76,6 @@ global $theme_options;
 								<button class="related-article-next"  type="button"><span class="screen-reader-text">Next</span></button>
 							</div>
 
-
-
 							<div class="related-article-slider">
 
 								<?php
@@ -90,13 +87,13 @@ global $theme_options;
 										class="post-widget__item-related uk-scrollspy-inview uk-animation-slide-left-small">
 										<div class="post-widget__img-wrapper">
 											<?php if (has_post_thumbnail()) { ?>
-												<a class="post-widget__img-item" href="<?php the_permalink(); ?>"
+												<a class="post-widget__img-link related-img-link" href="<?php the_permalink(); ?>"
 												   title="<?php the_title_attribute(); ?>">
 													<?php the_post_thumbnail('post_block_04', array('class' => 'post-widget__img-item')); ?>
 												</a>
 											<?php } else { ?>
-												<a href="<?php the_permalink() ?>">
-													<img class="post-widget__img-item"
+												<a  class="post-widget__img-link related-img-link" href="<?php the_permalink() ?>">
+													<img class="post-widget__img-item related-img-link "
 														 src="<?php echo get_template_directory_uri() ?>/images/placeholder-750-400.png"
 														 srcset="<?php echo get_template_directory_uri() ?>/images/placeholder-750-400@2x.png 2x"
 														 alt="Post picture">
