@@ -5,41 +5,41 @@
   background-color: var(--widget-background);
 
   @media (min-width: $tablet-width) {
-    flex-direction: column;
-    width: 30.9%;
-    min-height: 100%;
+	flex-direction: column;
+	width: 30.9%;
+	min-height: 100%;
 
   }
 
   .sidebar__inner {
-    background-color: var(--widget-background);
-    display: flex;
-    justify-content: space-between;
-    align-content: space-between;
-    flex-direction: row;
-    width: 100%;
-    padding: 30px;
+	background-color: var(--widget-background);
+	display: flex;
+	justify-content: space-between;
+	align-content: space-between;
+	flex-direction: row;
+	width: 100%;
+	padding: 30px;
 
-    @media (min-width: $tablet-width) {
-      padding: 0;
-      //padding-top: 23px;
-      flex-direction: column;
-      min-height: calc(100vh - 80px);
-    }
+	@media (min-width: $tablet-width) {
+	  padding: 0;
+	  //padding-top: 23px;
+	  flex-direction: column;
+	  min-height: calc(100vh - 80px);
+	}
   }
 
   &--map {
-    width: 100%;
-    min-height: 50vh;
-    @media (min-width: $tablet-width) {
-      min-height: unset;
-      width: 71% !important;
-      border-right: 1px solid var(--dividing-line-color);
-    }
+	width: 100%;
+	min-height: 50vh;
+	@media (min-width: $tablet-width) {
+	  min-height: unset;
+	  width: 71% !important;
+	  border-right: 1px solid var(--dividing-line-color);
+	}
   }
 
   &--right-line {
-    border-right: 1px solid var(--dividing-line-color);
+	border-right: 1px solid var(--dividing-line-color);
   }
 }
 
@@ -47,8 +47,8 @@
 
   min-height: 100vh;
   @media (min-width: $tablet-width) {
-    padding-top: 0;
-    padding-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
   }
 
 }
@@ -73,49 +73,49 @@
   width: 100%;
 
   @media (min-width: $small-screen) {
-    width: 50%;
-    &:nth-child(odd) {
-      padding-right: 15px;
-    }
+	width: 50%;
+	&:nth-child(odd) {
+	  padding-right: 15px;
+	}
 
-    &:nth-child(even) {
-      padding-left: 15px;
-    }
+	&:nth-child(even) {
+	  padding-left: 15px;
+	}
   }
 
   @media (min-width: $tablet-width) {
-    &:nth-child(odd) {
-      padding-right: 30px;
-    }
+	&:nth-child(odd) {
+	  padding-right: 30px;
+	}
 
-    &:nth-child(even) {
-      padding-left: 30px;
-    }
-    width: auto;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    padding-left: 30px;
-    padding-right: 30px;
-    justify-content: center;
+	&:nth-child(even) {
+	  padding-left: 30px;
+	}
+	width: auto;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	padding-left: 30px;
+	padding-right: 30px;
+	justify-content: center;
 
   }
 
   &:first-child {
-    @media (min-width: $tablet-width) {
-    }
+	@media (min-width: $tablet-width) {
+	}
   }
   &:nth-child(2) {
-    display: none;
+	display: none;
 
-    @media (min-width: $small-screen) {
-      display: flex;
-    }
+	@media (min-width: $small-screen) {
+	  display: flex;
+	}
   }
   &:nth-child(n+3) {
-    display: none;
-    @media (min-width: $tablet-width) {
-      display: flex;
-    }
+	display: none;
+	@media (min-width: $tablet-width) {
+	  display: flex;
+	}
   }
 }
 
@@ -126,12 +126,12 @@
   flex-grow: 1;
 
   @media (min-width: $tablet-width) {
-    flex-grow: 0;
-    font-size: 1.25vw;
+	flex-grow: 0;
+	font-size: 1.25vw;
   }
 
   @media (min-width: $large-desktop-width) {
-    font-size: 20px;
+	font-size: 20px;
   }
 }
 
@@ -144,19 +144,19 @@
   color: var(--widget-text-color);
 
   @media(min-width: $lg-screen) {
-    font-weight: 600;
+	font-weight: 600;
   }
 
   @media(min-width: $xl-screen) {
-    font-weight: 700;
+	font-weight: 700;
   }
 
   &:hover {
-    color: var(--widget-text-color);
-    text-decoration: inherit;
-    border-bottom-width: 0.5px;
-    border-bottom-style: solid;
-    border-bottom-color: var(--hover-links-border-color);
+	color: var(--widget-text-color);
+	text-decoration: inherit;
+	border-bottom-width: 0.5px;
+	border-bottom-style: solid;
+	border-bottom-color: var(--hover-links-border-color);
   }
 }
 
@@ -166,18 +166,33 @@
   line-height: 15px;
   font-family: $fonts-primary;
   color: inherit;
+  span:nth-of-type(2) {
+	margin-left: 10px;
+  }
 }
 
 .post-widget__date {
   color: inherit;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .post-widget__comments-count {
   margin-left: 2px;
   min-width: 83px;
   display: inline-block;
+  vertical-align: middle;
 }
 
-.post-widget__date {
-  margin-left: 10px;
+//.post-widget__date {
+//  margin-left: 10px;
+//}
+.post-widget__img-wrapper {
+  padding-bottom: 20px;
 }
+
+.post-widget-link-wrapper a {
+  margin-bottom: 5px;
+
+}
+

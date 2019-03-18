@@ -84,8 +84,6 @@ if (class_exists('ReduxFramework')) {
 			$req = get_option('require_name_email');
 			$aria_req = ($req ? " aria-required='true'" : '');
 
-			// TODO: set design for comment form
-
 			$args = array(
 				'fields' => apply_filters(
 					'comment_form_default_fields', array(

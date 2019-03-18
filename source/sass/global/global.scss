@@ -28,8 +28,8 @@ body {
 a {
   text-decoration: none;
   &:hover {
-    text-decoration: inherit;
-    color: inherit;
+	text-decoration: inherit;
+	color: inherit;
   }
 
 }
@@ -85,30 +85,30 @@ input[type="radio"].visually-hidden {
   padding: 40px 30px !important;
 
   @media (min-width: $tablet-width) {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    padding: 80px 40px !important;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	padding: 80px 40px !important;
   }
   &--mobile-top-reset {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-    @media (min-width: $tablet-width) {
-      padding: 80px 40px !important;
-    }
+	padding-top: 0 !important;
+	margin-top: 0 !important;
+	@media (min-width: $tablet-width) {
+	  padding: 80px 40px !important;
+	}
   }
 }
 
 .pb {
   padding-bottom: 40px !important;
   @media (min-width: $tablet-width) {
-    padding-bottom: 80px !important;
+	padding-bottom: 80px !important;
   }
 }
 
 .mt-remove-mobiles {
   margin-top: 0 !important;
   @media (min-width: $tablet-width) {
-    margin-top: unset;
+	margin-top: unset;
   }
 }
 
@@ -140,7 +140,7 @@ input[type="radio"].visually-hidden {
   justify-content: flex-end !important;
 }
 
-a#inifiniteLoader{
+a#inifiniteLoader {
   position: relative;
   width: 100%;
   padding-top: 30px;
@@ -152,5 +152,19 @@ a#inifiniteLoader{
 	height: 25px;
 	margin-left: 20px;
 	margin-right: 20px;
+  }
+}
+
+.cube-after {
+  &::after {
+	content: "";
+	width: 3px;
+	height: 3px;
+	display: inline-block;
+	background-color: #ddd;
+	margin-left: 5px;
+	margin-right: 5px;
+	vertical-align: middle;
+	margin-top: -3px;
   }
 }

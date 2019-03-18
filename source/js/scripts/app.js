@@ -231,6 +231,52 @@ if (isSingleSlider) {
 
 /**********************
 
+ Slick related
+
+ ************************/
+
+var isRelatedSlider = document.querySelector('.related-article-slider');
+
+if (isRelatedSlider) {
+
+
+  var slider = $('.related-article-slider');
+  slider.slick({
+      dots: true,
+      infinite: true,
+      slidesToShow: 2,
+      arrows: false,
+	  adaptiveHeight: true,
+      cssEase: 'linear',
+      slidesToScroll: 2
+    });
+
+  // slider.on('wheel', (function (e) {
+  //   e.preventDefault();
+  //
+  //   if (e.originalEvent.deltaY < 0) {
+  //     $(this).slick('slickNext');
+  //   } else {
+  //     $(this).slick('slickPrev');
+  //   }
+  // }));
+
+  // next button
+  $('.related-article-next').on('click', function () {
+  	console.log("related-article-next");
+    $('.related-article-slider').slick('slickNext');
+  });
+
+// previous button
+  $('.related-article-prev').on('click', function () {
+	  console.log("related-article-prev");
+    $('.related-article-slider').slick('slickPrev');
+  });
+
+}
+
+/**********************
+
  Google map witch gray style
 
  ************************/
