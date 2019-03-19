@@ -173,13 +173,13 @@ $args = array(
 // ADMIN BAR LINKS -> Setup custom links in the admin bar menu as external items.
 $args['admin_bar_links'][] = array(
 	'id' => 'bcn-docs',
-	'href' => '#',
+	'href' => 'https://docs.urazaev.com/bcn-wp/',
 	'title' => __('Documentation', 'bcn'),
 );
 
 $args['admin_bar_links'][] = array(
 	//'id'    => 'bcn-support',
-	'href' => '#',
+	'href' => 'https://up.ticksy.com/',
 	'title' => __('Support', 'bcn'),
 );
 
@@ -1346,20 +1346,20 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Post settings', 'bcn'),
+	'title' => __('++ Post settings', 'bcn'),
 	'id' => 'post-settings',
 	'subsection' => true,
 	'fields' => array(
 		array(
 			'id' => 'post-and-custom-post',
 			'type' => 'section',
-			'title' => __('+ Post and Custom Post Types', 'bcn'),
+			'title' => __('Post and Custom Post Types', 'bcn'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'post-show-categories',
 			'type' => 'switch',
-			'title' => __('+ Show categories tags', 'bcn'),
+			'title' => __('Show categories tags', 'bcn'),
 			'subtitle' => __('Enable or disable the categories tags (on single posts and custom post types)', 'bcn'),
 			'default' => true,
 		),
@@ -1374,14 +1374,14 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'post-show-author-name',
 			'type' => 'switch',
-			'title' => __('+ Show author name', 'bcn'),
+			'title' => __('Show author name', 'bcn'),
 			'subtitle' => __('Enable or disable the author name (on single post page)', 'bcn'),
 			'default' => true,
 		),
 		array(
 			'id' => 'post-show-date',
 			'type' => 'switch',
-			'title' => __('+ Show date', 'bcn'),
+			'title' => __('Show date', 'bcn'),
 			'subtitle' => __('Enable or disable the post date (on single post page)', 'bcn'),
 			'default' => true,
 		),
@@ -1396,35 +1396,35 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'post-show-comments-numbers',
 			'type' => 'switch',
-			'title' => __('+ Show comment count', 'bcn'),
+			'title' => __('Show comment count', 'bcn'),
 			'subtitle' => __('Enable or disable comment number (on single post page)', 'bcn'),
 			'default' => false,
 		),
 		array(
 			'id' => 'block-show-tags',
 			'type' => 'switch',
-			'title' => __('+ Show tags', 'bcn'),
+			'title' => __('Show tags', 'bcn'),
 			'subtitle' => __('Enable or disable the post tags (bottom of single post pages and CPT)', 'bcn'),
 			'default' => true,
 		),
 		array(
 			'id' => 'block-show-next-previous',
 			'type' => 'switch',
-			'title' => __('+ Show next and previous posts', 'bcn'),
+			'title' => __('Show next and previous posts', 'bcn'),
 			'subtitle' => __('Show or hide `next` and `previous` posts (bottom of single post pages)', 'bcn'),
 			'default' => true,
 		),
 		array(
 			'id' => 'block-show-author-box',
 			'type' => 'switch',
-			'title' => __('+ Show author box', 'bcn'),
+			'title' => __('Show author box', 'bcn'),
 			'subtitle' => __('Enable or disable the author box (bottom of single post pages)', 'bcn'),
 			'default' => true,
 		),
 		array(
 			'id' => 'block-show-comments',
 			'type' => 'switch',
-			'title' => __('+ Enable comments on posts', 'bcn'),
+			'title' => __('Enable comments on posts', 'bcn'),
 			'subtitle' => __('Enable or disable the posts\' comments, for the entire site.', 'bcn'),
 			'default' => true,
 		),
@@ -1439,14 +1439,14 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'post-template-title',
 			'type' => 'section',
-			'title' => __('+ Default post template (site wide)', 'bcn'),
+			'title' => __('Default post template (site wide)', 'bcn'),
 			'subtitle' => __('This template will be applied to the whole site. The theme will also try to adjust the default widgets to look in the same style with the block template selected here.', 'bcn'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'post-template-default',
 			'type' => 'image_select',
-			'title' => __('+ Default site post template', 'bcn'),
+			'title' => __('Default site post template', 'bcn'),
 			'subtitle' => __('Setting this option will make all post pages, that don\'t have a post template set, to be displayed using this template. You can overwrite this setting on a per post basis.', 'bcn'),
 //            'desc' => __('This uses some of the built in images, you can use them for layout options.', 'bcn'),
 			//Must provide key => value(array:title|img) pairs for radio options
@@ -1477,23 +1477,25 @@ Redux::setSection($opt_name, array(
 			'id' => 'post-featured-images-show',
 			'type' => 'switch',
 			'title' => __('Show featured image', 'bcn'),
-			'subtitle' => __('Show or hide featured image.', 'bcn'),
+			'subtitle' => __('Show or hide featured image. Also when a post doesn\'t have a featured image set, the theme will load a placeholder image.', 'bcn'),
 			'default' => false,
 		),
-		array(
-			'id' => 'post-featured-images-placeholder',
-			'type' => 'switch',
-			'title' => __('Featured image placeholder', 'bcn'),
-			'subtitle' => __('When a post doesn\'t have a featured image set, the theme will load a placeholder image.', 'bcn'),
-			'default' => false,
-		),
-		array(
-			'id' => 'post-featured-images-lightbox',
-			'type' => 'switch',
-			'title' => __('Featured image lightbox', 'bcn'),
-			'subtitle' => __('What to do when the featured image is clicked inside a post. (on single post page).', 'bcn'),
-			'default' => false,
-		),
+//		array(
+//			'id' => 'post-featured-images-placeholder',
+//			'type' => 'switch',
+//			'title' => __('Featured image placeholder', 'bcn'),
+//			'subtitle' => __('When a post doesn\'t have a featured image set, the theme will load a placeholder image.', 'bcn'),
+//			'default' => false,
+//			// TODO: for newest version
+//		),
+//		array(
+//			'id' => 'post-featured-images-lightbox',
+//			'type' => 'switch',
+//			'title' => __('Featured image lightbox', 'bcn'),
+//			'subtitle' => __('What to do when the featured image is clicked inside a post. (on single post page).', 'bcn'),
+//			'default' => false,
+//			// TODO: for newest version
+//		),
 		array(
 			'id' => 'post-related-title',
 			'type' => 'section',
@@ -1522,20 +1524,22 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Show or hide the top article sharing on single post.', 'bcn'),
 			'default' => true,
 		),
-		array(
-			'id' => 'post-sharing-top-like',
-			'type' => 'switch',
-			'title' => __('Top article like', 'bcn'),
-			'subtitle' => __('Show or hide the top article like on single post.', 'bcn'),
-			'default' => true,
-		),
-		array(
-			'id' => 'post-sharing-top-text',
-			'type' => 'switch',
-			'title' => __('Top article share text', 'bcn'),
-			'subtitle' => __('Show or hide the top article share text on single post.', 'bcn'),
-			'default' => true,
-		),
+//		array(
+//			'id' => 'post-sharing-top-like',
+//			'type' => 'switch',
+//			'title' => __('Top article like', 'bcn'),
+//			'subtitle' => __('Show or hide the top article like on single post.', 'bcn'),
+//			'default' => true,
+//			// TODO: for newest version
+//		),
+//		array(
+//			'id' => 'post-sharing-top-text',
+//			'type' => 'switch',
+//			'title' => __('Top article share text', 'bcn'),
+//			'subtitle' => __('Show or hide the top article share text on single post.', 'bcn'),
+//			'default' => true,
+//			// TODO: for newest version
+//		),
 //        array(
 //            'id' => 'post-sharing-top-style',
 //            'type' => 'switch',
@@ -1551,20 +1555,22 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Show or hide the bottom article sharing on post.', 'bcn'),
 			'default' => true,
 		),
-		array(
-			'id' => 'post-sharing-bottom-like',
-			'type' => 'switch',
-			'title' => __('Bottom article like', 'bcn'),
-			'subtitle' => __('Show or hide the bottom article like on post.', 'bcn'),
-			'default' => true,
-		),
-		array(
-			'id' => 'post-sharing-bottom-text',
-			'type' => 'switch',
-			'title' => __('Bottom article share text', 'bcn'),
-			'subtitle' => __('Change the appearance of the bottom sharing buttons.', 'bcn'),
-			'default' => true,
-		),
+//		array(
+//			'id' => 'post-sharing-bottom-like',
+//			'type' => 'switch',
+//			'title' => __('Bottom article like', 'bcn'),
+//			'subtitle' => __('Show or hide the bottom article like on post.', 'bcn'),
+//			'default' => true,
+//			// TODO: for newest version
+//		),
+//		array(
+//			'id' => 'post-sharing-bottom-text',
+//			'type' => 'switch',
+//			'title' => __('Bottom article share text', 'bcn'),
+//			'subtitle' => __('Change the appearance of the bottom sharing buttons.', 'bcn'),
+//			'default' => true,
+//			// TODO: for newest version
+//		),
 //        array(
 //            'id' => 'post-sharing-bottom-style',
 //            'type' => 'switch',

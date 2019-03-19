@@ -6,15 +6,20 @@
   padding: 30px;
   width: 100%;
   @media (min-width: $tablet-width) {
-    order: unset;
-    padding-top: 16px;
-    padding-left: 30px;
-    padding-right: 30px;
-    //width: 35.9%;
-    width: 50%;
-
+	order: unset;
+	//padding: 30px;
+	//width: 35.9%;
+	width: 50%;
+	&--full-width {
+	  width: 100%;
+	}
   }
 
+
+  .entry-content {
+	padding-top: 30px;
+	padding-bottom: 30px;
+  }
 }
 
 .post-text-block-08__item {
@@ -43,12 +48,12 @@
   font-size: 14px;
 
   @media (min-width: $tablet-width) {
-    font-size: 1vw;
+	font-size: 1vw;
 
   }
 
   @media (min-width: $large-desktop-width) {
-    font-size: 21px;
+	font-size: 21px;
   }
 }
 

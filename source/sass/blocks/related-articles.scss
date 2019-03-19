@@ -37,10 +37,12 @@
 	margin-right: 10px;
   }
   .related-article-prev::before {
-	content: "\f060";
+	content: "\f104";
+	padding-right: 3px;
   }
   .related-article-next::before {
-	content: "\f061";
+	content: "\f105";
+	padding-left: 3px;
   }
 
   .related-article-prev::before, .related-article-next::before {
@@ -57,6 +59,14 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transition: all ease-in-out 0.3s;
+  }
+
+  .related-article-prev:hover::before, .related-article-next:hover::before {
+	color: #ffffff;
+	border: 2px solid var(--active-word);
+	background-color: var(--active-word);
+	transition: all ease-in-out 0.3s;
   }
   .post-widget__img-item {
 	width: 100%;
@@ -88,6 +98,7 @@
 	bottom: unset;
 	padding-top: 15px;
 	padding-bottom: 0;
+	display: none !important;
   }
   .slick-dotted.slick-slider {
 	margin-bottom: 0;
@@ -127,37 +138,38 @@
 	transition: all ease-in 0.3s;
   }
 
-  &::after {
-	content: "\f061";
+  //&::after {
+	//content: "\f061";
+  //
+	//position: absolute;
+	//z-index: 20;
+	//top: 0;
+	//left: 50%;
+	//transform: translate(-50%, -50%);
+  //
+	//font-family: "FontAwesome";
+	//color: #ffffff;
+	//font-weight: 900;
+	//font-size: 19px;
+	//opacity: 0;
+	//transition: all ease-in 0.2s;
+  //}
+  //&:hover::after {
+	//content: "\f061";
+  //
+	//position: absolute;
+	//z-index: 20;
+	//top: 50%;
+	//left: 50%;
+	//transform: translate(-50%, -50%);
+  //
+	//font-family: "FontAwesome";
+	//opacity: 1;
+	//color: #ffffff;
+	//font-weight: 900;
+	//font-size: 19px;
+	//display: flex;
+	//transition: all ease-in 0.2s;
+  //}
 
-	position: absolute;
-	z-index: 20;
-	top: 0;
-	left: 50%;
-	transform: translate(-50%, -50%);
-
-	font-family: "FontAwesome";
-	color: #ffffff;
-	font-weight: 900;
-	font-size: 19px;
-	opacity: 0;
-	transition: all ease-in 0.2s;
-  }
-  &:hover::after {
-	content: "\f061";
-
-	position: absolute;
-	z-index: 20;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-
-	font-family: "FontAwesome";
-	opacity: 1;
-	color: #ffffff;
-	font-weight: 900;
-	font-size: 19px;
-	display: flex;
-	transition: all ease-in 0.2s;
-  }
 }
