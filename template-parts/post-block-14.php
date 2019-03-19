@@ -33,18 +33,35 @@ echo "post-block-14";
 			?>
 
 			<article class="post-block-14__item">
-				<header class="post-block-14__date">
-					<p class="post-block-14__date-item"><?php if ($theme_options['category-template-date'] == 1) {
-							; ?>
-							<time
-								datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time>
-						<?php }
-						if ($theme_options['category-template-author'] == 1) { ?>By <a
-							href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
-							<?php echo get_the_author(); ?></a>
-						<?php } ?>
-					</p>
-				</header>
+				<?php
+				if (class_exists('ReduxFramework')) {
+					if (($theme_options['block-settings-meta-date'] == 1) || ($theme_options['block-settings-meta-author'] == 1) || ($theme_options['block-settings-meta-comments'] == 1)) {
+						?>
+						<header class="post-block-14__date">
+							<p class="post-block-14__date-item"><?php if ($theme_options['block-settings-meta-date'] == 1) {
+									; ?>
+									<time
+										datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time>
+								<?php }
+								if ($theme_options['block-settings-meta-author'] == 1) { ?>By <a
+									href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+									<?php echo get_the_author(); ?></a>
+								<?php }
+								if (class_exists('ReduxFramework')) {
+									if ($theme_options['block-settings-meta-comments'] == 1) { ?>
+
+										<span class="post-block-04__comments-count"><i class="fa fa-comment"></i>
+											<?php echo get_comments_number(); ?></span>
+										<?php
+									}
+								}
+								?>
+							</p>
+						</header>
+						<?php
+					}
+				}
+				?>
 				<span class="post-block-14__wrapper-link">
 				<?php
 				$thelist = '';

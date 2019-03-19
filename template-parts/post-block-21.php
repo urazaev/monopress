@@ -47,16 +47,43 @@ if (have_posts()) : ?>
 
 				</figure>
 				<h2 class="post-block-21__header animation-rtl"><a
-						class="post-block-21__header-link" href="<?php esc_url(the_permalink()); ?>"><?php the_title() ?></a></h2>
-				<footer class="post-block-21__footer">
-<!--					<span class="post-block-21__comments-count">Comments 2</span> TODO : for new iteration?-->
-					<span class="post-block-21__comments-date"><?php if ($theme_options['category-template-date'] == 1) {
-							; ?>
-							<time
-								datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
-						if ($theme_options['category-template-author'] == 1) { ?>By <a
-							href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a><?php } ?></span>
-				</footer>
+						class="post-block-21__header-link"
+						href="<?php esc_url(the_permalink()); ?>"><?php the_title() ?></a></h2>
+				<?php
+				if (class_exists('ReduxFramework')) {
+					if (($theme_options['block-settings-meta-comments'] == 1) || ($theme_options['block-settings-meta-date'] == 1) || ($theme_options['block-settings-meta-author'] == 1)) {
+						?>
+						<footer class="post-block-21__footer">
+							<?php
+
+							if ($theme_options['block-settings-meta-comments'] == 1) { ?>
+								<span
+									class="post-block-21__comments-count">Comments <?php echo get_comments_number(); ?></span>
+								<?php
+							}
+
+							if (($theme_options['block-settings-meta-date'] == 1) || ($theme_options['block-settings-meta-author'] == 1)) {
+								?>
+
+
+								<span
+									class="post-block-21__comments-date"><?php if ($theme_options['block-settings-meta-date'] == 1) {
+										; ?>
+										<time
+											datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
+									if ($theme_options['block-settings-meta-author'] == 1) { ?>By <a
+										href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a><?php }
+
+									?></span>
+
+							<?php
+							}
+							?>
+						</footer>
+						<?php
+					}
+				}
+				?>
 			</article>
 
 		<?php endwhile;

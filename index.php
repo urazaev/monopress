@@ -32,7 +32,7 @@ get_header();
 
 			<?php
 			if (class_exists('ReduxFramework')) {
-				switch ($theme_options['category-article-display']) {
+				switch ($theme_options['block-settings-display']) {
 					case 2:
 						up_get_template('post-block-02');
 						break;

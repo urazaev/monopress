@@ -12,11 +12,11 @@
   flex-basis: 0%;
 
   @media (min-width: $tablet-width) {
-    margin-top: 0;
-    align-items: flex-start;
-    padding-left: 50px;
-    padding-right: 60px;
-    padding-top: 50px;
+	margin-top: 0;
+	align-items: flex-start;
+	padding-left: 50px;
+	padding-right: 60px;
+	padding-top: 50px;
   }
 }
 
@@ -30,66 +30,66 @@
 
   @media (min-width: $sm-screen) {
 
-    width: 50%;
-    &:nth-child(odd) {
-      padding-right: 15px;
-    }
+	width: 50%;
+	&:nth-child(odd) {
+	  padding-right: 15px;
+	}
 
-    &:nth-child(even) {
-      padding-left: 15px;
-      @media (max-width: $mobile-width-only) {
-        & .post-block-02__date {
-          left: 10px;
-        }
-      }
-    }
+	&:nth-child(even) {
+	  padding-left: 15px;
+	  @media (max-width: $mobile-width-only) {
+		& .post-block-02__date {
+		  left: 10px;
+		}
+	  }
+	}
   }
 
   @media (min-width: $tablet-width) {
-    width: 100%;
-    flex-direction: row;
-    align-items: flex-start;
-    margin-bottom: 50px;
+	width: 100%;
+	flex-direction: row;
+	align-items: flex-start;
+	margin-bottom: 50px;
 
-    &:nth-child(odd) {
-      padding-right: 0;
-    }
+	&:nth-child(odd) {
+	  padding-right: 0;
+	}
 
-    &:nth-child(even) {
-      padding-left: 0;
-    }
+	&:nth-child(even) {
+	  padding-left: 0;
+	}
   }
 }
 
 .post-block-02__item:hover {
   .post-block-02__img {
-    overflow: hidden;
+	overflow: hidden;
   }
 
   .post-block-02__img-item, img {
-    transition: all ease-in 0.3s;
-    transform: scale(1.05);
+	transition: all ease-in 0.3s;
+	transform: scale(1.05);
   }
 
   .post-block-02__img a::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: block;
-    background: linear-gradient(to top, rgba(33, 33, 33, 0.5), rgba(33, 33, 33, 0));
-    z-index: 1;
-    opacity: 1;
-    animation: links-gradient 0.3s forwards;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: block;
+	background: linear-gradient(to top, rgba(33, 33, 33, 0.5), rgba(33, 33, 33, 0));
+	z-index: 1;
+	opacity: 1;
+	animation: links-gradient 0.3s forwards;
   }
 
   .post-block-02__header-link {
-    border-bottom-width: 0.5px;
-    border-bottom-color: rgba($text-color-dark, 0.8);
-    border-bottom-style: solid;
-    color: rgba($text-color-dark, 0.8);
+	border-bottom-width: 0.5px;
+	border-bottom-color: rgba($text-color-dark, 0.8);
+	border-bottom-style: solid;
+	color: rgba($text-color-dark, 0.8);
   }
 }
 
@@ -98,7 +98,7 @@
   width: 100%;
 
   @media (min-width: $tablet-width) {
-    width: 60%;
+	width: 60%;
   }
 }
 
@@ -109,10 +109,10 @@
 
 @keyframes links-gradient {
   0% {
-    opacity: 0;
+	opacity: 0;
   }
   100% {
-    opacity: 0.4;
+	opacity: 0.4;
   }
 }
 
@@ -128,7 +128,7 @@
   transform-origin: 0 0;
 
   @media (min-width: $tablet-width) {
-    left: -10px;
+	left: -10px;
   }
 
 }
@@ -147,10 +147,10 @@
   z-index: 5;
 
   @media (min-width: $tablet-width) {
-    height: auto;
-    margin-left: -20%;
-    margin-top: 20px;
-    width: 60%;
+	height: auto;
+	margin-left: -20%;
+	margin-top: 20px;
+	width: 60%;
   }
 
 }
@@ -163,7 +163,7 @@
   flex-direction: column;
 
   @media (min-width: $tablet-width) {
-    height: auto;
+	height: auto;
   }
 
 }
@@ -175,11 +175,11 @@
   height: 100%;
 
   @media (min-width: $tablet-width) {
-    height: auto;
-    padding: 20px;
+	height: auto;
+	padding: 20px;
   }
   @media (min-width: $desktop-width) {
-    padding: 30px;
+	padding: 30px;
   }
 }
 
@@ -190,8 +190,8 @@
   line-height: 1.333;
 
   @media (min-width: $tablet-width) {
-    margin-top: 26px;
-    margin-bottom: 10px;
+	margin-top: 26px;
+	margin-bottom: 10px;
   }
 }
 
@@ -206,11 +206,11 @@
   @include links-decoration(rgba($text-color-dark, 0.8));
 
   @media (min-width: $tablet-width) {
-    font-size: 1.88vw;
+	font-size: 1.88vw;
   }
 
   @media (min-width: $large-desktop-width) {
-    font-size: 30px;
+	font-size: 30px;
   }
 
 }
@@ -218,4 +218,9 @@
 .post-block-02__wrapper-link {
   margin-top: 5px;
   text-align: right;
+}
+
+.post-block-02__comments-count {
+  margin-bottom: 0;
+  font-size: 12px;
 }

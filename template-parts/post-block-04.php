@@ -24,15 +24,33 @@ echo "post-block-04";
 		while (have_posts()) : the_post(); ?>
 
 			<article class="post-block-04__item">
-				<header class="post-block-04__date">
-					<p class="animation-rtl">
-						<?php if ($theme_options['category-template-date'] == 1) {
-							; ?>
-							<time datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
-						if ($theme_options['category-template-author'] == 1) { ?>By <a
-							href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a><?php } ?>
-					</p>
-				</header>
+				<?php
+				if (class_exists('ReduxFramework')) {
+					if (($theme_options['block-settings-meta-date'] == 1) || ($theme_options['block-settings-meta-author'] == 1) || ($theme_options['block-settings-meta-comments'] == 1)) {
+?>
+						<header class="post-block-04__date">
+							<p class="animation-rtl">
+								<?php if ($theme_options['block-settings-meta-date'] == 1) {
+									; ?>
+									<time
+										datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
+								if ($theme_options['block-settings-meta-author'] == 1) { ?>By <a
+									href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a><?php }
+
+								if ($theme_options['block-settings-meta-comments'] == 1) { ?>
+
+									<span class="post-block-04__comments-count"><i class="fa fa-comment"></i>
+										<?php echo get_comments_number(); ?></span>
+									<?php
+								}
+
+								?>
+							</p>
+						</header>
+						<?php
+					}
+				}
+				?>
 				<p class="post-block-04__wrapper-link">
           <span class="animation-rtl">
 
@@ -64,8 +82,12 @@ echo "post-block-04";
 					<?php } ?>
 
 				</figure>
+
+
 				<h2 class="post-block-04__header animation-rtl"><a
-						class="post-block-04__header-link" href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+						class="post-block-04__header-link" href="<?php the_permalink() ?>"><?php the_title() ?></a>
+				</h2>
+
 			</article>
 
 		<?php endwhile;

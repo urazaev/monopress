@@ -1204,24 +1204,24 @@ Redux::setSection($opt_name, array(
 //            'default' => true,
 //            // TODO: for newest version
 //        ),
-		array(
-			'id' => 'category-template-author',
-			'type' => 'switch',
-			'title' => __('Show or hide author name and link.', 'bcn'),
-			'subtitle' => __('Show or hide author on post listings.', 'bcn'),
-			'default' => true,
-			'on' => 'Show',
-			'off' => 'Hide',
-		),
-		array(
-			'id' => 'category-template-date',
-			'type' => 'switch',
-			'title' => __('Show or hide date.', 'bcn'),
-			'subtitle' => __('Show or hide date on post listings.', 'bcn'),
-			'default' => true,
-			'on' => 'Show',
-			'off' => 'Hide',
-		),
+//		array(
+//			'id' => 'category-template-author',
+//			'type' => 'switch',
+//			'title' => __('Show or hide author name and link.', 'bcn'),
+//			'subtitle' => __('Show or hide author on post listings.', 'bcn'),
+//			'default' => true,
+//			'on' => 'Show',
+//			'off' => 'Hide',
+//		),
+//		array(
+//			'id' => 'category-template-date',
+//			'type' => 'switch',
+//			'title' => __('Show or hide date.', 'bcn'),
+//			'subtitle' => __('Show or hide date on post listings.', 'bcn'),
+//			'default' => true,
+//			'on' => 'Show',
+//			'off' => 'Hide',
+//		),
 		array(
 			'id' => 'category-article-display',
 			'type' => 'image_select',
@@ -1660,7 +1660,7 @@ Redux::setSection($opt_name, array(
 
 // -> START Miscellaneous
 Redux::setSection($opt_name, array(
-	'title' => __('Miscellaneous', 'bcn'),
+	'title' => __('+ Miscellaneous', 'bcn'),
 	'id' => 'miscellaneous',
 	'desc' => __('', 'bcn'),
 	'icon' => 'el el-cog'
@@ -1680,48 +1680,87 @@ Redux::setSection($opt_name, array(
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
-			'id' => 'block-settings-template',
+			'id' => 'block-settings-display',
 			'type' => 'image_select',
 			'title' => __('Block template', 'bcn'),
 			'subtitle' => __('You can overwrite the template on each block and widget.', 'bcn'),
-//            'desc' => __('This uses some of the built in images, you can use them for layout options.', 'bcn'),
-			//Must provide key => value(array:title|img) pairs for radio options
 			'options' => array(
-				'1' => array(
-					'alt' => '1 Column',
-					'img' => get_template_directory_uri() . '/images/admin/preview-01.jpg'
-				),
 				'2' => array(
-					'alt' => '2 Column Left',
+					'alt' => '2',
 					'img' => get_template_directory_uri() . '/images/admin/preview-02.jpg'
 				),
 				'3' => array(
-					'alt' => '2 Column Right',
+					'alt' => '3',
 					'img' => get_template_directory_uri() . '/images/admin/preview-03.jpg'
 				),
 				'4' => array(
-					'alt' => '3 Column Middle',
+					'alt' => '4',
 					'img' => get_template_directory_uri() . '/images/admin/preview-04.jpg'
 				),
 				'5' => array(
-					'alt' => '3 Column Left',
+					'alt' => '5',
 					'img' => get_template_directory_uri() . '/images/admin/preview-05.jpg'
 				),
-				'6' => array(
-					'alt' => '3 Column Right',
-					'img' => get_template_directory_uri() . '/images/admin/preview-06.jpg'
-				),
+//				'6' => array(
+//					'alt' => '6',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-06.jpg'
+//				),
 				'7' => array(
-					'alt' => '3 Column Right',
+					'alt' => '7',
 					'img' => get_template_directory_uri() . '/images/admin/preview-07.jpg'
 				),
-				'8' => array(
-					'alt' => '3 Column Right',
+//				'8' => array(
+//					'alt' => '8',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-08.jpg'
+//				),
+				'9' => array(
+					'alt' => '9',
 					'img' => get_template_directory_uri() . '/images/admin/preview-09.jpg'
 				),
-				'9' => array(
-					'alt' => '3 Column Right',
+//				'10' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-10.jpg'
+//				),
+				'11' => array(
+					'alt' => '9',
 					'img' => get_template_directory_uri() . '/images/admin/preview-11.jpg'
+				),
+//				'12' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-12.jpg'
+//				),
+				'14' => array(
+					'alt' => '9',
+					'img' => get_template_directory_uri() . '/images/admin/preview-14.jpg'
+				),
+//				'15' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-15.jpg'
+//				),
+//				'16' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-16.jpg'
+//				),
+//			TODO: miss the file?
+//				'17' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-17.jpg'
+//				),
+				'18' => array(
+					'alt' => '9',
+					'img' => get_template_directory_uri() . '/images/admin/preview-18.jpg'
+				),
+				'19' => array(
+					'alt' => '9',
+					'img' => get_template_directory_uri() . '/images/admin/preview-19.jpg'
+				),
+//				'20' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-20.jpg'
+//				),
+				'21' => array(
+					'alt' => '9',
+					'img' => get_template_directory_uri() . '/images/admin/preview-21.jpg'
 				),
 			),
 			'default' => '2',
@@ -1748,24 +1787,25 @@ Redux::setSection($opt_name, array(
 			'default' => false,
 		),
 		array(
-			'id' => 'block-settings-meta-comments-number',
+			'id' => 'block-settings-meta-comments',
 			'type' => 'switch',
 			'title' => __('Show comment count', 'bcn'),
 			'subtitle' => __('Enable or disable comment number (on blocks and modules)', 'bcn'),
 			'default' => false,
 		),
-		array(
-			'id' => 'block-settings-meta-reviews',
-			'type' => 'switch',
-			'title' => __('Show review', 'bcn'),
-			'subtitle' => __('Enable or disable reviews (on blocks and modules)', 'bcn'),
-			'default' => false,
-		),
+//		array(
+//			'id' => 'block-settings-meta-reviews',
+//			'type' => 'switch',
+//			'title' => __('Show review', 'bcn'),
+//			'subtitle' => __('Enable or disable reviews (on blocks and modules)', 'bcn'),
+//			'default' => false,
+//			// TODO: for newest version
+//		),
 	)
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('+ Background', 'bcn'),
+	'title' => __('Background', 'bcn'),
 	'id' => 'background',
 	'subsection' => true,
 	'fields' => array(
@@ -1847,7 +1887,7 @@ Redux::setSection($opt_name, array(
 //));
 
 Redux::setSection($opt_name, array(
-	'title' => __('+ Theme colors', 'bcn'),
+	'title' => __('Theme colors', 'bcn'),
 	'id' => 'theme-color',
 //    'desc' => __('For full documentation on this field, visit: ', 'bcn') . '<a href="//docs.reduxframework.com/core/fields/slides/" target="_blank">docs.reduxframework.com/core/fields/slides/</a>',
 	'subsection' => true,
@@ -2526,7 +2566,7 @@ Redux::setSection($opt_name, array(
 
 
 Redux::setSection($opt_name, array(
-	'title' => __('+ Theme fonts', 'bcn'),
+	'title' => __('Theme fonts', 'bcn'),
 	'id' => 'theme-fonts',
 //    'desc' => __('Font Settings ', 'bcn'),
 	'subsection' => true,
@@ -3061,7 +3101,7 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('+ Custom css code', 'bcn'),
+	'title' => __('Custom css code', 'bcn'),
 	'id' => 'custom-code',
 	'subsection' => true,
 	'fields' => array(
@@ -3083,7 +3123,7 @@ Redux::setSection($opt_name, array(
 //   Social networks
 
 Redux::setSection($opt_name, array(
-	'title' => __('+ Social networks', 'bcn'),
+	'title' => __('Social networks', 'bcn'),
 	'id' => 'social-networks',
 	'desc' => __('Insert a link to your account if you want to display this social network.', 'bcn'),
 	'subsection' => true,
@@ -3345,7 +3385,7 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('+ Import - export', 'bcn'),
+	'title' => __('Import - export', 'bcn'),
 	'id' => 'import-export',
 	'subsection' => true,
 	'fields' => array(

@@ -25,14 +25,17 @@ echo "post-block-11";
 			?>
 
 			<article class="post-block-11__item">
-				<header class="post-block-11__date"><p class="post-block-11__date-item has-animation animation-rtl"
+				<header class="post-block-11__date">
+					<p class="post-block-11__date-item has-animation animation-rtl"
 					>
-						<?php if ($theme_options['category-template-date'] == 1) {
+						<?php if ($theme_options['block-settings-meta-date'] == 1) {
 							; ?>
-							<time datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
-						if ($theme_options['category-template-author'] == 1) { ?>By <a
+							<time
+								datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
+						if ($theme_options['block-settings-meta-author'] == 1) { ?>By <a
 							href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a><?php } ?>
-					</p></header>
+					</p>
+				</header>
 				<figure class="post-block-11__img has-animation animation-rtl">
 					<?php if (has_post_thumbnail()) { ?>
 						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
@@ -64,6 +67,17 @@ echo "post-block-11";
 							<h2 class="post-block-11__header"><a class="post-block-11__header-link"
 																 href="<?php the_permalink() ?>"><?php the_title() ?></a>
 							</h2>
+							<?php
+							if (class_exists('ReduxFramework')) {
+								if ($theme_options['block-settings-meta-comments'] == 1) { ?>
+
+									<p class="post-block-02__comments-count">Comments:
+										<?php echo get_comments_number(); ?></p>
+									<?php
+								}
+							}
+							?>
+
 						</div>
 					</div>
 				</footer>

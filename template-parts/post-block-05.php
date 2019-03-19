@@ -7,14 +7,7 @@
  * @package bcn
  */
 
-?>
-
-<?php
-
-
-
-echo "post-block-05";
-
+global $theme_options;
 
 ?>
 
@@ -41,12 +34,13 @@ echo "post-block-05";
 			</figure>
 			<article class="post-block-05__item theme-widget-white">
 				<header class="post-block-05__date"><p class="post-block-05__date-wrapper">
-						<?php if ($theme_options['category-template-date'] == 1) {
+						<?php if ($theme_options['block-settings-meta-date'] == 1) {
 							; ?>
 							<time datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
-						if ($theme_options['category-template-author'] == 1) { ?>By <a
+						if ($theme_options['block-settings-meta-author'] == 1) { ?>By <a
 							href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a><?php } ?>
 					</p></header>
+
 				<span class="post-block-05__wrapper-link uk-animation-slide-top-small">
 						<?php
 						$thelist = '';
@@ -58,6 +52,16 @@ echo "post-block-05";
 						}
 						echo $thelist; ?>
           		</span>
+				<?php
+				if (class_exists('ReduxFramework')) {
+					if ($theme_options['block-settings-meta-comments'] == 1) { ?>
+
+						<p class="post-block-05__comments-count">Comments:
+							<?php echo get_comments_number(); ?></p>
+						<?php
+					}
+				}
+				?>
 				<h2 class="post-block-05__header uk-animation-slide-bottom-small"><a
 						class="post-block-05__header-link" href="<?php the_permalink() ?>"> <?php the_title() ?></a></h2>
 			</article>

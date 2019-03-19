@@ -46,13 +46,16 @@ echo "post-block-03";
 						<h2 class="post-block-03__widget-title animate"><a
 								class="post-block-03__widget-title-link"
 								href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-						<footer class="post-block-03__widget-footer animate"><span
-								class="post-block-03__widget-comments-count animation-rtl">Comments <?php echo get_comments_number();?></span>
-							<?php if ($theme_options['category-template-date'] == 1) {
+						<footer class="post-block-03__widget-footer animate">
+							<?php if ($theme_options['block-settings-meta-comments'] == 1) {?>
+							<span
+								class="post-block-03__widget-comments-count animation-rtl">Comments <?php echo get_comments_number(); ?></span>
+							<?php}?>
+							<?php if ($theme_options['block-settings-meta-date'] == 1) {
 								; ?>
 								<time class="post-block-03__widget-date animation-ltr"
 									  datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
-							if ($theme_options['category-template-author'] == 1) { ?>By <a
+							if ($theme_options['block-settings-meta-author'] == 1) { ?>By <a
 								href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a><?php } ?>
 
 						</footer>

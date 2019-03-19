@@ -10,17 +10,18 @@
 global $theme_options;
 ?>
 
-<section class="post-text-block-08<?php if (class_exists('ReduxFramework')) {if ($theme_options['post-featured-images-show'] != 1) {?> post-text-block-08--full-width<?php }?>">
+<section class="post-text-block-08<?php if (class_exists('ReduxFramework')) {
+if ($theme_options['post-featured-images-show'] != 1) { ?> post-text-block-08--full-width<?php } ?>">
 
 	<article
 		id="post-<?php the_ID(); ?>" <?php post_class('post-text-block-08__item active-word-blue uk-animation-fade'); ?>>
 
 		<?php
-			if ($theme_options['post-featured-images-show'] != 1) { ?>
+		if ($theme_options['post-featured-images-show'] != 1) { ?>
 
-				<?php
-				if ($theme_options['post-show-categories'] == 1) { ?>
-					<span class="post-block-08__widget-link-wrapper post-block-08__widget-link-wrapper--top">
+			<?php
+			if ($theme_options['post-show-categories'] == 1) { ?>
+				<span class="post-block-08__widget-link-wrapper post-block-08__widget-link-wrapper--top">
 				<?php
 				$thelist = '';
 				$i = 0;
@@ -32,17 +33,17 @@ global $theme_options;
 				echo $thelist; ?>
 
 				</span>
-				<?php }
+			<?php }
 
-				if (is_singular()) :
-					the_title('<h1 class="entry-title post-block-08__widget-title post-block-08__widget-title--top">', '</h1>');
-				else :
-					the_title('<h2 class="entry-title><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-				endif;
+			if (is_singular()) :
+				the_title('<h1 class="entry-title post-block-08__widget-title post-block-08__widget-title--top">', '</h1>');
+			else :
+				the_title('<h2 class="entry-title><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+			endif;
 
-				if ($theme_options['post-show-author-name'] == 1 || $theme_options['post-show-date'] == 1 || $theme_options['post-show-comments-numbers'] == '1') { ?>
+			if ($theme_options['post-show-author-name'] == 1 || $theme_options['post-show-date'] == 1 || $theme_options['post-show-comments-numbers'] == '1') { ?>
 
-					<p class="post-block-08__widget-date post-block-08__widget-date--top">
+				<p class="post-block-08__widget-date post-block-08__widget-date--top">
 						<span class="cube-after">
 								<?php
 								if ($theme_options['post-show-author-name'] == 1) { ?>By <a
@@ -57,20 +58,20 @@ global $theme_options;
 								<?php echo get_the_date('M j, y') ?></time> <?php }
 								?>
 						</span>
-						<?php
-						if ($theme_options['post-show-comments-numbers'] == '1') { ?>
-							Comments:
-							<?php echo get_comments_number(); ?>
-						<?php } ?>
-					</p>
 					<?php
+					if ($theme_options['post-show-comments-numbers'] == '1') { ?>
+						Comments:
+						<?php echo get_comments_number(); ?>
+					<?php } ?>
+				</p>
+				<?php
 
-				}
 			}
+		}
 
-			if ($theme_options['post-sharing-top'] == '1') {
-				addtoany_render();
-			}
+		if ($theme_options['post-sharing-top'] == '1') {
+			addtoany_render();
+		}
 		}
 		?>
 
@@ -176,7 +177,7 @@ global $theme_options;
 							foreach (get_the_category() as $category) {
 								if (0 < $i) $thelist .= ' ';
 								$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button button--green button--sm ' . $category->slug . '">' . $category->name . '</a>';
-								$i++;
+								if (++$i == 2) break;
 							}
 							echo $thelist; ?>
 
@@ -186,21 +187,22 @@ global $theme_options;
 																		  href="<?php the_permalink(); ?>">
 												<?php the_title() ?>
 											</a></h2>
-
-										<footer class="post-widget__footer">
+										<?php if (($theme_options['block-settings-meta-date'] == 1) && $theme_options['block-settings-meta-author'] == 1) { ?>
+											<footer class="post-widget__footer">
 											<span class="post-widget__date">
-												<?php if ($theme_options['category-template-date'] == 1) {
+												<?php if ($theme_options['block-settings-meta-date'] == 1) {
 													; ?>
 													<time class="cube-after"
 														  datetime="
 											<?php echo get_the_date('c') ?>">
 														<?php echo get_the_date('M y') ?></time> <?php }
-												if ($theme_options['category-template-author'] == 1) { ?>By <a
+												if ($theme_options['block-settings-meta-author'] == 1) { ?>By <a
 													href="
 											<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
 													<?php echo get_the_author(); ?></a><?php } ?>
 											</span>
-										</footer>
+											</footer>
+										<?php } ?>
 									</article>
 
 									<?php
@@ -286,7 +288,8 @@ global $theme_options;
 								?>
 							</span>
 								<?php
-								if ($theme_options['post-show-comments-numbers'] == '1') { ?>
+
+								if ($theme_options['post-show-comments-numbers'] == '1' && comments_open()) { ?>
 									<span
 										class="post-block-08__widget-comments-count">Comments:
 										<?php echo get_comments_number(); ?></span>

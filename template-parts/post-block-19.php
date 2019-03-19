@@ -57,14 +57,19 @@ echo "post-block-19";
 						<h2 class="post-block-19__widget-title"><a
 								class="post-block-19__widget-title-link animation-ltr"
 								href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-						<footer class="post-block-19__widget-footer"><span
-								class="post-block-19__widget-comments-count">Comments 5</span><span
+						<footer class="post-block-19__widget-footer">
+							<?php if ($theme_options['block-settings-meta-comments'] == 1) { ?>
+								<span
+									class="post-block-19__widget-comments-count">Comments <?php echo get_comments_number(); ?></span>
+							<?php } ?>
+							<span
 								class="post-block-19__widget-date animation-ltr">
 
-								<?php if ($theme_options['category-template-date'] == 1) {
+								<?php if ($theme_options['block-settings-meta-date'] == 1) {
 									; ?>
-									<time datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
-								if ($theme_options['category-template-author'] == 1) { ?>By <a
+									<time
+										datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
+								if ($theme_options['block-settings-meta-author'] == 1) { ?>By <a
 									href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a><?php } ?>
 							</span>
 						</footer>

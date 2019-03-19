@@ -3,9 +3,9 @@
   position: absolute;
 
   @media (min-width: $tablet-width) {
-    position: fixed;
-    width: 50%;
-    right: 0;
+	position: fixed;
+	width: 50%;
+	right: 0;
   }
 
 }
@@ -45,12 +45,12 @@
   padding: 30px;
 
   @media (min-width: $tablet-width) {
-    //min-height: 25vh;
-    width: 100%;
-    margin: 0;
-    bottom: 0;
-    left: auto;
-    right: auto;
+	//min-height: 25vh;
+	width: 100%;
+	margin: 0;
+	bottom: 0;
+	left: auto;
+	right: auto;
   }
 }
 
@@ -66,13 +66,12 @@
   padding-top: 30px;
   padding-bottom: 30px;
   @media (min-width: $tablet-width) {
-    font-size: 1.57vw;
+	font-size: 1.57vw;
 
   }
 
-
   @media (min-width: $large-desktop-width) {
-    font-size: 25px;
+	font-size: 25px;
   }
 }
 
@@ -103,4 +102,8 @@
 
 .post-block-19__widget-date {
   margin-left: 24px;
+  color: inherit;
+  a {
+	color: inherit;
+  }
 }

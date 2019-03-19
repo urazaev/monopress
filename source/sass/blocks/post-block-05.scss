@@ -7,11 +7,11 @@
   top: 60px;
   @media (min-width: $tablet-width) {
 
-    overflow: hidden;
-    position: fixed;
-    width: 85.95%;
-    bottom: unset;
-    top: unset;
+	overflow: hidden;
+	position: fixed;
+	width: 85.95%;
+	bottom: unset;
+	top: unset;
   }
 
 }
@@ -27,7 +27,7 @@
   height: 100%;
   @media (min-width: $tablet-width) {
 
-    height: 100vh;
+	height: 100vh;
   }
 }
 
@@ -37,7 +37,7 @@
   object-fit: cover;
 
   @media (min-width: $tablet-width) {
-    height: 100%;
+	height: 100%;
   }
 }
 
@@ -58,10 +58,10 @@
   background-color: rgba($background-white, 0.8);
 
   @media (min-width: $tablet-width) {
-    width: 43%;
-    bottom: 50px;
-    right: 50px;
-    left: unset;
+	width: 43%;
+	bottom: 50px;
+	right: 50px;
+	left: unset;
   }
 }
 
@@ -76,7 +76,7 @@
   transform-origin: 0 0;
 
   @media (min-width: $tablet-width) {
-    left: -10px;
+	left: -10px;
   }
 }
 
@@ -93,11 +93,11 @@
   font-size: 14px;
 
   @media (min-width: $tablet-width) {
-    font-size: 1.9vw;
+	font-size: 1.9vw;
   }
 
   @media (min-width: $large-desktop-width) {
-    font-size: 30px;
+	font-size: 30px;
   }
 }
 
@@ -109,4 +109,12 @@
   @include links-decoration(rgba($text-color-dark, 0.8));
   font-size: inherit;
   line-height: inherit;
+}
+
+.post-block-05__comments-count {
+  order: 3;
+  padding-top: 20px;
+  text-align: right;
+  font-size: 12px;
+  margin: 0;
 }
