@@ -119,13 +119,59 @@
   margin-left: 2px;
   min-width: 83px;
   display: inline-block;
+  a {
+	position: relative;
+	color: inherit;
+
+	&:after {
+	  content: "";
+	  position: absolute;
+	  display: flex;
+	  opacity: 0;
+	  bottom: -3px;
+	  left: 0;
+	  height: 2px;
+	  background-color: var(--active-word);
+	  width: 2px;
+	  transition: all ease-out 0.3s;
+	}
+	&:hover {
+	  &:after {
+		content: "";
+		opacity: 1;
+		width: 100%;
+		transition: all ease-out 0.3s;
+	  }
+	}
+  }
 }
 
 .post-block-08__widget-date {
   margin-left: 24px;
   a {
 	color: inherit;
+	position: relative;
 
+	&:after {
+	  content: "";
+	  position: absolute;
+	  display: flex;
+	  opacity: 0;
+	  bottom: -3px;
+	  left: 0;
+	  height: 2px;
+	  background-color: var(--active-word);
+	  width: 2px;
+	  transition: all ease-out 0.3s;
+	}
+	&:hover {
+	  &:after {
+		content: "";
+		opacity: 1;
+		width: 100%;
+		transition: all ease-out 0.3s;
+	  }
+	}
   }
   &--top {
 	text-align: left;

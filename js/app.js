@@ -166,6 +166,22 @@ if (isPostImgFixed) {
 }
 /**********************
 
+ Fix post-template-3 left side
+
+ ************************/
+
+
+var isPostTemplateThirdFixed = document.querySelector('.post-template-3-fix');
+
+if (isPostTemplateThirdFixed) {
+  var sidebar = new StickySidebar('.post-template-3-fix', {
+    containerSelector: '.page-main',
+    innerWrapperSelector: '.post-block-20_inner',
+    minWidth: 768
+  });
+}
+/**********************
+
  Slick single
 
  ************************/

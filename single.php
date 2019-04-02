@@ -20,21 +20,16 @@ get_header();
 					if ($theme_options['post-template-default'] == '1') {
 						the_post();
 						get_template_part('template-parts/content', get_post_type());
-
 					}
 
 					if ($theme_options['post-template-default'] == '2') {
 						the_post();
-						echo $theme_options['post-template-default'];
-						echo "Post second template";
-//						TODO: Second post template
+						get_template_part('template-parts/post-template-2', get_post_type());
 					}
 
 					if ($theme_options['post-template-default'] == '3') {
 						the_post();
-						echo $theme_options['post-template-default'];
-						echo "Post third template";
-//						TODO: Third post template
+						get_template_part('template-parts/post-template-3', get_post_type());
 					}
 				}
 			endwhile; // End of the loop.

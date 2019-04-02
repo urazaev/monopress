@@ -1,6 +1,8 @@
 .author-box-container {
   position: relative;
   padding-top: 30px;
+  width: 100%;
+
   &::before {
 	content: "";
 	position: absolute;

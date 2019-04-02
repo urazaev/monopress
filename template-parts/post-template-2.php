@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying single post
+ * Template part for displaying single post style 2
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -10,18 +10,32 @@
 global $theme_options;
 ?>
 
-<section class="post-text-block-08<?php if (class_exists('ReduxFramework')) {
-if ($theme_options['post-featured-images-show'] != 1) { ?> post-text-block-08--full-width<?php } ?>">
 
-	<article
-		id="post-<?php the_ID(); ?>" <?php post_class('post-text-block-08__item active-word-blue uk-animation-fade'); ?>>
+<section class="post-block-15 theme-white">
 
-		<?php
-		if ($theme_options['post-featured-images-show'] != 1) { ?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class('post-block-15__item'); ?>>
+		<?php if (class_exists('ReduxFramework')) {
+			if ($theme_options['post-featured-images-show'] == 1) { ?>
+				<figure class="post-block-15__img">
+					<?php if (has_post_thumbnail()) {
+						the_post_thumbnail('post_block_21', array('class' => 'post-block-15__img-item'));
+					} else {
+//						if ($theme_options['post-featured-images-placeholder'] == 1) { ?>
+						<img class="post-block-15__img-item"
+							 src="<?php echo get_template_directory_uri() ?>/images/placeholder-700-370.png"
+							 srcset="<?php echo get_template_directory_uri() ?>/images/placeholder-700-370@2x.png 2x"
+							 alt="Post picture">
+						<?php
+//						}
+					}
+					?>
 
-			<?php
+				</figure>
+				<?php
+			}
+
 			if ($theme_options['post-show-categories'] == 1) { ?>
-				<span class="post-block-08__widget-link-wrapper post-block-08__widget-link-wrapper--top">
+				<span class="post-block-08__widget-link-wrapper">
 				<?php
 				$thelist = '';
 				$i = 0;
@@ -34,49 +48,40 @@ if ($theme_options['post-featured-images-show'] != 1) { ?> post-text-block-08--f
 
 				</span>
 			<?php }
+		}
 
-			if (is_singular()) :
-				the_title('<h1 class="entry-title post-block-08__widget-title post-block-08__widget-title--top">', '</h1>');
-			else :
-				the_title('<h2 class="entry-title><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-			endif;
+		the_title('<h1 class="post-block-15__header">', '</h1>');
+		if ($theme_options['post-show-author-name'] == 1 || $theme_options['post-show-date'] == 1 || $theme_options['post-show-comments-numbers'] == '1') { ?>
 
-			if ($theme_options['post-show-author-name'] == 1 || $theme_options['post-show-date'] == 1 || $theme_options['post-show-comments-numbers'] == '1') { ?>
+			<footer class="post-block-15__footer">
 
-				<p class="post-block-08__widget-date post-block-08__widget-date--top">
-						<span class="cube-after">
-								<?php
-								if ($theme_options['post-show-author-name'] == 1) { ?>By <a
-									href="
-								<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
-								<?php echo get_the_author(); ?></a> - <?php }
 
-								if ($theme_options['post-show-date'] == 1) {
-									; ?>
-									<time class="animation-ltr"
-										  datetime="<?php echo get_the_date('c') ?>">
-								<?php echo get_the_date('M j, y') ?></time> <?php }
-								?>
-						</span>
-					<?php
-					if ($theme_options['post-show-comments-numbers'] == '1') { ?>
-					<a href="#comments">Comments:
+			<?php
+			if ($theme_options['post-show-author-name'] == 1) { ?><span class="cube-after">By <a
+					href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+				<?php echo get_the_author(); ?></a> </span> <?php }
+
+			if ($theme_options['post-show-comments-numbers'] == '1') { ?>
+				<span class="post-block-15__comments-count"><a href="#comments">Comments:
 						<?php echo get_comments_number(); ?>
-					</a>
-					<?php } ?>
-				</p>
-				<?php
+					</a></span>
+			<?php }
 
+			if ($theme_options['post-show-date'] == 1) {
+				; ?>
+				<span class="post-block-15__comments-date"><time class="animation-ltr"
+																 datetime="<?php echo get_the_date('c') ?>">
+								<?php echo get_the_date('M j, y') ?></time> </span>
+				</footer><?php }
+
+			if ($theme_options['post-sharing-top'] == '1') {
+				addtoany_render();
 			}
-		}
+			?>
 
-		if ($theme_options['post-sharing-top'] == '1') {
-			addtoany_render();
-		}
-		}
-		?>
+		<?php } ?>
 
-		<div class="entry-content">
+		<div class="entry-content post-block-15__text">
 			<?php
 			the_content(sprintf(
 				wp_kses(
@@ -98,15 +103,13 @@ if ($theme_options['post-featured-images-show'] != 1) { ?> post-text-block-08--f
 			?>
 		</div><!-- .entry-content -->
 
-		<?php if (class_exists('ReduxFramework')) {
-			if ($theme_options['post-sharing-bottom'] == '1') {
-				addtoany_render();
-			}
+		<?php
+		if ($theme_options['post-sharing-bottom'] == '1') {
+			addtoany_render();
 		}
 		?>
 	</article>
 	<!-- #post-<?php the_ID(); ?> -->
-
 	<?php
 	if (class_exists('ReduxFramework')) {
 		if ($theme_options['block-show-tags'] == '1') {
@@ -224,84 +227,3 @@ if ($theme_options['post-featured-images-show'] != 1) { ?> post-text-block-08--f
 	?>
 
 </section>
-
-<?php if (class_exists('ReduxFramework')) {
-	if ($theme_options['post-featured-images-show'] == 1) { ?>
-
-		<section class="post-block-08 uk-animation-fade post-img-fixed">
-			<article class="post-block-08__item theme-light-gray post-img-fixed__inner">
-				<figure class="post-block-08__img">
-
-					<?php if (has_post_thumbnail()) {
-						the_post_thumbnail('post_block_19', array('class' => 'post-block-08__img-item'));
-					} else {
-//						if ($theme_options['post-featured-images-placeholder'] == 1) { ?>
-						<img class="post-block-08__img-item"
-							 src="<?php echo get_template_directory_uri() ?>/images/placeholder-800-900.png"
-							 srcset="<?php echo get_template_directory_uri() ?>/images/placeholder-800-900@2x.png 2x"
-							 alt="Post picture">
-						<?php
-//						}
-					}
-					?>
-
-					<div class="post-block-08__widget theme-widget-black">
-						<?php
-						if ($theme_options['post-show-categories'] == 1) { ?>
-							<span class="post-block-08__widget-link-wrapper">
-				<?php
-				$thelist = '';
-				$i = 0;
-				foreach (get_the_category() as $category) {
-					if (0 < $i) $thelist .= ' ';
-					$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button button--blue' . $category->slug . '">' . $category->name . '</a>';
-					$i++;
-				}
-				echo $thelist; ?>
-
-				</span>
-						<?php }
-
-						if (is_singular()) :
-							the_title('<h1 class="entry-title post-block-08__widget-title">', '</h1>');
-						else :
-							the_title('<h2 class="entry-title post-block-08__widget-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-						endif;
-
-						if ($theme_options['post-show-author-name'] == 1 || $theme_options['post-show-date'] == 1 || $theme_options['post-show-comments-numbers'] == '1') { ?>
-
-							<footer class="entry-footer post-block-08__widget-footer">
-							<span class="post-block-08__widget-date">
-								<?php
-								if ($theme_options['post-show-author-name'] == 1) { ?>By <a
-									href="
-								<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
-								<?php echo get_the_author(); ?></a> - <?php }
-
-								if ($theme_options['post-show-date'] == 1) {
-									?>
-									<time class="animation-ltr"
-										  datetime="<?php echo get_the_date('c') ?>">
-								<?php echo get_the_date('M j, y') ?></time> <?php }
-								?>
-							</span>
-								<?php
-
-								if ($theme_options['post-show-comments-numbers'] == '1' && comments_open()) { ?>
-									<span
-										class="post-block-08__widget-comments-count"><a href="#comments">Comments:
-										<?php echo get_comments_number(); ?></a></span>
-								<?php }
-								?>
-							</footer>
-						<?php } ?>
-					</div>
-
-				</figure>
-
-			</article>
-
-		</section>
-
-	<?php }
-} ?>

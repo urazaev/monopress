@@ -2,7 +2,7 @@
   position: relative;
   @include indents-zero;
   font-family: $fonts-primary;
-  color: var(--main-text-color);
+  color: inherit;
 }
 
 .post-text-block-20__item {
@@ -17,10 +17,10 @@
   line-height: 26px;
   font-family: $fonts-primary;
   font-weight: normal;
-  color: var(--main-text-color);
+  color: inherit;
 
   @media (min-width: $tablet-width) {
-    padding-top: 26px;
+    //padding-top: 26px;
   }
 }
 

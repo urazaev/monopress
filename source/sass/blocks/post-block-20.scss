@@ -3,14 +3,27 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   width: 100%;
+  order: 2;
+
+  @media (min-width: $tablet-width) {
+	order: unset;
+	padding: 0;
+	width: 50%;
+	flex-direction: column;
+  }
+}
+
+.post-block-20_inner {
+  width: 100%;
   padding: 30px;
 
   @media (min-width: $tablet-width) {
-    padding: 0;
-    width: 53%;
-    padding-top: 90px;
-    padding-bottom: 90px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	padding-left: 50px;
+	padding-right: 0;
   }
+
 }
 
 .post-block-20__wrapper-link {
@@ -19,31 +32,33 @@
   padding-bottom: 30px;
 
   @media (min-width: $tablet-width) {
-    padding-bottom: 10px;
+	padding-bottom: 10px;
   }
 }
 
 .post-block-20__item {
-  display: none;
+  //display: none;
   position: relative;
   flex-direction: column;
   transition: all ease-in 0.3s;
-  opacity: 0.3;
+  //opacity: 0.3;
   width: 100%;
+  padding-bottom: 30px;
 
   @media (min-width: $tablet-width) {
-    margin-left: 76px;
-    display: flex;
-    width: auto;
+	//margin-left: 76px;
+	display: flex;
+	//width: auto;
+	width: 100%;
   }
 
   &:hover {
-    opacity: 0.7;
+	//opacity: 0.7;
   }
 
   &:nth-child(1) {
-    display: flex;
-    opacity: 1;
+	display: flex;
+	opacity: 1;
   }
 }
 
@@ -66,14 +81,15 @@
   transform-origin: 0 0;
 
   @media (min-width: $tablet-width) {
-    font-size: 12px;
-    top: 40px;
-    left: -10px;
+	font-size: 12px;
+	top: 40px;
+	left: -10px;
   }
 }
 
 .post-block-20__date-item {
   @include indents-zero;
+  padding-bottom: 20px;
 }
 
 .post-block-20__header {
@@ -83,19 +99,19 @@
   font-weight: bold;
   text-decoration: none;
   @include indents-zero;
-  text-align: right;
+  //text-align: right;
   font-size: 14px;
   padding-top: 30px;
 
   @media (min-width: $tablet-width) {
-    padding-top: 30px;
-    padding-left: 30px;
-    padding-bottom: 30px;
-    font-size: 1.26vw;
+	padding-top: 0;
+	//padding-left: 30px;
+	padding-bottom: 30px;
+	font-size: 26px;
   }
 
   @media (min-width: $large-desktop-width) {
-    font-size: 25px;
+	font-size: 32px;
   }
 }
 
@@ -114,9 +130,17 @@
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 30px;
+  order: 1;
 
   @media (min-width: $tablet-width) {
-    padding: 50px 30px 50px 50px;
-    width: 47%;
+	padding: 50px;
+	width: 50%;
+	order: unset;
+  }
+  &--fullwidth {
+	width: 100%;
+	@media (min-width: $tablet-width) {
+	  width: 100%;
+	}
   }
 }
