@@ -1599,7 +1599,7 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Portfolio', 'bcn'),
+	'title' => __('+ +Portfolio', 'bcn'),
 	'id' => 'portfoilo',
 //    'desc' => __('Default portfolio template ', 'bcn'),
 	'subtitle' => __('.', 'bcn'),
@@ -1619,10 +1619,6 @@ Redux::setSection($opt_name, array(
 					'alt' => '2 Column Left',
 					'img' => get_template_directory_uri() . '/images/admin/preview-02.jpg'
 				),
-				'3' => array(
-					'alt' => '2 Column Right',
-					'img' => get_template_directory_uri() . '/images/admin/preview-03.jpg'
-				),
 // Todo: set the layouts for default site post template
 			),
 			'default' => '1',
@@ -1631,28 +1627,28 @@ Redux::setSection($opt_name, array(
 			'id' => 'portfolio-show-filter',
 			'type' => 'switch',
 			'title' => __('Show filter', 'bcn'),
-			'subtitle' => __('Change the appearance of the bottom sharing buttons.', 'bcn'),
+			'subtitle' => __('Enable or disable filter in portfolio page.', 'bcn'),
 			'default' => true,
 		),
 		array(
 			'id' => 'portfolio-show-title',
 			'type' => 'switch',
 			'title' => __('Show item title', 'bcn'),
-			'subtitle' => __('Change the appearance of the bottom sharing buttons.', 'bcn'),
+			'subtitle' => __('Show or hide portfolio item title.', 'bcn'),
 			'default' => false,
 		),
 		array(
 			'id' => 'portfolio-show-plus',
 			'type' => 'switch',
 			'title' => __('Show plus icon on hover', 'bcn'),
-			'subtitle' => __('Change the appearance of the bottom sharing buttons.', 'bcn'),
+			'subtitle' => __('Show or hide plus icon on hover.', 'bcn'),
 			'default' => true,
 		),
 		array(
 			'id' => 'portfolio-show-modal',
 			'type' => 'switch',
 			'title' => __('Enable modal image', 'bcn'),
-			'subtitle' => __('Change the appearance of the bottom sharing buttons.', 'bcn'),
+			'subtitle' => __('Open portfolio item link in modal window.', 'bcn'),
 			'default' => true,
 		),
 	)

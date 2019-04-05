@@ -1422,6 +1422,7 @@ button{cursor:pointer}
 a#inifiniteLoader{position:relative;width:100%;padding-top:30px;padding-bottom:30px}
 a#inifiniteLoader img{width:25px;height:25px;margin-left:20px;margin-right:20px}
 .cube-after::after{content:"";width:3px;height:3px;display:inline-block;background-color:#ddd;margin-left:5px;margin-right:5px;vertical-align:middle;margin-top:-3px}
+.body-right-margin{margin-right:5%}
 .has-animation{position:relative}
 .has-animation p,.has-animation img,.has-animation a,.has-animation h2,.has-animation div,.has-animation span,.has-animation time{opacity:0}
 .has-animation.animate-in p,.has-animation.animate-in img,.has-animation.animate-in a,.has-animation.animate-in h2,.has-animation.animate-in div,.has-animation.animate-in span,.has-animation.animate-in time{-webkit-animation:textHidden .1s .8s forwards;animation:textHidden .1s .8s forwards}

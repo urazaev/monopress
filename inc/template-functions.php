@@ -11,30 +11,37 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function bcn_body_classes( $classes ) {
+
+global $theme_options;
+
+function bcn_body_classes($classes)
+{
 	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
+	if (!is_singular()) {
 		$classes[] = 'hfeed';
 	}
 
 	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+	if (!is_active_sidebar('sidebar-1')) {
 		$classes[] = 'no-sidebar';
 	}
 
 	return $classes;
 }
-add_filter( 'body_class', 'bcn_body_classes' );
+
+add_filter('body_class', 'bcn_body_classes');
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function bcn_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
+function bcn_pingback_header()
+{
+	if (is_singular() && pings_open()) {
+		echo '<link rel="pingback" href="', esc_url(get_bloginfo('pingback_url')), '">';
 	}
 }
-add_action( 'wp_head', 'bcn_pingback_header' );
+
+add_action('wp_head', 'bcn_pingback_header');
 
 
 /**
@@ -57,7 +64,6 @@ add_action('wp_ajax_nopriv_infinite_scroll', 'wp_infinitepaginate');    // if us
 /**
  * custom comments listing
  **/
-
 class up_walker_comment extends Walker
 {
 
@@ -504,25 +510,21 @@ function addPanelCSS()
  **/
 
 if (function_exists('add_image_size')) {
-	add_image_size('post_block_02', 590, 375, 'true'); // done
-	add_image_size('post_block_03', 800, 900, 'true');
-	add_image_size('post_block_04', 750, 400, 'true');
-	add_image_size('post_block_05', 1375, 900, 'true');
-//	add_image_size('post_block_06', 800, 533, 'true');
-	add_image_size('post_block_07', 962, 700, 'true'); // done
-//	add_image_size('post_block_08', 800, 900, 'true');
-	add_image_size('post_block_09', 1600, 900, 'true'); // done
-//	add_image_size('post_block_10', 800, 533, 'true');
-	add_image_size('post_block_11', 590, 375, 'true');
-//	add_image_size('post_block_12', 590, 375, 'true');
-	add_image_size('post_block_14', 545, 350, 'true');
-//	add_image_size('post_block_15', 590, 375, 'true');
-//	add_image_size('post_block_16', 590, 375, 'true');
-//	add_image_size('post_block_17', 800, 533, 'true');
-	add_image_size('post_block_18', 590, 375, 'true');
-	add_image_size('post_block_19', 800, 900, 'true');
-//	add_image_size('post_block_20', 590, 375, 'true');
-	add_image_size('post_block_21', 700, 370, 'true');
+	add_image_size('post_block_02', 590, 375, true);
+	add_image_size('post_block_03', 800, 900, true);
+	add_image_size('post_block_04', 750, 400, true);
+	add_image_size('post_block_05', 1375, 900, true);
+	add_image_size('post_block_07', 962, 700, true);
+	add_image_size('post_block_09', 1600, 900, true);
+	add_image_size('post_block_11', 590, 375, true);
+	add_image_size('post_block_14', 545, 350, true);
+	add_image_size('post_block_18', 590, 375, true);
+	add_image_size('post_block_19', 800, 900, true);
+	add_image_size('post_block_21', 700, 370, true);
+	add_image_size('portfolio_masonry_thumb', 500, '', true);
+	add_image_size('portfolio_masonry_thumb_x2', 1000, '', true);
+	add_image_size('portfolio_grid_thumb', 500, 500, true);
+	add_image_size('portfolio_grid_thumb_x2', 1000, 1000, true);
 }
 
 /**
@@ -549,3 +551,23 @@ if (!function_exists('up_get_template')) {
 	}
 }
 
+
+/**
+ * custom body class
+ **/
+
+function my_own_body_classes($classes)
+{
+	global $theme_options;
+	if (class_exists('ReduxFramework')) {
+		if ($theme_options['portfolio-template-default'] == '2') {
+			if ($theme_options['portfolio-show-filter'] == '1') {
+				$classes[] = 'body-right-margin';
+			}
+		}
+	}
+
+	return $classes;
+}
+
+add_filter('body_class', 'my_own_body_classes');

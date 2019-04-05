@@ -12,6 +12,8 @@
  * @package bcn
  */
 
+global $theme_options;
+
 get_header();
 ?>
 	<div class="up-container up-container--fullwidth up-container--home-02 theme-light-gray" id="primary">
@@ -92,8 +94,6 @@ get_header();
 						break;
 				}
 			}
-			?>
-			<?php
 			if ($theme_options['category-pagination'] == 2) { ?>
 				<a id="inifiniteLoader"><img src="<?php bloginfo('template_directory'); ?>/images/ajax-loader.gif"/>
 					Loading more...</a>
