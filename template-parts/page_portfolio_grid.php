@@ -10,9 +10,34 @@
 
 global $theme_options;
 get_header();
-?>
+if ($theme_options['template-settings-breadcrumbs-show'] == 1) {
+	the_breadcrumb();
+}
 
-	<section class="theme-white portfolio portfolio--grid portfolio--grid-nowrap theme-white">
+?>
+	<section class="portfolio portfolio--grid">
+		<div class="entry-content portfolio__content post-text-block-20__text">
+			<?php
+			if (class_exists('ReduxFramework')) {
+				if ($theme_options['portfolio-show-content'] == '1') {
+
+					the_title('<h1 class="post-block-20__header">', '</h1>');
+				}
+
+				if ($theme_options['portfolio-sharing-top'] == '1') {
+					addtoany_render();
+				}
+
+				if ($theme_options['portfolio-show-content'] == '1') {
+					if (have_posts()) : while (have_posts()) : the_post();
+						the_content();
+					endwhile;
+					endif;
+				}
+			}
+			?>
+		</div>
+		<!-- .entry-content -->
 
 		<div data-uk-filter="target: .js-filter">
 			<?php if (class_exists('ReduxFramework')) {
@@ -22,7 +47,7 @@ get_header();
 						class="control-right control-right--left-border control-right--vpright control-right--portfolio active-word-red"
 						data-uk-scrollspy="target: > div; cls:uk-animation-slide-top-small; delay: 500">
 
-						<div class="control-right__item uk-active uk-scrollspy-inview uk-animation-slide-top-small"
+						<div class="control-right__item uk-active uk-animation-slide-top-small"
 							 data-uk-filter-control="" style="">
 							<a class="control-right__link rotate " href="#">All</a>
 						</div>
@@ -34,7 +59,7 @@ get_header();
 						if ($count > 0) {
 							foreach ($terms as $term) { ?>
 
-								<div class="control-right__item uk-scrollspy-inview uk-animation-slide-top-small"
+								<div class="control-right__item uk-animation-slide-top-small"
 									 data-uk-filter-control="[data-type*='<?php echo $term->name; ?>']" style="">
 									<a class="control-right__link rotate " href="#"><?php echo $term->name; ?></a>
 								</div>
@@ -45,7 +70,7 @@ get_header();
 						?>
 
 						<div
-							class="control-right__item control-right__scroll uk-scrollspy-inview uk-animation-slide-top-small"
+							class="control-right__item control-right__scroll uk-animation-slide-top-small"
 							style="">
 							<button class="control-right__link control-right__link--scroll rotate" type="button"
 									id="scroll-button">
@@ -135,10 +160,20 @@ get_header();
 
 		</div>
 
+		<?php if (class_exists('ReduxFramework')) {
+			if ($theme_options['portfolio-sharing-bottom'] == '1') { ?>
+				<div class="portfolio__content">
+					<?php
+					addtoany_render();
+					?>
+				</div>
+				<?php
+			}
+		}
+		?>
 	</section>
 
 <?php
-
 
 get_sidebar();
 get_footer();

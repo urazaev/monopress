@@ -12,7 +12,11 @@ global $theme_options;
 
 <section class="post-text-block-08<?php if (class_exists('ReduxFramework')) {
 if ($theme_options['post-featured-images-show'] != 1) { ?> post-text-block-08--full-width<?php } ?>">
-
+	<?php
+	if ($theme_options['template-settings-breadcrumbs-show'] == 1) {
+		the_breadcrumb('breadcrumbs breadcrumbs--inner');
+	}
+	?>
 	<article
 		id="post-<?php the_ID(); ?>" <?php post_class('post-text-block-08__item active-word-blue uk-animation-fade'); ?>>
 
@@ -60,9 +64,9 @@ if ($theme_options['post-featured-images-show'] != 1) { ?> post-text-block-08--f
 						</span>
 					<?php
 					if ($theme_options['post-show-comments-numbers'] == '1') { ?>
-					<a href="#comments">Comments:
-						<?php echo get_comments_number(); ?>
-					</a>
+						<a href="#comments">Comments:
+							<?php echo get_comments_number(); ?>
+						</a>
 					<?php } ?>
 				</p>
 				<?php
@@ -148,7 +152,7 @@ if ($theme_options['post-featured-images-show'] != 1) { ?> post-text-block-08--f
 									?>
 
 									<article
-										class="post-widget__item-related uk-scrollspy-inview uk-animation-slide-left-small">
+										class="post-widget__item-related uk-animation-slide-left-small">
 										<div class="post-widget__img-wrapper">
 											<?php if (has_post_thumbnail()) { ?>
 												<a class="post-widget__img-link related-img-link"
@@ -185,7 +189,7 @@ if ($theme_options['post-featured-images-show'] != 1) { ?> post-text-block-08--f
 																		  href="<?php the_permalink(); ?>">
 												<?php the_title() ?>
 											</a></h2>
-										<?php if (($theme_options['block-settings-meta-date'] == 1) && $theme_options['block-settings-meta-author'] == 1) { ?>
+										<?php if (($theme_options['block-settings-meta-date'] == 1) || $theme_options['block-settings-meta-author'] == 1) { ?>
 											<footer class="post-widget__footer">
 											<span class="post-widget__date">
 												<?php if ($theme_options['block-settings-meta-date'] == 1) {
@@ -290,7 +294,7 @@ if ($theme_options['post-featured-images-show'] != 1) { ?> post-text-block-08--f
 								if ($theme_options['post-show-comments-numbers'] == '1' && comments_open()) { ?>
 									<span
 										class="post-block-08__widget-comments-count"><a href="#comments">Comments:
-										<?php echo get_comments_number(); ?></a></span>
+											<?php echo get_comments_number(); ?></a></span>
 								<?php }
 								?>
 							</footer>

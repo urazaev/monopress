@@ -8,11 +8,13 @@
  */
 
 global $theme_options;
+
+if ($theme_options['template-settings-breadcrumbs-show'] == 1) {
+	the_breadcrumb();
+}
 ?>
 
-
 <section class="post-block-15 theme-white">
-
 	<article id="post-<?php the_ID(); ?>" <?php post_class('post-block-15__item'); ?>>
 		<?php if (class_exists('ReduxFramework')) {
 			if ($theme_options['post-featured-images-show'] == 1) { ?>
@@ -151,7 +153,7 @@ global $theme_options;
 									?>
 
 									<article
-										class="post-widget__item-related uk-scrollspy-inview uk-animation-slide-left-small">
+										class="post-widget__item-related uk-animation-slide-left-small">
 										<div class="post-widget__img-wrapper">
 											<?php if (has_post_thumbnail()) { ?>
 												<a class="post-widget__img-link related-img-link"
@@ -188,11 +190,11 @@ global $theme_options;
 																		  href="<?php the_permalink(); ?>">
 												<?php the_title() ?>
 											</a></h2>
-										<?php if (($theme_options['block-settings-meta-date'] == 1) && $theme_options['block-settings-meta-author'] == 1) { ?>
+										<?php if (($theme_options['block-settings-meta-date'] == 1) || $theme_options['block-settings-meta-author'] == 1) { ?>
 											<footer class="post-widget__footer">
 											<span class="post-widget__date">
 												<?php if ($theme_options['block-settings-meta-date'] == 1) {
-													; ?>
+													?>
 													<time class="cube-after"
 														  datetime="
 											<?php echo get_the_date('c') ?>">

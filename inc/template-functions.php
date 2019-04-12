@@ -525,6 +525,7 @@ if (function_exists('add_image_size')) {
 	add_image_size('portfolio_masonry_thumb_x2', 1000, '', true);
 	add_image_size('portfolio_grid_thumb', 500, 500, true);
 	add_image_size('portfolio_grid_thumb_x2', 1000, 1000, true);
+	add_image_size('search_grid_thumb', 400, 400, true);
 }
 
 /**
@@ -560,7 +561,7 @@ function my_own_body_classes($classes)
 {
 	global $theme_options;
 	if (class_exists('ReduxFramework')) {
-		if ($theme_options['portfolio-template-default'] == '2') {
+		if ($theme_options['portfolio-template-default'] == '2' || is_page_template('template-parts/page_portfolio_grid.php')) {
 			if ($theme_options['portfolio-show-filter'] == '1') {
 				$classes[] = 'body-right-margin';
 			}
@@ -571,3 +572,93 @@ function my_own_body_classes($classes)
 }
 
 add_filter('body_class', 'my_own_body_classes');
+
+/**
+ * breadcrumbs
+ **/
+
+function the_breadcrumb($outer_class='breadcrumbs')
+{
+	global $theme_options;
+
+	if (class_exists('ReduxFramework')) {
+		if ($theme_options['template-settings-breadcrumbs-sep']) {
+			$sep = $theme_options['template-settings-breadcrumbs-sep'];
+		} else {
+			$sep = ' > ';
+		}
+
+		if (!is_front_page()) {
+			// Start the breadcrumb with a link to your homepage ?>
+
+			<div class="<?php echo esc_html($outer_class);?>">
+
+			<?php
+			if ($theme_options['template-settings-breadcrumbs-home'] == '1') {
+				echo '<a href="';
+				echo get_option('home');
+				echo '">';
+				bloginfo('name');
+				echo '</a>';
+			}
+
+
+			if ($theme_options['template-settings-breadcrumbs-parent'] == '1') {
+
+				// Check if the current page is a category, an archive or a single page. If so show the category or archive name.
+				if (is_category() || is_single()) {
+					echo $sep;
+					the_category(', ');
+				} elseif (is_archive() || is_single()) {
+					echo $sep;
+					if (is_day()) {
+						printf(__('%s', 'bcn'), get_the_date());
+					} elseif (is_month()) {
+						printf(__('%s', 'bcn'), get_the_date(_x('F Y', 'monthly archives date format', 'bcn')));
+					} elseif (is_year()) {
+						printf(__('%s', 'bcn'), get_the_date(_x('Y', 'yearly archives date format', 'bcn')));
+					} else {
+						_e('Blog Archives', 'bcn');
+					}
+				}
+			}
+
+			if ($theme_options['template-settings-breadcrumbs-title'] == '1') {
+				// If the current page is a single post, show its title with the separator
+				if (is_single()) {
+					echo $sep;
+					the_title();
+				}
+
+				// If the current page is a static page, show its title.
+				if (is_page()) {
+					echo $sep;
+					echo the_title();
+				}
+
+				// if you have a static page assigned to be you posts list page. It will find the title of the static page and display it. i.e Home >> Blog
+				if (is_home()) {
+					echo $sep;
+					global $post;
+					$page_for_posts_id = get_option('page_for_posts');
+					if ($page_for_posts_id) {
+						$post = get_page($page_for_posts_id);
+						setup_postdata($post);
+						the_title();
+						rewind_posts();
+					}
+				}
+			}
+
+			echo '</div>';
+		}
+	}
+}
+
+/**
+ * excerpt more symbol
+ **/
+
+add_filter('excerpt_more', function($more) {
+	return '...';
+});

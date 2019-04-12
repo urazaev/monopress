@@ -18,7 +18,7 @@ echo "post-block-02";
 
 			$post_id = get_the_ID();
 			$category_object = get_the_category($post_id);
-			$category_name = $category_object[0]->name;
+//			$category_name = $category_object[0]->name;
 
 			?>
 			<article class="post-block-02__item">

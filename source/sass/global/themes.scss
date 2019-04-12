@@ -8,6 +8,7 @@ Common colours themes
 :root {
   @include html-vars(header-icon-color, $text-color-white);
   @include html-vars(header-icon-color-hover, $text-color-white);
+  @include html-vars(active-word, $text-color-blue);
 }
 
 .theme-white {

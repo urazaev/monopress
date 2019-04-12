@@ -122,7 +122,7 @@ if (class_exists('ReduxFramework')) {
 					_x('Comment', 'bcn') .
 					'" cols="45" rows="8" aria-required="true"></textarea>' .
 					'</p>',
-				'class_submit' => 'button button--blue',
+				'class_submit' => 'button',
 //				'title_reply' => '<div class="crunchify-text"> <h5>Please Post Your Comments & Reviews</h5></div>',
 //				'comment_notes_after' => '<button type="submit" id="submit-new" class="button"><span>' . __('Post Comment', 'bcn') . '</span></button>',
 

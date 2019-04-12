@@ -1019,7 +1019,7 @@ Redux::setSection($opt_name, array(
 
 // -> START Layouts settings
 Redux::setSection($opt_name, array(
-	'title' => __('Layouts settings', 'bcn'),
+	'title' => __('+ Layouts settings', 'bcn'),
 	'id' => 'layouts-settings',
 	'desc' => __('', 'bcn'),
 	'icon' => 'el el-align-justify'
@@ -1033,7 +1033,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'template-settings-preloader',
 			'type' => 'section',
-			'title' => __(' + Preloader', 'bcn'),
+			'title' => __('Preloader', 'bcn'),
 			'subtitle' => __('From here you can configure show or hide preloader. For color customization go to Miscellaneous > Theme colors > Preloader', 'bcn'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
@@ -1057,6 +1057,13 @@ Redux::setSection($opt_name, array(
 			'title' => __('Show breadcrumbs', 'bcn'),
 			'subtitle' => __('Enable or disable the breadcrumbs.', 'bcn'),
 			'default' => true,
+		),
+		array(
+			'id' => 'template-settings-breadcrumbs-sep',
+			'type' => 'text',
+			'title' => __('Separator symbol', 'bcn'),
+			'subtitle' => __('Set the breadcrumbs separator.', 'bcn'),
+			'default' => ' > ',
 		),
 		array(
 			'id' => 'template-settings-breadcrumbs-home',
@@ -1114,60 +1121,61 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Enable or disable the comments on pages, on the entire site. This option is disabled by default', 'bcn'),
 			'default' => false,
 		),
-		array(
-			'id' => 'woocommerce-template',
-			'type' => 'section',
-			'title' => __('WooCommerce template', 'bcn'),
-			'subtitle' => __('Set the sidebar and position for the WooCommerce pages.', 'bcn'),
-			'indent' => true, // Indent all options below until the next 'section' option is set.
-		),
-		array(
-			'id' => 'woocommerce-template-sidebar',
-			'type' => 'image_select',
-			'title' => __('Shop homepage + archives', 'bcn'),
-			'subtitle' => __('Sidebar position and custom sidebar.', 'bcn'),
-			'options' => array(
-				'1' => array(
-					'alt' => '1 Column',
-					'img' => ReduxFramework::$_url . 'assets/img/1col.png'
-				),
-				'2' => array(
-					'alt' => '2 Column Left',
-					'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
-				),
-				'3' => array(
-					'alt' => '2 Column Right',
-					'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
-				),
-			),
-			'default' => '2'
-		),
-		array(
-			'id' => 'woocommerce-product-sidebar',
-			'type' => 'image_select',
-			'title' => __('Shop single product page', 'bcn'),
-			'subtitle' => __('Sidebar position and custom sidebar.', 'bcn'),
-			'options' => array(
-				'1' => array(
-					'alt' => '1 Column',
-					'img' => ReduxFramework::$_url . 'assets/img/1col.png'
-				),
-				'2' => array(
-					'alt' => '2 Column Left',
-					'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
-				),
-				'3' => array(
-					'alt' => '2 Column Right',
-					'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
-				),
-			),
-			'default' => '2'
-		),
+//		array(
+//			'id' => 'woocommerce-template',
+//			'type' => 'section',
+//			'title' => __('WooCommerce template', 'bcn'),
+//			'subtitle' => __('Set the sidebar and position for the WooCommerce pages.', 'bcn'),
+//			'indent' => true, // Indent all options below until the next 'section' option is set.
+//		),
+//		array(
+//			'id' => 'woocommerce-template-sidebar',
+//			'type' => 'image_select',
+//			'title' => __('Shop homepage + archives', 'bcn'),
+//			'subtitle' => __('Sidebar position and custom sidebar.', 'bcn'),
+//			'options' => array(
+//				'1' => array(
+//					'alt' => '1 Column',
+//					'img' => ReduxFramework::$_url . 'assets/img/1col.png'
+//				),
+//				'2' => array(
+//					'alt' => '2 Column Left',
+//					'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+//				),
+//				'3' => array(
+//					'alt' => '2 Column Right',
+//					'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
+//				),
+//			),
+//			'default' => '2'
+//		),
+//		array(
+//			'id' => 'woocommerce-product-sidebar',
+//			'type' => 'image_select',
+//			'title' => __('Shop single product page', 'bcn'),
+//			'subtitle' => __('Sidebar position and custom sidebar.', 'bcn'),
+//			'options' => array(
+//				'1' => array(
+//					'alt' => '1 Column',
+//					'img' => ReduxFramework::$_url . 'assets/img/1col.png'
+//				),
+//				'2' => array(
+//					'alt' => '2 Column Left',
+//					'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+//				),
+//				'3' => array(
+//					'alt' => '2 Column Right',
+//					'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
+//				),
+//			),
+//			'default' => '2'
+//		),
+//	TODO: for the newest version
 	),
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('++ Categories template', 'bcn'),
+	'title' => __('Categories template', 'bcn'),
 	'id' => 'categories-template',
 	'desc' => __('Set the default layout for all the categories.', 'bcn'),
 	'subsection' => true,
@@ -1346,7 +1354,7 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('++ Post settings', 'bcn'),
+	'title' => __('Post settings', 'bcn'),
 	'id' => 'post-settings',
 	'subsection' => true,
 	'fields' => array(
@@ -1463,6 +1471,7 @@ Redux::setSection($opt_name, array(
 					'alt' => '2 Column Right',
 					'img' => get_template_directory_uri() . '/images/admin/preview-03.jpg'
 				),
+				'default' => '3',
 // Todo: set the layouts for default site post template
 			),
 			'default' => '1',
@@ -1599,7 +1608,7 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('+ +Portfolio', 'bcn'),
+	'title' => __('Portfolio', 'bcn'),
 	'id' => 'portfoilo',
 //    'desc' => __('Default portfolio template ', 'bcn'),
 	'subtitle' => __('.', 'bcn'),
@@ -1622,6 +1631,27 @@ Redux::setSection($opt_name, array(
 // Todo: set the layouts for default site post template
 			),
 			'default' => '1',
+		),
+		array(
+			'id' => 'portfolio-sharing-top',
+			'type' => 'switch',
+			'title' => __('Top portfolio sharing', 'bcn'),
+			'subtitle' => __('Show or hide the top content sharing on portfolio page.', 'bcn'),
+			'default' => true,
+		),
+		array(
+			'id' => 'portfolio-sharing-bottom',
+			'type' => 'switch',
+			'title' => __('Bottom portfolio sharing', 'bcn'),
+			'subtitle' => __('Show or hide the bottom content sharing on portfolio page.', 'bcn'),
+			'default' => true,
+		),
+		array(
+			'id' => 'portfolio-show-content',
+			'type' => 'switch',
+			'title' => __('Show page title and text content', 'bcn'),
+			'subtitle' => __('Enable or disable title and text content on portfolio page.', 'bcn'),
+			'default' => true,
 		),
 		array(
 			'id' => 'portfolio-show-filter',
@@ -1845,6 +1875,15 @@ Redux::setSection($opt_name, array(
 			'title' => __('Portfolio background', 'bcn'),
 			'background-color' => 'false',
 			'output' => '.container--portfolio, .container--portfolio-03, .container--portfolio-02'
+		),
+
+		array(
+			'id' => 'background-404',
+			'type' => 'background',
+//           'output' => array('body'),
+			'title' => __('404 page background', 'bcn'),
+			'background-color' => 'false',
+			'output' => '.error-404 .post-block-06__item'
 		),
 
 //        array(
@@ -2557,6 +2596,26 @@ Redux::setSection($opt_name, array(
 			),
 		),
 
+
+//      404
+		array(
+			'id' => 'colors-404-title',
+			'type' => 'section',
+			'title' => __('404', 'bcn'),
+			'indent' => true, // Indent all options below until the next 'section' option is set.
+		),
+		array(
+			'id' => '404-background',
+			'type' => 'color',
+			'compiler' => true,
+			'title' => esc_html__('404 background Color', 'bcn'),
+			'subtitle' => __('Select 404 page background color', 'bcn'),
+			'default' => '',
+			'output' => array(
+				'background-color' => '.error-404 .post-block-06__item',
+			)
+		),
+
 	)
 ));
 
@@ -3114,6 +3173,44 @@ Redux::setSection($opt_name, array(
 		),
 	)
 
+));
+
+Redux::setSection($opt_name, array(
+	'title' => esc_html__('Page 404', 'bcn'),
+	'subsection' => true,
+	'fields' => array(
+		array(
+			'id' => '404-heading',
+			'type' => 'text',
+			'title' => esc_html__('Heading text', 'bcn'),
+			'default' => esc_html__('Oops! That page can&rsquo;t be found.', 'bcn'),
+
+		),
+		array(
+			'id' => '404-text',
+			'type' => 'editor',
+			'title' => esc_html__('Content body Text', 'bcn'),
+			'subtitle' => esc_html__('Custom html allow', 'bcn'),
+			'args' => array(
+				'teeny' => true,
+			),
+			'default' => esc_html__('It looks like nothing was found at this location. Maybe try the link below or a search?', 'bcn'),
+
+		),
+		array(
+			'id' => '404-button-text',
+			'type' => 'text',
+			'title' => esc_html__('Button text', 'bcn'),
+			'default' => 'Go Home',
+
+		),
+		array(
+			'id' => '404-button-link',
+			'type' => 'text',
+			'title' => esc_html__('Button Contact link slug', 'bcn'),
+			'default' => '/',
+		),
+	)
 ));
 
 //   Social networks

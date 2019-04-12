@@ -43,10 +43,10 @@ global $theme_options;
 				<button class="usernav__search-close-button" data-uk-icon="close"></button>
 			</div>
 			<div class="usernav__search-wrapper">
-				<form class="uk-search uk-search-large">
+				<form class="uk-search uk-search-large" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<button class="uk-search-icon-flip" data-uk-search-icon type="submit"></button>
-					<input class="usernav__search-input uk-search-input" type="search" name="search"
-						   placeholder="Search...">
+					<input class="usernav__search-input uk-search-input" type="search" name="s" id="s"
+						   placeholder="<?php esc_attr_e( 'Search...', 'bcn' ); ?>">
 				</form>
 			</div>
 		</div>

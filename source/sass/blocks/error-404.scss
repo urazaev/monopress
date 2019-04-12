@@ -1,0 +1,36 @@
+.error-404 {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: $tablet-width) {
+	flex-direction: row;
+  }
+
+  &.post-block-06 {
+	width: 100%;
+  }
+
+  .post-widget {
+	padding: 30px;
+	@media (min-width: $tablet-width) {
+	  padding: 0;
+	}
+  }
+
+  .post-block-06__item {
+	height: auto;
+	padding-top: 70px;
+	padding-bottom: 70px;
+  }
+
+  .post-widget {
+	min-height: unset;
+  }
+
+}
+
+.error-404__image {
+  width: 70%;
+  @media (min-width: $tablet-width) {
+	width: 35vw;
+  }
+}

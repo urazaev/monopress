@@ -196,3 +196,9 @@
 
 }
 
+.post-widget__wrapper {
+  display: flex;
+  @media (min-width: $tablet-width) {
+	flex-direction: column;
+  }
+}

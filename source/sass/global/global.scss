@@ -170,5 +170,11 @@ a#inifiniteLoader {
 }
 
 .body-right-margin {
-  margin-right: 5%;
+  @media (min-width: $tablet-width) {
+	margin-right: 5%;
+  }
+}
+
+.pt-30 {
+  padding-top: 30px !important;
 }
