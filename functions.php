@@ -173,6 +173,7 @@ function bcn_scripts()
 	wp_enqueue_script('bcn-library-jquery-2.2.4', get_template_directory_uri() . '/js/libraries/jquery-2.2.4.min.js', array(), time());
 	wp_enqueue_script('bcn-library-css-var-polyfill', get_template_directory_uri() . '/js/libraries/css-var-polyfill.min.js', array(), time(), true);
 	wp_enqueue_script('bcn-library-sticky-sidebar', get_template_directory_uri() . '/js/libraries/sticky-sidebar.min.js', array(), time(), true);
+//	wp_enqueue_script('bcn-library-sticky-sidebar-jquery', get_template_directory_uri() . '/js/libraries/jquery.sticky-sidebar.min.js', array(), time(), true);
 	wp_enqueue_script('bcn-library-slick', get_template_directory_uri() . '/js/libraries/slick.min.js', array(), time(), true);
 	wp_enqueue_script('bcn-library-resizesensor', get_template_directory_uri() . '/js/libraries/resizesensor.min.js', array(), time(), true);
 

@@ -15,21 +15,12 @@
 get_header();
 global $theme_options;
 ?>
-	<main class="row no-gutters page content-area page-main" id="primary">
-		<?php if ($theme_options['page-template-sidebar'] == 2) { ?>
-			<aside class="col col-md-3 post-widget sidebar page__sidebar">
-				<div class="sidebar__inner page-sidebar__inner"
-					 data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 500">
-					<?php dynamic_sidebar('up-sidebar-default'); ?>
-				</div>
-			</aside>
-		<?php } ?>
+	<main class="row no-gutters page content-area page-main sidebar-parent" id="primary">
+		<?php if ($theme_options['page-template-sidebar'] == 2) {
+			get_sidebar();
+		} ?>
 
-		<section class="<?php if ($theme_options['page-template-sidebar'] == 1) {
-			echo "col-md-12";
-		} else {
-			echo "col-md-9";
-		} ?> post-block-06__item page__item uk-animation-slide-bottom-medium content-area" id="main">
+		<section class="post-block-06__item page__item uk-animation-slide-bottom-medium content-area" id="main">
 			<?php
 			if ($theme_options['template-settings-breadcrumbs-show'] == 1) {
 				the_breadcrumb('breadcrumbs breadcrumbs--inner-nottobbrdr');
@@ -56,19 +47,11 @@ global $theme_options;
 		</section>
 		<!-- .page-content -->
 
-		<?php if ($theme_options['page-template-sidebar'] == 3) { ?>
-			<aside class="col col-md-3 post-widget sidebar page__sidebar">
-				<div class="sidebar__inner page-sidebar__inner"
-					 data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 500">
-					<?php dynamic_sidebar('up-sidebar-default'); ?>
-				</div>
-			</aside>
-		<?php } ?>
+		<?php if ($theme_options['page-template-sidebar'] == 3) {
+			get_sidebar();
+		} ?>
 
 	</main>
 	<!-- #primary -->
-
-
 <?php
-get_sidebar();
 get_footer();

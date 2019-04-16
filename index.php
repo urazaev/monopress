@@ -16,17 +16,11 @@ global $theme_options;
 
 get_header();
 ?>
-	<div class="up-container up-container--fullwidth up-container--home-02 theme-light-gray" id="primary">
 
-		<main class="page-main page-main--home-02" id="main">
-			<?php if ($theme_options['category-sidebar'] == 2) { ?>
-				<aside class="post-widget theme-widget-white sidebar">
-					<div class="sidebar__inner"
-						 data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 500">
-						<?php dynamic_sidebar('up-sidebar-default'); ?>
-					</div>
-				</aside>
-			<?php } ?>
+		<main class="page-main page-main--home-02 sidebar-parent" id="main">
+			<?php if ($theme_options['category-sidebar'] == 2) {
+				get_sidebar();
+			} ?>
 
 			<div class="control-scroll-only control-scroll-only--vpright">
 				<button class="control-scroll-only__scroll-button" id="scroll-button" type="button">Scroll</button>
@@ -53,15 +47,9 @@ get_header();
 					case 7:
 						up_get_template('post-block-07');
 						break;
-//					case 8:
-//						up_get_template('post-block-08');
-//						break;
 					case 9:
 						up_get_template('post-block-09');
 						break;
-//					case 10:
-//						up_get_template('post-block-10');
-//						break;
 					case 11:
 						up_get_template('post-block-11');
 						break;
@@ -71,48 +59,32 @@ get_header();
 					case 14:
 						up_get_template('post-block-14');
 						break;
-//					case 15:
-//						up_get_template('post-block-15');
-//						break;
 					case 16:
 						up_get_template('post-block-16');
 						break;
-//					case 17:
-//						up_get_template('post-block-17');
-//						break;
 					case 18:
 						up_get_template('post-block-18');
 						break;
 					case 19:
 						up_get_template('post-block-19');
 						break;
-//					case 20:
-//						up_get_template('post-block-20');
-//						break;
 					case 21:
 						up_get_template('post-block-21');
 						break;
 				}
 			}
 			if ($theme_options['category-pagination'] == 2) { ?>
-				<a id="inifiniteLoader"><img src="<?php bloginfo('template_directory'); ?>/images/ajax-loader.gif"/>
+				<a id="inifiniteLoader"><img src="<?php bloginfo('template_directory');?>/images/ajax-loader.gif" alt="loading..."/>
 					Loading more...</a>
-			<?php } ?>
+			<?php }
 
-			<?php if ($theme_options['category-sidebar'] == 3) { ?>
-				<aside class="post-widget theme-widget-white sidebar">
-					<div class="sidebar__inner"
-						 data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 500">
-						<?php dynamic_sidebar('up-sidebar-default'); ?>
-					</div>
-				</aside>
-			<?php } ?>
+			if ($theme_options['category-sidebar'] == 3) {
+				get_sidebar();
+			} ?>
 
 		</main>
-	</div>
 
 <?php
-get_sidebar();
 get_footer();
 
 

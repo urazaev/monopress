@@ -54,13 +54,28 @@ global $theme_options;
 </head>
 
 
-<body <?php body_class("theme-black"); ?> >
+<body <?php body_class(); ?> >
+<?php
+if ($theme_options['header-layout'] == 2 && $theme_options['main-menu-flip'] == 1) {
+	?>
+	<ul class="usernav usernav--vert usernav--control header-animate">
+		<li class="usernav__hamburger-wrapper">
+			<div class="usernav__hamburger">
+				<span></span>
+			</div>
+		</li>
+	</ul>
+
+	<?php
+}
+?>
 <div id="page" class="site">
 
 	<?php
 	if (class_exists('ReduxFramework')) {
 		if (isset($theme_options['header-layout'])) {
-			if ($theme_options['header-layout'] == 1) {
+			if ($theme_options['header-layout'] == 2) {
+//				TODO temporary for test
 				?>
 
 				<header class="page-header"
@@ -143,10 +158,8 @@ global $theme_options;
 				</header>
 
 				<?php
-			} elseif ($theme_options['header-layout'] == 2) {
-				echo "Left panel";
 			}
-		} else {
+		} elseif (($theme_options['header-layout'] != 1) && ($theme_options['header-layout'] != 2)) {
 			?>
 			<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'bcn'); ?></a>
 
@@ -186,7 +199,127 @@ global $theme_options;
 			<?php
 		}
 	}
+
+	if ($theme_options['header-layout'] == 2) {
 	?>
 
-	<div id="content" class="site-content">
+	<div class="row no-gutters vertical-main-sidebar__container">
+		<aside class="col-md-2 vertical-main-sidebar vertical-main-sidebar--alone">
 
+			<div class="vertical-main-sidebar__inner">
+
+				<section class="vertical-main-sidebar__left"
+						 data-uk-scrollspy="target: > div; cls:uk-animation-slide-bottom-small; delay: 500">
+
+					<div class="vertical-main-sidebar__item vertical-main-sidebar__item--logo">
+
+						<?php if ($theme_options['main-menu-date'] == 1) { ?>
+							<p
+								class="vertical-main-sidebar__item-date date"><?php echo date('M d', current_time('timestamp', 1)) ?></p>
+						<?php } ?>
+
+
+						<a class="vertical-main-sidebar__logo" href="<?php echo esc_url(home_url('/')); ?>">
+							<?php
+							if ($theme_options['logo-type'] == '0') {
+								echo esc_attr($theme_options['logo-txt']);
+							} else {
+								echo "<picture>";
+								if ($theme_options['logo-mobile'] != '' && $theme_options['logo-mobile']['url'] != '') { ?>
+
+									<source media="(max-width: 767px)"
+											srcset="<?php echo esc_html($theme_options['logo-mobile']['url']);
+											if (esc_html($theme_options['logo-mobile']['url'] != '')) {
+												echo ', ' . esc_html($theme_options['logo-mobile-retina']['url']) . ' 2x';
+											} ?>">
+									<?php
+								}
+								if ($theme_options['logo'] != '' && $theme_options['logo']['url'] != '') {
+									echo '<img class="main-nav__logo-img" src="' . esc_html($theme_options['logo']['url']) . '" ' . (($theme_options['logo-retina']['url'] != '') ? 'srcset="' . esc_html($theme_options['logo-retina']['url']) . ' 2x"' : '') . ' alt="' . (($theme_options['logo-alt'] != '') ? '' . esc_html($theme_options['logo-alt']) . '' : '' . get_bloginfo('description', 'display') . '') . '" title="' . (($theme_options['logo-title'] != '') ? '' . esc_html($theme_options['logo-title']) . '' : '' . get_bloginfo('description', 'display') . '') . '">';
+								}
+								echo "</picture>";
+							}
+							?>
+						</a>
+
+					</div>
+
+					<div class="vertical-main-sidebar__item vertical-main-sidebar__item--nav">
+
+						<nav class="main-nav-vertical header-animate">
+
+							<div class="main-nav-vertical__hamburger-wrapper">
+								<button class="icon main-nav__hamburger" id="hamburger-one">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+								</button>
+							</div>
+
+							<?php
+							wp_nav_menu(array(
+								'container' => false,
+								'menu' => esc_html($theme_options['main-menu-select']),
+								'menu_id' => esc_html($theme_options['main-menu-select']),
+								'menu_class' => 'menu main-nav__list main-nav__wrapper menu-wrapper menu-wrapper-opened menu-wrapper-nojs header-animate',
+								'echo' => true,
+							));
+							?>
+
+
+						</nav>
+
+					</div>
+
+					<div class="vertical-main-sidebar__item vertical-main-sidebar__item--social social__vertical">
+
+						<ul class="social__vertical-list">
+
+							<li class="social__vertical-item">
+								<a class="social__vertical-link social__vertical-link--instagram"
+								   href="https://www.instagram.com/urazaev_production/">
+									<i class="" data-uk-icon="instagram"></i>
+								</a>
+							</li>
+							<!--							TODO : socials output set-->
+							<li class="social__vertical-item">
+								<a class="social__vertical-link social__vertical-link--twitter"
+								   href="https://twitter.com/UrazaevCom">
+									<i data-uk-icon="twitter"></i>
+								</a>
+							</li>
+							<li class="social__vertical-item">
+								<a class="social__vertical-link social__vertical-link--facebook"
+								   href="https://www.facebook.com/urazaevcom/">
+									<i class="social__vertical-img-icon" data-uk-icon="facebook"></i>
+								</a>
+							</li>
+
+						</ul>
+
+					</div>
+
+					<?php if ($theme_options['main-menu-weather'] == 1) { ?>
+						<div class="vertical-main-sidebar__item weather-vertical">
+							<b class="weather-vertical__num">+25°</b>
+							<p class="weather-vertical__location">San Francisco, CA</p>
+						</div>
+						<?php
+					}
+					?>
+
+
+				</section>
+
+			</div>
+
+		</aside>
+		<?php
+
+		}
+		?>
+
+		<div id="content" class="site-content<?php if ($theme_options['header-layout'] == 2) {
+			echo " col-md-10";
+		} ?>">

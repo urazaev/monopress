@@ -14,7 +14,7 @@ if ($theme_options['template-settings-breadcrumbs-show'] == 1) {
 }
 ?>
 
-<section class="post-block-15 theme-white">
+<section class="post-block-15" id="main">
 	<article id="post-<?php the_ID(); ?>" <?php post_class('post-block-15__item'); ?>>
 		<?php if (class_exists('ReduxFramework')) {
 			if ($theme_options['post-featured-images-show'] == 1) { ?>

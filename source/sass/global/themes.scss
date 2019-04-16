@@ -11,91 +11,7 @@ Common colours themes
   @include html-vars(active-word, $text-color-blue);
 }
 
-.theme-white {
-
-  //flip-page colours
-  @include html-vars(flip-text-color, $text-color-dark);
-  @include html-vars(flip-background, $background-white);
-  @include html-vars(flip-link-active, $text-color-header-blue);
-
-  //nav lvl2 colours
-  @include html-vars(subnav-background, rgba($background-white,0.9));
-
-  //header colours
-  @include html-vars(header-background, $background-white);
-  @include html-vars(header-text-color, $text-color-dark);
-
-  //main block colours
-  @include html-vars(main-background, $background-white);
-  @include html-vars(main-text-color, $text-color-dark);
-
-  //vertical sidebar colours
-  @include html-vars(sidebar-background, $background-white);
-  @include html-vars(sidebar-text-color, $text-color-dark);
-
-  //control colours
-  @include html-vars(control-background, $background-white);
-  @include html-vars(control-text-color, $text-color-dark);
-  @include html-vars(control-border-color, $line-grey);
-
-  //dividing line color
-  @include html-vars(dividing-line-color, $line-grey);
-
-  //author color
-  @include html-vars(author-color, $text-color-blue);
-
-  //social link color
-  @include html-vars(social-link-color, $text-color-blue);
-
-  //weather color
-  @include html-vars(weather-num-color, $text-color-orange);
-  @include html-vars(weather-location-color, $text-color-dark);
-
-}
-
-.theme-light-gray {
-
-  //flip-page colours
-  @include html-vars(flip-text-color, $text-color-dark);
-  @include html-vars(flip-background, $background-light-gray);
-  @include html-vars(flip-link-active, $text-color-header-blue);
-
-  //nav lvl2 colours
-  @include html-vars(subnav-background, rgba($background-light-gray,0.95));
-
-  //header colours
-  @include html-vars(header-background, $background-light-gray);
-  @include html-vars(header-text-color, $text-color-dark);
-
-  //main block colours
-  @include html-vars(main-background, $background-light-gray);
-  @include html-vars(main-text-color, $text-color-dark);
-
-  //vertical sidebar colours
-  @include html-vars(sidebar-background, $background-light-gray);
-  @include html-vars(sidebar-text-color, $text-color-dark);
-
-  //control colours
-  @include html-vars(control-background, $background-white);
-  @include html-vars(control-text-color, $text-color-dark);
-  @include html-vars(control-border-color, $line-grey);
-
-  //dividing line color
-  @include html-vars(dividing-line-color, $line-grey);
-
-  //author color
-  @include html-vars(author-color, $text-color-blue);
-
-  //social link color
-  @include html-vars(social-link-color, $text-color-blue);
-
-  //weather color
-  @include html-vars(weather-num-color, $text-color-dark);
-  @include html-vars(weather-location-color, $text-color-dark);
-
-}
-
-.theme-black {
+:root {
 
   //flip-page colours
   @include html-vars(flip-text-color, $text-color-white);
@@ -108,11 +24,12 @@ Common colours themes
 
   //header colours
   @include html-vars(header-background, $background-dark);
+  @include html-vars(header-text-color, $text-color-white);
 
   //main block colours
   @include html-vars(main-background, $background-dark);
   @include html-vars(content-background, $background-white);
-  @include html-vars(main-text-color, $text-color-white);
+  @include html-vars(main-text-color, $text-color-dark);
 
   //vertical sidebar colours
   @include html-vars(sidebar-background, $background-dark);
@@ -135,125 +52,4 @@ Common colours themes
   //weather color
   @include html-vars(weather-num-color, $text-color-red);
   @include html-vars(weather-location-color, $text-color-white);
-}
-
-/******************************************
-
-Colours for widget
-
-*******************************************/
-
-.theme-widget-white {
-
-  @include html-vars(widget-background, $background-white);
-  @include html-vars(widget-text-color, $text-color-dark);
-
-  @include html-vars(hover-links-border-color, rgba($text-color-dark, 0.5));
-
-}
-
-.theme-widget-light-gray {
-
-  @include html-vars(widget-background, $background-light-gray);
-  @include html-vars(widget-text-color, $text-color-dark);
-  @include html-vars(hover-links-border-color, rgba($text-color-dark, 0.8));
-
-}
-
-.theme-widget-black {
-
-  @include html-vars(widget-background, $background-dark);
-  @include html-vars(widget-text-color, $text-color-white);
-  @include html-vars(hover-links-border-color, rgba($text-color-white, 0.8));
-
-
-}
-
-/******************************************
-
-Colours for about pages
-
-*******************************************/
-
-.theme-about-light-gray {
-
-  @include html-vars(about-background, $background-light-gray);
-  @include html-vars(about-header-color, $text-color-header-blue);
-  @include html-vars(about-text-color, $text-color-dark);
-  @include html-vars(about-button-text, $text-color-white);
-
-}
-
-.theme-about-black {
-
-  @include html-vars(about-background, $background-dark);
-  @include html-vars(about-header-color, $text-color-header-orange);
-  @include html-vars(about-text-color, $text-color-white);
-  @include html-vars(about-button-text, $text-color-white);
-
-}
-
-.theme-about-green {
-
-  @include html-vars(about-background, $background-green);
-  @include html-vars(about-header-color, $text-color-header-white);
-  @include html-vars(about-text-color, $text-color-white);
-  @include html-vars(about-button-text, $text-color-green);
-
-}
-
-/******************************************
-
-Colours for left navigation
-
-*******************************************/
-
-.theme-menu-light-gray {
-
-  @include html-vars(menu-background, $background-light-gray);
-  @include html-vars(menu-header-color, $text-color-header-blue);
-  @include html-vars(menu-text-color, $text-color-dark);
-
-
-}
-
-.theme-menu-black {
-
-  @include html-vars(menu-background, $background-dark);
-  @include html-vars(menu-header-color, $text-color-header-orange);
-  @include html-vars(menu-text-color, $text-color-white);
-
-
-}
-
-.theme-menu-brown {
-
-  @include html-vars(menu-background, $background-brown);
-  @include html-vars(menu-header-color, $text-color-header-white);
-  @include html-vars(menu-text-color, $text-color-white);
-
-}
-
-
-/******************************************
-
-Colours for active words
-
-*******************************************/
-.active-word-blue {
-
-  @include html-vars(active-word, $text-color-blue);
-
-}
-
-.active-word-red {
-
-  @include html-vars(active-word, $text-color-red);
-
-}
-
-.active-word-orange {
-
-  @include html-vars(active-word, $text-color-orange);
-
 }

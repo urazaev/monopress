@@ -11,23 +11,14 @@ get_header();
 global $theme_options;
 ?>
 
-	<main class="content-area page-main" id="primary">
+	<main class="content-area page-main sidebar-parent" id="primary">
+		<?php if ($theme_options['page-template-sidebar'] == 2) {
+			get_sidebar();
+		} ?>
 
 		<section class="row no-gutters search-page">
-			<?php if ($theme_options['category-sidebar'] == 2) { ?>
-				<aside class="col col-md-3 post-widget sidebar search-page__sidebar">
-					<div class="sidebar__inner search-page-sidebar__inner"
-						 data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 500">
-						<?php dynamic_sidebar('up-sidebar-default'); ?>
-					</div>
-				</aside>
-			<?php } ?>
 
-			<div class="<?php if ($theme_options['category-sidebar'] == 1) {
-				echo "col-md-12";
-			} else {
-				echo "col-md-9";
-			} ?> post-block-06__item search-page__item uk-animation-slide-bottom-medium">
+			<div class="post-block-06__item search-page__item uk-animation-slide-bottom-medium">
 
 
 				<div class="post-block-06__text search-page__text">
@@ -75,19 +66,19 @@ global $theme_options;
 			</div>
 			<!-- .page-content -->
 
-			<?php if ($theme_options['category-sidebar'] == 3) { ?>
-				<aside class="col col-md-3 post-widget sidebar search-page__sidebar">
-					<div class="sidebar__inner search-page-sidebar__inner"
-						 data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 500">
-						<?php dynamic_sidebar('up-sidebar-default'); ?>
-					</div>
-				</aside>
-			<?php } ?>
-
 		</section>
+
+		<?php if ($theme_options['category-pagination'] == 2) { ?>
+			<a id="inifiniteLoader"><img src="<?php bloginfo('template_directory');?>/images/ajax-loader.gif" alt="loading..."/>
+				Loading more...</a>
+		<?php }
+
+		if ($theme_options['page-template-sidebar'] == 3) {
+			get_sidebar();
+		} ?>
+
 	</main>
 	<!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

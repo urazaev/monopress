@@ -57,7 +57,7 @@ $(document).ready(function () {
 	//vertical sidebar
 	$('.main-nav-vertical__hamburger').on('click', function () {
 		$(this).toggleClass('active');
-		mobileNav.toggleClass('main-nav__wrapper-opened');
+		mobileNav.toggleClass('menu-opened');
 	});
 
 });
@@ -158,12 +158,31 @@ var isSideBar = document.querySelector('.sidebar');
 if (isSideBar) {
 
 	var sidebar = new StickySidebar('.sidebar', {
-		containerSelector: '.page-main',
+		containerSelector: '.sidebar-parent',
 		innerWrapperSelector: '.sidebar__inner',
 		minWidth: 768
 	});
 
 }
+
+/**********************
+
+ Fix left navigation bar
+
+ ************************/
+
+var isLeftNavBar = document.querySelector('.vertical-main-sidebar');
+
+if (isLeftNavBar) {
+
+	var sidebar = new StickySidebar('.vertical-main-sidebar', {
+		containerSelector: '.vertical-main-sidebar__container',
+		innerWrapperSelector: '.vertical-main-sidebar__inner',
+		minWidth: 768
+	});
+
+}
+
 
 /**********************
 

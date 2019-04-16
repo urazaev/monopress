@@ -9,7 +9,6 @@
 global $theme_options;
 ?>
 
-
 <article <?php post_class('page__content-wrapper uk-animation-slide-top-small'); ?> id="post-<?php the_ID(); ?>">
 
 	<?php the_title('<h1 class="post-block-06__header page__heading">', '</h1>'); ?>

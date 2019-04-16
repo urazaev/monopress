@@ -4029,6 +4029,54 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 });
 "use strict";
 
+var _stickySidebarMin = _interopRequireDefault(require("./sticky-sidebar.min.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+(function () {
+  if ('undefined' === typeof window) return;
+  var plugin = window.$ || window.jQuery || window.Zepto;
+  var DATA_NAMESPACE = 'stickySidebar'; // Make sure the site has jquery or zepto plugin.
+
+  if (plugin) {
+    /**
+     * Sticky Sidebar Plugin Defintion.
+     * @param {Object|String} - config
+     */
+    var _jQueryPlugin = function _jQueryPlugin(config) {
+      return this.each(function () {
+        var $this = plugin(this),
+            data = plugin(this).data(DATA_NAMESPACE);
+
+        if (!data) {
+          data = new _stickySidebarMin.default(this, _typeof(config) == 'object' && config);
+          $this.data(DATA_NAMESPACE, data);
+        }
+
+        if ('string' === typeof config) {
+          if (data[config] === undefined && ['destroy', 'updateSticky'].indexOf(config) === -1) throw new Error('No method named "' + config + '"');
+          data[config]();
+        }
+      });
+    };
+
+    plugin.fn.stickySidebar = _jQueryPlugin;
+    plugin.fn.stickySidebar.Constructor = _stickySidebarMin.default;
+    var old = plugin.fn.stickySidebar;
+    /**
+     * Sticky Sidebar No Conflict.
+     */
+
+    plugin.fn.stickySidebar.noConflict = function () {
+      plugin.fn.stickySidebar = old;
+      return this;
+    };
+  }
+})();
+"use strict";
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 /*! picturefill - v3.0.2 - 2016-02-12

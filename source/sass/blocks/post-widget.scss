@@ -14,16 +14,15 @@
   .sidebar__inner {
 	background-color: var(--widget-background);
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	align-content: space-between;
-	flex-direction: row;
 	width: 100%;
 	padding: 30px;
+	flex-direction: column;
 
 	@media (min-width: $tablet-width) {
 	  padding: 0;
 	  //padding-top: 23px;
-	  flex-direction: column;
 	  min-height: calc(100vh - 80px);
 	}
   }
@@ -200,5 +199,16 @@
   display: flex;
   @media (min-width: $tablet-width) {
 	flex-direction: column;
+  }
+}
+
+.post-row {
+  .post-widget {
+	@media (min-width: $tablet-width) {
+	  width: 100%;
+	}
+  }
+  .post-template-1__wrapper {
+	display: flex;
   }
 }

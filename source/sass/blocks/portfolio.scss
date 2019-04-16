@@ -8,6 +8,12 @@
   &--masonry {
 	width: 100%;
 	padding: 30px;
+	flex-basis: 0;
+
+	.addtoany_shortcode:nth-child(1) {
+	  padding-top: 30px;
+	  padding-bottom: 0;
+	}
 
 	.uk-container {
 	  padding: 0;
@@ -52,7 +58,8 @@
 	.portfolio__sort-item {
 	  .portfolio__sort-link:hover {
 		background: none;
-		color: var(--header-text-color);
+		//color: var(--header-text-color);
+		color: inherit;
 		border-bottom: none;
 		position: relative;
 
@@ -71,7 +78,7 @@
 
 	  &.uk-active .portfolio__sort-link {
 		background: none;
-		color: var(--header-text-color);
+		color: var(--active-word);
 		border-bottom: none;
 		position: relative;
 		&::before {
@@ -102,9 +109,9 @@
 	  min-height: 100vh;
 	}
 
-	@media (min-width: $tablet-width) {
-	  margin-right: 5%;
-	}
+	//@media (min-width: $tablet-width) {
+	//  margin-right: 5%;
+	//}
 
 	.portfolio__link {
 	  width: 100%;

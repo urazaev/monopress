@@ -18,7 +18,7 @@ if ($theme_options['post-featured-images-show'] != 1) { ?> post-text-block-08--f
 	}
 	?>
 	<article
-		id="post-<?php the_ID(); ?>" <?php post_class('post-text-block-08__item active-word-blue uk-animation-fade'); ?>>
+		id="post-<?php the_ID(); ?>" <?php post_class('post-text-block-08__item uk-animation-fade'); ?>>
 
 		<?php
 		if ($theme_options['post-featured-images-show'] != 1) { ?>
@@ -31,7 +31,7 @@ if ($theme_options['post-featured-images-show'] != 1) { ?> post-text-block-08--f
 				$i = 0;
 				foreach (get_the_category() as $category) {
 					if (0 < $i) $thelist .= ' ';
-					$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button button--blue' . $category->slug . '">' . $category->name . '</a>';
+					$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button' . $category->slug . '">' . $category->name . '</a>';
 					$i++;
 				}
 				echo $thelist; ?>
@@ -258,7 +258,7 @@ if ($theme_options['post-featured-images-show'] != 1) { ?> post-text-block-08--f
 				$i = 0;
 				foreach (get_the_category() as $category) {
 					if (0 < $i) $thelist .= ' ';
-					$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button button--blue' . $category->slug . '">' . $category->name . '</a>';
+					$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button' . $category->slug . '">' . $category->name . '</a>';
 					$i++;
 				}
 				echo $thelist; ?>

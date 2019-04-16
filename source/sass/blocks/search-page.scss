@@ -1,6 +1,10 @@
 .search-page {
   width: 100%;
 
+  @media (min-width: $tablet-width) {
+	flex-basis: 0;
+	flex-grow: 1;
+  }
   .search-page__header {
 	text-align: left;
   }

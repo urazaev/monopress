@@ -12,8 +12,18 @@ global $theme_options;
 ?>
 
 </div><!-- #content -->
+<?php
 
-<?php if (class_exists('ReduxFramework')) {
+if ($theme_options['header-layout'] == 2) {
+	?>
+
+	</div>
+	<!-- .row -->
+	<?php
+
+}
+
+if (class_exists('ReduxFramework')) {
 	if ($theme_options['main-menu-flip'] == 1) :
 		if (is_active_sidebar('up-sidebar-flip')) : ?>
 
@@ -43,10 +53,10 @@ global $theme_options;
 				<button class="usernav__search-close-button" data-uk-icon="close"></button>
 			</div>
 			<div class="usernav__search-wrapper">
-				<form class="uk-search uk-search-large" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<form class="uk-search uk-search-large" action="<?php echo esc_url(home_url('/')); ?>">
 					<button class="uk-search-icon-flip" data-uk-search-icon type="submit"></button>
 					<input class="usernav__search-input uk-search-input" type="search" name="s" id="s"
-						   placeholder="<?php esc_attr_e( 'Search...', 'bcn' ); ?>">
+						   placeholder="<?php esc_attr_e('Search...', 'bcn'); ?>">
 				</form>
 			</div>
 		</div>
@@ -350,12 +360,10 @@ global $theme_options;
 
 <?php
 wp_footer();
-?>
-<?php
+
 if (class_exists('ReduxFramework')) {
 
 	if ($theme_options['category-pagination'] == 2) {
-
 
 		if (!is_single() || !is_page()):
 			?>

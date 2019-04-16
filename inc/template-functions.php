@@ -426,7 +426,6 @@ class up_walker_comment extends Walker
 		<article id="div-comment-<?php comment_ID(); ?>" class="comment-body comments-block__item">
 			<div class="comments-block__wrapper">
 
-
 				<figure class="comments-block__img">
 					<?php
 					if (0 != $args['avatar_size']) {
@@ -434,7 +433,6 @@ class up_walker_comment extends Walker
 					}
 					?>
 				</figure>
-
 
 				<div class="comments-block__text-block">
 					<div class="comments-block__top-line-wrapper">
@@ -482,6 +480,8 @@ class up_walker_comment extends Walker
 						<?php comment_text(); ?>
 					</div>
 				</div>
+
+			</div>
 
 		</article><!-- .comment-body -->
 		<?php
@@ -575,9 +575,10 @@ add_filter('body_class', 'my_own_body_classes');
 
 /**
  * breadcrumbs
+ * @param string $outer_class for class name
  **/
 
-function the_breadcrumb($outer_class='breadcrumbs')
+function the_breadcrumb($outer_class = 'breadcrumbs')
 {
 	global $theme_options;
 
@@ -591,7 +592,7 @@ function the_breadcrumb($outer_class='breadcrumbs')
 		if (!is_front_page()) {
 			// Start the breadcrumb with a link to your homepage ?>
 
-			<div class="<?php echo esc_html($outer_class);?>">
+		<div class="<?php echo esc_html($outer_class); ?>">
 
 			<?php
 			if ($theme_options['template-settings-breadcrumbs-home'] == '1') {
@@ -656,9 +657,9 @@ function the_breadcrumb($outer_class='breadcrumbs')
 }
 
 /**
- * excerpt more symbol
+ * excerpt more symbol > ...
  **/
 
-add_filter('excerpt_more', function($more) {
+add_filter('excerpt_more', function ($more) {
 	return '...';
 });

@@ -9,7 +9,7 @@
 
 global $theme_options;
 
-echo "post-block-07";
+//echo "post-block-07";
 
 ?>
 

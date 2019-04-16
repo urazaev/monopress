@@ -7,12 +7,10 @@
   flex-grow: 1;
   padding: 30px;
   padding-bottom: 0;
-  background-color: var(--main-background);
+  //background-color: var(--main-background);
 
   @media (min-width: $tablet-width) {
-    padding: 0;
-    padding-top: 50px;
-    padding-left: 50px;
+    padding: 50px 0 50px 50px;
   }
 
 }
@@ -29,7 +27,8 @@
   display: flex;
   flex-direction: column;
   @include indents-zero;
-  background-color: var(--main-background);
+  background-color: #fff;
+  color: inherit;
   margin-bottom: 30px;
   width: 100%;
 
@@ -121,7 +120,7 @@
   font-size: 10px;
 
   font-family: $fonts-primary;
-  color: var(--header-text-color);
+  color: inherit;
   transform: rotate(90deg);
   transform-origin: 0 0;
 
@@ -151,7 +150,7 @@
 
 .post-block-07__header-link {
   font-family: $fonts-secondary;
-  color: var(--header-text-color);
+  color: $text-color-dark;
   font-size: inherit;
   line-height: inherit;
   font-weight: bold;

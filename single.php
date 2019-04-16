@@ -12,33 +12,48 @@ get_header();
 
 ?>
 
-	<div id="primary" class="content-area">
-		<main class="page-main page-main--post-08" id="main">
-			<?php
-			while (have_posts()) :
-				if (class_exists('ReduxFramework')) {
-					if ($theme_options['post-template-default'] == '1') {
-						the_post();
-						get_template_part('template-parts/content', get_post_type());
-					}
-
-					if ($theme_options['post-template-default'] == '2') {
-						the_post();
-						get_template_part('template-parts/post-template-2', get_post_type());
-					}
-
-					if ($theme_options['post-template-default'] == '3') {
-						the_post();
-						get_template_part('template-parts/post-template-3', get_post_type());
-					}
-				}
-			endwhile; // End of the loop.
+	<main class="row no-gutters page content-area page-main sidebar-parent post-row" id="primary">
+		<?php if ($theme_options['post-sidebar'] == 2) {
 			?>
-		</main>
-		<!-- #main -->
-	</div>
+			<div class="col-md-4">
+				<?php
+				get_sidebar();
+				?>
+			</div>
+			<?php
+		}
+
+		while (have_posts()) :
+			if (class_exists('ReduxFramework')) {
+				if ($theme_options['post-template-default'] == '1') {
+					the_post();
+					get_template_part('template-parts/post-template-1', get_post_type());
+				}
+
+				if ($theme_options['post-template-default'] == '2') {
+					the_post();
+					get_template_part('template-parts/post-template-2', get_post_type());
+				}
+
+				if ($theme_options['post-template-default'] == '3') {
+					the_post();
+					get_template_part('template-parts/post-template-3', get_post_type());
+				}
+			}
+		endwhile; // End of the loop.
+
+		if ($theme_options['post-sidebar'] == 3) {
+			?>
+			<div class="col-md-4">
+				<?php
+				get_sidebar();
+				?>
+			</div>
+			<?php
+		} ?>
+
+	</main>
 	<!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();
