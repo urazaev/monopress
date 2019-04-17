@@ -15,7 +15,7 @@ get_header();
 	<main class="row no-gutters page content-area page-main sidebar-parent post-row" id="primary">
 		<?php if ($theme_options['post-sidebar'] == 2) {
 			?>
-			<div class="col-md-4">
+			<div class="col-md-4 post-template__side-wrapper">
 				<?php
 				get_sidebar();
 				?>

@@ -8,13 +8,15 @@
  */
 
 global $theme_options;
+
 ?>
-<div class="col-md-8 post-template-1__wrapper">
+
+<div class="<?php if ($theme_options['post-sidebar'] == 1) {echo "col-md-12";}else{echo "col-md-8";}?> post-template-1__wrapper">
 	<section class="post-text-block-08<?php if (class_exists('ReduxFramework')) {
 	if ($theme_options['post-featured-images-show'] != 1) { ?> post-text-block-08--full-width<?php } ?>" id="main">
 		<?php
 		if ($theme_options['template-settings-breadcrumbs-show'] == 1) {
-			the_breadcrumb('breadcrumbs breadcrumbs--inner');
+			the_breadcrumb('breadcrumbs breadcrumbs--inner breadcrumbs--inner-nottobbrdr');
 		}
 		?>
 		<article
@@ -31,7 +33,7 @@ global $theme_options;
 				$i = 0;
 				foreach (get_the_category() as $category) {
 					if (0 < $i) $thelist .= ' ';
-					$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button' . $category->slug . '">' . $category->name . '</a>';
+					$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button ' . $category->slug . '">' . $category->name . '</a>';
 					$i++;
 				}
 				echo $thelist; ?>
@@ -257,7 +259,7 @@ global $theme_options;
 				$i = 0;
 				foreach (get_the_category() as $category) {
 					if (0 < $i) $thelist .= ' ';
-					$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button' . $category->slug . '">' . $category->name . '</a>';
+					$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button ' . $category->slug . '">' . $category->name . '</a>';
 					$i++;
 				}
 				echo $thelist; ?>

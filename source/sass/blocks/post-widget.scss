@@ -210,5 +210,16 @@
   }
   .post-template-1__wrapper {
 	display: flex;
+	flex-direction: column;
+	@media (min-width: $tablet-width) {
+	  flex-direction: row;
+	}
   }
+  .post-template__side-wrapper {
+	order: 2;
+	@media (min-width: $tablet-width) {
+	  order: unset;
+	}
+  }
+
 }
