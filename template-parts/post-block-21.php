@@ -9,12 +9,6 @@
 
 global $theme_options;
 
-?>
-
-<?php
-
-echo "post-block-21";
-
 if (have_posts()) : ?>
 
 	<section class="post-block-21" data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 500">
@@ -56,9 +50,9 @@ if (have_posts()) : ?>
 						<footer class="post-block-21__footer">
 							<?php
 
-							if ($theme_options['block-settings-meta-comments'] == 1) { ?>
+							if ($theme_options['block-settings-meta-comments'] == 1 && (comments_open() || get_comments_number())) { ?>
 								<span
-									class="post-block-21__comments-count">Comments <?php echo get_comments_number(); ?></span>
+									class="post-block-21__comments-count"><i data-uk-icon="commenting"></i> Comments <?php echo get_comments_number(); ?></span>
 								<?php
 							}
 
@@ -70,7 +64,7 @@ if (have_posts()) : ?>
 									class="post-block-21__comments-date"><?php if ($theme_options['block-settings-meta-date'] == 1) {
 										; ?>
 										<time
-											datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time> <?php }
+											datetime="<?php echo get_the_date('c') ?>"><i data-uk-icon="clock"></i><?php echo get_the_date('M j, y') ?></time> <?php }
 									if ($theme_options['block-settings-meta-author'] == 1) { ?>By <a
 										href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a><?php }
 
