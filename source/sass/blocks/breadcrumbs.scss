@@ -32,10 +32,10 @@
   }
   &--inner-nottobbrdr {
 	padding-left: 0;
+	padding-top: 0;
 
 	@media (min-width: $tablet-width) {
 	  margin-bottom: 30px;
-	  padding-top: 0;
 	}
   }
 }

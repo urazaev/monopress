@@ -1,6 +1,29 @@
 .sidebar {
   will-change: min-height;
+  min-height: 100vh;
 
+  h2 {
+	background-color: $text-color-dark;
+	color: #fff;
+	padding: 10px;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+	@media (min-width: $tablet-width) {
+	  flex-grow: 0;
+	  //font-size: 1.25vw;
+	}
+
+	@media (min-width: $large-desktop-width) {
+	  //font-size: 20px;
+	}
+  }
+  //.widget_bcn_advertise_widget {
+  //margin-bottom: 0;
+  //
+  //}
 }
 
 .sidebar__inner {
@@ -9,7 +32,7 @@
   will-change: position, transform;
   //flex-direction: column;
   //@media (min-width: $tablet-width) {
-	//flex-direction: unset;
+  //flex-direction: unset;
   //}
 }
 
@@ -21,3 +44,7 @@
 	}
   }
 }
+
+//.Container {
+//  //width: 360px;
+//}

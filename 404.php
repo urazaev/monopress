@@ -11,43 +11,14 @@ global $theme_options;
 get_header();
 ?>
 
-	<main class="content-area page-main page-main--about-06" id="primary">
+	<main class="content-area page-main page-main--about-06 sidebar-parent" id="primary">
 
 		<section class="error-404 not-found post-block-06 theme-about-light-gray">
 
-			<section class="post-widget theme-widget-white"
-					 data-uk-scrollspy="target: > article; cls:uk-animation-slide-top-small; delay: 500">
+			<?php if ($theme_options['page-template-sidebar'] == 2) {
+				get_sidebar();
+			} ?>
 
-				<?php
-
-				$args = array(
-					'numberposts' => '4',
-					'post_type' => 'post',
-					'post_status' => 'publish',
-				);
-
-				$recent_posts = wp_get_recent_posts($args);
-				foreach ($recent_posts as $recent) {
-					echo '<article class="post-widget__item">';
-					$thelist = '';
-					$i = 0;
-					echo '<span class="post-widget-link-wrapper">';
-					foreach (get_the_category($recent["ID"]) as $category) {
-						if (0 < $i) $thelist .= ' ';
-						$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button button--accent-color button--sm ' . $category->slug . '">' . $category->name . '</a>';
-						if (++$i == 2) break;
-					}
-					echo $thelist;
-					echo '</span>';
-					echo '<h2 class="post-widget__title"><a class="post-widget__title-link" href="' . get_permalink($recent["ID"]) . '">' . $recent["post_title"] . '</a> </h2> ';
-					echo '<footer class="post-widget__footer"><span class="post-widget__date">' . date_i18n('d F Y', strtotime($recent['post_date'])) . '</span></footer> ';
-					echo '</article>';
-				}
-				wp_reset_query();
-				?>
-
-
-			</section>
 
 			<article class="post-block-06__item uk-animation-slide-bottom-medium">
 
@@ -102,6 +73,10 @@ get_header();
 
 			</article>
 			<!-- .page-content -->
+
+			<?php if ($theme_options['page-template-sidebar'] == 3) {
+				get_sidebar();
+			} ?>
 
 		</section>
 		<!-- .error-404 -->

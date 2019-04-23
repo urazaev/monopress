@@ -2,13 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  padding: 30px;
+  padding: 30px !important;
   flex-direction: column;
 
   @media (min-width: $tablet-width) {
-	padding: 50px;
+	//padding: 30px !important;
 	//width: 50%;
-	max-width: 100%;
+	//max-width: 100%;
   }
   .addtoany_shortcode:nth-of-type(1) {
 	text-align: right;
@@ -39,9 +39,9 @@
   //margin-left: 30px;
   font-family: $fonts-secondary;
   line-height: 1.4;
-  color: var(--header-text-color);
   font-weight: bold;
   font-size: 16px;
+  margin-bottom: 10px;
 
   @media (min-width: $tablet-width) {
 
@@ -64,7 +64,7 @@
 }
 
 .post-block-15__footer {
-  margin-top: 10px;
+
   //margin-left: 30px;
   margin-bottom: 30px;
   font-size: 12px;
@@ -108,7 +108,7 @@
 
 .post-block-15__text {
   @include indents-zero;
-  margin-top: 20px;
+  //margin-top: 20px;
   padding-bottom: 30px;
   font-size: 13px;
   line-height: 26px;

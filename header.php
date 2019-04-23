@@ -74,8 +74,7 @@ if ($theme_options['header-layout'] == 2 && $theme_options['main-menu-flip'] == 
 	<?php
 	if (class_exists('ReduxFramework')) {
 		if (isset($theme_options['header-layout'])) {
-			if ($theme_options['header-layout'] == 2) {
-//				TODO temporary for test
+			if ($theme_options['header-layout'] == 1) {
 				?>
 
 				<header class="page-header"

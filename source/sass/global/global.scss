@@ -183,3 +183,53 @@ a#inifiniteLoader {
 #wpadminbar {
   display: none;
 }
+
+#cancel-comment-reply-link {
+  padding: 2px 5px;
+  font-size: 10px;
+  font-family: $fonts-secondary;
+  font-weight: bold;
+  color: $text-color-white;
+  background: var(--active-word);
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  line-height: 20px;
+  margin-bottom: 15px;
+  &:hover {
+	color: $text-color-white;
+  }
+
+  &::before {
+	position: absolute;
+	width: 0;
+	height: 100%;
+	left: 0;
+	top: 0;
+	content: " ";
+	background: $background-white;
+	opacity: 0.3;
+	transition: all 0.3s;
+  }
+
+  &:hover::before {
+	width: 100%;
+  }
+}
+.show-on {
+
+  &--mobile {
+	display: block;
+	@media (min-width: $tablet-width) {
+	  display: none;
+	}
+
+  }
+  &--desktop {
+	display: none;
+	@media (min-width: $tablet-width) {
+	  display: block;
+	}
+  }
+}

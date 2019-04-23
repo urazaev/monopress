@@ -276,7 +276,7 @@ Redux::setSection($opt_name, array(
 			'type' => 'image_select',
 			'title' => __('Header style', 'bcn'),
 //            TODO: paste icons
-			'subtitle' => __('Select the layout in which the header elements will be arranged', 'bcn'),
+			'subtitle' => __('Select the layout in which the header elements will be arranged (horizontal or vertical)', 'bcn'),
 			'width' => '1200',
 			'options' => array(
 				'1' => array(

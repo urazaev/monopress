@@ -6,9 +6,8 @@
 
   @media (min-width: $tablet-width) {
 	flex-direction: column;
-	width: 30.9%;
+	width: 25%;
 	min-height: 100%;
-
   }
 
   .sidebar__inner {
@@ -17,13 +16,14 @@
 	justify-content: flex-start;
 	align-content: space-between;
 	width: 100%;
-	padding: 30px;
+	//padding: 30px;
 	flex-direction: column;
+	padding: 30px;
 
 	@media (min-width: $tablet-width) {
-	  padding: 0;
+	  //padding: 0;
 	  //padding-top: 23px;
-	  min-height: calc(100vh - 80px);
+	  //min-height: calc(100vh - 80px);
 	}
   }
 
@@ -70,15 +70,19 @@
 
   align-content: space-between;
   width: 100%;
+  &:not(:last-child) {
+	margin-top: 15px;
+	margin-bottom: 15px;
+  }
 
   @media (min-width: $small-screen) {
-	width: 50%;
+	//width: 50%;
 	&:nth-child(odd) {
-	  padding-right: 15px;
+	  //padding-right: 15px;
 	}
 
 	&:nth-child(even) {
-	  padding-left: 15px;
+	  //padding-left: 15px;
 	}
   }
 
@@ -98,28 +102,11 @@
 	justify-content: center;
 
   }
-
-  &:first-child {
-	@media (min-width: $tablet-width) {
-	}
-  }
-  &:nth-child(2) {
-	display: none;
-
-	@media (min-width: $small-screen) {
-	  display: flex;
-	}
-  }
-  &:nth-child(n+3) {
-	display: none;
-	@media (min-width: $tablet-width) {
-	  display: flex;
-	}
-  }
 }
 
 .post-widget__title {
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   line-height: 1.6;
   font-size: 14px;
   flex-grow: 1;
@@ -199,6 +186,7 @@
   display: flex;
   @media (min-width: $tablet-width) {
 	flex-direction: column;
+	margin: -30px;
   }
 }
 
@@ -213,6 +201,10 @@
 	flex-direction: column;
 	@media (min-width: $tablet-width) {
 	  flex-direction: row;
+
+	  .related-articles-container {
+		padding-bottom: 0;
+	  }
 	}
   }
   .post-template__side-wrapper {

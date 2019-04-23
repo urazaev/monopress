@@ -60,7 +60,7 @@ $(document).ready(function () {
 
 var parrentNavNode = $('.menu-item-has-children');
 
-if ($(window).width() < 767) {
+if ($(window).width() < 768) {
   parrentNavNode.on('click', function (evt) {
     evt.preventDefault(); // $(this).parent().toggleClass('main-nav__item--opened');
 
@@ -70,7 +70,7 @@ if ($(window).width() < 767) {
 
 
 parrentNavNode.parent().mouseout(function (evt) {
-  if ($(window).width() >= 767) {
+  if ($(window).width() >= 768) {
     $(this).removeClass('menu-item-has-children-opened');
   }
 });
@@ -279,6 +279,35 @@ if (isRelatedSlider) {
   $('.related-article-prev').on('click', function () {
     console.log("related-article-prev");
     $('.related-article-slider').slick('slickPrev');
+  });
+}
+/**********************
+
+ Subscribe form
+
+ ************************/
+
+
+var content, form, indicator, input, loader;
+input = document.querySelector(".subscribe-input");
+
+if (input) {
+  form = document.querySelector(".subscribe-form");
+  indicator = document.querySelector(".subscribe-indicator");
+  loader = document.querySelector(".subscribe-loader"); // content = input.value;
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    indicator.setAttribute("data-content", "Saving...");
+    loader.classList.add("full");
+    return setTimeout(function () {
+      indicator.setAttribute("data-content", "You've been subscribed!");
+      loader.classList.add("done");
+      input.classList.add("full"); // return input.value("");
+    }, 3000);
+  });
+  input.addEventListener("input", function () {
+    return indicator.setAttribute("data-content", "Now hit enter!");
   });
 }
 /**********************

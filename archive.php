@@ -10,43 +10,75 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
 
-		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+	<main class="page-main page-main--home-02 sidebar-parent" id="main">
+		<?php if ($theme_options['category-sidebar'] == 2) {
+			get_sidebar();
+		} ?>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+		<div class="control-scroll-only control-scroll-only--vpright">
+			<button class="control-scroll-only__scroll-button" id="scroll-button" type="button">Scroll</button>
+		</div>
 
-			endwhile;
+		<?php
+		if (class_exists('ReduxFramework')) {
+			switch ($theme_options['block-settings-display']) {
+				case 2:
+					up_get_template('post-block-02');
+					break;
+				case 3:
+					up_get_template('post-block-03');
+					break;
+				case 4:
+					up_get_template('post-block-04');
+					break;
+				case 5:
+					up_get_template('post-block-05');
+					break;
+				case 6:
+					up_get_template('post-block-06');
+					break;
+				case 7:
+					up_get_template('post-block-07');
+					break;
+				case 9:
+					up_get_template('post-block-09');
+					break;
+				case 11:
+					up_get_template('post-block-11');
+					break;
+				case 12:
+					up_get_template('post-block-12');
+					break;
+				case 14:
+					up_get_template('post-block-14');
+					break;
+				case 16:
+					up_get_template('post-block-16');
+					break;
+				case 18:
+					up_get_template('post-block-18');
+					break;
+				case 19:
+					up_get_template('post-block-19');
+					break;
+				case 21:
+					up_get_template('post-block-21');
+					break;
+			}
+		}
+		if ($theme_options['category-pagination'] == 2) { ?>
+			<a id="inifiniteLoader"><img src="<?php bloginfo('template_directory');?>/images/ajax-loader.gif" alt="loading..."/>
+				Loading more...</a>
+		<?php }
 
-			the_posts_navigation();
+		if ($theme_options['category-sidebar'] == 3) {
+			get_sidebar();
+		} ?>
 
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</main>
 
 <?php
 get_sidebar();
