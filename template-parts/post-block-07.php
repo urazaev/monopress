@@ -38,9 +38,9 @@ global $theme_options;
 							if ($theme_options['block-settings-meta-author'] == 1) { ?>By <a
 								href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php echo get_the_author(); ?></a><?php }
 
-							if ($theme_options['block-settings-meta-comments'] == 1) { ?>
+							if (($theme_options['block-settings-meta-comments'] == 1) && (comments_open() || get_comments_number())) { ?>
 
-								<span class="post-block-04__comments-count"><i class="fa fa-comment"></i>
+								<span class="post-block-04__comments-count"><i data-uk-icon="commenting"></i>
 									<?php echo get_comments_number(); ?></span>
 								<?php
 							}

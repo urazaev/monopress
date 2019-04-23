@@ -9,16 +9,14 @@
 
 global $theme_options;
 
-echo "post-block-02";
 ?>
-<section class="post-block-02 theme-white" id="loop-content">
+<section class="post-block-02" id="loop-content">
 
 	<?php if (have_posts()) :
 		while (have_posts()) : the_post();
 
 			$post_id = get_the_ID();
 			$category_object = get_the_category($post_id);
-//			$category_name = $category_object[0]->name;
 
 			?>
 			<article class="post-block-02__item">
@@ -69,11 +67,11 @@ echo "post-block-02";
 							</h2>
 							<?php
 							if (class_exists('ReduxFramework')) {
-								if ($theme_options['block-settings-meta-comments'] == 1) { ?>
+								if (($theme_options['block-settings-meta-comments'] == 1) && (comments_open() || get_comments_number())) { ?>
 
 									<p class="post-block-02__comments-count">Comments:
 										<?php echo get_comments_number(); ?></p>
-								<?php
+									<?php
 								}
 							}
 							?>

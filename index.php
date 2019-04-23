@@ -28,7 +28,7 @@ get_header();
 
 			<?php
 			if (class_exists('ReduxFramework')) {
-				switch ($theme_options['block-settings-display']) {
+				switch ($theme_options['category-article-display']) {
 					case 2:
 						up_get_template('post-block-02');
 						break;
@@ -41,26 +41,14 @@ get_header();
 					case 5:
 						up_get_template('post-block-05');
 						break;
-					case 6:
-						up_get_template('post-block-06');
-						break;
 					case 7:
 						up_get_template('post-block-07');
 						break;
 					case 9:
 						up_get_template('post-block-09');
 						break;
-					case 11:
-						up_get_template('post-block-11');
-						break;
-					case 12:
-						up_get_template('post-block-12');
-						break;
 					case 14:
 						up_get_template('post-block-14');
-						break;
-					case 16:
-						up_get_template('post-block-16');
 						break;
 					case 18:
 						up_get_template('post-block-18');

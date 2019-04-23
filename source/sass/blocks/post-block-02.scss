@@ -1,7 +1,6 @@
 .post-block-02 {
-  padding-left: 30px;
-  padding-right: 30px;
-  margin-top: 30px;
+  padding: 30px;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -9,14 +8,13 @@
   overflow: auto;
   flex-grow: 1;
   flex-shrink: 1;
-  flex-basis: 0%;
 
   @media (min-width: $tablet-width) {
-	margin-top: 0;
+	padding: 50px;
+
+	flex-basis: 0;
 	align-items: flex-start;
-	padding-left: 50px;
-	padding-right: 60px;
-	padding-top: 50px;
+	align-content: flex-start;
   }
 }
 
@@ -117,18 +115,24 @@
 }
 
 .post-block-02__date {
-  position: absolute;
-  width: auto;
-  top: 0;
-  left: -6px;
+  order: 2;
   font-size: 12px;
   font-family: $fonts-primary;
-  color: var(--header-text-color);
-  transform: rotate(90deg);
   transform-origin: 0 0;
+  text-align: right;
+  background: $background-white;
+  padding-right: 30px;
+  padding-top: 30px;
 
   @media (min-width: $tablet-width) {
+	background: unset;
+	text-align: left;
+	position: absolute;
+	width: auto;
+	top: 0;
 	left: -10px;
+	transform: rotate(90deg);
+	padding: 0;
   }
 
 }
@@ -145,12 +149,14 @@
   flex-direction: column;
   text-align: right;
   z-index: 5;
+  order: 3;
 
   @media (min-width: $tablet-width) {
 	height: auto;
-	margin-left: -20%;
-	margin-top: 20px;
+	margin-left: -25%;
+	margin-top: 2%;
 	width: 60%;
+	order: unset;
   }
 
 }
@@ -188,6 +194,7 @@
   margin-bottom: 0;
   font-size: 15px;
   line-height: 1.333;
+  color: inherit;
 
   @media (min-width: $tablet-width) {
 	margin-top: 26px;
@@ -199,7 +206,6 @@
   font-size: inherit;
   line-height: inherit;
   font-family: $fonts-secondary;
-  color: var(--header-text-color);
   font-weight: bold;
   text-decoration: none;
   transition: 0.3s all ease;

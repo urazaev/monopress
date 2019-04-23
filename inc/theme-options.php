@@ -1256,65 +1256,24 @@ Redux::setSection($opt_name, array(
 					'alt' => '5',
 					'img' => get_template_directory_uri() . '/images/admin/preview-05.jpg'
 				),
-//				'6' => array(
-//					'alt' => '6',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-06.jpg'
-//				),
 				'7' => array(
 					'alt' => '7',
 					'img' => get_template_directory_uri() . '/images/admin/preview-07.jpg'
 				),
-//				'8' => array(
-//					'alt' => '8',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-08.jpg'
-//				),
 				'9' => array(
 					'alt' => '9',
 					'img' => get_template_directory_uri() . '/images/admin/preview-09.jpg'
 				),
-//				'10' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-10.jpg'
-//				),
-				'11' => array(
-					'alt' => '9',
-					'img' => get_template_directory_uri() . '/images/admin/preview-11.jpg'
-				),
-//				'12' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-12.jpg'
-//				),
 				'14' => array(
-					'alt' => '9',
+					'alt' => '14',
 					'img' => get_template_directory_uri() . '/images/admin/preview-14.jpg'
 				),
-//				'15' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-15.jpg'
-//				),
-//				'16' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-16.jpg'
-//				),
-//			TODO: miss the file?
-//				'17' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-17.jpg'
-//				),
-				'18' => array(
-					'alt' => '9',
-					'img' => get_template_directory_uri() . '/images/admin/preview-18.jpg'
-				),
 				'19' => array(
-					'alt' => '9',
+					'alt' => '19',
 					'img' => get_template_directory_uri() . '/images/admin/preview-19.jpg'
 				),
-//				'20' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-20.jpg'
-//				),
 				'21' => array(
-					'alt' => '9',
+					'alt' => '21',
 					'img' => get_template_directory_uri() . '/images/admin/preview-21.jpg'
 				),
 			),
@@ -1354,6 +1313,34 @@ Redux::setSection($opt_name, array(
 				),
 			),
 			'default' => '2'
+		),
+		array(
+			'id' => 'block-settings-meta-title',
+			'type' => 'section',
+			'title' => __('Meta info on Modules/Blocks', 'bcn'),
+			'subtitle' => __('You can overwrite the template on each block and widget.', 'bcn'),
+			'indent' => true, // Indent all options below until the next 'section' option is set.
+		),
+		array(
+			'id' => 'block-settings-meta-author',
+			'type' => 'switch',
+			'title' => __('Show author name', 'bcn'),
+			'subtitle' => __('Enable or disable the author name (on blocks and modules)', 'bcn'),
+			'default' => false,
+		),
+		array(
+			'id' => 'block-settings-meta-date',
+			'type' => 'switch',
+			'title' => __('Show date', 'bcn'),
+			'subtitle' => __('Enable or disable the post date (on blocks and modules)', 'bcn'),
+			'default' => false,
+		),
+		array(
+			'id' => 'block-settings-meta-comments',
+			'type' => 'switch',
+			'title' => __('Show comment count', 'bcn'),
+			'subtitle' => __('Enable or disable comment number (on blocks and modules)', 'bcn'),
+			'default' => false,
 		),
 	)
 ));
@@ -1748,143 +1735,106 @@ Redux::setSection($opt_name, array(
 	'icon' => 'el el-cog'
 ));
 
-
-Redux::setSection($opt_name, array(
-	'title' => __('Block settings', 'bcn'),
-	'id' => 'block-settings',
-	'subsection' => true,
-	'fields' => array(
-		array(
-			'id' => 'block-settings-title',
-			'type' => 'section',
-			'title' => __('Global Block Template', 'bcn'),
-			'subtitle' => __('This template will be applied to the whole site. The theme will also try to adjust the default widgets to look in the same style with the block template selected here.', 'bcn'),
-			'indent' => true, // Indent all options below until the next 'section' option is set.
-		),
-		array(
-			'id' => 'block-settings-display',
-			'type' => 'image_select',
-			'title' => __('Block template', 'bcn'),
-			'subtitle' => __('You can overwrite the template on each block and widget.', 'bcn'),
-			'options' => array(
-				'2' => array(
-					'alt' => '2',
-					'img' => get_template_directory_uri() . '/images/admin/preview-02.jpg'
-				),
-				'3' => array(
-					'alt' => '3',
-					'img' => get_template_directory_uri() . '/images/admin/preview-03.jpg'
-				),
-				'4' => array(
-					'alt' => '4',
-					'img' => get_template_directory_uri() . '/images/admin/preview-04.jpg'
-				),
-				'5' => array(
-					'alt' => '5',
-					'img' => get_template_directory_uri() . '/images/admin/preview-05.jpg'
-				),
-//				'6' => array(
-//					'alt' => '6',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-06.jpg'
-//				),
-				'7' => array(
-					'alt' => '7',
-					'img' => get_template_directory_uri() . '/images/admin/preview-07.jpg'
-				),
-//				'8' => array(
-//					'alt' => '8',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-08.jpg'
-//				),
-				'9' => array(
-					'alt' => '9',
-					'img' => get_template_directory_uri() . '/images/admin/preview-09.jpg'
-				),
-//				'10' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-10.jpg'
-//				),
-				'11' => array(
-					'alt' => '9',
-					'img' => get_template_directory_uri() . '/images/admin/preview-11.jpg'
-				),
-//				'12' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-12.jpg'
-//				),
-				'14' => array(
-					'alt' => '9',
-					'img' => get_template_directory_uri() . '/images/admin/preview-14.jpg'
-				),
-//				'15' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-15.jpg'
-//				),
-//				'16' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-16.jpg'
-//				),
-//			TODO: miss the file?
-//				'17' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-17.jpg'
-//				),
-				'18' => array(
-					'alt' => '9',
-					'img' => get_template_directory_uri() . '/images/admin/preview-18.jpg'
-				),
-				'19' => array(
-					'alt' => '9',
-					'img' => get_template_directory_uri() . '/images/admin/preview-19.jpg'
-				),
-//				'20' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-20.jpg'
-//				),
-				'21' => array(
-					'alt' => '9',
-					'img' => get_template_directory_uri() . '/images/admin/preview-21.jpg'
-				),
-			),
-			'default' => '2',
-		),
-		array(
-			'id' => 'block-settings-meta-title',
-			'type' => 'section',
-			'title' => __('Meta info on Modules/Blocks', 'bcn'),
-			'subtitle' => __('You can overwrite the template on each block and widget.', 'bcn'),
-			'indent' => true, // Indent all options below until the next 'section' option is set.
-		),
-		array(
-			'id' => 'block-settings-meta-author',
-			'type' => 'switch',
-			'title' => __('Show author name', 'bcn'),
-			'subtitle' => __('Enable or disable the author name (on blocks and modules)', 'bcn'),
-			'default' => false,
-		),
-		array(
-			'id' => 'block-settings-meta-date',
-			'type' => 'switch',
-			'title' => __('Show date', 'bcn'),
-			'subtitle' => __('Enable or disable the post date (on blocks and modules)', 'bcn'),
-			'default' => false,
-		),
-		array(
-			'id' => 'block-settings-meta-comments',
-			'type' => 'switch',
-			'title' => __('Show comment count', 'bcn'),
-			'subtitle' => __('Enable or disable comment number (on blocks and modules)', 'bcn'),
-			'default' => false,
-		),
+//Redux::setSection($opt_name, array(
+//	'title' => __('Block settings', 'bcn'),
+//	'id' => 'block-settings',
+//	'subsection' => true,
+//	'fields' => array(
 //		array(
-//			'id' => 'block-settings-meta-reviews',
-//			'type' => 'switch',
-//			'title' => __('Show review', 'bcn'),
-//			'subtitle' => __('Enable or disable reviews (on blocks and modules)', 'bcn'),
-//			'default' => false,
-//			// TODO: for newest version
+//			'id' => 'block-settings-title',
+//			'type' => 'section',
+//			'title' => __('Global Block Template', 'bcn'),
+//			'subtitle' => __('This template will be applied to the whole site. The theme will also try to adjust the default widgets to look in the same style with the block template selected here.', 'bcn'),
+//			'indent' => true, // Indent all options below until the next 'section' option is set.
 //		),
-	)
-));
+//		array(
+//			'id' => 'block-settings-display',
+//			'type' => 'image_select',
+//			'title' => __('Block template', 'bcn'),
+//			'subtitle' => __('You can overwrite the template on each block and widget.', 'bcn'),
+//			'options' => array(
+//				'2' => array(
+//					'alt' => '2',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-02.jpg'
+//				),
+//				'3' => array(
+//					'alt' => '3',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-03.jpg'
+//				),
+//				'4' => array(
+//					'alt' => '4',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-04.jpg'
+//				),
+//				'5' => array(
+//					'alt' => '5',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-05.jpg'
+//				),
+////				'6' => array(
+////					'alt' => '6',
+////					'img' => get_template_directory_uri() . '/images/admin/preview-06.jpg'
+////				),
+//				'7' => array(
+//					'alt' => '7',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-07.jpg'
+//				),
+////				'8' => array(
+////					'alt' => '8',
+////					'img' => get_template_directory_uri() . '/images/admin/preview-08.jpg'
+////				),
+//				'9' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-09.jpg'
+//				),
+////				'10' => array(
+////					'alt' => '9',
+////					'img' => get_template_directory_uri() . '/images/admin/preview-10.jpg'
+////				),
+//				'11' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-11.jpg'
+//				),
+////				'12' => array(
+////					'alt' => '9',
+////					'img' => get_template_directory_uri() . '/images/admin/preview-12.jpg'
+////				),
+//				'14' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-14.jpg'
+//				),
+////				'15' => array(
+////					'alt' => '9',
+////					'img' => get_template_directory_uri() . '/images/admin/preview-15.jpg'
+////				),
+////				'16' => array(
+////					'alt' => '9',
+////					'img' => get_template_directory_uri() . '/images/admin/preview-16.jpg'
+////				),
+////			TODO: miss the file?
+////				'17' => array(
+////					'alt' => '9',
+////					'img' => get_template_directory_uri() . '/images/admin/preview-17.jpg'
+////				),
+//				'18' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-18.jpg'
+//				),
+//				'19' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-19.jpg'
+//				),
+////				'20' => array(
+////					'alt' => '9',
+////					'img' => get_template_directory_uri() . '/images/admin/preview-20.jpg'
+////				),
+//				'21' => array(
+//					'alt' => '9',
+//					'img' => get_template_directory_uri() . '/images/admin/preview-21.jpg'
+//				),
+//			),
+//			'default' => '2',
+//		),
+//	)
+//));
 
 Redux::setSection($opt_name, array(
 	'title' => __('Background', 'bcn'),

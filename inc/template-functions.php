@@ -516,9 +516,7 @@ if (function_exists('add_image_size')) {
 	add_image_size('post_block_05', 1375, 900, true);
 	add_image_size('post_block_07', 962, 700, true);
 	add_image_size('post_block_09', 1600, 900, true);
-	add_image_size('post_block_11', 590, 375, true);
 	add_image_size('post_block_14', 545, 350, true);
-	add_image_size('post_block_18', 590, 375, true);
 	add_image_size('post_block_19', 800, 900, true);
 	add_image_size('post_block_21', 700, 370, true);
 	add_image_size('portfolio_masonry_thumb', 500, '', true);
