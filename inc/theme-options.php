@@ -1268,10 +1268,6 @@ Redux::setSection($opt_name, array(
 					'alt' => '14',
 					'img' => get_template_directory_uri() . '/images/admin/preview-14.jpg'
 				),
-				'19' => array(
-					'alt' => '19',
-					'img' => get_template_directory_uri() . '/images/admin/preview-19.jpg'
-				),
 				'21' => array(
 					'alt' => '21',
 					'img' => get_template_directory_uri() . '/images/admin/preview-21.jpg'

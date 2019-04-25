@@ -9,7 +9,6 @@
 
 global $theme_options;
 
-echo "post-block-03";
 
 ?>
 <section class="post-block-03">
@@ -47,10 +46,10 @@ echo "post-block-03";
 								class="post-block-03__widget-title-link"
 								href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
 						<footer class="post-block-03__widget-footer animate">
-							<?php if ($theme_options['block-settings-meta-comments'] == 1) {?>
-							<span
-								class="post-block-03__widget-comments-count animation-rtl">Comments <?php echo get_comments_number(); ?></span>
-							<?php}?>
+							<?php if ($theme_options['block-settings-meta-comments'] == 1) { ?>
+								<span
+									class="post-block-03__widget-comments-count animation-rtl">Comments <?php echo get_comments_number(); ?></span>
+							<?php } ?>
 							<?php if ($theme_options['block-settings-meta-date'] == 1) {
 								; ?>
 								<time class="post-block-03__widget-date animation-ltr"
@@ -66,15 +65,15 @@ echo "post-block-03";
 
 		<?php endwhile;
 
-		if (class_exists('ReduxFramework')) {
-			if ($theme_options['category-pagination'] == 1) {
-				the_posts_pagination(array(
-					'mid_size' => 2,
-					'prev_text' => __('«'),
-					'next_text' => __('»'),
-				));
-			}
-		}
+//		if (class_exists('ReduxFramework')) {
+//			if ($theme_options['category-pagination'] == 1) {
+//				the_posts_pagination(array(
+//					'mid_size' => 2,
+//					'prev_text' => __('«'),
+//					'next_text' => __('»'),
+//				));
+//			}
+//		}
 	endif;
 	?>
 

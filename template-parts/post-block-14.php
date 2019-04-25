@@ -9,13 +9,6 @@
 
 global $theme_options;
 
-?>
-
-<?php
-
-
-echo "post-block-14";
-
 
 ?>
 
@@ -33,35 +26,6 @@ echo "post-block-14";
 			?>
 
 			<article class="post-block-14__item">
-				<?php
-				if (class_exists('ReduxFramework')) {
-					if (($theme_options['block-settings-meta-date'] == 1) || ($theme_options['block-settings-meta-author'] == 1) || ($theme_options['block-settings-meta-comments'] == 1)) {
-						?>
-						<header class="post-block-14__date">
-							<p class="post-block-14__date-item"><?php if ($theme_options['block-settings-meta-date'] == 1) {
-									; ?>
-									<time
-										datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time>
-								<?php }
-								if ($theme_options['block-settings-meta-author'] == 1) { ?>By <a
-									href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
-									<?php echo get_the_author(); ?></a>
-								<?php }
-								if (class_exists('ReduxFramework')) {
-									if ($theme_options['block-settings-meta-comments'] == 1) { ?>
-
-										<span class="post-block-04__comments-count"><i class="fa fa-comment"></i>
-											<?php echo get_comments_number(); ?></span>
-										<?php
-									}
-								}
-								?>
-							</p>
-						</header>
-						<?php
-					}
-				}
-				?>
 				<span class="post-block-14__wrapper-link">
 				<?php
 				$thelist = '';
@@ -73,13 +37,45 @@ echo "post-block-14";
 				}
 				echo $thelist; ?>
 			</span>
-				<figure>
+				<figure class="post-block-14__img animation-ltr">
+					<?php
+					if (class_exists('ReduxFramework')) {
+						if (($theme_options['block-settings-meta-date'] == 1) || ($theme_options['block-settings-meta-author'] == 1) || ($theme_options['block-settings-meta-comments'] == 1)) {
+							?>
+							<div class="post-block-14__date">
+								<p class="post-block-14__date-item"><?php if ($theme_options['block-settings-meta-date'] == 1) {
+										; ?>
+										<time
+											datetime="<?php echo get_the_date('c') ?>"><?php echo get_the_date('M j, y') ?></time>
+									<?php }
+									if ($theme_options['block-settings-meta-author'] == 1) { ?>By <a
+										href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+										<?php echo get_the_author(); ?></a>
+									<?php }
+									if (class_exists('ReduxFramework')) {
+										if ($theme_options['block-settings-meta-comments'] == 1) { ?>
+
+											<span class="post-block-04__comments-count"><i
+													data-uk-icon="commenting"></i>
+												<?php echo get_comments_number(); ?></span>
+											<?php
+										}
+									}
+									?>
+								</p>
+							</div>
+							<?php
+						}
+					}
+					?>
+
 					<?php if (has_post_thumbnail()) { ?>
-						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+						<a class="post-block-14__img-link" href="<?php the_permalink(); ?>"
+						   title="<?php the_title_attribute(); ?>">
 							<?php the_post_thumbnail('post_block_14', array('class' => 'post-block-14__img-item')); ?>
 						</a>
 					<?php } else { ?>
-						<a href="<?php the_permalink() ?>">
+						<a class="post-block-14__img-link" href="<?php the_permalink() ?>">
 							<img class="post-block-14__img-item"
 								 src="<?php echo get_template_directory_uri() ?>/images/placeholder-545-350.png"
 								 srcset="<?php echo get_template_directory_uri() ?>/images/placeholder-545-350@2x.png 2x"

@@ -20,13 +20,8 @@ get_header();
 		<main class="page-main page-main--home-02 sidebar-parent" id="main">
 			<?php if ($theme_options['category-sidebar'] == 2) {
 				get_sidebar();
-			} ?>
+			}
 
-			<div class="control-scroll-only control-scroll-only--vpright">
-				<button class="control-scroll-only__scroll-button" id="scroll-button" type="button">Scroll</button>
-			</div>
-
-			<?php
 			if (class_exists('ReduxFramework')) {
 				switch ($theme_options['category-article-display']) {
 					case 2:

@@ -21,6 +21,11 @@
 	@media (min-width: $tablet-width) {
 	  padding-bottom: 50px;
 	}
+	.nav-links {
+	  @media (min-width: $tablet-width) {
+		justify-content: flex-end;
+	  }
+	}
   }
 }
 
