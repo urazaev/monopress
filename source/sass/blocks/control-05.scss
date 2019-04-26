@@ -7,12 +7,12 @@
   justify-content: flex-start;
   width: 150px;
 
-
   @media (min-width: $tablet-width) {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    left: unset;
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	left: unset;
+	justify-content: flex-end;
   }
 }
 
@@ -26,35 +26,36 @@
 .control-05__next-link {
   color: var(--main-text-color);
   @include button-reset;
-  border: none;
   height: 30px;
   width: 30px;
   display: flex;
   justify-content: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all ease-in-out 0.3s;
+  border: 1px solid transparent;
+
   &:hover {
-    border-width: 1px;
-    border-style: solid;
-    border-color: var(--subnav-background);
-    opacity: 0.9;
+	border-width: 1px;
+	border-style: solid;
+	border-color: var(--subnav-background);
+	opacity: 0.9;
+	transition: all ease-in-out 0.3s;
   }
 }
 
 .control-05__scroll-link {
   display: none;
   @media (min-width: $tablet-width) {
-    display: block;
-    font-family: $fonts-secondary;
-    font-size: 14px;
-    font-weight: bold;
-    color: var(--main-text-color);
-    @include button-reset;
-    transform: rotate(90deg);
-    padding: 0;
-    margin-top: 21px;
-    margin-left: 4px;
-    @include links-decoration-bottom-line();
-
+	display: block;
+	font-family: $fonts-secondary;
+	font-size: 14px;
+	font-weight: bold;
+	color: var(--main-text-color);
+	@include button-reset;
+	transform: rotate(90deg);
+	padding: 0;
+	margin-top: 21px;
+	margin-left: 4px;
+	@include links-decoration-bottom-line();
   }
-
-
 }

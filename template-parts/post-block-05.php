@@ -96,11 +96,7 @@ if (have_posts()) : ?>
           </span>
 				</button>
 			</div>
-			<div class="control-05__wrapper">
-        <span class="control-05__scroll">
-          <button class="control-05__scroll-link slick-custom-next">or Scroll</button>
-        </span>
-			</div>
+
 		</div>
 	</section>
 
