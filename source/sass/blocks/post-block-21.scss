@@ -42,6 +42,7 @@
 
   @media (min-width: $tablet-width) {
 	padding-bottom: 50px;
+	width: 100%;
   }
 }
 
@@ -137,5 +138,31 @@
   }
   svg {
 	margin-top: -4px;
+  }
+
+  a {
+	position: relative;
+	color: inherit;
+
+	&:after {
+	  content: "";
+	  position: absolute;
+	  display: flex;
+	  opacity: 0;
+	  bottom: -3px;
+	  left: 0;
+	  height: 2px;
+	  background-color: var(--active-word);
+	  width: 2px;
+	  transition: all ease-out 0.3s;
+	}
+	&:hover {
+	  &:after {
+		content: "";
+		opacity: 1;
+		width: 100%;
+		transition: all ease-out 0.3s;
+	  }
+	}
   }
 }

@@ -258,9 +258,156 @@ Redux::setArgs($opt_name, $args);
 
  */
 
+// -> START Main Page
+Redux::setSection($opt_name, array(
+	'title' => __('Main Page', 'bcn'),
+	'id' => 'main-page',
+	'desc' => __('Main Page options', 'bcn'),
+	'icon' => 'el el-adjust-alt',
+	'fields' => array(
+		array(
+			'id' => 'main-page-featured-title',
+			'type' => 'section',
+			'title' => __('Main page featured block', 'bcn'),
+			'indent' => true, // Indent all options below until the next 'section' option is set.
+		),
+		array(
+			'id' => 'main-page-featured',
+			'type' => 'switch',
+			'title' => __('Show top featured block', 'bcn'),
+			'default' => true,
+		),
+		array(
+			'required' => array('main-page-featured', '=', '1'),
+			'id' => 'main-page-featured-cat',
+			'type' => 'select',
+			'multi' => true,
+			'title' => __('Featured post categories', 'bcn'),
+			'data' => 'categories',
+
+		),
+		array(
+			'required' => array('main-page-featured', '=', '1'),
+			'id' => 'main-page-featured-num',
+			'type' => 'text',
+			'title' => __('Featured post limit', 'bcn'),
+			'default' => '2',
+		),
+		array(
+			'required' => array('main-page-featured', '=', '1'),
+			'id' => 'main-page-featured-display',
+			'type' => 'image_select',
+			'title' => __('Article display view', 'bcn'),
+			'subtitle' => __('Select a module type, this is how your featured list will be displayed.', 'bcn'),
+			'options' => array(
+				'2' => array(
+					'alt' => '2',
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-02.png'
+				),
+				'4' => array(
+					'alt' => '4',
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-04.png'
+				),
+				'5' => array(
+					'alt' => '5',
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-05.png'
+				),
+				'7' => array(
+					'alt' => '7',
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-07.png'
+				),
+				'14' => array(
+					'alt' => '14',
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-14.png'
+				),
+				'21' => array(
+					'alt' => '21',
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-21.png'
+				),
+			),
+			'default' => '2',
+		),
+		array(
+			'id' => 'main-page-display-title',
+			'type' => 'section',
+			'title' => __('Main page post listing', 'bcn'),
+			'indent' => true, // Indent all options below until the next 'section' option is set.
+		),
+		array(
+			'id' => 'main-page-display',
+			'type' => 'image_select',
+			'title' => __('Article display view', 'bcn'),
+			'subtitle' => __('Select a module type, this is how your article list will be displayed.', 'bcn'),
+			'options' => array(
+				'2' => array(
+					'alt' => '2',
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-02.png'
+				),
+				'4' => array(
+					'alt' => '4',
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-04.png'
+				),
+				'5' => array(
+					'alt' => '5',
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-05.png'
+				),
+				'7' => array(
+					'alt' => '7',
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-07.png'
+				),
+				'14' => array(
+					'alt' => '14',
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-14.png'
+				),
+				'21' => array(
+					'alt' => '21',
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-21.png'
+				),
+			),
+			'default' => '2',
+		),
+		array(
+			'id' => 'main-page-pagination',
+			'type' => 'select',
+			'title' => __('Pagination style', 'bcn'),
+			'subtitle' => __('Set a pagination style for main page.', 'bcn'),
+			'options' => array(
+				'1' => 'Normal pagination',
+				'2' => 'Infinite loading',
+//				'3' => 'Infinite loading + Load more',
+//			TODO for newest options
+			),
+			'default' => '1',
+		),
+		array(
+			'id' => 'main-page-sidebar',
+			'type' => 'image_select',
+			'title' => __('Sidebar position', 'bcn'),
+			'subtitle' => __('Sidebar position and custom sidebars.', 'bcn'),
+			'options' => array(
+				'1' => array(
+					'alt' => 'No sidebar',
+					'img' => get_template_directory_uri() . '/images/admin/layout-no-sidebar.png'
+
+				),
+				'2' => array(
+					'alt' => 'Left sidebar',
+					'img' => get_template_directory_uri() . '/images/admin/layout-left-sidebar.png'
+				),
+				'3' => array(
+					'alt' => 'Right sidebar',
+					'img' => get_template_directory_uri() . '/images/admin/layout-right-sidebar.png'
+				),
+			),
+			'default' => '2'
+		),
+	)
+));
+
+
 // -> START Header
 Redux::setSection($opt_name, array(
-	'title' => __('+ Header', 'bcn'),
+	'title' => __('Header', 'bcn'),
 	'id' => 'header',
 	'desc' => __('Header options', 'bcn'),
 	'icon' => 'el el-adjust-alt'
@@ -586,7 +733,7 @@ Redux::setSection($opt_name, array(
 
 // -> START Footer
 Redux::setSection($opt_name, array(
-	'title' => __('+ Footer', 'bcn'),
+	'title' => __('Footer', 'bcn'),
 	'id' => 'footer',
 	'icon' => 'el el-edit',
 ));
@@ -1020,7 +1167,7 @@ Redux::setSection($opt_name, array(
 
 // -> START Layouts settings
 Redux::setSection($opt_name, array(
-	'title' => __('+ Layouts settings', 'bcn'),
+	'title' => __('Layouts settings', 'bcn'),
 	'id' => 'layouts-settings',
 	'desc' => __('', 'bcn'),
 	'icon' => 'el el-align-justify'
@@ -1242,35 +1389,27 @@ Redux::setSection($opt_name, array(
 			'options' => array(
 				'2' => array(
 					'alt' => '2',
-					'img' => get_template_directory_uri() . '/images/admin/preview-02.jpg'
-				),
-				'3' => array(
-					'alt' => '3',
-					'img' => get_template_directory_uri() . '/images/admin/preview-03.jpg'
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-02.png'
 				),
 				'4' => array(
 					'alt' => '4',
-					'img' => get_template_directory_uri() . '/images/admin/preview-04.jpg'
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-04.png'
 				),
 				'5' => array(
 					'alt' => '5',
-					'img' => get_template_directory_uri() . '/images/admin/preview-05.jpg'
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-05.png'
 				),
 				'7' => array(
 					'alt' => '7',
-					'img' => get_template_directory_uri() . '/images/admin/preview-07.jpg'
-				),
-				'9' => array(
-					'alt' => '9',
-					'img' => get_template_directory_uri() . '/images/admin/preview-09.jpg'
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-07.png'
 				),
 				'14' => array(
 					'alt' => '14',
-					'img' => get_template_directory_uri() . '/images/admin/preview-14.jpg'
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-14.png'
 				),
 				'21' => array(
 					'alt' => '21',
-					'img' => get_template_directory_uri() . '/images/admin/preview-21.jpg'
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-21.png'
 				),
 			),
 			'default' => '2',
@@ -1725,7 +1864,7 @@ Redux::setSection($opt_name, array(
 
 // -> START Miscellaneous
 Redux::setSection($opt_name, array(
-	'title' => __('+ Miscellaneous', 'bcn'),
+	'title' => __('Miscellaneous', 'bcn'),
 	'id' => 'miscellaneous',
 	'desc' => __('', 'bcn'),
 	'icon' => 'el el-cog'

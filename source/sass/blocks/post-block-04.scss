@@ -30,7 +30,7 @@
   flex-direction: column;
   width: 49.4%;
 
-  &:nth-child(odd) {
+  &:nth-of-type(odd) {
 	width: 100%;
 	@media (min-width: $sm-screen) {
 	  margin-top: 50px;
@@ -45,7 +45,7 @@
 	}
   }
 
-  &:nth-child(even) {
+  &:nth-of-type(even) {
 	width: 100%;
 
 	@media (min-width: $sm-screen) {
@@ -59,7 +59,7 @@
 
   }
 
-  &:nth-child(even) .post-block-04__header {
+  &:nth-of-type(even) .post-block-04__header {
 	font-size: 14px;
 	line-height: 1.5;
 
@@ -203,6 +203,8 @@
 
 .post-block-04__img-item {
   width: 100%;
+  transition: all ease-in 0.3s;
+  overflow: hidden;
 }
 
 .post-block-04__comments-count {
@@ -220,4 +222,8 @@
 	height: 4px;
 	background-color: #ddd;
   }
+}
+
+.post-block-04__img-link {
+  overflow: hidden;
 }
