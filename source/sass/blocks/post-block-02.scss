@@ -145,6 +145,32 @@
 
 .post-block-02__date-item {
   @include indents-zero;
+
+  a {
+	position: relative;
+	color: inherit;
+
+	&:after {
+	  content: "";
+	  position: absolute;
+	  display: flex;
+	  opacity: 0;
+	  bottom: -3px;
+	  left: 0;
+	  height: 2px;
+	  background-color: var(--active-word);
+	  width: 2px;
+	  transition: all ease-out 0.3s;
+	}
+	&:hover {
+	  &:after {
+		content: "";
+		opacity: 1;
+		width: 100%;
+		transition: all ease-out 0.3s;
+	  }
+	}
+  }
 }
 
 .post-block-02__footer {

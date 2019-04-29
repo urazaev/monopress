@@ -78,7 +78,7 @@
 	padding-bottom: 0;
   }
 
-  &:nth-child(odd) {
+  &:nth-of-type(odd) {
 	@media (min-width: $sm-screen) {
 	  padding-right: 15px;
 	}
@@ -93,7 +93,7 @@
 	}
   }
 
-  &:nth-child(even) {
+  &:nth-of-type(even) {
 	@media (min-width: $sm-screen) {
 	  padding-left: 15px;
 	}

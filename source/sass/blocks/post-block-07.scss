@@ -40,7 +40,7 @@
     width: calc(50% - 15px);
   }
 
-  &:nth-child(odd) {
+  &:nth-of-type(odd) {
 
     @media (min-width: $sm-screen) {
       margin-right: 15px;
@@ -59,7 +59,7 @@
     }
   }
 
-  &:nth-child(even) {
+  &:nth-of-type(even) {
     @media (min-width: $sm-screen) {
       margin-left: 15px;
     }
@@ -86,7 +86,7 @@
 
   .post-block-07__img-item {
     transition: all ease-in 0.3s;
-    transform: scale(1.01);
+    transform: scale(1.1);
   }
 
   .post-block-07__img a::before {
@@ -138,6 +138,31 @@
 .post-block-07__date-item {
   @include indents-zero;
   white-space: nowrap;
+  a {
+	position: relative;
+	color: inherit;
+
+	&:after {
+	  content: "";
+	  position: absolute;
+	  display: flex;
+	  opacity: 0;
+	  bottom: -3px;
+	  left: 0;
+	  height: 2px;
+	  background-color: var(--active-word);
+	  width: 2px;
+	  transition: all ease-out 0.3s;
+	}
+	&:hover {
+	  &:after {
+		content: "";
+		opacity: 1;
+		width: 100%;
+		transition: all ease-out 0.3s;
+	  }
+	}
+  }
 }
 
 .post-block-07__header {

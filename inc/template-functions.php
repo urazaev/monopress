@@ -536,17 +536,53 @@ if (!isset($theme_options) && file_exists(get_template_directory() . '/inc/theme
 // This example assumes your opt_name is set to redux_demo, replace with your opt_name value
 add_action('redux/page/theme_options/enqueue', 'addPanelCSS');
 
-/**
- * include templates
- **/
 
 if (!function_exists('up_get_template')) {
-	/*
-     * get template parts
-     */
+
+	/**
+	 * get template parts
+	 **/
+
 	function up_get_template($template, $name = null)
 	{
 		get_template_part('template-parts/' . $template, $name);
+	}
+}
+
+if (!function_exists('up_cat_pagination')) {
+
+	/**
+	 * get pagination
+	 **/
+
+	function up_cat_pagination()
+	{
+		if (class_exists('ReduxFramework')) {
+			global $theme_options;
+			if ($theme_options['category-pagination'] == 1) {
+				the_posts_pagination(array(
+					'mid_size' => 2,
+					'prev_text' => __('«'),
+					'next_text' => __('»'),
+				));
+			}
+		}
+	}
+}
+
+
+if (!function_exists('up_section_echo')) {
+
+	/**
+	 * get breadcrumbs
+	 * @param string $section_class for class name
+	 * @param string $section_id for id name
+	 **/
+
+	function up_section_echo($section_class = 'section', $section_id = '')
+	{
+		echo '<section class="' . $section_class . '" id="' . $section_id . '">';
+
 	}
 }
 

@@ -99,14 +99,10 @@ get_header();
 			<?php
 			$loop = new WP_Query(array('post_type' => 'portfolio', 'posts_per_page' => -1));
 			$count = 0;
-			?>
+			if ($loop) :
 
+				while ($loop->have_posts()) : $loop->the_post();
 
-			<?php if ($loop) :
-
-				while ($loop->have_posts()) : $loop->the_post(); ?>
-
-					<?php
 					$terms = get_the_terms($post->ID, 'portfolio');
 
 					if ($terms && !is_wp_error($terms)) :
@@ -119,9 +115,9 @@ get_header();
 					else :
 						$tax = '';
 					endif;
-					?>
 
-					<?php $infos = get_post_custom_values('_url'); ?>
+					$infos = get_post_custom_values('_url'); ?>
+
 					<li class="portfolio__item" data-type="<?php echo $tax; ?>"
 						data-name="A<?php echo $post->ID ?>">
 						<a class="portfolio__link uk-inline-clip uk-transition-toggle uk-dark"

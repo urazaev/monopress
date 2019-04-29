@@ -1,0 +1,21 @@
+.archive__header {
+  text-align: left;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.archive__text {
+  //margin-top: 20px;
+  text-align: left;
+}
+
+.archive__notfound-wrapper {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-basis: 0;
+  flex-grow: 1;
+  min-height: 100vh;
+  overflow: hidden;
+}
