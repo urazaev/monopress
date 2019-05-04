@@ -46,7 +46,7 @@ get_header();
 				</p>
 
 				<span class="post-block-06__wrapper-link">
-					<a class="button button--big button--accent-color" href="
+					<a class="button button--big" href="
 						<?php
 					if (isset($theme_options['404-button-link'])) {
 						echo esc_html__($theme_options['404-button-link']);

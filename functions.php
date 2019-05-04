@@ -136,21 +136,48 @@ function bcn_widgets_init()
 	));
 
 	register_sidebar(array(
-		'name' => 'Footer 1',
+		'name' => 'Footer section 1',
 		'id' => 'up-sidebar-footer1',
-		'before_widget' => '<section class="widget %2$s">',
-		'after_widget' => '</section>',
-		'before_title' => '<div class="block-title"><span>',
-		'after_title' => '</span></div>'
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>'
 	));
 
 	register_sidebar(array(
-		'name' => 'Footer 2',
+		'name' => 'Footer section 2',
 		'id' => 'up-sidebar-footer2',
-		'before_widget' => '<section class="widget %2$s">',
-		'after_widget' => '</section>',
-		'before_title' => '<div class="block-title"><span>',
-		'after_title' => '</span></div>'
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>'
+	));
+
+	register_sidebar(array(
+		'name' => 'Footer section 3',
+		'id' => 'up-sidebar-footer3',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<em>',
+		'after_title' => '</em>'
+	));
+
+	register_sidebar(array(
+		'name' => 'Header section 1',
+		'id' => 'up-sidebar-header1',
+		'before_widget' => '<div class="vertical-main-sidebar__item vertical-main-sidebar__item--social social__vertical">',
+		'after_widget' => '</div>',
+		'before_title' => '',
+		'after_title' => ''
+	));
+
+	register_sidebar(array(
+		'name' => 'Header section 2',
+		'id' => 'up-sidebar-header2',
+		'before_widget' => '<div class="vertical-main-sidebar__item weather-vertical">',
+		'after_widget' => '</div>',
+		'before_title' => '',
+		'after_title' => ''
 	));
 }
 

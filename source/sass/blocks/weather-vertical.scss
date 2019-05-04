@@ -2,14 +2,21 @@
   display: none;
 
   @media (min-width: $tablet-width) {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+  }
+  .textwidget {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
   }
 }
 
 .weather-vertical__num {
+  text-align: center;
   @include indents-zero;
   font-size: 30px;
   font-family: $fonts-secondary;
@@ -19,6 +26,7 @@
 }
 
 .weather-vertical__location {
+  text-align: center;
   @include indents-zero;
   margin-top: 16px;
   font-size: 12px;

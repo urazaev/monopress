@@ -75,7 +75,7 @@
   text-align: right;
   margin: 0;
   font-weight: bold;
-  color: var(--widget-text-color);
+  color: #eaeaea;
   @media (min-width: $tablet-width) {
 	font-size: 1.57vw;
   }
@@ -108,7 +108,7 @@
   font-size: 12px;
   line-height: 14px;
   font-family: $fonts-primary;
-  color: var(--widget-text-color);
+  color: #eaeaea;
   text-align: right;
   &--top {
 	text-align: left;

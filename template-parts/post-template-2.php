@@ -25,7 +25,12 @@ global $theme_options;
 
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class('post-block-15__item'); ?>>
-		<?php if (class_exists('ReduxFramework')) {
+		<?php
+
+		$adv_block_4 = isset($theme_options['ads-block4']) ? $theme_options['ads-block4'] : '';
+		echo do_shortcode($adv_block_4);
+
+		if (class_exists('ReduxFramework')) {
 			if ($theme_options['post-featured-images-show'] == 1) { ?>
 				<figure class="post-block-15__img">
 					<?php if (has_post_thumbnail()) {

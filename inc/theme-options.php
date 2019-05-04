@@ -308,10 +308,6 @@ Redux::setSection($opt_name, array(
 					'alt' => '4',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-04.png'
 				),
-				'5' => array(
-					'alt' => '5',
-					'img' => get_template_directory_uri() . '/images/admin/post-layout-05.png'
-				),
 				'7' => array(
 					'alt' => '7',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-07.png'
@@ -323,6 +319,10 @@ Redux::setSection($opt_name, array(
 				'21' => array(
 					'alt' => '21',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-21.png'
+				),
+				'22' => array(
+					'alt' => '21',
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-22.png'
 				),
 			),
 			'default' => '2',
@@ -347,10 +347,6 @@ Redux::setSection($opt_name, array(
 					'alt' => '4',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-04.png'
 				),
-				'5' => array(
-					'alt' => '5',
-					'img' => get_template_directory_uri() . '/images/admin/post-layout-05.png'
-				),
 				'7' => array(
 					'alt' => '7',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-07.png'
@@ -362,6 +358,10 @@ Redux::setSection($opt_name, array(
 				'21' => array(
 					'alt' => '21',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-21.png'
+				),
+				'22' => array(
+					'alt' => '21',
+					'img' => get_template_directory_uri() . '/images/admin/post-layout-22.png'
 				),
 			),
 			'default' => '2',
@@ -760,8 +760,6 @@ Redux::setSection($opt_name, array(
 			'type' => 'image_select',
 			'title' => __('Footer templates', 'bcn'),
 			'subtitle' => __('Set the footer template', 'bcn'),
-//            'desc' => __('This uses some of the built in images, you can use them for layout options.', 'bcn'),
-			//Must provide key => value(array:title|img) pairs for radio options
 			'options' => array(
 				'1' => array(
 					'alt' => 'First',
@@ -769,11 +767,11 @@ Redux::setSection($opt_name, array(
 				),
 				'3' => array(
 					'alt' => 'Third',
-					'img' => get_template_directory_uri() . '/images/admin/layout-footer-2.png'
+					'img' => get_template_directory_uri() . '/images/admin/layout-footer-3.png'
 				),
 				'2' => array(
 					'alt' => 'Second',
-					'img' => get_template_directory_uri() . '/images/admin/layout-footer-3.png'
+					'img' => get_template_directory_uri() . '/images/admin/layout-footer-2.png'
 				),
 			),
 			'default' => '1',
@@ -1018,7 +1016,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'required' => array('subfooter-on', '=', '1'),
 			'id' => 'subfooter-text',
-			'type' => 'textarea',
+			'type' => 'editor',
 			'title' => __('Sub footer copyright text', 'bcn'),
 			'subtitle' => __('Set sub footer copyright text', 'bcn'),
 		),
@@ -1054,34 +1052,10 @@ Redux::setSection($opt_name, array(
 
 // -> START Advertisement
 Redux::setSection($opt_name, array(
-	'title' => __('-- Advertisement', 'bcn'),
+	'title' => __('Advertisement', 'bcn'),
 	'id' => 'ads',
 	'desc' => __('', 'bcn'),
 	'icon' => 'el el-usd'
-));
-
-Redux::setSection($opt_name, array(
-	'title' => __('Background click ad', 'bcn'),
-	'id' => 'bg-click-ad',
-	'desc' => __('NOTICE: Please go to BACKGROUND tab if you also need a background image', 'bcn'),
-	'subsection' => true,
-	'fields' => array(
-		array(
-			'id' => 'bg-click-url',
-			'type' => 'text',
-			'title' => __('Url', 'bcn'),
-			'subtitle' => __('Paste your link here like: http://www.domain.com', 'bcn'),
-		),
-		array(
-			'id' => 'bg-click-window',
-			'type' => 'switch',
-			'title' => __('Open in new window', 'bcn'),
-			'subtitle' => __('If enabled, this option will open the URL in a new window. Leave disabled for the URL to be loaded in current page', 'bcn'),
-			//'options' => array('on', 'off'),
-			'default' => false,
-		),
-	),
-
 ));
 
 Redux::setSection($opt_name, array(
@@ -3300,7 +3274,7 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Custom css code', 'bcn'),
+	'title' => __('Custom code', 'bcn'),
 	'id' => 'custom-code',
 	'subsection' => true,
 	'fields' => array(
@@ -3314,6 +3288,17 @@ Redux::setSection($opt_name, array(
 			'theme' => 'monokai',
 			'desc' => 'The css from this box will load on all the pages of the site.',
 			'default' => ""
+		),
+		array(
+			'id'       => 'custom-code-js',
+			'type'     => 'ace_editor',
+			'full_width' => true,
+			'title'    => __( 'JS Code', 'bcn-theme' ),
+			'subtitle' => __( 'Paste your JS code here.', 'bcn-theme' ),
+			'mode'     => 'javascript',
+			'theme'    => 'chrome',
+			'desc'     => 'Add custom javascript easly, using this editor. Please do not include the &lt;script&gt &lt;/script&gt',
+			'default'  => ""
 		),
 	)
 

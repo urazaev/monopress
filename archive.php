@@ -43,8 +43,11 @@ get_header();
 					echo 'data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 800"';
 				} ?>>
 
-
 					<?php
+
+					$adv_block_2 = isset($theme_options['ads-block2']) ? $theme_options['ads-block2'] : '';
+					echo do_shortcode($adv_block_2);
+
 					if ($theme_options['template-settings-breadcrumbs-show'] == 1) {
 						the_breadcrumb('breadcrumbs breadcrumbs--inner breadcrumbs--inner-nottobbrdr');
 					}
@@ -120,6 +123,9 @@ get_header();
 				<?php
 
 				}
+
+				$adv_block_3 = isset($theme_options['ads-block3']) ? $theme_options['ads-block3'] : '';
+				echo do_shortcode($adv_block_3);
 
 				if ($theme_options['category-pagination'] == 1) {
 					the_posts_pagination(array(

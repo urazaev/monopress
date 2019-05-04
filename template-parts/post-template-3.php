@@ -220,7 +220,12 @@ global $theme_options;
 					</figure>
 				<?php } ?>
 
-				<?php the_title('<h1 class="post-block-20__header has-animation animation-ltr animate-in">', '</h1>');
+				<?php
+
+				$adv_block_4 = isset($theme_options['ads-block4']) ? $theme_options['ads-block4'] : '';
+				echo do_shortcode($adv_block_4);
+
+				the_title('<h1 class="post-block-20__header has-animation animation-ltr animate-in">', '</h1>');
 
 				if ($theme_options['post-show-author-name'] == 1 || $theme_options['post-show-date'] == 1 || $theme_options['post-show-comments-numbers'] == '1') { ?>
 

@@ -270,41 +270,12 @@ if ($theme_options['header-layout'] == 2 && $theme_options['main-menu-flip'] == 
 						</nav>
 
 					</div>
+					<?php if (is_active_sidebar('up-sidebar-header1')) {
+						dynamic_sidebar('up-sidebar-header1');
+					}
 
-					<div class="vertical-main-sidebar__item vertical-main-sidebar__item--social social__vertical">
-
-						<ul class="social__vertical-list">
-
-							<li class="social__vertical-item">
-								<a class="social__vertical-link social__vertical-link--instagram"
-								   href="https://www.instagram.com/urazaev_production/">
-									<i class="" data-uk-icon="instagram"></i>
-								</a>
-							</li>
-							<!--							TODO : socials output set-->
-							<li class="social__vertical-item">
-								<a class="social__vertical-link social__vertical-link--twitter"
-								   href="https://twitter.com/UrazaevCom">
-									<i data-uk-icon="twitter"></i>
-								</a>
-							</li>
-							<li class="social__vertical-item">
-								<a class="social__vertical-link social__vertical-link--facebook"
-								   href="https://www.facebook.com/urazaevcom/">
-									<i class="social__vertical-img-icon" data-uk-icon="facebook"></i>
-								</a>
-							</li>
-
-						</ul>
-
-					</div>
-
-					<?php if ($theme_options['main-menu-weather'] == 1) { ?>
-						<div class="vertical-main-sidebar__item weather-vertical">
-							<b class="weather-vertical__num">+25°</b>
-							<p class="weather-vertical__location">San Francisco, CA</p>
-						</div>
-						<?php
+					if (($theme_options['main-menu-weather'] == 1) && is_active_sidebar('up-sidebar-header2')) {
+						dynamic_sidebar('up-sidebar-header2');
 					}
 					?>
 

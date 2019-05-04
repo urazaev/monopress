@@ -18,6 +18,10 @@ global $theme_options;
 		if ($theme_options['template-settings-breadcrumbs-show'] == 1) {
 			the_breadcrumb('breadcrumbs breadcrumbs--inner breadcrumbs--inner-nottobbrdr');
 		}
+
+		$adv_block_4 = isset($theme_options['ads-block4']) ? $theme_options['ads-block4'] : '';
+		echo do_shortcode($adv_block_4);
+
 		?>
 		<article
 			id="post-<?php the_ID(); ?>" <?php post_class('post-text-block-08__item uk-animation-fade'); ?>>

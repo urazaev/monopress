@@ -2,21 +2,23 @@
   padding-top: 50px;
   padding-bottom: 50px;
   background-color: var(--header-background);
+  font-family: var(--fonts-primary);
+
   .social-listing {
 	display: flex;
 	justify-content: center;
 	margin: 0;
 	padding: 0;
 	li {
-	  border-radius: 50%;
+	  //border-radius: 50%;
 	  border: 1px solid #eaeaea;
 	  list-style: none;
 	  margin-left: 5px;
 	  margin-right: 5px;
-	  transition: all ease-in 0.4s;
+	  transition: all ease-in 0.3s;
 	  &:hover {
-		border-radius: 50%;
-		transition: all ease-in 0.4s;
+		opacity: 0.6;
+		transition: all ease-in 0.3s;
 	  }
 	  a {
 		width: 40px;
@@ -36,8 +38,16 @@
 	position: absolute;
 	z-index: -1;
   }
+  .footer-contacts {
+	a {
+	  color: inherit;
+	  &:hover {
+		color: var(--active-word);
+	  }
+	}
+  }
   a {
-	color: var(--sidebar-text-color);
+	color: inherit;
   }
   &.footer-first {
 	background-color: #0e0e0e;
@@ -45,49 +55,147 @@
 	.footer-txt {
 	  padding-top: 10px;
 	  padding-bottom: 10px;
-	  margin-left: 30%;
-	  margin-right: 30%;
+	  margin-left: 10%;
+	  margin-right: 10%;
+	  @media (min-width: $small-screen) {
+
+		margin-left: 30%;
+		margin-right: 30%;
+	  }
 	}
-	.footer-contacts {
-	  a {
-		&:hover {
-		  text-decoration: underline;
-		  color: #ff6600;
-		}
+	.footer-logo {
+	  margin-bottom: 50px;
+	  @media (min-width: $tablet-width) {
+		margin-bottom: 30px;
 	  }
 	}
   }
   &.footer-second {
+
 	background-color: #0e0e0e;
 	color: #eaeaea;
 	.footer-txt {
 
 	}
-	.footer-logo {
-	  margin: 0;
+	.column-1, .column-2, .column-3 {
+	  align-items: center;
 	}
-	.footer-contacts {
-	  a {
-		&:hover {
-		  text-decoration: underline;
-		  color: #ff6600;
+	.column-1 {
+	  text-align: center;
+	  @media (min-width: $tablet-width) {
+		text-align: unset;
+	  }
+	}
+	.column-2 {
+	  text-align: center;
+	  margin-bottom: 20px;
+	  @media (min-width: $small-screen) {
+		text-align: left;
+		margin-bottom: unset;
+	  }
+	}
+	.column-3 {
+	  .social-listing {
+		justify-content: center !important;
+		@media (min-width: $tablet-width) {
+		  justify-content: unset;
 		}
 	  }
 	}
+	.footer-logo {
+	  margin-bottom: 50px;
+	  @media (min-width: $tablet-width) {
+		margin-bottom: 30px;
+	  }
+	}
   }
+
   &.footer-third {
+
 	background-color: #0e0e0e;
 	color: #b7b6b5;
-	.footer-menu {
+	padding: 30px;
+
+	@media (min-width: $tablet-width) {
+	  padding: 0;
+	  padding-top: 50px;
+	}
+	.section-first {
+	  padding-bottom: 30px;
+	}
+	.footer-logo {
+	  margin-bottom: 50px;
+	  @media (min-width: $tablet-width) {
+		margin-bottom: 30px;
+	  }
+	}
+	.column-1 {
+
+	  @media (min-width: $tablet-width) {
+		padding-left: 10%;
+		padding-right: 240px;
+
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+	  }
+
+	}
+	.column-2 {
+	  padding-right: 30px;
+	}
+	.column-3 {
+	  padding-left: 30px;
+	}
+
+	.column-4 {
+	  background-color: #ffffff;
+	  color: #212121;
+	  display: flex;
+	  align-items: center;
+	  font-size: 12px;
+	  padding: 20px;
+	  justify-content: center;
+
+	  @media (min-width: $tablet-width) {
+		padding: 20px 20px 20px 10%;
+		justify-content: unset;
+
+	  }
+	  em {
+		font-size: 45px;
+		color: inherit;
+		line-height: 1;
+		font-family: var(--fonts-secondary);
+		font-weight: 600;
+		font-style: normal;
+		margin-right: 20px;
+	  }
+	}
+	.social-listing {
+	  padding-top: 20px;
+	  padding-bottom: 20px;
+
+	  @media (min-width: $tablet-width) {
+		padding: 20px;
+	  }
+	  justify-content: flex-start;
+	  li {
+		border-radius: 0;
+	  }
+	}
+
+	.footer-widget-menu {
 
 	  margin: 0;
 	  padding: 0;
 	  list-style: none;
 
 	  li {
-		//padding-top: 5px;
 		padding-bottom: 10px;
 		list-style: none;
+		font-family: var(--fonts-primary);
+		font-size: 12px;
 		&::before {
 		  content: "";
 		  display: inline-block;
@@ -112,12 +220,18 @@
 		}
 	  }
 	}
+
 	h3 {
-	  font-size: 20px;
 	  line-height: 1.3;
 	  position: relative;
-	  padding-bottom: 10px;
-	  color: #b7b6b5;
+	  font-family: var(--fonts-secondary);
+	  color: #fff;
+	  padding: 10px 10px 10px 0;
+	  font-size: 13px;
+	  font-weight: 700;
+	  letter-spacing: 1px;
+	  text-transform: uppercase;
+	  margin-bottom: 20px;
 
 	  &::after {
 		content: "";
@@ -133,18 +247,8 @@
 	.footer-txt {
 
 	}
-	.footer-logo {
-	  margin: 0;
-	}
-	.footer-contacts {
-	  a {
-		&:hover {
-		  text-decoration: underline;
-		  color: #ff6600;
-		}
-	  }
-	}
   }
+
 }
 
 #sb_instagram {

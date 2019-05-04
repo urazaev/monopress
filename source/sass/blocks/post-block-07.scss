@@ -18,6 +18,12 @@
 	  padding-bottom: 50px;
 	}
   }
+  .advertise {
+	padding-bottom: 30px;
+	@media (min-width: $tablet-width) {
+	  padding-bottom: 50px;
+	}
+  }
 }
 
 .post-block-07__wrapper-link {

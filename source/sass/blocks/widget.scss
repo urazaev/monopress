@@ -39,7 +39,7 @@
   }
 
   &:last-of-type {
-	margin-bottom: 0;
+	//margin-bottom: 0;
 	@media (min-width: $tablet-width) {
 	  //margin-bottom: 30px;
 	}
@@ -137,7 +137,7 @@
 	  line-height: 1.6;
 	  font-size: 14px;
 	  flex-grow: 1;
-	  font-family: $fonts-secondary;
+	  font-family: var(--fonts-secondary);
 	  font-weight: bold;
 	  text-decoration: none;
 	  color: var(--widget-text-color);

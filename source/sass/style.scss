@@ -1,94 +1,96 @@
 @import "global/variables";
 
-@import "../../node_modules/uikit/src/scss/variables.scss";
-@import "../../node_modules/uikit/src/scss/mixins.scss";
-@import "../../node_modules/uikit/src/scss/uikit.scss";
+@import "../../node_modules/uikit/src/scss/variables";
+@import "../../node_modules/uikit/src/scss/mixins";
+@import "../../node_modules/uikit/src/scss/uikit";
 
-@import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap-grid";
 
 @import "global/mixins";
-@import "global/global.scss";
-@import "global/animation.scss";
-@import "global/layout.scss";
-@import "global/themes.scss";
-@import "global/slick.scss";
-@import "global/slick-theme.scss";
+@import "global/global";
+@import "global/animation";
+@import "global/layout";
+@import "global/themes";
+@import "global/slick";
+@import "global/slick-theme";
 
-@import "blocks/button.scss";
+@import "blocks/button";
 
 @import "blocks/comments-block";
 
-@import "blocks/control-05.scss";
-@import "blocks/control-09.scss";
-@import "blocks/control-center.scss";
-@import "blocks/control-right.scss";
-@import "blocks/control-scroll.scss";
-@import "blocks/control-scroll-only.scss";
+@import "blocks/control-05";
+@import "blocks/control-09";
+@import "blocks/control-center";
+@import "blocks/control-right";
+@import "blocks/control-scroll";
+@import "blocks/control-scroll-only";
 
-@import "blocks/date.scss";
-@import "blocks/main-nav.scss";
-@import "blocks/main-nav-vertical.scss";
-@import "blocks/page-header.scss";
-@import "blocks/page-main.scss";
+@import "blocks/date";
+@import "blocks/main-nav";
+@import "blocks/main-nav-vertical";
+@import "blocks/page-header";
+@import "blocks/page-main";
 
-@import "blocks/post-block-02.scss";
-//@import "blocks/post-block-03.scss";
-@import "blocks/post-block-04.scss";
-@import "blocks/post-block-05.scss";
-@import "blocks/post-block-06.scss";
-@import "blocks/post-block-07.scss";
-@import "blocks/post-block-08.scss";
-//@import "blocks/post-block-09.scss";
-@import "blocks/post-block-10.scss";
-//@import "blocks/post-block-11.scss";
-@import "blocks/post-block-12.scss";
-@import "blocks/post-block-14.scss";
-@import "blocks/post-block-15.scss";
-@import "blocks/post-block-16.scss";
-@import "blocks/post-block-17.scss";
-//@import "blocks/post-block-18.scss";
-//@import "blocks/post-block-19.scss";
-@import "blocks/post-block-20.scss";
-@import "blocks/post-block-21.scss";
+@import "blocks/post-block-02";
+//@import "blocks/post-block-03";
+@import "blocks/post-block-04";
+@import "blocks/post-block-05";
+@import "blocks/post-block-06";
+@import "blocks/post-block-07";
+@import "blocks/post-block-08";
+//@import "blocks/post-block-09";
+@import "blocks/post-block-10";
+//@import "blocks/post-block-11";
+@import "blocks/post-block-12";
+@import "blocks/post-block-14";
+@import "blocks/post-block-15";
+@import "blocks/post-block-16";
+@import "blocks/post-block-17";
+//@import "blocks/post-block-18";
+//@import "blocks/post-block-19";
+@import "blocks/post-block-20";
+@import "blocks/post-block-21";
 
-@import "blocks/post-text-block-08.scss";
-@import "blocks/post-text-block-20.scss";
+@import "blocks/post-text-block-08";
+@import "blocks/post-text-block-20";
 
-@import "blocks/post-widget.scss";
+@import "blocks/post-widget";
 
-@import "blocks/tags.scss";
-@import "blocks/author-box.scss";
-@import "blocks/related-articles.scss";
-@import "blocks/post-navigation.scss";
+@import "blocks/tags";
+@import "blocks/author-box";
+@import "blocks/related-articles";
+@import "blocks/post-navigation";
 
-@import "blocks/rotate.scss";
+@import "blocks/rotate";
 
-@import "blocks/scaffolding.scss";
+@import "blocks/scaffolding";
 
-@import "blocks/social.scss";
+@import "blocks/social";
 
-@import "blocks/usernav.scss";
-@import "blocks/vertical-main-sidebar.scss";
-@import "blocks/sidebar.scss";
-@import "blocks/weather.scss";
-@import "blocks/weather-vertical.scss";
+@import "blocks/usernav";
+@import "blocks/vertical-main-sidebar";
+@import "blocks/sidebar";
+@import "blocks/weather";
+@import "blocks/weather-vertical";
 
-@import "blocks/flip-block.scss";
-@import "blocks/loading-spinner.scss";
+@import "blocks/flip-block";
+@import "blocks/loading-spinner";
 
-@import "blocks/portfolio.scss";
+@import "blocks/portfolio";
 
-@import "blocks/footer.scss";
-@import "blocks/sub-footer.scss";
+@import "blocks/footer";
+@import "blocks/sub-footer";
 
-@import "blocks/nav-links.scss";
+@import "blocks/nav-links";
 
-@import "blocks/error-404.scss";
-@import "blocks/breadcrumbs.scss";
-@import "blocks/search-page.scss";
-@import "blocks/page.scss";
-@import "blocks/widget.scss";
-@import "blocks/archive.scss";
-@import "blocks/mainpage.scss";
+@import "blocks/error-404";
+@import "blocks/breadcrumbs";
+@import "blocks/search-page";
+@import "blocks/page";
+@import "blocks/widget";
+@import "blocks/archive";
+@import "blocks/mainpage";
+@import "blocks/advertise";
+@import "blocks/entry-content";
 
 

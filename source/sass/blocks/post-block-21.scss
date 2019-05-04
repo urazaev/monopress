@@ -17,8 +17,10 @@
 	align-content: flex-start;
   }
   .navigation.pagination {
+	padding-top: 30px;
 	padding-bottom: 30px;
 	@media (min-width: $tablet-width) {
+	  padding-top: 50px;
 	  padding-bottom: 50px;
 	}
 	.nav-links {

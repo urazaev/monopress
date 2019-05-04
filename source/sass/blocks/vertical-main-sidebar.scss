@@ -115,6 +115,11 @@
 	flex-direction: row;
 	z-index: 555;
 
+	.textwidget {
+	  display: flex;
+	  width: 100%;
+	}
+
 	@media (min-width: $tablet-width) {
 	  order: unset;
 	  flex-grow: 1;
@@ -138,6 +143,7 @@
   text-transform: uppercase;
   transform: translateX(-50%);
   transition: 200ms;
+  margin-top: -8px;
 
   &:hover {
 	opacity: 0.8;
@@ -145,11 +151,14 @@
 
   @media (min-width: $tablet-width) {
 	line-height: 40px;
+	margin-top: unset;
 	position: relative;
 	top: auto;
 	left: auto;
 	align-self: center;
 	font-weight: bold;
 	transform: none;
+	padding-left: 20%;
+	padding-right: 20%;
   }
 }
