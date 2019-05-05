@@ -29,6 +29,13 @@
 	  }
 	}
   }
+  .advertise-block-3 {
+	padding-bottom: 30px;
+	padding-top: 0 !important;
+	@media (min-width: $tablet-width) {
+	  padding-bottom: 50px;
+	}
+  }
 }
 
 .post-block-21__wrapper-link {
