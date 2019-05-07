@@ -14,9 +14,19 @@
 
 get_header();
 global $theme_options;
+
+$sidebar_position =  get_post_meta(get_the_ID(),'bcn_meta_sidebar',true);
+
+if (!isset($sidebar_position) || $sidebar_position == '-1' || $sidebar_position == '') {
+	$sidebar_position = isset( $theme_options['page-template-sidebar'] ) ? $theme_options['page-template-sidebar'] : '1';
+}
 ?>
+
+
+
+
 	<main class="row no-gutters page content-area page-main sidebar-parent" id="primary">
-		<?php if ($theme_options['page-template-sidebar'] == 2) {
+		<?php if ($sidebar_position == 2) {
 			get_sidebar();
 		} ?>
 
@@ -47,7 +57,7 @@ global $theme_options;
 		</section>
 		<!-- .page-content -->
 
-		<?php if ($theme_options['page-template-sidebar'] == 3) {
+		<?php if ($sidebar_position == 3) {
 			get_sidebar();
 		} ?>
 

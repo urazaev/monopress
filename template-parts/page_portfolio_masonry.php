@@ -1,7 +1,6 @@
 <?php
 /**
- * Template Name: Portfolio masonry
- * The template for displaying all single posts
+ * The template for displaying portfolio
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *

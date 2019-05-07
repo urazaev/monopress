@@ -24,7 +24,7 @@ if ($theme_options['header-layout'] == 2) {
 }
 
 if (class_exists('ReduxFramework')) {
-	if ($theme_options['main-menu-flip'] == 1) :
+	if (($theme_options['main-menu-flip'] == 1) && ($theme_options['header-layout'] == 1)) :
 		if (is_active_sidebar('up-sidebar-flip')) : ?>
 
 			<section class="flip-block">

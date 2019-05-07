@@ -242,6 +242,12 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Metaboxes.
+ */
+
+require get_template_directory() . '/inc/meta-box.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 

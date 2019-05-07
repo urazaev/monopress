@@ -35,68 +35,68 @@ $wizard = new Merlin(
 		'ready_big_button_url' => '', // Link for the big button on the ready step.
 	),
 	$strings = array(
-		'admin-menu'               => esc_html__( 'Theme Setup', '@@textdomain' ),
+		'admin-menu'               => esc_html__( 'Theme Setup', 'bcn' ),
 
 		/* translators: 1: Title Tag 2: Theme Name 3: Closing Title Tag */
-		'title%s%s%s%s'            => esc_html__( '%1$s%2$s Themes &lsaquo; Theme Setup: %3$s%4$s', '@@textdomain' ),
-		'return-to-dashboard'      => esc_html__( 'Return to the dashboard', '@@textdomain' ),
-		'ignore'                   => esc_html__( 'Disable this wizard', '@@textdomain' ),
+		'title%s%s%s%s'            => esc_html__( '%1$s%2$s Themes &lsaquo; Theme Setup: %3$s%4$s', 'bcn' ),
+		'return-to-dashboard'      => esc_html__( 'Return to the dashboard', 'bcn' ),
+		'ignore'                   => esc_html__( 'Disable this wizard', 'bcn' ),
 
-		'btn-skip'                 => esc_html__( 'Skip', '@@textdomain' ),
-		'btn-next'                 => esc_html__( 'Next', '@@textdomain' ),
-		'btn-start'                => esc_html__( 'Start', '@@textdomain' ),
-		'btn-no'                   => esc_html__( 'Cancel', '@@textdomain' ),
-		'btn-plugins-install'      => esc_html__( 'Install', '@@textdomain' ),
-		'btn-child-install'        => esc_html__( 'Install', '@@textdomain' ),
-		'btn-content-install'      => esc_html__( 'Install', '@@textdomain' ),
-		'btn-import'               => esc_html__( 'Import', '@@textdomain' ),
-		'btn-license-activate'     => esc_html__( 'Activate', '@@textdomain' ),
-		'btn-license-skip'         => esc_html__( 'Later', '@@textdomain' ),
-
-		/* translators: Theme Name */
-		'license-header%s'         => esc_html__( 'Activate %s', '@@textdomain' ),
-		/* translators: Theme Name */
-		'license-header-success%s' => esc_html__( '%s is Activated', '@@textdomain' ),
-		/* translators: Theme Name */
-		'license%s'                => esc_html__( 'Enter your license key to enable remote updates and theme support.', '@@textdomain' ),
-		'license-label'            => esc_html__( 'License key', '@@textdomain' ),
-		'license-success%s'        => esc_html__( 'The theme is already registered, so you can go to the next step!', '@@textdomain' ),
-		'license-json-success%s'   => esc_html__( 'Your theme is activated! Remote updates and theme support are enabled.', '@@textdomain' ),
-		'license-tooltip'          => esc_html__( 'Need help?', '@@textdomain' ),
+		'btn-skip'                 => esc_html__( 'Skip', 'bcn' ),
+		'btn-next'                 => esc_html__( 'Next', 'bcn' ),
+		'btn-start'                => esc_html__( 'Start', 'bcn' ),
+		'btn-no'                   => esc_html__( 'Cancel', 'bcn' ),
+		'btn-plugins-install'      => esc_html__( 'Install', 'bcn' ),
+		'btn-child-install'        => esc_html__( 'Install', 'bcn' ),
+		'btn-content-install'      => esc_html__( 'Install', 'bcn' ),
+		'btn-import'               => esc_html__( 'Import', 'bcn' ),
+		'btn-license-activate'     => esc_html__( 'Activate', 'bcn' ),
+		'btn-license-skip'         => esc_html__( 'Later', 'bcn' ),
 
 		/* translators: Theme Name */
-		'welcome-header%s'         => esc_html__( 'Welcome to %s', '@@textdomain' ),
-		'welcome-header-success%s' => esc_html__( 'Hi. Welcome back', '@@textdomain' ),
-		'welcome%s'                => esc_html__( 'This wizard will set up your theme, install plugins, and import content. It is optional & should take only a few minutes.', '@@textdomain' ),
-		'welcome-success%s'        => esc_html__( 'You may have already run this theme setup wizard. If you would like to proceed anyway, click on the "Start" button below.', '@@textdomain' ),
+		'license-header%s'         => esc_html__( 'Activate %s', 'bcn' ),
+		/* translators: Theme Name */
+		'license-header-success%s' => esc_html__( '%s is Activated', 'bcn' ),
+		/* translators: Theme Name */
+		'license%s'                => esc_html__( 'Enter your license key to enable remote updates and theme support.', 'bcn' ),
+		'license-label'            => esc_html__( 'License key', 'bcn' ),
+		'license-success%s'        => esc_html__( 'The theme is already registered, so you can go to the next step!', 'bcn' ),
+		'license-json-success%s'   => esc_html__( 'Your theme is activated! Remote updates and theme support are enabled.', 'bcn' ),
+		'license-tooltip'          => esc_html__( 'Need help?', 'bcn' ),
 
-		'child-header'             => esc_html__( 'Install Child Theme', '@@textdomain' ),
-		'child-header-success'     => esc_html__( 'You\'re good to go!', '@@textdomain' ),
-		'child'                    => esc_html__( 'Let\'s build & activate a child theme so you may easily make theme changes.', '@@textdomain' ),
-		'child-success%s'          => esc_html__( 'Your child theme has already been installed and is now activated, if it wasn\'t already.', '@@textdomain' ),
-		'child-action-link'        => esc_html__( 'Learn about child themes', '@@textdomain' ),
-		'child-json-success%s'     => esc_html__( 'Awesome. Your child theme has already been installed and is now activated.', '@@textdomain' ),
-		'child-json-already%s'     => esc_html__( 'Awesome. Your child theme has been created and is now activated.', '@@textdomain' ),
+		/* translators: Theme Name */
+		'welcome-header%s'         => esc_html__( 'Welcome to %s', 'bcn' ),
+		'welcome-header-success%s' => esc_html__( 'Hi. Welcome back', 'bcn' ),
+		'welcome%s'                => esc_html__( 'This wizard will set up your theme, install plugins, and import content. It is optional & should take only a few minutes.', 'bcn' ),
+		'welcome-success%s'        => esc_html__( 'You may have already run this theme setup wizard. If you would like to proceed anyway, click on the "Start" button below.', 'bcn' ),
 
-		'plugins-header'           => esc_html__( 'Install Plugins', '@@textdomain' ),
-		'plugins-header-success'   => esc_html__( 'You\'re up to speed!', '@@textdomain' ),
-		'plugins'                  => esc_html__( 'Let\'s install some essential WordPress plugins to get your site up to speed.', '@@textdomain' ),
-		'plugins-success%s'        => esc_html__( 'The required WordPress plugins are all installed and up to date. Press "Next" to continue the setup wizard.', '@@textdomain' ),
-		'plugins-action-link'      => esc_html__( 'Advanced', '@@textdomain' ),
+		'child-header'             => esc_html__( 'Install Child Theme', 'bcn' ),
+		'child-header-success'     => esc_html__( 'You\'re good to go!', 'bcn' ),
+		'child'                    => esc_html__( 'Let\'s build & activate a child theme so you may easily make theme changes.', 'bcn' ),
+		'child-success%s'          => esc_html__( 'Your child theme has already been installed and is now activated, if it wasn\'t already.', 'bcn' ),
+		'child-action-link'        => esc_html__( 'Learn about child themes', 'bcn' ),
+		'child-json-success%s'     => esc_html__( 'Awesome. Your child theme has already been installed and is now activated.', 'bcn' ),
+		'child-json-already%s'     => esc_html__( 'Awesome. Your child theme has been created and is now activated.', 'bcn' ),
 
-		'import-header'            => esc_html__( 'Import Content', '@@textdomain' ),
-		'import'                   => esc_html__( 'Let\'s import content to your website, to help you get familiar with the theme.', '@@textdomain' ),
-		'import-action-link'       => esc_html__( 'Advanced', '@@textdomain' ),
+		'plugins-header'           => esc_html__( 'Install Plugins', 'bcn' ),
+		'plugins-header-success'   => esc_html__( 'You\'re up to speed!', 'bcn' ),
+		'plugins'                  => esc_html__( 'Let\'s install some essential WordPress plugins to get your site up to speed.', 'bcn' ),
+		'plugins-success%s'        => esc_html__( 'The required WordPress plugins are all installed and up to date. Press "Next" to continue the setup wizard.', 'bcn' ),
+		'plugins-action-link'      => esc_html__( 'Advanced', 'bcn' ),
 
-		'ready-header'             => esc_html__( 'All done. Have fun!', '@@textdomain' ),
+		'import-header'            => esc_html__( 'Import Content', 'bcn' ),
+		'import'                   => esc_html__( 'Let\'s import content to your website, to help you get familiar with the theme.', 'bcn' ),
+		'import-action-link'       => esc_html__( 'Advanced', 'bcn' ),
+
+		'ready-header'             => esc_html__( 'All done. Have fun!', 'bcn' ),
 
 		/* translators: Theme Author */
-		'ready%s'                  => esc_html__( 'Your theme has been all set up. Enjoy your new theme by %s.', '@@textdomain' ),
-		'ready-action-link'        => esc_html__( 'Extras', '@@textdomain' ),
-		'ready-big-button'         => esc_html__( 'View your website', '@@textdomain' ),
-		'ready-link-1'             => sprintf( '<a href="%1$s" target="_blank">%2$s</a>', 'https://wordpress.org/support/', esc_html__( 'Explore WordPress', '@@textdomain' ) ),
-		'ready-link-2'             => sprintf( '<a href="%1$s" target="_blank">%2$s</a>', 'https://themebeans.com/contact/', esc_html__( 'Get Theme Support', '@@textdomain' ) ),
-		'ready-link-3'             => sprintf( '<a href="%1$s">%2$s</a>', admin_url( 'customize.php' ), esc_html__( 'Start Customizing', '@@textdomain' ) ),
+		'ready%s'                  => esc_html__( 'Your theme has been all set up. Enjoy your new theme by %s.', 'bcn' ),
+		'ready-action-link'        => esc_html__( 'Extras', 'bcn' ),
+		'ready-big-button'         => esc_html__( 'View your website', 'bcn' ),
+		'ready-link-1'             => sprintf( '<a href="%1$s" target="_blank">%2$s</a>', 'https://wordpress.org/support/', esc_html__( 'Explore WordPress', 'bcn' ) ),
+		'ready-link-2'             => sprintf( '<a href="%1$s" target="_blank">%2$s</a>', 'https://themebeans.com/contact/', esc_html__( 'Get Theme Support', 'bcn' ) ),
+		'ready-link-3'             => sprintf( '<a href="%1$s">%2$s</a>', admin_url( 'customize.php' ), esc_html__( 'Start Customizing', 'bcn' ) ),
 	)
 );
 
@@ -111,8 +111,7 @@ function merlin_import_files() {
 		array(
 			'import_file_name'           => 'Multi Demo 1',
 			'import_file_url'            => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/wordpress-96733-403878cloudwaysappscom.wordpress.multi-cloud.xml',
-			'import_widget_file_url'     => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/contempothemes.com-wp-real-estate-7-multi-demo-widgets.json',
-			'import_rev_slider_file_url' => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/home-realestate.zip',
+			'import_widget_file_url'     => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/bcnthemes.com-wp-real-estate-7-multi-demo-widgets.json',
 			//'import_customizer_file_url' => 'http://www.your_domain.com/merlin/customizer.dat',
 			'import_redux'               => array(
 				array(
@@ -120,16 +119,15 @@ function merlin_import_files() {
 					'option_name' => 'ct_options',
 				),
 			),
-			'import_preview_image_url'   => 'http://contempothemes.com/wp-real-estate-7/multi-demo/wp-content/plugins/aqua-style-switcher/images/screenshots/multi-slider-screenshot.jpg',
-			'import_notice'              => __( 'A special note for this import.', 'contempo' ),
-			'preview_url'                => 'http://contempothemes.com/wp-real-estate-7/multi-demo',
+			'import_preview_image_url'   => 'http://bcnthemes.com/wp-real-estate-7/multi-demo/wp-content/plugins/aqua-style-switcher/images/screenshots/multi-slider-screenshot.jpg',
+			'import_notice'              => __( 'A special note for this import.', 'bcn' ),
+			'preview_url'                => 'http://bcnthemes.com/wp-real-estate-7/multi-demo',
 		),
 
 		array(
 			'import_file_name'           => 'Test demo 2',
 			'import_file_url'            => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/wordpress-96733-403878cloudwaysappscom.wordpress.multi-cloud.xml',
-			'import_widget_file_url'     => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/contempothemes.com-wp-real-estate-7-multi-demo-widgets.json',
-			'import_rev_slider_file_url' => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/home-realestate.zip',
+			'import_widget_file_url'     => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/bcnthemes.com-wp-real-estate-7-multi-demo-widgets.json',
 			//'import_customizer_file_url' => 'http://www.your_domain.com/merlin/customizer.dat',
 			'import_redux'               => array(
 				array(
@@ -137,9 +135,9 @@ function merlin_import_files() {
 					'option_name' => 'ct_options',
 				),
 			),
-			'import_preview_image_url'   => 'http://contempothemes.com/wp-real-estate-7/multi-demo/wp-content/plugins/aqua-style-switcher/images/screenshots/multi-slider-screenshot.jpg',
-			'import_notice'              => __( 'A special note for this import.', 'contempo' ),
-			'preview_url'                => 'http://contempothemes.com/wp-real-estate-7/multi-demo',
+			'import_preview_image_url'   => 'http://bcnthemes.com/wp-real-estate-7/multi-demo/wp-content/plugins/aqua-style-switcher/images/screenshots/multi-slider-screenshot.jpg',
+			'import_notice'              => __( 'A special note for this import.', 'bcn' ),
+			'preview_url'                => 'http://bcnthemes.com/wp-real-estate-7/multi-demo',
 		),
 	);
 }

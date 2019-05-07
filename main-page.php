@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Main page
  * The main template file
  *
  * This is the most generic template file in a WordPress theme
@@ -13,6 +14,12 @@
  */
 
 global $theme_options;
+
+$sidebar_position =  get_post_meta(get_the_ID(),'bcn_meta_sidebar',true);
+
+if (!isset($sidebar_position) || $sidebar_position == '-1' || $sidebar_position == '') {
+	$sidebar_position = isset( $theme_options['main-page-sidebar'] ) ? $theme_options['main-page-sidebar'] : '1';
+}
 
 get_header();
 ?>
@@ -80,7 +87,7 @@ get_header();
 										'order' => 'ASC',
 										'orderby' => 'date',
 										'post_type' => array('post'),
-										'cat' => $featured_category,
+										'cat' => $theme_options['main-page-featured-cat'],
 										'posts_per_page' => $theme_options['main-page-featured-num'],
 									);
 

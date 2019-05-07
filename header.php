@@ -55,20 +55,7 @@ global $theme_options;
 
 
 <body <?php body_class(); ?> >
-<?php
-if ($theme_options['header-layout'] == 2 && $theme_options['main-menu-flip'] == 1) {
-	?>
-	<ul class="usernav usernav--vert usernav--control header-animate">
-		<li class="usernav__hamburger-wrapper">
-			<div class="usernav__hamburger">
-				<span></span>
-			</div>
-		</li>
-	</ul>
 
-	<?php
-}
-?>
 <div id="page" class="site">
 
 	<?php

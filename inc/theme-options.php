@@ -527,6 +527,7 @@ Redux::setSection($opt_name, array(
 			'off' => 'Disabled',
 		),
 		array(
+			'required' => array('header-layout', '=', '1'),
 			'id' => 'main-menu-flip',
 			'type' => 'switch',
 			'title' => __('Show flip panel', 'bcn'),
@@ -2339,6 +2340,29 @@ Redux::setSection($opt_name, array(
 			'type' => 'section',
 			'title' => __('Sidebar', 'bcn'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
+		),
+		array(
+			'id' => 'colors-sidebar-titles-bg',
+			'type' => 'color',
+			'title' => __('Sidebar titles background color', 'bcn'),
+			'subtitle' => __('Select sidebar titles background color', 'bcn'),
+			'default' => false,
+			'validate' => 'color',
+			'output' => array(
+				'background-color' => '.sidebar .widget-title',
+			),
+		),
+
+		array(
+			'id' => 'colors-sidebar-titles',
+			'type' => 'color',
+			'title' => __('Sidebar titles color', 'bcn'),
+			'subtitle' => __('Select sidebar titles color', 'bcn'),
+			'default' => false,
+			'validate' => 'color',
+			'output' => array(
+				'color' => '.sidebar .widget-title',
+			),
 		),
 		array(
 			'id' => 'colors-sidebar-bg',
