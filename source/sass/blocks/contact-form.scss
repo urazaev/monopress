@@ -1,0 +1,98 @@
+
+.wpcf7-form {
+  //padding-top: 16px;
+  //margin-top: 30px;
+  position: relative;
+
+  //&::before {
+  //content: "";
+  //position: absolute;
+  //width: 100%;
+  //height: 1px;
+  //top: 0;
+  //left: 0;
+  //background-color: var(--dividing-line-color);
+  //}
+
+  .button,  input[type="submit"] {
+	background-color: var(--active-word);
+	border: none;
+	padding: 8px 15px;
+	cursor: pointer;
+	color: $text-color-white;
+
+	&:hover {
+	  background-color: $background-dark;
+	}
+
+	&::before {
+	  position: absolute;
+	  width: 0;
+	  height: 100%;
+	  left: 0;
+	  top: 0;
+	  content: "";
+	  background: $background-white;
+	  opacity: 0.3;
+	  transition: all 0.3s;
+	}
+
+	&:hover::before {
+	  width: 100%;
+	}
+  }
+
+  input[type="text"], input[type="email"], input[type="url"], textarea {
+	font-family: inherit;
+	font-size: 14px;
+	border: solid 2px rgba(221, 221, 221, 0.4);
+	transition: all ease-in 0.1s;
+	//background-color: #eaeaea;
+	padding: 12px 20px;
+	//width: 100%;
+
+  }
+
+  input[type="text"]:hover, input[type="email"]:hover, input[type="url"]:hover, textarea:hover {
+	font-family: inherit;
+	font-size: 14px;
+	border: solid 2px #dddddd;
+	padding: 12px 20px;
+	background-color: #f8f8f8;
+	outline: none;
+  }
+
+  input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, textarea:focus {
+	font-family: inherit;
+	font-size: 14px;
+	border: solid 2px #dddddd;
+	padding: 12px 20px;
+	outline: none;
+	background-color: #fff;
+  }
+
+  input[type="text"].error, input[type="email"].error, input[type="url"].error, input[type="text"]:invalid, input[type="email"]:invalid, input[type="url"]:invalid {
+	font-family: inherit;
+	font-size: 14px;
+	padding: 12px 20px;
+	border: solid 2px #dc3545;
+	outline: none;
+	background-color: rgba(255, 166, 0, 0.1);
+  }
+  .comment-form-comment {
+	margin-top: 30px;
+	margin-bottom: 30px;
+  }
+  .comment-form-author {
+	padding-bottom: 10px;
+  }
+
+  .comment-form-email {
+	padding-bottom: 10px;
+  }
+
+  .comment-form-url {
+	padding-bottom: 10px;
+  }
+
+}

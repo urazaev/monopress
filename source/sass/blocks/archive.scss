@@ -7,6 +7,10 @@
 .archive__text {
   text-align: left;
   width: 100%;
+  margin-bottom: 20px;
+   p:last-child {
+	 margin-bottom: 0;
+   }
 }
 
 .archive__notfound-wrapper {

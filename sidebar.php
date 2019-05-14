@@ -13,7 +13,7 @@ if ( ! is_active_sidebar( 'up-sidebar-default' ) ) {
 ?>
 <aside class="post-widget sidebar">
 	<div class="sidebar__inner"
-		 data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 500">
+		 data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small;">
 		<?php dynamic_sidebar('up-sidebar-default'); ?>
 	</div>
 </aside>

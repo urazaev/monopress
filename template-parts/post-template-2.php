@@ -193,7 +193,7 @@ global $theme_options;
 							$i = 0;
 							foreach (get_the_category() as $category) {
 								if (0 < $i) $thelist .= ' ';
-								$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button button--green button--sm ' . $category->slug . '">' . $category->name . '</a>';
+								$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button button--sm ' . $category->slug . '">' . $category->name . '</a>';
 								if (++$i == 2) break;
 							}
 							echo $thelist; ?>

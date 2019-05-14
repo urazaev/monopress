@@ -10,7 +10,7 @@ global $theme_options;
 ?>
 
 <footer class="container-fluid footer footer-second">
-	<div class="row">
+	<div class="row footer-second-row">
 		<div class="col-sm column-1">
 			<p class="footer-logo">
 				<a class="main-nav__logo main-nav__logo--hor header-animate"

@@ -212,6 +212,7 @@ a#inifiniteLoader {
 	width: 100%;
   }
 }
+
 .show-on {
 
   &--mobile {
@@ -228,6 +229,14 @@ a#inifiniteLoader {
 	}
   }
 }
+
 .entry-content {
   font-family: $fonts-primary;
+}
+
+@media screen and (max-width: 600px) {
+  #wpadminbar {
+	position: absolute;
+	top: -46px;
+  }
 }

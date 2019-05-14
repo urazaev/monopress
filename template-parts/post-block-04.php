@@ -20,7 +20,7 @@ global $theme_options;
 						$i = 0;
 						foreach (get_the_category() as $category) {
 							if (0 < $i) $thelist .= ' ';
-							$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button button--green' . $category->slug . '">' . $category->name . '</a>';
+							$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button ' . $category->slug . '">' . $category->name . '</a>';
 							$i++;
 						}
 						echo $thelist; ?>

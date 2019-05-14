@@ -321,7 +321,7 @@ Redux::setSection($opt_name, array(
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-21.png'
 				),
 				'22' => array(
-					'alt' => '21',
+					'alt' => '22',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-22.png'
 				),
 			),
@@ -360,7 +360,7 @@ Redux::setSection($opt_name, array(
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-21.png'
 				),
 				'22' => array(
-					'alt' => '21',
+					'alt' => '22',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-22.png'
 				),
 			),
@@ -468,7 +468,15 @@ Redux::setSection($opt_name, array(
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
-			'id' => 'main-menu-select',
+			'id' => 'main-menu-enabled',
+			'type' => 'switch',
+			'title' => __('Show header menu (main)', 'bcn'),
+			'subtitle' => __('Show a menu for the main header section', 'bcn'),
+			'default' => 1,
+		),
+		array(
+			'required' => array('main-menu-enabled', '=', '1'),
+			'id' => 'main-menu-show',
 			'type' => 'select',
 			'data' => 'menus',
 			'title' => __('Header menu (main)', 'bcn'),
@@ -560,25 +568,10 @@ Redux::setSection($opt_name, array(
 
 
 Redux::setSection($opt_name, array(
-	'title' => __('Logo & favicon ', 'bcn'),
+	'title' => __('Logo ', 'bcn'),
 	'id' => 'logo-favicon',
 	'subsection' => true,
 	'fields' => array(
-
-		array(
-			'id' => 'favicon-title',
-			'type' => 'section',
-			'title' => __('Favicon', 'bcn'),
-			'indent' => true, // Indent all options below until the next 'section' option is set.
-		),
-		array(
-			'id' => 'favicon',
-			'type' => 'media',
-			'url' => true,
-			'title' => __('Site favicon', 'bcn'),
-			'compiler' => 'true',
-			'subtitle' => __('Optional - upload a favicon image .png', 'bcn'),
-		),
 		array(
 			'id' => 'logo-type-title',
 			'type' => 'section',
@@ -679,11 +672,19 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Ios bookmarklet', 'bcn'),
+	'title' => __('Favicon & ios bookmarklet', 'bcn'),
 	'id' => 'ios-bookmarklet',
 	'desc' => __('The bookmarklets work on iOS and Android. When a user adds your site to the home screen, the phone will download one of the icons from here (based on the screen size and device type) and your site will appear with that icon on the homes creen', 'bcn'),
 	'subsection' => true,
 	'fields' => array(
+		array(
+			'id' => 'favicon',
+			'type' => 'media',
+			'url' => true,
+			'title' => __('Site favicon', 'bcn'),
+			'compiler' => 'true',
+			'subtitle' => __('Optional - upload a favicon image .png', 'bcn'),
+		),
 		array(
 			'id' => 'bookmarklet-76',
 			'type' => 'media',
@@ -2151,7 +2152,8 @@ Redux::setSection($opt_name, array(
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
-				'background-color' => '.page-header, .vertical-main-sidebar__left'
+				'background-color' => '.page-header, .vertical-main-sidebar__left',
+				'--header-background' => ':root'
 			),
 		),
 
@@ -2415,7 +2417,9 @@ Redux::setSection($opt_name, array(
 			'validate' => 'color',
 			'output' => array(
 				'background-color' => '.flip-block ',
+				'--flip-background' => ':root',
 			),
+
 		),
 		array(
 			'id' => 'colors-flip-color',
@@ -2424,7 +2428,16 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Select text and icons color for flip panel', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
-			'output' => '.flip-block__wrapper, .flip-block__wrapper a',
+			'output' => '.flip-block__wrapper',
+		),
+		array(
+			'id' => 'colors-flip-links-color',
+			'type' => 'color',
+			'title' => __('Flip panel button`s color', 'bcn'),
+			'subtitle' => __('Select button`s color for flip panel', 'bcn'),
+			'default' => false,
+			'validate' => 'color',
+			'output' => '.flip-block__wrapper a',
 		),
 
 //      Search panel
@@ -2596,6 +2609,7 @@ Redux::setSection($opt_name, array(
 			'validate' => 'color',
 			'output' => array(
 				'color' => 'footer.footer a, .footer.footer-first a, .footer.footer-second a, .footer.footer-third a',
+				'background-color' => '.footer.footer-third .footer-widget-menu li::before, .footer.footer-third .footer-widget-menu li:hover::before',
 			),
 		),
 		array(
@@ -2681,8 +2695,8 @@ Redux::setSection($opt_name, array(
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
-				'color' => '.sub-footer a',
-				'background-color' => '.sub-footer a::before',
+				'color' => '.sub-footer a, footer.footer .subfooter a, .footer.footer-first .subfooter a, .footer.footer-second .subfooter a, .footer.footer-third .subfooter a',
+				'background-color' => '.subfooter a::before, .sub-footer a::before',
 			),
 		),
 
@@ -2776,15 +2790,34 @@ Redux::setSection($opt_name, array(
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
-			'id' => 'fonts-body',
+			'id' => 'fonts-primary',
 			'type' => 'typography',
-			'title' => __('Body general font', 'bcn'),
+			'title' => __('Primary font', 'bcn'),
 			'google' => true,
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
 			'text-transform' => true,
-			'output' => array('body'),
+			'output' => array(
+				'font-family' => 'body',
+				'--fonts-primary' => ':root',
+			),
+
+		),
+		array(
+			'id' => 'fonts-secondary',
+			'type' => 'typography',
+			'title' => __('Secondary font', 'bcn'),
+			'google' => true,
+			'text-align' => false,
+			'color' => false,
+			'default' => false,
+			'text-transform' => true,
+			'output' => array(
+				'font-family' => 'h1,h2,h3,h4,h5,h6',
+				'--fonts-secondary' => ':root',
+			),
+
 		),
 		array(
 			'id' => 'fonts-header-title',

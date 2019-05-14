@@ -64,19 +64,23 @@ global $theme_options;
 			if ($theme_options['header-layout'] == 1) {
 				?>
 
-				<header class="page-header"
+				<header class="page-header<?php if ($theme_options['main-menu-enabled'] != 1) {echo ' page-header--70';} ?>"
 						<?php if ($theme_options['main-menu-sticky'] == 1) { ?>data-uk-sticky<?php } ?>>
 					<div class="page-header__wrapper"
 						 data-uk-scrollspy="target: > .header-animate; cls:uk-animation-slide-top-small; delay: 800">
 						<nav class="main-nav main-nav--hor">
-							<div class="main-nav__hamburger-wrapper">
-								<button class="icon main-nav__hamburger" id="hamburger-one">
-									<span></span>
-									<span></span>
-									<span></span>
-									<span></span>
-								</button>
-							</div>
+							<?php
+							if ($theme_options['main-menu-enabled'] == 1) { ?>
+								<div class="main-nav__hamburger-wrapper">
+									<button class="icon main-nav__hamburger" id="hamburger-one">
+										<span></span>
+										<span></span>
+										<span></span>
+										<span></span>
+									</button>
+								</div>
+							<?php }
+							?>
 
 							<a class="main-nav__logo main-nav__logo--hor header-animate"
 							   href="<?php echo esc_url(home_url('/')); ?>">
@@ -104,13 +108,17 @@ global $theme_options;
 							</a>
 
 							<?php
-							wp_nav_menu(array(
-								'container' => false,
-								'menu' => esc_html($theme_options['main-menu-select']),
-								'menu_id' => esc_html($theme_options['main-menu-select']),
-								'menu_class' => 'menu header-menu menu-wrapper menu-wrapper-opened menu-wrapper-nojs',
-								'echo' => true,
-							));
+
+							$main_menu = !empty($theme_options['main-menu-select']) ? $theme_options['main-menu-select'] : array();
+							if ($theme_options['main-menu-enabled'] == 1) {
+								wp_nav_menu(array(
+									'container' => false,
+									'menu' => $main_menu,
+									'menu_id' => $main_menu,
+									'menu_class' => 'menu header-menu menu-wrapper menu-wrapper-opened menu-wrapper-nojs',
+									'echo' => true,
+								));
+							}
 							?>
 						</nav>
 						<?php if ($theme_options['main-menu-date'] == 1) { ?>
@@ -175,10 +183,12 @@ global $theme_options;
 					<button class="menu-toggle" aria-controls="primary-menu"
 							aria-expanded="false"><?php esc_html_e('Primary Menu', 'bcn'); ?></button>
 					<?php
-					wp_nav_menu(array(
-						'theme_location' => 'menu-1',
-						'menu_id' => 'primary-menu',
-					));
+					if ($theme_options['main-menu-enabled'] == 1) {
+						wp_nav_menu(array(
+							'theme_location' => 'menu-1',
+							'menu_id' => 'primary-menu',
+						));
+					}
 					?>
 				</nav><!-- #site-navigation -->
 			</header><!-- #masthead -->
@@ -244,10 +254,11 @@ global $theme_options;
 							</div>
 
 							<?php
+							$main_menu = !empty($theme_options['main-menu-select']) ? $theme_options['main-menu-select'] : array();
 							wp_nav_menu(array(
 								'container' => false,
-								'menu' => esc_html($theme_options['main-menu-select']),
-								'menu_id' => esc_html($theme_options['main-menu-select']),
+								'menu' => $main_menu,
+								'menu_id' => $main_menu,
 								'menu_class' => 'menu main-nav__list main-nav__wrapper menu-wrapper menu-wrapper-opened menu-wrapper-nojs header-animate',
 								'echo' => true,
 							));

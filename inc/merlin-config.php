@@ -109,36 +109,36 @@ $wizard = new Merlin(
 function merlin_import_files() {
 	return array(
 		array(
-			'import_file_name'           => 'Multi Demo 1',
-			'import_file_url'            => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/wordpress-96733-403878cloudwaysappscom.wordpress.multi-cloud.xml',
-			'import_widget_file_url'     => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/bcnthemes.com-wp-real-estate-7-multi-demo-widgets.json',
+			'import_file_name'           => 'Demo 1',
+			'import_file_url'            => 'http://bcn/bcn_content_first_demo.xml',
+			'import_widget_file_url'     => 'http://bcn/bcn_widgets_first_demo.json',
 			//'import_customizer_file_url' => 'http://www.your_domain.com/merlin/customizer.dat',
 			'import_redux'               => array(
 				array(
-					'file_url'    => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/redux_options_ct_options_multi_demo.json',
-					'option_name' => 'ct_options',
+					'file_url'    => 'http://bcn/bcn_redux_first_demo.json',
+					'option_name' => 'theme_options',
 				),
 			),
-			'import_preview_image_url'   => 'http://bcnthemes.com/wp-real-estate-7/multi-demo/wp-content/plugins/aqua-style-switcher/images/screenshots/multi-slider-screenshot.jpg',
-			'import_notice'              => __( 'A special note for this import.', 'bcn' ),
-			'preview_url'                => 'http://bcnthemes.com/wp-real-estate-7/multi-demo',
+//			'import_preview_image_url'   => 'http://bcnthemes.com/wp-real-estate-7/multi-demo/wp-content/plugins/aqua-style-switcher/images/screenshots/multi-slider-screenshot.jpg',
+//			'import_notice'              => __( 'A special note for this import.', 'bcn' ),
+			'preview_url'                => 'http://bcnthemes.com/demo-1',
 		),
-
-		array(
-			'import_file_name'           => 'Test demo 2',
-			'import_file_url'            => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/wordpress-96733-403878cloudwaysappscom.wordpress.multi-cloud.xml',
-			'import_widget_file_url'     => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/bcnthemes.com-wp-real-estate-7-multi-demo-widgets.json',
-			//'import_customizer_file_url' => 'http://www.your_domain.com/merlin/customizer.dat',
-			'import_redux'               => array(
-				array(
-					'file_url'    => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/redux_options_ct_options_multi_demo.json',
-					'option_name' => 'ct_options',
-				),
-			),
-			'import_preview_image_url'   => 'http://bcnthemes.com/wp-real-estate-7/multi-demo/wp-content/plugins/aqua-style-switcher/images/screenshots/multi-slider-screenshot.jpg',
-			'import_notice'              => __( 'A special note for this import.', 'bcn' ),
-			'preview_url'                => 'http://bcnthemes.com/wp-real-estate-7/multi-demo',
-		),
+//
+//		array(
+//			'import_file_name'           => 'Test demo 2',
+//			'import_file_url'            => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/wordpress-96733-403878cloudwaysappscom.wordpress.multi-cloud.xml',
+//			'import_widget_file_url'     => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/bcnthemes.com-wp-real-estate-7-multi-demo-widgets.json',
+//			//'import_customizer_file_url' => 'http://www.your_domain.com/merlin/customizer.dat',
+//			'import_redux'               => array(
+//				array(
+//					'file_url'    => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/redux_options_ct_options_multi_demo.json',
+//					'option_name' => 'ct_options',
+//				),
+//			),
+//			'import_preview_image_url'   => 'http://bcnthemes.com/wp-real-estate-7/multi-demo/wp-content/plugins/aqua-style-switcher/images/screenshots/multi-slider-screenshot.jpg',
+//			'import_notice'              => __( 'A special note for this import.', 'bcn' ),
+//			'preview_url'                => 'http://bcnthemes.com/wp-real-estate-7/multi-demo',
+//		),
 	);
 }
 add_filter( 'merlin_import_files', 'merlin_import_files' );

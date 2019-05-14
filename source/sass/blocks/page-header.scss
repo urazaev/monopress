@@ -2,6 +2,9 @@
   width: 100%;
   background-color: var(--header-background);
   color: var(--header-text-color);
+  &--70 {
+	min-height: 59px;
+  }
 }
 
 .page-header__wrapper {
@@ -19,3 +22,14 @@
   }
 }
 
+@media (min-width: 601px) {
+  .admin-bar header.uk-sticky-fixed {
+	top: 46px !important;
+  }
+}
+
+@media (min-width: 783px) {
+  .admin-bar header.uk-sticky-fixed {
+	top: 30px !important;
+  }
+}

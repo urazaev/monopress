@@ -59,7 +59,7 @@ get_header();
 								break;
 						} ?>"
 								 id="loop-content"<?php if ($theme_options['main-page-featured-display'] == 4 || 07 || 14 || 21 || 22) {
-							echo 'data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 800"';
+							echo 'data-uk-scrollspy="target: > article; cls:uk-animation-slide-left; delay: 800"';
 						} ?>>
 
 							<?php
@@ -183,7 +183,7 @@ get_header();
 							break;
 					} ?>" id="loop-content"
 						<?php if ($theme_options['main-page-display'] == 4 || 07 || 14 || 21 || 22) {
-							echo 'data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 800"';
+							echo 'data-uk-scrollspy="target: > article; cls:uk-animation-slide-left;"';
 						} ?>>
 
 						<?php

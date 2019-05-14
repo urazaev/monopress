@@ -23,7 +23,7 @@
 	}
 
 	a:hover {
-	  background-color: #444444;
+	  background-color: var(--active-word);
 	  color: #eaeaea;
 	}
 	.prev {

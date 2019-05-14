@@ -112,6 +112,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  margin-top: -10px;
 
   &:hover {
 	opacity: 0.8;
@@ -123,6 +124,7 @@
 	top: auto;
 	left: auto;
 	transform: none;
+	margin-top: unset;
   }
 }
 
