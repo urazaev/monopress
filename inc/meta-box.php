@@ -68,14 +68,15 @@ function cmb2_sample_metaboxes()
 		// 'closed'     => true, // Keep the metabox closed by default
 	));
 
-	$cmb_main_page->add_field(array(
-		'name' => esc_html__('Featured post categories', 'bcn'),
-		'id' => 'meta_main-page-featured-cat',
-		'type' => 'taxonomy_multicheck',
-		'taxonomy' => 'category', // Taxonomy Slug
-//		'sanitization_cb' => 'sanitize_text_field',
-
-	));
+//	$cmb_main_page->add_field(array(
+//		'name' => esc_html__('Featured post categories', 'bcn'),
+//		'id' => 'meta_main-page-featured-cat',
+//		'type' => 'taxonomy_select',
+//		'taxonomy' => 'category', // Taxonomy Slug
+//		'remove_default' => true,
+//
+//	));
+//	TODO: for newest version
 
 	$cmb_main_page->add_field(array(
 		'name' => esc_html__('Featured post limit', 'bcn'),
