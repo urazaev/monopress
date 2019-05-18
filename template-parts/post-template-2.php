@@ -60,7 +60,7 @@ $post_sidebar = isset($post_sidebar_meta)&&($post_sidebar_meta!='') ? $post_side
 			}
 
 			if ($theme_options['post-show-categories'] == 1) { ?>
-				<span class="post-block-08__widget-link-wrapper">
+				<span class="post-block-15__widget-link-wrapper">
 				<?php
 				$thelist = '';
 				$i = 0;

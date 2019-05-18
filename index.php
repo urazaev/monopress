@@ -20,7 +20,7 @@ get_header();
 $page_sidebar = get_post_meta(get_the_ID(), 'meta_page-template-sidebar', true);
 
 if (!isset($page_sidebar) || $page_sidebar == '-1' || $page_sidebar == '') {
-	$page_sidebar = isset($theme_options['page-template-sidebar']) ? $theme_options['page-template-sidebar'] : '';
+	$page_sidebar = isset($theme_options['main-page-sidebar']) ? $theme_options['main-page-sidebar'] : '';
 }
 
 // Featured cat var
@@ -65,7 +65,7 @@ if (!isset($regular_layout) || $regular_layout == '-1' || $regular_layout == '')
 
 			if (class_exists('ReduxFramework')) {
 				if ($theme_options['main-page-featured'] == 1) {
-//					if (is_home() && !is_paged()) {
+					if (!is_paged()) {
 					?>
 					<section class="post-block-<?php switch ($featured_layout) {
 						case 2:
@@ -180,7 +180,7 @@ if (!isset($regular_layout) || $regular_layout == '-1' || $regular_layout == '')
 
 					</section>
 					<?php
-//					}
+					}
 
 					wp_reset_postdata();
 
@@ -230,7 +230,7 @@ if (!isset($regular_layout) || $regular_layout == '-1' || $regular_layout == '')
 
 							// WP_Query arguments
 							$args = array(
-								'order' => 'ASC',
+								'order' => 'DESK',
 								'orderby' => 'date',
 								'post_type' => array('post'),
 							);

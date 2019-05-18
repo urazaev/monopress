@@ -126,15 +126,13 @@
   @media (min-width: $tablet-width) {
     padding-bottom: 0;
     &--active a::before, .current-menu-item  a::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 1px;
-      width: 100%;
-      background-color: var(--header-text-color);
-      opacity: 0.3;
+	  position: relative;
+	  display: inline-block;
+	  margin-bottom: 4px;
+	  background: var(--header-text-color);
+	  width: 10px;
+	  transition: 0.5s;
+	  margin-right: 5px;
     }
 
     &--parrent, .menu-item-has-children {

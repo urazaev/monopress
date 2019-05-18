@@ -1823,16 +1823,17 @@ body.header-shadow{background-color:#fff}
 .post-block-15__item{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;width:100%}
 .post-block-15__img{margin:0;padding:0;padding-bottom:30px}
 .post-block-15__img-item{width:100%}
-.post-block-15__header{margin:0;padding:0;text-align:right;font-family:var(--fonts-secondary);line-height:1.4;font-weight:bold;font-size:16px;margin-bottom:10px}
+.post-block-15__header{margin:0;padding:0;font-family:var(--fonts-secondary);line-height:1.4;font-weight:bold;font-size:16px;margin-bottom:10px}
 .post-block-15__header-link{font-family:var(--fonts-secondary);font-size:inherit;line-height:inherit;color:var(--header-text-color);font-weight:bold;text-decoration:none;-webkit-transition:.3s all ease;transition:.3s all ease}
 .post-block-15__header-link:hover{border-bottom-width:.5px;border-bottom-color:rgba(33,33,33,0.8);border-bottom-style:solid;color:rgba(33,33,33,0.8)}
-.post-block-15__footer{margin-bottom:30px;font-size:12px;font-family:var(--fonts-primary);color:var(--main-text-color);text-align:right}
+.post-block-15__footer{margin-bottom:30px;font-size:12px;font-family:var(--fonts-primary);color:var(--main-text-color)}
 .post-block-15__footer a{position:relative}
 .post-block-15__footer a:after{content:"";position:absolute;display:-webkit-box;display:-ms-flexbox;display:flex;opacity:0;bottom:-3px;left:0;height:2px;background-color:var(--active-word);width:2px;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 .post-block-15__footer a:hover:after{content:"";opacity:1;width:100%;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 .post-block-15__comments-count{display:inline-block}
 .post-block-15__comments-date{margin-left:24px}
 .post-block-15__text{margin:0;padding:0;padding-bottom:30px;font-size:13px;line-height:26px;font-family:var(--fonts-primary);color:var(--main-text-color)}
+.post-block-15__widget-link-wrapper{text-align:left;padding-bottom:20px}
 .post-block-16{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;width:100%;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
 .post-block-16__wrapper{right:0;top:0;z-index:1;display:block;width:100%}
 .post-block-16__img{margin:0;padding:0;overflow:hidden;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;-ms-flex-negative:0;flex-shrink:0;height:100%}
@@ -2816,7 +2817,7 @@ body.header-shadow::before{content:"";left:0;right:0;top:0;height:81px;position:
 .main-nav-vertical__hamburger{display:none}
 .main-nav-vertical .main-nav__list.main-nav__wrapper{margin:0;padding:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-transform:none}
 .main-nav-vertical .main-nav__item,.main-nav-vertical .menu-item{padding-bottom:0}
-.main-nav-vertical .main-nav__item--active a::before,.main-nav-vertical .main-nav__item .current-menu-item a::before,.main-nav-vertical .menu-item--active a::before,.main-nav-vertical .menu-item .current-menu-item a::before{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;width:100%;background-color:var(--header-text-color);opacity:.3}
+.main-nav-vertical .main-nav__item--active a::before,.main-nav-vertical .main-nav__item .current-menu-item a::before,.main-nav-vertical .menu-item--active a::before,.main-nav-vertical .menu-item .current-menu-item a::before{position:relative;display:inline-block;margin-bottom:4px;background:var(--header-text-color);width:10px;-webkit-transition:.5s;transition:.5s;margin-right:5px}
 .main-nav-vertical .main-nav__item--parrent,.main-nav-vertical .main-nav__item .menu-item-has-children,.main-nav-vertical .menu-item--parrent,.main-nav-vertical .menu-item .menu-item-has-children{margin-left:0;margin-right:0;padding-bottom:10px}
 .main-nav-vertical .main-nav__link,.main-nav-vertical .menu-item a{font-weight:700}
 .main-nav-vertical .main-nav__list--lvl2,.main-nav-vertical .main-nav__list .sub-menu{margin:0;left:100%;top:-7px !important}

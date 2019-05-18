@@ -34,7 +34,7 @@
 
 .post-block-15__header {
   @include indents-zero;
-  text-align: right;
+  //text-align: right;
   //margin-top: 22px;
   //margin-left: 30px;
   font-family: $fonts-secondary;
@@ -70,7 +70,7 @@
   font-size: 12px;
   font-family: $fonts-primary;
   color: var(--main-text-color);
-  text-align: right;
+  //text-align: right;
   a {
 	position: relative;
 
@@ -115,3 +115,9 @@
   font-family: $fonts-primary;
   color: var(--main-text-color);
 }
+
+.post-block-15__widget-link-wrapper {
+  text-align: left;
+  padding-bottom: 20px;
+}
+

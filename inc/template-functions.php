@@ -595,7 +595,7 @@ function my_own_body_classes($classes)
 {
 	global $theme_options;
 	if (class_exists('ReduxFramework')) {
-		if ($theme_options['portfolio-template-default'] == '2' || is_page_template('template-parts/page_portfolio_grid.php')) {
+		if ($theme_options['portfolio-template-default'] == '2' && is_page_template('page_portfolio.php')) {
 			if ($theme_options['portfolio-show-filter'] == '1') {
 				$classes[] = 'body-right-margin';
 			}
