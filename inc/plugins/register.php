@@ -98,6 +98,18 @@ function bcn_register_required_plugins() {
 			'slug'      => 'add-to-any',
 			'required'  => true,
 		),
+		// This is an example of how to include a plugin from the WordPress Plugin Repository.
+		array(
+			'name'      => 'cmb2',
+			'slug'      => 'cmb2',
+			'required'  => true,
+		),
+
+		array(
+			'name'      => 'Contact Form 7',
+			'slug'      => 'contact-form-7',
+			'required'  => true,
+		),
 	);
 
 	/*

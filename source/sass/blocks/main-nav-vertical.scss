@@ -118,14 +118,14 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-right: 14px;
-  margin-left: 14px;
+  //margin-right: 14px;
+  //margin-left: 14px;
   list-style: none;
   white-space: nowrap;
 
   @media (min-width: $tablet-width) {
     padding-bottom: 0;
-    &--active a::before, .current-menu-item {
+    &--active a::before, .current-menu-item  a::before {
       content: "";
       position: absolute;
       left: 0;
@@ -134,7 +134,7 @@
       height: 1px;
       width: 100%;
       background-color: var(--header-text-color);
-      opacity: 1;
+      opacity: 0.3;
     }
 
     &--parrent, .menu-item-has-children {

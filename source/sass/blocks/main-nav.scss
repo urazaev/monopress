@@ -171,8 +171,8 @@
   list-style: none;
   white-space: nowrap;
 
-  &--opened, &-opened {
-	@media (max-width: $mobile-width-only) {
+  @media (max-width: $mobile-width-only) {
+	&--opened, &-opened {
 	  padding-bottom: 0;
 	}
   }
@@ -278,7 +278,7 @@
   height: auto;
   padding-top: 8px;
   padding-bottom: 8px;
-  background-color: var(--subnav-background);
+  //background-color: var(--subnav-background);
 
   @media (max-width: $mobile-width-only) {
 	padding-bottom: 0;
@@ -308,7 +308,7 @@
 	height: auto;
 	padding-top: 8px;
 	padding-bottom: 8px;
-	background-color: var(--subnav-background);
+	//background-color: var(--subnav-background);
 	z-index: 200;
   }
 

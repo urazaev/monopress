@@ -1,7 +1,7 @@
 <?php
 /**
  * The main template file
- *
+ * Template Name: Main page template
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
  * It is used to display a page when nothing more specific matches a query.
@@ -15,10 +15,18 @@
 global $theme_options;
 
 get_header();
+
+
+$page_sidebar =  get_post_meta(get_the_ID(),'meta_page-template-sidebar',true);
+
+if (!isset($page_sidebar) || $page_sidebar == '-1' || $page_sidebar == '') {
+	$page_sidebar = isset( $theme_options['page-template-sidebar'] ) ? $theme_options['page-template-sidebar'] : '1';
+}
+
 ?>
 
 	<main class="page-main page-main--home-02 sidebar-parent" id="main">
-		<?php if ($theme_options['main-page-sidebar'] == 2) {
+		<?php if ($page_sidebar == 2) {
 			get_sidebar();
 		}
 		?>
@@ -295,7 +303,7 @@ get_header();
 
 		</div>
 
-		<?php if ($theme_options['main-page-sidebar'] == 3) {
+		<?php if ($page_sidebar == 3) {
 			get_sidebar();
 		} ?>
 

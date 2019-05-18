@@ -63,30 +63,7 @@ if (!function_exists('bcn_setup')) :
 			'caption',
 		));
 
-		// Set up the WordPress core custom background feature.
-//		add_theme_support( 'custom-background', apply_filters( 'bcn_custom_background_args', array(
-//			'default-color' => 'ffffff',
-//			'default-image' => '',
-//		) ) );
 
-		// Add theme support for selective refresh for widgets.
-//		add_theme_support( 'customize-selective-refresh-widgets' );
-
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
-//		add_theme_support( 'custom-logo', array(
-//			'height'      => 250,
-//			'width'       => 250,
-//			'flex-width'  => true,
-//			'flex-height' => true,
-//		)
-//        );
-
-
-//        add_action('admin_enqueue_scripts', 'dfd_themes_admin_scripts');
 	}
 endif;
 add_action('after_setup_theme', 'bcn_setup');
@@ -190,7 +167,6 @@ add_action('widgets_init', 'bcn_widgets_init');
 function bcn_scripts()
 {
 	wp_enqueue_style('bcn-style', get_stylesheet_uri());
-
 	wp_enqueue_style('bcn-theme-style', get_template_directory_uri() . '/css/style.min.css', array(), time());
 
 	//    header libraries
@@ -201,13 +177,10 @@ function bcn_scripts()
 	wp_enqueue_script('bcn-library-jquery-2.2.4', get_template_directory_uri() . '/js/libraries/jquery-2.2.4.min.js', array(), time());
 	wp_enqueue_script('bcn-library-css-var-polyfill', get_template_directory_uri() . '/js/libraries/css-var-polyfill.min.js', array(), time(), true);
 	wp_enqueue_script('bcn-library-sticky-sidebar', get_template_directory_uri() . '/js/libraries/sticky-sidebar.min.js', array(), time(), true);
-//	wp_enqueue_script('bcn-library-sticky-sidebar-jquery', get_template_directory_uri() . '/js/libraries/jquery.sticky-sidebar.min.js', array(), time(), true);
 	wp_enqueue_script('bcn-library-slick', get_template_directory_uri() . '/js/libraries/slick.min.js', array(), time(), true);
 	wp_enqueue_script('bcn-library-resizesensor', get_template_directory_uri() . '/js/libraries/resizesensor.min.js', array(), time(), true);
 
 	//    scripts
-//    wp_enqueue_script('bcn-navigation', get_template_directory_uri() . '/js/navigation.js', array(),  time(), true);
-//    wp_enqueue_script('bcn-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(),  time(), true);
 	wp_enqueue_script('bcn-app-min', get_template_directory_uri() . '/js/app.min.js', array(), time(), true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -259,12 +232,19 @@ if (defined('JETPACK__VERSION')) {
  * Enqueue TGMPA
  */
 
-require_once get_parent_theme_file_path( '/inc/plugins/register.php' );
+require_once get_template_directory() . '/inc/plugins/register.php';
 
 /**
  * Enqueue MerlinWP.
  */
 
-require_once get_parent_theme_file_path( '/inc/merlin/vendor/autoload.php' );
-require_once get_parent_theme_file_path( 'inc/merlin/class-merlin.php' );
-require_once get_parent_theme_file_path( 'inc/merlin-config.php' );
+require_once get_template_directory() . '/inc/merlin/vendor/autoload.php';
+require_once get_template_directory() . '/inc/merlin/class-merlin.php';
+require_once get_template_directory() . '/inc/merlin-config.php';
+
+/**
+ * Enqueue Custom Metaboxes
+ */
+
+//require_once get_template_directory() . '/inc/cmb2/init.php';
+//require_once get_template_directory() . '/inc/cmb2/example-functions.php';

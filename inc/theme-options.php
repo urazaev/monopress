@@ -476,7 +476,7 @@ Redux::setSection($opt_name, array(
 		),
 		array(
 			'required' => array('main-menu-enabled', '=', '1'),
-			'id' => 'main-menu-show',
+			'id' => 'main-menu-select',
 			'type' => 'select',
 			'data' => 'menus',
 			'title' => __('Header menu (main)', 'bcn'),
@@ -1564,15 +1564,15 @@ Redux::setSection($opt_name, array(
 			'options' => array(
 				'1' => array(
 					'alt' => '1 Column',
-					'img' => get_template_directory_uri() . '/images/admin/preview-01.jpg'
+					'img' => get_template_directory_uri() . '/images/admin/layout-single-post-1.png'
 				),
 				'2' => array(
 					'alt' => '2 Column Left',
-					'img' => get_template_directory_uri() . '/images/admin/preview-02.jpg'
+					'img' => get_template_directory_uri() . '/images/admin/layout-single-post-2.png'
 				),
 				'3' => array(
 					'alt' => '2 Column Right',
-					'img' => get_template_directory_uri() . '/images/admin/preview-03.jpg'
+					'img' => get_template_directory_uri() . '/images/admin/layout-single-post-3.png'
 				),
 				'default' => '3',
 // Todo: set the layouts for default site post template

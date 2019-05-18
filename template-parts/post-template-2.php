@@ -9,9 +9,18 @@
 
 global $theme_options;
 
+$post_layout_meta = get_post_meta( get_the_ID(), 'meta_post-template-default', true );
+$post_sidebar_meta = get_post_meta( get_the_ID(), 'meta_post-sidebar', true );
+
+$post_layout_theme_options = isset($theme_options['post-template-default']) ? $theme_options['post-template-default'] : '';
+$post_sidebar_theme_options = isset($theme_options['post-sidebar']) ? $theme_options['post-sidebar'] : '';
+
+$post_layout = isset($post_layout_meta)&&($post_layout_meta!='') ? $post_layout_meta : $post_layout_theme_options;
+$post_sidebar = isset($post_sidebar_meta)&&($post_sidebar_meta!='') ? $post_sidebar_meta : $post_sidebar_theme_options;
+
 ?>
 
-<section class="post-block-15 <?php if ($theme_options['post-sidebar'] == 1) {
+<section class="post-block-15 <?php if ($post_sidebar == 1) {
 	echo "col-md-12";
 } else {
 	echo "col-md-9";
