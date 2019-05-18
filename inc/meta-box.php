@@ -4,42 +4,6 @@
  *
  * @package bcn
  */
-//
-//function bcn_get_meta_box($meta_boxes)
-//{
-//	$prefix = 'bcn_meta_';
-//
-////	 Page meta boxes
-//
-//	$meta_boxes[] = array(
-//		'id' => 'page_template',
-//		'title' => esc_html__('Page Template Settings', 'bcn'),
-//		'post_types' => array('page'),
-//		'context' => 'advanced',
-//		'priority' => 'default',
-//		'autosave' => 'false',
-//		'fields' => array(
-//			array(
-//				'id' => $prefix . 'sidebar',
-//				'type' => 'image_select',
-//				'name' => esc_html__('Sidebar position', 'bcn'),
-//				'force_delete' => 'false',
-//				'max_file_uploads' => '4',
-//				'options' => array(
-//					'-1' => get_template_directory_uri() . '/images/admin/layout-default.png',
-//					'1' => get_template_directory_uri() . '/images/admin/layout-no-sidebar.png',
-//					'2' => get_template_directory_uri() . '/images/admin/layout-left-sidebar.png',
-//					'3' => get_template_directory_uri() . '/images/admin/layout-right-sidebar.png',
-//				),
-//			),
-//		),
-//	);
-//
-//	return $meta_boxes;
-//}
-//
-//add_filter('rwmb_meta_boxes', 'bcn_get_meta_box');
-
 
 /** START --- Initialize the CMB2 Metabox & Related Classes */
 function initialize_showcase_meta_box()
@@ -73,7 +37,7 @@ function cmb2_sample_metaboxes()
 
 	$cmb_page = new_cmb2_box(array(
 		'id' => 'page-sidebar',
-		'title' => esc_html__('Layout options', 'cmb2'),
+		'title' => esc_html__('Layout options', 'bcn'),
 		'object_types' => array('page',), // Post type
 		'context' => 'normal',
 		'priority' => 'high',
@@ -81,7 +45,7 @@ function cmb2_sample_metaboxes()
 	));
 
 	$cmb_page->add_field(array(
-		'name' => esc_html__('Sidebar position', 'cmb2'),
+		'name' => esc_html__('Sidebar position', 'bcn'),
 		'id' => 'meta_page-template-sidebar',
 		'type' => 'image_select',
 		'options' => array(
@@ -94,7 +58,7 @@ function cmb2_sample_metaboxes()
 
 	$cmb_main_page = new_cmb2_box(array(
 		'id' => 'main-page-title',
-		'title' => esc_html__('Main page options', 'cmb2'),
+		'title' => esc_html__('Main page options', 'bcn'),
 		'object_types' => array('page',), // Post type
 		'context' => 'normal',
 		'priority' => 'high',
@@ -105,17 +69,19 @@ function cmb2_sample_metaboxes()
 	));
 
 	$cmb_main_page->add_field(array(
-		'name' => esc_html__('Featured post categories', 'cmb2'),
+		'name' => esc_html__('Featured post categories', 'bcn'),
 		'id' => 'meta_main-page-featured-cat',
-		'type' => 'taxonomy_select',
+		'type' => 'taxonomy_multicheck',
 		'taxonomy' => 'category', // Taxonomy Slug
+//		'sanitization_cb' => 'sanitize_text_field',
+
 	));
 
 	$cmb_main_page->add_field(array(
-		'name' => esc_html__('Featured post limit', 'cmb2'),
+		'name' => esc_html__('Featured post limit', 'bcn'),
 		'id' => 'meta_main-page-featured-num',
 		'type' => 'text',
-		'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
+//		'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
 		// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
 		// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
 		// 'on_front'        => false, // Optionally designate a field to wp-admin only
@@ -123,7 +89,7 @@ function cmb2_sample_metaboxes()
 	));
 
 	$cmb_main_page->add_field(array(
-		'name' => esc_html__('Featured posts layout', 'cmb2'),
+		'name' => esc_html__('Featured posts layout', 'bcn'),
 		'id' => 'meta_main-page-featured-display',
 		'type' => 'image_select',
 		'options' => array(
@@ -137,7 +103,7 @@ function cmb2_sample_metaboxes()
 //		'default' => 'default',
 	));
 	$cmb_main_page->add_field(array(
-		'name' => esc_html__('Regular posts layout', 'cmb2'),
+		'name' => esc_html__('Regular posts layout', 'bcn'),
 		'id' => 'meta_main-page-display',
 		'type' => 'image_select',
 		'options' => array(
@@ -156,7 +122,7 @@ function cmb2_sample_metaboxes()
 
 	$cmb_post = new_cmb2_box(array(
 		'id' => 'post_metabox',
-		'title' => esc_html__('Post layout options', 'cmb2'),
+		'title' => esc_html__('Post layout options', 'bcn'),
 		'object_types' => array('post',), // Post type
 		'context' => 'normal',
 		'priority' => 'high',
@@ -166,7 +132,7 @@ function cmb2_sample_metaboxes()
 	));
 
 	$cmb_post->add_field(array(
-		'name' => esc_html__('Sidebar position', 'cmb2'),
+		'name' => esc_html__('Sidebar position', 'bcn'),
 		'id' => 'meta_post-sidebar',
 		'type' => 'image_select',
 		'options' => array(
@@ -179,7 +145,7 @@ function cmb2_sample_metaboxes()
 	));
 
 	$cmb_post->add_field(array(
-		'name' => esc_html__('Post layout', 'cmb2'),
+		'name' => esc_html__('Post layout', 'bcn'),
 		'id' => 'meta_post-template-default',
 		'type' => 'image_select',
 		'options' => array(
