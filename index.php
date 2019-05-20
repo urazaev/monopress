@@ -26,6 +26,10 @@ if (!isset($page_sidebar) || $page_sidebar == '-1' || $page_sidebar == '') {
 // Featured cat var
 $featured_category = get_post_meta(get_the_ID(), 'meta_main-page-featured-cat', true);
 
+if (!isset($featured_category) || $featured_category == '-1' || $featured_category == '') {
+	$featured_category = isset($theme_options['main-page-featured-cat']) ? $theme_options['main-page-featured-cat'] : '';
+}
+
 // Featured num
 $featured_num = get_post_meta(get_the_ID(), 'meta_main-page-featured-num', true);
 
@@ -108,7 +112,7 @@ if (!isset($regular_layout) || $regular_layout == '-1' || $regular_layout == '')
 								// WP_Query arguments
 								$args = array(
 									'ignore_sticky_posts' => true,
-									'order' => 'ASC',
+									'order' => 'DESC',
 									'orderby' => 'date',
 									'post_type' => array('post'),
 									'cat' => $featured_category,

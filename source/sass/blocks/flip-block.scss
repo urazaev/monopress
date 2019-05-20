@@ -20,7 +20,12 @@
   //padding-top: 80px;
   left: 0;
   width: 100%;
-
+  .main-nav__item:hover .main-nav__list--lvl2, .menu-item-has-children:hover .sub-menu {
+	@media (min-width: $tablet-width) {
+	  position: relative;
+	  top: 0;
+	}
+  }
   .menu {
 	display: flex;
 	flex-direction: column;

@@ -40,16 +40,16 @@
   font-family: $fonts-secondary;
   line-height: 1.4;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 2.2rem;
   margin-bottom: 10px;
 
   @media (min-width: $tablet-width) {
 
-	font-size: 1.57vw;
+	//font-size: 2.2rem;
   }
 
   @media (min-width: $large-desktop-width) {
-	font-size: 25px;
+	//font-size: 2.2rem;
   }
 }
 
