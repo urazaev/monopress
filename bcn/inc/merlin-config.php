@@ -95,7 +95,7 @@ $wizard = new Merlin(
 		'ready-action-link'        => esc_html__( 'Extras', 'bcn' ),
 		'ready-big-button'         => esc_html__( 'View your website', 'bcn' ),
 		'ready-link-1'             => sprintf( '<a href="%1$s" target="_blank">%2$s</a>', 'https://wordpress.org/support/', esc_html__( 'Explore WordPress', 'bcn' ) ),
-		'ready-link-2'             => sprintf( '<a href="%1$s" target="_blank">%2$s</a>', 'https://themebeans.com/contact/', esc_html__( 'Get Theme Support', 'bcn' ) ),
+		'ready-link-2'             => sprintf( '<a href="%1$s" target="_blank">%2$s</a>', 'https://urazaev.com/contact/', esc_html__( 'Get Theme Support', 'bcn' ) ),
 		'ready-link-3'             => sprintf( '<a href="%1$s">%2$s</a>', admin_url( 'customize.php' ), esc_html__( 'Start Customizing', 'bcn' ) ),
 	)
 );
@@ -109,10 +109,9 @@ $wizard = new Merlin(
 function merlin_import_files() {
 	return array(
 		array(
-			'import_file_name'           => 'Demo 1',
+			'import_file_name'           => 'Demo 1 (Travel)',
 			'import_file_url'            => 'http://bcn/bcn_content_first_demo.xml',
 			'import_widget_file_url'     => 'http://bcn/bcn_widgets_first_demo.json',
-			//'import_customizer_file_url' => 'http://www.your_domain.com/merlin/customizer.dat',
 			'import_redux'               => array(
 				array(
 					'file_url'    => 'http://bcn/bcn_redux_first_demo.json',
@@ -123,60 +122,44 @@ function merlin_import_files() {
 //			'import_notice'              => __( 'A special note for this import.', 'bcn' ),
 			'preview_url'                => 'http://bcnthemes.com/demo-1',
 		),
-//
-//		array(
-//			'import_file_name'           => 'Test demo 2',
-//			'import_file_url'            => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/wordpress-96733-403878cloudwaysappscom.wordpress.multi-cloud.xml',
-//			'import_widget_file_url'     => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/bcnthemes.com-wp-real-estate-7-multi-demo-widgets.json',
-//			//'import_customizer_file_url' => 'http://www.your_domain.com/merlin/customizer.dat',
-//			'import_redux'               => array(
-//				array(
-//					'file_url'    => 'https://s3-us-west-2.amazonaws.com/re7-demo-files/redux_options_ct_options_multi_demo.json',
-//					'option_name' => 'ct_options',
-//				),
-//			),
-//			'import_preview_image_url'   => 'http://bcnthemes.com/wp-real-estate-7/multi-demo/wp-content/plugins/aqua-style-switcher/images/screenshots/multi-slider-screenshot.jpg',
-//			'import_notice'              => __( 'A special note for this import.', 'bcn' ),
-//			'preview_url'                => 'http://bcnthemes.com/wp-real-estate-7/multi-demo',
-//		),
 	);
 }
 add_filter( 'merlin_import_files', 'merlin_import_files' );
-
-function merlin_after_import_setup( $selected_index ) {
-
-	// Assign menus to their locations.
-	$main_menu = get_term_by( 'name', 'Primary', 'nav_menu' );
-	$footer_menu = get_term_by( 'name', 'Footer', 'nav_menu' );
-
-	set_theme_mod( 'nav_menu_locations', array(
-			'primary_left' => $main_menu->term_id,
-			'primary_right' => $main_menu->term_id,
-			'primary_full_width' => $main_menu->term_id,
-			'footer' => $footer_menu->term_id,
-		)
-	);
-
-	// Assign front page to specific imports
-	if ( 7 === $selected_index ) {
-		$front_page_id = get_page_by_title( 'Homepage - Parallax' );
-		update_option( 'show_on_front', 'page' );
-		update_option( 'page_on_front', $front_page_id->ID );
-	}
-	else {
-		// Assign front page "Home" for the rest of the imports
-		$front_page_id = get_page_by_title( 'Home' );
-		update_option( 'show_on_front', 'page' );
-		update_option( 'page_on_front', $front_page_id->ID );
-	}
-
-}
-add_action( 'merlin_after_all_import', 'merlin_after_import_setup' );
-
-function ct_merlin_unset_default_widgets_args( $widget_areas ) {
-	$widget_areas = array(
-		'listings-single-right' => array(),
-	);
-	return $widget_areas;
-}
-add_filter( 'merlin_unset_default_widgets_args', 'ct_merlin_unset_default_widgets_args' );
+//
+//function merlin_after_import_setup( $selected_index ) {
+//
+//	// Assign menus to their locations.
+//	$main_menu = get_term_by( 'name', 'Primary', 'nav_menu' );
+//	$footer_menu = get_term_by( 'name', 'Footer', 'nav_menu' );
+//
+//	set_theme_mod( 'nav_menu_locations', array(
+//			'primary_left' => $main_menu->term_id,
+//			'primary_right' => $main_menu->term_id,
+//			'primary_full_width' => $main_menu->term_id,
+//			'footer' => $footer_menu->term_id,
+//		)
+//	);
+//
+//	// Assign front page to specific imports
+//	if ( 7 === $selected_index ) {
+//		$front_page_id = get_page_by_title( 'Homepage - Parallax' );
+//		update_option( 'show_on_front', 'page' );
+//		update_option( 'page_on_front', $front_page_id->ID );
+//	}
+//	else {
+//		// Assign front page "Home" for the rest of the imports
+//		$front_page_id = get_page_by_title( 'Home' );
+//		update_option( 'show_on_front', 'page' );
+//		update_option( 'page_on_front', $front_page_id->ID );
+//	}
+//
+//}
+//add_action( 'merlin_after_all_import', 'merlin_after_import_setup' );
+//
+//function ct_merlin_unset_default_widgets_args( $widget_areas ) {
+//	$widget_areas = array(
+//		'listings-single-right' => array(),
+//	);
+//	return $widget_areas;
+//}
+//add_filter( 'merlin_unset_default_widgets_args', 'ct_merlin_unset_default_widgets_args' );

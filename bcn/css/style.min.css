@@ -2120,7 +2120,7 @@ body.header-shadow{background-color:#fff}
 .loading-spinner__item .c3:before{-webkit-animation-delay:.6s;animation-delay:.6s}
 .loading-spinner__item .c4:before{-webkit-animation-delay:.9s;animation-delay:.9s}
 .portfolio{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;min-height:100%;position:relative}
-.portfolio--masonry{width:100%;padding:30px;-ms-flex-preferred-size:0;flex-basis:0}
+.portfolio--masonry{width:100%;padding:30px}
 .portfolio--masonry .addtoany_shortcode:nth-child(1){padding-top:30px;padding-bottom:0}
 .portfolio--masonry .uk-container{padding:0}
 .portfolio--masonry .portfolio__content{padding-left:0}
@@ -2920,7 +2920,7 @@ body.header-shadow::before{content:"";left:0;right:0;top:0;height:81px;position:
 .post-text-block-08__header{font-size:1vw}
 .post-text-block-20__header{font-size:1.26vw;margin-top:24px}
 .post-text-block-20__social-wrapper{padding:0}
-.post-widget{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;width:25%;min-height:100%}
+.post-widget{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;width:30%;min-height:100%}
 .post-widget--map{min-height:unset;width:71% !important;border-right:1px solid var(--dividing-line-color)}
 .sidebar.is-affixed .sidebar__inner{padding-top:0;padding-bottom:0}
 .post-widget__item{width:auto;padding-top:25px;padding-bottom:25px;padding-left:30px;padding-right:30px;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
@@ -2973,6 +2973,7 @@ body.header-shadow::before{content:"";left:0;right:0;top:0;height:81px;position:
 .flip-block{padding:40px;left:50%;width:50%}
 .flip-block--large{padding:40px;left:45%;width:55%}
 .flip-block__wrapper{padding:60px}
+.portfolio--masonry{-ms-flex-preferred-size:0;flex-basis:0}
 .portfolio--grid{padding:30px 30px 0 0;margin-top:0;-ms-flex-negative:0;flex-shrink:0;-ms-flex-preferred-size:0;flex-basis:0;min-height:100vh}
 .footer.footer-first .footer-logo{margin-bottom:30px}
 .footer.footer-second{padding-left:50px;padding-right:50px}
@@ -3549,6 +3550,7 @@ h2,.uk-h2{font-size:2rem}
 .menu{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .post-block-02 .navigation.pagination{padding-bottom:50px}
 .post-block-02__footer-bg{padding:30px}
+.post-widget{width:25%}
 .post-widget__title-link{font-weight:600}
 .social--right-bottom{margin-left:1180px}
 .widget .about_widget_wrapper h3{font-weight:600}

@@ -894,6 +894,13 @@ Redux::setSection($opt_name, array(
 			'title' => __('Instagram id', 'bcn'),
 			'subtitle' => __('Enter the ID as it appears after the instagram url ( ex. instagram.com/myID )', 'bcn'),
 		),
+//		array(
+//			'required' => array('instagram-on', '=', '1'),
+//			'id' => 'instagram-token',
+//			'type' => 'text',
+//			'title' => __('Instagram token', 'bcn'),
+//			'subtitle' => __('Enter the instagram token', 'bcn'),
+//		),
 		array(
 			'required' => array('instagram-on', '=', '1'),
 			'id' => 'instagram-images',
@@ -1263,7 +1270,6 @@ Redux::setSection($opt_name, array(
 //	TODO: for the newest version
 	),
 ));
-
 
 
 Redux::setSection($opt_name, array(

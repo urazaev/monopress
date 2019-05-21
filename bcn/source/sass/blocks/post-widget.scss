@@ -6,8 +6,11 @@
 
   @media (min-width: $tablet-width) {
 	flex-direction: column;
-	width: 25%;
+	width: 30%;
 	min-height: 100%;
+  }
+  @media (min-width: $desktop-width) {
+	width: 25%;
   }
 
   .sidebar__inner {
