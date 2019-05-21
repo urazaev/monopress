@@ -110,17 +110,17 @@ function merlin_import_files() {
 	return array(
 		array(
 			'import_file_name'           => 'Demo 1 (Travel)',
-			'import_file_url'            => 'http://bcn/bcn_content_first_demo.xml',
-			'import_widget_file_url'     => 'http://bcn/bcn_widgets_first_demo.json',
+			'import_file_url'            => 'http://bcn.urazaev.com/demos/bcn_content_first_demo.xml',
+			'import_widget_file_url'     => 'http://bcn.urazaev.com/demos/bcn_widgets_first_demo.json',
 			'import_redux'               => array(
 				array(
-					'file_url'    => 'http://bcn/bcn_redux_first_demo.json',
+					'file_url'    => 'http://bcn.urazaev.com/demos/bcn_redux_first_demo.json',
 					'option_name' => 'theme_options',
 				),
 			),
 //			'import_preview_image_url'   => 'http://bcnthemes.com/wp-real-estate-7/multi-demo/wp-content/plugins/aqua-style-switcher/images/screenshots/multi-slider-screenshot.jpg',
 //			'import_notice'              => __( 'A special note for this import.', 'bcn' ),
-			'preview_url'                => 'http://bcnthemes.com/demo-1',
+			'preview_url'                => 'http://bcn.urazaev.com/',
 		),
 	);
 }

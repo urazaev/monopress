@@ -2086,6 +2086,9 @@ body.header-shadow{background-color:#fff}
 .vertical-main-sidebar__logo{font-size:30px;font-family:var(--fonts-secondary);color:var(--sidebar-text-color);text-decoration:none;text-transform:uppercase;-webkit-transform:translateX(-50%);transform:translateX(-50%);-webkit-transition:200ms;transition:200ms;margin-top:-8px}
 .vertical-main-sidebar__logo:hover{opacity:.8}
 .sidebar{will-change:min-height;min-height:100vh}
+.sidebar .widget-title{position:relative;background-color:transparent !important;color:black;border-bottom:1px solid #000}
+.sidebar .widget-title::before{content:"";width:1px;background-color:black;height:10px;display:inline-block;position:absolute;left:0;bottom:0}
+.sidebar .widget-title::after{content:"";width:1px;background-color:black;height:10px;display:inline-block;position:absolute;right:0;bottom:-10px}
 .sidebar h2{font-family:var(--fonts-secondary);background-color:#212121;color:#fff;padding:10px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:30px}
 .sidebar__inner{-webkit-transform:translate(0,0);transform:translate(0,0);-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);will-change:position,transform}
 .sidebar-parent .sidebar{-webkit-box-ordinal-group:3;-ms-flex-order:2;order:2}

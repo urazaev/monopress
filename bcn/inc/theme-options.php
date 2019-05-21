@@ -2356,12 +2356,13 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-sidebar-titles-bg',
 			'type' => 'color',
-			'title' => __('Sidebar titles background color', 'bcn'),
+			'title' => __('Sidebar titles border color', 'bcn'),
 			'subtitle' => __('Select sidebar titles background color', 'bcn'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
-				'background-color' => '.sidebar .widget-title',
+				'background-color' => '.sidebar .widget-title::before, .sidebar .widget-title::after',
+				'border-bottom-color' => '.sidebar .widget-title',
 			),
 		),
 

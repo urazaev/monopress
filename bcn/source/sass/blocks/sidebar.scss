@@ -1,6 +1,37 @@
 .sidebar {
   will-change: min-height;
   min-height: 100vh;
+  .widget-title {
+	position: relative;
+	background-color: transparent !important;
+	color: black;
+	border-bottom: 1px solid #000000;
+
+	&::before {
+	  content: "";
+	  width: 1px;
+	  background-color: black;
+	  height: 10px;
+	  display: inline-block;
+	  position: absolute;
+	  left: 0;
+	  bottom: 0;
+
+	}
+	&::after {
+
+	  content: "";
+	  width: 1px;
+	  background-color: black;
+	  height: 10px;
+	  display: inline-block;
+	  position: absolute;
+	  right: 0;
+	  bottom: -10px;
+
+	}
+
+  }
 
   h2 {
 	font-family: var(--fonts-secondary);
