@@ -69,7 +69,7 @@ $post_sidebar = isset($post_sidebar_meta)&&($post_sidebar_meta!='') ? $post_side
 					$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button button--blue' . $category->slug . '">' . $category->name . '</a>';
 					$i++;
 				}
-				echo $thelist; ?>
+				echo do_shortcode($thelist); ?>
 
 				</span>
 			<?php }
@@ -205,7 +205,7 @@ $post_sidebar = isset($post_sidebar_meta)&&($post_sidebar_meta!='') ? $post_side
 								$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button button--sm ' . $category->slug . '">' . $category->name . '</a>';
 								if (++$i == 2) break;
 							}
-							echo $thelist; ?>
+							echo do_shortcode($thelist); ?>
 
 						</span>
 

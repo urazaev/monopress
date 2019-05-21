@@ -1210,43 +1210,6 @@ Redux::setSection($opt_name, array(
 			'subtitle' => __('Show or hide the article title on post pages.', 'bcn'),
 			'default' => true,
 		),
-		array(
-			'id' => 'page-template',
-			'type' => 'section',
-			'title' => __('Page template', 'bcn'),
-			'subtitle' => __('Select the page sidebar position.', 'bcn'),
-			'indent' => true, // Indent all options below until the next 'section' option is set.
-		),
-		array(
-			'id' => 'page-template-sidebar',
-			'type' => 'image_select',
-			'title' => __('Sidebar position', 'bcn'),
-			'subtitle' => __('Sidebar position and custom sidebars.', 'bcn'),
-			'options' => array(
-				'1' => array(
-					'alt' => 'No sidebar',
-					'img' => get_template_directory_uri() . '/images/admin/layout-no-sidebar.png'
-
-				),
-				'2' => array(
-					'alt' => 'Left sidebar',
-					'img' => get_template_directory_uri() . '/images/admin/layout-left-sidebar.png'
-				),
-				'3' => array(
-					'alt' => 'Right sidebar',
-					'img' => get_template_directory_uri() . '/images/admin/layout-right-sidebar.png'
-				),
-			),
-			'default' => '2'
-		),
-		array(
-			'id' => 'page-template-comments',
-			'type' => 'switch',
-			'title' => __('Disable comments on pages', 'bcn'),
-			'subtitle' => __('Enable or disable the comments on pages, on the entire site. This option is disabled by default', 'bcn'),
-			'default' => false,
-		),
-
 
 //		array(
 //			'id' => 'woocommerce-template',
@@ -1299,6 +1262,47 @@ Redux::setSection($opt_name, array(
 //		),
 //	TODO: for the newest version
 	),
+));
+
+
+
+Redux::setSection($opt_name, array(
+	'title' => __('Page template', 'bcn'),
+	'id' => 'page-template-title',
+	'desc' => __('Set the default layout for page template.', 'bcn'),
+	'subsection' => true,
+	'fields' => array(
+
+		array(
+			'id' => 'page-template-sidebar',
+			'type' => 'image_select',
+			'title' => __('Sidebar position', 'bcn'),
+			'subtitle' => __('Sidebar position and custom sidebars.', 'bcn'),
+			'options' => array(
+				'1' => array(
+					'alt' => 'No sidebar',
+					'img' => get_template_directory_uri() . '/images/admin/layout-no-sidebar.png'
+
+				),
+				'2' => array(
+					'alt' => 'Left sidebar',
+					'img' => get_template_directory_uri() . '/images/admin/layout-left-sidebar.png'
+				),
+				'3' => array(
+					'alt' => 'Right sidebar',
+					'img' => get_template_directory_uri() . '/images/admin/layout-right-sidebar.png'
+				),
+			),
+			'default' => '2'
+		),
+		array(
+			'id' => 'page-template-comments',
+			'type' => 'switch',
+			'title' => __('Disable comments on pages', 'bcn'),
+			'subtitle' => __('Enable or disable the comments on pages, on the entire site. This option is disabled by default', 'bcn'),
+			'default' => false,
+		),
+	)
 ));
 
 Redux::setSection($opt_name, array(
@@ -1457,7 +1461,7 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Post settings', 'bcn'),
+	'title' => __('Post template', 'bcn'),
 	'id' => 'post-settings',
 	'subsection' => true,
 	'fields' => array(
@@ -1740,7 +1744,7 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Portfolio settings', 'bcn'),
+	'title' => __('Portfolio template', 'bcn'),
 	'id' => 'portfoilo',
 //    'desc' => __('Default portfolio template ', 'bcn'),
 	'subtitle' => __('.', 'bcn'),
@@ -3350,8 +3354,8 @@ Redux::setSection($opt_name, array(
 			'id'       => 'custom-code-js',
 			'type'     => 'ace_editor',
 			'full_width' => true,
-			'title'    => __( 'JS Code', 'bcn-theme' ),
-			'subtitle' => __( 'Paste your JS code here.', 'bcn-theme' ),
+			'title'    => __( 'JS Code', 'bcn' ),
+			'subtitle' => __( 'Paste your JS code here.', 'bcn' ),
 			'mode'     => 'javascript',
 			'theme'    => 'chrome',
 			'desc'     => 'Add custom javascript easly, using this editor. Please do not include the &lt;script&gt &lt;/script&gt',

@@ -294,7 +294,7 @@ class up_walker_comment extends Walker
 	{
 		$tag = ('div' == $args['style']) ? 'div' : 'li';
 		?>
-		<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class('', $comment); ?>>
+		<<?php echo esc_html($tag); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class('', $comment); ?>>
 		<div class="comment-body comments-block__item">
 			<?php _e('Pingback:'); ?><?php comment_author_link($comment); ?><?php edit_comment_link(__('Edit'), '<span class="edit-link">', '</span>'); ?>
 		</div>
@@ -330,7 +330,7 @@ class up_walker_comment extends Walker
 		}
 
 		?>
-		<<?php echo $tag; ?><?php comment_class($this->has_children ? 'parent' : '', $comment); ?> id="comment-<?php comment_ID(); ?>">
+		<<?php echo esc_html($tag); ?><?php comment_class($this->has_children ? 'parent' : '', $comment); ?> id="comment-<?php comment_ID(); ?>">
 		<?php if ('div' != $args['style']) : ?>
 		<div id="div-comment-<?php comment_ID(); ?>" class="comment-body comments-block__item">
 	<?php endif; ?>
@@ -422,7 +422,7 @@ class up_walker_comment extends Walker
 		}
 
 		?>
-		<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class($this->has_children ? 'parent' : '', $comment); ?>>
+		<<?php echo esc_html($tag); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class($this->has_children ? 'parent' : '', $comment); ?>>
 		<article id="div-comment-<?php comment_ID(); ?>" class="comment-body comments-block__item">
 			<div class="comments-block__wrapper">
 
@@ -595,7 +595,7 @@ function my_own_body_classes($classes)
 {
 	global $theme_options;
 	if (class_exists('ReduxFramework')) {
-		if ($theme_options['portfolio-template-default'] == '2' && is_page_template('page_portfolio.php')) {
+		if ($theme_options['portfolio-template-default'] == '2' && is_page_template('page_portfolio.php') || is_page_template('page_portfolio_grid.php') )  {
 			if ($theme_options['portfolio-show-filter'] == '1') {
 				$classes[] = 'body-right-margin';
 			}
@@ -631,7 +631,7 @@ function the_breadcrumb($outer_class = 'breadcrumbs')
 			<?php
 			if ($theme_options['template-settings-breadcrumbs-home'] == '1') {
 				echo '<a href="';
-				echo get_option('home');
+				echo home_url();
 				echo '">';
 				bloginfo('name');
 				echo '</a>';
@@ -642,10 +642,10 @@ function the_breadcrumb($outer_class = 'breadcrumbs')
 
 				// Check if the current page is a category, an archive or a single page. If so show the category or archive name.
 				if (is_category() || is_single()) {
-					echo $sep;
+					echo esc_html($sep);
 					the_category(', ');
 				} elseif (is_archive() || is_single()) {
-					echo $sep;
+					echo esc_html($sep);
 					if (is_day()) {
 						printf(__('%s', 'bcn'), get_the_date());
 					} elseif (is_month()) {
@@ -661,19 +661,19 @@ function the_breadcrumb($outer_class = 'breadcrumbs')
 			if ($theme_options['template-settings-breadcrumbs-title'] == '1') {
 				// If the current page is a single post, show its title with the separator
 				if (is_single()) {
-					echo $sep;
+					echo esc_html($sep);
 					the_title();
 				}
 
 				// If the current page is a static page, show its title.
 				if (is_page()) {
-					echo $sep;
+					echo esc_html($sep);
 					echo the_title();
 				}
 
 				// if you have a static page assigned to be you posts list page. It will find the title of the static page and display it. i.e Home >> Blog
 				if (is_home()) {
-					echo $sep;
+					echo esc_html($sep);
 					global $post;
 					$page_for_posts_id = get_option('page_for_posts');
 					if ($page_for_posts_id) {
@@ -697,44 +697,3 @@ function the_breadcrumb($outer_class = 'breadcrumbs')
 add_filter('excerpt_more', function ($more) {
 	return '...';
 });
-
-/**
- * pagination custom loop
- **/
-
-function pagination($pages = '', $range = 4)
-{
-	$showitems = ($range * 2)+1;
-
-	global $paged;
-	if(empty($paged)) $paged = 1;
-
-	if($pages == '')
-	{
-		global $wp_query;
-		$pages = $wp_query->max_num_pages;
-		if(!$pages)
-		{
-			$pages = 1;
-		}
-	}
-
-	if(1 != $pages)
-	{
-		echo "<div class=\"pagination\"><span>Page ".$paged." of ".$pages."</span>";
-		if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>&laquo; First</a>";
-		if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo; Previous</a>";
-
-		for ($i=1; $i <= $pages; $i++)
-		{
-			if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
-			{
-				echo ($paged == $i)? "<span class=\"current\">".$i."</span>":"<a href='".get_pagenum_link($i)."' class=\"inactive\">".$i."</a>";
-			}
-		}
-
-		if ($paged < $pages && $showitems < $pages) echo "<a href=\"".get_pagenum_link($paged + 1)."\">Next &rsaquo;</a>";
-		if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($pages)."'>Last &raquo;</a>";
-		echo "</div>\n";
-	}
-}

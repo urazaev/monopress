@@ -116,7 +116,7 @@ if (class_exists('ReduxFramework')) {
 					function loadArticle(pageNumber) {
 						$('a#inifiniteLoader').show('fast');
 						$.ajax({
-							url: "<?php bloginfo('wpurl') ?>/wp-admin/admin-ajax.php",
+							url: "<?php echo esc_url(site_url())?>/wp-admin/admin-ajax.php",
 							type: 'POST',
 							data: "action=infinite_scroll&page_no=" + pageNumber + '&loop_file=template-parts/post-block-02',
 							success: function (html) {

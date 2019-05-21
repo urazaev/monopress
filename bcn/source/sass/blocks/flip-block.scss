@@ -20,10 +20,31 @@
   //padding-top: 80px;
   left: 0;
   width: 100%;
+
   .main-nav__item:hover .main-nav__list--lvl2, .menu-item-has-children:hover .sub-menu {
 	@media (min-width: $tablet-width) {
 	  position: relative;
-	  top: 0;
+	  top: 5px;
+	  height: auto;
+	  margin-right: 30px;
+	  margin-top: 5px;
+	  padding-top: 8px;
+	  padding-bottom: 8px;
+	}
+  }
+  .main-nav__item, .menu-item {
+	padding-right: 30px;
+  }
+  .main-nav__item .main-nav__list--lvl2, .menu-item-has-children .sub-menu {
+	@media (min-width: $tablet-width) {
+	  display: block;
+	  position: relative;
+	  top: 5px;
+	  height: auto;
+	  margin-right: 30px;
+	  margin-top: 5px;
+	  padding-top: 8px;
+	  padding-bottom: 8px;
 	}
   }
   .menu {
@@ -54,7 +75,7 @@
 	align-items: flex-start;
   }
 
-  h1,h2,h3,h4,h5,h6 {
+  h1, h2, h3, h4, h5, h6 {
 	font-family: var(--fonts-secondary);
 	font-weight: bold;
   }

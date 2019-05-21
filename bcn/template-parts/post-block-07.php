@@ -46,7 +46,7 @@ global $theme_options;
 						$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button button--blue' . $category->slug . '">' . $category->name . '</a>';
 						$i++;
 					}
-					echo $thelist; ?>
+					echo do_shortcode($thelist); ?>
 
 				</span>
 	<figure class="post-block-07__img">

@@ -33,7 +33,7 @@ global $theme_options;
 		if ($thelist) {
 			?>
 			<span class="post-widget-link-wrapper search-page__link-wrapper">
-			<?php echo $thelist; ?>
+			<?php echo do_shortcode($thelist); ?>
 			</span>
 			<?php
 		}

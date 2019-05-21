@@ -114,7 +114,7 @@
   }
 }
 
-.main-nav-vertical .main-nav__item, .main-nav-vertical .menu-item  {
+.main-nav-vertical .menu-item  {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -125,17 +125,30 @@
 
   @media (min-width: $tablet-width) {
     padding-bottom: 0;
-    &--active a::before, .current-menu-item  a::before {
-	  position: relative;
-	  display: inline-block;
-	  margin-bottom: 4px;
-	  background: var(--header-text-color);
-	  width: 10px;
-	  transition: 0.5s;
-	  margin-right: 5px;
-    }
+	//&.sub-menu .current-menu-item > a::before {
+	//  position: relative;
+	//  display: inline-block;
+	//  margin-bottom: 4px;
+	//  background: var(--header-text-color);
+	//  width: 10px;
+	//  transition: 0.5s;
+	//  margin-right: 5px;
+	//}
+	//&.current-menu-item > a::before, &.current-menu-parent > a::before {
+	//  content: "";
+	//  position: absolute;
+	//  z-index: 200;
+	//  left: 0;
+	//  right: 0;
+	//  bottom: 0;
+	//  height: 1px;
+	//  width: 100%;
+	//  opacity: 0.8;
+	//  background-color: var(--header-text-color);
+	//  transition: all ease-in 0.3s;
+	//}
 
-    &--parrent, .menu-item-has-children {
+    .menu-item-has-children {
       margin-left: 0;
       margin-right: 0;
       padding-bottom: 10px;
@@ -144,7 +157,7 @@
 
 }
 
-.main-nav-vertical .main-nav__link, .main-nav-vertical .menu-item a {
+.main-nav-vertical .menu-item a {
   font-size: 14px;
   line-height: 1.375em;
   //line-height: 30px;
@@ -165,7 +178,7 @@
         list-style: none;
         width: 100%; */
 
-    &--lvl2, .sub-menu {
+    .sub-menu {
       //@include indents-zero;
 	  margin: 0;
       //padding-left: 8px;
@@ -178,14 +191,14 @@
   }
 }
 
-.main-nav-vertical > .main-nav__list > .main-nav__item, .main-nav-vertical > .main-nav__list > .menu-item {
+.main-nav-vertical > .main-nav__list > .menu-item {
   padding-left: 34px;
   @media (min-width: $tablet-width) {
     padding-left: 0;
   }
 }
 
-.main-nav-vertical .main-nav__item--parrent, .main-nav-vertical .menu-item-has-children {
+.main-nav-vertical .menu-item-has-children {
   min-width: 100%;
   text-align: left;
   @media (min-width: $tablet-width) {
@@ -195,7 +208,7 @@
   }
 }
 
-.main-nav-vertical .main-nav__list--lvl2, .main-nav-vertical .sub-menu {
+.main-nav-vertical .sub-menu {
 
   @media (min-width: $tablet-width) {
     position: absolute;
@@ -203,14 +216,14 @@
   }
 }
 
-.main-nav-vertical .main-nav__link, .main-nav-vertical .menu-item  a {
+.main-nav-vertical .menu-item  a {
   @include indents-zero;
   font-size: 14px;
   line-height: 30px;
   text-decoration: none;
 }
 
-.main-nav-vertical .main-nav__list--lvl2 .main-nav__link, .main-nav-vertical .sub-menu a {
+.main-nav-vertical .sub-menu a {
   font-weight: 400 !important;
   text-align: left;
 }

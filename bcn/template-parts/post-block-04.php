@@ -23,7 +23,7 @@ global $theme_options;
 							$thelist .= '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="button ' . $category->slug . '">' . $category->name . '</a>';
 							$i++;
 						}
-						echo $thelist; ?>
+						echo do_shortcode($thelist); ?>
 
 				  </span>
 	</p>

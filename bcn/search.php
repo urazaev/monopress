@@ -69,7 +69,7 @@ global $theme_options;
 		</section>
 
 		<?php if ($theme_options['category-pagination'] == 2) { ?>
-			<a id="inifiniteLoader"><img src="<?php bloginfo('template_directory');?>/images/ajax-loader.gif" alt="loading..."/>
+			<a id="inifiniteLoader"><img src="<?php echo esc_url(get_template_directory_uri())?>/images/ajax-loader.gif" alt="loading..."/>
 				Loading more...</a>
 		<?php }
 

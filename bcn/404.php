@@ -25,7 +25,7 @@ get_header();
 				<h1 class="post-block-06__header">
 					<?php
 					if (isset($theme_options['404-heading'])) {
-						echo esc_html__($theme_options['404-heading']);
+						echo esc_html($theme_options['404-heading']);
 
 					} else {
 						echo __("Oops! That page can&rsquo;t be found.", 'bcn');
@@ -37,7 +37,7 @@ get_header();
 				<p class="post-block-06__text">
 					<?php
 					if (isset($theme_options['404-text'])) {
-						echo esc_html__($theme_options['404-text']);
+						echo esc_html($theme_options['404-text']);
 
 					} else {
 						echo __("It looks like nothing was found at this location. Maybe try the link below or a search?", 'bcn');
@@ -49,7 +49,7 @@ get_header();
 					<a class="button button--big" href="
 						<?php
 					if (isset($theme_options['404-button-link'])) {
-						echo esc_html__($theme_options['404-button-link']);
+						echo esc_html($theme_options['404-button-link']);
 
 					} else {
 						echo "/";
@@ -58,7 +58,7 @@ get_header();
 
 					<?php
 					if (isset($theme_options['404-button-text'])) {
-						echo esc_html__($theme_options['404-button-text']);
+						echo esc_html($theme_options['404-button-text']);
 
 					} else {
 						echo "Go Home";
