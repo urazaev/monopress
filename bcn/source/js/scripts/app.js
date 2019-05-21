@@ -69,17 +69,15 @@ $(document).ready(function () {
 
  ************************/
 
-var parrentNavNode = $('.menu-item-has-children');
+var parrentNavNode = $('.menu-item-has-children>a');
 
 if ($(window).width() < 768) {
 	parrentNavNode.on('click', function (evt) {
 		evt.preventDefault();
 		// $(this).parent().toggleClass('main-nav__item--opened');
-		$(this).toggleClass('menu-item-has-children-opened').siblings('li').removeClass('main-nav__item--opened');
+		$(this).parent().toggleClass('menu-item-has-children-opened');
 	});
 }
-// TODO broken responsibe accesible
-
 parrentNavNode.parent().mouseout(function (evt) {
 	if ($(window).width() >= 768) {
 		$(this).removeClass('menu-item-has-children-opened');
