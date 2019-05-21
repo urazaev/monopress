@@ -45,7 +45,7 @@ $author_rss = get_the_author_meta('rss');
 		<?php if ($author_avatar) { ?>
 			<div class="col-sm-auto up-author-img">
 				<a href="<?php echo esc_url($author_url); ?>" rel="author">
-					<?php echo $author_avatar; ?>
+					<?php echo get_avatar(get_the_author_meta('user_email'), apply_filters('wpex_author_bio_avatar_size', 75)); ?>
 				</a>
 			</div>
 		<?php } ?>

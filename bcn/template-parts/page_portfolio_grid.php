@@ -60,8 +60,8 @@ get_header();
 						foreach ($terms as $term) { ?>
 
 							<div class="control-right__item uk-animation-slide-top-small"
-								 data-uk-filter-control="[data-type*='<?php echo $term->name; ?>']" style="">
-								<a class="control-right__link rotate " href="#"><?php echo $term->name; ?></a>
+								 data-uk-filter-control="[data-type*='<?php echo esc_html($term->name); ?>']" style="">
+								<a class="control-right__link rotate " href="#"><?php echo esc_html($term->name); ?></a>
 							</div>
 
 							<?php
@@ -118,8 +118,8 @@ get_header();
 					<?php $infos = get_post_custom_values('_url'); ?>
 
 
-					<li class="portfolio__item uk-first-column" data-type="<?php echo $tax; ?>"
-						data-name="<?php echo $post->ID ?>">
+					<li class="portfolio__item uk-first-column" data-type="<?php echo esc_html($tax); ?>"
+						data-name="<?php echo esc_html($post->ID); ?>">
 						<a class="portfolio__link uk-inline-clip uk-transition-toggle uk-dark"
 						   href="<?php echo get_the_post_thumbnail_url(); ?>"
 						   data-caption="<?php the_title(); ?>">

@@ -9,8 +9,8 @@ function cmb2_render_image_select($field, $escaped_value, $object_id, $object_ty
 	foreach ($field->options() as $value => $item) {
 		$selected = ($value === ($escaped_value == '' ? $default_value : $escaped_value)) ? 'checked="checked"' : '';
 		$image_select .= '<li class="cmb2-image-select ' . ($selected != '' ? 'cmb2-image-select-selected' : '') . '"><label for="' . $field->args['_id'] . esc_attr($value) . '">
-			<input ' . $conditional_value . $conditional_id . ' type="radio" id="' . $field->args['_id'] . esc_attr($value) . '" name="' . $field->args['_name'] . '" value="' . esc_attr($value) . '" ' . $selected . ' class="cmb2-option"><img class="" style=" width: auto; " alt="' . $item['alt'] . '" src="' . $item['img'] . '">
-			<br><span>' . esc_html($item['title']) . '</span></label></li>';
+<input ' . $conditional_value . $conditional_id . ' type="radio" id="' . $field->args['_id'] . esc_attr($value) . '" name="' . $field->args['_name'] . '" value="' . esc_attr($value) . '" ' . $selected . ' class="cmb2-option"><img class="" style=" width: auto; " alt="' . $item['alt'] . '" src="' . $item['img'] . '">
+<br><span>' . esc_html($item['title']) . '</span></label></li>';
 	}
 	$image_select .= '</ul>';
 	$image_select .= $field_type_object->_desc(true);

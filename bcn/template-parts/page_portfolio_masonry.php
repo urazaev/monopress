@@ -64,9 +64,9 @@ get_header();
 									if ($count > 0) {
 										foreach ($terms as $term) { ?>
 											<li class="portfolio__sort-item"
-												data-uk-filter-control="[data-type*='<?php echo $term->name; ?>']">
+												data-uk-filter-control="[data-type*='<?php echo esc_html($term->name); ?>']">
 												<a class="portfolio__sort-link"
-												   href="#"><?php echo $term->name; ?></a>
+												   href="#"><?php echo esc_html($term->name); ?></a>
 											</li>
 											<?php
 										}
@@ -117,8 +117,8 @@ get_header();
 
 					$infos = get_post_custom_values('_url'); ?>
 
-					<li class="portfolio__item" data-type="<?php echo $tax; ?>"
-						data-name="A<?php echo $post->ID ?>">
+					<li class="portfolio__item" data-type="<?php echo esc_html($tax); ?>"
+						data-name="A<?php echo esc_html($post->ID); ?>">
 						<a class="portfolio__link uk-inline-clip uk-transition-toggle uk-dark"
 						   href="<?php echo get_the_post_thumbnail_url(); ?>"
 						   data-caption="<?php the_title(); ?>">

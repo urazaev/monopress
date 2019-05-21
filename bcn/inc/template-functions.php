@@ -324,9 +324,9 @@ class up_walker_comment extends Walker
 
 		$commenter = wp_get_current_commenter();
 		if ($commenter['comment_author_email']) {
-			$moderation_note = __('Your comment is awaiting moderation.');
+			$moderation_note = __('Your comment is awaiting moderation.', 'bcn');
 		} else {
-			$moderation_note = __('Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved.');
+			$moderation_note = __('Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved.', 'bcn');
 		}
 
 		?>
@@ -349,7 +349,7 @@ class up_walker_comment extends Walker
 			?>
 		</div>
 		<?php if ('0' == $comment->comment_approved) : ?>
-		<em class="comment-awaiting-moderation"><?php echo $moderation_note; ?></em>
+		<em class="comment-awaiting-moderation"><?php echo esc_html($moderation_note); ?></em>
 		<br/>
 	<?php endif; ?>
 
@@ -416,9 +416,9 @@ class up_walker_comment extends Walker
 
 		$commenter = wp_get_current_commenter();
 		if ($commenter['comment_author_email']) {
-			$moderation_note = __('Your comment is awaiting moderation.');
+			$moderation_note = __('Your comment is awaiting moderation.', 'bcn');
 		} else {
-			$moderation_note = __('Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved.');
+			$moderation_note = __('Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved.', 'bcn');
 		}
 
 		?>
@@ -562,8 +562,8 @@ if (!function_exists('up_cat_pagination')) {
 			if ($theme_options['category-pagination'] == 1) {
 				the_posts_pagination(array(
 					'mid_size' => 2,
-					'prev_text' => __('«'),
-					'next_text' => __('»'),
+					'prev_text' => __('«', 'bcn'),
+					'next_text' => __('»', 'bcn'),
 				));
 			}
 		}
@@ -571,7 +571,7 @@ if (!function_exists('up_cat_pagination')) {
 }
 
 
-if (!function_exists('up_section_echo')) {
+if (!function_exists('up_section_return')) {
 
 	/**
 	 * get breadcrumbs
@@ -579,7 +579,7 @@ if (!function_exists('up_section_echo')) {
 	 * @param string $section_id for id name
 	 **/
 
-	function up_section_echo($section_class = 'section', $section_id = '')
+	function up_section_return($section_class = 'section', $section_id = '')
 	{
 		echo '<section class="' . $section_class . '" id="' . $section_id . '">';
 

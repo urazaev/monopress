@@ -130,8 +130,8 @@ get_header();
 				if ($theme_options['category-pagination'] == 1) {
 					the_posts_pagination(array(
 						'mid_size' => 2,
-						'prev_text' => __('«'),
-						'next_text' => __('»'),
+						'prev_text' => __('«', 'bcn'),
+						'next_text' => __('»', 'bcn'),
 					));
 				}
 

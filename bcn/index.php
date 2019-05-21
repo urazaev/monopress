@@ -310,8 +310,8 @@ if (!isset($regular_layout) || $regular_layout == '-1' || $regular_layout == '')
 
 					the_posts_pagination(array(
 						'mid_size' => 2,
-						'prev_text' => __('«'),
-						'next_text' => __('»'),
+						'prev_text' => __('«', 'bcn'),
+						'next_text' => __('»', 'bcn'),
 					));
 				}
 				?>
