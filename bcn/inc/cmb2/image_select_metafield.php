@@ -14,7 +14,8 @@ function cmb2_render_image_select($field, $escaped_value, $object_id, $object_ty
 	}
 	$image_select .= '</ul>';
 	$image_select .= $field_type_object->_desc(true);
-	echo $image_select;
+	echo apply_filters('the_content', wp_kses_post($image_select));
+
 }
 
 add_action('cmb2_render_image_select', 'cmb2_render_image_select', 10, 5);

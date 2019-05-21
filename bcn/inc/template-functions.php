@@ -296,7 +296,7 @@ class up_walker_comment extends Walker
 		?>
 		<<?php echo esc_html($tag); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class('', $comment); ?>>
 		<div class="comment-body comments-block__item">
-			<?php _e('Pingback:'); ?><?php comment_author_link($comment); ?><?php edit_comment_link(__('Edit'), '<span class="edit-link">', '</span>'); ?>
+			<?php _e('Pingback:', 'bcn'); ?><?php comment_author_link($comment); ?><?php edit_comment_link(__('Edit', 'bcn'), '<span class="edit-link">', '</span>'); ?>
 		</div>
 		<?php
 	}
@@ -343,7 +343,7 @@ class up_walker_comment extends Walker
 			<?php
 			/* translators: %s: comment author link */
 			printf(
-				__('%s <span class="says">says:</span>'),
+				__('%s <span class="says">says:</span>', 'bcn'),
 				sprintf('<cite class="fn">%s</cite>', get_comment_author_link($comment))
 			);
 			?>
@@ -356,11 +356,11 @@ class up_walker_comment extends Walker
 		<div class="comment-meta commentmetadata"><a href="<?php echo esc_url(get_comment_link($comment, $args)); ?>">
 				<?php
 				/* translators: 1: comment date, 2: comment time */
-				printf(__('%1$s at %2$s'), get_comment_date('', $comment), get_comment_time());
+				printf(__('%1$s at %2$s', 'bcn'), get_comment_date('', $comment), get_comment_time());
 				?>
 			</a>
 			<?php
-			edit_comment_link(__('(Edit)'), '&nbsp;&nbsp;', '');
+			edit_comment_link(__('(Edit)', 'bcn'), '&nbsp;&nbsp;', '');
 			?>
 		</div>
 
@@ -441,7 +441,7 @@ class up_walker_comment extends Walker
 						<?php
 						/* translators: %s: comment author link */
 						printf(
-							__('%s'),
+							__('%s', 'bcn'),
 							sprintf('<span class="fn">%s</span>', get_comment_author_link($comment))
 						);
 						?>
@@ -451,7 +451,7 @@ class up_walker_comment extends Walker
 						<time datetime="<?php comment_time('c'); ?>">
 							<?php
 							/* translators: 1: comment date, 2: comment time */
-							printf(__('%1$s at %2$s'), get_comment_date('', $comment), get_comment_time());
+							printf(__('%1$s at %2$s', 'bcn'), get_comment_date('', $comment), get_comment_time());
 							?>
 						</time>
 					</a>
@@ -472,7 +472,7 @@ class up_walker_comment extends Walker
 							);
 							?>
 
-							<?php edit_comment_link(__('Edit')); ?>
+							<?php edit_comment_link(__('Edit', 'bcn')); ?>
 
 						</span>
 					</div>
@@ -595,7 +595,7 @@ function my_own_body_classes($classes)
 {
 	global $theme_options;
 	if (class_exists('ReduxFramework')) {
-		if ($theme_options['portfolio-template-default'] == '2' && is_page_template('page_portfolio.php') || is_page_template('page_portfolio_grid.php') )  {
+		if ($theme_options['portfolio-template-default'] == '2' && is_page_template('page_portfolio.php') || is_page_template('page_portfolio_grid.php')) {
 			if ($theme_options['portfolio-show-filter'] == '1') {
 				$classes[] = 'body-right-margin';
 			}

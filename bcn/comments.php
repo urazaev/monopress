@@ -119,7 +119,7 @@ if (class_exists('ReduxFramework')) {
 				'comment_field' => '<p class="comment-form-comment">' .
 //					'<label for="comment">' . __('Let us know what you have to say:') . '</label>' .
 					'<textarea id="comment" name="comment" placeholder="' .
-					_x('Comment', 'bcn') .
+					_x('Comment', '', 'bcn') .
 					'" cols="45" rows="8" aria-required="true"></textarea>' .
 					'</p>',
 				'class_submit' => 'button',
