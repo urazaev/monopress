@@ -237,6 +237,7 @@ if (!isset($regular_layout) || $regular_layout == '-1' || $regular_layout == '')
 								'order' => 'DESK',
 								'orderby' => 'date',
 								'post_type' => array('post'),
+								'paged' => $paged
 							);
 
 							$regular = new WP_Query($args);

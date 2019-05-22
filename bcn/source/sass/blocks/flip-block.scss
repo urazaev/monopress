@@ -78,6 +78,10 @@
   h1, h2, h3, h4, h5, h6 {
 	font-family: var(--fonts-secondary);
 	font-weight: bold;
+	color: inherit;
+  }
+  .about_widget_txt {
+	margin-top: 20px;
   }
 }
 
