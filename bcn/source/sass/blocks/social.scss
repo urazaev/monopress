@@ -356,3 +356,6 @@
 	border-radius: 0;
   }
 }
+.addtoany_list a:not(.addtoany_special_service)>span {
+  border-radius: 0 !important;
+}

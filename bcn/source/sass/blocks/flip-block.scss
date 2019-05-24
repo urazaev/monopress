@@ -21,45 +21,12 @@
   left: 0;
   width: 100%;
 
-  .main-nav__item:hover .main-nav__list--lvl2, .menu-item-has-children:hover .sub-menu {
-	@media (min-width: $tablet-width) {
-	  position: relative;
-	  top: 5px;
-	  height: auto;
-	  margin-right: 30px;
-	  margin-top: 5px;
-	  padding-top: 8px;
-	  padding-bottom: 8px;
-	}
-  }
-  .main-nav__item, .menu-item {
-	padding-right: 30px;
-  }
-  .main-nav__item .main-nav__list--lvl2, .menu-item-has-children .sub-menu {
-	@media (min-width: $tablet-width) {
-	  display: block;
-	  position: relative;
-	  top: 5px;
-	  height: auto;
-	  margin-right: 30px;
-	  margin-top: 5px;
-	  padding-top: 8px;
-	  padding-bottom: 8px;
-	}
-  }
-  .menu {
-	display: flex;
-	flex-direction: column;
-	a {
-	  font-size: 29px;
-	  line-height: 1.3;
-	}
-  }
   @media (min-width: $tablet-width) {
 	padding: 40px;
 	left: 50%;
 	width: 50%;
   }
+
   &--large {
 	@media (min-width: $tablet-width) {
 	  padding: 40px;
@@ -67,12 +34,93 @@
 	  width: 55%;
 	}
   }
+
   &--open {
 	transform: translateX(0);
 	opacity: 1;
 	visibility: unset;
 	display: flex;
 	align-items: flex-start;
+  }
+
+  ul li {
+	list-style: none;
+  }
+  .post-widget__item:nth-child(odd), .post-widget__item:nth-child(even) {
+	padding-right: 0;
+  }
+  .a2a_svg {
+	background-color: transparent !important;
+  }
+
+  .menu {
+	display: flex;
+	flex-direction: column;
+
+	a {
+	  font-size: 29px;
+	  line-height: 1.3;
+
+	  &:hover::before {
+		width: 40%;
+	  }
+	  &:after {
+		content: "";
+		display: inline-block;
+		background-color: #ffffff;
+		width: 50px;
+		height: 1px;
+		margin-bottom: 8px;
+		margin-left: 10px;
+
+	  }
+	}
+	.sub-menu {
+	  @media (min-width: $tablet-width) {
+		display: block;
+		position: relative;
+		top: 5px;
+		height: auto;
+		margin-right: 30px;
+		margin-top: 5px;
+		padding-top: 8px;
+		padding-bottom: 8px;
+
+		transform: translateY(0);
+	  }
+
+	  & > li > a {
+		font-size: 16px;
+	  }
+
+	  & > li > a:after {
+		content: "";
+		display: inline-block;
+		background-color: #ffffff;
+		width: 10px;
+		height: 1px;
+		margin-bottom: 4px;
+		margin-left: 5px;
+		transition: all ease-out 0.3s;
+	  }
+	  & > li > a:hover:after {
+		content: "";
+		display: inline-block;
+		background-color: #ffffff;
+		width: 15px;
+		height: 1px;
+		margin-bottom: 4px;
+		margin-left: 5px;
+	  }
+
+	  & > li > a:before {
+		display: none;
+	  }
+
+	  & > li > a:hover:before {
+		display: none;
+	  }
+	}
   }
 
   h1, h2, h3, h4, h5, h6 {

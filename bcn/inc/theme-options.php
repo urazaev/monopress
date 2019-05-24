@@ -2248,13 +2248,37 @@ Redux::setSection($opt_name, array(
 
 		array(
 			'id' => 'colors-submenu-bg',
-			'type' => 'color',
+			'type' => 'color_rgba',
 			'title' => __('Sub-menu background color', 'bcn'),
 			'subtitle' => __('Select sub-menu background color', 'bcn'),
-			'default' => false,
-			'validate' => 'color',
+//			'default' => false,
+//			'validate' => 'color',
+//			'default'   => array(
+//				'color'     => '#fdfdfd',
+//				'alpha'     => 1
+//			),
+
+			// These options display a fully functional color palette.  Omit this argument
+			// for the minimal color picker, and change as desired.
+			'options'       => array(
+				'show_input'                => true,
+				'show_initial'              => true,
+				'show_alpha'                => true,
+				'show_palette'              => true,
+				'show_palette_only'         => false,
+				'show_selection_palette'    => true,
+				'max_palette_size'          => 10,
+				'allow_empty'               => true,
+				'clickout_fires_change'     => false,
+				'choose_text'               => 'Choose',
+				'cancel_text'               => 'Cancel',
+				'show_buttons'              => true,
+				'use_extended_classes'      => true,
+				'palette'                   => null,  // show default
+				'input_text'                => 'Select Color'
+			),
 			'output' => array(
-				'background-color' => '.header-menu .menu-item-has-children:hover .sub-menu, .header-menu .sub-menu, .main-nav-vertical .menu-item-has-children:hover .sub-menu, .main-nav-vertical .sub-menu',
+				'background-color' => '.header-menu .sub-menu, .header-menu .sub-menu,  .main-nav-vertical .sub-menu, .menu-item-has-children:hover .sub-menu',
 			),
 		),
 		array(
@@ -2810,7 +2834,12 @@ Redux::setSection($opt_name, array(
 			'default' => false,
 			'text-transform' => true,
 			'output' => array(
-				'font-family' => 'body',
+				'font-family' => '.promary-font, .entry-content, .comments-block__separator, .comments-block__date, .comments-block__date a,
+.comments-block__text, .post-block-02__date, .post-block-04__date, .post-block-05__date, .post-block-06__text, .post-block-07__date,
+.post-block-08__widget-footer, .post-block-10__text, .post-block-14__date, .post-block-15__footer, .post-block-15__text, .post-block-16__date,
+.post-block-17__text, .post-block-20__date, .post-block-21__footer, .post-text-block-08__text, .post-text-block-20, .post-text-block-20__text,
+.post-widget__footer, .weather-vertical__location, .footer, .footer.footer-third .footer-widget-menu li, .sub-footer, .page blockquote, .widget, .author-box-wrap .up-author-description,
+.up-author-url a, .breadcrumbs, .button, .tags-single-post a, .post-navigation .nav-links  a, .flip-block .sub-menu>li>a',
 				'--fonts-primary' => ':root',
 			),
 
@@ -2825,7 +2854,17 @@ Redux::setSection($opt_name, array(
 			'default' => false,
 			'text-transform' => true,
 			'output' => array(
-				'font-family' => 'h1,h2,h3,h4,h5,h6',
+				'font-family' => 'h1,h2,h3,h4,h5,h6, body, .secondary-font, #cancel-comment-reply-link, .comments-block__header, .comment-reply-title, .comments-block__author a,
+.comments-block__author .fn, .comments-block__author-link, .comments-block__reply a, .comments-block__reply-link, .control-09__scroll-link, .control-center__link,
+.control-right__link, .control-scroll__scroll-button, .control-scroll-only__scroll-button, .post-block-02__header-link, .post-block-04__header-link,
+.post-block-05__header-link, .post-block-06__header, .post-block-06__slider-info, .post-block-07__header-link, .post-block-08__widget-title,
+.post-block-10__header, .post-block-10__slider-info, .post-block-12__header, .post-block-14__header-link, .post-block-15__header,
+.post-block-15__header-link, .post-block-16__header-link, .post-block-17__header, .post-block-17__slider-info, .post-block-20__header,
+.post-block-20__header-link, .post-block-21__header-link, .post-text-block-08__header-link, .post-text-block-08__social-link-facebook, .post-text-block-08__social-link-twitter,
+.post-text-block-20__header-link, .post-text-block-20__social-link-facebook, .post-text-block-20__social-link-twitter, .post-widget__title-link,
+.author-box-wrap h2, .author-box-wrap .up-author-name a, .related-articles-wrap .related-title, .vertical-main-sidebar__logo, .sidebar h2, .weather__num, 
+.weather-vertical__num, .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, .flip-block h1, 
+.flip-block h2, .flip-block h3, .flip-block h4, .flip-block h5, .flip-block h6, .widget .about_widget_wrapper h3, .footer.footer-third h3, .footer.footer-third .column-4 em',
 				'--fonts-secondary' => ':root',
 			),
 
@@ -3358,15 +3397,15 @@ Redux::setSection($opt_name, array(
 			'default' => ""
 		),
 		array(
-			'id'       => 'custom-code-js',
-			'type'     => 'ace_editor',
+			'id' => 'custom-code-js',
+			'type' => 'ace_editor',
 			'full_width' => true,
-			'title'    => __( 'JS Code', 'bcn' ),
-			'subtitle' => __( 'Paste your JS code here.', 'bcn' ),
-			'mode'     => 'javascript',
-			'theme'    => 'chrome',
-			'desc'     => 'Add custom javascript easly, using this editor. Please do not include the &lt;script&gt &lt;/script&gt',
-			'default'  => ""
+			'title' => __('JS Code', 'bcn'),
+			'subtitle' => __('Paste your JS code here.', 'bcn'),
+			'mode' => 'javascript',
+			'theme' => 'chrome',
+			'desc' => 'Add custom javascript easly, using this editor. Please do not include the &lt;script&gt &lt;/script&gt',
+			'default' => ""
 		),
 	)
 
