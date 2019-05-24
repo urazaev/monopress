@@ -3493,18 +3493,7 @@ Redux::setSection($opt_name, array(
 			'title' => __('Behance', 'bcn'),
 			'desc' => __('Link to: behance', 'bcn'),
 		),
-		array(
-			'id' => 'social-blogger',
-			'type' => 'text',
-			'title' => __('Blogger', 'bcn'),
-			'desc' => __('Link to: blogger', 'bcn'),
-		),
-		array(
-			'id' => 'social-dailymotion',
-			'type' => 'text',
-			'title' => __('Dailymotion', 'bcn'),
-			'desc' => __('Link to: dailymotion', 'bcn'),
-		),
+
 		array(
 			'id' => 'social-delicious',
 			'type' => 'text',
@@ -3537,12 +3526,6 @@ Redux::setSection($opt_name, array(
 			'desc' => __('Link to: dropbox', 'bcn'),
 		),
 		array(
-			'id' => 'social-evernote',
-			'type' => 'text',
-			'title' => __('Evernote', 'bcn'),
-			'desc' => __('Link to: evernote', 'bcn'),
-		),
-		array(
 			'id' => 'social-flickr',
 			'type' => 'text',
 			'title' => __('Flickr', 'bcn'),
@@ -3555,22 +3538,16 @@ Redux::setSection($opt_name, array(
 			'desc' => __('Link to: googleplus', 'bcn'),
 		),
 		array(
-			'id' => 'social-instagram',
+			'id' => 'social-lastfm',
 			'type' => 'text',
 			'title' => __('Last FM', 'bcn'),
-			'desc' => __('Link to: instagram', 'bcn'),
+			'desc' => __('Link to: Last FM', 'bcn'),
 		),
 		array(
 			'id' => 'social-linkedin',
 			'type' => 'text',
 			'title' => __('LinkedIN', 'bcn'),
 			'desc' => __('Link to: linkedin', 'bcn'),
-		),
-		array(
-			'id' => 'social-picasa',
-			'type' => 'text',
-			'title' => __('Picasa', 'bcn'),
-			'desc' => __('Link to: picasa', 'bcn'),
 		),
 		array(
 			'id' => 'social-pinterest',
@@ -3608,12 +3585,7 @@ Redux::setSection($opt_name, array(
 			'title' => __('500 pixels', 'bcn'),
 			'desc' => __('Link to: 500 pixels', 'bcn'),
 		),
-		array(
-			'id' => 'social-viewbug',
-			'type' => 'text',
-			'title' => __('ViewBug', 'bcn'),
-			'desc' => __('Link to: viewbug', 'bcn'),
-		),
+
 		array(
 			'id' => 'social-xing',
 			'type' => 'text',
@@ -3657,28 +3629,10 @@ Redux::setSection($opt_name, array(
 			'desc' => __('Link to: soundcloud', 'bcn'),
 		),
 		array(
-			'id' => 'social-periscope',
-			'type' => 'text',
-			'title' => __('Periscope', 'bcn'),
-			'desc' => __('Link to: periscope', 'bcn'),
-		),
-		array(
 			'id' => 'social-snapchat',
 			'type' => 'text',
 			'title' => __('Snapchat', 'bcn'),
 			'desc' => __('Link to: snapchat', 'bcn'),
-		),
-		array(
-			'id' => 'social-thecity',
-			'type' => 'text',
-			'title' => __('The City', 'bcn'),
-			'desc' => __('Link to: thecity', 'bcn'),
-		),
-		array(
-			'id' => 'social-microsoft-pinpoint',
-			'type' => 'text',
-			'title' => __('Microsoft Pinpoint', 'bcn'),
-			'desc' => __('Link to: microsoft pinpoint', 'bcn'),
 		),
 		array(
 			'id' => 'social-viadeo',

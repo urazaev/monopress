@@ -51,14 +51,8 @@ global $theme_options;
 				echo '<p class="footer-contacts">Contact us <a href="mailto:' . esc_html($theme_options['footer-email']) . '">' . esc_html($theme_options['footer-email']) . '</a></p>';
 			}
 
-			if ($theme_options['footer-social'] == '1') {
-				?>
+			up_get_social_links();
 
-				<?php
-				if ($theme_options['footer-social'] == '1') {
-					up_get_template('socials-listing');
-				}
-			}
 			?>
 		</div>
 	</div>

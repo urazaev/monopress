@@ -697,3 +697,161 @@ function the_breadcrumb($outer_class = 'breadcrumbs')
 add_filter('excerpt_more', function ($more) {
 	return '...';
 });
+
+
+/**
+ * add2any disable without shortcode
+ **/
+
+function addtoany_disable_sharing()
+{
+	return true;
+}
+
+add_filter('addtoany_sharing_disabled', 'addtoany_disable_sharing');
+
+/**
+ * echo socials links
+ **/
+
+function up_get_social_links()
+{
+	global $theme_options;
+	if ($theme_options['footer-social'] == '1') {
+
+		echo '<ul class="social-listing">';
+		if (isset($theme_options['social-twitter']) && $theme_options['social-twitter'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-twitter']) . '" target="_blank"><i class="fa fa-lg fa-twitter"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-facebook']) && $theme_options['social-facebook'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-facebook']) . '" target="_blank"><i class="fa fa-lg fa-facebook"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-instagram']) && $theme_options['social-instagram'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-instagram']) . '" target="_blank"><i class="fa fa-lg fa-instagram"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-youtube']) && $theme_options['social-youtube'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-youtube']) . '" target="_blank"><i class="fa fa-lg fa-youtube"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-behance']) && $theme_options['social-behance'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-behance']) . '" target="_blank"><i class="fa fa-lg fa-behance"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-delicious']) && $theme_options['social-delicious'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-delicious']) . '" target="_blank"><i class="fa fa-lg fa-delicious"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-deviantart']) && $theme_options['social-deviantart'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-deviantart']) . '" target="_blank"><i class="fa fa-lg fa-deviantart"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-digg']) && $theme_options['social-digg'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-digg']) . '" target="_blank"><i class="fa fa-lg fa-digg"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-dribbble']) && $theme_options['social-dribbble'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-dribbble']) . '" target="_blank"><i class="fa fa-lg fa-dribbble"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-dropbox']) && $theme_options['social-dropbox'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-dropbox']) . '" target="_blank"><i class="fa fa-lg fa-dropbox"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-flickr']) && $theme_options['social-flickr'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-flickr']) . '" target="_blank"><i class="fa fa-lg fa-flickr"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-googleplus']) && $theme_options['social-googleplus'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-googleplus']) . '" target="_blank"><i class="fa fa-lg fa-google-plus"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-lastfm']) && $theme_options['social-lastfm'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-lastfm']) . '" target="_blank"><i class="fa fa-lg fa-lastfm"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-linkedin']) && $theme_options['social-linkedin'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-linkedin']) . '" target="_blank"><i class="fa fa-lg fa-linkedin"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-pinterest']) && $theme_options['social-pinterest'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-pinterest']) . '" target="_blank"><i class="fa fa-lg fa-pinterest-p"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-rss']) && $theme_options['social-rss'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-rss']) . '" target="_blank"><i class="fa fa-lg fa-rss"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-tumblr']) && $theme_options['social-tumblr'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-tumblr']) . '" target="_blank"><i class="fa fa-lg fa-tumblr"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-vimeo']) && $theme_options['social-vimeo'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-vimeo']) . '" target="_blank"><i class="fa fa-lg fa-vimeo"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-wordpress']) && $theme_options['social-wordpress'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-wordpress']) . '" target="_blank"><i class="fa fa-lg fa-wordpress"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-500pixels']) && $theme_options['social-500pixels'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-500pixels']) . '" target="_blank"><i class="fa fa-lg fa-500px"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-xing']) && $theme_options['social-xing'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-xing']) . '" target="_blank"><i class="fa fa-lg fa-xing"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-spotify']) && $theme_options['social-spotify'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-spotify']) . '" target="_blank"><i class="fa fa-lg fa-spotify"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-houzz']) && $theme_options['social-houzz'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-houzz']) . '" target="_blank"><i class="fa fa-lg fa-houzz"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-skype']) && $theme_options['social-skype'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-skype']) . '" target="_blank"><i class="fa fa-lg fa-skype"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-slideshare']) && $theme_options['social-slideshare'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-slideshare']) . '" target="_blank"><i class="fa fa-lg fa-slideshare"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-bandcamp']) && $theme_options['social-bandcamp'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-bandcamp']) . '" target="_blank"><i class="fa fa-lg fa-bandcamp"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-soundcloud']) && $theme_options['social-soundcloud'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-soundcloud']) . '" target="_blank"><i class="fa fa-lg fa-soundcloud"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-snapchat']) && $theme_options['social-snapchat'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-snapchat']) . '" target="_blank"><i class="fa fa-lg fa-snapchat-ghost"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-viadeo']) && $theme_options['social-viadeo'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-viadeo']) . '" target="_blank"><i class="fa fa-lg fa-viadeo"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-tripadvisor']) && $theme_options['social-tripadvisor'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-tripadvisor']) . '" target="_blank"><i class="fa fa-lg fa-tripadvisor"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-vk']) && $theme_options['social-vk'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-vk']) . '" target="_blank"><i class="fa fa-lg fa-vk"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-social-ok']) && $theme_options['social-social-ok'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-social-ok']) . '" target="_blank"><i class="fa fa-lg fa-odnoklassniki"></i></a></li>';
+		}
+
+		if (isset($theme_options['social-telegram']) && $theme_options['social-telegram'] != '') {
+			echo '<li><a href="' . esc_url($theme_options['social-telegram']) . '" target="_blank"><i class="fa fa-lg fa-telegram"></i></a></li>';
+		}
+		echo '</ul>';
+	}
+}
+

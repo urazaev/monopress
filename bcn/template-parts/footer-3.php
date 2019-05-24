@@ -78,9 +78,8 @@ global $theme_options;
 		<div class="col column-5">
 			<div class="socials">
 				<?php
-				if ($theme_options['footer-social'] == '1') {
-					up_get_template('socials-listing');
-				} ?>
+				up_get_social_links();
+				?>
 
 			</div>
 
