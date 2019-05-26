@@ -20,7 +20,7 @@ $post_sidebar = isset($post_sidebar_meta)&&($post_sidebar_meta!='') ? $post_side
 
 ?>
 
-<div class="<?php if ($post_sidebar == 1) {echo "col-md-12";}else{echo "col-md-9";}?> post-template-1__wrapper">
+<div class="<?php if ($post_sidebar == 'sidebar_1') {echo "col-md-12";}else{echo "col-md-9";}?> post-template-1__wrapper">
 	<section class="post-text-block-08<?php if (class_exists('ReduxFramework')) {
 	if ($theme_options['post-featured-images-show'] != 1) { ?> post-text-block-08--full-width<?php } ?>" id="main">
 		<?php

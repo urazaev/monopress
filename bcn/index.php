@@ -20,7 +20,7 @@ get_header();
 $page_sidebar = get_post_meta(get_the_ID(), 'meta_page-template-sidebar', true);
 
 if (!isset($page_sidebar) || $page_sidebar == '-1' || $page_sidebar == '') {
-	$page_sidebar = isset($theme_options['main-page-sidebar']) ? $theme_options['main-page-sidebar'] : '';
+	$page_sidebar = isset($theme_options['main-page-sidebar']) ? $theme_options['main-page-sidebar'] : 'sidebar_1';
 }
 
 // Featured cat
@@ -34,27 +34,27 @@ if (!isset($featured_category) || $featured_category == '-1' || $featured_catego
 $featured_num = get_post_meta(get_the_ID(), 'meta_main-page-featured-num', true);
 
 if (!isset($featured_num) || $featured_num == '-1' || $featured_num == '') {
-	$featured_num = isset($theme_options['main-page-featured-num']) ? $theme_options['main-page-featured-num'] : '';
+	$featured_num = isset($theme_options['main-page-featured-num']) ? $theme_options['main-page-featured-num'] : '1';
 }
 
 // Featured layout
 $featured_layout = get_post_meta(get_the_ID(), 'meta_main-page-featured-display', true);
 
 if (!isset($featured_layout) || $featured_layout == '-1' || $featured_layout == '') {
-	$featured_layout = isset($theme_options['main-page-featured-display']) ? $theme_options['main-page-featured-display'] : '';
+	$featured_layout = isset($theme_options['main-page-featured-display']) ? $theme_options['main-page-featured-display'] : 'layout_21';
 }
 
 // Post layout
 $regular_layout = get_post_meta(get_the_ID(), 'meta_main-page-display', true);
 
 if (!isset($regular_layout) || $regular_layout == '-1' || $regular_layout == '') {
-	$regular_layout = isset($theme_options['main-page-display']) ? $theme_options['main-page-display'] : '';
+	$regular_layout = isset($theme_options['main-page-display']) ? $theme_options['main-page-display'] : 'layout_7';
 }
 
 ?>
 
 	<main class="page-main page-main--home-02 sidebar-parent" id="main">
-		<?php if ($page_sidebar == 2) {
+		<?php if ($page_sidebar == 'sidebar_2') {
 			get_sidebar();
 		}
 		?>
@@ -72,26 +72,25 @@ if (!isset($regular_layout) || $regular_layout == '-1' || $regular_layout == '')
 					if (!is_paged()) {
 					?>
 					<section class="post-block-<?php switch ($featured_layout) {
-						case 2:
+						case 'layout_2':
 							echo esc_html('02');
 							break;
-						case 4:
+						case  'layout_4':
 							echo esc_html('04');
 							break;
-						case 5:
+						case  'layout_5':
 							echo esc_html('05');
 							break;
-						case 7:
+						case  'layout_7':
 							echo esc_html('07');
 							break;
-						case 14:
+						case  'layout_14':
 							echo esc_html('14');
 							break;
-						case 21:
+						case  'layout_21':
 							echo esc_html('21');
 							break;
-
-						case 22:
+						case  'layout_22':
 							echo esc_html('22');
 							break;
 					} ?>"
@@ -126,32 +125,32 @@ if (!isset($regular_layout) || $regular_layout == '-1' || $regular_layout == '')
 										$featured->the_post();
 										switch ($featured_layout) {
 
-											case 2:
+											case  'layout_2':
 												up_get_template('post-block-02');
 												break;
 
-											case 4:
+											case  'layout_4':
 												up_get_template('post-block-04');
 												break;
 
-											case 5:
+											case  'layout_5':
 												up_get_template('post-block-05');
 												// TODO: slider pagination? or infinite?
 												break;
 
-											case 7:
+											case  'layout_7':
 												up_get_template('post-block-07');
 												break;
 
-											case 14:
+											case  'layout_14':
 												up_get_template('post-block-14');
 												break;
 
-											case 21:
+											case  'layout_21':
 												up_get_template('post-block-21');
 												break;
 
-											case 22:
+											case  'layout_22':
 												up_get_template('post-block-22');
 												break;
 										}
@@ -195,28 +194,28 @@ if (!isset($regular_layout) || $regular_layout == '-1' || $regular_layout == '')
 				?>
 
 				<section class="post-block-<?php switch ($regular_layout) {
-					case 2:
+					case  'layout_2':
 						echo esc_html('02');
 						break;
-					case 4:
+					case  'layout_4':
 						echo esc_html('04');
 						break;
-					case 5:
+					case  'layout_5':
 						echo esc_html('05');
 						break;
-					case 7:
+					case  'layout_7':
 						echo esc_html('07');
 						break;
-					case 14:
+					case  'layout_14':
 						echo esc_html('14');
 						break;
-					case 21:
+					case  'layout_21':
 						echo esc_html('21');
 						break;
-
-					case 22:
+					case  'layout_22':
 						echo esc_html('22');
 						break;
+
 				} ?>" id="loop-content"<?php if ($regular_layout == 4 || 07 || 14 || 21 || 22) {
 					echo 'data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 800"';
 				} ?>>
@@ -247,32 +246,25 @@ if (!isset($regular_layout) || $regular_layout == '-1' || $regular_layout == '')
 									$regular->the_post();
 									switch ($regular_layout) {
 
-										case 2:
+										case  'layout_2':
 											up_get_template('post-block-02');
 											break;
-
-										case 4:
+										case  'layout_4':
 											up_get_template('post-block-04');
 											break;
-
-										case 5:
+										case  'layout_5':
 											up_get_template('post-block-05');
-											// TODO: slider pagination? or infinite?
 											break;
-
-										case 7:
+										case  'layout_7':
 											up_get_template('post-block-07');
 											break;
-
-										case 14:
+										case  'layout_14':
 											up_get_template('post-block-14');
 											break;
-
-										case 21:
+										case  'layout_21':
 											up_get_template('post-block-21');
 											break;
-
-										case 22:
+										case  'layout_22':
 											up_get_template('post-block-22');
 											break;
 									}
@@ -324,7 +316,7 @@ if (!isset($regular_layout) || $regular_layout == '-1' || $regular_layout == '')
 
 		</div>
 
-		<?php if ($page_sidebar == 3) {
+		<?php if ($page_sidebar == 'sidebar_3') {
 			get_sidebar();
 		} ?>
 

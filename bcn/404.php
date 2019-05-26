@@ -8,17 +8,22 @@
  */
 
 global $theme_options;
+$page_sidebar = get_post_meta(get_the_ID(), 'meta_page-template-sidebar', true);
+
+if (!isset($page_sidebar) || $page_sidebar == '-1' || $page_sidebar == '') {
+	$page_sidebar = isset($theme_options['page-template-sidebar']) ? $theme_options['page-template-sidebar'] : 'sidebar_1';
+}
 get_header();
+
 ?>
 
 	<main class="content-area page-main page-main--about-06 sidebar-parent" id="primary">
 
 		<section class="error-404 not-found post-block-06 theme-about-light-gray">
 
-			<?php if ($theme_options['page-template-sidebar'] == 2) {
+			<?php if ($page_sidebar == 'sidebar_2') {
 				get_sidebar();
 			} ?>
-
 
 			<article class="post-block-06__item uk-animation-slide-bottom-medium">
 
@@ -32,7 +37,6 @@ get_header();
 					}
 					?>
 				</h1>
-
 
 				<p class="post-block-06__text">
 					<?php
@@ -74,7 +78,7 @@ get_header();
 			</article>
 			<!-- .page-content -->
 
-			<?php if ($theme_options['page-template-sidebar'] == 3) {
+			<?php if ($page_sidebar == 'sidebar_3') {
 				get_sidebar();
 			} ?>
 

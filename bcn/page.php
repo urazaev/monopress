@@ -18,7 +18,7 @@ global $theme_options;
 $page_sidebar =  get_post_meta(get_the_ID(),'meta_page-template-sidebar',true);
 
 if (!isset($page_sidebar) || $page_sidebar == '-1' || $page_sidebar == '') {
-	$page_sidebar = isset( $theme_options['page-template-sidebar'] ) ? $theme_options['page-template-sidebar'] : '1';
+	$page_sidebar = isset( $theme_options['page-template-sidebar'] ) ? $theme_options['page-template-sidebar'] : 'sidebar_1';
 }
 ?>
 
@@ -26,7 +26,7 @@ if (!isset($page_sidebar) || $page_sidebar == '-1' || $page_sidebar == '') {
 
 
 	<main class="row no-gutters page content-area page-main sidebar-parent" id="primary">
-		<?php if ($page_sidebar == 2) {
+		<?php if ($page_sidebar == 'sidebar_2') {
 			get_sidebar();
 		} ?>
 
@@ -57,7 +57,7 @@ if (!isset($page_sidebar) || $page_sidebar == '-1' || $page_sidebar == '') {
 		</section>
 		<!-- .page-content -->
 
-		<?php if ($page_sidebar == 3) {
+		<?php if ($page_sidebar == 'sidebar_3') {
 			get_sidebar();
 		} ?>
 

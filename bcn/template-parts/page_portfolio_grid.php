@@ -8,6 +8,7 @@
  */
 
 global $theme_options;
+
 get_header();
 ?>
 

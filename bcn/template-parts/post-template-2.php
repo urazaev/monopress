@@ -20,7 +20,7 @@ $post_sidebar = isset($post_sidebar_meta)&&($post_sidebar_meta!='') ? $post_side
 
 ?>
 
-<section class="post-block-15 <?php if ($post_sidebar == 1) {
+<section class="post-block-15 <?php if ($post_sidebar == 'sidebar_1') {
 	echo "col-md-12";
 } else {
 	echo "col-md-9";

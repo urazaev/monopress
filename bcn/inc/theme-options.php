@@ -300,27 +300,27 @@ Redux::setSection($opt_name, array(
 			'title' => __('Article display view', 'bcn'),
 			'subtitle' => __('Select a module type, this is how your featured list will be displayed.', 'bcn'),
 			'options' => array(
-				'2' => array(
+				'layout_2' => array(
 					'alt' => '2',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-02.png'
 				),
-				'4' => array(
+				'layout_4' => array(
 					'alt' => '4',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-04.png'
 				),
-				'7' => array(
+				'layout_7' => array(
 					'alt' => '7',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-07.png'
 				),
-				'14' => array(
+				'layout_14' => array(
 					'alt' => '14',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-14.png'
 				),
-				'21' => array(
+				'layout_21' => array(
 					'alt' => '21',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-21.png'
 				),
-				'22' => array(
+				'layout_22' => array(
 					'alt' => '22',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-22.png'
 				),
@@ -339,27 +339,27 @@ Redux::setSection($opt_name, array(
 			'title' => __('Article display view', 'bcn'),
 			'subtitle' => __('Select a module type, this is how your article list will be displayed.', 'bcn'),
 			'options' => array(
-				'2' => array(
+				'layout_2' => array(
 					'alt' => '2',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-02.png'
 				),
-				'4' => array(
+				'layout_4' => array(
 					'alt' => '4',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-04.png'
 				),
-				'7' => array(
+				'layout_7' => array(
 					'alt' => '7',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-07.png'
 				),
-				'14' => array(
+				'layout_14' => array(
 					'alt' => '14',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-14.png'
 				),
-				'21' => array(
+				'layout_21' => array(
 					'alt' => '21',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-21.png'
 				),
-				'22' => array(
+				'layout_22' => array(
 					'alt' => '22',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-22.png'
 				),
@@ -385,16 +385,16 @@ Redux::setSection($opt_name, array(
 			'title' => __('Sidebar position', 'bcn'),
 			'subtitle' => __('Sidebar position and custom sidebars.', 'bcn'),
 			'options' => array(
-				'1' => array(
+				'sidebar_1' => array(
 					'alt' => 'No sidebar',
 					'img' => get_template_directory_uri() . '/images/admin/layout-no-sidebar.png'
 
 				),
-				'2' => array(
+				'sidebar_2' => array(
 					'alt' => 'Left sidebar',
 					'img' => get_template_directory_uri() . '/images/admin/layout-left-sidebar.png'
 				),
-				'3' => array(
+				'sidebar_3' => array(
 					'alt' => 'Right sidebar',
 					'img' => get_template_directory_uri() . '/images/admin/layout-right-sidebar.png'
 				),
@@ -973,55 +973,7 @@ Redux::setSection($opt_name, array(
 			'on' => 'Enabled',
 			'off' => 'Disabled',
 		),
-//        array(
-//            'required' => array('subfooter-on', '=', '1'),
-//            'id' => 'subfooter-layout',
-//            'type' => 'image_select',
-//            'title' => __('Sub footer templates', 'bcn'),
-//            'subtitle' => __('Set the sub footer template', 'bcn'),
-////            'desc' => __('This uses some of the built in images, you can use them for layout options.', 'bcn'),
-//            //Must provide key => value(array:title|img) pairs for radio options
-//            'options' => array(
-////                TODO: set the sub footer templates
-//                '1' => array(
-//                    'alt' => '1 Column',
-//                    'img' => get_template_directory_uri() . '/images/admin/preview-01.jpg'
-//                ),
-//                '2' => array(
-//                    'alt' => '2 Column Left',
-//                    'img' => get_template_directory_uri() . '/images/admin/preview-02.jpg'
-//                ),
-//                '3' => array(
-//                    'alt' => '2 Column Right',
-//                    'img' => get_template_directory_uri() . '/images/admin/preview-03.jpg'
-//                ),
-//                '4' => array(
-//                    'alt' => '3 Column Middle',
-//                    'img' => get_template_directory_uri() . '/images/admin/preview-04.jpg'
-//                ),
-//                '5' => array(
-//                    'alt' => '3 Column Left',
-//                    'img' => get_template_directory_uri() . '/images/admin/preview-05.jpg'
-//                ),
-//                '6' => array(
-//                    'alt' => '3 Column Right',
-//                    'img' => get_template_directory_uri() . '/images/admin/preview-06.jpg'
-//                ),
-//                '7' => array(
-//                    'alt' => '3 Column Right',
-//                    'img' => get_template_directory_uri() . '/images/admin/preview-07.jpg'
-//                ),
-//                '8' => array(
-//                    'alt' => '3 Column Right',
-//                    'img' => get_template_directory_uri() . '/images/admin/preview-09.jpg'
-//                ),
-//                '9' => array(
-//                    'alt' => '3 Column Right',
-//                    'img' => get_template_directory_uri() . '/images/admin/preview-11.jpg'
-//                ),
-//            ),
-//            'default' => '2',
-//        ),
+
 		array(
 			'required' => array('subfooter-on', '=', '1'),
 			'id' => 'subfooter-text',
@@ -1285,16 +1237,16 @@ Redux::setSection($opt_name, array(
 			'title' => __('Sidebar position', 'bcn'),
 			'subtitle' => __('Sidebar position and custom sidebars.', 'bcn'),
 			'options' => array(
-				'1' => array(
+				'sidebar_1' => array(
 					'alt' => 'No sidebar',
 					'img' => get_template_directory_uri() . '/images/admin/layout-no-sidebar.png'
 
 				),
-				'2' => array(
+				'sidebar_2' => array(
 					'alt' => 'Left sidebar',
 					'img' => get_template_directory_uri() . '/images/admin/layout-left-sidebar.png'
 				),
-				'3' => array(
+				'sidebar_3' => array(
 					'alt' => 'Right sidebar',
 					'img' => get_template_directory_uri() . '/images/admin/layout-right-sidebar.png'
 				),
@@ -1373,27 +1325,27 @@ Redux::setSection($opt_name, array(
 			'title' => __('Article display view', 'bcn'),
 			'subtitle' => __('Select a module type, this is how your article list will be displayed.', 'bcn'),
 			'options' => array(
-				'2' => array(
+				'layout_2' => array(
 					'alt' => '2',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-02.png'
 				),
-				'4' => array(
+				'layout_4' => array(
 					'alt' => '4',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-04.png'
 				),
-				'5' => array(
+				'layout_5' => array(
 					'alt' => '5',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-05.png'
 				),
-				'7' => array(
+				'layout_7' => array(
 					'alt' => '7',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-07.png'
 				),
-				'14' => array(
+				'layout_14' => array(
 					'alt' => '14',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-14.png'
 				),
-				'21' => array(
+				'layout_21' => array(
 					'alt' => '21',
 					'img' => get_template_directory_uri() . '/images/admin/post-layout-21.png'
 				),
@@ -1419,16 +1371,16 @@ Redux::setSection($opt_name, array(
 			'title' => __('Sidebar position', 'bcn'),
 			'subtitle' => __('Sidebar position and custom sidebars.', 'bcn'),
 			'options' => array(
-				'1' => array(
+				'sidebar_1' => array(
 					'alt' => 'No sidebar',
 					'img' => get_template_directory_uri() . '/images/admin/layout-no-sidebar.png'
 
 				),
-				'2' => array(
+				'sidebar_2' => array(
 					'alt' => 'Left sidebar',
 					'img' => get_template_directory_uri() . '/images/admin/layout-left-sidebar.png'
 				),
-				'3' => array(
+				'sidebar_3' => array(
 					'alt' => 'Right sidebar',
 					'img' => get_template_directory_uri() . '/images/admin/layout-right-sidebar.png'
 				),
@@ -1572,15 +1524,15 @@ Redux::setSection($opt_name, array(
 //            'desc' => __('This uses some of the built in images, you can use them for layout options.', 'bcn'),
 			//Must provide key => value(array:title|img) pairs for radio options
 			'options' => array(
-				'1' => array(
+				'layout_1' => array(
 					'alt' => '1 Column',
 					'img' => get_template_directory_uri() . '/images/admin/layout-single-post-1.png'
 				),
-				'2' => array(
+				'layout_2' => array(
 					'alt' => '2 Column Left',
 					'img' => get_template_directory_uri() . '/images/admin/layout-single-post-2.png'
 				),
-				'3' => array(
+				'layout_3' => array(
 					'alt' => '2 Column Right',
 					'img' => get_template_directory_uri() . '/images/admin/layout-single-post-3.png'
 				),
@@ -1690,16 +1642,16 @@ Redux::setSection($opt_name, array(
 			'title' => __('Sidebar position', 'bcn'),
 			'subtitle' => __('Sidebar position and custom sidebars.', 'bcn'),
 			'options' => array(
-				'1' => array(
+				'sidebar_1' => array(
 					'alt' => 'No sidebar',
 					'img' => get_template_directory_uri() . '/images/admin/layout-no-sidebar.png'
 
 				),
-				'2' => array(
+				'sidebar_2' => array(
 					'alt' => 'Left sidebar',
 					'img' => get_template_directory_uri() . '/images/admin/layout-left-sidebar.png'
 				),
-				'3' => array(
+				'sidebar_3' => array(
 					'alt' => 'Right sidebar',
 					'img' => get_template_directory_uri() . '/images/admin/layout-right-sidebar.png'
 				),
@@ -1762,12 +1714,12 @@ Redux::setSection($opt_name, array(
 			'title' => __('Default portfolio template', 'bcn'),
 			'subtitle' => __('This template will be applied to the portfolio whole site.', 'bcn'),
 			'options' => array(
-				'1' => array(
-					'alt' => '1 Column',
+				'layout_1' => array(
+					'alt' => 'Masonry',
 					'img' => get_template_directory_uri() . '/images/admin/layout-portfolio-masonry.png'
 				),
-				'2' => array(
-					'alt' => '2 Column Left',
+				'layout_2' => array(
+					'alt' => 'Grid',
 					'img' => get_template_directory_uri() . '/images/admin/layout-portfolio-grid.png'
 				),
 // Todo: set the layouts for default site post template
@@ -1829,16 +1781,16 @@ Redux::setSection($opt_name, array(
 			'title' => __('Sidebar position', 'bcn'),
 			'subtitle' => __('Sidebar position and custom sidebars.', 'bcn'),
 			'options' => array(
-				'1' => array(
+				'sidebar_1' => array(
 					'alt' => 'No sidebar',
 					'img' => get_template_directory_uri() . '/images/admin/layout-no-sidebar.png'
 
 				),
-				'2' => array(
+				'sidebar_2' => array(
 					'alt' => 'Left sidebar',
 					'img' => get_template_directory_uri() . '/images/admin/layout-left-sidebar.png'
 				),
-				'3' => array(
+				'sidebar_3' => array(
 					'alt' => 'Right sidebar',
 					'img' => get_template_directory_uri() . '/images/admin/layout-right-sidebar.png'
 				),
@@ -1855,107 +1807,6 @@ Redux::setSection($opt_name, array(
 	'desc' => __('', 'bcn'),
 	'icon' => 'el el-cog'
 ));
-
-//Redux::setSection($opt_name, array(
-//	'title' => __('Block settings', 'bcn'),
-//	'id' => 'block-settings',
-//	'subsection' => true,
-//	'fields' => array(
-//		array(
-//			'id' => 'block-settings-title',
-//			'type' => 'section',
-//			'title' => __('Global Block Template', 'bcn'),
-//			'subtitle' => __('This template will be applied to the whole site. The theme will also try to adjust the default widgets to look in the same style with the block template selected here.', 'bcn'),
-//			'indent' => true, // Indent all options below until the next 'section' option is set.
-//		),
-//		array(
-//			'id' => 'block-settings-display',
-//			'type' => 'image_select',
-//			'title' => __('Block template', 'bcn'),
-//			'subtitle' => __('You can overwrite the template on each block and widget.', 'bcn'),
-//			'options' => array(
-//				'2' => array(
-//					'alt' => '2',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-02.jpg'
-//				),
-//				'3' => array(
-//					'alt' => '3',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-03.jpg'
-//				),
-//				'4' => array(
-//					'alt' => '4',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-04.jpg'
-//				),
-//				'5' => array(
-//					'alt' => '5',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-05.jpg'
-//				),
-////				'6' => array(
-////					'alt' => '6',
-////					'img' => get_template_directory_uri() . '/images/admin/preview-06.jpg'
-////				),
-//				'7' => array(
-//					'alt' => '7',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-07.jpg'
-//				),
-////				'8' => array(
-////					'alt' => '8',
-////					'img' => get_template_directory_uri() . '/images/admin/preview-08.jpg'
-////				),
-//				'9' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-09.jpg'
-//				),
-////				'10' => array(
-////					'alt' => '9',
-////					'img' => get_template_directory_uri() . '/images/admin/preview-10.jpg'
-////				),
-//				'11' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-11.jpg'
-//				),
-////				'12' => array(
-////					'alt' => '9',
-////					'img' => get_template_directory_uri() . '/images/admin/preview-12.jpg'
-////				),
-//				'14' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-14.jpg'
-//				),
-////				'15' => array(
-////					'alt' => '9',
-////					'img' => get_template_directory_uri() . '/images/admin/preview-15.jpg'
-////				),
-////				'16' => array(
-////					'alt' => '9',
-////					'img' => get_template_directory_uri() . '/images/admin/preview-16.jpg'
-////				),
-////			TODO: miss the file?
-////				'17' => array(
-////					'alt' => '9',
-////					'img' => get_template_directory_uri() . '/images/admin/preview-17.jpg'
-////				),
-//				'18' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-18.jpg'
-//				),
-//				'19' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-19.jpg'
-//				),
-////				'20' => array(
-////					'alt' => '9',
-////					'img' => get_template_directory_uri() . '/images/admin/preview-20.jpg'
-////				),
-//				'21' => array(
-//					'alt' => '9',
-//					'img' => get_template_directory_uri() . '/images/admin/preview-21.jpg'
-//				),
-//			),
-//			'default' => '2',
-//		),
-//	)
-//));
 
 Redux::setSection($opt_name, array(
 	'title' => __('Background', 'bcn'),
@@ -2013,40 +1864,9 @@ Redux::setSection($opt_name, array(
 			'output' => '.error-404 .post-block-06__item'
 		),
 
-//        array(
-//            'id' => 'background-theme',
-//            'type' => 'background',
-////            'output' => array('body'),
-//            'title' => __('Footer background', 'bcn'),
-//            'background-color' => 'false',
-//        ),
 	),
 ));
 
-//Redux::setSection($opt_name, array(
-//	'title' => __('Excerpts', 'bcn'),
-//	'id' => 'excerpts',
-//	'desc' => __('Adding a text as excerpt on post edit page (Excerpt box), will overwrite the theme excerpts ', 'bcn'),
-//	'subsection' => true,
-//	'fields' => array(
-//		array(
-//			'id' => 'title-lenght',
-//			'type' => 'text',
-//			'title' => __('Title lenght', 'bcn'),
-//			'subtitle' => __('In words', 'bcn'),
-//			'desc' => __('Example: 12', 'bcn'),
-//			'default' => '12',
-//		),
-//		array(
-//			'id' => 'excerpts-lenght',
-//			'type' => 'text',
-//			'title' => __('Excerpts lenght', 'bcn'),
-//			'subtitle' => __('In words', 'bcn'),
-//			'desc' => __('Example: 256', 'bcn'),
-//			'default' => '12',
-//		),
-//	)
-//));
 
 Redux::setSection($opt_name, array(
 	'title' => __('Theme colors', 'bcn'),
@@ -2074,7 +1894,6 @@ Redux::setSection($opt_name, array(
 				'color' => 'body b,body strong, .content, .entry-content b, .entry-content strong, .entry-title span, .entry-title b, .entry-title strong',
 				'--active-word' => ':root',
 			),
-//		TODO: think much more about it
 		),
 
 
@@ -2092,15 +1911,7 @@ Redux::setSection($opt_name, array(
 
 
 		),
-//		array(
-//			'id' => 'colors-general-headers-bg',
-//			'type' => 'color',
-//			'title' => __('Headers background color', 'bcn'),
-//			'subtitle' => __('Select a global header background color', 'bcn'),
-//			'default' => false,
-//			'validate' => 'color',
-////			TODO: for newest version
-//		),
+
 		array(
 			'id' => 'colors-general-headers',
 			'type' => 'color',
@@ -2251,12 +2062,6 @@ Redux::setSection($opt_name, array(
 			'type' => 'color_rgba',
 			'title' => __('Sub-menu background color', 'bcn'),
 			'subtitle' => __('Select sub-menu background color', 'bcn'),
-//			'default' => false,
-//			'validate' => 'color',
-//			'default'   => array(
-//				'color'     => '#fdfdfd',
-//				'alpha'     => 1
-//			),
 
 			// These options display a fully functional color palette.  Omit this argument
 			// for the minimal color picker, and change as desired.
@@ -2345,29 +2150,6 @@ Redux::setSection($opt_name, array(
 				'--header-icon-color-hover' => ':root'
 			),
 		),
-
-//      Header ->  social
-//
-//		array(
-//			'id' => 'colors-menu-soc-icons',
-//			'type' => 'color',
-//			'title' => __('- Social icons color', 'bcn'),
-//			'subtitle' => __('Select social icons color', 'bcn'),
-//			'default' => false,
-//			'validate' => 'color',
-//			'output' => '',
-//		),
-//		array(
-//			'id' => 'colors-menu-soc-icons-hover',
-//			'type' => 'color',
-//			'title' => __('- Social icons hover color', 'bcn'),
-//			'subtitle' => __('Select social icons hover color', 'bcn'),
-//			'default' => false,
-//			'validate' => 'color',
-//			'output' => '',
-//		),
-
-//		TODO: for newest version
 
 //      Sidebar
 
@@ -2920,40 +2702,6 @@ Redux::setSection($opt_name, array(
 			'output' => array('.header-menu .sub-menu'),
 		),
 
-//		array(
-//			'id' => 'fonts-header-mobile-menu',
-//			'type' => 'typography',
-//			'title' => __('Mobile menu', 'bcn'),
-//			'google' => true,
-//			'output' => array(''),
-//			'text-align' => false,
-//			'color' => false,
-//			'default' => false,
-//			'text-transform' => true,
-//			// TODO: for newest version
-//		),
-//
-//		array(
-//			'id' => 'fonts-header-mobile-submenu',
-//			'type' => 'typography',
-//			'title' => __('Mobile sub menu', 'bcn'),
-//			'google' => true,
-//			'output' => array(''),
-//			'text-align' => false,
-//			'color' => false,
-//			'default' => false,
-//			'text-transform' => true,
-//			// TODO: for newest version
-//		),
-//
-//        array(
-//            'id' => 'fonts-post-title',
-//            'type' => 'section',
-//            'title' => __('Post  elements', 'bcn'),
-//            'subtitle' => __('Main theme fonts.', 'bcn'),
-//            'indent' => true, // Indent all options below until the next 'section' option is set.
-//        ),
-
 		array(
 			'id' => 'fonts-post-title',
 			'type' => 'section',
@@ -2993,30 +2741,7 @@ Redux::setSection($opt_name, array(
 			'default' => false,
 			'text-transform' => true,
 		),
-//		array(
-//			'id' => 'fonts-post-boxkquote',
-//			'type' => 'typography',
-//			'title' => __('Box quote', 'bcn'),
-//			'google' => true,
-//			'output' => array(''),
-//			'text-align' => false,
-//			'color' => false,
-//			'default' => false,
-//			'text-transform' => true,
-//			// TODO: for newest version
-//		),
-//		array(
-//			'id' => 'fonts-post-pullquote',
-//			'type' => 'typography',
-//			'title' => __('Pull quote', 'bcn'),
-//			'google' => true,
-//			'output' => array(''),
-//			'text-align' => false,
-//			'color' => false,
-//			'default' => false,
-//			'text-transform' => true,
-//			// TODO: for newest version
-//		),
+
 		array(
 			'id' => 'fonts-post-lists',
 			'type' => 'typography',
@@ -3102,18 +2827,6 @@ Redux::setSection($opt_name, array(
 			'indent' => true,
 		),
 
-//		array(
-//			'id' => 'fonts-post-elements-category',
-//			'type' => 'typography',
-//			'title' => __('Category tag', 'bcn'),
-//			'google' => true,
-//			'output' => array(''),
-//			'text-align' => false,
-//			'color' => false,
-//			'default' => false,
-//			'text-transform' => true,
-//			// TODO: for newest version
-//		),
 		array(
 			'id' => 'fonts-post-elements-author',
 			'type' => 'typography',
@@ -3138,18 +2851,6 @@ Redux::setSection($opt_name, array(
 			'text-transform' => true,
 		),
 
-//		array(
-//			'id' => 'fonts-post-elements-views-comments',
-//			'type' => 'typography',
-//			'title' => __('Views and comments', 'bcn'),
-//			'google' => true,
-//			'output' => array(''),
-//			'text-align' => false,
-//			'color' => false,
-//			'default' => false,
-//			'text-transform' => true,
-//			// TODO: for newest version
-//		),
 		array(
 			'id' => 'fonts-post-elements-vst',
 			'type' => 'typography',
@@ -3172,18 +2873,7 @@ Redux::setSection($opt_name, array(
 			'default' => false,
 			'text-transform' => true,
 		),
-//		array(
-//			'id' => 'fonts-post-elements-nppttxt',
-//			'type' => 'typography',
-//			'title' => __('+ Next/prev post title', 'bcn'),
-//			'google' => true,
-//			'output' => array('.site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation'),
-//			'text-align' => false,
-//			'color' => false,
-//			'default' => false,
-//			'text-transform' => true,
-//			// TODO: for newest version
-//		),
+
 		array(
 			'id' => 'fonts-post-elements-box-author-name',
 			'type' => 'typography',
@@ -3217,18 +2907,6 @@ Redux::setSection($opt_name, array(
 			'default' => false,
 			'text-transform' => true,
 		),
-//		array(
-//			'id' => 'fonts-post-elements-related-article',
-//			'type' => 'typography',
-//			'title' => __('+ Related article title', 'bcn'),
-//			'google' => true,
-//			'output' => array('.site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation'),
-//			'text-align' => false,
-//			'color' => false,
-//			'default' => false,
-//			'text-transform' => true,
-//// TODO: for newest version
-//		),
 
 		array(
 			'id' => 'fonts-post-elements-share-text',

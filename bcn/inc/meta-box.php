@@ -49,11 +49,22 @@ function cmb2_sample_metaboxes()
 		'id' => 'meta_page-template-sidebar',
 		'type' => 'image_select',
 		'options' => array(
-			'1' => array('title' => 'No Sidebar', 'alt' => 'No Sidebar', 'img' => get_template_directory_uri() . '/images/admin/layout-no-sidebar.png'),
-			'2' => array('title' => 'Sidebar left', 'alt' => 'Sidebar left', 'img' => get_template_directory_uri() . '/images/admin/layout-left-sidebar.png'),
-			'3' => array('title' => 'Sidebar Right', 'alt' => 'Sidebar Right', 'img' => get_template_directory_uri() . '/images/admin/layout-right-sidebar.png'),
+			'sidebar_1' => array(
+				'title' => 'No Sidebar',
+				'alt' => 'No Sidebar',
+				'img' => get_template_directory_uri() . '/images/admin/layout-no-sidebar.png'
+			),
+			'sidebar_2' => array(
+				'title' => 'Sidebar left',
+				'alt' => 'Sidebar left',
+				'img' => get_template_directory_uri() . '/images/admin/layout-left-sidebar.png'
+			),
+			'sidebar_3' => array(
+				'title' => 'Sidebar Right',
+				'alt' => 'Sidebar Right',
+				'img' => get_template_directory_uri() . '/images/admin/layout-right-sidebar.png'
+			),
 		),
-//		'default' => 'default',
 	));
 
 	$cmb_main_page = new_cmb2_box(array(
@@ -63,30 +74,16 @@ function cmb2_sample_metaboxes()
 		'context' => 'normal',
 		'priority' => 'high',
 		'show_names' => true, // Show field names on the left
-		'show_on' => array('key' => 'page-template', 'value' => 'index.php'),
-		// 'cmb_styles' => false, // false to disable the CMB stylesheet
-		// 'closed'     => true, // Keep the metabox closed by default
+		'show_on' => array(
+			'key' => 'page-template',
+			'value' => 'index.php'
+		),
 	));
 
-//	$cmb_main_page->add_field(array(
-//		'name' => esc_html__('Featured post categories', 'bcn'),
-//		'id' => 'meta_main-page-featured-cat',
-//		'type' => 'taxonomy_select',
-//		'taxonomy' => 'category', // Taxonomy Slug
-//		'remove_default' => true,
-//
-//	));
-//	TODO: for newest version
-
 	$cmb_main_page->add_field(array(
-		'name' => esc_html__('Featured post limit', 'bcn'),
+		'name' => 'Featured post limit',
 		'id' => 'meta_main-page-featured-num',
 		'type' => 'text',
-//		'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
-		// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-		// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-		// 'on_front'        => false, // Optionally designate a field to wp-admin only
-		// 'repeatable'      => true,
 	));
 
 	$cmb_main_page->add_field(array(
@@ -94,32 +91,76 @@ function cmb2_sample_metaboxes()
 		'id' => 'meta_main-page-featured-display',
 		'type' => 'image_select',
 		'options' => array(
-			'2' => array('title' => 'Post layout 2', 'alt' => 'Post layout 2', 'img' => get_template_directory_uri() . '/images/admin/post-layout-02.png'),
-			'4' => array('title' => 'Post layout 4', 'alt' => 'Post layout 4', 'img' => get_template_directory_uri() . '/images/admin/post-layout-04.png'),
-			'7' => array('title' => 'Post layout 7', 'alt' => 'Post layout 7', 'img' => get_template_directory_uri() . '/images/admin/post-layout-07.png'),
-			'14' => array('title' => 'Post layout 14', 'alt' => 'Post layout 14', 'img' => get_template_directory_uri() . '/images/admin/post-layout-14.png'),
-			'21' => array('title' => 'Post layout 21', 'alt' => 'Post layout 21', 'img' => get_template_directory_uri() . '/images/admin/post-layout-21.png'),
-			'22' => array('title' => 'Post layout 22', 'alt' => 'Post layout 22', 'img' => get_template_directory_uri() . '/images/admin/post-layout-22.png'),
+			'layout_2' => array(
+				'title' => 'Post layout 2',
+				'alt' => 'Post layout 2',
+				'img' => get_template_directory_uri() . '/images/admin/post-layout-02.png'
+			),
+			'layout_4' => array(
+				'title' => 'Post layout 4',
+				'alt' => 'Post layout 4',
+				'img' => get_template_directory_uri() . '/images/admin/post-layout-04.png'
+			),
+			'layout_7' => array(
+				'title' => 'Post layout 7',
+				'alt' => 'Post layout 7',
+				'img' => get_template_directory_uri() . '/images/admin/post-layout-07.png'
+			),
+			'layout_14' => array(
+				'title' => 'Post layout 14',
+				'alt' => 'Post layout 14',
+				'img' => get_template_directory_uri() . '/images/admin/post-layout-14.png'
+			),
+			'layout_21' => array(
+				'title' => 'Post layout 21',
+				'alt' => 'Post layout 21',
+				'img' => get_template_directory_uri() . '/images/admin/post-layout-21.png'
+			),
+			'layout_22' => array(
+				'title' => 'Post layout 22',
+				'alt' => 'Post layout 22',
+				'img' => get_template_directory_uri() . '/images/admin/post-layout-22.png'
+			),
 		),
-//		'default' => 'default',
 	));
+
 	$cmb_main_page->add_field(array(
 		'name' => esc_html__('Regular posts layout', 'bcn'),
 		'id' => 'meta_main-page-display',
 		'type' => 'image_select',
 		'options' => array(
-//			'default' => array('title' => 'Use global', 'alt' => 'Full Width', 'img' => get_template_directory_uri() .  '/images/admin/layout-default.png'),
-			'2' => array('title' => 'Post layout 2', 'alt' => 'Post layout 2', 'img' => get_template_directory_uri() . '/images/admin/post-layout-02.png'),
-			'4' => array('title' => 'Post layout 4', 'alt' => 'Post layout 4', 'img' => get_template_directory_uri() . '/images/admin/post-layout-04.png'),
-			'7' => array('title' => 'Post layout 7', 'alt' => 'Post layout 7', 'img' => get_template_directory_uri() . '/images/admin/post-layout-07.png'),
-			'14' => array('title' => 'Post layout 14', 'alt' => 'Post layout 14', 'img' => get_template_directory_uri() . '/images/admin/post-layout-14.png'),
-			'21' => array('title' => 'Post layout 21', 'alt' => 'Post layout 21', 'img' => get_template_directory_uri() . '/images/admin/post-layout-21.png'),
-			'22' => array('title' => 'Post layout 22', 'alt' => 'Post layout 22', 'img' => get_template_directory_uri() . '/images/admin/post-layout-22.png'),
+			'layout_2' => array(
+				'title' => 'Post layout 2',
+				'alt' => 'Post layout 2',
+				'img' => get_template_directory_uri() . '/images/admin/post-layout-02.png'
+			),
+			'layout_4' => array(
+				'title' => 'Post layout 4',
+				'alt' => 'Post layout 4',
+				'img' => get_template_directory_uri() . '/images/admin/post-layout-04.png'
+			),
+			'layout_7' => array(
+				'title' => 'Post layout 7',
+				'alt' => 'Post layout 7',
+				'img' => get_template_directory_uri() . '/images/admin/post-layout-07.png'
+			),
+			'layout_14' => array(
+				'title' => 'Post layout 14',
+				'alt' => 'Post layout 14',
+				'img' => get_template_directory_uri() . '/images/admin/post-layout-14.png'
+			),
+			'layout_21' => array(
+				'title' => 'Post layout 21',
+				'alt' => 'Post layout 21',
+				'img' => get_template_directory_uri() . '/images/admin/post-layout-21.png'
+			),
+			'layout_22' => array(
+				'title' => 'Post layout 22',
+				'alt' => 'Post layout 22',
+				'img' => get_template_directory_uri() . '/images/admin/post-layout-22.png'
+			),
 		),
-//		'default' => 'default',
 	));
-
-
 
 	$cmb_post = new_cmb2_box(array(
 		'id' => 'post_metabox',
@@ -128,8 +169,6 @@ function cmb2_sample_metaboxes()
 		'context' => 'normal',
 		'priority' => 'high',
 		'show_names' => true, // Show field names on the left
-		// 'cmb_styles' => false, // false to disable the CMB stylesheet
-		// 'closed'     => true, // Keep the metabox closed by default
 	));
 
 	$cmb_post->add_field(array(
@@ -137,12 +176,22 @@ function cmb2_sample_metaboxes()
 		'id' => 'meta_post-sidebar',
 		'type' => 'image_select',
 		'options' => array(
-//			'default' => array('title' => 'Use global', 'alt' => 'Full Width', 'img' => get_template_directory_uri() .  '/images/admin/layout-default.png'),
-			'1' => array('title' => 'No Sidebar', 'alt' => 'No Sidebar', 'img' => get_template_directory_uri() . '/images/admin/layout-no-sidebar.png'),
-			'2' => array('title' => 'Sidebar left', 'alt' => 'Sidebar left', 'img' => get_template_directory_uri() . '/images/admin/layout-left-sidebar.png'),
-			'3' => array('title' => 'Sidebar Right', 'alt' => 'Sidebar Right', 'img' => get_template_directory_uri() . '/images/admin/layout-right-sidebar.png'),
+			'sidebar_1' => array(
+				'title' => 'No Sidebar',
+				'alt' => 'No Sidebar',
+				'img' => get_template_directory_uri() . '/images/admin/layout-no-sidebar.png'
+			),
+			'sidebar_2' => array(
+				'title' => 'Sidebar left',
+				'alt' => 'Sidebar left',
+				'img' => get_template_directory_uri() . '/images/admin/layout-left-sidebar.png'
+			),
+			'sidebar_3' => array(
+				'title' => 'Sidebar Right',
+				'alt' => 'Sidebar Right',
+				'img' => get_template_directory_uri() . '/images/admin/layout-right-sidebar.png'
+			),
 		),
-//		'default' => 'default',
 	));
 
 	$cmb_post->add_field(array(
@@ -150,11 +199,48 @@ function cmb2_sample_metaboxes()
 		'id' => 'meta_post-template-default',
 		'type' => 'image_select',
 		'options' => array(
-//			'default' => array('title' => 'Use global', 'alt' => 'Full Width', 'img' => get_template_directory_uri() .  '/images/admin/layout-default.png'),
-			'1' => array('title' => 'Post layout 1', 'alt' => 'Full Width', 'img' => get_template_directory_uri() . '/images/admin/layout-single-post-1.png'),
-			'2' => array('title' => 'Post layout 2', 'alt' => 'Sidebar Left', 'img' => get_template_directory_uri() . '/images/admin/layout-single-post-2.png'),
-			'3' => array('title' => 'Post layout 3', 'alt' => 'Sidebar Right', 'img' => get_template_directory_uri() . '/images/admin/layout-single-post-3.png'),
+			'layout_1' => array(
+				'title' => 'Post layout 1',
+				'alt' => 'Full Width',
+				'img' => get_template_directory_uri() . '/images/admin/layout-single-post-1.png'
+			),
+			'layout_2' => array(
+				'title' => 'Post layout 2',
+				'alt' => 'Sidebar Left',
+				'img' => get_template_directory_uri() . '/images/admin/layout-single-post-2.png'
+			),
+			'layout_3' => array(
+				'title' => 'Post layout 3',
+				'alt' => 'Sidebar Right',
+				'img' => get_template_directory_uri() . '/images/admin/layout-single-post-3.png'
+			),
 		),
-//		'default' => 'default',
+	));
+
+
+	$cmb_portfolio = new_cmb2_box(array(
+		'id' => 'portfolio-meta',
+		'title' => esc_html__('Portfolio layout', 'bcn'),
+		'object_types' => array('page','portfolio'), // Post type
+		'context' => 'normal',
+		'taxonomies' => array('portfolio'),
+		'priority' => 'high',
+		'show_names' => true, // Show field names on the left
+	));
+
+	$cmb_portfolio->add_field(array(
+		'name' => esc_html__('Post layout', 'bcn'),
+		'id' => 'meta_portfolio-template-default',
+		'type' => 'image_select',
+		'options' => array(
+			'layout_1' => array('title' => 'Post layout 1',
+				'alt' => 'Full Width',
+				'img' => get_template_directory_uri() . '/images/admin/layout-portfolio-masonry.png'
+			),
+			'layout_2' => array(
+				'title' => 'Post layout 2',
+				'alt' => 'Sidebar Left',
+				'img' => get_template_directory_uri() . '/images/admin/layout-portfolio-grid.png'),
+		),
 	));
 }

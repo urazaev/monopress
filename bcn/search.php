@@ -12,7 +12,7 @@ global $theme_options;
 ?>
 
 	<main class="content-area page-main sidebar-parent" id="primary">
-		<?php if ($theme_options['page-template-sidebar'] == 2) {
+		<?php if ($theme_options['page-template-sidebar'] == 'sidebar_2') {
 			get_sidebar();
 		} ?>
 
@@ -73,7 +73,7 @@ global $theme_options;
 				Loading more...</a>
 		<?php }
 
-		if ($theme_options['page-template-sidebar'] == 3) {
+		if ($theme_options['page-template-sidebar'] == 'sidebar_3') {
 			get_sidebar();
 		} ?>
 

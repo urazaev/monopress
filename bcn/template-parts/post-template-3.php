@@ -18,7 +18,7 @@ $post_sidebar_theme_options = isset($theme_options['post-sidebar']) ? $theme_opt
 $post_layout = isset($post_layout_meta)&&($post_layout_meta!='') ? $post_layout_meta : $post_layout_theme_options;
 $post_sidebar = isset($post_sidebar_meta)&&($post_sidebar_meta!='') ? $post_sidebar_meta : $post_sidebar_theme_options;
 ?>
-<div class="<?php if ($post_sidebar == 1) {
+<div class="<?php if ($post_sidebar == 'sidebar_1') {
 	echo "col-md-12";
 } else {
 	echo "col-md-9";

@@ -20,22 +20,22 @@ get_header();
 //$post_sidebar = isset($post_sidebar_meta)&&($post_sidebar_meta!='') ? $post_sidebar_meta : $post_sidebar_theme_options;
 
 
-$post_sidebar =  get_post_meta(get_the_ID(),'meta_post-sidebar',true);
+$post_sidebar = get_post_meta(get_the_ID(), 'meta_post-sidebar', true);
 
 if (!isset($post_sidebar) || $post_sidebar == '-1' || $post_sidebar == '') {
-	$post_sidebar = isset( $theme_options['post-sidebar'] ) ? $theme_options['post-sidebar'] : '1';
+	$post_sidebar = isset($theme_options['post-sidebar']) ? $theme_options['post-sidebar'] : '1';
 }
 
-$post_layout =  get_post_meta(get_the_ID(),'meta_post-template-default',true);
+$post_layout = get_post_meta(get_the_ID(), 'meta_post-template-default', true);
 
 if (!isset($post_layout) || $post_layout == '-1' || $post_layout == '') {
-	$post_layout = isset( $theme_options['post-template-default'] ) ? $theme_options['post-template-default'] : '1';
+	$post_layout = isset($theme_options['post-template-default']) ? $theme_options['post-template-default'] : '1';
 }
 
 ?>
 
 	<main class="row no-gutters page content-area page-main sidebar-parent post-row" id="primary">
-		<?php if ($post_sidebar == 2) {
+		<?php if ($post_sidebar == 'sidebar_2') {
 			?>
 			<div class="col-md-3 post-template__side-wrapper">
 				<?php
@@ -47,24 +47,24 @@ if (!isset($post_layout) || $post_layout == '-1' || $post_layout == '') {
 
 		while (have_posts()) :
 			if (class_exists('ReduxFramework')) {
-				if ($post_layout == 1) {
+				if ($post_layout == 'layout_1') {
 					the_post();
 					get_template_part('template-parts/post-template-1', get_post_type());
 				}
 
-				if ($post_layout == 2) {
+				if ($post_layout == 'layout_2') {
 					the_post();
 					get_template_part('template-parts/post-template-2', get_post_type());
 				}
 
-				if ($post_layout == 3) {
+				if ($post_layout == 'layout_3') {
 					the_post();
 					get_template_part('template-parts/post-template-3', get_post_type());
 				}
 			}
 		endwhile; // End of the loop.
 
-		if ($post_sidebar == 3) {
+		if ($post_sidebar == 'sidebar_3') {
 			?>
 			<div class="col-md-3">
 				<?php

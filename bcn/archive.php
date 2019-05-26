@@ -13,7 +13,7 @@ get_header();
 ?>
 
 	<main class="page-main page-main--home-02 sidebar-parent archive" id="main">
-		<?php if ($theme_options['category-sidebar'] == 2) {
+		<?php if ($theme_options['category-sidebar'] == 'sidebar_2') {
 			get_sidebar();
 		}
 
@@ -21,22 +21,22 @@ get_header();
 
 			if (have_posts()) : ?>
 				<section class="post-block-<?php switch ($theme_options['category-article-display']) {
-					case 2:
+					case  'layout_2':
 						echo esc_html('02');
 						break;
-					case 4:
+					case  'layout_4':
 						echo esc_html('04');
 						break;
-					case 5:
+					case  'layout_5':
 						echo esc_html('05');
 						break;
-					case 7:
+					case  'layout_7':
 						echo esc_html('07');
 						break;
-					case 14:
+					case  'layout_14':
 						echo esc_html('14');
 						break;
-					case 21:
+					case  'layout_21':
 						echo esc_html('21');
 						break;
 				} ?>" id="loop-content" <?php if ($theme_options['category-article-display'] == 4 || 07 || 14 || 21) {
@@ -71,37 +71,29 @@ get_header();
 								$category_name = $category_object[0]->name;
 
 								switch ($theme_options['category-article-display']) {
-
-									case 2:
+									case  'layout_2':
 										up_get_template('post-block-02');
 										break;
-
-									case 4:
+									case  'layout_4':
 										up_get_template('post-block-04');
 										break;
-
-									case 5:
+									case  'layout_5':
 										up_get_template('post-block-05');
 										// TODO: slider pagination? or infinite?
 										break;
-
-									case 7:
+									case  'layout_7':
 										up_get_template('post-block-07');
 										break;
-
-									case 14:
+									case  'layout_14':
 										up_get_template('post-block-14');
 										break;
-
-									case 21:
+									case  'layout_21':
 										up_get_template('post-block-21');
 										break;
 								}
 
 							endwhile;
-
 							if ($theme_options['category-article-display'] == 5) { ?>
-
 
 						</div>
 
@@ -161,7 +153,7 @@ get_header();
 				Loading more...</a>
 		<?php }
 
-		if ($theme_options['category-sidebar'] == 3) {
+		if ($theme_options['category-sidebar'] == 'sidebar_3') {
 			get_sidebar();
 		} ?>
 
