@@ -233,12 +233,13 @@ function cmb2_sample_metaboxes()
 		'id' => 'meta_portfolio-template-default',
 		'type' => 'image_select',
 		'options' => array(
-			'layout_1' => array('title' => 'Post layout 1',
+			'layout_1' => array(
+				'title' => 'Portfolio layout masonry',
 				'alt' => 'Full Width',
 				'img' => get_template_directory_uri() . '/images/admin/layout-portfolio-masonry.png'
 			),
 			'layout_2' => array(
-				'title' => 'Post layout 2',
+				'title' => 'Portfolio layout grid',
 				'alt' => 'Sidebar Left',
 				'img' => get_template_directory_uri() . '/images/admin/layout-portfolio-grid.png'),
 		),

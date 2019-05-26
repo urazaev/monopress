@@ -586,27 +586,6 @@ if (!function_exists('up_section_return')) {
 	}
 }
 
-
-/**
- * custom body class
- **/
-
-function my_own_body_classes($classes)
-{
-	global $theme_options;
-	if (class_exists('ReduxFramework')) {
-		if ($theme_options['portfolio-template-default'] == 'layout_2' && is_page_template('page_portfolio.php') || is_page_template('page_portfolio_grid.php')) {
-			if ($theme_options['portfolio-show-filter'] == '1') {
-				$classes[] = 'body-right-margin';
-			}
-		}
-	}
-
-	return $classes;
-}
-
-add_filter('body_class', 'my_own_body_classes');
-
 /**
  * breadcrumbs
  * @param string $outer_class for class name
