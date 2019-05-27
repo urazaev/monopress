@@ -111,11 +111,11 @@ function merlin_import_files()
 	return array(
 		array(
 			'import_file_name' => 'Demo 1 (Travel)',
-			'import_file_url' => 'http://bcn/__1__content_27-05-2019.xml',
-			'import_widget_file_url' => 'http://bcn/__1__widgets_27-05-2019.json',
+			'import_file_url' => 'http://bcn.urazaev.com/demos/__1__content_27-05-2019.xml',
+			'import_widget_file_url' => 'http://bcn.urazaev.com/demos/__1__widgets_27-05-2019.json',
 			'import_redux' => array(
 				array(
-					'file_url' => 'http://bcn/__1__redux_27-05-2019.json',
+					'file_url' => 'http://bcn.urazaev.com/demos/__1__redux_27-05-2019.json',
 					'option_name' => 'theme_options',
 				),
 			),
