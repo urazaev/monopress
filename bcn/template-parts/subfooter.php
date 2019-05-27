@@ -44,9 +44,9 @@ global $theme_options;
 				$subfooter_menu = "col-sm sub-footer-right";
 			}
 			wp_nav_menu(array(
-				'menu' => esc_html($theme_options['subfooter-menu']),
 				'menu_id' => esc_html($theme_options['subfooter-menu']),
 				'menu_class' => 'footer-menu',
+				'theme_location' => esc_html($theme_options['subfooter-menu']),
 				'container' => 'div',
 				'container_class' => $subfooter_menu,
 				'echo' => true,

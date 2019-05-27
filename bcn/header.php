@@ -114,6 +114,7 @@ global $theme_options;
 								wp_nav_menu(array(
 									'container' => false,
 									'menu' => $main_menu,
+									'theme_location' => $main_menu,
 									'menu_id' => $main_menu,
 									'menu_class' => 'menu header-menu menu-wrapper menu-wrapper-opened menu-wrapper-nojs',
 									'echo' => true,
@@ -258,6 +259,7 @@ global $theme_options;
 							wp_nav_menu(array(
 								'container' => false,
 								'menu' => $main_menu,
+								'theme_location' => $main_menu,
 								'menu_id' => $main_menu,
 								'menu_class' => 'menu main-nav__list main-nav__wrapper menu-wrapper menu-wrapper-opened menu-wrapper-nojs header-animate',
 								'echo' => true,
