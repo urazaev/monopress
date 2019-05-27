@@ -111,82 +111,17 @@ function merlin_import_files()
 	return array(
 		array(
 			'import_file_name' => 'Demo 1 (Travel)',
-			'import_file_url' => 'http://bcn.urazaev.com/demos/__1__content_27-05-2019.xml',
-			'import_widget_file_url' => 'http://bcn.urazaev.com/demos/__1__widgets_27-05-2019.json',
+			'import_file_url' => 'http://bcn/__1__content_27-05-2019.xml',
+			'import_widget_file_url' => 'http://bcn/__1__widgets_27-05-2019.json',
 			'import_redux' => array(
 				array(
-					'file_url' => 'http://bcn.urazaev.com/demos/__1__redux_27-05-2019.json',
+					'file_url' => 'http://bcn/__1__redux_27-05-2019.json',
 					'option_name' => 'theme_options',
 				),
 			),
 //			'import_preview_image_url'   => 'http://bcnthemes.com/wp-real-estate-7/multi-demo/wp-content/plugins/aqua-style-switcher/images/screenshots/multi-slider-screenshot.jpg',
 //			'import_notice'              => __( 'A special note for this import.', 'bcn' ),
-			'preview_url' => 'http://bcn.urazaev.com/',
-		), array(
-			'import_file_name' => 'Demo 2 (Interior)',
-			'import_file_url' => 'http://bcn.urazaev.com/demos/__2__content_27-05-2019.xml',
-			'import_widget_file_url' => 'http://bcn.urazaev.com/demos/__2__widgets_27-05-2019.json',
-			'import_redux' => array(
-				array(
-					'file_url' => 'http://bcn.urazaev.com/demos/__2__redux_27-05-2019.json',
-					'option_name' => 'theme_options',
-				),
-			),
-//			'import_preview_image_url'   => 'http://bcnthemes.com/wp-real-estate-7/multi-demo/wp-content/plugins/aqua-style-switcher/images/screenshots/multi-slider-screenshot.jpg',
-//			'import_notice'              => __( 'A special note for this import.', 'bcn' ),
-			'preview_url' => 'http://bcn.urazaev.com/',
-		), array(
-			'import_file_name' => 'Demo 3 (Urban)',
-			'import_file_url' => 'http://bcn.urazaev.com/demos/__3__content_27-05-2019.xml',
-			'import_widget_file_url' => 'http://bcn.urazaev.com/demos/__3__widgets_27-05-2019.json',
-			'import_redux' => array(
-				array(
-					'file_url' => 'http://bcn.urazaev.com/demos/__3__redux_27-05-2019.json',
-					'option_name' => 'theme_options',
-				),
-			),
-//			'import_preview_image_url'   => 'http://bcnthemes.com/wp-real-estate-7/multi-demo/wp-content/plugins/aqua-style-switcher/images/screenshots/multi-slider-screenshot.jpg',
-//			'import_notice'              => __( 'A special note for this import.', 'bcn' ),
-			'preview_url' => 'http://bcn.urazaev.com/',
-		), array(
-			'import_file_name' => 'Demo 4 (Minimal)',
-			'import_file_url' => 'http://bcn.urazaev.com/demos/__4__content_27-05-2019.xml',
-			'import_widget_file_url' => 'http://bcn.urazaev.com/demos/__4__widgets_27-05-2019.json',
-			'import_redux' => array(
-				array(
-					'file_url' => 'http://bcn.urazaev.com/demos/__4__redux_27-05-2019.json',
-					'option_name' => 'theme_options',
-				),
-			),
-//			'import_preview_image_url'   => 'http://bcnthemes.com/wp-real-estate-7/multi-demo/wp-content/plugins/aqua-style-switcher/images/screenshots/multi-slider-screenshot.jpg',
-//			'import_notice'              => __( 'A special note for this import.', 'bcn' ),
-			'preview_url' => 'http://bcn.urazaev.com/',
-		), array(
-			'import_file_name' => 'Demo 5 (Food)',
-			'import_file_url' => 'http://bcn.urazaev.com/demos/__5__content_27-05-2019.xml',
-			'import_widget_file_url' => 'http://bcn.urazaev.com/demos/__5__widgets_27-05-2019.json',
-			'import_redux' => array(
-				array(
-					'file_url' => 'http://bcn.urazaev.com/demos/__5__redux_27-05-2019.json',
-					'option_name' => 'theme_options',
-				),
-			),
-//			'import_preview_image_url'   => 'http://bcnthemes.com/wp-real-estate-7/multi-demo/wp-content/plugins/aqua-style-switcher/images/screenshots/multi-slider-screenshot.jpg',
-//			'import_notice'              => __( 'A special note for this import.', 'bcn' ),
-			'preview_url' => 'http://bcn.urazaev.com/',
-		), array(
-			'import_file_name' => 'Demo 6 (Photo)',
-			'import_file_url' => 'http://bcn.urazaev.com/demos/__6__content_27-05-2019.xml',
-			'import_widget_file_url' => 'http://bcn.urazaev.com/demos/__6__widgets_27-05-2019.json',
-			'import_redux' => array(
-				array(
-					'file_url' => 'http://bcn.urazaev.com/demos/__6__redux_27-05-2019.json',
-					'option_name' => 'theme_options',
-				),
-			),
-//			'import_preview_image_url'   => 'http://bcnthemes.com/wp-real-estate-7/multi-demo/wp-content/plugins/aqua-style-switcher/images/screenshots/multi-slider-screenshot.jpg',
-//			'import_notice'              => __( 'A special note for this import.', 'bcn' ),
-			'preview_url' => 'http://bcn.urazaev.com/',
+			'preview_url' => 'http://bcn/',
 		),
 	);
 }
@@ -201,8 +136,8 @@ function bcn_merlin_after_import_setup()
 {
 
 	// Assign menus to their locations.
-	$main_menu = get_term_by( 'name', 'Primary', 'nav_menu' );
-	$footer_menu = get_term_by( 'name', 'Footer', 'nav_menu' );
+	$main_menu = get_term_by( 'name', 'up-demo-top-menu', 'nav_menu' );
+	$footer_menu = get_term_by( 'name', 'up-demo-footer-menu', 'nav_menu' );
 
 	set_theme_mod( 'nav_menu_locations', array(
 			'primary' => $main_menu->term_id,

@@ -290,6 +290,7 @@ global $theme_options;
 		}
 		?>
 
+
 		<div id="content" class="site-content<?php if ($theme_options['header-layout'] == 2) {
 			echo " col-md-10";
 		} ?>">
