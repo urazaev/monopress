@@ -5,14 +5,6 @@
  * @package bcn
  */
 
-/** START --- Initialize the CMB2 Metabox & Related Classes */
-function initialize_showcase_meta_box()
-{
-	require_once(get_template_directory() . '/inc/cmb2/image_select_metafield.php'); //CMB2 Buttonset Field
-}
-
-add_action('init', 'initialize_showcase_meta_box', 9999);
-
 /** LOAD --- Related CSS and JS */
 function load_custom_cmb2_script()
 {
@@ -221,9 +213,10 @@ function cmb2_sample_metaboxes()
 	$cmb_portfolio = new_cmb2_box(array(
 		'id' => 'portfolio-meta',
 		'title' => esc_html__('Portfolio layout', 'bcn'),
-		'object_types' => array('page','portfolio'), // Post type
 		'context' => 'normal',
-		'taxonomies' => array('portfolio'),
+		'object_types' => array( 'page' ), // post type
+		'show_on'      => array( 'key' => 'page-template', 'value' => 'page_portfolio.php' ),
+//		'taxonomies' => array('portfolio'),
 		'priority' => 'high',
 		'show_names' => true, // Show field names on the left
 	));
