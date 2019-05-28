@@ -169,6 +169,8 @@ function bcn_scripts()
 	wp_enqueue_style('bcn-style', get_stylesheet_uri());
 	wp_enqueue_style('bcn-theme-style', get_template_directory_uri() . '/css/style.min.css', array(), time());
 
+	wp_enqueue_style( 'font-awesome-free', '//use.fontawesome.com/releases/v5.8.2/css/all.css' );
+
 	//    header libraries
 	wp_enqueue_script('bcn-uikit', get_template_directory_uri() . '/js/libraries/uikit.min.js', array(), time());
 	wp_enqueue_script('bcn-uikit-icons', get_template_directory_uri() . '/js/libraries/uikit-icons.min.js', array(), time());
