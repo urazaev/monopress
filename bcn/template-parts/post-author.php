@@ -63,46 +63,44 @@ $author_rss = get_the_author_meta('rss');
 					<?php if ($author_facebook) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_facebook) ?>" title="Facebook">
-					<i class="fa fa-facebook-official"></i>
+					<i class="fab fa-facebook-f"></i>
 				</a>
 			</span>
 					<?php } ?>
 					<?php if ($author_twitter) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_twitter) ?>" title="Twitter">
-					<i class="fa fa-twitter-square"></i>
+					<i class="fab fa-twitter"></i>
 				</a>
 			</span>
 					<?php } ?>
 					<?php if ($author_instagram) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_instagram) ?>" title="Instagram">
-					<i class="fa fa-instagram"></i>
+					<i class="fab fa-instagram"></i>
 				</a>
 			</span>
 					<?php } ?>
 					<?php if ($author_youtube) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_youtube) ?>" title="Youtube">
-					<i class="fa fa-facebook-official"></i>
+					<i class="fab fa-youtube"></i>
 				</a>
 			</span>
 					<?php } ?>
 					<?php if ($author_telegram) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_telegram) ?>" title="Telegram">
-					<i class="fa fa-telegram"></i>
+					<i class="fab fa-telegram-plane"></i>
 				</a>
 			</span>
 					<?php } ?>
 
 
-
-
 					<?php if ($author_pinterest) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_pinterest) ?>" title="Pinterest">
-					<i class="fa fa-pinterest"></i>
+					<i class="fab fa-pinterest-p"></i>
 				</a>
 			</span>
 					<?php } ?>
@@ -110,7 +108,7 @@ $author_rss = get_the_author_meta('rss');
 					<?php if ($author_google_plus) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_google_plus) ?>" title="Google plus">
-					<i class="fa fa-google-plus-square"></i>
+					<i class="fab fa-google-plus-g"></i>
 				</a>
 			</span>
 					<?php } ?>
@@ -118,7 +116,7 @@ $author_rss = get_the_author_meta('rss');
 					<?php if ($author_vimeo) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_vimeo) ?>" title="Vimeo">
-					<i class="fa fa-vimeo"></i>
+					<i class="fab fa-vimeo-v"></i>
 				</a>
 			</span>
 					<?php } ?>
@@ -126,7 +124,7 @@ $author_rss = get_the_author_meta('rss');
 					<?php if ($author_soundcloud) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_soundcloud) ?>" title="Soundcloud">
-					<i class="fa fa-soundcloud"></i>
+					<i class="fab fa-soundcloud"></i>
 				</a>
 			</span>
 					<?php } ?>
@@ -134,7 +132,7 @@ $author_rss = get_the_author_meta('rss');
 					<?php if ($author_spotify) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_spotify) ?>" title="Spotify">
-					<i class="fa fa-spotify"></i>
+					<i class="fab fa-spotify"></i>
 				</a>
 			</span>
 					<?php } ?>
@@ -142,7 +140,7 @@ $author_rss = get_the_author_meta('rss');
 					<?php if ($author_dribbble) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_dribbble) ?>" title="Dribbble">
-					<i class="fa fa-dribbble"></i>
+					<i class="fab fa-dribbble"></i>
 				</a>
 			</span>
 					<?php } ?>
@@ -150,7 +148,7 @@ $author_rss = get_the_author_meta('rss');
 					<?php if ($author_behance) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_behance) ?>" title="Behance">
-					<i class="fa fa-behance"></i>
+					<i class="fab fa-behance"></i>
 				</a>
 			</span>
 					<?php } ?>
@@ -158,7 +156,7 @@ $author_rss = get_the_author_meta('rss');
 					<?php if ($author_github) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_github) ?>" title="Github">
-					<i class="fa fa-github"></i>
+					<i class="fab fa-github"></i>
 				</a>
 			</span>
 					<?php } ?>
@@ -166,7 +164,7 @@ $author_rss = get_the_author_meta('rss');
 					<?php if ($author_vk) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_vk) ?>" title="Vk">
-					<i class="fa fa-vk"></i>
+					<i class="fab fa-vk"></i>
 				</a>
 			</span>
 					<?php } ?>
@@ -174,7 +172,7 @@ $author_rss = get_the_author_meta('rss');
 					<?php if ($author_linkedin) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_linkedin) ?>" title="Linkedin">
-					<i class="fa fa-linkedin"></i>
+					<i class="fab fa-linkedin-in"></i>
 				</a>
 			</span>
 					<?php } ?>
@@ -182,7 +180,7 @@ $author_rss = get_the_author_meta('rss');
 					<?php if ($author_twitch) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_twitch) ?>" title="Twitch">
-					<i class="fa fa-twitch"></i>
+					<i class="fab fa-twitch"></i>
 				</a>
 			</span>
 					<?php } ?>
@@ -190,7 +188,7 @@ $author_rss = get_the_author_meta('rss');
 					<?php if ($author_flickr) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_flickr) ?>" title="Flickr">
-					<i class="fa fa-flickr"></i>
+					<i class="fab fa-flickr"></i>
 				</a>
 			</span>
 					<?php } ?>
@@ -198,7 +196,7 @@ $author_rss = get_the_author_meta('rss');
 					<?php if ($author_snapchat) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_snapchat) ?>" title="Snapchat">
-					<i class="fa fa-snapchat"></i>
+					<i class="fa-snapchat-ghost"></i>
 				</a>
 			</span>
 					<?php } ?>
@@ -206,7 +204,7 @@ $author_rss = get_the_author_meta('rss');
 					<?php if ($author_medium) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_medium) ?>" title="Medium">
-					<i class="fa fa-medium"></i>
+					<i class="fab fa-medium-m"></i>
 				</a>
 			</span>
 					<?php } ?>
@@ -214,7 +212,7 @@ $author_rss = get_the_author_meta('rss');
 					<?php if ($author_tumblr) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_tumblr) ?>" title="Tumblr">
-					<i class="fa fa-tumblr"></i>
+					<i class="fab fa-tumblr"></i>
 				</a>
 			</span>
 					<?php } ?>
@@ -230,7 +228,7 @@ $author_rss = get_the_author_meta('rss');
 					<?php if ($author_rss) { ?>
 						<span class="up-social-icon-wrap">
 				<a target="_blank" href="<?php echo esc_url($author_rss) ?>" title="Rss">
-					<i class="fa fa-rss-square"></i>
+					<i class="fas fa-rss"></i>
 				</a>
 			</span>
 					<?php } ?>

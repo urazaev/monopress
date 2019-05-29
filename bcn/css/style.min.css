@@ -2286,7 +2286,7 @@ body.header-shadow{background-color:#fff}
 .widget .widget-subscribe-submit button:hover:before{display:none}
 .widget .widget-subscribe-submit button span{display:block;-webkit-transition:all .2s ease;transition:all .2s ease}
 .widget .widget-subscribe-submit button span:first-child{-webkit-transform:translate(0);transform:translate(0)}
-.widget .widget-subscribe-submit button span:last-child{position:absolute;left:50%;margin-top:-2px;-webkit-transform:translateY(200%) translateX(-50%);transform:translateY(200%) translateX(-50%)}
+.widget .widget-subscribe-submit button span:last-child{position:absolute;left:50%;-webkit-transform:translateY(200%) translateX(-50%);transform:translateY(200%) translateX(-50%)}
 .widget .widget-subscribe-submit button:hover span:first-child{-webkit-transform:translateY(-200%);transform:translateY(-200%)}
 .widget .widget-subscribe-submit button:hover span:last-child{-webkit-transform:translateY(-100%) translateX(-50%);transform:translateY(-100%) translateX(-50%)}
 .widget .widget-subscribe-submit button .icon{display:inline-block;font-size:1rem;vertical-align:middle}

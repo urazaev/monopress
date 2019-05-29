@@ -1832,24 +1832,14 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'background-flip',
 			'type' => 'background',
-//            'output' => array('body'),
 			'title' => __('Flip panel background', 'bcn'),
 			'background-color' => 'false',
 			'output' => '.flip-block--open',
 		),
-//		array(
-//			'id' => 'background-mobile-menu',
-//			'type' => 'background',
-////            'output' => array('body'),
-//			'title' => __('? Mobile menu background', 'bcn'),
-//			'background-color' => 'false',
-//		),
-//// TODO: for newest version
 
 		array(
 			'id' => 'background-portfolio',
 			'type' => 'background',
-//           'output' => array('body'),
 			'title' => __('Portfolio background', 'bcn'),
 			'background-color' => 'false',
 			'output' => '.container--portfolio, .container--portfolio-03, .container--portfolio-02'
@@ -1858,7 +1848,6 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'background-404',
 			'type' => 'background',
-//           'output' => array('body'),
 			'title' => __('404 page background', 'bcn'),
 			'background-color' => 'false',
 			'output' => '.error-404 .post-block-06__item'
@@ -1950,7 +1939,6 @@ Redux::setSection($opt_name, array(
 			'title' => __('Preloader color', 'bcn'),
 			'subtitle' => __('Select preloader color', 'bcn'),
 			'default' => false,
-			'validate' => 'color',
 			'output' => array(
 				'background-color' => '.loading-spinner__item .loading-spinner__item-cube:before'
 			),
@@ -2614,7 +2602,13 @@ Redux::setSection($opt_name, array(
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
-			'text-transform' => true,
+			'text-transform' => false,
+			'font-weight' => false,
+			'font-size' => false,
+			'line-height' => false,
+			'font-style' => false,
+			'subsets' => true,
+			'all_styles' => true,
 			'output' => array(
 				'font-family' => '.promary-font, .entry-content, .comments-block__separator, .comments-block__date, .comments-block__date a,
 .comments-block__text, .post-block-02__date, .post-block-04__date, .post-block-05__date, .post-block-06__text, .post-block-07__date,
@@ -2625,6 +2619,7 @@ Redux::setSection($opt_name, array(
 				'--fonts-primary' => ':root',
 			),
 
+
 		),
 		array(
 			'id' => 'fonts-secondary',
@@ -2634,7 +2629,12 @@ Redux::setSection($opt_name, array(
 			'text-align' => false,
 			'color' => false,
 			'default' => false,
-			'text-transform' => true,
+			'text-transform' => false,
+			'font-weight' => false,
+			'font-size' => false,
+			'line-height' => false,
+			'font-style' => false,
+			'all_styles' => true,
 			'output' => array(
 				'font-family' => 'h1,h2,h3,h4,h5,h6, body, .secondary-font, #cancel-comment-reply-link, .comments-block__header, .comment-reply-title, .comments-block__author a,
 .comments-block__author .fn, .comments-block__author-link, .comments-block__reply a, .comments-block__reply-link, .control-09__scroll-link, .control-center__link,
@@ -2700,6 +2700,24 @@ Redux::setSection($opt_name, array(
 			'default' => false,
 			'text-transform' => true,
 			'output' => array('.header-menu .sub-menu'),
+		),
+
+		array(
+			'id' => 'headers-post-title',
+			'type' => 'section',
+			'title' => __('Listing blocks', 'bcn'),
+			'indent' => true,
+		),
+		array(
+			'id' => 'headers-post-titles',
+			'type' => 'typography',
+			'title' => __('Headers', 'bcn'),
+			'google' => true,
+			'output' => array('.post-block-02__header a:hover, .post-block-03__widget-title a:hover, .post-block-04__header a:hover, .post-block-05__header a:hover, .post-block-07__header a:hover, .post-block-09__header a:hover, .post-block-11__header a:hover, .post-block-14__header a:hover, .post-block-18__header a:hover, .post-block-19__widget-title a:hover, .post-block-21__header a:hover, .post-block-02__header a, .post-block-03__widget-title a, .post-block-04__header a, .post-block-05__header a, .post-block-07__header a, .post-block-09__header a, .post-block-11__header a, .post-block-14__header a, .post-block-18__header a, .post-block-19__widget-title a, .post-block-21__header a, .post-block-02__item:hover .post-block-02__header-link, .post-block-03__item:hover .post-block-03__header-link, .post-block-04__item:hover .post-block-04__header-link, .post-block-05__item:hover .post-block-05__header-link, .post-block-07__item:hover .post-block-07__header-link, .post-block-09__item:hover .post-block-09__header-link, .post-block-11__item:hover .post-block-11__header-link, .post-block-14__item:hover .post-block-14__header-link, .post-block-18__item:hover .post-block-18__header-link, .post-block-19__item:hover .post-block-19__header-link, .post-block-21__item:hover .post-block-21__header-link, .post-widget__title-link'),
+			'text-align' => false,
+			'color' => false,
+			'default' => false,
+			'text-transform' => true,
 		),
 
 		array(

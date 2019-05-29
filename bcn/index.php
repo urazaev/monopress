@@ -70,119 +70,129 @@ if (!isset($regular_layout) || $regular_layout == '-1' || $regular_layout == '')
 			if (class_exists('ReduxFramework')) {
 				if ($theme_options['main-page-featured'] == 1) {
 					if (!is_paged()) {
-					?>
-					<section class="post-block-<?php switch ($featured_layout) {
-						case 'layout_2':
-							echo esc_html('02');
-							break;
-						case  'layout_4':
-							echo esc_html('04');
-							break;
-						case  'layout_5':
-							echo esc_html('05');
-							break;
-						case  'layout_7':
-							echo esc_html('07');
-							break;
-						case  'layout_14':
-							echo esc_html('14');
-							break;
-						case  'layout_21':
-							echo esc_html('21');
-							break;
-						case  'layout_22':
-							echo esc_html('22');
-							break;
-					} ?>"
-							 id="loop-content"<?php if ($featured_layout == 4 || 07 || 14 || 21 || 22) {
-						echo 'data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 600"';
-					} ?>>
+						?>
+						<section class="post-block-<?php switch ($featured_layout) {
+							case 'layout_2':
+								echo esc_html('02');
+								break;
+							case  'layout_4':
+								echo esc_html('04');
+								break;
+							case  'layout_5':
+								echo esc_html('05');
+								break;
+							case  'layout_7':
+								echo esc_html('07');
+								break;
+							case  'layout_14':
+								echo esc_html('14');
+								break;
+							case  'layout_21':
+								echo esc_html('21');
+								break;
+							case  'layout_22':
+								echo esc_html('22');
+								break;
+						} ?>"
+								 id="loop-content"<?php if ($featured_layout == 4 || 07 || 14 || 21 || 22) {
+							echo 'data-uk-scrollspy="target: > article; cls:uk-animation-slide-left-small; delay: 600"';
+						} ?>>
+
+							<?php
+
+							if ($featured_layout == 5) { ?>
+
+							<div class="post-block-05__content">
+								<div class="single-slider-item">
+
+									<?php
+									}
+									if ($featured_category != '') {
+										$args = array(
+											'ignore_sticky_posts' => true,
+											'order' => 'DESC',
+											'orderby' => 'date',
+											'post_type' => array('post'),
+											'cat' => $featured_category,
+											'posts_per_page' => $featured_num,
+										);
+									} else {
+										$args = array(
+											'ignore_sticky_posts' => true,
+											'order' => 'DESC',
+											'orderby' => 'date',
+											'post_type' => array('post'),
+											'category_name' => 'featured',
+											'posts_per_page' => $featured_num,
+										);
+									}                // WP_Query arguments
+
+
+									$featured = new WP_Query($args);
+
+									if ($featured->have_posts()) {
+										while ($featured->have_posts()) {
+											$featured->the_post();
+											switch ($featured_layout) {
+
+												case  'layout_2':
+													up_get_template('post-block-02');
+													break;
+
+												case  'layout_4':
+													up_get_template('post-block-04');
+													break;
+
+												case  'layout_5':
+													up_get_template('post-block-05');
+													// TODO: slider pagination? or infinite?
+													break;
+
+												case  'layout_7':
+													up_get_template('post-block-07');
+													break;
+
+												case  'layout_14':
+													up_get_template('post-block-14');
+													break;
+
+												case  'layout_21':
+													up_get_template('post-block-21');
+													break;
+
+												case  'layout_22':
+													up_get_template('post-block-22');
+													break;
+											}
+										}
+									}
+
+									if ($featured_layout == 5) { ?>
+
+								</div>
+
+								<div class="control-05 owl-nav uk-animation-fade theme-light-gray">
+									<div class="control-05__control-slider">
+										<button class="control-05__prev-link slick-custom-prev" type="button">
+				          <span class="control-05__prev-img" data-uk-icon="chevron-up">
+				          </span>
+										</button>
+										<button class="control-05__next-link slick-custom-next" type="button">
+				          <span class="control-05__next-img" data-uk-icon="chevron-down">
+				          </span>
+										</button>
+									</div>
+
+								</div>
+							</div>
 
 						<?php
 
-						if ($featured_layout == 5) { ?>
+						}
+						?>
 
-						<div class="post-block-05__content">
-							<div class="single-slider-item">
-
-								<?php
-								}
-
-								// WP_Query arguments
-								$args = array(
-									'ignore_sticky_posts' => true,
-									'order' => 'DESC',
-									'orderby' => 'date',
-									'post_type' => array('post'),
-									'cat' => $featured_category,
-									'posts_per_page' => $featured_num,
-								);
-
-								$featured = new WP_Query($args);
-
-								if ($featured->have_posts()) {
-									while ($featured->have_posts()) {
-										$featured->the_post();
-										switch ($featured_layout) {
-
-											case  'layout_2':
-												up_get_template('post-block-02');
-												break;
-
-											case  'layout_4':
-												up_get_template('post-block-04');
-												break;
-
-											case  'layout_5':
-												up_get_template('post-block-05');
-												// TODO: slider pagination? or infinite?
-												break;
-
-											case  'layout_7':
-												up_get_template('post-block-07');
-												break;
-
-											case  'layout_14':
-												up_get_template('post-block-14');
-												break;
-
-											case  'layout_21':
-												up_get_template('post-block-21');
-												break;
-
-											case  'layout_22':
-												up_get_template('post-block-22');
-												break;
-										}
-									}
-								}
-
-								if ($featured_layout == 5) { ?>
-
-							</div>
-
-							<div class="control-05 owl-nav uk-animation-fade theme-light-gray">
-								<div class="control-05__control-slider">
-									<button class="control-05__prev-link slick-custom-prev" type="button">
-				          <span class="control-05__prev-img" data-uk-icon="chevron-up">
-				          </span>
-									</button>
-									<button class="control-05__next-link slick-custom-next" type="button">
-				          <span class="control-05__next-img" data-uk-icon="chevron-down">
-				          </span>
-									</button>
-								</div>
-
-							</div>
-						</div>
-
-					<?php
-
-					}
-					?>
-
-					</section>
-					<?php
+						</section>
+						<?php
 					}
 
 					wp_reset_postdata();
