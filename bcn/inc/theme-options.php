@@ -94,7 +94,7 @@ $args = array(
 	// Set a different name for your global variable other than the opt_name
 	'dev_mode' => false,
 	// Show the time the page took to load, etc
-	'update_notice' => true,
+	'update_notice' => false,
 	// If dev_mode is enabled, will notify developer of updated versions available in the GitHub Repo
 	'customizer' => true,
 	// Enable basic customizer support
@@ -194,18 +194,6 @@ $args['share_icons'][] = array(
 	'icon' => 'el el-twitter'
 );
 
-
-// Panel Intro text -> before the form
-if (!isset($args['global_variable']) || $args['global_variable'] !== false) {
-	if (!empty($args['global_variable'])) {
-		$v = $args['global_variable'];
-	} else {
-		$v = str_replace('-', '_', $args['opt_name']);
-	}
-	$args['intro_text'] = sprintf(__('<p>Did you know that Redux sets a global variable for you? To access any of your saved options from within your code you can use your global variable: <strong>$%1$s</strong></p>', 'bcn'), $v);
-} else {
-	$args['intro_text'] = __('<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>', 'bcn');
-}
 
 // Add content after the form.
 $args['footer_text'] = __('<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'bcn');
