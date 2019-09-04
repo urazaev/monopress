@@ -10,43 +10,43 @@
 module.exports = {
 
 	// Project options.
-	projectURL: 'bcn', // Local project URL of your already running WordPress site. Could be something like wpgulp.local or localhost:3000 depending upon your local WordPress setup.
-	productURL: './bcn/', // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
+	projectURL: 'monopress', // Local project URL of your already running WordPress site. Could be something like wpgulp.local or localhost:3000 depending upon your local WordPress setup.
+	productURL: './monopress/', // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 	browserAutoOpen: false,
 	injectChanges: true,
 
 	// Style options.
-	styleSRC: './bcn/source/sass/style.scss', // Path to main .scss file.
-	styleDestination: './bcn/css/', // Path to place the compiled CSS file. Default set to root folder.
+	styleSRC: './monopress/source/sass/style.scss', // Path to main .scss file.
+	styleDestination: './monopress/css/', // Path to place the compiled CSS file. Default set to root folder.
 	outputStyle: 'compact', // Available options → 'compact' or 'compressed' or 'nested' or 'expanded'
 	errLogToConsole: true,
 	precision: 10,
 
 	// JS Vendor options.
-	jsVendorSRC: './bcn/source/js/libraries/*.js', // Path to JS vendor folder.
-	jsVendorDestination: './bcn/js/libraries/', // Path to place the compiled JS vendors file.
+	jsVendorSRC: './monopress/source/js/libraries/*.js', // Path to JS vendor folder.
+	jsVendorDestination: './monopress/js/libraries/', // Path to place the compiled JS vendors file.
 	jsVendorFile: 'vendor', // Compiled JS vendors file name. Default set to vendors i.e. vendors.js.
 
 	// JS Custom options.
-	jsCustomSRC: './bcn/source/js/scripts/*.js', // Path to JS custom scripts folder.
-	jsCustomDestination: './bcn/js/', // Path to place the compiled JS custom scripts file.
+	jsCustomSRC: './monopress/source/js/scripts/*.js', // Path to JS custom scripts folder.
+	jsCustomDestination: './monopress/js/', // Path to place the compiled JS custom scripts file.
 	jsCustomFile: 'app', // Compiled JS custom file name. Default set to custom i.e. custom.js.
 
 	// Images options.
-	imgSRC: './bcn/source/images/**/*', // Source folder of images which should be optimized and watched. You can also specify types e.g. raw/**.{png,jpg,gif} in the glob.
-	imgDST: './bcn/images/', // Destination folder of optimized images. Must be different from the imagesSRC folder.
+	imgSRC: './monopress/source/images/**/*', // Source folder of images which should be optimized and watched. You can also specify types e.g. raw/**.{png,jpg,gif} in the glob.
+	imgDST: './monopress/images/', // Destination folder of optimized images. Must be different from the imagesSRC folder.
 
 	// Watch files paths.
-	watchStyles: './bcn/source/sass/**/*.scss', // Path to all *.scss files inside css folder and inside them.
-	watchJsVendor: './bcn/source/js/libraries/*.js', // Path to all vendor JS files.
-	watchJsCustom: './bcn/source/js/scripts/*.js', // Path to all custom JS files.
-	watchPhp: './bcn/**/*.php', // Path to all PHP files.
+	watchStyles: './monopress/source/sass/**/*.scss', // Path to all *.scss files inside css folder and inside them.
+	watchJsVendor: './monopress/source/js/libraries/*.js', // Path to all vendor JS files.
+	watchJsCustom: './monopress/source/js/scripts/*.js', // Path to all custom JS files.
+	watchPhp: './monopress/**/*.php', // Path to all PHP files.
 
 	// Translation options.
-	textDomain: 'bcn', // Your textdomain here.
-	translationFile: 'bcn.pot', // Name of the translation file.
-	translationDestination: './bcn/languages', // Where to save the translation files.
-	packageName: 'bcn', // Package name.
+	textDomain: 'monopress', // Your textdomain here.
+	translationFile: 'monopress.pot', // Name of the translation file.
+	translationDestination: './monopress/languages', // Where to save the translation files.
+	packageName: 'monopress', // Package name.
 	bugReport: 'https://urazaev.com/', // Where can users report bugs.
 	lastTranslator: 'Alexander Urazaev <alexander@urazaev.com>', // Last translator Email ID.
 	team: 'Alexander Urazaev <alexander@urazaev.com>', // Team's Email ID.

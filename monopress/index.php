@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package bcn
+ * @package monopress
  */
 
 global $theme_options;
@@ -313,8 +313,8 @@ if (!isset($regular_layout) || $regular_layout == '-1' || $regular_layout == '')
 
 					the_posts_pagination(array(
 						'mid_size' => 2,
-						'prev_text' => __('«', 'bcn'),
-						'next_text' => __('»', 'bcn'),
+						'prev_text' => __('«', 'monopress'),
+						'next_text' => __('»', 'monopress'),
 					));
 				}
 				?>

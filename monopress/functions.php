@@ -2,15 +2,15 @@
 
 
 /**
- * bcn functions and definitions
+ * monopress functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package bcn
+ * @package monopress
  */
 $theme = wp_get_theme();
 
-if (!function_exists('bcn_setup')) :
+if (!function_exists('monopress_setup')) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -18,15 +18,15 @@ if (!function_exists('bcn_setup')) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function bcn_setup()
+	function monopress_setup()
 	{
 		/*
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.
-         * If you're building a theme based on bcn, use a find and replace
-         * to change 'bcn' to the name of your theme in all the template files.
+         * If you're building a theme based on monopress, use a find and replace
+         * to change 'monopress' to the name of your theme in all the template files.
          */
-		load_theme_textdomain('bcn', get_template_directory() . '/languages');
+		load_theme_textdomain('monopress', get_template_directory() . '/languages');
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support('automatic-feed-links');
@@ -48,8 +48,8 @@ if (!function_exists('bcn_setup')) :
 
 		// This theme uses wp_nav_menu() in one location.
 
-		register_nav_menus(array('primary' => __('Primary Menu', 'bcn')));
-		register_nav_menus(array('footer' => __('Footer', 'bcn')));
+		register_nav_menus(array('primary' => __('Primary Menu', 'monopress')));
+		register_nav_menus(array('footer' => __('Footer', 'monopress')));
 
 		/*
          * Switch default core markup for search form, comment form, and comments
@@ -66,7 +66,7 @@ if (!function_exists('bcn_setup')) :
 
 	}
 endif;
-add_action('after_setup_theme', 'bcn_setup');
+add_action('after_setup_theme', 'monopress_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -75,27 +75,27 @@ add_action('after_setup_theme', 'bcn_setup');
  *
  * @global int $content_width
  */
-function bcn_content_width()
+function monopress_content_width()
 {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters('bcn_content_width', 640);
+	$GLOBALS['content_width'] = apply_filters('monopress_content_width', 640);
 }
 
-add_action('after_setup_theme', 'bcn_content_width', 0);
+add_action('after_setup_theme', 'monopress_content_width', 0);
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function bcn_widgets_init()
+function monopress_widgets_init()
 {
 	register_sidebar(array(
-		'name' => esc_html__('Default Sidebar', 'bcn'),
+		'name' => esc_html__('Default Sidebar', 'monopress'),
 		'id' => 'up-sidebar-default',
-		'description' => esc_html__('Add widgets here.', 'bcn'),
+		'description' => esc_html__('Add widgets here.', 'monopress'),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget' => '</section>',
 		'before_title' => '<h2 class="widget-title">',
@@ -103,9 +103,9 @@ function bcn_widgets_init()
 	));
 
 	register_sidebar(array(
-		'name' => esc_html__('Flip Page', 'bcn'),
+		'name' => esc_html__('Flip Page', 'monopress'),
 		'id' => 'up-sidebar-flip',
-		'description' => esc_html__('Add widgets here.', 'bcn'),
+		'description' => esc_html__('Add widgets here.', 'monopress'),
 		'before_widget' => ' ',
 		'after_widget' => ' ',
 		'before_title' => '<h2 class="uk-h2 widget-title">',
@@ -158,39 +158,39 @@ function bcn_widgets_init()
 	));
 }
 
-add_action('widgets_init', 'bcn_widgets_init');
+add_action('widgets_init', 'monopress_widgets_init');
 
 /**
  * Enqueue scripts and styles.
  */
 
-function bcn_scripts()
+function monopress_scripts()
 {
-	wp_enqueue_style('bcn-style', get_stylesheet_uri());
-	wp_enqueue_style('bcn-theme-style', get_template_directory_uri() . '/css/style.min.css', array(), time());
+	wp_enqueue_style('monopress-style', get_stylesheet_uri());
+	wp_enqueue_style('monopress-theme-style', get_template_directory_uri() . '/css/style.min.css', array(), time());
 
 	wp_enqueue_style( 'font-awesome-free', '//use.fontawesome.com/releases/v5.8.2/css/all.css' );
 
 	//    header libraries
-	wp_enqueue_script('bcn-uikit', get_template_directory_uri() . '/js/libraries/uikit.min.js', array(), time());
-	wp_enqueue_script('bcn-uikit-icons', get_template_directory_uri() . '/js/libraries/uikit-icons.min.js', array(), time());
+	wp_enqueue_script('monopress-uikit', get_template_directory_uri() . '/js/libraries/uikit.min.js', array(), time());
+	wp_enqueue_script('monopress-uikit-icons', get_template_directory_uri() . '/js/libraries/uikit-icons.min.js', array(), time());
 
 	//    footer libraries
-	wp_enqueue_script('bcn-library-jquery-2.2.4', get_template_directory_uri() . '/js/libraries/jquery-2.2.4.min.js', array(), time());
-	wp_enqueue_script('bcn-library-css-var-polyfill', get_template_directory_uri() . '/js/libraries/css-var-polyfill.min.js', array(), time(), true);
-	wp_enqueue_script('bcn-library-sticky-sidebar', get_template_directory_uri() . '/js/libraries/sticky-sidebar.min.js', array(), time(), true);
-	wp_enqueue_script('bcn-library-slick', get_template_directory_uri() . '/js/libraries/slick.min.js', array(), time(), true);
-	wp_enqueue_script('bcn-library-resizesensor', get_template_directory_uri() . '/js/libraries/resizesensor.min.js', array(), time(), true);
+	wp_enqueue_script('monopress-library-jquery-2.2.4', get_template_directory_uri() . '/js/libraries/jquery-2.2.4.min.js', array(), time());
+	wp_enqueue_script('monopress-library-css-var-polyfill', get_template_directory_uri() . '/js/libraries/css-var-polyfill.min.js', array(), time(), true);
+	wp_enqueue_script('monopress-library-sticky-sidebar', get_template_directory_uri() . '/js/libraries/sticky-sidebar.min.js', array(), time(), true);
+	wp_enqueue_script('monopress-library-slick', get_template_directory_uri() . '/js/libraries/slick.min.js', array(), time(), true);
+	wp_enqueue_script('monopress-library-resizesensor', get_template_directory_uri() . '/js/libraries/resizesensor.min.js', array(), time(), true);
 
 	//    scripts
-	wp_enqueue_script('bcn-app-min', get_template_directory_uri() . '/js/app.min.js', array(), time(), true);
+	wp_enqueue_script('monopress-app-min', get_template_directory_uri() . '/js/app.min.js', array(), time(), true);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
 }
 
-add_action('wp_enqueue_scripts', 'bcn_scripts');
+add_action('wp_enqueue_scripts', 'monopress_scripts');
 
 /**
  * Implement the Custom Header feature.
