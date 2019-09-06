@@ -65,7 +65,7 @@ $args = array(
 	// TYPICAL -> Change these values as you need/desire
 	'opt_name' => $opt_name,
 	// This is where your data is stored in the database and also becomes your global variable name.
-	'display_name' => 'BCN ' . esc_html__('Options', 'bcn') . '',
+	'display_name' => 'Monopress ' . esc_html__('Options', 'bcn') . '',
 	// Name that appears at the top of your panel
 	'display_version' => $theme->get('Version'),
 	// Version that appears at the top of your panel
@@ -1576,7 +1576,7 @@ Redux::setSection($opt_name, array(
 			'id' => 'post-sharing-title',
 			'type' => 'section',
 			'title' => __('Sharing', 'bcn'),
-			'subtitle' => __('All the articles of BCN have sharing buttons at the start of the article (usually under the title) and at the end of the article (after tags). You can sort the social networks with drag and drop.', 'bcn'),
+			'subtitle' => __('All the articles of Monopress have sharing buttons at the start of the article (usually under the title) and at the end of the article (after tags). You can sort the social networks with drag and drop.', 'bcn'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(

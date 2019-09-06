@@ -28,7 +28,7 @@
 	  padding-left: 50px;
 	  padding-right: 50px;
 	}
-	.post-widget__item:not(:last-child) {
+	.post-widget__item:not(:last-of-type) {
 	  padding-bottom: 30px;
 	  padding-left: 0;
 	  padding-right: 0;
@@ -37,6 +37,9 @@
 		padding-left: 0;
 		padding-right: 0;
 	  }
+	}
+	.post-widget__item:last-of-type {
+	  padding-bottom: 0;
 	}
 	.col-sm-3 {
 	  padding-bottom: 20px;

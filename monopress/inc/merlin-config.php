@@ -110,76 +110,16 @@ function merlin_import_files()
 {
 	return array(
 		array(
-			'import_file_name' => 'Demo 1 (Travel)',
-			'import_file_url' => 'http://bcn.urazaev.com/demos/__1__content.xml',
-			'import_widget_file_url' => 'http://bcn.urazaev.com/demos/__1__widgets.json',
+			'import_file_name' => 'Monopress demo',
+			'import_file_url' => 'http://monopress.urazaev.com/demos/__1__content.xml',
+			'import_widget_file_url' => 'http://monopress.urazaev.com/demos/__1__widgets.json',
 			'import_redux' => array(
 				array(
-					'file_url' => 'http://bcn.urazaev.com/demos/__1__redux.json',
+					'file_url' => 'http://monopress.urazaev.com/demos/__1__redux.json',
 					'option_name' => 'theme_options',
 				),
 			),
-			'preview_url' => 'http://bcn.urazaev.com/',
-		),
-		array(
-			'import_file_name' => 'Demo 2 (Interior)',
-			'import_file_url' => 'http://bcn.urazaev.com/demos/__2__content.xml',
-			'import_widget_file_url' => 'http://bcn.urazaev.com/demos/__2__widgets.json',
-			'import_redux' => array(
-				array(
-					'file_url' => 'http://bcn.urazaev.com/demos/__2__redux.json',
-					'option_name' => 'theme_options',
-				),
-			),
-			'preview_url' => 'http://bcn.urazaev.com/interrior/',
-		),
-		array(
-			'import_file_name' => 'Demo 3 (Urban)',
-			'import_file_url' => 'http://bcn.urazaev.com/demos/__3__content.xml',
-			'import_widget_file_url' => 'http://bcn.urazaev.com/demos/__3__widgets.json',
-			'import_redux' => array(
-				array(
-					'file_url' => 'http://bcn.urazaev.com/demos/__3__redux.json',
-					'option_name' => 'theme_options',
-				),
-			),
-			'preview_url' => 'http://bcn.urazaev.com/urban/',
-		),
-		array(
-			'import_file_name' => 'Demo 4 (Minimal)',
-			'import_file_url' => 'http://bcn.urazaev.com/demos/__4__content.xml',
-			'import_widget_file_url' => 'http://bcn.urazaev.com/demos/__4__widgets.json',
-			'import_redux' => array(
-				array(
-					'file_url' => 'http://bcn.urazaev.com/demos/__4__redux.json',
-					'option_name' => 'theme_options',
-				),
-			),
-			'preview_url' => 'http://bcn.urazaev.com/minimal/',
-		),
-		array(
-			'import_file_name' => 'Demo 5 (Food)',
-			'import_file_url' => 'http://bcn.urazaev.com/demos/__5__content.xml',
-			'import_widget_file_url' => 'http://bcn.urazaev.com/demos/__5__widgets.json',
-			'import_redux' => array(
-				array(
-					'file_url' => 'http://bcn.urazaev.com/demos/__5__redux.json',
-					'option_name' => 'theme_options',
-				),
-			),
-			'preview_url' => 'http://bcn.urazaev.com/food/',
-		),
-		array(
-			'import_file_name' => 'Demo 6 (Photo)',
-			'import_file_url' => 'http://bcn.urazaev.com/demos/__6__content.xml',
-			'import_widget_file_url' => 'http://bcn.urazaev.com/demos/__6__widgets.json',
-			'import_redux' => array(
-				array(
-					'file_url' => 'http://bcn.urazaev.com/demos/__6__redux.json',
-					'option_name' => 'theme_options',
-				),
-			),
-			'preview_url' => 'http://bcn.urazaev.com/photo/',
+			'preview_url' => 'http://monopress.urazaev.com/',
 		),
 	);
 }
