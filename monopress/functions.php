@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * monopress functions and definitions
  *
