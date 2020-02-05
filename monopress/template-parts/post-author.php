@@ -237,7 +237,7 @@ $author_rss = get_the_author_meta('rss');
 				<?php if ($author_website) { ?>
 					<div class="col-12 up-author-url">
 						<a href="<?php echo esc_url($author_website); ?>"
-						   title="<?php esc_html_e('View author home page', 'bcn'); ?>"><?php echo esc_url($author_website); ?></a>
+						   title="<?php esc_html_e('View author home page', 'monopress'); ?>"><?php echo esc_url($author_website); ?></a>
 					</div>
 					<?php
 				}

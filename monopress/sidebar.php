@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package bcn
+ * @package monopress
  */
 
 if ( ! is_active_sidebar( 'up-sidebar-default' ) ) {

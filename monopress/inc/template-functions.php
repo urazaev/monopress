@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package bcn
+ * @package monopress
  */
 
 /**
@@ -14,7 +14,7 @@
 
 global $theme_options;
 
-function bcn_body_classes($classes)
+function monopress_body_classes($classes)
 {
 	// Adds a class of hfeed to non-singular pages.
 	if (!is_singular()) {
@@ -29,19 +29,19 @@ function bcn_body_classes($classes)
 	return $classes;
 }
 
-add_filter('body_class', 'bcn_body_classes');
+add_filter('body_class', 'monopress_body_classes');
 
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
-function bcn_pingback_header()
+function monopress_pingback_header()
 {
 	if (is_singular() && pings_open()) {
 		echo '<link rel="pingback" href="', esc_url(get_bloginfo('pingback_url')), '">';
 	}
 }
 
-add_action('wp_head', 'bcn_pingback_header');
+add_action('wp_head', 'monopress_pingback_header');
 
 
 /**
@@ -296,7 +296,7 @@ class up_walker_comment extends Walker
 		?>
 		<<?php echo esc_html($tag); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class('', $comment); ?>>
 		<div class="comment-body comments-block__item">
-			<?php _e('Pingback:', 'bcn'); ?><?php comment_author_link($comment); ?><?php edit_comment_link(__('Edit', 'bcn'), '<span class="edit-link">', '</span>'); ?>
+			<?php _e('Pingback:', 'monopress'); ?><?php comment_author_link($comment); ?><?php edit_comment_link(__('Edit', 'monopress'), '<span class="edit-link">', '</span>'); ?>
 		</div>
 		<?php
 	}
@@ -324,9 +324,9 @@ class up_walker_comment extends Walker
 
 		$commenter = wp_get_current_commenter();
 		if ($commenter['comment_author_email']) {
-			$moderation_note = __('Your comment is awaiting moderation.', 'bcn');
+			$moderation_note = __('Your comment is awaiting moderation.', 'monopress');
 		} else {
-			$moderation_note = __('Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved.', 'bcn');
+			$moderation_note = __('Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved.', 'monopress');
 		}
 
 		?>
@@ -343,7 +343,7 @@ class up_walker_comment extends Walker
 			<?php
 			/* translators: %s: comment author link */
 			printf(
-				__('%s <span class="says">says:</span>', 'bcn'),
+				__('%s <span class="says">says:</span>', 'monopress'),
 				sprintf('<cite class="fn">%s</cite>', get_comment_author_link($comment))
 			);
 			?>
@@ -356,11 +356,11 @@ class up_walker_comment extends Walker
 		<div class="comment-meta commentmetadata"><a href="<?php echo esc_url(get_comment_link($comment, $args)); ?>">
 				<?php
 				/* translators: 1: comment date, 2: comment time */
-				printf(__('%1$s at %2$s', 'bcn'), get_comment_date('', $comment), get_comment_time());
+				printf(__('%1$s at %2$s', 'monopress'), get_comment_date('', $comment), get_comment_time());
 				?>
 			</a>
 			<?php
-			edit_comment_link(__('(Edit)', 'bcn'), '&nbsp;&nbsp;', '');
+			edit_comment_link(__('(Edit)', 'monopress'), '&nbsp;&nbsp;', '');
 			?>
 		</div>
 
@@ -416,9 +416,9 @@ class up_walker_comment extends Walker
 
 		$commenter = wp_get_current_commenter();
 		if ($commenter['comment_author_email']) {
-			$moderation_note = __('Your comment is awaiting moderation.', 'bcn');
+			$moderation_note = __('Your comment is awaiting moderation.', 'monopress');
 		} else {
-			$moderation_note = __('Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved.', 'bcn');
+			$moderation_note = __('Your comment is awaiting moderation. This is a preview, your comment will be visible after it has been approved.', 'monopress');
 		}
 
 		?>
@@ -441,7 +441,7 @@ class up_walker_comment extends Walker
 						<?php
 						/* translators: %s: comment author link */
 						printf(
-							__('%s', 'bcn'),
+							__('%s', 'monopress'),
 							sprintf('<span class="fn">%s</span>', get_comment_author_link($comment))
 						);
 						?>
@@ -451,7 +451,7 @@ class up_walker_comment extends Walker
 						<time datetime="<?php comment_time('c'); ?>">
 							<?php
 							/* translators: 1: comment date, 2: comment time */
-							printf(__('%1$s at %2$s', 'bcn'), get_comment_date('', $comment), get_comment_time());
+							printf(__('%1$s at %2$s', 'monopress'), get_comment_date('', $comment), get_comment_time());
 							?>
 						</time>
 					</a>
@@ -472,7 +472,7 @@ class up_walker_comment extends Walker
 							);
 							?>
 
-							<?php edit_comment_link(__('Edit', 'bcn')); ?>
+							<?php edit_comment_link(__('Edit', 'monopress')); ?>
 
 						</span>
 					</div>
@@ -562,8 +562,8 @@ if (!function_exists('up_cat_pagination')) {
 			if ($theme_options['category-pagination'] == 1) {
 				the_posts_pagination(array(
 					'mid_size' => 2,
-					'prev_text' => __('«', 'bcn'),
-					'next_text' => __('»', 'bcn'),
+					'prev_text' => __('«', 'monopress'),
+					'next_text' => __('»', 'monopress'),
 				));
 			}
 		}
@@ -626,13 +626,13 @@ function the_breadcrumb($outer_class = 'breadcrumbs')
 				} elseif (is_archive() || is_single()) {
 					echo esc_html($sep);
 					if (is_day()) {
-						printf(__('%s', 'bcn'), get_the_date());
+						printf(__('%s', 'monopress'), get_the_date());
 					} elseif (is_month()) {
-						printf(__('%s', 'bcn'), get_the_date(_x('F Y', 'monthly archives date format', 'bcn')));
+						printf(__('%s', 'monopress'), get_the_date(_x('F Y', 'monthly archives date format', 'monopress')));
 					} elseif (is_year()) {
-						printf(__('%s', 'bcn'), get_the_date(_x('Y', 'yearly archives date format', 'bcn')));
+						printf(__('%s', 'monopress'), get_the_date(_x('Y', 'yearly archives date format', 'monopress')));
 					} else {
-						_e('Blog Archives', 'bcn');
+						_e('Blog Archives', 'monopress');
 					}
 				}
 			}

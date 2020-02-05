@@ -1,8 +1,8 @@
 <?php
 /**
- * bcn Theme Meta boxes
+ * monopress Theme Meta boxes
  *
- * @package bcn
+ * @package monopress
  */
 
 /** LOAD --- Related CSS and JS */
@@ -29,7 +29,7 @@ function cmb2_sample_metaboxes()
 
 	$cmb_page = new_cmb2_box(array(
 		'id' => 'page-sidebar',
-		'title' => esc_html__('Layout options', 'bcn'),
+		'title' => esc_html__('Layout options', 'monopress'),
 		'object_types' => array('page',), // Post type
 		'context' => 'normal',
 		'priority' => 'high',
@@ -37,7 +37,7 @@ function cmb2_sample_metaboxes()
 	));
 
 	$cmb_page->add_field(array(
-		'name' => esc_html__('Sidebar position', 'bcn'),
+		'name' => esc_html__('Sidebar position', 'monopress'),
 		'id' => 'meta_page-template-sidebar',
 		'type' => 'image_select',
 		'options' => array(
@@ -61,7 +61,7 @@ function cmb2_sample_metaboxes()
 
 	$cmb_main_page = new_cmb2_box(array(
 		'id' => 'main-page-title',
-		'title' => esc_html__('Main page options', 'bcn'),
+		'title' => esc_html__('Main page options', 'monopress'),
 		'object_types' => array('page',), // Post type
 		'context' => 'normal',
 		'priority' => 'high',
@@ -79,7 +79,7 @@ function cmb2_sample_metaboxes()
 	));
 
 	$cmb_main_page->add_field(array(
-		'name' => esc_html__('Featured posts layout', 'bcn'),
+		'name' => esc_html__('Featured posts layout', 'monopress'),
 		'id' => 'meta_main-page-featured-display',
 		'type' => 'image_select',
 		'options' => array(
@@ -117,7 +117,7 @@ function cmb2_sample_metaboxes()
 	));
 
 	$cmb_main_page->add_field(array(
-		'name' => esc_html__('Regular posts layout', 'bcn'),
+		'name' => esc_html__('Regular posts layout', 'monopress'),
 		'id' => 'meta_main-page-display',
 		'type' => 'image_select',
 		'options' => array(
@@ -156,7 +156,7 @@ function cmb2_sample_metaboxes()
 
 	$cmb_post = new_cmb2_box(array(
 		'id' => 'post_metabox',
-		'title' => esc_html__('Post layout options', 'bcn'),
+		'title' => esc_html__('Post layout options', 'monopress'),
 		'object_types' => array('post',), // Post type
 		'context' => 'normal',
 		'priority' => 'high',
@@ -164,7 +164,7 @@ function cmb2_sample_metaboxes()
 	));
 
 	$cmb_post->add_field(array(
-		'name' => esc_html__('Sidebar position', 'bcn'),
+		'name' => esc_html__('Sidebar position', 'monopress'),
 		'id' => 'meta_post-sidebar',
 		'type' => 'image_select',
 		'options' => array(
@@ -187,7 +187,7 @@ function cmb2_sample_metaboxes()
 	));
 
 	$cmb_post->add_field(array(
-		'name' => esc_html__('Post layout', 'bcn'),
+		'name' => esc_html__('Post layout', 'monopress'),
 		'id' => 'meta_post-template-default',
 		'type' => 'image_select',
 		'options' => array(
@@ -212,7 +212,7 @@ function cmb2_sample_metaboxes()
 
 	$cmb_portfolio = new_cmb2_box(array(
 		'id' => 'portfolio-meta',
-		'title' => esc_html__('Portfolio layout', 'bcn'),
+		'title' => esc_html__('Portfolio layout', 'monopress'),
 		'context' => 'normal',
 		'object_types' => array( 'page' ), // post type
 		'show_on'      => array( 'key' => 'page-template', 'value' => 'page_portfolio.php' ),
@@ -222,7 +222,7 @@ function cmb2_sample_metaboxes()
 	));
 
 	$cmb_portfolio->add_field(array(
-		'name' => esc_html__('Post layout', 'bcn'),
+		'name' => esc_html__('Post layout', 'monopress'),
 		'id' => 'meta_portfolio-template-default',
 		'type' => 'image_select',
 		'options' => array(

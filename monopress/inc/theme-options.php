@@ -65,7 +65,7 @@ $args = array(
 	// TYPICAL -> Change these values as you need/desire
 	'opt_name' => $opt_name,
 	// This is where your data is stored in the database and also becomes your global variable name.
-	'display_name' => 'Monopress ' . esc_html__('Options', 'bcn') . '',
+	'display_name' => 'Monopress ' . esc_html__('Options', 'monopress') . '',
 	// Name that appears at the top of your panel
 	'display_version' => $theme->get('Version'),
 	// Version that appears at the top of your panel
@@ -73,8 +73,8 @@ $args = array(
 	//Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
 	'allow_sub_menu' => true,
 	// Show the sections below the admin menu item or not
-	'menu_title' => __('Theme Options', 'bcn'),
-	'page_title' => __('Theme Options', 'bcn'),
+	'menu_title' => __('Theme Options', 'monopress'),
+	'page_title' => __('Theme Options', 'monopress'),
 	// You will need to generate a Google API key to use this feature.
 	// Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
 	'google_api_key' => '',
@@ -172,15 +172,15 @@ $args = array(
 
 // ADMIN BAR LINKS -> Setup custom links in the admin bar menu as external items.
 $args['admin_bar_links'][] = array(
-	'id' => 'bcn-docs',
-	'href' => 'https://docs.urazaev.com/bcn-wp/',
-	'title' => __('Documentation', 'bcn'),
+	'id' => 'monopress-docs',
+	'href' => 'https://docs.urazaev.com/monopress-wp/',
+	'title' => __('Documentation', 'monopress'),
 );
 
 $args['admin_bar_links'][] = array(
-	//'id'    => 'bcn-support',
+	//'id'    => 'monopress-support',
 	'href' => 'https://up.ticksy.com/',
-	'title' => __('Support', 'bcn'),
+	'title' => __('Support', 'monopress'),
 );
 
 $args['share_icons'][] = array(
@@ -196,7 +196,7 @@ $args['share_icons'][] = array(
 
 
 // Add content after the form.
-$args['footer_text'] = __('<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'bcn');
+$args['footer_text'] = __('<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'monopress');
 
 Redux::setArgs($opt_name, $args);
 
@@ -212,19 +212,19 @@ Redux::setArgs($opt_name, $args);
 //$tabs = array(
 //    array(
 //        'id' => 'redux-help-tab-1',
-//        'title' => __('Theme Information 1', 'bcn'),
-//        'content' => __('<p>This is the tab content, HTML is allowed.</p>', 'bcn')
+//        'title' => __('Theme Information 1', 'monopress'),
+//        'content' => __('<p>This is the tab content, HTML is allowed.</p>', 'monopress')
 //    ),
 //    array(
 //        'id' => 'redux-help-tab-2',
-//        'title' => __('Theme Information 2', 'bcn'),
-//        'content' => __('<p>This is the tab content, HTML is allowed.</p>', 'bcn')
+//        'title' => __('Theme Information 2', 'monopress'),
+//        'content' => __('<p>This is the tab content, HTML is allowed.</p>', 'monopress')
 //    )
 //);
 //Redux::setHelpTab($opt_name, $tabs);
 //
 //// Set the help sidebar
-//$content = __('<p>This is the sidebar content, HTML is allowed.</p>', 'bcn');
+//$content = __('<p>This is the sidebar content, HTML is allowed.</p>', 'monopress');
 //Redux::setHelpSidebar($opt_name, $content);
 
 
@@ -248,21 +248,21 @@ Redux::setArgs($opt_name, $args);
 
 // -> START Main Page
 Redux::setSection($opt_name, array(
-	'title' => __('Main Page', 'bcn'),
+	'title' => __('Main Page', 'monopress'),
 	'id' => 'main-page',
-	'desc' => __('Main Page options', 'bcn'),
+	'desc' => __('Main Page options', 'monopress'),
 	'icon' => 'el el-adjust-alt',
 	'fields' => array(
 		array(
 			'id' => 'main-page-featured-title',
 			'type' => 'section',
-			'title' => __('Main page featured block', 'bcn'),
+			'title' => __('Main page featured block', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'main-page-featured',
 			'type' => 'switch',
-			'title' => __('Show top featured block', 'bcn'),
+			'title' => __('Show top featured block', 'monopress'),
 			'default' => true,
 		),
 		array(
@@ -270,7 +270,7 @@ Redux::setSection($opt_name, array(
 			'id' => 'main-page-featured-cat',
 			'type' => 'select',
 			'multi' => true,
-			'title' => __('Featured post categories', 'bcn'),
+			'title' => __('Featured post categories', 'monopress'),
 			'data' => 'categories',
 
 		),
@@ -278,15 +278,15 @@ Redux::setSection($opt_name, array(
 			'required' => array('main-page-featured', '=', '1'),
 			'id' => 'main-page-featured-num',
 			'type' => 'text',
-			'title' => __('Featured post limit', 'bcn'),
+			'title' => __('Featured post limit', 'monopress'),
 			'default' => '2',
 		),
 		array(
 			'required' => array('main-page-featured', '=', '1'),
 			'id' => 'main-page-featured-display',
 			'type' => 'image_select',
-			'title' => __('Article display view', 'bcn'),
-			'subtitle' => __('Select a module type, this is how your featured list will be displayed.', 'bcn'),
+			'title' => __('Article display view', 'monopress'),
+			'subtitle' => __('Select a module type, this is how your featured list will be displayed.', 'monopress'),
 			'options' => array(
 				'layout_2' => array(
 					'alt' => '2',
@@ -318,14 +318,14 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'main-page-display-title',
 			'type' => 'section',
-			'title' => __('Main page post listing', 'bcn'),
+			'title' => __('Main page post listing', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'main-page-display',
 			'type' => 'image_select',
-			'title' => __('Article display view', 'bcn'),
-			'subtitle' => __('Select a module type, this is how your article list will be displayed.', 'bcn'),
+			'title' => __('Article display view', 'monopress'),
+			'subtitle' => __('Select a module type, this is how your article list will be displayed.', 'monopress'),
 			'options' => array(
 				'layout_2' => array(
 					'alt' => '2',
@@ -357,8 +357,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'main-page-pagination',
 			'type' => 'select',
-			'title' => __('Pagination style', 'bcn'),
-			'subtitle' => __('Set a pagination style for main page.', 'bcn'),
+			'title' => __('Pagination style', 'monopress'),
+			'subtitle' => __('Set a pagination style for main page.', 'monopress'),
 			'options' => array(
 				'1' => 'Normal pagination',
 				'2' => 'Infinite loading',
@@ -370,8 +370,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'main-page-sidebar',
 			'type' => 'image_select',
-			'title' => __('Sidebar position', 'bcn'),
-			'subtitle' => __('Sidebar position and custom sidebars.', 'bcn'),
+			'title' => __('Sidebar position', 'monopress'),
+			'subtitle' => __('Sidebar position and custom sidebars.', 'monopress'),
 			'options' => array(
 				'sidebar_1' => array(
 					'alt' => 'No sidebar',
@@ -395,23 +395,23 @@ Redux::setSection($opt_name, array(
 
 // -> START Header
 Redux::setSection($opt_name, array(
-	'title' => __('Header', 'bcn'),
+	'title' => __('Header', 'monopress'),
 	'id' => 'header',
-	'desc' => __('Header options', 'bcn'),
+	'desc' => __('Header options', 'monopress'),
 	'icon' => 'el el-adjust-alt'
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Header and main menu', 'bcn'),
+	'title' => __('Header and main menu', 'monopress'),
 	'id' => 'header-style',
 	'subsection' => true,
 	'fields' => array(
 		array(
 			'id' => 'header-layout',
 			'type' => 'image_select',
-			'title' => __('Header style', 'bcn'),
+			'title' => __('Header style', 'monopress'),
 //            TODO: paste icons
-			'subtitle' => __('Select the layout in which the header elements will be arranged (horizontal or vertical)', 'bcn'),
+			'subtitle' => __('Select the layout in which the header elements will be arranged (horizontal or vertical)', 'monopress'),
 			'width' => '1200',
 			'options' => array(
 				'1' => array(
@@ -428,38 +428,38 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'header-bg-title',
 			'type' => 'section',
-			'title' => __('Header background', 'bcn'),
-			'subtitle' => __('You can overwrite the template on each block and widget.', 'bcn'),
+			'title' => __('Header background', 'monopress'),
+			'subtitle' => __('You can overwrite the template on each block and widget.', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'header-bg',
 			'type' => 'background',
 			'output' => array('header.page-header, .vertical-main-sidebar__left'),
-			'title' => __('Header background', 'bcn'),
+			'title' => __('Header background', 'monopress'),
 			'background-color' => 'false',
 
 		),
 //        array(
 //            'id' => 'header-bg-opacity',
 //            'type' => 'text',
-//            'title' => __('Background opacity', 'bcn'),
-//            'subtitle' => __('Set the background image transparency (Example: 0.5)', 'bcn'),
-////            'default' => __('0.5', 'bcn'),
+//            'title' => __('Background opacity', 'monopress'),
+//            'subtitle' => __('Set the background image transparency (Example: 0.5)', 'monopress'),
+////            'default' => __('0.5', 'monopress'),
 //// TODO: for newest version
 //        ),
 		array(
 			'id' => 'main-menu-title',
 			'type' => 'section',
-			'title' => __('Main menu', 'bcn'),
-			'subtitle' => __('You can overwrite the template on each block and widget.', 'bcn'),
+			'title' => __('Main menu', 'monopress'),
+			'subtitle' => __('You can overwrite the template on each block and widget.', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'main-menu-enabled',
 			'type' => 'switch',
-			'title' => __('Show header menu (main)', 'bcn'),
-			'subtitle' => __('Show a menu for the main header section', 'bcn'),
+			'title' => __('Show header menu (main)', 'monopress'),
+			'subtitle' => __('Show a menu for the main header section', 'monopress'),
 			'default' => 1,
 		),
 		array(
@@ -467,21 +467,21 @@ Redux::setSection($opt_name, array(
 			'id' => 'main-menu-select',
 			'type' => 'select',
 			'data' => 'menu_location',
-			'title' => __('Header menu (main)', 'bcn'),
-			'subtitle' => __('Select a menu for the main header section', 'bcn'),
+			'title' => __('Header menu (main)', 'monopress'),
+			'subtitle' => __('Select a menu for the main header section', 'monopress'),
 		),
 		array(
 			'required' => array('header-layout', '=', '1'),
 			'id' => 'main-menu-sticky',
 			'type' => 'switch',
-			'title' => __('Sticky menu', 'bcn'),
-			'subtitle' => __('How to display the header menu on scroll', 'bcn'),
+			'title' => __('Sticky menu', 'monopress'),
+			'subtitle' => __('How to display the header menu on scroll', 'monopress'),
 			'default' => 'false',
 		),
 //        array(
 //            'id' => 'main-menu-sticky-logo',
 //            'type' => 'select',
-//            'title' => __('- Logo on sticky menu', 'bcn'),
+//            'title' => __('- Logo on sticky menu', 'monopress'),
 //            'subtitle' => __('Show / Hide the Logo on sticky menu'),
 //            'description' => __('Notice: If you choose Mobile logo, upload a logo in <b>Logo for Mobile</b> section'),
 //            'options' => array(
@@ -496,8 +496,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'main-menu-date',
 			'type' => 'switch',
-			'title' => __('Show date', 'bcn'),
-			'subtitle' => __('Hide or show the date in the top menu', 'bcn'),
+			'title' => __('Show date', 'monopress'),
+			'subtitle' => __('Hide or show the date in the top menu', 'monopress'),
 			'default' => 1,
 			'on' => 'Enabled',
 			'off' => 'Disabled',
@@ -505,8 +505,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'main-menu-weather',
 			'type' => 'switch',
-			'title' => __('Show weather', 'bcn'),
-			'subtitle' => __('Hide or show the weather info in the top menu', 'bcn'),
+			'title' => __('Show weather', 'monopress'),
+			'subtitle' => __('Hide or show the weather info in the top menu', 'monopress'),
 			'default' => 1,
 			'on' => 'Enabled',
 			'off' => 'Disabled',
@@ -515,9 +515,9 @@ Redux::setSection($opt_name, array(
 			'required' => array('header-layout', '=', '1'),
 			'id' => 'main-menu-search',
 			'type' => 'switch',
-			'title' => __('Show search icon', 'bcn'),
-			'subtitle' => __('Show or hide search icon', 'bcn'),
-			'description' => __('Hide or show the search dialog info in the top menu.', 'bcn'),
+			'title' => __('Show search icon', 'monopress'),
+			'subtitle' => __('Show or hide search icon', 'monopress'),
+			'description' => __('Hide or show the search dialog info in the top menu.', 'monopress'),
 			'default' => 1,
 			'on' => 'Enabled',
 			'off' => 'Disabled',
@@ -526,9 +526,9 @@ Redux::setSection($opt_name, array(
 			'required' => array('header-layout', '=', '1'),
 			'id' => 'main-menu-flip',
 			'type' => 'switch',
-			'title' => __('Show flip panel', 'bcn'),
-			'subtitle' => __('Show or hide the flip', 'bcn'),
-			'description' => __('The flip panel uses sidebar to show information. To add content to the flip panel go to the widgets section and drag widget to the Flip Panel sidebar.', 'bcn'),
+			'title' => __('Show flip panel', 'monopress'),
+			'subtitle' => __('Show or hide the flip', 'monopress'),
+			'description' => __('The flip panel uses sidebar to show information. To add content to the flip panel go to the widgets section and drag widget to the Flip Panel sidebar.', 'monopress'),
 			'default' => 1,
 			'on' => 'Enabled',
 			'off' => 'Disabled',
@@ -537,40 +537,40 @@ Redux::setSection($opt_name, array(
 ));
 
 //Redux::setSection($opt_name, array(
-//    'title' => __('Search position', 'bcn'),
+//    'title' => __('Search position', 'monopress'),
 //    'id' => 'search-position',
 //    'subsection' => true,
-//    'desc' => __('For full documentation on this field, visit: ', 'bcn') . '<a href="//docs.reduxframework.com/core/fields/radio/" target="_blank">docs.reduxframework.com/core/fields/radio/</a>',
+//    'desc' => __('For full documentation on this field, visit: ', 'monopress') . '<a href="//docs.reduxframework.com/core/fields/radio/" target="_blank">docs.reduxframework.com/core/fields/radio/</a>',
 //    'fields' => array()
 //    // TODO: for newest version
 //));
 
 //Redux::setSection($opt_name, array(
-//    'title' => __('Top bar', 'bcn'),
+//    'title' => __('Top bar', 'monopress'),
 //    'id' => 'top-bar',
 //    'subsection' => true,
-//    'desc' => __('For full documentation on this field, visit: ', 'bcn') . '<a href="//docs.reduxframework.com/core/fields/sortable/" target="_blank">docs.reduxframework.com/core/fields/sortable/</a>',
+//    'desc' => __('For full documentation on this field, visit: ', 'monopress') . '<a href="//docs.reduxframework.com/core/fields/sortable/" target="_blank">docs.reduxframework.com/core/fields/sortable/</a>',
 //    'fields' => array()
 //    // TODO: for newest version
 //));
 
 
 Redux::setSection($opt_name, array(
-	'title' => __('Logo ', 'bcn'),
+	'title' => __('Logo ', 'monopress'),
 	'id' => 'logo-favicon',
 	'subsection' => true,
 	'fields' => array(
 		array(
 			'id' => 'logo-type-title',
 			'type' => 'section',
-			'title' => __('Text or img logo', 'bcn'),
+			'title' => __('Text or img logo', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'logo-type',
 			'type' => 'switch',
-			'title' => __('Show the image for logos or text', 'bcn'),
-			'subtitle' => __('Text or img logo', 'bcn'),
+			'title' => __('Show the image for logos or text', 'monopress'),
+			'subtitle' => __('Text or img logo', 'monopress'),
 			'default' => 1,
 			'on' => 'Image',
 			'off' => 'Text',
@@ -579,80 +579,80 @@ Redux::setSection($opt_name, array(
 			'required' => array('logo-type', '=', '1'),
 			'id' => 'logo-desktop-title',
 			'type' => 'section',
-			'title' => __('Logo for desktop', 'bcn'),
+			'title' => __('Logo for desktop', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'logo',
 			'type' => 'media',
 			'url' => true,
-			'title' => __('Logo upload', 'bcn'),
+			'title' => __('Logo upload', 'monopress'),
 			'compiler' => 'true',
-			'subtitle' => __('Upload your logo .png or .jpg', 'bcn'),
+			'subtitle' => __('Upload your logo .png or .jpg', 'monopress'),
 		),
 		array(
 			'id' => 'logo-retina',
 			'type' => 'media',
 			'url' => true,
-			'title' => __('Retina logo upload', 'bcn'),
+			'title' => __('Retina logo upload', 'monopress'),
 			'compiler' => 'true',
-			'subtitle' => __('Upload your retina logo .png or .jpg.<ul><li>If you do not set any retina logo, the site will load the normal logo on retina displays</li><li>The retina logo has to have the same file format with the normal logo</li></ul>', 'bcn'),
+			'subtitle' => __('Upload your retina logo .png or .jpg.<ul><li>If you do not set any retina logo, the site will load the normal logo on retina displays</li><li>The retina logo has to have the same file format with the normal logo</li></ul>', 'monopress'),
 		),
 		array(
 			'id' => 'logo-alt',
 			'type' => 'text',
-			'title' => __('Logo alt attribute', 'bcn'),
-			'subtitle' => __('Alt attribute for the logo.', 'bcn'),
-			'description' => __('This is the alternative text if the logo cannot be displayed. It\'s useful for SEO and generally is the name of the site.', 'bcn'),
+			'title' => __('Logo alt attribute', 'monopress'),
+			'subtitle' => __('Alt attribute for the logo.', 'monopress'),
+			'description' => __('This is the alternative text if the logo cannot be displayed. It\'s useful for SEO and generally is the name of the site.', 'monopress'),
 		),
 		array(
 			'id' => 'logo-title',
 			'type' => 'text',
-			'title' => __('Logo title attribute', 'bcn'),
-			'subtitle' => __('Title attribute for the logo.', 'bcn'),
+			'title' => __('Logo title attribute', 'monopress'),
+			'subtitle' => __('Title attribute for the logo.', 'monopress'),
 		),
 		array(
 			'required' => array('logo-type', '=', '1'),
 			'id' => 'logo-mobile-title',
 			'type' => 'section',
-			'title' => __('Logo for mobile', 'bcn'),
+			'title' => __('Logo for mobile', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'logo-mobile',
 			'type' => 'media',
 			'url' => true,
-			'title' => __('Logo mobile', 'bcn'),
+			'title' => __('Logo mobile', 'monopress'),
 			'compiler' => 'true',
-			'subtitle' => __('Upload your logo', 'bcn'),
+			'subtitle' => __('Upload your logo', 'monopress'),
 		),
 		array(
 			'id' => 'logo-mobile-retina',
 			'type' => 'media',
 			'url' => true,
-			'title' => __('Retina logo mobile', 'bcn'),
+			'title' => __('Retina logo mobile', 'monopress'),
 			'compiler' => 'true',
-			'subtitle' => __('Upload your retina logo (double size)', 'bcn'),
+			'subtitle' => __('Upload your retina logo (double size)', 'monopress'),
 		),
 		array(
 			'required' => array('logo-type', '=', '0'),
 			'id' => 'logo-txt-title',
 			'type' => 'section',
-			'title' => __('Plain text logo', 'bcn'),
+			'title' => __('Plain text logo', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'logo-txt',
 			'type' => 'text',
-			'title' => __('Text logo', 'bcn'),
-			'subtitle' => __('Write a text logo', 'bcn'),
+			'title' => __('Text logo', 'monopress'),
+			'subtitle' => __('Write a text logo', 'monopress'),
 		),
 //        array(
 //            'id' => 'logo-title',
 //            'type' => 'text',
-//            'title' => __('Text logo tagline', 'bcn'),
-//            'subtitle' => __('Write a tagline for the text logo.', 'bcn'),
-//            'description' => __('This attribute specifies extra information about the logo. Most browsers will show a tooltip with this text on logo hover.', 'bcn'),
+//            'title' => __('Text logo tagline', 'monopress'),
+//            'subtitle' => __('Write a tagline for the text logo.', 'monopress'),
+//            'description' => __('This attribute specifies extra information about the logo. Most browsers will show a tooltip with this text on logo hover.', 'monopress'),
 //        ),
 //// TODO: for newest version
 
@@ -660,86 +660,86 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Favicon & ios bookmarklet', 'bcn'),
+	'title' => __('Favicon & ios bookmarklet', 'monopress'),
 	'id' => 'ios-bookmarklet',
-	'desc' => __('The bookmarklets work on iOS and Android. When a user adds your site to the home screen, the phone will download one of the icons from here (based on the screen size and device type) and your site will appear with that icon on the homes creen', 'bcn'),
+	'desc' => __('The bookmarklets work on iOS and Android. When a user adds your site to the home screen, the phone will download one of the icons from here (based on the screen size and device type) and your site will appear with that icon on the homes creen', 'monopress'),
 	'subsection' => true,
 	'fields' => array(
 		array(
 			'id' => 'favicon',
 			'type' => 'media',
 			'url' => true,
-			'title' => __('Site favicon', 'bcn'),
+			'title' => __('Site favicon', 'monopress'),
 			'compiler' => 'true',
-			'subtitle' => __('Optional - upload a favicon image .png', 'bcn'),
+			'subtitle' => __('Optional - upload a favicon image .png', 'monopress'),
 		),
 		array(
 			'id' => 'bookmarklet-76',
 			'type' => 'media',
 			'url' => true,
-			'title' => __('Image 76 x 76', 'bcn'),
+			'title' => __('Image 76 x 76', 'monopress'),
 			'compiler' => 'true',
 			//'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-			'subtitle' => __('Upload your icon (76 x 76px).png', 'bcn'),
+			'subtitle' => __('Upload your icon (76 x 76px).png', 'monopress'),
 		),
 		array(
 			'id' => 'bookmarklet-114',
 			'type' => 'media',
 			'url' => true,
-			'title' => __('Image 114 x 114', 'bcn'),
+			'title' => __('Image 114 x 114', 'monopress'),
 			'compiler' => 'true',
 			//'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-			'subtitle' => __('Upload your icon (114 x 114px).png', 'bcn'),
+			'subtitle' => __('Upload your icon (114 x 114px).png', 'monopress'),
 		),
 		array(
 			'id' => 'bookmarklet-120',
 			'type' => 'media',
 			'url' => true,
-			'title' => __('Image 120 x 120', 'bcn'),
+			'title' => __('Image 120 x 120', 'monopress'),
 			'compiler' => 'true',
 			//'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-			'subtitle' => __('Upload your icon (120 x 120px).png', 'bcn'),
+			'subtitle' => __('Upload your icon (120 x 120px).png', 'monopress'),
 		),
 		array(
 			'id' => 'bookmarklet-144',
 			'type' => 'media',
 			'url' => true,
-			'title' => __('Image 144 x 144', 'bcn'),
+			'title' => __('Image 144 x 144', 'monopress'),
 			'compiler' => 'true',
 			//'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-			'subtitle' => __('Upload your icon (144 x 144px).png', 'bcn'),
+			'subtitle' => __('Upload your icon (144 x 144px).png', 'monopress'),
 		),
 		array(
 			'id' => 'bookmarklet-152',
 			'type' => 'media',
 			'url' => true,
-			'title' => __('Image 152 x 152', 'bcn'),
+			'title' => __('Image 152 x 152', 'monopress'),
 			'compiler' => 'true',
 			//'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-			'subtitle' => __('Upload your icon (152 x 152px).png', 'bcn'),
+			'subtitle' => __('Upload your icon (152 x 152px).png', 'monopress'),
 		),
 	)
 ));
 
 // -> START Footer
 Redux::setSection($opt_name, array(
-	'title' => __('Footer', 'bcn'),
+	'title' => __('Footer', 'monopress'),
 	'id' => 'footer',
 	'icon' => 'el el-edit',
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Footer settings', 'bcn'),
+	'title' => __('Footer settings', 'monopress'),
 	'id' => 'footer-settings',
 	//'icon'  => 'el el-home'
-	'desc' => __('The footer uses sidebars to show information. Here you can customize the number of sidebars and the layout. To add content to the footer head go to the widgets section and drag widget to the Footer 1, Footer 2 and Footer 3 sidebars.', 'bcn'),
+	'desc' => __('The footer uses sidebars to show information. Here you can customize the number of sidebars and the layout. To add content to the footer head go to the widgets section and drag widget to the Footer 1, Footer 2 and Footer 3 sidebars.', 'monopress'),
 	'subsection' => true,
 	'fields' => array(
 		array(
 			'id' => 'footer-on',
 			'type' => 'switch',
-			'title' => __('Show footer', 'bcn'),
-			'subtitle' => __('Show or hide the footer', 'bcn'),
+			'title' => __('Show footer', 'monopress'),
+			'subtitle' => __('Show or hide the footer', 'monopress'),
 			'default' => 0,
 			'on' => 'Enabled',
 			'off' => 'Disabled',
@@ -748,8 +748,8 @@ Redux::setSection($opt_name, array(
 			'required' => array('footer-on', '=', '1'),
 			'id' => 'footer-layout',
 			'type' => 'image_select',
-			'title' => __('Footer templates', 'bcn'),
-			'subtitle' => __('Set the footer template', 'bcn'),
+			'title' => __('Footer templates', 'monopress'),
+			'subtitle' => __('Set the footer template', 'monopress'),
 			'options' => array(
 				'1' => array(
 					'alt' => 'First',
@@ -770,7 +770,7 @@ Redux::setSection($opt_name, array(
 			'required' => array('footer-on', '=', '1'),
 			'id' => 'footer-bg-title',
 			'type' => 'section',
-			'title' => __('Footer background', 'bcn'),
+			'title' => __('Footer background', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 			'output' => 'footer::after',
 		),
@@ -779,23 +779,23 @@ Redux::setSection($opt_name, array(
 			'id' => 'footer-bg',
 			'type' => 'background',
 			'output' => array('footer'),
-			'title' => __('Footer background', 'bcn'),
+			'title' => __('Footer background', 'monopress'),
 			'background-color' => 'false',
 		),
 //    array(
 //      'required' => array('footer-on', '=', '1'),
 //      'id' => 'footer-bg-opacity',
 //      'type' => 'text',
-//      'title' => __('Background opacity', 'bcn'),
-//      'subtitle' => __('Set the background image transparency (Example: 0.5)', 'bcn'),
-//      'default' => __('0.5', 'bcn'),
+//      'title' => __('Background opacity', 'monopress'),
+//      'subtitle' => __('Set the background image transparency (Example: 0.5)', 'monopress'),
+//      'default' => __('0.5', 'monopress'),
 //    ),
 //    // TODO: for newest version
 		array(
 			'required' => array('footer-on', '=', '1'),
 			'id' => 'footer-content-title',
 			'type' => 'section',
-			'title' => __('Footer content', 'bcn'),
+			'title' => __('Footer content', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
@@ -803,57 +803,57 @@ Redux::setSection($opt_name, array(
 			'id' => 'footer-logo',
 			'type' => 'media',
 			'url' => true,
-			'title' => __('Footer logo', 'bcn'),
-			'desc' => __('Upload your logo.', 'bcn'),
-			'subtitle' => __('Different one from the header logo. If footer logo is not specified, the site will load the default normal logo.', 'bcn'),
+			'title' => __('Footer logo', 'monopress'),
+			'desc' => __('Upload your logo.', 'monopress'),
+			'subtitle' => __('Different one from the header logo. If footer logo is not specified, the site will load the default normal logo.', 'monopress'),
 		),
 		array(
 			'required' => array('footer-on', '=', '1'),
 			'id' => 'footer-logo-retina',
 			'type' => 'media',
 			'url' => true,
-			'title' => __('Footer retina logo', 'bcn'),
-			'desc' => __('Upload your retina logo (double size)', 'bcn'),
-			'subtitle' => __('Different one from the header logo. If footer logo is not specified, the site will load the default retina logo.', 'bcn'),
+			'title' => __('Footer retina logo', 'monopress'),
+			'desc' => __('Upload your retina logo (double size)', 'monopress'),
+			'subtitle' => __('Different one from the header logo. If footer logo is not specified, the site will load the default retina logo.', 'monopress'),
 		),
 		array(
 			'required' => array('footer-on', '=', '1'),
 			'id' => 'footer-logo-alt',
 			'type' => 'text',
-			'title' => __('Logo alt attribute', 'bcn'),
-			'subtitle' => __('Alt attribute for the logo.', 'bcn'),
-			'description' => __('This is the alternative text if the logo cannot be displayed. It\'s useful for SEO and generally is the name of the site.', 'bcn'),
+			'title' => __('Logo alt attribute', 'monopress'),
+			'subtitle' => __('Alt attribute for the logo.', 'monopress'),
+			'description' => __('This is the alternative text if the logo cannot be displayed. It\'s useful for SEO and generally is the name of the site.', 'monopress'),
 		),
 		array(
 			'required' => array('footer-on', '=', '1'),
 			'id' => 'footer-logo-title',
 			'type' => 'text',
-			'title' => __('Logo title attribute', 'bcn'),
-			'subtitle' => __('Title attribute for the logo.', 'bcn'),
-			'description' => __('This attribute specifies extra information about the logo. Most browsers will show a tooltip with this text on logo hover.', 'bcn'),
+			'title' => __('Logo title attribute', 'monopress'),
+			'subtitle' => __('Title attribute for the logo.', 'monopress'),
+			'description' => __('This attribute specifies extra information about the logo. Most browsers will show a tooltip with this text on logo hover.', 'monopress'),
 		),
 		array(
 			'required' => array('footer-on', '=', '1'),
 			'id' => 'footer-text',
 			'type' => 'textarea',
-			'title' => __('Footer text', 'bcn'),
-			'subtitle' => __('Write here your footer text', 'bcn'),
-			'description' => __('Usually it\'s a text about your sites topic', 'bcn'),
+			'title' => __('Footer text', 'monopress'),
+			'subtitle' => __('Write here your footer text', 'monopress'),
+			'description' => __('Usually it\'s a text about your sites topic', 'monopress'),
 		),
 		array(
 			'required' => array('footer-on', '=', '1'),
 			'id' => 'footer-email',
 			'type' => 'text',
-			'title' => __('Your email address', 'bcn'),
-			'subtitle' => __('Your email address', 'bcn'),
-			'description' => __('Your contact email address', 'bcn'),
+			'title' => __('Your email address', 'monopress'),
+			'subtitle' => __('Your email address', 'monopress'),
+			'description' => __('Your contact email address', 'monopress'),
 		),
 		array(
 			'required' => array('footer-on', '=', '1'),
 			'id' => 'footer-social',
 			'type' => 'switch',
-			'title' => __('Show social icons', 'bcn'),
-			'subtitle' => __('Show or hide the social icons, to setup the Social icons go to Miscellaneous > Social Networks', 'bcn'),
+			'title' => __('Show social icons', 'monopress'),
+			'subtitle' => __('Show or hide the social icons, to setup the Social icons go to Miscellaneous > Social Networks', 'monopress'),
 			//'options' => array('on', 'off'),
 			'default' => false,
 		),
@@ -861,16 +861,16 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Instagram section', 'bcn'),
+	'title' => __('Instagram section', 'monopress'),
 	'id' => 'instagram',
 	'subsection' => true,
-	'desc' => __('From this section you can set and configure the Footer Instagram Section - this area appears above the footer section on all pages', 'bcn'),
+	'desc' => __('From this section you can set and configure the Footer Instagram Section - this area appears above the footer section on all pages', 'monopress'),
 	'fields' => array(
 		array(
 			'id' => 'instagram-on',
 			'type' => 'switch',
-			'title' => __('Show the footer instagram section', 'bcn'),
-			'subtitle' => __('Show or hide the instagram section', 'bcn'),
+			'title' => __('Show the footer instagram section', 'monopress'),
+			'subtitle' => __('Show or hide the instagram section', 'monopress'),
 			'default' => 0,
 			'on' => 'Enabled',
 			'off' => 'Disabled',
@@ -879,22 +879,22 @@ Redux::setSection($opt_name, array(
 			'required' => array('instagram-on', '=', '1'),
 			'id' => 'instagram-id',
 			'type' => 'text',
-			'title' => __('Instagram id', 'bcn'),
-			'subtitle' => __('Enter the ID as it appears after the instagram url ( ex. instagram.com/myID )', 'bcn'),
+			'title' => __('Instagram id', 'monopress'),
+			'subtitle' => __('Enter the ID as it appears after the instagram url ( ex. instagram.com/myID )', 'monopress'),
 		),
 //		array(
 //			'required' => array('instagram-on', '=', '1'),
 //			'id' => 'instagram-token',
 //			'type' => 'text',
-//			'title' => __('Instagram token', 'bcn'),
-//			'subtitle' => __('Enter the instagram token', 'bcn'),
+//			'title' => __('Instagram token', 'monopress'),
+//			'subtitle' => __('Enter the instagram token', 'monopress'),
 //		),
 		array(
 			'required' => array('instagram-on', '=', '1'),
 			'id' => 'instagram-images',
 			'type' => 'select',
-			'title' => __('Number of images', 'bcn'),
-			'subtitle' => __('Set the number of images displayed from instagram.', 'bcn'),
+			'title' => __('Number of images', 'monopress'),
+			'subtitle' => __('Set the number of images displayed from instagram.', 'monopress'),
 			//Must provide key => value pairs for select options
 			'options' => array(
 				'1' => '1',
@@ -913,8 +913,8 @@ Redux::setSection($opt_name, array(
 			'required' => array('instagram-on', '=', '1'),
 			'id' => 'instagram-columns',
 			'type' => 'select',
-			'title' => __('Number of columns', 'bcn'),
-			'subtitle' => __('The number of columns in your feed. 1 - 10.', 'bcn'),
+			'title' => __('Number of columns', 'monopress'),
+			'subtitle' => __('The number of columns in your feed. 1 - 10.', 'monopress'),
 			//Must provide key => value pairs for select options
 			'options' => array(
 				'1' => '1',
@@ -933,8 +933,8 @@ Redux::setSection($opt_name, array(
 			'required' => array('instagram-on', '=', '1'),
 			'id' => 'instagram-gap',
 			'type' => 'select',
-			'title' => __('Image gap', 'bcn'),
-			'subtitle' => __('Set a gap between images (default: No gap)', 'bcn'),
+			'title' => __('Image gap', 'monopress'),
+			'subtitle' => __('Set a gap between images (default: No gap)', 'monopress'),
 			//Must provide key => value pairs for select options
 			'options' => array(
 				'0' => 'No gap',
@@ -947,16 +947,16 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Sub footer settings', 'bcn'),
+	'title' => __('Sub footer settings', 'monopress'),
 	'id' => 'sub-footer-settings',
 	'subsection' => true,
-	'desc' => __('The sub footer section is the content under the main footer. It usually includes a copyright text and a menu spot on the right', 'bcn'),
+	'desc' => __('The sub footer section is the content under the main footer. It usually includes a copyright text and a menu spot on the right', 'monopress'),
 	'fields' => array(
 		array(
 			'id' => 'subfooter-on',
 			'type' => 'switch',
-			'title' => __('Show sub-footer', 'bcn'),
-			'subtitle' => __('Show or hide the sub-footer', 'bcn'),
+			'title' => __('Show sub-footer', 'monopress'),
+			'subtitle' => __('Show or hide the sub-footer', 'monopress'),
 			'default' => 0,
 			'on' => 'Enabled',
 			'off' => 'Disabled',
@@ -966,15 +966,15 @@ Redux::setSection($opt_name, array(
 			'required' => array('subfooter-on', '=', '1'),
 			'id' => 'subfooter-text',
 			'type' => 'editor',
-			'title' => __('Sub footer copyright text', 'bcn'),
-			'subtitle' => __('Set sub footer copyright text', 'bcn'),
+			'title' => __('Sub footer copyright text', 'monopress'),
+			'subtitle' => __('Set sub footer copyright text', 'monopress'),
 		),
 		array(
 			'required' => array('subfooter-on', '=', '1'),
 			'id' => 'subfooter-copy',
 			'type' => 'switch',
-			'title' => __('Copyright symbol', 'bcn'),
-			'subtitle' => __('Show or hide the footer copyright symbol', 'bcn'),
+			'title' => __('Copyright symbol', 'monopress'),
+			'subtitle' => __('Show or hide the footer copyright symbol', 'monopress'),
 			'default' => 0,
 			'on' => 'Enabled',
 			'off' => 'Disabled',
@@ -984,41 +984,41 @@ Redux::setSection($opt_name, array(
 			'id' => 'subfooter-menu',
 			'type' => 'select',
 			'data' => 'menu_location',
-			'title' => __('Footer menu', 'bcn'),
-			'subtitle' => __('Select a menu for the sub footer', 'bcn'),
+			'title' => __('Footer menu', 'monopress'),
+			'subtitle' => __('Select a menu for the sub footer', 'monopress'),
 		),
 	),
 ));
 
 //// -> START Portfolio settings
 //Redux::setSection($opt_name, array(
-//    'title' => __('Portfolio', 'bcn'),
+//    'title' => __('Portfolio', 'monopress'),
 //    'id' => 'Portfolio',
-//    'desc' => __('', 'bcn'),
+//    'desc' => __('', 'monopress'),
 //    'icon' => 'el el-photo'
 //    // TODO: for newest version
 //));
 
 // -> START Advertisement
 Redux::setSection($opt_name, array(
-	'title' => __('Advertisement', 'bcn'),
+	'title' => __('Advertisement', 'monopress'),
 	'id' => 'ads',
-	'desc' => __('', 'bcn'),
+	'desc' => __('', 'monopress'),
 	'icon' => 'el el-usd'
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('block 1', 'bcn'),
+	'title' => __('block 1', 'monopress'),
 	'id' => 'block1',
-	'desc' => __('Custom advertise block 1', 'bcn'),
+	'desc' => __('Custom advertise block 1', 'monopress'),
 	'subsection' => true,
 	'fields' => array(
 		array(
 			'id' => 'ads-block1',
 			'type' => 'ace_editor',
 			'full_width' => true,
-			'title' => __('Your ad code', 'bcn'),
-			'subtitle' => __('Paste your ad code here.', 'bcn'),
+			'title' => __('Your ad code', 'monopress'),
+			'subtitle' => __('Paste your ad code here.', 'monopress'),
 			'mode' => 'plain_text',
 			'theme' => 'chrome',
 			'desc' => '',
@@ -1028,17 +1028,17 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('block 2', 'bcn'),
+	'title' => __('block 2', 'monopress'),
 	'id' => 'block2',
-	'desc' => __('Custom advertise block 2', 'bcn'),
+	'desc' => __('Custom advertise block 2', 'monopress'),
 	'subsection' => true,
 	'fields' => array(
 		array(
 			'id' => 'ads-block2',
 			'type' => 'ace_editor',
 			'full_width' => true,
-			'title' => __('Your ad code', 'bcn'),
-			'subtitle' => __('Paste your ad code here.', 'bcn'),
+			'title' => __('Your ad code', 'monopress'),
+			'subtitle' => __('Paste your ad code here.', 'monopress'),
 			'mode' => 'plain_text',
 			'theme' => 'chrome',
 			'desc' => '',
@@ -1048,17 +1048,17 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('block 3', 'bcn'),
+	'title' => __('block 3', 'monopress'),
 	'id' => 'block3',
-	'desc' => __('Custom advertise block 3', 'bcn'),
+	'desc' => __('Custom advertise block 3', 'monopress'),
 	'subsection' => true,
 	'fields' => array(
 		array(
 			'id' => 'ads-block3',
 			'type' => 'ace_editor',
 			'full_width' => true,
-			'title' => __('Your ad code', 'bcn'),
-			'subtitle' => __('Paste your ad code here.', 'bcn'),
+			'title' => __('Your ad code', 'monopress'),
+			'subtitle' => __('Paste your ad code here.', 'monopress'),
 			'mode' => 'plain_text',
 			'theme' => 'chrome',
 			'desc' => '',
@@ -1068,17 +1068,17 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('block 4', 'bcn'),
+	'title' => __('block 4', 'monopress'),
 	'id' => 'block4',
-	'desc' => __('Custom advertise block 4', 'bcn'),
+	'desc' => __('Custom advertise block 4', 'monopress'),
 	'subsection' => true,
 	'fields' => array(
 		array(
 			'id' => 'ads-block4',
 			'type' => 'ace_editor',
 			'full_width' => true,
-			'title' => __('Your ad code', 'bcn'),
-			'subtitle' => __('Paste your ad code here.', 'bcn'),
+			'title' => __('Your ad code', 'monopress'),
+			'subtitle' => __('Paste your ad code here.', 'monopress'),
 			'mode' => 'plain_text',
 			'theme' => 'chrome',
 			'desc' => '',
@@ -1090,86 +1090,86 @@ Redux::setSection($opt_name, array(
 
 // -> START Layouts settings
 Redux::setSection($opt_name, array(
-	'title' => __('Layouts settings', 'bcn'),
+	'title' => __('Layouts settings', 'monopress'),
 	'id' => 'layouts-settings',
-	'desc' => __('', 'bcn'),
+	'desc' => __('', 'monopress'),
 	'icon' => 'el el-align-justify'
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Template settings', 'bcn'),
+	'title' => __('Template settings', 'monopress'),
 	'id' => 'template-settings',
 	'subsection' => true,
 	'fields' => array(
 		array(
 			'id' => 'template-settings-preloader',
 			'type' => 'section',
-			'title' => __('Preloader', 'bcn'),
-			'subtitle' => __('From here you can configure show or hide preloader. For color customization go to Miscellaneous > Theme colors > Preloader', 'bcn'),
+			'title' => __('Preloader', 'monopress'),
+			'subtitle' => __('From here you can configure show or hide preloader. For color customization go to Miscellaneous > Theme colors > Preloader', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'template-settings-preloader-show',
 			'type' => 'switch',
-			'title' => __('Show preloader', 'bcn'),
-			'subtitle' => __('Show or hide the preloader.', 'bcn'),
+			'title' => __('Show preloader', 'monopress'),
+			'subtitle' => __('Show or hide the preloader.', 'monopress'),
 			'default' => true,
 		),
 		array(
 			'id' => 'template-settings-breadcrumbs',
 			'type' => 'section',
-			'title' => __('Breadcrumbs', 'bcn'),
-			'subtitle' => __('From here you can customize the breadcrumbs that appear on your site. The breadcrumbs are a very useful navigation element that looks like this \'Home > My category > My article title\'. Since the breadcrumbs are so important for humans and search engines crawlers, Newspaper comes with extensive configuration options for them.', 'bcn'),
+			'title' => __('Breadcrumbs', 'monopress'),
+			'subtitle' => __('From here you can customize the breadcrumbs that appear on your site. The breadcrumbs are a very useful navigation element that looks like this \'Home > My category > My article title\'. Since the breadcrumbs are so important for humans and search engines crawlers, Newspaper comes with extensive configuration options for them.', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'template-settings-breadcrumbs-show',
 			'type' => 'switch',
-			'title' => __('Show breadcrumbs', 'bcn'),
-			'subtitle' => __('Enable or disable the breadcrumbs.', 'bcn'),
+			'title' => __('Show breadcrumbs', 'monopress'),
+			'subtitle' => __('Enable or disable the breadcrumbs.', 'monopress'),
 			'default' => true,
 		),
 		array(
 			'id' => 'template-settings-breadcrumbs-sep',
 			'type' => 'text',
-			'title' => __('Separator symbol', 'bcn'),
-			'subtitle' => __('Set the breadcrumbs separator.', 'bcn'),
+			'title' => __('Separator symbol', 'monopress'),
+			'subtitle' => __('Set the breadcrumbs separator.', 'monopress'),
 			'default' => ' > ',
 		),
 		array(
 			'id' => 'template-settings-breadcrumbs-home',
 			'type' => 'switch',
-			'title' => __('Show breadcrumbs home link', 'bcn'),
-			'subtitle' => __('Show or hide the home link in breadcrumbs.', 'bcn'),
+			'title' => __('Show breadcrumbs home link', 'monopress'),
+			'subtitle' => __('Show or hide the home link in breadcrumbs.', 'monopress'),
 			'default' => true,
 		),
 		array(
 			'id' => 'template-settings-breadcrumbs-parent',
 			'type' => 'switch',
-			'title' => __('Show parent category', 'bcn'),
-			'subtitle' => __('Show or hide the parent category link ex: Home > parent category > category.', 'bcn'),
+			'title' => __('Show parent category', 'monopress'),
+			'subtitle' => __('Show or hide the parent category link ex: Home > parent category > category.', 'monopress'),
 			'default' => true,
 		),
 		array(
 			'id' => 'template-settings-breadcrumbs-title',
 			'type' => 'switch',
-			'title' => __('Show article title', 'bcn'),
-			'subtitle' => __('Show or hide the article title on post pages.', 'bcn'),
+			'title' => __('Show article title', 'monopress'),
+			'subtitle' => __('Show or hide the article title on post pages.', 'monopress'),
 			'default' => true,
 		),
 
 //		array(
 //			'id' => 'woocommerce-template',
 //			'type' => 'section',
-//			'title' => __('WooCommerce template', 'bcn'),
-//			'subtitle' => __('Set the sidebar and position for the WooCommerce pages.', 'bcn'),
+//			'title' => __('WooCommerce template', 'monopress'),
+//			'subtitle' => __('Set the sidebar and position for the WooCommerce pages.', 'monopress'),
 //			'indent' => true, // Indent all options below until the next 'section' option is set.
 //		),
 //		array(
 //			'id' => 'woocommerce-template-sidebar',
 //			'type' => 'image_select',
-//			'title' => __('Shop homepage + archives', 'bcn'),
-//			'subtitle' => __('Sidebar position and custom sidebar.', 'bcn'),
+//			'title' => __('Shop homepage + archives', 'monopress'),
+//			'subtitle' => __('Sidebar position and custom sidebar.', 'monopress'),
 //			'options' => array(
 //				'1' => array(
 //					'alt' => '1 Column',
@@ -1189,8 +1189,8 @@ Redux::setSection($opt_name, array(
 //		array(
 //			'id' => 'woocommerce-product-sidebar',
 //			'type' => 'image_select',
-//			'title' => __('Shop single product page', 'bcn'),
-//			'subtitle' => __('Sidebar position and custom sidebar.', 'bcn'),
+//			'title' => __('Shop single product page', 'monopress'),
+//			'subtitle' => __('Sidebar position and custom sidebar.', 'monopress'),
 //			'options' => array(
 //				'1' => array(
 //					'alt' => '1 Column',
@@ -1213,17 +1213,17 @@ Redux::setSection($opt_name, array(
 
 
 Redux::setSection($opt_name, array(
-	'title' => __('Page template', 'bcn'),
+	'title' => __('Page template', 'monopress'),
 	'id' => 'page-template-title',
-	'desc' => __('Set the default layout for page template.', 'bcn'),
+	'desc' => __('Set the default layout for page template.', 'monopress'),
 	'subsection' => true,
 	'fields' => array(
 
 		array(
 			'id' => 'page-template-sidebar',
 			'type' => 'image_select',
-			'title' => __('Sidebar position', 'bcn'),
-			'subtitle' => __('Sidebar position and custom sidebars.', 'bcn'),
+			'title' => __('Sidebar position', 'monopress'),
+			'subtitle' => __('Sidebar position and custom sidebars.', 'monopress'),
 			'options' => array(
 				'sidebar_1' => array(
 					'alt' => 'No sidebar',
@@ -1244,23 +1244,23 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'page-template-comments',
 			'type' => 'switch',
-			'title' => __('Disable comments on pages', 'bcn'),
-			'subtitle' => __('Enable or disable the comments on pages, on the entire site. This option is disabled by default', 'bcn'),
+			'title' => __('Disable comments on pages', 'monopress'),
+			'subtitle' => __('Enable or disable the comments on pages, on the entire site. This option is disabled by default', 'monopress'),
 			'default' => false,
 		),
 	)
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Categories template', 'bcn'),
+	'title' => __('Categories template', 'monopress'),
 	'id' => 'categories-template',
-	'desc' => __('Set the default layout for all the categories.', 'bcn'),
+	'desc' => __('Set the default layout for all the categories.', 'monopress'),
 	'subsection' => true,
 	'fields' => array(
 //        array(
 //            'id' => 'category-template',
 //            'type' => 'switch',
-//            'title' => __('Category template', 'bcn'),
+//            'title' => __('Category template', 'monopress'),
 //            'subtitle' => __('This is the header of the category'),
 //            'default' => true,
 //            // TODO: for newest version
@@ -1268,7 +1268,7 @@ Redux::setSection($opt_name, array(
 //        array(
 //            'id' => 'category-template-filter',
 //            'type' => 'switch',
-//            'title' => __('Category pull-down filter', 'bcn'),
+//            'title' => __('Category pull-down filter', 'monopress'),
 //            'subtitle' => __('This setting controls the display of the category pull-down filter.'),
 //            'default' => true,
 //            // TODO: for newest version
@@ -1276,7 +1276,7 @@ Redux::setSection($opt_name, array(
 //        array(
 //            'id' => 'category-template-top-style',
 //            'type' => 'switch',
-//            'title' => __('Category top posts style', 'bcn'),
+//            'title' => __('Category top posts style', 'monopress'),
 //            'subtitle' => __('Set top post style.'),
 //            'default' => true,
 //            // TODO: for newest version
@@ -1284,7 +1284,7 @@ Redux::setSection($opt_name, array(
 //        array(
 //            'id' => 'category-template-top-grid-style',
 //            'type' => 'switch',
-//            'title' => __('Category top posts grid style', 'bcn'),
+//            'title' => __('Category top posts grid style', 'monopress'),
 //            'subtitle' => __('Each category grid supports multiple styles.'),
 //            'default' => true,
 //            // TODO: for newest version
@@ -1292,8 +1292,8 @@ Redux::setSection($opt_name, array(
 //		array(
 //			'id' => 'category-template-author',
 //			'type' => 'switch',
-//			'title' => __('Show or hide author name and link.', 'bcn'),
-//			'subtitle' => __('Show or hide author on post listings.', 'bcn'),
+//			'title' => __('Show or hide author name and link.', 'monopress'),
+//			'subtitle' => __('Show or hide author on post listings.', 'monopress'),
 //			'default' => true,
 //			'on' => 'Show',
 //			'off' => 'Hide',
@@ -1301,8 +1301,8 @@ Redux::setSection($opt_name, array(
 //		array(
 //			'id' => 'category-template-date',
 //			'type' => 'switch',
-//			'title' => __('Show or hide date.', 'bcn'),
-//			'subtitle' => __('Show or hide date on post listings.', 'bcn'),
+//			'title' => __('Show or hide date.', 'monopress'),
+//			'subtitle' => __('Show or hide date on post listings.', 'monopress'),
 //			'default' => true,
 //			'on' => 'Show',
 //			'off' => 'Hide',
@@ -1310,8 +1310,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'category-article-display',
 			'type' => 'image_select',
-			'title' => __('Article display view', 'bcn'),
-			'subtitle' => __('Select a module type, this is how your article list will be displayed.', 'bcn'),
+			'title' => __('Article display view', 'monopress'),
+			'subtitle' => __('Select a module type, this is how your article list will be displayed.', 'monopress'),
 			'options' => array(
 				'layout_2' => array(
 					'alt' => '2',
@@ -1343,8 +1343,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'category-pagination',
 			'type' => 'select',
-			'title' => __('Pagination style', 'bcn'),
-			'subtitle' => __('Set a pagination style for all categories.', 'bcn'),
+			'title' => __('Pagination style', 'monopress'),
+			'subtitle' => __('Set a pagination style for all categories.', 'monopress'),
 			'options' => array(
 				'1' => 'Normal pagination',
 				'2' => 'Infinite loading',
@@ -1356,8 +1356,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'category-sidebar',
 			'type' => 'image_select',
-			'title' => __('Sidebar position', 'bcn'),
-			'subtitle' => __('Sidebar position and custom sidebars.', 'bcn'),
+			'title' => __('Sidebar position', 'monopress'),
+			'subtitle' => __('Sidebar position and custom sidebars.', 'monopress'),
 			'options' => array(
 				'sidebar_1' => array(
 					'alt' => 'No sidebar',
@@ -1378,56 +1378,56 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'block-settings-meta-title',
 			'type' => 'section',
-			'title' => __('Meta info on Modules/Blocks', 'bcn'),
-			'subtitle' => __('You can overwrite the template on each block and widget.', 'bcn'),
+			'title' => __('Meta info on Modules/Blocks', 'monopress'),
+			'subtitle' => __('You can overwrite the template on each block and widget.', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'block-settings-meta-author',
 			'type' => 'switch',
-			'title' => __('Show author name', 'bcn'),
-			'subtitle' => __('Enable or disable the author name (on blocks and modules)', 'bcn'),
+			'title' => __('Show author name', 'monopress'),
+			'subtitle' => __('Enable or disable the author name (on blocks and modules)', 'monopress'),
 			'default' => false,
 		),
 		array(
 			'id' => 'block-settings-meta-date',
 			'type' => 'switch',
-			'title' => __('Show date', 'bcn'),
-			'subtitle' => __('Enable or disable the post date (on blocks and modules)', 'bcn'),
+			'title' => __('Show date', 'monopress'),
+			'subtitle' => __('Enable or disable the post date (on blocks and modules)', 'monopress'),
 			'default' => false,
 		),
 		array(
 			'id' => 'block-settings-meta-comments',
 			'type' => 'switch',
-			'title' => __('Show comment count', 'bcn'),
-			'subtitle' => __('Enable or disable comment number (on blocks and modules)', 'bcn'),
+			'title' => __('Show comment count', 'monopress'),
+			'subtitle' => __('Enable or disable comment number (on blocks and modules)', 'monopress'),
 			'default' => false,
 		),
 	)
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Post template', 'bcn'),
+	'title' => __('Post template', 'monopress'),
 	'id' => 'post-settings',
 	'subsection' => true,
 	'fields' => array(
 		array(
 			'id' => 'post-and-custom-post',
 			'type' => 'section',
-			'title' => __('Post and Custom Post Types', 'bcn'),
+			'title' => __('Post and Custom Post Types', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'post-show-categories',
 			'type' => 'switch',
-			'title' => __('Show categories tags', 'bcn'),
-			'subtitle' => __('Enable or disable the categories tags (on single posts and custom post types)', 'bcn'),
+			'title' => __('Show categories tags', 'monopress'),
+			'subtitle' => __('Enable or disable the categories tags (on single posts and custom post types)', 'monopress'),
 			'default' => true,
 		),
 //        array(
 //            'id' => 'post-categories-tags-order',
 //            'type' => 'switch',
-//            'title' => __('Category tags display order', 'bcn'),
+//            'title' => __('Category tags display order', 'monopress'),
 //            'subtitle' => __('Set the post category tags display order.'),
 //            'default' => false,
 //    // TODO: for newest version
@@ -1435,81 +1435,81 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'post-show-author-name',
 			'type' => 'switch',
-			'title' => __('Show author name', 'bcn'),
-			'subtitle' => __('Enable or disable the author name (on single post page)', 'bcn'),
+			'title' => __('Show author name', 'monopress'),
+			'subtitle' => __('Enable or disable the author name (on single post page)', 'monopress'),
 			'default' => true,
 		),
 		array(
 			'id' => 'post-show-date',
 			'type' => 'switch',
-			'title' => __('Show date', 'bcn'),
-			'subtitle' => __('Enable or disable the post date (on single post page)', 'bcn'),
+			'title' => __('Show date', 'monopress'),
+			'subtitle' => __('Enable or disable the post date (on single post page)', 'monopress'),
 			'default' => true,
 		),
 //		array(
 //			'id' => 'post-show-views',
 //			'type' => 'switch',
-//			'title' => __('Show post views', 'bcn'),
-//			'subtitle' => __('Enable or disable the post views (on single post page)', 'bcn'),
+//			'title' => __('Show post views', 'monopress'),
+//			'subtitle' => __('Enable or disable the post views (on single post page)', 'monopress'),
 //			'default' => false,
 //		),
 //		// TODO: for newest version
 		array(
 			'id' => 'post-show-comments-numbers',
 			'type' => 'switch',
-			'title' => __('Show comment count', 'bcn'),
-			'subtitle' => __('Enable or disable comment number (on single post page)', 'bcn'),
+			'title' => __('Show comment count', 'monopress'),
+			'subtitle' => __('Enable or disable comment number (on single post page)', 'monopress'),
 			'default' => false,
 		),
 		array(
 			'id' => 'block-show-tags',
 			'type' => 'switch',
-			'title' => __('Show tags', 'bcn'),
-			'subtitle' => __('Enable or disable the post tags (bottom of single post pages and CPT)', 'bcn'),
+			'title' => __('Show tags', 'monopress'),
+			'subtitle' => __('Enable or disable the post tags (bottom of single post pages and CPT)', 'monopress'),
 			'default' => true,
 		),
 		array(
 			'id' => 'block-show-next-previous',
 			'type' => 'switch',
-			'title' => __('Show next and previous posts', 'bcn'),
-			'subtitle' => __('Show or hide `next` and `previous` posts (bottom of single post pages)', 'bcn'),
+			'title' => __('Show next and previous posts', 'monopress'),
+			'subtitle' => __('Show or hide `next` and `previous` posts (bottom of single post pages)', 'monopress'),
 			'default' => true,
 		),
 		array(
 			'id' => 'block-show-author-box',
 			'type' => 'switch',
-			'title' => __('Show author box', 'bcn'),
-			'subtitle' => __('Enable or disable the author box (bottom of single post pages)', 'bcn'),
+			'title' => __('Show author box', 'monopress'),
+			'subtitle' => __('Enable or disable the author box (bottom of single post pages)', 'monopress'),
 			'default' => true,
 		),
 		array(
 			'id' => 'block-show-comments',
 			'type' => 'switch',
-			'title' => __('Enable comments on posts', 'bcn'),
-			'subtitle' => __('Enable or disable the posts\' comments, for the entire site.', 'bcn'),
+			'title' => __('Enable comments on posts', 'monopress'),
+			'subtitle' => __('Enable or disable the posts\' comments, for the entire site.', 'monopress'),
 			'default' => true,
 		),
 //		array(
 //			'id' => 'block-show-general-modal',
 //			'type' => 'switch',
-//			'title' => __('General modal image', 'bcn'),
-//			'subtitle' => __('<p>Enable or disable general modal image viewer over all post images, so you won\'t have to go on each post to set them individually.</p><p>Consider that disabling this feature, the individual settings of an image post are applied.</p>', 'bcn'),
+//			'title' => __('General modal image', 'monopress'),
+//			'subtitle' => __('<p>Enable or disable general modal image viewer over all post images, so you won\'t have to go on each post to set them individually.</p><p>Consider that disabling this feature, the individual settings of an image post are applied.</p>', 'monopress'),
 //			'default' => false,
 //			// TODO: for newest version
 //		),
 		array(
 			'id' => 'post-template-title',
 			'type' => 'section',
-			'title' => __('Default post template (site wide)', 'bcn'),
-			'subtitle' => __('This template will be applied to the whole site. The theme will also try to adjust the default widgets to look in the same style with the block template selected here.', 'bcn'),
+			'title' => __('Default post template (site wide)', 'monopress'),
+			'subtitle' => __('This template will be applied to the whole site. The theme will also try to adjust the default widgets to look in the same style with the block template selected here.', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'post-template-default',
 			'type' => 'image_select',
-			'title' => __('Default site post template', 'bcn'),
-			'subtitle' => __('Setting this option will make all post pages, that don\'t have a post template set, to be displayed using this template. You can overwrite this setting on a per post basis.', 'bcn'),
-//            'desc' => __('This uses some of the built in images, you can use them for layout options.', 'bcn'),
+			'title' => __('Default site post template', 'monopress'),
+			'subtitle' => __('Setting this option will make all post pages, that don\'t have a post template set, to be displayed using this template. You can overwrite this setting on a per post basis.', 'monopress'),
+//            'desc' => __('This uses some of the built in images, you can use them for layout options.', 'monopress'),
 			//Must provide key => value(array:title|img) pairs for radio options
 			'options' => array(
 				'layout_1' => array(
@@ -1532,103 +1532,103 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'post-featured-images-title',
 			'type' => 'section',
-			'title' => __('Featured images', 'bcn'),
+			'title' => __('Featured images', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'post-featured-images-show',
 			'type' => 'switch',
-			'title' => __('Show featured image', 'bcn'),
-			'subtitle' => __('Show or hide featured image. Also when a post doesn\'t have a featured image set, the theme will load a placeholder image.', 'bcn'),
+			'title' => __('Show featured image', 'monopress'),
+			'subtitle' => __('Show or hide featured image. Also when a post doesn\'t have a featured image set, the theme will load a placeholder image.', 'monopress'),
 			'default' => false,
 		),
 //		array(
 //			'id' => 'post-featured-images-placeholder',
 //			'type' => 'switch',
-//			'title' => __('Featured image placeholder', 'bcn'),
-//			'subtitle' => __('When a post doesn\'t have a featured image set, the theme will load a placeholder image.', 'bcn'),
+//			'title' => __('Featured image placeholder', 'monopress'),
+//			'subtitle' => __('When a post doesn\'t have a featured image set, the theme will load a placeholder image.', 'monopress'),
 //			'default' => false,
 //			// TODO: for newest version
 //		),
 //		array(
 //			'id' => 'post-featured-images-lightbox',
 //			'type' => 'switch',
-//			'title' => __('Featured image lightbox', 'bcn'),
-//			'subtitle' => __('What to do when the featured image is clicked inside a post. (on single post page).', 'bcn'),
+//			'title' => __('Featured image lightbox', 'monopress'),
+//			'subtitle' => __('What to do when the featured image is clicked inside a post. (on single post page).', 'monopress'),
 //			'default' => false,
 //			// TODO: for newest version
 //		),
 		array(
 			'id' => 'post-related-title',
 			'type' => 'section',
-			'title' => __('Related article', 'bcn'),
-			'subtitle' => __('On each single post, the theme shows three or five similar posts in the related articles section.', 'bcn'),
+			'title' => __('Related article', 'monopress'),
+			'subtitle' => __('On each single post, the theme shows three or five similar posts in the related articles section.', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'post-related-show',
 			'type' => 'switch',
-			'title' => __('Show related article', 'bcn'),
-			'subtitle' => __('Enable or disable the related article section.', 'bcn'),
+			'title' => __('Show related article', 'monopress'),
+			'subtitle' => __('Enable or disable the related article section.', 'monopress'),
 			'default' => true,
 		),
 		array(
 			'id' => 'post-sharing-title',
 			'type' => 'section',
-			'title' => __('Sharing', 'bcn'),
-			'subtitle' => __('All the articles of Monopress have sharing buttons at the start of the article (usually under the title) and at the end of the article (after tags). You can sort the social networks with drag and drop.', 'bcn'),
+			'title' => __('Sharing', 'monopress'),
+			'subtitle' => __('All the articles of Monopress have sharing buttons at the start of the article (usually under the title) and at the end of the article (after tags). You can sort the social networks with drag and drop.', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'post-sharing-top',
 			'type' => 'switch',
-			'title' => __('Top article sharing', 'bcn'),
-			'subtitle' => __('Show or hide the top article sharing on single post.', 'bcn'),
+			'title' => __('Top article sharing', 'monopress'),
+			'subtitle' => __('Show or hide the top article sharing on single post.', 'monopress'),
 			'default' => true,
 		),
 //		array(
 //			'id' => 'post-sharing-top-like',
 //			'type' => 'switch',
-//			'title' => __('Top article like', 'bcn'),
-//			'subtitle' => __('Show or hide the top article like on single post.', 'bcn'),
+//			'title' => __('Top article like', 'monopress'),
+//			'subtitle' => __('Show or hide the top article like on single post.', 'monopress'),
 //			'default' => true,
 //			// TODO: for newest version
 //		),
 //		array(
 //			'id' => 'post-sharing-top-text',
 //			'type' => 'switch',
-//			'title' => __('Top article share text', 'bcn'),
-//			'subtitle' => __('Show or hide the top article share text on single post.', 'bcn'),
+//			'title' => __('Top article share text', 'monopress'),
+//			'subtitle' => __('Show or hide the top article share text on single post.', 'monopress'),
 //			'default' => true,
 //			// TODO: for newest version
 //		),
 //        array(
 //            'id' => 'post-sharing-top-style',
 //            'type' => 'switch',
-//            'title' => __('Top share buttons style', 'bcn'),
-//            'subtitle' => __('Change the appearance of the top sharing buttons.', 'bcn'),
+//            'title' => __('Top share buttons style', 'monopress'),
+//            'subtitle' => __('Change the appearance of the top sharing buttons.', 'monopress'),
 //            'default' => false,
 //            // TODO: for newest version
 //        ),
 		array(
 			'id' => 'post-sharing-bottom',
 			'type' => 'switch',
-			'title' => __('Bottom article sharing', 'bcn'),
-			'subtitle' => __('Show or hide the bottom article sharing on post.', 'bcn'),
+			'title' => __('Bottom article sharing', 'monopress'),
+			'subtitle' => __('Show or hide the bottom article sharing on post.', 'monopress'),
 			'default' => true,
 		),
 		array(
 			'id' => 'post-sidebar-title',
 			'type' => 'section',
-			'title' => __('Sidebar', 'bcn'),
-			'subtitle' => __('Select the single post sidebar position.', 'bcn'),
+			'title' => __('Sidebar', 'monopress'),
+			'subtitle' => __('Select the single post sidebar position.', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'post-sidebar',
 			'type' => 'image_select',
-			'title' => __('Sidebar position', 'bcn'),
-			'subtitle' => __('Sidebar position and custom sidebars.', 'bcn'),
+			'title' => __('Sidebar position', 'monopress'),
+			'subtitle' => __('Sidebar position and custom sidebars.', 'monopress'),
 			'options' => array(
 				'sidebar_1' => array(
 					'alt' => 'No sidebar',
@@ -1649,40 +1649,40 @@ Redux::setSection($opt_name, array(
 //		array(
 //			'id' => 'post-sharing-bottom-like',
 //			'type' => 'switch',
-//			'title' => __('Bottom article like', 'bcn'),
-//			'subtitle' => __('Show or hide the bottom article like on post.', 'bcn'),
+//			'title' => __('Bottom article like', 'monopress'),
+//			'subtitle' => __('Show or hide the bottom article like on post.', 'monopress'),
 //			'default' => true,
 //			// TODO: for newest version
 //		),
 //		array(
 //			'id' => 'post-sharing-bottom-text',
 //			'type' => 'switch',
-//			'title' => __('Bottom article share text', 'bcn'),
-//			'subtitle' => __('Change the appearance of the bottom sharing buttons.', 'bcn'),
+//			'title' => __('Bottom article share text', 'monopress'),
+//			'subtitle' => __('Change the appearance of the bottom sharing buttons.', 'monopress'),
 //			'default' => true,
 //			// TODO: for newest version
 //		),
 //        array(
 //            'id' => 'post-sharing-bottom-style',
 //            'type' => 'switch',
-//            'title' => __('Bottom share buttons style', 'bcn'),
-//            'subtitle' => __('Change the appearance of the bottom sharing buttons.', 'bcn'),
+//            'title' => __('Bottom share buttons style', 'monopress'),
+//            'subtitle' => __('Change the appearance of the bottom sharing buttons.', 'monopress'),
 //            'default' => false,
 //            // TODO: for newest version
 //        ),
 //        array(
 //            'id' => 'post-sharing-twitter-username',
 //            'type' => 'switch',
-//            'title' => __('Twitter username', 'bcn'),
-//            'subtitle' => __('<p>This will be used in the tweet for the via parameter. The site name will be used if no twitter username is provided. </p><p>Do not include the @</p>', 'bcn'),
+//            'title' => __('Twitter username', 'monopress'),
+//            'subtitle' => __('<p>This will be used in the tweet for the via parameter. The site name will be used if no twitter username is provided. </p><p>Do not include the @</p>', 'monopress'),
 //            'default' => false,
 //            // TODO: for newest version
 //        ),
 //        array(
 //            'id' => 'post-sharing-socials',
 //            'type' => 'switch',
-//            'title' => __('Social networks', 'bcn'),
-//            'subtitle' => __('Select active social share links and sort them with drag and drop:', 'bcn'),
+//            'title' => __('Social networks', 'monopress'),
+//            'subtitle' => __('Select active social share links and sort them with drag and drop:', 'monopress'),
 //            'default' => false,
 //            // TODO: for newest version
 //        ),
@@ -1690,17 +1690,17 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Portfolio template', 'bcn'),
+	'title' => __('Portfolio template', 'monopress'),
 	'id' => 'portfoilo',
-//    'desc' => __('Default portfolio template ', 'bcn'),
-	'subtitle' => __('.', 'bcn'),
+//    'desc' => __('Default portfolio template ', 'monopress'),
+	'subtitle' => __('.', 'monopress'),
 	'subsection' => true,
 	'fields' => array(
 		array(
 			'id' => 'portfolio-template-default',
 			'type' => 'image_select',
-			'title' => __('Default portfolio template', 'bcn'),
-			'subtitle' => __('This template will be applied to the portfolio whole site.', 'bcn'),
+			'title' => __('Default portfolio template', 'monopress'),
+			'subtitle' => __('This template will be applied to the portfolio whole site.', 'monopress'),
 			'options' => array(
 				'layout_1' => array(
 					'alt' => 'Masonry',
@@ -1717,57 +1717,57 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'portfolio-sharing-top',
 			'type' => 'switch',
-			'title' => __('Top portfolio sharing', 'bcn'),
-			'subtitle' => __('Show or hide the top content sharing on portfolio page.', 'bcn'),
+			'title' => __('Top portfolio sharing', 'monopress'),
+			'subtitle' => __('Show or hide the top content sharing on portfolio page.', 'monopress'),
 			'default' => true,
 		),
 		array(
 			'id' => 'portfolio-sharing-bottom',
 			'type' => 'switch',
-			'title' => __('Bottom portfolio sharing', 'bcn'),
-			'subtitle' => __('Show or hide the bottom content sharing on portfolio page.', 'bcn'),
+			'title' => __('Bottom portfolio sharing', 'monopress'),
+			'subtitle' => __('Show or hide the bottom content sharing on portfolio page.', 'monopress'),
 			'default' => true,
 		),
 		array(
 			'id' => 'portfolio-show-content',
 			'type' => 'switch',
-			'title' => __('Show page title and text content', 'bcn'),
-			'subtitle' => __('Enable or disable title and text content on portfolio page.', 'bcn'),
+			'title' => __('Show page title and text content', 'monopress'),
+			'subtitle' => __('Enable or disable title and text content on portfolio page.', 'monopress'),
 			'default' => true,
 		),
 		array(
 			'id' => 'portfolio-show-filter',
 			'type' => 'switch',
-			'title' => __('Show filter', 'bcn'),
-			'subtitle' => __('Enable or disable filter in portfolio page.', 'bcn'),
+			'title' => __('Show filter', 'monopress'),
+			'subtitle' => __('Enable or disable filter in portfolio page.', 'monopress'),
 			'default' => true,
 		),
 		array(
 			'id' => 'portfolio-show-title',
 			'type' => 'switch',
-			'title' => __('Show item title', 'bcn'),
-			'subtitle' => __('Show or hide portfolio item title.', 'bcn'),
+			'title' => __('Show item title', 'monopress'),
+			'subtitle' => __('Show or hide portfolio item title.', 'monopress'),
 			'default' => false,
 		),
 		array(
 			'id' => 'portfolio-show-plus',
 			'type' => 'switch',
-			'title' => __('Show plus icon on hover', 'bcn'),
-			'subtitle' => __('Show or hide plus icon on hover.', 'bcn'),
+			'title' => __('Show plus icon on hover', 'monopress'),
+			'subtitle' => __('Show or hide plus icon on hover.', 'monopress'),
 			'default' => true,
 		),
 		array(
 			'id' => 'portfolio-show-modal',
 			'type' => 'switch',
-			'title' => __('Enable modal image', 'bcn'),
-			'subtitle' => __('Open portfolio item link in modal window.', 'bcn'),
+			'title' => __('Enable modal image', 'monopress'),
+			'subtitle' => __('Open portfolio item link in modal window.', 'monopress'),
 			'default' => true,
 		),
 		array(
 			'id' => 'portfolio-sidebar',
 			'type' => 'image_select',
-			'title' => __('Sidebar position', 'bcn'),
-			'subtitle' => __('Sidebar position and custom sidebars.', 'bcn'),
+			'title' => __('Sidebar position', 'monopress'),
+			'subtitle' => __('Sidebar position and custom sidebars.', 'monopress'),
 			'options' => array(
 				'sidebar_1' => array(
 					'alt' => 'No sidebar',
@@ -1790,14 +1790,14 @@ Redux::setSection($opt_name, array(
 
 // -> START Miscellaneous
 Redux::setSection($opt_name, array(
-	'title' => __('Miscellaneous', 'bcn'),
+	'title' => __('Miscellaneous', 'monopress'),
 	'id' => 'miscellaneous',
-	'desc' => __('', 'bcn'),
+	'desc' => __('', 'monopress'),
 	'icon' => 'el el-cog'
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Background', 'bcn'),
+	'title' => __('Background', 'monopress'),
 	'id' => 'background',
 	'subsection' => true,
 	'fields' => array(
@@ -1805,7 +1805,7 @@ Redux::setSection($opt_name, array(
 			'id' => 'background-theme',
 			'type' => 'background',
 //            'output' => array('body'),
-			'title' => __('Theme background', 'bcn'),
+			'title' => __('Theme background', 'monopress'),
 			'background-color' => 'false',
 			'output' => '.up-container',
 		),
@@ -1813,14 +1813,14 @@ Redux::setSection($opt_name, array(
 			'id' => 'background-search',
 			'type' => 'background',
 //            'output' => array('body'),
-			'title' => __('Search panel background', 'bcn'),
+			'title' => __('Search panel background', 'monopress'),
 			'background-color' => 'false',
 			'output' => '.usernav__search-search--open',
 		),
 		array(
 			'id' => 'background-flip',
 			'type' => 'background',
-			'title' => __('Flip panel background', 'bcn'),
+			'title' => __('Flip panel background', 'monopress'),
 			'background-color' => 'false',
 			'output' => '.flip-block--open',
 		),
@@ -1828,7 +1828,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'background-portfolio',
 			'type' => 'background',
-			'title' => __('Portfolio background', 'bcn'),
+			'title' => __('Portfolio background', 'monopress'),
 			'background-color' => 'false',
 			'output' => '.container--portfolio, .container--portfolio-03, .container--portfolio-02'
 		),
@@ -1836,7 +1836,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'background-404',
 			'type' => 'background',
-			'title' => __('404 page background', 'bcn'),
+			'title' => __('404 page background', 'monopress'),
 			'background-color' => 'false',
 			'output' => '.error-404 .post-block-06__item'
 		),
@@ -1846,9 +1846,9 @@ Redux::setSection($opt_name, array(
 
 
 Redux::setSection($opt_name, array(
-	'title' => __('Theme colors', 'bcn'),
+	'title' => __('Theme colors', 'monopress'),
 	'id' => 'theme-color',
-//    'desc' => __('For full documentation on this field, visit: ', 'bcn') . '<a href="//docs.reduxframework.com/core/fields/slides/" target="_blank">docs.reduxframework.com/core/fields/slides/</a>',
+//    'desc' => __('For full documentation on this field, visit: ', 'monopress') . '<a href="//docs.reduxframework.com/core/fields/slides/" target="_blank">docs.reduxframework.com/core/fields/slides/</a>',
 	'subsection' => true,
 	'fields' => array(
 
@@ -1857,14 +1857,14 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-general-title',
 			'type' => 'section',
-			'title' => __('General theme colors', 'bcn'),
+			'title' => __('General theme colors', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'colors-general-accent',
 			'type' => 'color',
-			'title' => __('Theme accent color', 'bcn'),
-			'subtitle' => __('Select theme accent color', 'bcn'),
+			'title' => __('Theme accent color', 'monopress'),
+			'subtitle' => __('Select theme accent color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -1877,8 +1877,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-general-bg',
 			'type' => 'color',
-			'title' => __('Background color', 'bcn'),
-			'subtitle' => __('Select theme background color', 'bcn'),
+			'title' => __('Background color', 'monopress'),
+			'subtitle' => __('Select theme background color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -1892,8 +1892,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-general-headers',
 			'type' => 'color',
-			'title' => __('Headers text color', 'bcn'),
-			'subtitle' => __('Select a global header text color', 'bcn'),
+			'title' => __('Headers text color', 'monopress'),
+			'subtitle' => __('Select a global header text color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -1907,14 +1907,14 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-preloader-title',
 			'type' => 'section',
-			'title' => __('Preloader', 'bcn'),
+			'title' => __('Preloader', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'colors-preloader-bg',
 			'type' => 'color_rgba',
-			'title' => __('Preloader background color', 'bcn'),
-			'subtitle' => __('Select preloader background color', 'bcn'),
+			'title' => __('Preloader background color', 'monopress'),
+			'subtitle' => __('Select preloader background color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -1924,8 +1924,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-preloader',
 			'type' => 'color_rgba',
-			'title' => __('Preloader color', 'bcn'),
-			'subtitle' => __('Select preloader color', 'bcn'),
+			'title' => __('Preloader color', 'monopress'),
+			'subtitle' => __('Select preloader color', 'monopress'),
 			'default' => false,
 			'output' => array(
 				'background-color' => '.loading-spinner__item .loading-spinner__item-cube:before'
@@ -1937,15 +1937,15 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-header-title',
 			'type' => 'section',
-			'title' => __('Header', 'bcn'),
+			'title' => __('Header', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 
 		),
 		array(
 			'id' => 'colors-header-bg',
 			'type' => 'color',
-			'title' => __('Header background color', 'bcn'),
-			'subtitle' => __('Select header background color', 'bcn'),
+			'title' => __('Header background color', 'monopress'),
+			'subtitle' => __('Select header background color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -1957,8 +1957,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-header-text',
 			'type' => 'color',
-			'title' => __('Header text color', 'bcn'),
-			'subtitle' => __('Select header text color', 'bcn'),
+			'title' => __('Header text color', 'monopress'),
+			'subtitle' => __('Select header text color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -1970,8 +1970,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-header-b',
 			'type' => 'color',
-			'title' => __('Header accent text color', 'bcn'),
-			'subtitle' => __('Select header accent text color', 'bcn'),
+			'title' => __('Header accent text color', 'monopress'),
+			'subtitle' => __('Select header accent text color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -1981,8 +1981,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-header-logo',
 			'type' => 'color',
-			'title' => __('Text logo color', 'bcn'),
-			'subtitle' => __('Select text logo color', 'bcn'),
+			'title' => __('Text logo color', 'monopress'),
+			'subtitle' => __('Select text logo color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -1992,8 +1992,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-menu-bg',
 			'type' => 'color',
-			'title' => __('Menu background color', 'bcn'),
-			'subtitle' => __('Select menu background color', 'bcn'),
+			'title' => __('Menu background color', 'monopress'),
+			'subtitle' => __('Select menu background color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2003,8 +2003,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-menu-hover',
 			'type' => 'color',
-			'title' => __('Menu active & hover color', 'bcn'),
-			'subtitle' => __('Select the active and hover color for menu and submenu', 'bcn'),
+			'title' => __('Menu active & hover color', 'monopress'),
+			'subtitle' => __('Select the active and hover color for menu and submenu', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => '.header-menu .menu-item a:hover, .header-menu .menu-item a:focus, .header-menu .menu-item a:active, .main-nav-vertical .menu-item a:hover, .main-nav-vertical .menu-item a:focus, .main-nav-vertical .menu-item a:active',
@@ -2012,8 +2012,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-menu-txt',
 			'type' => 'color',
-			'title' => __('Menu links color', 'bcn'),
-			'subtitle' => __('Select menu text color', 'bcn'),
+			'title' => __('Menu links color', 'monopress'),
+			'subtitle' => __('Select menu text color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2024,8 +2024,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-menu-accent-txt',
 			'type' => 'color',
-			'title' => __('Menu accent text color', 'bcn'),
-			'subtitle' => __('Select menu accent text color', 'bcn'),
+			'title' => __('Menu accent text color', 'monopress'),
+			'subtitle' => __('Select menu accent text color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => '.header-menu .menu-item > a >strong, .main-nav-vertical .menu-item > a >strong',
@@ -2036,8 +2036,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-submenu-bg',
 			'type' => 'color_rgba',
-			'title' => __('Sub-menu background color', 'bcn'),
-			'subtitle' => __('Select sub-menu background color', 'bcn'),
+			'title' => __('Sub-menu background color', 'monopress'),
+			'subtitle' => __('Select sub-menu background color', 'monopress'),
 
 			// These options display a fully functional color palette.  Omit this argument
 			// for the minimal color picker, and change as desired.
@@ -2065,8 +2065,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-submenu-color',
 			'type' => 'color',
-			'title' => __('Sub-menu text color', 'bcn'),
-			'subtitle' => __('Select sub-menu text color', 'bcn'),
+			'title' => __('Sub-menu text color', 'monopress'),
+			'subtitle' => __('Select sub-menu text color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2077,8 +2077,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-submenu-hover-bg',
 			'type' => 'color',
-			'title' => __('Sub-menu active & hover background', 'bcn'),
-			'subtitle' => __('Active and hover background color for sub-menus', 'bcn'),
+			'title' => __('Sub-menu active & hover background', 'monopress'),
+			'subtitle' => __('Active and hover background color for sub-menus', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2088,8 +2088,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-submenu-hover-color',
 			'type' => 'color',
-			'title' => __('Sub-menu active & hover text color', 'bcn'),
-			'subtitle' => __('Active and hover text color for sub-menus', 'bcn'),
+			'title' => __('Sub-menu active & hover text color', 'monopress'),
+			'subtitle' => __('Active and hover text color for sub-menus', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2103,8 +2103,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-menu-icons',
 			'type' => 'color',
-			'title' => __('Menu icons color', 'bcn'),
-			'subtitle' => __('Select menu icons color', 'bcn'),
+			'title' => __('Menu icons color', 'monopress'),
+			'subtitle' => __('Select menu icons color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2116,8 +2116,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-menu-icons-hover',
 			'type' => 'color',
-			'title' => __('Menu icons hover color', 'bcn'),
-			'subtitle' => __('Select menu icons hover color', 'bcn'),
+			'title' => __('Menu icons hover color', 'monopress'),
+			'subtitle' => __('Select menu icons hover color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2132,14 +2132,14 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-sidebar-title',
 			'type' => 'section',
-			'title' => __('Sidebar', 'bcn'),
+			'title' => __('Sidebar', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'colors-sidebar-titles-bg',
 			'type' => 'color',
-			'title' => __('Sidebar titles border color', 'bcn'),
-			'subtitle' => __('Select sidebar titles background color', 'bcn'),
+			'title' => __('Sidebar titles border color', 'monopress'),
+			'subtitle' => __('Select sidebar titles background color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2151,8 +2151,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-sidebar-titles',
 			'type' => 'color',
-			'title' => __('Sidebar titles color', 'bcn'),
-			'subtitle' => __('Select sidebar titles color', 'bcn'),
+			'title' => __('Sidebar titles color', 'monopress'),
+			'subtitle' => __('Select sidebar titles color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2162,8 +2162,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-sidebar-bg',
 			'type' => 'color',
-			'title' => __('Sidebar background color', 'bcn'),
-			'subtitle' => __('Select sidebar background color', 'bcn'),
+			'title' => __('Sidebar background color', 'monopress'),
+			'subtitle' => __('Select sidebar background color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2173,8 +2173,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-sidebar-color',
 			'type' => 'color',
-			'title' => __('Sidebar text color', 'bcn'),
-			'subtitle' => __('Select sidebar text color', 'bcn'),
+			'title' => __('Sidebar text color', 'monopress'),
+			'subtitle' => __('Select sidebar text color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => '.post-widget, .post-widget .sidebar__inner',
@@ -2182,8 +2182,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-sidebar-links-color',
 			'type' => 'color',
-			'title' => __('Sidebar links color', 'bcn'),
-			'subtitle' => __('Select sidebar links color', 'bcn'),
+			'title' => __('Sidebar links color', 'monopress'),
+			'subtitle' => __('Select sidebar links color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2197,15 +2197,15 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-flip-title',
 			'type' => 'section',
-			'title' => __('Flip panel', 'bcn'),
+			'title' => __('Flip panel', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 
 		),
 		array(
 			'id' => 'colors-flip-bg',
 			'type' => 'color',
-			'title' => __('Flip panel background color', 'bcn'),
-			'subtitle' => __('Select flip panel background color', 'bcn'),
+			'title' => __('Flip panel background color', 'monopress'),
+			'subtitle' => __('Select flip panel background color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2217,8 +2217,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-flip-color',
 			'type' => 'color',
-			'title' => __('Flip panel text and icons color', 'bcn'),
-			'subtitle' => __('Select text and icons color for flip panel', 'bcn'),
+			'title' => __('Flip panel text and icons color', 'monopress'),
+			'subtitle' => __('Select text and icons color for flip panel', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => '.flip-block__wrapper',
@@ -2226,8 +2226,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-flip-links-color',
 			'type' => 'color',
-			'title' => __('Flip panel button`s color', 'bcn'),
-			'subtitle' => __('Select button`s color for flip panel', 'bcn'),
+			'title' => __('Flip panel button`s color', 'monopress'),
+			'subtitle' => __('Select button`s color for flip panel', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => '.flip-block__wrapper a',
@@ -2238,14 +2238,14 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-search-title',
 			'type' => 'section',
-			'title' => __('Search panel', 'bcn'),
+			'title' => __('Search panel', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'colors-search-bg',
 			'type' => 'color',
-			'title' => __('Search panel background color', 'bcn'),
-			'subtitle' => __('Select search panel background color', 'bcn'),
+			'title' => __('Search panel background color', 'monopress'),
+			'subtitle' => __('Select search panel background color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2255,8 +2255,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-search-color',
 			'type' => 'color',
-			'title' => __('Search panel text and icons color', 'bcn'),
-			'subtitle' => __('Select search panel text and icons color', 'bcn'),
+			'title' => __('Search panel text and icons color', 'monopress'),
+			'subtitle' => __('Select search panel text and icons color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => '.usernav__search-search.usernav__search-search--open  button, .usernav__search-input,.usernav__search-wrapper .usernav__search-input:focus, .usernav__search-input::-webkit-input-placeholder',
@@ -2264,8 +2264,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-search-border',
 			'type' => 'color',
-			'title' => __('Search panel bottom border color', 'bcn'),
-			'subtitle' => __('Select search panel bottom border color', 'bcn'),
+			'title' => __('Search panel bottom border color', 'monopress'),
+			'subtitle' => __('Select search panel bottom border color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2278,14 +2278,14 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-posts-title',
 			'type' => 'section',
-			'title' => __('Posts', 'bcn'),
+			'title' => __('Posts', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'colors-posts-titles',
 			'type' => 'color',
-			'title' => __('Post title color', 'bcn'),
-			'subtitle' => __('Select post title color', 'bcn'),
+			'title' => __('Post title color', 'monopress'),
+			'subtitle' => __('Select post title color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => '.post h1',
@@ -2293,8 +2293,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-posts-author',
 			'type' => 'color',
-			'title' => __('Post & block author name color', 'bcn'),
-			'subtitle' => __('Select author name color', 'bcn'),
+			'title' => __('Post & block author name color', 'monopress'),
+			'subtitle' => __('Select author name color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => '.post .author a',
@@ -2302,8 +2302,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-posts-text',
 			'type' => 'color',
-			'title' => __('Post text color', 'bcn'),
-			'subtitle' => __('Select post content color', 'bcn'),
+			'title' => __('Post text color', 'monopress'),
+			'subtitle' => __('Select post content color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => '.post .entry-content',
@@ -2311,8 +2311,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-posts-h',
 			'type' => 'color',
-			'title' => __('Post h1, h2, h3, h4, h5, h6 color', 'bcn'),
-			'subtitle' => __('Select in post h color', 'bcn'),
+			'title' => __('Post h1, h2, h3, h4, h5, h6 color', 'monopress'),
+			'subtitle' => __('Select in post h color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => '.post h1,.post h2,.post h3,.post h4,.post h5,.post h6',
@@ -2320,8 +2320,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-posts-blockquote',
 			'type' => 'color',
-			'title' => __('Post blockquote color', 'bcn'),
-			'subtitle' => __('Select in post blockquote color', 'bcn'),
+			'title' => __('Post blockquote color', 'monopress'),
+			'subtitle' => __('Select in post blockquote color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => '.post blockquote',
@@ -2332,14 +2332,14 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-pages-title',
 			'type' => 'section',
-			'title' => __('Pages', 'bcn'),
+			'title' => __('Pages', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'colors-pages-titles',
 			'type' => 'color',
-			'title' => __('Page title color', 'bcn'),
-			'subtitle' => __('Select page title color', 'bcn'),
+			'title' => __('Page title color', 'monopress'),
+			'subtitle' => __('Select page title color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => '.page h1',
@@ -2347,8 +2347,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-pages-text',
 			'type' => 'color',
-			'title' => __('Page text color', 'bcn'),
-			'subtitle' => __('Select page text color', 'bcn'),
+			'title' => __('Page text color', 'monopress'),
+			'subtitle' => __('Select page text color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => '.page ',
@@ -2356,8 +2356,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-pages-h',
 			'type' => 'color',
-			'title' => __('Page h1, h2, h3, h4, h5, h6 color', 'bcn'),
-			'subtitle' => __('Select page h color', 'bcn'),
+			'title' => __('Page h1, h2, h3, h4, h5, h6 color', 'monopress'),
+			'subtitle' => __('Select page h color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => '.page h1,.page h2,.page h3,.page h4,.page h5,.page h6',
@@ -2368,14 +2368,14 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-footer-title',
 			'type' => 'section',
-			'title' => __('Footer', 'bcn'),
+			'title' => __('Footer', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'colors-footer-bg',
 			'type' => 'color',
-			'title' => __('Background color', 'bcn'),
-			'subtitle' => __('Select footer background color', 'bcn'),
+			'title' => __('Background color', 'monopress'),
+			'subtitle' => __('Select footer background color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2385,8 +2385,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-footer-text',
 			'type' => 'color',
-			'title' => __('Text color', 'bcn'),
-			'subtitle' => __('Select footer text color', 'bcn'),
+			'title' => __('Text color', 'monopress'),
+			'subtitle' => __('Select footer text color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2396,8 +2396,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-footer-links',
 			'type' => 'color',
-			'title' => __('Links color', 'bcn'),
-			'subtitle' => __('Select footer links color', 'bcn'),
+			'title' => __('Links color', 'monopress'),
+			'subtitle' => __('Select footer links color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2408,8 +2408,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-footer-header',
 			'type' => 'color',
-			'title' => __('Widgets header text color', 'bcn'),
-			'subtitle' => __('Select widgets header text color', 'bcn'),
+			'title' => __('Widgets header text color', 'monopress'),
+			'subtitle' => __('Select widgets header text color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2419,8 +2419,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-footer-social-bg',
 			'type' => 'color',
-			'title' => __('Footer social icons background', 'bcn'),
-			'subtitle' => __('Select social icons background', 'bcn'),
+			'title' => __('Footer social icons background', 'monopress'),
+			'subtitle' => __('Select social icons background', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2430,8 +2430,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-footer-social',
 			'type' => 'color',
-			'title' => __('Footer social icons color', 'bcn'),
-			'subtitle' => __('Select social icons color', 'bcn'),
+			'title' => __('Footer social icons color', 'monopress'),
+			'subtitle' => __('Select social icons color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2441,8 +2441,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-footer-social-hover',
 			'type' => 'color',
-			'title' => __('Footer social icons hover color', 'bcn'),
-			'subtitle' => __('Select social icons hover color', 'bcn'),
+			'title' => __('Footer social icons hover color', 'monopress'),
+			'subtitle' => __('Select social icons hover color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2455,14 +2455,14 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-subfooter-title',
 			'type' => 'section',
-			'title' => __('Sub footer', 'bcn'),
+			'title' => __('Sub footer', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'colors-subfooter-bg',
 			'type' => 'color',
-			'title' => __('Background color', 'bcn'),
-			'subtitle' => __('Select sub footer background color', 'bcn'),
+			'title' => __('Background color', 'monopress'),
+			'subtitle' => __('Select sub footer background color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2472,8 +2472,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-subfooter-text',
 			'type' => 'color',
-			'title' => __('Text color', 'bcn'),
-			'subtitle' => __('Select sub footer text color', 'bcn'),
+			'title' => __('Text color', 'monopress'),
+			'subtitle' => __('Select sub footer text color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2483,8 +2483,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-subfooter-links',
 			'type' => 'color',
-			'title' => __('Links color', 'bcn'),
-			'subtitle' => __('Select sub footer links color', 'bcn'),
+			'title' => __('Links color', 'monopress'),
+			'subtitle' => __('Select sub footer links color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2497,14 +2497,14 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-portfolio-title',
 			'type' => 'section',
-			'title' => __('Portfolio', 'bcn'),
+			'title' => __('Portfolio', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'colors-portfolio-bg',
 			'type' => 'color',
-			'title' => __('Background color', 'bcn'),
-			'subtitle' => __('Select portfolio background color', 'bcn'),
+			'title' => __('Background color', 'monopress'),
+			'subtitle' => __('Select portfolio background color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2514,8 +2514,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-portfolio-color',
 			'type' => 'color',
-			'title' => __('Text color', 'bcn'),
-			'subtitle' => __('Select portfolio text color', 'bcn'),
+			'title' => __('Text color', 'monopress'),
+			'subtitle' => __('Select portfolio text color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2525,8 +2525,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-portfolio-hover',
 			'type' => 'color',
-			'title' => __('On hover fade color', 'bcn'),
-			'subtitle' => __('Select portfolio item on hover fade color', 'bcn'),
+			'title' => __('On hover fade color', 'monopress'),
+			'subtitle' => __('Select portfolio item on hover fade color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2536,8 +2536,8 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-portfolio-hover-txt-bg',
 			'type' => 'color',
-			'title' => __('On hover title background color', 'bcn'),
-			'subtitle' => __('Select portfolio item on hover title background color', 'bcn'),
+			'title' => __('On hover title background color', 'monopress'),
+			'subtitle' => __('Select portfolio item on hover title background color', 'monopress'),
 			'default' => false,
 			'validate' => 'color',
 			'output' => array(
@@ -2550,15 +2550,15 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'colors-404-title',
 			'type' => 'section',
-			'title' => __('404', 'bcn'),
+			'title' => __('404', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => '404-background',
 			'type' => 'color',
 			'compiler' => true,
-			'title' => esc_html__('404 background Color', 'bcn'),
-			'subtitle' => __('Select 404 page background color', 'bcn'),
+			'title' => esc_html__('404 background Color', 'monopress'),
+			'subtitle' => __('Select 404 page background color', 'monopress'),
 			'default' => '',
 			'output' => array(
 				'background-color' => '.error-404 .post-block-06__item',
@@ -2570,22 +2570,22 @@ Redux::setSection($opt_name, array(
 
 
 Redux::setSection($opt_name, array(
-	'title' => __('Theme fonts', 'bcn'),
+	'title' => __('Theme fonts', 'monopress'),
 	'id' => 'theme-fonts',
-//    'desc' => __('Font Settings ', 'bcn'),
+//    'desc' => __('Font Settings ', 'monopress'),
 	'subsection' => true,
 	'fields' => array(
 		array(
 			'id' => 'fonts-body-title',
 			'type' => 'section',
-			'title' => __('Global fonts setting', 'bcn'),
-			'subtitle' => __('Main theme fonts.', 'bcn'),
+			'title' => __('Global fonts setting', 'monopress'),
+			'subtitle' => __('Main theme fonts.', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'fonts-primary',
 			'type' => 'typography',
-			'title' => __('Primary font', 'bcn'),
+			'title' => __('Primary font', 'monopress'),
 			'google' => true,
 			'text-align' => false,
 			'color' => false,
@@ -2612,7 +2612,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-secondary',
 			'type' => 'typography',
-			'title' => __('Secondary font', 'bcn'),
+			'title' => __('Secondary font', 'monopress'),
 			'google' => true,
 			'text-align' => false,
 			'color' => false,
@@ -2642,13 +2642,13 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-header-title',
 			'type' => 'section',
-			'title' => __('Header', 'bcn'),
+			'title' => __('Header', 'monopress'),
 			'indent' => true,
 		),
 		array(
 			'id' => 'fonts-header-logo',
 			'type' => 'typography',
-			'title' => __('Text logo', 'bcn'),
+			'title' => __('Text logo', 'monopress'),
 			'google' => true,
 			'text-align' => false,
 			'color' => false,
@@ -2659,7 +2659,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-header',
 			'type' => 'typography',
-			'title' => __('Header', 'bcn'),
+			'title' => __('Header', 'monopress'),
 			'google' => true,
 			'text-align' => false,
 			'color' => false,
@@ -2670,7 +2670,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-header-menu',
 			'type' => 'typography',
-			'title' => __('Top menu', 'bcn'),
+			'title' => __('Top menu', 'monopress'),
 			'google' => true,
 			'text-align' => false,
 			'color' => false,
@@ -2681,7 +2681,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-header-submenu',
 			'type' => 'typography',
-			'title' => __('Top sub menu', 'bcn'),
+			'title' => __('Top sub menu', 'monopress'),
 			'google' => true,
 			'text-align' => false,
 			'color' => false,
@@ -2693,13 +2693,13 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'headers-post-title',
 			'type' => 'section',
-			'title' => __('Listing blocks', 'bcn'),
+			'title' => __('Listing blocks', 'monopress'),
 			'indent' => true,
 		),
 		array(
 			'id' => 'headers-post-titles',
 			'type' => 'typography',
-			'title' => __('Headers', 'bcn'),
+			'title' => __('Headers', 'monopress'),
 			'google' => true,
 			'output' => array('.post-block-02__header a:hover, .post-block-03__widget-title a:hover, .post-block-04__header a:hover, .post-block-05__header a:hover, .post-block-07__header a:hover, .post-block-09__header a:hover, .post-block-11__header a:hover, .post-block-14__header a:hover, .post-block-18__header a:hover, .post-block-19__widget-title a:hover, .post-block-21__header a:hover, .post-block-02__header a, .post-block-03__widget-title a, .post-block-04__header a, .post-block-05__header a, .post-block-07__header a, .post-block-09__header a, .post-block-11__header a, .post-block-14__header a, .post-block-18__header a, .post-block-19__widget-title a, .post-block-21__header a, .post-block-02__item:hover .post-block-02__header-link, .post-block-03__item:hover .post-block-03__header-link, .post-block-04__item:hover .post-block-04__header-link, .post-block-05__item:hover .post-block-05__header-link, .post-block-07__item:hover .post-block-07__header-link, .post-block-09__item:hover .post-block-09__header-link, .post-block-11__item:hover .post-block-11__header-link, .post-block-14__item:hover .post-block-14__header-link, .post-block-18__item:hover .post-block-18__header-link, .post-block-19__item:hover .post-block-19__header-link, .post-block-21__item:hover .post-block-21__header-link, .post-widget__title-link'),
 			'text-align' => false,
@@ -2711,13 +2711,13 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-title',
 			'type' => 'section',
-			'title' => __('Post content', 'bcn'),
+			'title' => __('Post content', 'monopress'),
 			'indent' => true,
 		),
 		array(
 			'id' => 'fonts-post-titles',
 			'type' => 'typography',
-			'title' => __('Post title', 'bcn'),
+			'title' => __('Post title', 'monopress'),
 			'google' => true,
 			'output' => array('.post h1'),
 			'text-align' => false,
@@ -2728,7 +2728,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-content',
 			'type' => 'typography',
-			'title' => __('Post content', 'bcn'),
+			'title' => __('Post content', 'monopress'),
 			'google' => true,
 			'output' => array('.post .entry-content'),
 			'text-align' => false,
@@ -2739,7 +2739,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-blockquote',
 			'type' => 'typography',
-			'title' => __('Blockquote', 'bcn'),
+			'title' => __('Blockquote', 'monopress'),
 			'google' => true,
 			'output' => array('.post blockquote'),
 			'text-align' => false,
@@ -2751,7 +2751,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-lists',
 			'type' => 'typography',
-			'title' => __('Lists', 'bcn'),
+			'title' => __('Lists', 'monopress'),
 			'google' => true,
 			'output' => array('.post ul, .post ol'),
 			'text-align' => false,
@@ -2762,7 +2762,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-h1',
 			'type' => 'typography',
-			'title' => __('H1', 'bcn'),
+			'title' => __('H1', 'monopress'),
 			'google' => true,
 			'output' => array('.post h1'),
 			'text-align' => false,
@@ -2773,7 +2773,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-h2',
 			'type' => 'typography',
-			'title' => __('H2', 'bcn'),
+			'title' => __('H2', 'monopress'),
 			'google' => true,
 			'output' => array('.post h2'),
 			'text-align' => false,
@@ -2784,7 +2784,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-h3',
 			'type' => 'typography',
-			'title' => __('H3', 'bcn'),
+			'title' => __('H3', 'monopress'),
 			'google' => true,
 			'output' => array('.post h3'),
 			'text-align' => false,
@@ -2795,7 +2795,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-h4',
 			'type' => 'typography',
-			'title' => __('H4', 'bcn'),
+			'title' => __('H4', 'monopress'),
 			'google' => true,
 			'output' => array('.post h4'),
 			'text-align' => false,
@@ -2806,7 +2806,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-h5',
 			'type' => 'typography',
-			'title' => __('H5', 'bcn'),
+			'title' => __('H5', 'monopress'),
 			'google' => true,
 			'output' => array('.post h5'),
 			'text-align' => false,
@@ -2817,7 +2817,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-h6',
 			'type' => 'typography',
-			'title' => __('H6', 'bcn'),
+			'title' => __('H6', 'monopress'),
 			'google' => true,
 			'output' => array('.post h6'),
 			'text-align' => false,
@@ -2829,14 +2829,14 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-elements-title',
 			'type' => 'section',
-			'title' => __('Post  elements', 'bcn'),
+			'title' => __('Post  elements', 'monopress'),
 			'indent' => true,
 		),
 
 		array(
 			'id' => 'fonts-post-elements-author',
 			'type' => 'typography',
-			'title' => __('Author', 'bcn'),
+			'title' => __('Author', 'monopress'),
 			'google' => true,
 			'output' => array('.byline'),
 			'text-align' => false,
@@ -2848,7 +2848,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-elements-date',
 			'type' => 'typography',
-			'title' => __('Date', 'bcn'),
+			'title' => __('Date', 'monopress'),
 			'google' => true,
 			'output' => array('.posted-on'),
 			'text-align' => false,
@@ -2860,7 +2860,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-elements-vst',
 			'type' => 'typography',
-			'title' => __('Via/source/tags', 'bcn'),
+			'title' => __('Via/source/tags', 'monopress'),
 			'google' => true,
 			'output' => array('footer.entry-footer'),
 			'text-align' => false,
@@ -2871,7 +2871,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-elements-nptxt',
 			'type' => 'typography',
-			'title' => __('Next/prev text', 'bcn'),
+			'title' => __('Next/prev text', 'monopress'),
 			'google' => true,
 			'output' => array('.post-navigation .nav-previous, .post-navigation .nav-next'),
 			'text-align' => false,
@@ -2883,7 +2883,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-elements-box-author-name',
 			'type' => 'typography',
-			'title' => __('Box author name', 'bcn'),
+			'title' => __('Box author name', 'monopress'),
 			'google' => true,
 			'output' => array('.up-author-name'),
 			'text-align' => false,
@@ -2894,7 +2894,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-elements-box-author-url',
 			'type' => 'typography',
-			'title' => __('Box author url', 'bcn'),
+			'title' => __('Box author url', 'monopress'),
 			'google' => true,
 			'output' => array('.up-author-url'),
 			'text-align' => false,
@@ -2905,7 +2905,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-elements-box-author-description',
 			'type' => 'typography',
-			'title' => __('Box author description', 'bcn'),
+			'title' => __('Box author description', 'monopress'),
 			'google' => true,
 			'output' => array('.up-author-description'),
 			'text-align' => false,
@@ -2917,7 +2917,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-elements-share-text',
 			'type' => 'typography',
-			'title' => __('Share text', 'bcn'),
+			'title' => __('Share text', 'monopress'),
 			'google' => true,
 			'output' => array('.pk-share-buttons-wrap'),
 			'text-align' => false,
@@ -2928,7 +2928,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-post-elements-image-caption',
 			'type' => 'typography',
-			'title' => __('Image caption', 'bcn'),
+			'title' => __('Image caption', 'monopress'),
 			'google' => true,
 			'output' => array('.wp-caption-text'),
 			'text-align' => false,
@@ -2941,13 +2941,13 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-pages-title',
 			'type' => 'section',
-			'title' => __('Pages', 'bcn'),
+			'title' => __('Pages', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'fonts-pages-titles',
 			'type' => 'typography',
-			'title' => __('Page title', 'bcn'),
+			'title' => __('Page title', 'monopress'),
 			'google' => true,
 			'output' => array('.page h1'),
 			'text-align' => false,
@@ -2958,7 +2958,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-pages-content',
 			'type' => 'typography',
-			'title' => __('Page content', 'bcn'),
+			'title' => __('Page content', 'monopress'),
 			'google' => true,
 			'output' => array('.page'),
 			'text-align' => false,
@@ -2969,7 +2969,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-pages-h1',
 			'type' => 'typography',
-			'title' => __('H1', 'bcn'),
+			'title' => __('H1', 'monopress'),
 			'google' => true,
 			'output' => array('.page h1'),
 			'text-align' => false,
@@ -2980,7 +2980,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-pages-h2',
 			'type' => 'typography',
-			'title' => __('H2', 'bcn'),
+			'title' => __('H2', 'monopress'),
 			'google' => true,
 			'output' => array('.page h2'),
 			'text-align' => false,
@@ -2991,7 +2991,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-pages-h3',
 			'type' => 'typography',
-			'title' => __('H3', 'bcn'),
+			'title' => __('H3', 'monopress'),
 			'google' => true,
 			'output' => array('.page h3'),
 			'text-align' => false,
@@ -3002,7 +3002,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-pages-h4',
 			'type' => 'typography',
-			'title' => __('H4', 'bcn'),
+			'title' => __('H4', 'monopress'),
 			'google' => true,
 			'output' => array('.page h4'),
 			'text-align' => false,
@@ -3013,7 +3013,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-pages-h5',
 			'type' => 'typography',
-			'title' => __('H5', 'bcn'),
+			'title' => __('H5', 'monopress'),
 			'google' => true,
 			'output' => array('.page h5'),
 			'text-align' => false,
@@ -3024,7 +3024,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-pages-h6',
 			'type' => 'typography',
-			'title' => __('H6', 'bcn'),
+			'title' => __('H6', 'monopress'),
 			'google' => true,
 			'output' => array('.page h6'),
 			'text-align' => false,
@@ -3036,13 +3036,13 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-footer-title',
 			'type' => 'section',
-			'title' => __('Footer fonts settings', 'bcn'),
+			'title' => __('Footer fonts settings', 'monopress'),
 			'indent' => true, // Indent all options below until the next 'section' option is set.
 		),
 		array(
 			'id' => 'fonts-footer-text',
 			'type' => 'typography',
-			'title' => __('Footer text', 'bcn'),
+			'title' => __('Footer text', 'monopress'),
 			'google' => true,
 			'output' => array('footer.footer, .footer.footer-first, .footer.footer-second, .footer.footer-third, footer.footer a, .footer.footer-first a, .footer.footer-second a, .footer.footer-third a, footer.footer h2, .footer.footer-first h2, .footer.footer-second h2, .footer.footer-third h2, footer.footer h3, .footer.footer-first h3, .footer.footer-second h3, .footer.footer-third h3'),
 			'text-align' => false,
@@ -3053,7 +3053,7 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'fonts-footer-menu',
 			'type' => 'typography',
-			'title' => __('Footer menu', 'bcn'),
+			'title' => __('Footer menu', 'monopress'),
 			'google' => true,
 			'output' => array('.footer-menu'),
 			'text-align' => false,
@@ -3065,7 +3065,7 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Custom code', 'bcn'),
+	'title' => __('Custom code', 'monopress'),
 	'id' => 'custom-code',
 	'subsection' => true,
 	'fields' => array(
@@ -3073,8 +3073,8 @@ Redux::setSection($opt_name, array(
 			'id' => 'custom-code-css',
 			'type' => 'ace_editor',
 			'full_width' => true,
-			'title' => __('CSS Code', 'bcn'),
-			'subtitle' => __('Paste your CSS code here.', 'bcn'),
+			'title' => __('CSS Code', 'monopress'),
+			'subtitle' => __('Paste your CSS code here.', 'monopress'),
 			'mode' => 'css',
 			'theme' => 'monokai',
 			'desc' => 'The css from this box will load on all the pages of the site.',
@@ -3084,8 +3084,8 @@ Redux::setSection($opt_name, array(
 			'id' => 'custom-code-js',
 			'type' => 'ace_editor',
 			'full_width' => true,
-			'title' => __('JS Code', 'bcn'),
-			'subtitle' => __('Paste your JS code here.', 'bcn'),
+			'title' => __('JS Code', 'monopress'),
+			'subtitle' => __('Paste your JS code here.', 'monopress'),
 			'mode' => 'javascript',
 			'theme' => 'chrome',
 			'desc' => 'Add custom javascript easly, using this editor. Please do not include the &lt;script&gt &lt;/script&gt',
@@ -3096,38 +3096,38 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => esc_html__('Page 404', 'bcn'),
+	'title' => esc_html__('Page 404', 'monopress'),
 	'subsection' => true,
 	'fields' => array(
 		array(
 			'id' => '404-heading',
 			'type' => 'text',
-			'title' => esc_html__('Heading text', 'bcn'),
-			'default' => esc_html__('Oops! That page can&rsquo;t be found.', 'bcn'),
+			'title' => esc_html__('Heading text', 'monopress'),
+			'default' => esc_html__('Oops! That page can&rsquo;t be found.', 'monopress'),
 
 		),
 		array(
 			'id' => '404-text',
 			'type' => 'editor',
-			'title' => esc_html__('Content body Text', 'bcn'),
-			'subtitle' => esc_html__('Custom html allow', 'bcn'),
+			'title' => esc_html__('Content body Text', 'monopress'),
+			'subtitle' => esc_html__('Custom html allow', 'monopress'),
 			'args' => array(
 				'teeny' => true,
 			),
-			'default' => esc_html__('It looks like nothing was found at this location. Maybe try the link below or a search?', 'bcn'),
+			'default' => esc_html__('It looks like nothing was found at this location. Maybe try the link below or a search?', 'monopress'),
 
 		),
 		array(
 			'id' => '404-button-text',
 			'type' => 'text',
-			'title' => esc_html__('Button text', 'bcn'),
+			'title' => esc_html__('Button text', 'monopress'),
 			'default' => 'Go Home',
 
 		),
 		array(
 			'id' => '404-button-link',
 			'type' => 'text',
-			'title' => esc_html__('Button Contact link slug', 'bcn'),
+			'title' => esc_html__('Button Contact link slug', 'monopress'),
 			'default' => '/',
 		),
 	)
@@ -3136,9 +3136,9 @@ Redux::setSection($opt_name, array(
 //   Social networks
 
 Redux::setSection($opt_name, array(
-	'title' => __('Social networks', 'bcn'),
+	'title' => __('Social networks', 'monopress'),
 	'id' => 'social-networks',
-	'desc' => __('Insert a link to your account if you want to display this social network.', 'bcn'),
+	'desc' => __('Insert a link to your account if you want to display this social network.', 'monopress'),
 	'subsection' => true,
 	'fields' => array(
 
@@ -3147,26 +3147,26 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'social-twitter',
 			'type' => 'text',
-			'title' => __('Twitter', 'bcn'),
-			'desc' => __('Link to: twitter', 'bcn'),
+			'title' => __('Twitter', 'monopress'),
+			'desc' => __('Link to: twitter', 'monopress'),
 		),
 		array(
 			'id' => 'social-facebook',
 			'type' => 'text',
-			'title' => __('Facebook', 'bcn'),
-			'desc' => __('Link to: facebook', 'bcn'),
+			'title' => __('Facebook', 'monopress'),
+			'desc' => __('Link to: facebook', 'monopress'),
 		),
 		array(
 			'id' => 'social-instagram',
 			'type' => 'text',
-			'title' => __('Instagram', 'bcn'),
-			'desc' => __('Link to: instagram', 'bcn'),
+			'title' => __('Instagram', 'monopress'),
+			'desc' => __('Link to: instagram', 'monopress'),
 		),
 		array(
 			'id' => 'social-youtube',
 			'type' => 'text',
-			'title' => __('Youtube', 'bcn'),
-			'desc' => __('Link to: youtube', 'bcn'),
+			'title' => __('Youtube', 'monopress'),
+			'desc' => __('Link to: youtube', 'monopress'),
 		),
 
 //      Regular
@@ -3174,185 +3174,185 @@ Redux::setSection($opt_name, array(
 		array(
 			'id' => 'social-behance',
 			'type' => 'text',
-			'title' => __('Behance', 'bcn'),
-			'desc' => __('Link to: behance', 'bcn'),
+			'title' => __('Behance', 'monopress'),
+			'desc' => __('Link to: behance', 'monopress'),
 		),
 
 		array(
 			'id' => 'social-delicious',
 			'type' => 'text',
-			'title' => __('Delicious', 'bcn'),
-			'desc' => __('Link to: delicious', 'bcn'),
+			'title' => __('Delicious', 'monopress'),
+			'desc' => __('Link to: delicious', 'monopress'),
 		),
 
 		array(
 			'id' => 'social-deviantart',
 			'type' => 'text',
-			'title' => __('Deviantart', 'bcn'),
-			'desc' => __('Link to: deviantart', 'bcn'),
+			'title' => __('Deviantart', 'monopress'),
+			'desc' => __('Link to: deviantart', 'monopress'),
 		),
 		array(
 			'id' => 'social-digg',
 			'type' => 'text',
-			'title' => __('Digg', 'bcn'),
-			'desc' => __('Link to: digg', 'bcn'),
+			'title' => __('Digg', 'monopress'),
+			'desc' => __('Link to: digg', 'monopress'),
 		),
 		array(
 			'id' => 'social-dribbble',
 			'type' => 'text',
-			'title' => __('Dribbble', 'bcn'),
-			'desc' => __('Link to: dribbble', 'bcn'),
+			'title' => __('Dribbble', 'monopress'),
+			'desc' => __('Link to: dribbble', 'monopress'),
 		),
 		array(
 			'id' => 'social-dropbox',
 			'type' => 'text',
-			'title' => __('Dropbox', 'bcn'),
-			'desc' => __('Link to: dropbox', 'bcn'),
+			'title' => __('Dropbox', 'monopress'),
+			'desc' => __('Link to: dropbox', 'monopress'),
 		),
 		array(
 			'id' => 'social-flickr',
 			'type' => 'text',
-			'title' => __('Flickr', 'bcn'),
-			'desc' => __('Link to: flickr', 'bcn'),
+			'title' => __('Flickr', 'monopress'),
+			'desc' => __('Link to: flickr', 'monopress'),
 		),
 		array(
 			'id' => 'social-googleplus',
 			'type' => 'text',
-			'title' => __('Google +', 'bcn'),
-			'desc' => __('Link to: googleplus', 'bcn'),
+			'title' => __('Google +', 'monopress'),
+			'desc' => __('Link to: googleplus', 'monopress'),
 		),
 		array(
 			'id' => 'social-lastfm',
 			'type' => 'text',
-			'title' => __('Last FM', 'bcn'),
-			'desc' => __('Link to: Last FM', 'bcn'),
+			'title' => __('Last FM', 'monopress'),
+			'desc' => __('Link to: Last FM', 'monopress'),
 		),
 		array(
 			'id' => 'social-linkedin',
 			'type' => 'text',
-			'title' => __('LinkedIN', 'bcn'),
-			'desc' => __('Link to: linkedin', 'bcn'),
+			'title' => __('LinkedIN', 'monopress'),
+			'desc' => __('Link to: linkedin', 'monopress'),
 		),
 		array(
 			'id' => 'social-pinterest',
 			'type' => 'text',
-			'title' => __('Pinterest', 'bcn'),
-			'desc' => __('Link to: pinterest', 'bcn'),
+			'title' => __('Pinterest', 'monopress'),
+			'desc' => __('Link to: pinterest', 'monopress'),
 		),
 		array(
 			'id' => 'social-rss',
 			'type' => 'text',
-			'title' => __('RSS', 'bcn'),
-			'desc' => __('Link to: rss', 'bcn'),
+			'title' => __('RSS', 'monopress'),
+			'desc' => __('Link to: rss', 'monopress'),
 		),
 		array(
 			'id' => 'social-tumblr',
 			'type' => 'text',
-			'title' => __('Tumblr', 'bcn'),
-			'desc' => __('Link to: tumblr', 'bcn'),
+			'title' => __('Tumblr', 'monopress'),
+			'desc' => __('Link to: tumblr', 'monopress'),
 		),
 		array(
 			'id' => 'social-vimeo',
 			'type' => 'text',
-			'title' => __('Vimeo', 'bcn'),
-			'desc' => __('Link to: vimeo', 'bcn'),
+			'title' => __('Vimeo', 'monopress'),
+			'desc' => __('Link to: vimeo', 'monopress'),
 		),
 		array(
 			'id' => 'social-wordpress',
 			'type' => 'text',
-			'title' => __('WordPress', 'bcn'),
-			'desc' => __('Link to: wordpress', 'bcn'),
+			'title' => __('WordPress', 'monopress'),
+			'desc' => __('Link to: wordpress', 'monopress'),
 		),
 		array(
 			'id' => 'social-500pixels',
 			'type' => 'text',
-			'title' => __('500 pixels', 'bcn'),
-			'desc' => __('Link to: 500 pixels', 'bcn'),
+			'title' => __('500 pixels', 'monopress'),
+			'desc' => __('Link to: 500 pixels', 'monopress'),
 		),
 
 		array(
 			'id' => 'social-xing',
 			'type' => 'text',
-			'title' => __('Xing', 'bcn'),
-			'desc' => __('Link to: xing', 'bcn'),
+			'title' => __('Xing', 'monopress'),
+			'desc' => __('Link to: xing', 'monopress'),
 		),
 		array(
 			'id' => 'social-spotify',
 			'type' => 'text',
-			'title' => __('Spotify', 'bcn'),
-			'desc' => __('Link to: spotify', 'bcn'),
+			'title' => __('Spotify', 'monopress'),
+			'desc' => __('Link to: spotify', 'monopress'),
 		),
 		array(
 			'id' => 'social-houzz',
 			'type' => 'text',
-			'title' => __('Houzz', 'bcn'),
-			'desc' => __('Link to: houzz', 'bcn'),
+			'title' => __('Houzz', 'monopress'),
+			'desc' => __('Link to: houzz', 'monopress'),
 		),
 		array(
 			'id' => 'social-skype',
 			'type' => 'text',
-			'title' => __('Skype', 'bcn'),
-			'desc' => __('Link to: skype', 'bcn'),
+			'title' => __('Skype', 'monopress'),
+			'desc' => __('Link to: skype', 'monopress'),
 		),
 		array(
 			'id' => 'social-slideshare',
 			'type' => 'text',
-			'title' => __('Slideshare', 'bcn'),
-			'desc' => __('Link to: slideshare', 'bcn'),
+			'title' => __('Slideshare', 'monopress'),
+			'desc' => __('Link to: slideshare', 'monopress'),
 		),
 		array(
 			'id' => 'social-bandcamp',
 			'type' => 'text',
-			'title' => __('Bandcamp', 'bcn'),
-			'desc' => __('Link to: bandcamp', 'bcn'),
+			'title' => __('Bandcamp', 'monopress'),
+			'desc' => __('Link to: bandcamp', 'monopress'),
 		),
 		array(
 			'id' => 'social-soundcloud',
 			'type' => 'text',
-			'title' => __('Soundcloud', 'bcn'),
-			'desc' => __('Link to: soundcloud', 'bcn'),
+			'title' => __('Soundcloud', 'monopress'),
+			'desc' => __('Link to: soundcloud', 'monopress'),
 		),
 		array(
 			'id' => 'social-snapchat',
 			'type' => 'text',
-			'title' => __('Snapchat', 'bcn'),
-			'desc' => __('Link to: snapchat', 'bcn'),
+			'title' => __('Snapchat', 'monopress'),
+			'desc' => __('Link to: snapchat', 'monopress'),
 		),
 		array(
 			'id' => 'social-viadeo',
 			'type' => 'text',
-			'title' => __('Viadeo', 'bcn'),
-			'desc' => __('Link to: viadeo', 'bcn'),
+			'title' => __('Viadeo', 'monopress'),
+			'desc' => __('Link to: viadeo', 'monopress'),
 		),
 		array(
 			'id' => 'social-tripadvisor',
 			'type' => 'text',
-			'title' => __('TripAdvisor', 'bcn'),
-			'desc' => __('Link to: tripadvisor', 'bcn'),
+			'title' => __('TripAdvisor', 'monopress'),
+			'desc' => __('Link to: tripadvisor', 'monopress'),
 		),
 		array(
 			'id' => 'social-vk',
 			'type' => 'text',
-			'title' => __('VKontakte', 'bcn'),
-			'desc' => __('Link to: vkontakte', 'bcn'),
+			'title' => __('VKontakte', 'monopress'),
+			'desc' => __('Link to: vkontakte', 'monopress'),
 		),
 		array(
 			'id' => 'social-ok',
 			'type' => 'text',
-			'title' => __('Odnoklassniki', 'bcn'),
-			'desc' => __('Link to: odnoklassniki', 'bcn'),
+			'title' => __('Odnoklassniki', 'monopress'),
+			'desc' => __('Link to: odnoklassniki', 'monopress'),
 		),
 		array(
 			'id' => 'social-telegram',
 			'type' => 'text',
-			'title' => __('Telegram', 'bcn'),
-			'desc' => __('Link to: telegram', 'bcn'),
+			'title' => __('Telegram', 'monopress'),
+			'desc' => __('Link to: telegram', 'monopress'),
 		),
 	)
 ));
 
 Redux::setSection($opt_name, array(
-	'title' => __('Import - export', 'bcn'),
+	'title' => __('Import - export', 'monopress'),
 	'id' => 'import-export',
 	'subsection' => true,
 	'fields' => array(
@@ -3475,8 +3475,8 @@ if (!function_exists('dynamic_section')) {
 	{
 		//$sections = array();
 		$sections[] = array(
-			'title' => __('Section via hook', 'bcn'),
-			'desc' => __('<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'bcn'),
+			'title' => __('Section via hook', 'monopress'),
+			'desc' => __('<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'monopress'),
 			'icon' => 'el el-paper-clip',
 			// Leave this as a blank section, no options just some intro text set above.
 			'fields' => array()

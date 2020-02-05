@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package bcn
+ * @package monopress
  */
 
 
@@ -34,18 +34,18 @@ if (class_exists('ReduxFramework')) {
 				?>
 				<h2 class="comments-title comments-block__header">
 					<?php
-					$bcn_comment_count = get_comments_number();
-					if ('1' === $bcn_comment_count) {
+					$monopress_comment_count = get_comments_number();
+					if ('1' === $monopress_comment_count) {
 						printf(
 						/* translators: 1: title. */
-							esc_html__('One thought on &ldquo;%1$s&rdquo;', 'bcn'),
+							esc_html__('One thought on &ldquo;%1$s&rdquo;', 'monopress'),
 							'<span>' . get_the_title() . '</span>'
 						);
 					} else {
 						printf( // WPCS: XSS OK.
 						/* translators: 1: comment count number, 2: title. */
-							esc_html(_nx('%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $bcn_comment_count, 'comments title', 'bcn')),
-							number_format_i18n($bcn_comment_count),
+							esc_html(_nx('%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $monopress_comment_count, 'comments title', 'monopress')),
+							number_format_i18n($monopress_comment_count),
 							'<span>' . get_the_title() . '</span>'
 						);
 					}
@@ -74,7 +74,7 @@ if (class_exists('ReduxFramework')) {
 				// If comments are closed and there are comments, let's leave a little note, shall we?
 				if (!comments_open()) :
 					?>
-					<p class="no-comments"><?php esc_html_e('Comments are closed.', 'bcn'); ?></p>
+					<p class="no-comments"><?php esc_html_e('Comments are closed.', 'monopress'); ?></p>
 				<?php
 				endif;
 
@@ -89,7 +89,7 @@ if (class_exists('ReduxFramework')) {
 					'comment_form_default_fields', array(
 
 						'author' => ' <div class="row"><div class="comment-form-author col-lg-4">' . '<input id="author" placeholder="' .
-							__('Name', 'bcn') .
+							__('Name', 'monopress') .
 							($req ? '*' : '') .
 							'" name="author" type="text" value="' .
 							esc_attr($commenter['comment_author']) . '" size="30"' . $aria_req . ' />' .
@@ -98,7 +98,7 @@ if (class_exists('ReduxFramework')) {
 							'</div>',
 
 						'email' => '<div class="comment-form-email col-lg-4">' . '<input id="email" placeholder="' .
-							__('Email', 'bcn') .
+							__('Email', 'monopress') .
 							($req ? '*' : '') .
 							'" name="email" type="email" value="' . esc_attr($commenter['comment_author_email']) .
 							'" size="30"' . $aria_req . ' />' .
@@ -107,7 +107,7 @@ if (class_exists('ReduxFramework')) {
 
 						'url' => '<div class="comment-form-url col-lg-4">' .
 							'<input id="url" name="url" placeholder="' .
-							__('Website', 'bcn') .
+							__('Website', 'monopress') .
 							($req ? '*' : '') .
 							'" type="url" value="' . esc_attr($commenter['comment_author_url']) . '" size="30"  /> ' .
 //							'<label for="url">' . __('Website', 'domainreference') . '</label>' .
@@ -119,12 +119,12 @@ if (class_exists('ReduxFramework')) {
 				'comment_field' => '<p class="comment-form-comment">' .
 //					'<label for="comment">' . __('Let us know what you have to say:') . '</label>' .
 					'<textarea id="comment" name="comment" placeholder="' .
-					_x('Comment', '', 'bcn') .
+					_x('Comment', '', 'monopress') .
 					'" cols="45" rows="8" aria-required="true"></textarea>' .
 					'</p>',
 				'class_submit' => 'button',
 //				'title_reply' => '<div class="crunchify-text"> <h5>Please Post Your Comments & Reviews</h5></div>',
-//				'comment_notes_after' => '<button type="submit" id="submit-new" class="button"><span>' . __('Post Comment', 'bcn') . '</span></button>',
+//				'comment_notes_after' => '<button type="submit" id="submit-new" class="button"><span>' . __('Post Comment', 'monopress') . '</span></button>',
 
 			);
 			comment_form($args);

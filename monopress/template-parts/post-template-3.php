@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package bcn
+ * @package monopress
  */
 
 global $theme_options;
@@ -89,7 +89,7 @@ $post_sidebar = isset($post_sidebar_meta)&&($post_sidebar_meta!='') ? $post_side
 								<div class="related-articles-wrap row">
 
 									<div class="col-12">
-										<h2 class="related-title"><?php echo __('Related Articles', 'bcn') ?></h2>
+										<h2 class="related-title"><?php echo __('Related Articles', 'monopress') ?></h2>
 
 										<div class="related-arrows">
 											<button class="related-article-prev" type="button"><span
@@ -270,7 +270,7 @@ $post_sidebar = isset($post_sidebar_meta)&&($post_sidebar_meta!='') ? $post_side
 					the_content(sprintf(
 						wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-							__('Continue reading<span class="screen-reader-text"> "%s"</span>', 'bcn'),
+							__('Continue reading<span class="screen-reader-text"> "%s"</span>', 'monopress'),
 							array(
 								'span' => array(
 									'class' => array(),
@@ -281,7 +281,7 @@ $post_sidebar = isset($post_sidebar_meta)&&($post_sidebar_meta!='') ? $post_side
 					));
 
 					wp_link_pages(array(
-						'before' => '<div class="page-links">' . esc_html__('Pages:', 'bcn'),
+						'before' => '<div class="page-links">' . esc_html__('Pages:', 'monopress'),
 						'after' => '</div>',
 					));
 					?>

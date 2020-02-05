@@ -4,14 +4,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package bcn
+ * @package monopress
  */
 
 ?>
 
 
 <h1 class="post-block-06__header search-page__header">
-	<?php esc_html_e('Nothing Found', 'bcn'); ?>
+	<?php esc_html_e('Nothing Found', 'monopress'); ?>
 </h1>
 
 <div class="post-block-06__text search-page__text">
@@ -21,7 +21,7 @@
 		printf(
 			'<p>' . wp_kses(
 			/* translators: 1: link to WP admin new post page. */
-				__('Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'bcn'),
+				__('Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'monopress'),
 				array(
 					'a' => array(
 						'href' => array(),
@@ -34,12 +34,12 @@
 	elseif (is_search()) :
 		?>
 
-		<p><?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'bcn'); ?></p>
+		<p><?php esc_html_e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'monopress'); ?></p>
 	<?php
 	else :
 		?>
 
-		<p><?php esc_html_e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'bcn'); ?></p>
+		<p><?php esc_html_e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'monopress'); ?></p>
 	<?php
 	endif;
 	?>

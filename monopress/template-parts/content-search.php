@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package bcn
+ * @package monopress
  */
 global $theme_options;
 up_get_template('post-block-22');

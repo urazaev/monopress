@@ -3,4 +3,4 @@
 Monopress Wordpress theme
 ===
 
-Hi. I'm a theme called `bcn`.
+Hi. I'm a theme called `monopress`.

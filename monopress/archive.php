@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package bcn
+ * @package monopress
  */
 
 global $theme_options;
@@ -122,8 +122,8 @@ get_header();
 				if ($theme_options['category-pagination'] == 1) {
 					the_posts_pagination(array(
 						'mid_size' => 2,
-						'prev_text' => __('«', 'bcn'),
-						'next_text' => __('»', 'bcn'),
+						'prev_text' => __('«', 'monopress'),
+						'next_text' => __('»', 'monopress'),
 					));
 				}
 
@@ -135,10 +135,10 @@ get_header();
 				<article class="archive__notfound-wrapper uk-animation-slide-bottom-medium">
 
 					<h1 class="post-block-06__header archive__header">
-						<?php esc_html_e('Nothing Found', 'bcn'); ?>
+						<?php esc_html_e('Nothing Found', 'monopress'); ?>
 					</h1>
 					<div class="post-block-06__text archive__text">
-						<p><?php esc_html_e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'bcn'); ?></p>
+						<p><?php esc_html_e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'monopress'); ?></p>
 					</div>
 				</article>
 			<?php

@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package bcn
+ * @package monopress
  */
 global $theme_options;
 ?>
@@ -56,7 +56,7 @@ if (class_exists('ReduxFramework')) {
 				<form class="uk-search uk-search-large" action="<?php echo esc_url(home_url('/')); ?>">
 					<button class="uk-search-icon-flip" data-uk-search-icon type="submit"></button>
 					<input class="usernav__search-input uk-search-input" type="search" name="s" id="s"
-						   placeholder="<?php esc_attr_e('Search...', 'bcn'); ?>">
+						   placeholder="<?php esc_attr_e('Search...', 'monopress'); ?>">
 				</form>
 			</div>
 		</div>
@@ -137,7 +137,7 @@ if (class_exists('ReduxFramework')) {
 $custom_code_js = isset($theme_options['custom-code-js']) ? $theme_options['custom-code-js'] : '';
 
 if (isset($custom_code_js) && $custom_code_js != '') {
-	echo '<script id="bcn-custom-js">' . do_shortcode($custom_code_js) . '</script>';
+	echo '<script id="monopress-custom-js">' . do_shortcode($custom_code_js) . '</script>';
 };
 ?>
 

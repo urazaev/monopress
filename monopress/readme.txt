@@ -1,4 +1,4 @@
-=== bcn ===
+=== monopress ===
 
 Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -9,7 +9,7 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called bcn.
+A starter theme called monopress.
 
 == Description ==
 
@@ -25,7 +25,7 @@ Description
 
 = Does this theme support any plugins? =
 
-bcn includes support for Infinite Scroll in Jetpack.
+monopress includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

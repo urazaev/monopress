@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package bcn
+ * @package monopress
  */
 global $theme_options;
 ?>
@@ -42,7 +42,7 @@ global $theme_options;
 		}
 
 		if ($theme_options['custom-code-css'] != '') { ?>
-			<style type="text/css" media="screen" id="bcn-custom-css">
+			<style type="text/css" media="screen" id="monopress-custom-css">
 				<?php
                  echo esc_html($theme_options['custom-code-css']);
                  ?>
@@ -156,7 +156,7 @@ global $theme_options;
 			}
 		} elseif (($theme_options['header-layout'] != 1) && ($theme_options['header-layout'] != 2)) {
 			?>
-			<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'bcn'); ?></a>
+			<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'monopress'); ?></a>
 
 			<header id="masthead" class="site-header">
 				<div class="site-branding">
@@ -173,16 +173,16 @@ global $theme_options;
 												 rel="home"><?php bloginfo('name'); ?></a></p>
 					<?php
 					endif;
-					$bcn_description = get_bloginfo('description', 'display');
-					if ($bcn_description || is_customize_preview()) :
+					$monopress_description = get_bloginfo('description', 'display');
+					if ($monopress_description || is_customize_preview()) :
 						?>
-						<p class="site-description"><?php echo esc_html($bcn_description); /* WPCS: xss ok. */ ?></p>
+						<p class="site-description"><?php echo esc_html($monopress_description); /* WPCS: xss ok. */ ?></p>
 					<?php endif; ?>
 				</div><!-- .site-branding -->
 
 				<nav id="site-navigation" class="main-navigation">
 					<button class="menu-toggle" aria-controls="primary-menu"
-							aria-expanded="false"><?php esc_html_e('Primary Menu', 'bcn'); ?></button>
+							aria-expanded="false"><?php esc_html_e('Primary Menu', 'monopress'); ?></button>
 					<?php
 					if ($theme_options['main-menu-enabled'] == 1) {
 						wp_nav_menu(array(

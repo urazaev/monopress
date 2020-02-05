@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package bcn
+ * @package monopress
  */
 
 get_header();
@@ -30,7 +30,7 @@ global $theme_options;
 					<h1 class="post-block-06__header search-page__header">
 						<?php
 						/* translators: %s: search query. */
-						printf(esc_html__('Search Results for: %s', 'bcn'), '<span>' . get_search_query() . '</span>');
+						printf(esc_html__('Search Results for: %s', 'monopress'), '<span>' . get_search_query() . '</span>');
 						?>
 					</h1>
 
@@ -53,8 +53,8 @@ global $theme_options;
 						if ($theme_options['category-pagination'] == 1) {
 							the_posts_pagination(array(
 								'mid_size' => 2,
-								'prev_text' => __('«', 'bcn'),
-								'next_text' => __('»', 'bcn'),
+								'prev_text' => __('«', 'monopress'),
+								'next_text' => __('»', 'monopress'),
 							));
 						}
 					};

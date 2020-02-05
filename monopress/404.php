@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package bcn
+ * @package monopress
  */
 
 global $theme_options;
@@ -33,7 +33,7 @@ get_header();
 						echo esc_html($theme_options['404-heading']);
 
 					} else {
-						echo __("Oops! That page can&rsquo;t be found.", 'bcn');
+						echo __("Oops! That page can&rsquo;t be found.", 'monopress');
 					}
 					?>
 				</h1>
@@ -44,7 +44,7 @@ get_header();
 						echo esc_html($theme_options['404-text']);
 
 					} else {
-						echo __("It looks like nothing was found at this location. Maybe try the link below or a search?", 'bcn');
+						echo __("It looks like nothing was found at this location. Maybe try the link below or a search?", 'monopress');
 					}
 					?>
 				</p>

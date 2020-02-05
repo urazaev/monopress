@@ -8,33 +8,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package bcn
+ * @package monopress
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses bcn_header_style()
+ * @uses monopress_header_style()
  */
-function bcn_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'bcn_custom_header_args', array(
+function monopress_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'monopress_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'bcn_header_style',
+		'wp-head-callback'       => 'monopress_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'bcn_custom_header_setup' );
+add_action( 'after_setup_theme', 'monopress_custom_header_setup' );
 
-if ( ! function_exists( 'bcn_header_style' ) ) :
+if ( ! function_exists( 'monopress_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see bcn_custom_header_setup().
+	 * @see monopress_custom_header_setup().
 	 */
-	function bcn_header_style() {
+	function monopress_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

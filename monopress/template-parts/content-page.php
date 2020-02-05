@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package bcn
+ * @package monopress
  */
 global $theme_options;
 ?>
@@ -13,7 +13,7 @@ global $theme_options;
 
 	<?php the_title('<h1 class="post-block-06__header page__heading">', '</h1>'); ?>
 
-	<?php bcn_post_thumbnail(); ?>
+	<?php monopress_post_thumbnail(); ?>
 
 	<div class="entry-content post-block-06__text page__content">
 		<?php
@@ -23,7 +23,7 @@ global $theme_options;
 
 	<?php
 	wp_link_pages(array(
-		'before' => '<div class="page-links page__links">' . esc_html__('Pages:', 'bcn'),
+		'before' => '<div class="page-links page__links">' . esc_html__('Pages:', 'monopress'),
 		'after' => '</div>',
 	));
 	?>
@@ -35,7 +35,7 @@ global $theme_options;
 				sprintf(
 					wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-						__('Edit <span class="screen-reader-text">%s</span>', 'bcn'),
+						__('Edit <span class="screen-reader-text">%s</span>', 'monopress'),
 						array(
 							'span' => array(
 								'class' => array(),
